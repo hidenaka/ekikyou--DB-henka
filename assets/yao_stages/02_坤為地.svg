@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="350" viewBox="0 0 700 350">
+<style>
+  .title { font: bold 18px sans-serif; fill: #333; }
+  .subtitle { font: 14px sans-serif; fill: #666; }
+  .yao-label { font: 14px sans-serif; fill: #333; }
+  .rate { font: bold 14px monospace; fill: #333; }
+  .phrase { font: 12px sans-serif; fill: #555; }
+  .note { font: 11px sans-serif; fill: #888; }
+  .bar-bg { fill: #e0e0e0; }
+  .bar-fill { fill: #4CAF50; }
+  .bar-empty { fill: #f5f5f5; stroke: #ccc; }
+</style>
+<rect width="700" height="350" fill="white"/>
+<text x="20" y="30" class="title">坤為地</text>
+<text x="20" y="50" class="subtitle">受容・柔順・包容力</text>
+<line x1="20" y1="60" x2="680" y2="60" stroke="#ccc"/>
+<text x="20" y="98" class="yao-label">上爻</text>
+<rect x="70" y="83" width="200" height="20" class="bar-empty" rx="3"/>
+<rect x="70" y="83" width="1" height="20" fill="#FF9800" rx="3"/>
+<text x="280" y="98" class="rate">  1%</text>
+<text x="335" y="98" class="phrase">龍戦于野</text>
+<text x="455" y="98" class="note">(龍が野に戦う)</text>
+<text x="630" y="98" class="note">n=146</text>
+<text x="20" y="133" class="yao-label">五爻</text>
+<rect x="70" y="118" width="200" height="20" class="bar-empty" rx="3"/>
+<rect x="70" y="118" width="85" height="20" fill="#FFC107" rx="3"/>
+<text x="280" y="133" class="rate"> 43%</text>
+<text x="335" y="133" class="phrase">黄裳元吉</text>
+<text x="455" y="133" class="note">(黄色の衣で大吉)</text>
+<text x="630" y="133" class="note">n=277</text>
+<text x="20" y="168" class="yao-label">四爻</text>
+<rect x="70" y="153" width="200" height="20" class="bar-empty" rx="3"/>
+<text x="280" y="168" class="rate">  0%</text>
+<text x="335" y="168" class="phrase">括嚢</text>
+<text x="455" y="168" class="note">(袋を括る)</text>
+<text x="630" y="168" class="note">n=34</text>
+<text x="20" y="203" class="yao-label">三爻</text>
+<rect x="70" y="188" width="200" height="20" class="bar-empty" rx="3"/>
+<rect x="70" y="188" width="78" height="20" fill="#FFC107" rx="3"/>
+<text x="280" y="203" class="rate"> 39%</text>
+<text x="335" y="203" class="phrase">含章可貞</text>
+<text x="455" y="203" class="note">(才能を内に秘める)</text>
+<text x="630" y="203" class="note">n=100</text>
+<text x="20" y="238" class="yao-label">二爻</text>
+<rect x="70" y="223" width="200" height="20" class="bar-empty" rx="3"/>
+<rect x="70" y="223" width="135" height="20" fill="#8BC34A" rx="3"/>
+<text x="280" y="238" class="rate"> 68%</text>
+<text x="335" y="238" class="phrase">直方大</text>
+<text x="455" y="238" class="note">(直にして方にして大なり)</text>
+<text x="630" y="238" class="note">n=223</text>
+<text x="20" y="273" class="yao-label">初爻</text>
+<rect x="70" y="258" width="200" height="20" class="bar-empty" rx="3"/>
+<rect x="70" y="258" width="200" height="20" fill="#4CAF50" rx="3"/>
+<text x="280" y="273" class="rate">100%</text>
+<text x="335" y="273" class="phrase">履霜堅冰至</text>
+<text x="455" y="273" class="note">(霜を踏めば堅い氷に至る)</text>
+<text x="630" y="273" class="note">n=2</text>
+<line x1="20" y1="310" x2="680" y2="310" stroke="#ccc"/>
+<text x="20" y="335" class="note">総事例数: 782件, 全体成功率: 39.9%</text>
+</svg>

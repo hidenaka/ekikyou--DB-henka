@@ -1,0 +1,104 @@
+# タイムライン型動画用 易経マッピングテンプレート
+#
+# 使い方:
+# 1. project情報を埋める
+# 2. timeline の各時代に対して、該当する八卦を選択
+# 3. transitions の logic を記述
+# 4. scripts/export_narration.py で台本生成
+
+project:
+  theme: "[テーマ名を記入]"
+  theme_id: "[3桁の数字]"
+  scale: "other"  # individual/company/family/country/other
+
+# 八卦の選択肢:
+# 乾(☰): 天・創造・剛健・強さ
+# 坤(☷): 地・受容・柔順・基盤
+# 震(☳): 雷・動き・奮起・衝撃
+# 巽(☴): 風・浸透・柔軟・対話
+# 坎(☵): 水・危険・困難・試練
+# 離(☲): 火・明知・分離・才能
+# 艮(☶): 山・止まる・待機・蓄積
+# 兌(☱): 沢・喜び・和悦・成功
+
+timeline:
+  # 時代1（Hook）
+  - era: "Hook"
+    year: "現在"
+    hexagram: "坎"  # 例: 困難・危機
+    state: "混乱・カオス"
+    description: "[現在の状況を記述]"
+
+  # 時代2（過去1）
+  - era: "過去1"
+    year: "[年代]"
+    hexagram: "艮"  # 例: 停滞
+    state: "停滞・閉塞"
+    description: "[時代の特徴を記述]"
+
+  # 時代3（過去2）
+  - era: "過去2"
+    year: "[年代]"
+    hexagram: "兌"  # 例: 喜び・成功
+    state: "変質・新生"
+    description: "[時代の特徴を記述]"
+
+  # 時代4（現在）
+  - era: "現在"
+    year: "[年代]"
+    hexagram: "離"  # 例: 才能・個性
+    state: "成長痛"
+    description: "[時代の特徴を記述]"
+
+  # 時代5（未来1）
+  - era: "未来1"
+    year: "[年代]"
+    hexagram: "乾"  # 例: 強さ・効率
+    state: "絶頂・慢心"
+    description: "[予測される状況]"
+
+  # 時代6（未来2）
+  - era: "未来2"
+    year: "[年代]"
+    hexagram: "坤"  # 例: 基盤・原点回帰
+    state: "変質・新生"
+    description: "[予測される状況]"
+
+transitions:
+  # 過去1 → 過去2
+  - from_era: "過去1"
+    to_era: "過去2"
+    from_hex: "艮"
+    to_hex: "兌"
+    trigger_type: "意図的決断"  # 外部ショック/内部崩壊/意図的決断/偶発・出会い
+    changing_lines: [1, 2]
+    logic: "[変化の理由を記述]"
+
+  # 過去2 → 現在
+  - from_era: "過去2"
+    to_era: "現在"
+    from_hex: "兌"
+    to_hex: "離"
+    trigger_type: "偶発・出会い"
+    changing_lines: [2]
+    logic: "[変化の理由を記述]"
+
+  # 現在 → 未来1
+  - from_era: "現在"
+    to_era: "未来1"
+    from_hex: "離"
+    to_hex: "乾"
+    trigger_type: "外部ショック"
+    changing_lines: [1, 3]
+    logic: "[変化の理由を記述]"
+    pattern_warning: "失敗パターンの可能性"  # オプション
+
+  # 未来1 → 未来2
+  - from_era: "未来1"
+    to_era: "未来2"
+    from_hex: "乾"
+    to_hex: "坤"
+    trigger_type: "内部崩壊"
+    changing_lines: [1, 2, 3]
+    logic: "[変化の理由を記述]"
+    pattern_type: "Shock_Recovery"  # オプション

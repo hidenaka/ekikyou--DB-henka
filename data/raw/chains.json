@@ -1,0 +1,255 @@
+{
+  "chains": [
+    {
+      "chain_id": "CHAIN_AUDIO_001",
+      "theme": "音楽再生デバイスの変化",
+      "description": "このチェーンは、据え置き機からポータブル、デジタルオーディオ、スマートフォン、完全ワイヤレスイヤホンへと至る音楽体験の変化を表す。",
+      "steps": [
+        {
+          "order": 1,
+          "label": "据え置きステレオ＋カセット",
+          "related_transition_ids": [],
+          "summary": "家庭のリビングでのみ音楽を楽しむスタイルが中心だった段階。持ち出しは困難。"
+        },
+        {
+          "order": 2,
+          "label": "ウォークマン型ポータブルプレーヤー",
+          "related_transition_ids": [
+            "PROD_GADG_001"
+          ],
+          "summary": "音楽を身体の近くに常時持ち歩けるようになり、通勤・通学などの移動時間の意味が変わった。"
+        },
+        {
+          "order": 3,
+          "label": "デジタルオーディオプレーヤー (iPod)",
+          "related_transition_ids": [
+            "PROD_GADG_002"
+          ],
+          "summary": "物理メディア（カセット/CD）からデータ管理へ。1000曲をポケットに入れ、ライブラリごと持ち歩く革命。"
+        },
+        {
+          "order": 4,
+          "label": "スマートフォンへの統合",
+          "related_transition_ids": [
+            "PROD_GADG_004"
+          ],
+          "summary": "通信機能を持つスマホに音楽機能が吸収され、専用プレーヤーが不要になる。ストリーミング時代の到来。"
+        },
+        {
+          "order": 5,
+          "label": "完全ワイヤレスイヤホン",
+          "related_transition_ids": [],
+          "summary": "再生機すら意識せず、耳元のウェアラブルデバイスだけで音楽と常時接続するスタイルへ。"
+        }
+      ]
+    },
+    {
+      "chain_id": "CHAIN_CAMERA_001",
+      "theme": "カメラ機能の行方（専用機 vs スマホ）",
+      "description": "写真は「現像する特別なイベント」から「日常のコミュニケーション」へ。専用機のニッチ化とスマホによる大衆化の歴史。",
+      "steps": [
+        {
+          "order": 1,
+          "label": "フィルムコンパクトカメラ",
+          "related_transition_ids": [],
+          "summary": "現像が必要で、撮影枚数に制限があった時代。写真は「記念撮影」が主目的。"
+        },
+        {
+          "order": 2,
+          "label": "デジタルコンパクトカメラ (コンデジ)",
+          "related_transition_ids": [
+            "PROD_GADG_005"
+          ],
+          "summary": "フィルム代不要で撮り放題に。ブログ等の普及と共に日常記録のツールとして爆発的に普及。"
+        },
+        {
+          "order": 3,
+          "label": "カメラ付きケータイ",
+          "related_transition_ids": [
+            "PROD_GADG_003"
+          ],
+          "summary": "「写メール」の登場。画質は低いが、撮ってすぐ送るというコミュニケーション用途が生まれる。"
+        },
+        {
+          "order": 4,
+          "label": "スマホカメラ",
+          "related_transition_ids": [
+            "PROD_GADG_004"
+          ],
+          "summary": "コンデジ並みの画質とSNSへの即時投稿機能が融合し、コンデジ市場を破壊。AI補正が標準化。"
+        },
+        {
+          "order": 5,
+          "label": "ミラーレス一眼（プロ・ハイアマ）",
+          "related_transition_ids": [
+            "PROD_GADG_006"
+          ],
+          "summary": "スマホでは撮れない表現領域（ボケ、望遠）に特化し、高付加価値な趣味・業務用ツールとして生存。"
+        }
+      ]
+    },
+    {
+      "chain_id": "CHAIN_COMM_001",
+      "theme": "通信端末からウェアラブルへの分散",
+      "description": "「電話する場所」から「持ち歩く電話」、そして「身体の一部としての通信」へ。連絡手段の身体性の変化。",
+      "steps": [
+        {
+          "order": 1,
+          "label": "固定電話・公衆電話",
+          "related_transition_ids": [],
+          "summary": "特定の「場所」に行かないと連絡が取れない時代。待ち合わせには事前の約束が必須。"
+        },
+        {
+          "order": 2,
+          "label": "フィーチャーフォン（ガラケー）",
+          "related_transition_ids": [
+            "PROD_GADG_003"
+          ],
+          "summary": "個人が常時連絡可能に。メールと通話が中心で、親指文化が定着。"
+        },
+        {
+          "order": 3,
+          "label": "スマートフォン",
+          "related_transition_ids": [
+            "PROD_GADG_004"
+          ],
+          "summary": "PC並みの情報処理能力を持ち歩く。SNSやメッセンジャーア��リが通話に取って代わる。"
+        },
+        {
+          "order": 4,
+          "label": "スマートウォッチ",
+          "related_transition_ids": [
+            "PROD_GADG_010"
+          ],
+          "summary": "スマホを取り出さずに通知を確認。バイブレーションによる身体への直接的な通知。"
+        }
+      ]
+    },
+    {
+      "chain_id": "CHAIN_GAME_001",
+      "theme": "ゲーム機エコシステムの変化",
+      "description": "リビングの専用機から、いつでもどこでも遊べる環境へ。そしてハードウェアの境界が溶けていく過程。",
+      "steps": [
+        {
+          "order": 1,
+          "label": "家庭用据え置きゲーム機",
+          "related_transition_ids": [
+            "PROD_GADG_008"
+          ],
+          "summary": "テレビに接続して遊ぶ高性能マシン。家族や友人とリビングで遊ぶスタイル。"
+        },
+        {
+          "order": 2,
+          "label": "携帯専用ゲーム機",
+          "related_transition_ids": [
+            "PROD_GADG_007"
+          ],
+          "summary": "個人の手元で没入できるゲーム体験。通信ケーブルやローカル無線での遊びが発展。"
+        },
+        {
+          "order": 3,
+          "label": "スマホゲーム（Free-to-Play）",
+          "related_transition_ids": [
+            "PROD_GADG_004"
+          ],
+          "summary": "基本無料・課金モデルの台頭。隙間時間の暇つぶしとしてマス層に拡大。"
+        },
+        {
+          "order": 4,
+          "label": "ハイブリッド機 (Switch)",
+          "related_transition_ids": [
+            "PROD_GADG_007",
+            "PROD_GADG_008"
+          ],
+          "summary": "テレビでも携帯でも遊べるスタイルの確立。生活シーンに合わせて形態を変える。"
+        },
+        {
+          "order": 5,
+          "label": "クラウドゲーミング / マルチプラットフォーム",
+          "related_transition_ids": [],
+          "summary": "ハードウェアの制約から解放され、どの画面でも同じ高品質なゲームが遊べる未来へ。"
+        }
+      ]
+    },
+    {
+      "chain_id": "CHAIN_READING_001",
+      "theme": "読書・情報消費の変化",
+      "description": "紙の物理的制約からの解放と、デジタルデバイスによる「読む」体験の多様化。",
+      "steps": [
+        {
+          "order": 1,
+          "label": "紙の書籍・雑誌",
+          "related_transition_ids": [],
+          "summary": "物理的な実体としての本。所有感はあるが、持ち運びや保管場所の制約がある。"
+        },
+        {
+          "order": 2,
+          "label": "PC / PDAでの閲覧",
+          "related_transition_ids": [],
+          "summary": "デジタル化された文書を読むことはできたが、解像度や姿勢の問題で長時間の読書には不向き。"
+        },
+        {
+          "order": 3,
+          "label": "電子書籍リーダー (E-ink)",
+          "related_transition_ids": [
+            "PROD_GADG_009"
+          ],
+          "summary": "紙に近い視認性と電池持ちを実現し、読書体験を損なわずにデジタル化に成功。"
+        },
+        {
+          "order": 4,
+          "label": "スマホ・タブレット読書",
+          "related_transition_ids": [
+            "PROD_GADG_004"
+          ],
+          "summary": "汎用機アプリでの読書。カラー雑誌や漫画には適するが、通知による集中阻害が課題。"
+        },
+        {
+          "order": 5,
+          "label": "用途による棲み分け",
+          "related_transition_ids": [
+            "PROD_GADG_009"
+          ],
+          "summary": "集中読書はE-ink、情報収集や雑誌はスマホと、デバイスの使い分けが定着。"
+        }
+      ]
+    },
+    {
+      "chain_id": "CHAIN_SPACE_001",
+      "theme": "空間インターフェース（画面→音声→VR/AR）",
+      "description": "平面ディスプレイの操作から、音声対話、そして空間そのものをインターフェースにする没入型体験へ。",
+      "steps": [
+        {
+          "order": 1,
+          "label": "PC (キーボード/マウス)",
+          "related_transition_ids": [],
+          "summary": "机に向かい、間接的な入力デバイスで画面の中を操作する時代。"
+        },
+        {
+          "order": 2,
+          "label": "スマホ (マルチタッチ)",
+          "related_transition_ids": [
+            "PROD_GADG_004"
+          ],
+          "summary": "画面を直接触る直感的な操作。いつでもどこでも情報にアクセス可能に。"
+        },
+        {
+          "order": 3,
+          "label": "スマートスピーカー (音声UI)",
+          "related_transition_ids": [
+            "PROD_GADG_011"
+          ],
+          "summary": "画面を見ず、手を使わずに声だけで操作する「アンビエント」な体験。"
+        },
+        {
+          "order": 4,
+          "label": "VR/ARヘッドセット",
+          "related_transition_ids": [
+            "PROD_GADG_012"
+          ],
+          "summary": "画面の枠を超え、360度の空間全体を情報領域として扱う没入型インターフェース。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "workflow_name": "バイアス補正ワークフロー",
+  "created": "2026-01-03",
+  "completed": "2026-01-04",
+  "status": "completed",
+  "goal": "生存者バイアスを補正し、現実に近いデータ分布を実現",
+  "metrics": {
+    "initial": {
+      "total_cases": 5951,
+      "success_rate": 53.6,
+      "failure_rate": 14.5,
+      "us_country_cases": 7,
+      "pre_1900_cases": 100
+    },
+    "final_2026_01_04": {
+      "total_cases": 7372,
+      "failure_rate": 30.01,
+      "failure_cases": 2212,
+      "success_cases": 3190,
+      "added_cases": 1421,
+      "added_failure_cases": 1350,
+      "batch_categories": [
+        "batch_failure_* (産業別失敗事例)",
+        "batch_hex_action_* (八卦行動別失敗)",
+        "batch_hex_after_* (八卦結果別失敗)",
+        "batch_hex_before_* (八卦初期状態別失敗)"
+      ]
+    },
+    "targets": {
+      "failure_rate": 30.0,
+      "status": "ACHIEVED"
+    }
+  },
+  "phases": [
+    {
+      "id": "A",
+      "name": "失敗事例の意図的収集",
+      "description": "倒産企業・撤退事業・消えたサービスの収集",
+      "target_cases": 500,
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "B",
+      "name": "静かな失敗パターン追加",
+      "description": "Quiet_Fade/Stagnationパターンの新設と事例収集",
+      "target_cases": 200,
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "C",
+      "name": "八卦パターン別失敗事例",
+      "description": "震/坎/艮/巽/兌/離など八卦別の失敗パターンを網羅的に収集",
+      "target_cases": 800,
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "D",
+      "name": "最終調整",
+      "description": "30%目標達成のための最終調整",
+      "status": "completed",
+      "progress": 100
+    }
+  ],
+  "summary": {
+    "achievement": "失敗率14.5% → 30.01% 達成",
+    "key_insight": "成功談は宣伝材料として多く書かれるため、意図的に失敗事例を収集することで現実に近いバランスを実現",
+    "next_steps": [
+      "データ品質改善ワークフローの継続（Phase B: 国際事例、Phase D: 歴史事例）",
+      "実名事例（ニュースソースあり）の追加を継続"
+    ]
+  }
+}

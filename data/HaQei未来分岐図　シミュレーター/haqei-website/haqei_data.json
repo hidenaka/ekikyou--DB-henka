@@ -1,0 +1,668 @@
+{
+  "hexagrams": {
+    "1": {
+      "hexagram_id": 1,
+      "name_jp": "乾為天",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 1,
+      "description": "積極的、エネルギッシュ、プライドが高い、自己中心的、正義感が強い",
+      "keywords": "創造,リーダーシップ,力",
+      "mbti_type": "ENTJ"
+    },
+    "2": {
+      "hexagram_id": 2,
+      "name_jp": "坤為地",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 8,
+      "description": "穏やか、従順、勤勉、受動的、包容力がある、縁の下の力持ち",
+      "keywords": "受容,育成,サポート",
+      "mbti_type": "ISFJ"
+    },
+    "3": {
+      "hexagram_id": 3,
+      "name_jp": "水雷屯",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 4,
+      "description": "悩みやすい、慎重、粘り強い、内向的、苦労性",
+      "keywords": "産みの苦しみ,混沌,始まり"
+    },
+    "4": {
+      "hexagram_id": 4,
+      "name_jp": "山水蒙",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 6,
+      "description": "未熟、子供っぽい、無邪気、教えを請うことに抵抗がない",
+      "keywords": "未熟,教育,啓蒙"
+    },
+    "5": {
+      "hexagram_id": 5,
+      "name_jp": "水天需",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 1,
+      "description": "どっしりしている、焦らない、いずれ良くなると信じている",
+      "keywords": "待機,準備,忍耐"
+    },
+    "6": {
+      "hexagram_id": 6,
+      "name_jp": "天水訟",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 6,
+      "description": "理屈っぽい、負けず嫌い、争いごとを好む、正義感が強い",
+      "keywords": "争い,対立,訴訟"
+    },
+    "7": {
+      "hexagram_id": 7,
+      "name_jp": "地水師",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 6,
+      "description": "厳格、規律を重んじる、目的意識が強い、大衆心理を読む",
+      "keywords": "組織,規律,リーダーシップ",
+      "mbti_type": "INFJ"
+    },
+    "8": {
+      "hexagram_id": 8,
+      "name_jp": "水地比",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 8,
+      "description": "社交的、情が深い、誰とでも仲良くなれる、リーダーを支える",
+      "keywords": "協力,親密,結束",
+      "mbti_type": "ESFJ"
+    },
+    "9": {
+      "hexagram_id": 9,
+      "name_jp": "風天小畜",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 1,
+      "description": "控えめ、真面目、コツコツ努力する、少し頼りない印象",
+      "keywords": "小さな蓄積,一時的な停滞"
+    },
+    "10": {
+      "hexagram_id": 10,
+      "name_jp": "天澤履",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 2,
+      "description": "謙虚、真面目、目上を敬う、慎重に行動する",
+      "keywords": "礼儀,慎重,危険回避"
+    },
+    "11": {
+      "hexagram_id": 11,
+      "name_jp": "地天泰",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 1,
+      "description": "穏やか、社交的、誰とでもうまくやれる、包容力がある",
+      "keywords": "平和,繁栄,調和"
+    },
+    "12": {
+      "hexagram_id": 12,
+      "name_jp": "天地否",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 8,
+      "description": "内向的、非社交的、頑固、人を寄せ付けない雰囲気",
+      "keywords": "閉塞,不調和,停滞"
+    },
+    "13": {
+      "hexagram_id": 13,
+      "name_jp": "天火同人",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 3,
+      "description": "社交的、誰とでも分け隔てなく接する、オープンな性格",
+      "keywords": "協力,大同団結,公正"
+    },
+    "14": {
+      "hexagram_id": 14,
+      "name_jp": "火天大有",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 1,
+      "description": "明るく、寛大、おおらか、多くの人に慕われる",
+      "keywords": "大いなる所有,繁栄,公正な分配"
+    },
+    "15": {
+      "hexagram_id": 15,
+      "name_jp": "地山謙",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 7,
+      "description": "腰が低い、実力があるのにひけらかさない、誰からも好かれる",
+      "keywords": "謙虚,有能,持続"
+    },
+    "16": {
+      "hexagram_id": 16,
+      "name_jp": "雷地豫",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 8,
+      "description": "用意周到、楽観的、音楽や楽しいことが好き、人を喜ばせるのが好き",
+      "keywords": "喜び,準備,油断"
+    },
+    "17": {
+      "hexagram_id": 17,
+      "name_jp": "沢雷随",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 4,
+      "description": "素直、社交的、人に合わせるのが上手、軽率な面も",
+      "keywords": "追随,変化への適応"
+    },
+    "18": {
+      "hexagram_id": 18,
+      "name_jp": "山風蠱",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 5,
+      "description": "責任感が強い、困難に立ち向かう、厳しい、物事を根本から立て直したい",
+      "keywords": "腐敗の立て直し,改革"
+    },
+    "19": {
+      "hexagram_id": 19,
+      "name_jp": "地沢臨",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 2,
+      "description": "明るく、おおらか、親分肌・姉御肌、人を育てるのが好き",
+      "keywords": "成長,接近,リーダーシップ"
+    },
+    "20": {
+      "hexagram_id": 20,
+      "name_jp": "風地観",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 8,
+      "description": "静か、思慮深い、物事の本質を見抜く、精神性が高い",
+      "keywords": "観察,洞察,自己反省"
+    },
+    "21": {
+      "hexagram_id": 21,
+      "name_jp": "火雷噬嗑",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 4,
+      "description": "歯に衣着せぬ、情熱的、正義感が強い、怒りっぽい",
+      "keywords": "困難の排除,公正な裁き"
+    },
+    "22": {
+      "hexagram_id": 22,
+      "name_jp": "山火賁",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 3,
+      "description": "おしゃれ、外面を気にする、優雅、見栄っ張り",
+      "keywords": "飾り,美しさ,調和"
+    },
+    "23": {
+      "hexagram_id": 23,
+      "name_jp": "山地剝",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 8,
+      "description": "保守的、現状にしがみつく、衰運にある",
+      "keywords": "衰退,崩壊,変化の時"
+    },
+    "24": {
+      "hexagram_id": 24,
+      "name_jp": "地雷復",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 4,
+      "description": "前向き、失敗を恐れない、素直、根本に戻って考える",
+      "keywords": "回復,回帰,新たな始まり"
+    },
+    "25": {
+      "hexagram_id": 25,
+      "name_jp": "天雷无妄",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 4,
+      "description": "天真爛漫、正直、裏表がない、自然のまま",
+      "keywords": "無垢,自然体,予期せぬ災難"
+    },
+    "26": {
+      "hexagram_id": 26,
+      "name_jp": "山天大畜",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 1,
+      "description": "どっしりと構えている、思慮深い、忍耐強い、内面に大きなエネルギーを秘めている",
+      "keywords": "大いなる蓄積,才能の開花"
+    },
+    "27": {
+      "hexagram_id": 27,
+      "name_jp": "山雷頤",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 4,
+      "description": "おっとりしている、自分のペースを大事にする、食いしん坊、言葉を慎む",
+      "keywords": "養う,口,正しい食と情報"
+    },
+    "28": {
+      "hexagram_id": 28,
+      "name_jp": "澤風大過",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 5,
+      "description": "型破り、大胆不敵、やりすぎてしまう、責任感が強い",
+      "keywords": "異常事態,危機,覚悟"
+    },
+    "29": {
+      "hexagram_id": 29,
+      "name_jp": "坎為水",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 6,
+      "description": "苦労性、内省的、悩みやすい、粘り強い、真理を求める",
+      "keywords": "困難,危険,陥る"
+    },
+    "30": {
+      "hexagram_id": 30,
+      "name_jp": "離為火",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 3,
+      "description": "明るく華やか、感情の起伏が激しい、知的、プライドが高い",
+      "keywords": "輝き,依存,明智"
+    },
+    "31": {
+      "hexagram_id": 31,
+      "name_jp": "沢山咸",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 7,
+      "description": "感受性が豊か、デリケート、ロマンチスト、影響されやすい",
+      "keywords": "感応,共感,相互作用"
+    },
+    "32": {
+      "hexagram_id": 32,
+      "name_jp": "雷風恒",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 5,
+      "description": "地道、真面目、一度決めたことはやり通す、変化を嫌う",
+      "keywords": "持続,恒久,安定"
+    },
+    "33": {
+      "hexagram_id": 33,
+      "name_jp": "天山遯",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 7,
+      "description": "賢い、逃げ上手、深入りしない、冷静",
+      "keywords": "撤退,身を引く,自己防衛"
+    },
+    "34": {
+      "hexagram_id": 34,
+      "name_jp": "雷天大壮",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 1,
+      "description": "血気盛ん、猪突猛進、エネルギッシュ、正義感が強い",
+      "keywords": "大いなる勢い,力強い前進",
+      "mbti_type": "ESTJ"
+    },
+    "35": {
+      "hexagram_id": 35,
+      "name_jp": "火地晋",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 8,
+      "description": "明るい、前向き、目標に向かって進む、人に認められたい",
+      "keywords": "進展,昇進,光明"
+    },
+    "36": {
+      "hexagram_id": 36,
+      "name_jp": "地火明夷",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 3,
+      "description": "苦労性、用心深い、本心を明かさない、内に強い意志を持つ",
+      "keywords": "光明の隠蔽,困難,忍耐"
+    },
+    "37": {
+      "hexagram_id": 37,
+      "name_jp": "風火家人",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 3,
+      "description": "真面目、規律正しい、情愛深い、内向き",
+      "keywords": "家族,秩序,内部統制",
+      "mbti_type": "INFP"
+    },
+    "38": {
+      "hexagram_id": 38,
+      "name_jp": "火沢睽",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 2,
+      "description": "あまのじゃく、反骨精神が旺盛、人と同じことを嫌う、疑り深い",
+      "keywords": "対立,不和,相互理解の困難"
+    },
+    "39": {
+      "hexagram_id": 39,
+      "name_jp": "水山蹇",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 7,
+      "description": "苦労性、悩みが多い、進退窮まる、助けを求めるのが上手",
+      "keywords": "困難,足踏み,立ち往生"
+    },
+    "40": {
+      "hexagram_id": 40,
+      "name_jp": "雷水解",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 6,
+      "description": "さっぱりしている、過去にこだわらない、行動が早い、寛大",
+      "keywords": "解決,解放,新たな始まり"
+    },
+    "41": {
+      "hexagram_id": 41,
+      "name_jp": "山沢損",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 2,
+      "description": "控えめ、我慢強い、自分のことを後回しにする",
+      "keywords": "損失,削減,自己犠牲"
+    },
+    "42": {
+      "hexagram_id": 42,
+      "name_jp": "風雷益",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 4,
+      "description": "親切、行動的、自己犠牲をいとわない、前向き",
+      "keywords": "増益,貢献,成長"
+    },
+    "43": {
+      "hexagram_id": 43,
+      "name_jp": "沢天夬",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 1,
+      "description": "大胆不敵、決断が速い、白黒はっきりさせたい、短気な面も",
+      "keywords": "決断,決行,突破"
+    },
+    "44": {
+      "hexagram_id": 44,
+      "name_jp": "天風姤",
+      "upper_trigram_id": 1,
+      "lower_trigram_id": 5,
+      "description": "魅力的、積極的、油断しやすい、移り気",
+      "keywords": "予期せぬ出会い,影響力"
+    },
+    "45": {
+      "hexagram_id": 45,
+      "name_jp": "沢地萃",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 8,
+      "description": "明るい、社交的、お祭り好き、リーダーシップがある",
+      "keywords": "結集,結束,喜び"
+    },
+    "46": {
+      "hexagram_id": 46,
+      "name_jp": "地風升",
+      "upper_trigram_id": 8,
+      "lower_trigram_id": 5,
+      "description": "謙虚、真面目、努力家、目上を敬う",
+      "keywords": "上昇,成長,着実な進歩"
+    },
+    "47": {
+      "hexagram_id": 47,
+      "name_jp": "沢水困",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 6,
+      "description": "苦労性、悲観的、口が重い、内に強い意志を秘めている",
+      "keywords": "困窮,逆境,忍耐"
+    },
+    "48": {
+      "hexagram_id": 48,
+      "name_jp": "水風井",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 5,
+      "description": "穏やか、縁の下の力持ち、誰にでも公平、地味",
+      "keywords": "供給,安定,継続的改善"
+    },
+    "49": {
+      "hexagram_id": 49,
+      "name_jp": "沢火革",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 3,
+      "description": "ラディカル、現状に満足しない、理想主義者",
+      "keywords": "改革,変革,革命"
+    },
+    "50": {
+      "hexagram_id": 50,
+      "name_jp": "火風鼎",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 5,
+      "description": "どっしりしている、人を受け入れる、三方よしの精神を持つ",
+      "keywords": "形成,安定,文化の確立"
+    },
+    "51": {
+      "hexagram_id": 51,
+      "name_jp": "震為雷",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 4,
+      "description": "活発、エネルギッシュ、驚きやすい、短気、声が大きい",
+      "keywords": "衝撃,覚醒,急変",
+      "mbti_type": "ESTP"
+    },
+    "52": {
+      "hexagram_id": 52,
+      "name_jp": "艮為山",
+      "upper_trigram_id": 7,
+      "lower_trigram_id": 7,
+      "description": "冷静沈着、動じない、無口、頑固、自分の世界を持つ",
+      "keywords": "静止,休息,自己抑制",
+      "mbti_type": "ISTP"
+    },
+    "53": {
+      "hexagram_id": 53,
+      "name_jp": "風山漸",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 7,
+      "description": "真面目、慎重、一歩一歩進む、時間をかける",
+      "keywords": "漸進,着実な成長,婚姻"
+    },
+    "54": {
+      "hexagram_id": 54,
+      "name_jp": "雷沢帰妹",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 2,
+      "description": "情熱的、衝動的、後先を考えない、わがまま",
+      "keywords": "不自然な関係,秩序の乱れ"
+    },
+    "55": {
+      "hexagram_id": 55,
+      "name_jp": "雷火豊",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 3,
+      "description": "明るく、派手好き、エネルギッシュ、自信家",
+      "keywords": "繁栄の極み,豊かさ,光明"
+    },
+    "56": {
+      "hexagram_id": 56,
+      "name_jp": "火山旅",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 7,
+      "description": "孤独を好む、根無し草、慎み深い、常にアウェイな感覚",
+      "keywords": "旅,変化,異郷での適応"
+    },
+    "57": {
+      "hexagram_id": 57,
+      "name_jp": "巽為風",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 5,
+      "description": "穏やか、優柔不断、人に合わせるのがうまい、社交的",
+      "keywords": "浸透,影響,柔軟性"
+    },
+    "58": {
+      "hexagram_id": 58,
+      "name_jp": "兌為沢",
+      "upper_trigram_id": 2,
+      "lower_trigram_id": 2,
+      "description": "明るい、おしゃべり好き、楽しいことが好き、愛嬌がある",
+      "keywords": "喜び,コミュニケーション",
+      "mbti_type": "ESFP"
+    },
+    "59": {
+      "hexagram_id": 59,
+      "name_jp": "風水渙",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 6,
+      "description": "大局的な視点を持つ、私心がない、人々をまとめるのが上手",
+      "keywords": "困難の解消,分散"
+    },
+    "60": {
+      "hexagram_id": 60,
+      "name_jp": "水沢節",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 2,
+      "description": "ケジメを大事にする、自己管理ができる、真面目、少し窮屈",
+      "keywords": "節度,規律,抑制"
+    },
+    "61": {
+      "hexagram_id": 61,
+      "name_jp": "風沢中孚",
+      "upper_trigram_id": 5,
+      "lower_trigram_id": 2,
+      "description": "裏表がない、正直、素直、誠意がある",
+      "keywords": "真心,信頼,共感"
+    },
+    "62": {
+      "hexagram_id": 62,
+      "name_jp": "雷山小過",
+      "upper_trigram_id": 4,
+      "lower_trigram_id": 7,
+      "description": "控えめ、臆病、石橋を叩いて渡る、自分に自信がない",
+      "keywords": "少し行き過ぎ,異常事態"
+    },
+    "63": {
+      "hexagram_id": 63,
+      "name_jp": "水火既済",
+      "upper_trigram_id": 6,
+      "lower_trigram_id": 3,
+      "description": "整然としている、完璧主義、安定を好む、保守的",
+      "keywords": "完成,調和,維持"
+    },
+    "64": {
+      "hexagram_id": 64,
+      "name_jp": "火水未済",
+      "upper_trigram_id": 3,
+      "lower_trigram_id": 6,
+      "description": "慎重、思慮深い、混乱の中でも希望を失わない",
+      "keywords": "未完成,継続,希望"
+    }
+  },
+  "trigrams": {
+    "1": {
+      "trigram_id": 1,
+      "name_jp": "乾",
+      "name_en": "天",
+      "element": "金"
+    },
+    "2": {
+      "trigram_id": 2,
+      "name_jp": "兌",
+      "name_en": "沢",
+      "element": "金"
+    },
+    "3": {
+      "trigram_id": 3,
+      "name_jp": "離",
+      "name_en": "火",
+      "element": "火"
+    },
+    "4": {
+      "trigram_id": 4,
+      "name_jp": "震",
+      "name_en": "雷",
+      "element": "木"
+    },
+    "5": {
+      "trigram_id": 5,
+      "name_jp": "巽",
+      "name_en": "風",
+      "element": "木"
+    },
+    "6": {
+      "trigram_id": 6,
+      "name_jp": "坎",
+      "name_en": "水",
+      "element": "水"
+    },
+    "7": {
+      "trigram_id": 7,
+      "name_jp": "艮",
+      "name_en": "山",
+      "element": "土"
+    },
+    "8": {
+      "trigram_id": 8,
+      "name_jp": "坤",
+      "name_en": "地",
+      "element": "土"
+    }
+  },
+  "element_relationships": [
+    {
+      "relationship_id": 1,
+      "source_element": "木",
+      "target_element": "火",
+      "relationship_type": "相生",
+      "metaphor_text": "{source}が持つ木のエネルギーは、{target}が持つ火の炎を燃え上がらせます。"
+    },
+    {
+      "relationship_id": 2,
+      "source_element": "火",
+      "target_element": "土",
+      "relationship_type": "相生",
+      "metaphor_text": "{source}が持つ火のエネルギーは、{target}が持つ土の大地を温め、育みます。"
+    },
+    {
+      "relationship_id": 3,
+      "source_element": "土",
+      "target_element": "金",
+      "relationship_type": "相生",
+      "metaphor_text": "{source}が持つ土のエネルギーは、{target}から金という貴い鉱石を産み出します。"
+    },
+    {
+      "relationship_id": 4,
+      "source_element": "金",
+      "target_element": "水",
+      "relationship_type": "相生",
+      "metaphor_text": "{source}が持つ金のエネルギーの表面には、{target}という清らかな水滴が生まれます。"
+    },
+    {
+      "relationship_id": 5,
+      "source_element": "水",
+      "target_element": "木",
+      "relationship_type": "相生",
+      "metaphor_text": "{source}が持つ水のエネルギーは、{target}という若木を育む、生命の源です。"
+    },
+    {
+      "relationship_id": 6,
+      "source_element": "木",
+      "target_element": "土",
+      "relationship_type": "相剋",
+      "metaphor_text": "{source}が持つ木のエネルギーは、{target}が持つ土の養分を吸い上げ、その力を抑制します。"
+    },
+    {
+      "relationship_id": 7,
+      "source_element": "土",
+      "target_element": "水",
+      "relationship_type": "相剋",
+      "metaphor_text": "{source}が持つ土のエネルギーは、{target}が持つ水の流れを堰き止め、その自由を奪います。"
+    },
+    {
+      "relationship_id": 8,
+      "source_element": "水",
+      "target_element": "火",
+      "relationship_type": "相剋",
+      "metaphor_text": "{source}が持つ水のエネルギーは、{target}が持つ火の炎を消し止め、その輝きを失わせます。"
+    },
+    {
+      "relationship_id": 9,
+      "source_element": "火",
+      "target_element": "金",
+      "relationship_type": "相剋",
+      "metaphor_text": "{source}が持つ火のエネルギーは、{target}が持つ金の金属を溶かし、その形を変えてしまいます。"
+    },
+    {
+      "relationship_id": 10,
+      "source_element": "金",
+      "target_element": "木",
+      "relationship_type": "相剋",
+      "metaphor_text": "{source}が持つ金のエネルギーは、{target}が持つ木の若木を切り倒す斧にもなります。"
+    }
+  ],
+  "mappings": {
+    "mbti": {
+      "INTJ": 52,
+      "INTP": 52,
+      "ENTJ": 1,
+      "ENTP": 51,
+      "INFJ": 7,
+      "INFP": 37,
+      "ENFP": 51,
+      "ISTJ": 2,
+      "ISFJ": 2,
+      "ESTJ": 34,
+      "ESFJ": 8,
+      "ISTP": 52,
+      "ISFP": 58,
+      "ESTP": 51,
+      "ESFP": 58
+    },
+    "enneagram": {},
+    "strengthsfinder": {}
+  }
+}

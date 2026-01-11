@@ -1,0 +1,93 @@
+{
+  "title": "八卦1秒辞典",
+  "description": "動画冒頭で1秒で八卦の読みと意味を伝えるための素材",
+  "usage": "Hook前または直後に1-2秒で表示。視聴者が読みと意味を瞬時に把握できる",
+
+  "hexagrams": {
+    "乾": {
+      "reading": "けん",
+      "symbol": "☰",
+      "one_word": "強さ",
+      "display_text": "乾（けん）＝ 強さ",
+      "color": "#FFD700",
+      "sound_cue": "金属音、上昇音"
+    },
+    "坤": {
+      "reading": "こん",
+      "symbol": "☷",
+      "one_word": "基盤",
+      "display_text": "坤（こん）＝ 基盤",
+      "color": "#8B4513",
+      "sound_cue": "大地の低音、安定音"
+    },
+    "震": {
+      "reading": "しん",
+      "symbol": "☳",
+      "one_word": "衝撃",
+      "display_text": "震（しん）＝ 衝撃",
+      "color": "#FF4500",
+      "sound_cue": "雷鳴、衝撃音"
+    },
+    "巽": {
+      "reading": "そん",
+      "symbol": "☴",
+      "one_word": "柔軟",
+      "display_text": "巽（そん）＝ 柔軟",
+      "color": "#87CEEB",
+      "sound_cue": "風の音、流れる音"
+    },
+    "坎": {
+      "reading": "かん",
+      "symbol": "☵",
+      "one_word": "試練",
+      "display_text": "坎（かん）＝ 試練",
+      "color": "#4169E1",
+      "sound_cue": "水滴、深い低音"
+    },
+    "離": {
+      "reading": "り",
+      "symbol": "☲",
+      "one_word": "才能",
+      "display_text": "離（り）＝ 才能",
+      "color": "#FF6347",
+      "sound_cue": "火の音、輝く音"
+    },
+    "艮": {
+      "reading": "ごん",
+      "symbol": "☶",
+      "one_word": "待機",
+      "display_text": "艮（ごん）＝ 待機",
+      "color": "#708090",
+      "sound_cue": "静寂、止まる音"
+    },
+    "兌": {
+      "reading": "だ",
+      "symbol": "☱",
+      "one_word": "喜び",
+      "display_text": "兌（だ）＝ 喜び",
+      "color": "#FFB6C1",
+      "sound_cue": "明るい音、笑い声"
+    }
+  },
+
+  "display_patterns": {
+    "single": {
+      "description": "単一の八卦を1秒で表示",
+      "format": "[シンボル] [漢字]（[読み]）＝ [意味]",
+      "example": "☵ 坎（かん）＝ 試練",
+      "duration_sec": 1.0
+    },
+    "transition": {
+      "description": "変化を1秒で表示",
+      "format": "[from_symbol][from_漢字] → [to_symbol][to_漢字]",
+      "example": "☵坎 → ☰乾",
+      "duration_sec": 1.0
+    },
+    "transition_with_meaning": {
+      "description": "変化と意味を1.5秒で表示",
+      "format": "[from_意味] → [to_意味]",
+      "example": "試練 → 強さ",
+      "duration_sec": 1.5
+    }
+  }
+}

@@ -1,0 +1,2516 @@
+{
+  "generated_at": "2026-01-09T14:15:08.546399",
+  "total_cases": 8449,
+  "cases_with_hexagram_id": 2839,
+  "summary": {
+    "hexagrams_present": 44,
+    "hexagrams_missing": 20,
+    "hex_yao_combinations_with_data": 384,
+    "hex_yao_combinations_missing": 281,
+    "low_data_combinations": 78,
+    "low_accuracy_combinations": 2
+  },
+  "missing_hexagrams": [
+    {
+      "hexagram_id": 5,
+      "name": "水天需",
+      "keyword": "待機・需要",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 16,
+      "name": "雷地予",
+      "keyword": "喜び・準備",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 19,
+      "name": "地沢臨",
+      "keyword": "接近・臨む",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 25,
+      "name": "天雷无妄",
+      "keyword": "無妄・誠実",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 27,
+      "name": "山雷頤",
+      "keyword": "養い・栄養",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 31,
+      "name": "沢山咸",
+      "keyword": "感応・交流",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 33,
+      "name": "天山遯",
+      "keyword": "退却・隠遁",
+      "importance": "high",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 35,
+      "name": "火地晋",
+      "keyword": "前進・昇進",
+      "importance": "high",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 37,
+      "name": "風火家人",
+      "keyword": "家族・組織",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 40,
+      "name": "雷水解",
+      "keyword": "解放・解決",
+      "importance": "high",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 42,
+      "name": "風雷益",
+      "keyword": "利益・増加",
+      "importance": "high",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 45,
+      "name": "沢地萃",
+      "keyword": "集合・結集",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 48,
+      "name": "水風井",
+      "keyword": "井戸・源泉",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 49,
+      "name": "沢火革",
+      "keyword": "革命・変革",
+      "importance": "high",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 53,
+      "name": "風山漸",
+      "keyword": "漸進・徐々",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 56,
+      "name": "火山旅",
+      "keyword": "旅・流浪",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 59,
+      "name": "風水渙",
+      "keyword": "散逸・拡散",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 61,
+      "name": "風沢中孚",
+      "keyword": "誠信・信頼",
+      "importance": "high",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 62,
+      "name": "雷山小過",
+      "keyword": "小さな過ち",
+      "importance": "medium",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 63,
+      "name": "水火既済",
+      "keyword": "完成・達成",
+      "importance": "high",
+      "priority": 30
+    }
+  ],
+  "missing_hex_yao": [
+    {
+      "hexagram_id": 1,
+      "yao_position": 1,
+      "name": "乾為天",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 1,
+      "yao_position": 4,
+      "name": "乾為天",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 1,
+      "yao_position": 5,
+      "name": "乾為天",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 3,
+      "yao_position": 5,
+      "name": "水雷屯",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 3,
+      "yao_position": 6,
+      "name": "水雷屯",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 4,
+      "yao_position": 1,
+      "name": "山水蒙",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 4,
+      "yao_position": 4,
+      "name": "山水蒙",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 4,
+      "yao_position": 5,
+      "name": "山水蒙",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 4,
+      "yao_position": 6,
+      "name": "山水蒙",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 5,
+      "yao_position": 1,
+      "name": "水天需",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 5,
+      "yao_position": 2,
+      "name": "水天需",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 5,
+      "yao_position": 3,
+      "name": "水天需",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 5,
+      "yao_position": 4,
+      "name": "水天需",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 5,
+      "yao_position": 5,
+      "name": "水天需",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 5,
+      "yao_position": 6,
+      "name": "水天需",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 6,
+      "yao_position": 2,
+      "name": "天水訟",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 6,
+      "yao_position": 3,
+      "name": "天水訟",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 6,
+      "yao_position": 4,
+      "name": "天水訟",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 6,
+      "yao_position": 5,
+      "name": "天水訟",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 6,
+      "yao_position": 6,
+      "name": "天水訟",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 7,
+      "yao_position": 1,
+      "name": "地水師",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 8,
+      "yao_position": 1,
+      "name": "水地比",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 8,
+      "yao_position": 3,
+      "name": "水地比",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 8,
+      "yao_position": 4,
+      "name": "水地比",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 8,
+      "yao_position": 5,
+      "name": "水地比",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 8,
+      "yao_position": 6,
+      "name": "水地比",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 9,
+      "yao_position": 1,
+      "name": "風天小畜",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 9,
+      "yao_position": 2,
+      "name": "風天小畜",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 9,
+      "yao_position": 4,
+      "name": "風天小畜",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 9,
+      "yao_position": 5,
+      "name": "風天小畜",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 9,
+      "yao_position": 6,
+      "name": "風天小畜",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 10,
+      "yao_position": 1,
+      "name": "天沢履",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 10,
+      "yao_position": 2,
+      "name": "天沢履",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 10,
+      "yao_position": 3,
+      "name": "天沢履",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 10,
+      "yao_position": 4,
+      "name": "天沢履",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 10,
+      "yao_position": 5,
+      "name": "天沢履",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 11,
+      "yao_position": 1,
+      "name": "地天泰",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 11,
+      "yao_position": 3,
+      "name": "地天泰",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 11,
+      "yao_position": 4,
+      "name": "地天泰",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 12,
+      "yao_position": 1,
+      "name": "天地否",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 12,
+      "yao_position": 3,
+      "name": "天地否",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 12,
+      "yao_position": 4,
+      "name": "天地否",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 12,
+      "yao_position": 5,
+      "name": "天地否",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 12,
+      "yao_position": 6,
+      "name": "天地否",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 13,
+      "yao_position": 1,
+      "name": "天火同人",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 13,
+      "yao_position": 3,
+      "name": "天火同人",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 13,
+      "yao_position": 4,
+      "name": "天火同人",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 13,
+      "yao_position": 5,
+      "name": "天火同人",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 14,
+      "yao_position": 1,
+      "name": "火天大有",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 14,
+      "yao_position": 2,
+      "name": "火天大有",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 14,
+      "yao_position": 3,
+      "name": "火天大有",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 14,
+      "yao_position": 4,
+      "name": "火天大有",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 14,
+      "yao_position": 5,
+      "name": "火天大有",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 15,
+      "yao_position": 1,
+      "name": "地山謙",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 15,
+      "yao_position": 3,
+      "name": "地山謙",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 15,
+      "yao_position": 4,
+      "name": "地山謙",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 16,
+      "yao_position": 1,
+      "name": "雷地予",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 16,
+      "yao_position": 2,
+      "name": "雷地予",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 16,
+      "yao_position": 3,
+      "name": "雷地予",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 16,
+      "yao_position": 4,
+      "name": "雷地予",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 16,
+      "yao_position": 5,
+      "name": "雷地予",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 16,
+      "yao_position": 6,
+      "name": "雷地予",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 17,
+      "yao_position": 1,
+      "name": "沢雷随",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 17,
+      "yao_position": 2,
+      "name": "沢雷随",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 17,
+      "yao_position": 3,
+      "name": "沢雷随",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 17,
+      "yao_position": 4,
+      "name": "沢雷随",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 17,
+      "yao_position": 5,
+      "name": "沢雷随",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 18,
+      "yao_position": 2,
+      "name": "山風蠱",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 18,
+      "yao_position": 3,
+      "name": "山風蠱",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 18,
+      "yao_position": 5,
+      "name": "山風蠱",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 18,
+      "yao_position": 6,
+      "name": "山風蠱",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 19,
+      "yao_position": 1,
+      "name": "地沢臨",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 19,
+      "yao_position": 2,
+      "name": "地沢臨",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 19,
+      "yao_position": 3,
+      "name": "地沢臨",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 19,
+      "yao_position": 4,
+      "name": "地沢臨",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 19,
+      "yao_position": 5,
+      "name": "地沢臨",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 19,
+      "yao_position": 6,
+      "name": "地沢臨",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 20,
+      "yao_position": 1,
+      "name": "風地観",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 20,
+      "yao_position": 3,
+      "name": "風地観",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 20,
+      "yao_position": 4,
+      "name": "風地観",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 20,
+      "yao_position": 5,
+      "name": "風地観",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 20,
+      "yao_position": 6,
+      "name": "風地観",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 21,
+      "yao_position": 1,
+      "name": "火雷噬嗑",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 21,
+      "yao_position": 3,
+      "name": "火雷噬嗑",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 21,
+      "yao_position": 4,
+      "name": "火雷噬嗑",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 21,
+      "yao_position": 5,
+      "name": "火雷噬嗑",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 21,
+      "yao_position": 6,
+      "name": "火雷噬嗑",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 22,
+      "yao_position": 1,
+      "name": "山火賁",
+      "priority": 5
+    },
+    {
+      "hexagram_id": 22,
+      "yao_position": 3,
+      "name": "山火賁",
+      "priority": 5
+    },
+    {
+      "hexagram_id": 22,
+      "yao_position": 4,
+      "name": "山火賁",
+      "priority": 5
+    },
+    {
+      "hexagram_id": 22,
+      "yao_position": 5,
+      "name": "山火賁",
+      "priority": 5
+    },
+    {
+      "hexagram_id": 22,
+      "yao_position": 6,
+      "name": "山火賁",
+      "priority": 5
+    },
+    {
+      "hexagram_id": 23,
+      "yao_position": 2,
+      "name": "山地剥",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 23,
+      "yao_position": 6,
+      "name": "山地剥",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 24,
+      "yao_position": 1,
+      "name": "地雷復",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 24,
+      "yao_position": 4,
+      "name": "地雷復",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 24,
+      "yao_position": 5,
+      "name": "地雷復",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 24,
+      "yao_position": 6,
+      "name": "地雷復",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 25,
+      "yao_position": 1,
+      "name": "天雷无妄",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 25,
+      "yao_position": 2,
+      "name": "天雷无妄",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 25,
+      "yao_position": 3,
+      "name": "天雷无妄",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 25,
+      "yao_position": 4,
+      "name": "天雷无妄",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 25,
+      "yao_position": 5,
+      "name": "天雷无妄",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 25,
+      "yao_position": 6,
+      "name": "天雷无妄",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 26,
+      "yao_position": 1,
+      "name": "山天大畜",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 26,
+      "yao_position": 2,
+      "name": "山天大畜",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 26,
+      "yao_position": 4,
+      "name": "山天大畜",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 26,
+      "yao_position": 5,
+      "name": "山天大畜",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 26,
+      "yao_position": 6,
+      "name": "山天大畜",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 27,
+      "yao_position": 1,
+      "name": "山雷頤",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 27,
+      "yao_position": 2,
+      "name": "山雷頤",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 27,
+      "yao_position": 3,
+      "name": "山雷頤",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 27,
+      "yao_position": 4,
+      "name": "山雷頤",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 27,
+      "yao_position": 5,
+      "name": "山雷頤",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 27,
+      "yao_position": 6,
+      "name": "山雷頤",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 28,
+      "yao_position": 2,
+      "name": "沢風大過",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 28,
+      "yao_position": 3,
+      "name": "沢風大過",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 28,
+      "yao_position": 4,
+      "name": "沢風大過",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 28,
+      "yao_position": 5,
+      "name": "沢風大過",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 28,
+      "yao_position": 6,
+      "name": "沢風大過",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 29,
+      "yao_position": 4,
+      "name": "坎為水",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 29,
+      "yao_position": 5,
+      "name": "坎為水",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 29,
+      "yao_position": 6,
+      "name": "坎為水",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 30,
+      "yao_position": 4,
+      "name": "離為火",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 31,
+      "yao_position": 1,
+      "name": "沢山咸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 31,
+      "yao_position": 2,
+      "name": "沢山咸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 31,
+      "yao_position": 3,
+      "name": "沢山咸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 31,
+      "yao_position": 4,
+      "name": "沢山咸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 31,
+      "yao_position": 5,
+      "name": "沢山咸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 31,
+      "yao_position": 6,
+      "name": "沢山咸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 32,
+      "yao_position": 1,
+      "name": "雷風恒",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 32,
+      "yao_position": 2,
+      "name": "雷風恒",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 32,
+      "yao_position": 4,
+      "name": "雷風恒",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 32,
+      "yao_position": 5,
+      "name": "雷風恒",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 32,
+      "yao_position": 6,
+      "name": "雷風恒",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 33,
+      "yao_position": 1,
+      "name": "天山遯",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 33,
+      "yao_position": 2,
+      "name": "天山遯",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 33,
+      "yao_position": 3,
+      "name": "天山遯",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 33,
+      "yao_position": 4,
+      "name": "天山遯",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 33,
+      "yao_position": 5,
+      "name": "天山遯",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 33,
+      "yao_position": 6,
+      "name": "天山遯",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 34,
+      "yao_position": 1,
+      "name": "雷天大壮",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 34,
+      "yao_position": 2,
+      "name": "雷天大壮",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 34,
+      "yao_position": 4,
+      "name": "雷天大壮",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 34,
+      "yao_position": 5,
+      "name": "雷天大壮",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 35,
+      "yao_position": 1,
+      "name": "火地晋",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 35,
+      "yao_position": 2,
+      "name": "火地晋",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 35,
+      "yao_position": 3,
+      "name": "火地晋",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 35,
+      "yao_position": 4,
+      "name": "火地晋",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 35,
+      "yao_position": 5,
+      "name": "火地晋",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 35,
+      "yao_position": 6,
+      "name": "火地晋",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 36,
+      "yao_position": 1,
+      "name": "地火明夷",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 36,
+      "yao_position": 4,
+      "name": "地火明夷",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 36,
+      "yao_position": 6,
+      "name": "地火明夷",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 37,
+      "yao_position": 1,
+      "name": "風火家人",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 37,
+      "yao_position": 2,
+      "name": "風火家人",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 37,
+      "yao_position": 3,
+      "name": "風火家人",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 37,
+      "yao_position": 4,
+      "name": "風火家人",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 37,
+      "yao_position": 5,
+      "name": "風火家人",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 37,
+      "yao_position": 6,
+      "name": "風火家人",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 38,
+      "yao_position": 2,
+      "name": "火沢睽",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 38,
+      "yao_position": 4,
+      "name": "火沢睽",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 38,
+      "yao_position": 5,
+      "name": "火沢睽",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 38,
+      "yao_position": 6,
+      "name": "火沢睽",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 39,
+      "yao_position": 4,
+      "name": "水山蹇",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 39,
+      "yao_position": 5,
+      "name": "水山蹇",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 39,
+      "yao_position": 6,
+      "name": "水山蹇",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 40,
+      "yao_position": 1,
+      "name": "雷水解",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 40,
+      "yao_position": 2,
+      "name": "雷水解",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 40,
+      "yao_position": 3,
+      "name": "雷水解",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 40,
+      "yao_position": 4,
+      "name": "雷水解",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 40,
+      "yao_position": 5,
+      "name": "雷水解",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 40,
+      "yao_position": 6,
+      "name": "雷水解",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 41,
+      "yao_position": 1,
+      "name": "山沢損",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 41,
+      "yao_position": 2,
+      "name": "山沢損",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 41,
+      "yao_position": 4,
+      "name": "山沢損",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 41,
+      "yao_position": 5,
+      "name": "山沢損",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 41,
+      "yao_position": 6,
+      "name": "山沢損",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 42,
+      "yao_position": 1,
+      "name": "風雷益",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 42,
+      "yao_position": 2,
+      "name": "風雷益",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 42,
+      "yao_position": 3,
+      "name": "風雷益",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 42,
+      "yao_position": 4,
+      "name": "風雷益",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 42,
+      "yao_position": 5,
+      "name": "風雷益",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 42,
+      "yao_position": 6,
+      "name": "風雷益",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 43,
+      "yao_position": 1,
+      "name": "沢天夬",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 43,
+      "yao_position": 2,
+      "name": "沢天夬",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 43,
+      "yao_position": 3,
+      "name": "沢天夬",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 43,
+      "yao_position": 4,
+      "name": "沢天夬",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 43,
+      "yao_position": 5,
+      "name": "沢天夬",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 44,
+      "yao_position": 1,
+      "name": "天風姤",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 44,
+      "yao_position": 2,
+      "name": "天風姤",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 44,
+      "yao_position": 3,
+      "name": "天風姤",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 44,
+      "yao_position": 4,
+      "name": "天風姤",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 44,
+      "yao_position": 5,
+      "name": "天風姤",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 45,
+      "yao_position": 1,
+      "name": "沢地萃",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 45,
+      "yao_position": 2,
+      "name": "沢地萃",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 45,
+      "yao_position": 3,
+      "name": "沢地萃",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 45,
+      "yao_position": 4,
+      "name": "沢地萃",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 45,
+      "yao_position": 5,
+      "name": "沢地萃",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 45,
+      "yao_position": 6,
+      "name": "沢地萃",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 46,
+      "yao_position": 1,
+      "name": "地風升",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 46,
+      "yao_position": 4,
+      "name": "地風升",
+      "priority": 9
+    },
+    {
+      "hexagram_id": 47,
+      "yao_position": 2,
+      "name": "沢水困",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 47,
+      "yao_position": 4,
+      "name": "沢水困",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 47,
+      "yao_position": 5,
+      "name": "沢水困",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 47,
+      "yao_position": 6,
+      "name": "沢水困",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 48,
+      "yao_position": 1,
+      "name": "水風井",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 48,
+      "yao_position": 2,
+      "name": "水風井",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 48,
+      "yao_position": 3,
+      "name": "水風井",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 48,
+      "yao_position": 4,
+      "name": "水風井",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 48,
+      "yao_position": 5,
+      "name": "水風井",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 48,
+      "yao_position": 6,
+      "name": "水風井",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 49,
+      "yao_position": 1,
+      "name": "沢火革",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 49,
+      "yao_position": 2,
+      "name": "沢火革",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 49,
+      "yao_position": 3,
+      "name": "沢火革",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 49,
+      "yao_position": 4,
+      "name": "沢火革",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 49,
+      "yao_position": 5,
+      "name": "沢火革",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 49,
+      "yao_position": 6,
+      "name": "沢火革",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 50,
+      "yao_position": 1,
+      "name": "火風鼎",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 50,
+      "yao_position": 2,
+      "name": "火風鼎",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 50,
+      "yao_position": 4,
+      "name": "火風鼎",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 50,
+      "yao_position": 5,
+      "name": "火風鼎",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 50,
+      "yao_position": 6,
+      "name": "火風鼎",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 51,
+      "yao_position": 4,
+      "name": "震為雷",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 51,
+      "yao_position": 6,
+      "name": "震為雷",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 52,
+      "yao_position": 1,
+      "name": "艮為山",
+      "priority": 3
+    },
+    {
+      "hexagram_id": 53,
+      "yao_position": 1,
+      "name": "風山漸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 53,
+      "yao_position": 2,
+      "name": "風山漸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 53,
+      "yao_position": 3,
+      "name": "風山漸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 53,
+      "yao_position": 4,
+      "name": "風山漸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 53,
+      "yao_position": 5,
+      "name": "風山漸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 53,
+      "yao_position": 6,
+      "name": "風山漸",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 54,
+      "yao_position": 1,
+      "name": "雷沢帰妹",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 54,
+      "yao_position": 2,
+      "name": "雷沢帰妹",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 54,
+      "yao_position": 3,
+      "name": "雷沢帰妹",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 54,
+      "yao_position": 4,
+      "name": "雷沢帰妹",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 54,
+      "yao_position": 5,
+      "name": "雷沢帰妹",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 55,
+      "yao_position": 2,
+      "name": "雷火豊",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 55,
+      "yao_position": 3,
+      "name": "雷火豊",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 55,
+      "yao_position": 4,
+      "name": "雷火豊",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 55,
+      "yao_position": 5,
+      "name": "雷火豊",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 56,
+      "yao_position": 1,
+      "name": "火山旅",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 56,
+      "yao_position": 2,
+      "name": "火山旅",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 56,
+      "yao_position": 3,
+      "name": "火山旅",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 56,
+      "yao_position": 4,
+      "name": "火山旅",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 56,
+      "yao_position": 5,
+      "name": "火山旅",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 56,
+      "yao_position": 6,
+      "name": "火山旅",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 57,
+      "yao_position": 6,
+      "name": "巽為風",
+      "priority": 2
+    },
+    {
+      "hexagram_id": 58,
+      "yao_position": 4,
+      "name": "兌為沢",
+      "priority": 2
+    },
+    {
+      "hexagram_id": 59,
+      "yao_position": 1,
+      "name": "風水渙",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 59,
+      "yao_position": 2,
+      "name": "風水渙",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 59,
+      "yao_position": 3,
+      "name": "風水渙",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 59,
+      "yao_position": 4,
+      "name": "風水渙",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 59,
+      "yao_position": 5,
+      "name": "風水渙",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 59,
+      "yao_position": 6,
+      "name": "風水渙",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 60,
+      "yao_position": 1,
+      "name": "水沢節",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 60,
+      "yao_position": 4,
+      "name": "水沢節",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 60,
+      "yao_position": 5,
+      "name": "水沢節",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 60,
+      "yao_position": 6,
+      "name": "水沢節",
+      "priority": 10
+    },
+    {
+      "hexagram_id": 61,
+      "yao_position": 1,
+      "name": "風沢中孚",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 61,
+      "yao_position": 2,
+      "name": "風沢中孚",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 61,
+      "yao_position": 3,
+      "name": "風沢中孚",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 61,
+      "yao_position": 4,
+      "name": "風沢中孚",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 61,
+      "yao_position": 5,
+      "name": "風沢中孚",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 61,
+      "yao_position": 6,
+      "name": "風沢中孚",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 62,
+      "yao_position": 1,
+      "name": "雷山小過",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 62,
+      "yao_position": 2,
+      "name": "雷山小過",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 62,
+      "yao_position": 3,
+      "name": "雷山小過",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 62,
+      "yao_position": 4,
+      "name": "雷山小過",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 62,
+      "yao_position": 5,
+      "name": "雷山小過",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 62,
+      "yao_position": 6,
+      "name": "雷山小過",
+      "priority": 20
+    },
+    {
+      "hexagram_id": 63,
+      "yao_position": 1,
+      "name": "水火既済",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 63,
+      "yao_position": 2,
+      "name": "水火既済",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 63,
+      "yao_position": 3,
+      "name": "水火既済",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 63,
+      "yao_position": 4,
+      "name": "水火既済",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 63,
+      "yao_position": 5,
+      "name": "水火既済",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 63,
+      "yao_position": 6,
+      "name": "水火既済",
+      "priority": 30
+    },
+    {
+      "hexagram_id": 64,
+      "yao_position": 2,
+      "name": "火水未済",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 64,
+      "yao_position": 4,
+      "name": "火水未済",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 64,
+      "yao_position": 5,
+      "name": "火水未済",
+      "priority": 15
+    },
+    {
+      "hexagram_id": 64,
+      "yao_position": 6,
+      "name": "火水未済",
+      "priority": 15
+    }
+  ],
+  "low_data_hex_yao": [
+    {
+      "hexagram_id": 24,
+      "yao_position": 3,
+      "name": "地雷復",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 39,
+      "yao_position": 1,
+      "name": "水山蹇",
+      "count": 3,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 6,
+      "yao_position": 1,
+      "name": "天水訟",
+      "count": 2,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 47,
+      "yao_position": 3,
+      "name": "沢水困",
+      "count": 5,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 1,
+      "yao_position": 3,
+      "name": "乾為天",
+      "count": 9,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 3,
+      "yao_position": 3,
+      "name": "水雷屯",
+      "count": 5,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 36,
+      "yao_position": 3,
+      "name": "地火明夷",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 52,
+      "yao_position": 5,
+      "name": "艮為山",
+      "count": 4,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 10,
+      "yao_position": 6,
+      "name": "天沢履",
+      "count": 8,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 43,
+      "yao_position": 6,
+      "name": "沢天夬",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 14,
+      "yao_position": 6,
+      "name": "火天大有",
+      "count": 3,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 7,
+      "yao_position": 4,
+      "name": "地水師",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 13,
+      "yao_position": 6,
+      "name": "天火同人",
+      "count": 7,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 7,
+      "yao_position": 3,
+      "name": "地水師",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 26,
+      "yao_position": 3,
+      "name": "山天大畜",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 4,
+      "yao_position": 3,
+      "name": "山水蒙",
+      "count": 4,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 46,
+      "yao_position": 5,
+      "name": "地風升",
+      "count": 5,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 64,
+      "yao_position": 3,
+      "name": "火水未済",
+      "count": 5,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 36,
+      "yao_position": 5,
+      "name": "地火明夷",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 39,
+      "yao_position": 3,
+      "name": "水山蹇",
+      "count": 5,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 3,
+      "yao_position": 2,
+      "name": "水雷屯",
+      "count": 7,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 60,
+      "yao_position": 2,
+      "name": "水沢節",
+      "count": 4,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 47,
+      "yao_position": 1,
+      "name": "沢水困",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 51,
+      "yao_position": 5,
+      "name": "震為雷",
+      "count": 1,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 15,
+      "yao_position": 5,
+      "name": "地山謙",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 7,
+      "yao_position": 5,
+      "name": "地水師",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 23,
+      "yao_position": 4,
+      "name": "山地剥",
+      "count": 3,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 15,
+      "yao_position": 6,
+      "name": "地山謙",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 46,
+      "yao_position": 6,
+      "name": "地風升",
+      "count": 3,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 3,
+      "yao_position": 4,
+      "name": "水雷屯",
+      "count": 3,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 41,
+      "yao_position": 3,
+      "name": "山沢損",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 3,
+      "yao_position": 1,
+      "name": "水雷屯",
+      "count": 6,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 28,
+      "yao_position": 1,
+      "name": "沢風大過",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 64,
+      "yao_position": 1,
+      "name": "火水未済",
+      "count": 4,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 38,
+      "yao_position": 1,
+      "name": "火沢睽",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 32,
+      "yao_position": 3,
+      "name": "雷風恒",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 15,
+      "yao_position": 2,
+      "name": "地山謙",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 7,
+      "yao_position": 2,
+      "name": "地水師",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 46,
+      "yao_position": 2,
+      "name": "地風升",
+      "count": 2,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 8,
+      "yao_position": 2,
+      "name": "水地比",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 22,
+      "yao_position": 2,
+      "name": "山火賁",
+      "count": 1,
+      "priority": 5
+    },
+    {
+      "hexagram_id": 11,
+      "yao_position": 2,
+      "name": "地天泰",
+      "count": 2,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 34,
+      "yao_position": 6,
+      "name": "雷天大壮",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 23,
+      "yao_position": 5,
+      "name": "山地剥",
+      "count": 1,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 44,
+      "yao_position": 6,
+      "name": "天風姤",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 38,
+      "yao_position": 3,
+      "name": "火沢睽",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 34,
+      "yao_position": 3,
+      "name": "雷天大壮",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 11,
+      "yao_position": 5,
+      "name": "地天泰",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 23,
+      "yao_position": 3,
+      "name": "山地剥",
+      "count": 3,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 11,
+      "yao_position": 6,
+      "name": "地天泰",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 50,
+      "yao_position": 3,
+      "name": "火風鼎",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 13,
+      "yao_position": 2,
+      "name": "天火同人",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 52,
+      "yao_position": 6,
+      "name": "艮為山",
+      "count": 4,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 46,
+      "yao_position": 3,
+      "name": "地風升",
+      "count": 1,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 60,
+      "yao_position": 3,
+      "name": "水沢節",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 9,
+      "yao_position": 3,
+      "name": "風天小畜",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 20,
+      "yao_position": 2,
+      "name": "風地観",
+      "count": 2,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 4,
+      "yao_position": 2,
+      "name": "山水蒙",
+      "count": 4,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 36,
+      "yao_position": 2,
+      "name": "地火明夷",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 1,
+      "yao_position": 2,
+      "name": "乾為天",
+      "count": 9,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 30,
+      "yao_position": 1,
+      "name": "離為火",
+      "count": 7,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 23,
+      "yao_position": 1,
+      "name": "山地剥",
+      "count": 5,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 18,
+      "yao_position": 4,
+      "name": "山風蠱",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 39,
+      "yao_position": 2,
+      "name": "水山蹇",
+      "count": 3,
+      "priority": 9
+    },
+    {
+      "hexagram_id": 55,
+      "yao_position": 6,
+      "name": "雷火豊",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 54,
+      "yao_position": 6,
+      "name": "雷沢帰妹",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 12,
+      "yao_position": 2,
+      "name": "天地否",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 24,
+      "yao_position": 2,
+      "name": "地雷復",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 21,
+      "yao_position": 2,
+      "name": "火雷噬嗑",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 18,
+      "yao_position": 1,
+      "name": "山風蠱",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 55,
+      "yao_position": 1,
+      "name": "雷火豊",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 58,
+      "yao_position": 1,
+      "name": "兌為沢",
+      "count": 8,
+      "priority": 2
+    },
+    {
+      "hexagram_id": 2,
+      "yao_position": 1,
+      "name": "坤為地",
+      "count": 2,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 17,
+      "yao_position": 6,
+      "name": "沢雷随",
+      "count": 1,
+      "priority": 10
+    },
+    {
+      "hexagram_id": 7,
+      "yao_position": 6,
+      "name": "地水師",
+      "count": 1,
+      "priority": 15
+    },
+    {
+      "hexagram_id": 30,
+      "yao_position": 5,
+      "name": "離為火",
+      "count": 1,
+      "priority": 3
+    },
+    {
+      "hexagram_id": 57,
+      "yao_position": 4,
+      "name": "巽為風",
+      "count": 3,
+      "priority": 2
+    },
+    {
+      "hexagram_id": 57,
+      "yao_position": 5,
+      "name": "巽為風",
+      "count": 3,
+      "priority": 2
+    }
+  ],
+  "low_accuracy_hex_yao": [
+    {
+      "hexagram_id": 30,
+      "yao_position": 6,
+      "name": "離為火",
+      "accuracy": 0.55,
+      "total": 11,
+      "priority": "high"
+    },
+    {
+      "hexagram_id": 29,
+      "yao_position": 3,
+      "name": "坎為水",
+      "accuracy": 0.59,
+      "total": 94,
+      "priority": "high"
+    }
+  ],
+  "research_tasks": [
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 33,
+      "hexagram_name": "天山遯",
+      "keyword": "退却・隠遁",
+      "target_cases": 10,
+      "search_hints": [
+        "戦略的撤退 企業",
+        "事業売却 成功"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 35,
+      "hexagram_name": "火地晋",
+      "keyword": "前進・昇進",
+      "target_cases": 10,
+      "search_hints": [
+        "企業 事例 前進・昇進"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 40,
+      "hexagram_name": "雷水解",
+      "keyword": "解放・解決",
+      "target_cases": 10,
+      "search_hints": [
+        "問題解決 企業 事例",
+        "課題解決 成功"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 42,
+      "hexagram_name": "風雷益",
+      "keyword": "利益・増加",
+      "target_cases": 10,
+      "search_hints": [
+        "事業拡大 成功 事例",
+        "成長戦略 企業"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 49,
+      "hexagram_name": "沢火革",
+      "keyword": "革命・変革",
+      "target_cases": 10,
+      "search_hints": [
+        "企業改革 成功",
+        "変革 事例"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 61,
+      "hexagram_name": "風沢中孚",
+      "keyword": "誠信・信頼",
+      "target_cases": 10,
+      "search_hints": [
+        "企業 事例 誠信・信頼"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 63,
+      "hexagram_name": "水火既済",
+      "keyword": "完成・達成",
+      "target_cases": 10,
+      "search_hints": [
+        "企業 目標達成 事例",
+        "プロジェクト 完了"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 5,
+      "hexagram_name": "水天需",
+      "keyword": "待機・需要",
+      "target_cases": 10,
+      "search_hints": [
+        "企業 事例 待機・需要"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 16,
+      "hexagram_name": "雷地予",
+      "keyword": "喜び・準備",
+      "target_cases": 10,
+      "search_hints": [
+        "企業 事例 喜び・準備"
+      ]
+    },
+    {
+      "type": "collect_hexagram_cases",
+      "hexagram_id": 19,
+      "hexagram_name": "地沢臨",
+      "keyword": "接近・臨む",
+      "target_cases": 10,
+      "search_hints": [
+        "企業 事例 接近・臨む"
+      ]
+    }
+  ]
+}

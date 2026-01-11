@@ -1,0 +1,190 @@
+{
+  "_meta": {
+    "description": "動画テーマから易経の卦への逆引きマッピング",
+    "usage": "動画テーマのキーワードから、最も適した卦と状態を取得する",
+    "version": "1.0.0",
+    "created": "2025-12-31"
+  },
+  "themes": [
+    {
+      "theme_id": "loneliness",
+      "theme_name": "孤独・孤立",
+      "keywords": ["孤独", "孤立", "一人", "ぼっち", "友達いない", "人間関係", "疎外", "寂しい", "独り"],
+      "primary_trigram": "坎",
+      "secondary_trigrams": ["艮"],
+      "suggested_hexagrams": ["29_坎為水", "39_水山蹇", "47_沢水困", "4_山水蒙"],
+      "before_state": "どん底・危機",
+      "typical_pattern": "Endurance",
+      "video_angle": "時代とともに孤独の形が変わった。昭和は物理的孤立、令和は接続過多の中の孤独。",
+      "outro_message": "易経ではこれを「坎」—水の卦と呼ぶ。困難の中にこそ、流れを見つける知恵がある。"
+    },
+    {
+      "theme_id": "no_hobby",
+      "theme_name": "趣味がない・空虚",
+      "keywords": ["趣味がない", "趣味", "生きがい", "やりたいことがない", "空虚", "虚無", "退屈", "無気力", "生産性"],
+      "primary_trigram": "坤",
+      "secondary_trigrams": ["艮"],
+      "suggested_hexagrams": ["2_坤為地", "23_山地剥", "12_天地否", "52_艮為山"],
+      "before_state": "停滞・閉塞",
+      "typical_pattern": "Slow_Decline",
+      "video_angle": "趣味は義務から自己表現へ、そしてAI提案へ。受動的でいいのか？",
+      "outro_message": "易経ではこれを「坤」—地の卦と呼ぶ。受容の中に、自分だけの種を見つける時。"
+    },
+    {
+      "theme_id": "approval_seeking",
+      "theme_name": "承認欲求・SNS疲れ",
+      "keywords": ["承認欲求", "SNS", "いいね", "フォロワー", "映え", "比較", "自己顕示", "マウント", "嫉妬"],
+      "primary_trigram": "兌",
+      "secondary_trigrams": ["離"],
+      "suggested_hexagrams": ["58_兌為沢", "17_沢雷随", "49_沢火革", "28_沢風大過"],
+      "before_state": "成長痛",
+      "typical_pattern": "Hubris_Collapse",
+      "video_angle": "昭和は世間体、令和はいいね数。承認の形が変わっても、渇きは同じ。",
+      "outro_message": "易経ではこれを「兌」—沢の卦と呼ぶ。喜びを外に求めすぎると、内が枯れる。"
+    },
+    {
+      "theme_id": "efficiency_doubt",
+      "theme_name": "効率化・最適化への疑問",
+      "keywords": ["効率", "最適化", "タイパ", "コスパ", "無駄", "生産性", "時短", "合理化", "AI"],
+      "primary_trigram": "乾",
+      "secondary_trigrams": ["離"],
+      "suggested_hexagrams": ["1_乾為天", "14_火天大有", "43_沢天夬", "10_天沢履"],
+      "before_state": "絶頂・慢心",
+      "typical_pattern": "Hubris_Collapse",
+      "video_angle": "効率を極めた先に何がある？昭和の非効率が持っていた価値。",
+      "outro_message": "易経ではこれを「乾」—天の卦と呼ぶ。創造の極みには、立ち止まる勇気も必要。"
+    },
+    {
+      "theme_id": "obligation",
+      "theme_name": "義務感・しがらみ",
+      "keywords": ["義務", "しがらみ", "同調圧力", "空気を読む", "我慢", "建前", "世間体", "常識", "普通"],
+      "primary_trigram": "艮",
+      "secondary_trigrams": ["坤"],
+      "suggested_hexagrams": ["52_艮為山", "23_山地剥", "33_天山遯", "18_山風蠱"],
+      "before_state": "停滞・閉塞",
+      "typical_pattern": "Endurance",
+      "video_angle": "昭和の義務は明確だった。令和は見えない義務に縛られている。",
+      "outro_message": "易経ではこれを「艮」—山の卦と呼ぶ。止まることで見える景色がある。"
+    },
+    {
+      "theme_id": "freedom_desire",
+      "theme_name": "自由・独立への渇望",
+      "keywords": ["自由", "独立", "脱サラ", "起業", "転職", "移住", "ノマド", "FIRE", "解放"],
+      "primary_trigram": "震",
+      "secondary_trigrams": ["巽"],
+      "suggested_hexagrams": ["51_震為雷", "3_水雷屯", "16_雷地予", "42_風雷益"],
+      "before_state": "成長痛",
+      "typical_pattern": "Pivot_Success",
+      "video_angle": "自由を求めて動く。でもその先にあるのは、別の不自由かもしれない。",
+      "outro_message": "易経ではこれを「震」—雷の卦と呼ぶ。動き出す衝撃が、新しい世界を開く。"
+    },
+    {
+      "theme_id": "identity_crisis",
+      "theme_name": "アイデンティティ・何者問題",
+      "keywords": ["何者", "自分探し", "アイデンティティ", "自分らしさ", "個性", "存在意義", "居場所", "役割"],
+      "primary_trigram": "坎",
+      "secondary_trigrams": ["震"],
+      "suggested_hexagrams": ["29_坎為水", "4_山水蒙", "3_水雷屯", "40_雷水解"],
+      "before_state": "混乱・カオス",
+      "typical_pattern": "Endurance",
+      "video_angle": "昭和は役割が自分を作った。令和は自分で自分を作らないといけない。",
+      "outro_message": "易経ではこれを「坎」—水の卦と呼ぶ。流れの中で、形は自然に定まる。"
+    },
+    {
+      "theme_id": "overwork",
+      "theme_name": "働きすぎ・燃え尽き",
+      "keywords": ["過労", "燃え尽き", "バーンアウト", "ワークライフバランス", "残業", "休めない", "うつ", "メンタル"],
+      "primary_trigram": "離",
+      "secondary_trigrams": ["乾"],
+      "suggested_hexagrams": ["30_離為火", "35_火地晋", "13_天火同人", "50_火風鼎"],
+      "before_state": "成長痛",
+      "typical_pattern": "Slow_Decline",
+      "video_angle": "昭和は24時間働けた。令和は効率を求められながら燃え尽きる。",
+      "outro_message": "易経ではこれを「離」—火の卦と呼ぶ。燃え続けるには、燃料を補う時間がいる。"
+    },
+    {
+      "theme_id": "family_pressure",
+      "theme_name": "家族・親との関係",
+      "keywords": ["毒親", "親子", "介護", "家族", "実家", "帰省", "結婚", "子育て", "世代間"],
+      "primary_trigram": "坤",
+      "secondary_trigrams": ["艮"],
+      "suggested_hexagrams": ["2_坤為地", "37_風火家人", "53_風山漸", "18_山風蠱"],
+      "before_state": "停滞・閉塞",
+      "typical_pattern": "Endurance",
+      "video_angle": "家族の形は変わった。でも「家族だから」の呪縛は変わらない。",
+      "outro_message": "易経ではこれを「坤」—地の卦と呼ぶ。受け入れることと、受け流すことは違う。"
+    },
+    {
+      "theme_id": "money_anxiety",
+      "theme_name": "お金・将来不安",
+      "keywords": ["お金", "貯金", "老後", "年金", "投資", "借金", "貧困", "格差", "将来不安"],
+      "primary_trigram": "坎",
+      "secondary_trigrams": ["艮"],
+      "suggested_hexagrams": ["29_坎為水", "47_沢水困", "39_水山蹇", "5_水天需"],
+      "before_state": "どん底・危機",
+      "typical_pattern": "Endurance",
+      "video_angle": "昭和は終身雇用があった。令和は自分で自分を守るしかない。",
+      "outro_message": "易経ではこれを「坎」—水の卦と呼ぶ。困難を抜けるには、焦らず待つ力も必要。"
+    },
+    {
+      "theme_id": "technology_anxiety",
+      "theme_name": "テクノロジー・AI不安",
+      "keywords": ["AI", "DX", "デジタル", "取り残される", "ついていけない", "自動化", "失業", "ChatGPT"],
+      "primary_trigram": "震",
+      "secondary_trigrams": ["離"],
+      "suggested_hexagrams": ["51_震為雷", "21_火雷噬嗑", "55_雷火豊", "3_水雷屯"],
+      "before_state": "混乱・カオス",
+      "typical_pattern": "Shock_Recovery",
+      "video_angle": "新しい技術への恐怖は、いつの時代も同じ。昭和の機械化、令和のAI化。",
+      "outro_message": "易経ではこれを「震」—雷の卦と呼ぶ。衝撃の後に、新しい秩序が生まれる。"
+    },
+    {
+      "theme_id": "aging",
+      "theme_name": "老い・人生の終盤",
+      "keywords": ["老い", "老後", "定年", "第二の人生", "健康", "死", "終活", "引退", "衰え"],
+      "primary_trigram": "艮",
+      "secondary_trigrams": ["坤"],
+      "suggested_hexagrams": ["52_艮為山", "23_山地剥", "33_天山遯", "15_地山謙"],
+      "before_state": "安定・平和",
+      "typical_pattern": "Slow_Decline",
+      "video_angle": "老いは避けられない。でも止まることで見える景色がある。",
+      "outro_message": "易経ではこれを「艮」—山の卦と呼ぶ。頂上を過ぎても、山は山であり続ける。"
+    },
+    {
+      "theme_id": "success_pressure",
+      "theme_name": "成功への圧力",
+      "keywords": ["成功", "勝ち組", "負け組", "キャリア", "出世", "競争", "エリート", "落ちこぼれ"],
+      "primary_trigram": "乾",
+      "secondary_trigrams": ["震"],
+      "suggested_hexagrams": ["1_乾為天", "34_雷天大壮", "14_火天大有", "43_沢天夬"],
+      "before_state": "成長痛",
+      "typical_pattern": "Hubris_Collapse",
+      "video_angle": "成功の定義が変わった。昭和は肩書き、令和はフォロワー数。本当の成功とは？",
+      "outro_message": "易経ではこれを「乾」—天の卦と呼ぶ。天に昇りつめた龍は、降りる準備もいる。"
+    },
+    {
+      "theme_id": "connection_paradox",
+      "theme_name": "つながりの逆説",
+      "keywords": ["つながり", "コミュニティ", "帰属", "居場所", "仲間", "オンライン", "オフライン"],
+      "primary_trigram": "兌",
+      "secondary_trigrams": ["巽"],
+      "suggested_hexagrams": ["58_兌為沢", "61_風沢中孚", "31_沢山咸", "45_沢地萃"],
+      "before_state": "成長痛",
+      "typical_pattern": "Steady_Growth",
+      "video_angle": "つながりが増えるほど、本当のつながりが減る。量と質の逆転。",
+      "outro_message": "易経ではこれを「兌」—沢の卦と呼ぶ。水が集まる場所に、本当の交わりがある。"
+    },
+    {
+      "theme_id": "choice_overload",
+      "theme_name": "選択肢の過多",
+      "keywords": ["選択", "選べない", "決められない", "迷う", "正解", "最適解", "後悔", "FOMO"],
+      "primary_trigram": "巽",
+      "secondary_trigrams": ["震"],
+      "suggested_hexagrams": ["57_巽為風", "9_風天小畜", "20_風地観", "42_風雷益"],
+      "before_state": "混乱・カオス",
+      "typical_pattern": "Endurance",
+      "video_angle": "昭和は選択肢が少なかった。令和は多すぎて選べない。どちらが幸せか？",
+      "outro_message": "易経ではこれを「巽」—風の卦と呼ぶ。風は形がないからこそ、どこへでも行ける。"
+    }
+  ]
+}

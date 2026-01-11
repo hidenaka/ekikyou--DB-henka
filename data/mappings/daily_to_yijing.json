@@ -1,0 +1,184 @@
+{
+  "_meta": {
+    "description": "日常語から易経用語への変換辞書",
+    "usage": "視聴者が使う言葉を易経の概念に変換し、逆引きに使用",
+    "version": "1.0.0",
+    "created": "2025-12-31"
+  },
+  "feelings_to_state": {
+    "ネガティブ・停滞系": [
+      {
+        "daily_phrases": ["なんかモヤモヤする", "何かが違う", "このままでいいのか", "やる気が出ない", "退屈", "マンネリ"],
+        "yijing_state": "停滞・閉塞",
+        "trigram": "坤",
+        "hexagram_suggestions": ["2_坤為地", "12_天地否", "23_山地剥"],
+        "interpretation": "地のように動きがない状態。受け入れる時期だが、種は眠っている。"
+      },
+      {
+        "daily_phrases": ["人生詰んだ", "もう無理", "どん底", "最悪", "絶望", "光が見えない"],
+        "yijing_state": "どん底・危機",
+        "trigram": "坎",
+        "hexagram_suggestions": ["29_坎為水", "47_沢水困", "39_水山蹇"],
+        "interpretation": "水の中に落ちた状態。苦しいが、流れに身を任せることで抜け出せる。"
+      },
+      {
+        "daily_phrases": ["頭がパニック", "何から手をつければ", "ぐちゃぐちゃ", "収拾がつかない", "訳わからん"],
+        "yijing_state": "混乱・カオス",
+        "trigram": "震",
+        "hexagram_suggestions": ["51_震為雷", "3_水雷屯", "4_山水蒙"],
+        "interpretation": "雷のように激しく動いている状態。衝撃の後に、整理が始まる。"
+      }
+    ],
+    "ポジティブ・上昇系": [
+      {
+        "daily_phrases": ["調子に乗ってた", "イケイケだった", "無敵だと思った", "天狗になってた"],
+        "yijing_state": "絶頂・慢心",
+        "trigram": "乾",
+        "hexagram_suggestions": ["1_乾為天", "43_沢天夬", "14_火天大有"],
+        "interpretation": "天のように高く昇った状態。しかし、頂点の次は下りしかない。"
+      },
+      {
+        "daily_phrases": ["まあまあ順調", "特に不満はない", "普通に幸せ", "安定してる"],
+        "yijing_state": "安定・平和",
+        "trigram": "坤",
+        "hexagram_suggestions": ["2_坤為地", "11_地天泰", "15_地山謙"],
+        "interpretation": "地のように落ち着いた状態。変化を起こす必要はないが、備えは必要。"
+      },
+      {
+        "daily_phrases": ["成長中", "伸びてる", "勢いがある", "上り調子"],
+        "yijing_state": "成長痛",
+        "trigram": "震",
+        "hexagram_suggestions": ["51_震為雷", "16_雷地予", "42_風雷益"],
+        "interpretation": "雷のように動き出している状態。痛みを伴うが、成長の証。"
+      }
+    ],
+    "人間関係系": [
+      {
+        "daily_phrases": ["いいね欲しい", "認められたい", "注目されたい", "褒められたい", "フォロワー増やしたい"],
+        "yijing_state": "成長痛",
+        "trigram": "兌",
+        "hexagram_suggestions": ["58_兌為沢", "17_沢雷随", "28_沢風大過"],
+        "interpretation": "沢のように外に喜びを求める状態。内側の充実も必要。"
+      },
+      {
+        "daily_phrases": ["一人でいたい", "人と会いたくない", "引きこもりたい", "そっとしておいて"],
+        "yijing_state": "停滞・閉塞",
+        "trigram": "艮",
+        "hexagram_suggestions": ["52_艮為山", "33_天山遯", "23_山地剥"],
+        "interpretation": "山のように止まっている状態。休息は必要だが、いつかは動き出す。"
+      },
+      {
+        "daily_phrases": ["仲間がほしい", "つながりたい", "居場所がない", "孤独"],
+        "yijing_state": "どん底・危機",
+        "trigram": "坎",
+        "hexagram_suggestions": ["29_坎為水", "45_沢地萃", "13_天火同人"],
+        "interpretation": "水のように流れを求めている。正しい場所に流れ着けば、仲間が集まる。"
+      }
+    ],
+    "仕事・キャリア系": [
+      {
+        "daily_phrases": ["仕事辞めたい", "転職したい", "このままじゃダメ", "変わりたい"],
+        "yijing_state": "成長痛",
+        "trigram": "震",
+        "hexagram_suggestions": ["51_震為雷", "49_沢火革", "40_雷水解"],
+        "interpretation": "雷のように変化を求めている。恐れずに動けば、道は開ける。"
+      },
+      {
+        "daily_phrases": ["しがらみがある", "辞められない", "義務感", "責任が重い"],
+        "yijing_state": "停滞・閉塞",
+        "trigram": "艮",
+        "hexagram_suggestions": ["52_艮為山", "18_山風蠱", "22_山火賁"],
+        "interpretation": "山のように動けない状態。でも山は山であり続ける価値がある。"
+      },
+      {
+        "daily_phrases": ["燃え尽きた", "疲れた", "限界", "休みたい"],
+        "yijing_state": "成長痛",
+        "trigram": "離",
+        "hexagram_suggestions": ["30_離為火", "35_火地晋", "50_火風鼎"],
+        "interpretation": "火が燃え尽きかけている。燃料を補充する時間が必要。"
+      }
+    ],
+    "将来・選択系": [
+      {
+        "daily_phrases": ["どうすればいい", "選べない", "決められない", "正解がわからない"],
+        "yijing_state": "混乱・カオス",
+        "trigram": "巽",
+        "hexagram_suggestions": ["57_巽為風", "20_風地観", "9_風天小畜"],
+        "interpretation": "風のようにあちこち吹かれている。一度止まって観察することが必要。"
+      },
+      {
+        "daily_phrases": ["将来が不安", "老後が心配", "お金が足りない", "このまま生きていける？"],
+        "yijing_state": "どん底・危機",
+        "trigram": "坎",
+        "hexagram_suggestions": ["29_坎為水", "5_水天需", "47_沢水困"],
+        "interpretation": "水のように先が見えない。でも水は必ず流れ出す道を見つける。"
+      },
+      {
+        "daily_phrases": ["自由になりたい", "解放されたい", "縛られたくない", "もっと冒険したい"],
+        "yijing_state": "成長痛",
+        "trigram": "震",
+        "hexagram_suggestions": ["51_震為雷", "16_雷地予", "3_水雷屯"],
+        "interpretation": "雷のように飛び出したい。恐れを乗り越えれば、新しい世界がある。"
+      }
+    ]
+  },
+  "quick_lookup": {
+    "モヤモヤ": {"state": "停滞・閉塞", "trigram": "坤"},
+    "詰んだ": {"state": "どん底・危機", "trigram": "坎"},
+    "パニック": {"state": "混乱・カオス", "trigram": "震"},
+    "調子乗ってた": {"state": "絶頂・慢心", "trigram": "乾"},
+    "順調": {"state": "安定・平和", "trigram": "坤"},
+    "伸びてる": {"state": "成長痛", "trigram": "震"},
+    "認められたい": {"state": "成長痛", "trigram": "兌"},
+    "一人でいたい": {"state": "停滞・閉塞", "trigram": "艮"},
+    "孤独": {"state": "どん底・危機", "trigram": "坎"},
+    "辞めたい": {"state": "成長痛", "trigram": "震"},
+    "しがらみ": {"state": "停滞・閉塞", "trigram": "艮"},
+    "燃え尽きた": {"state": "成長痛", "trigram": "離"},
+    "選べない": {"state": "混乱・カオス", "trigram": "巽"},
+    "不安": {"state": "どん底・危機", "trigram": "坎"},
+    "自由になりたい": {"state": "成長痛", "trigram": "震"}
+  },
+  "trigram_personality": {
+    "乾": {
+      "energy": "創造・上昇・主導",
+      "daily_metaphor": "社長タイプ、リーダー、開拓者",
+      "warning": "高すぎると落ちるしかない"
+    },
+    "坤": {
+      "energy": "受容・安定・忍耐",
+      "daily_metaphor": "サポーター、母親的、大地のような存在",
+      "warning": "受け身すぎると動けなくなる"
+    },
+    "震": {
+      "energy": "行動・衝撃・変革",
+      "daily_metaphor": "起業家タイプ、革命児、先駆者",
+      "warning": "動きすぎると疲れる"
+    },
+    "巽": {
+      "energy": "適応・浸透・柔軟",
+      "daily_metaphor": "営業マンタイプ、交渉上手、八方美人",
+      "warning": "流されすぎると自分を見失う"
+    },
+    "坎": {
+      "energy": "忍耐・困難・深み",
+      "daily_metaphor": "苦労人タイプ、経験豊富、深い人",
+      "warning": "溺れすぎると抜け出せない"
+    },
+    "離": {
+      "energy": "明晰・表現・情熱",
+      "daily_metaphor": "アーティストタイプ、表現者、カリスマ",
+      "warning": "燃えすぎると燃え尽きる"
+    },
+    "艮": {
+      "energy": "静止・内省・安定",
+      "daily_metaphor": "職人タイプ、こだわり派、一匹狼",
+      "warning": "止まりすぎると動けなくなる"
+    },
+    "兌": {
+      "energy": "喜び・交流・表現",
+      "daily_metaphor": "ムードメーカー、人気者、エンターテイナー",
+      "warning": "外ばかり向くと内が空っぽになる"
+    }
+  }
+}

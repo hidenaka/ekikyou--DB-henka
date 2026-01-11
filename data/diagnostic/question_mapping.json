@@ -1,0 +1,155 @@
+{
+  "version": "1.1",
+  "description": "診断質問→位相マッピング表（ラベル整合版）",
+
+  "action_type_master": [
+    "攻める・挑戦",
+    "守る・維持",
+    "耐える・潜伏",
+    "刷新・破壊",
+    "逃げる・放置",
+    "対話・融合",
+    "捨てる・撤退",
+    "分散・スピンオフ"
+  ],
+
+  "pattern_type_master": [
+    "Slow_Decline",
+    "Pivot_Success",
+    "Steady_Growth",
+    "Shock_Recovery",
+    "Endurance",
+    "Hubris_Collapse"
+  ],
+
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "今の状況は「動いている」か「止まっている」か？",
+      "axis": "動静",
+      "score_key": "movement",
+      "options": [
+        {"value": "active_strong", "label": "激しく動いている", "score": 3, "weights": {"震": 3, "乾": 2, "巽": 1}},
+        {"value": "active_mild", "label": "ゆるやかに動いている", "score": 1, "weights": {"巽": 2, "震": 1, "離": 1}},
+        {"value": "static_stable", "label": "安定して止まっている", "score": -1, "weights": {"坤": 3, "艮": 2}},
+        {"value": "static_stuck", "label": "停滞して止まっている", "score": -3, "weights": {"艮": 2, "坎": 2, "坤": 1}}
+      ]
+    },
+    {
+      "id": "Q2",
+      "text": "エネルギーは「外に向かう」か「内に向かう」か？",
+      "axis": "内外",
+      "score_key": "direction",
+      "options": [
+        {"value": "outward_expand", "label": "拡大・発信している", "score": 3, "weights": {"乾": 3, "離": 2, "兌": 1}},
+        {"value": "outward_connect", "label": "人と繋がろうとしている", "score": 1, "weights": {"兌": 3, "離": 1, "巽": 1}},
+        {"value": "inward_focus", "label": "内省・集中している", "score": -1, "weights": {"艮": 3, "坎": 2}},
+        {"value": "inward_protect", "label": "守り・維持している", "score": -3, "weights": {"坤": 3, "艮": 1, "坎": 1}}
+      ]
+    },
+    {
+      "id": "Q3",
+      "text": "状況は「明確」か「不透明」か？",
+      "axis": "明暗",
+      "score_key": "clarity",
+      "options": [
+        {"value": "clear_certain", "label": "見通しが立っている", "score": 3, "weights": {"離": 3, "乾": 1}},
+        {"value": "clear_partial", "label": "一部は見えている", "score": 1, "weights": {"離": 1, "巽": 2}},
+        {"value": "unclear_fog", "label": "霧の中にいる感じ", "score": -1, "weights": {"坎": 2, "巽": 1}},
+        {"value": "unclear_danger", "label": "危機的で見通せない", "score": -3, "weights": {"坎": 3, "艮": 1}}
+      ]
+    },
+    {
+      "id": "Q4",
+      "text": "変化のきっかけは？",
+      "axis": "trigger",
+      "score_key": "trigger_type",
+      "options": [
+        {"value": "external_shock", "label": "外部からの衝撃", "trigger_type": "外部ショック", "weights": {"坎": 2, "震": 1}},
+        {"value": "internal_collapse", "label": "内部の問題", "trigger_type": "内部崩壊", "weights": {"震": 2, "坎": 1}},
+        {"value": "intentional", "label": "自分で決断した", "trigger_type": "意図的決断", "weights": {"離": 2, "乾": 1}},
+        {"value": "encounter", "label": "偶然の出会い・発見", "trigger_type": "偶発・出会い", "weights": {"兌": 2, "巽": 1}}
+      ]
+    },
+    {
+      "id": "Q5",
+      "text": "今「増えている」ものは？",
+      "axis": "増加要素",
+      "score_key": "gain",
+      "options": [
+        {"value": "power_influence", "label": "力・影響力・リソース", "score": 3, "weights": {"乾": 3}},
+        {"value": "clarity_insight", "label": "理解・洞察・明確さ", "score": 2, "weights": {"離": 3}},
+        {"value": "connections", "label": "人脈・協力者・仲間", "score": 2, "weights": {"兌": 3}},
+        {"value": "stability", "label": "安定・基盤・信頼", "score": 1, "weights": {"坤": 3}},
+        {"value": "flexibility", "label": "選択肢・柔軟性", "score": 1, "weights": {"巽": 3}},
+        {"value": "pressure", "label": "プレッシャー・緊張", "score": -2, "weights": {"坎": 2, "震": 1}},
+        {"value": "nothing", "label": "特にない／減っている", "score": -3, "weights": {"艮": 2, "坎": 1}}
+      ]
+    },
+    {
+      "id": "Q6",
+      "text": "今「減っている」ものは？",
+      "axis": "減少要素",
+      "score_key": "loss",
+      "options": [
+        {"value": "resources", "label": "資金・時間・体力", "score": -3, "weights": {"坎": 2, "艮": 1}},
+        {"value": "options", "label": "選択肢・自由度", "score": -2, "weights": {"艮": 2, "坤": 1}},
+        {"value": "relationships", "label": "人間関係・信頼", "score": -2, "weights": {"坎": 2}},
+        {"value": "motivation", "label": "やる気・情熱", "score": -2, "weights": {"坤": 2, "艮": 1}},
+        {"value": "clarity", "label": "見通し・確信", "score": -1, "weights": {"坎": 3}},
+        {"value": "stability", "label": "安定・平穏", "score": -1, "weights": {"震": 2, "巽": 1}},
+        {"value": "nothing", "label": "特にない", "score": 1, "weights": {"乾": 1, "離": 1}}
+      ]
+    },
+    {
+      "id": "Q7",
+      "text": "最も恐れていること・避けたいことは？",
+      "axis": "回避対象",
+      "score_key": "avoid",
+      "options": [
+        {"value": "hubris_collapse", "label": "調子に乗って失敗", "avoid_pattern": "Hubris_Collapse"},
+        {"value": "slow_decline", "label": "じわじわ衰退", "avoid_pattern": "Slow_Decline"},
+        {"value": "shock_damage", "label": "突然の衝撃で回復を強いられる", "avoid_pattern": "Shock_Recovery"},
+        {"value": "endurance_fail", "label": "耐えきれずに崩壊", "avoid_pattern": "Endurance"},
+        {"value": "pivot_fail", "label": "方向転換の失敗", "avoid_pattern": "Pivot_Success"},
+        {"value": "stagnation", "label": "成長が止まること", "avoid_pattern": "Steady_Growth"}
+      ]
+    },
+    {
+      "id": "Q8",
+      "text": "今の状況で最も大事にしたいことは？",
+      "axis": "優先価値",
+      "score_key": "priority",
+      "options": [
+        {"value": "growth", "label": "成長・拡大", "preferred_action": "攻める・挑戦", "weights": {"乾": 2}},
+        {"value": "stability", "label": "安定・維持", "preferred_action": "守る・維持", "weights": {"坤": 2}},
+        {"value": "endurance", "label": "耐え抜くこと", "preferred_action": "耐える・潜伏", "weights": {"艮": 2}},
+        {"value": "renewal", "label": "リセット・刷新", "preferred_action": "刷新・破壊", "weights": {"震": 2}},
+        {"value": "connection", "label": "人との繋がり", "preferred_action": "対話・融合", "weights": {"兌": 2}},
+        {"value": "retreat", "label": "撤退・損切り", "preferred_action": "捨てる・撤退", "weights": {"艮": 1, "坎": 1}}
+      ]
+    }
+  ],
+
+  "scoring": {
+    "method": "weighted_sum",
+    "hex_calculation": "各質問のweightsを合算し、最大値を primary_hex とする",
+    "momentum_calculation": {
+      "formula": "(Q1.score + Q2.score + Q5.score + Q6.score) / 4",
+      "thresholds": {
+        "ascending": {"min": 1.0, "label": "上昇"},
+        "stable": {"min": -0.5, "max": 1.0, "label": "安定"},
+        "descending": {"min": -2.0, "max": -0.5, "label": "下降"},
+        "chaotic": {"max": -2.0, "label": "混乱"}
+      }
+    },
+    "timing_calculation": {
+      "formula": "(Q3.score + Q5.score - Q6.score) / 3",
+      "thresholds": {
+        "act_now": {"min": 1.0, "label": "動くべき時"},
+        "wait": {"max": -1.0, "label": "待つべき時"},
+        "adapt": {"min": -1.0, "max": 1.0, "label": "適応すべき時"}
+      }
+    }
+  }
+}

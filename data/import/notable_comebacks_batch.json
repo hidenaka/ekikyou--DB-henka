@@ -1,0 +1,42 @@
+[
+  {
+    "target_name": "Luckin Coffee（不正会計からの復活）",
+    "scale": "company",
+    "period": "2017-2024",
+    "story_summary": "2017年中国で創業、2019年5月にナスダック上場。2020年、Muddy Watersが売上高3億ドル超の水増し、経費1.9億ドル水増しを指摘。5月に上場廃止、店頭市場（OTC）に移行。2020年純損失56億元。しかし「濃厚ミルクラテ」等の新商品と1杯9.9元（約200円）の低価格戦略で復活。2021年に黒字転換。2024年時点で店舗数2.9万店、スターバックス（7300店）を圧倒。時価総額66億ドル（約1兆円）、ADRは上場廃止時の約12倍に。米国再上場を準備中。",
+    "before_state": "どん底・危機",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "V字回復・大成功",
+    "before_hex": "坎",
+    "trigger_hex": "離",
+    "action_hex": "離",
+    "after_hex": "乾",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": ["#不正会計", "#上場廃止", "#V字回復", "#スタバ超え", "#2.9万店"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "不正会計発覚の危機（坎）→経営刷新の決断（離）→商品・価格戦略の革新（離）→中国コーヒー王者（乾）"
+  },
+  {
+    "target_name": "Beyond Meat（代替肉バブル崩壊）",
+    "scale": "company",
+    "period": "2019-2024",
+    "story_summary": "2019年5月IPO、1株25ドル。初日163%上昇、1ヶ月後に史上最高値234.90ドル、時価総額141億ドル（売上高の47倍）。2019年売上高239%成長。しかしパンデミックでレストラン閉鎖、消費者が安価な動物性肉に回帰。2022年に売上10%減、粗利益率マイナス5.7%。2023年売上18%減、粗利益率マイナス24.1%。現金は7.33億ドル→1.9億ドルに減少。株価は1ドル台まで90%超下落。総負債約11億ドル。植物性肉への関心は2023年27%→2024年19%に低下。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "守る・維持",
+    "after_state": "どん底・危機",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "艮",
+    "after_hex": "坎",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": ["#代替肉", "#IPO163%上昇", "#株価90%下落", "#植物性肉", "#粗利益率マイナス"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "IPO大成功の絶頂（乾）→パンデミック・消費者離れ（坎）→対応できず守りの姿勢（艮）→財務悪化で危機（坎）"
+  }
+]

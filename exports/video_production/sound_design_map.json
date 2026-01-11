@@ -1,0 +1,152 @@
+{
+  "title": "八卦サウンド設計マップ",
+  "description": "各八卦に対応する音の設計。視聴者の記憶に残すための統一ルール",
+
+  "hexagram_sounds": {
+    "乾": {
+      "symbol": "☰",
+      "base_sound": "金属音、高音",
+      "keywords": ["輝き", "上昇", "達成"],
+      "specific_sounds": [
+        "キーン（高い金属音）",
+        "シンバルのサスティン",
+        "上昇するシンセ音"
+      ],
+      "emotion": "解放、達成感、力強さ",
+      "volume": "やや大きめ",
+      "frequency": "高音域中心"
+    },
+    "坤": {
+      "symbol": "☷",
+      "base_sound": "大地の低音、安定音",
+      "keywords": ["基盤", "安定", "受容"],
+      "specific_sounds": [
+        "低いドローン音",
+        "大地を踏む音",
+        "安定したベース音"
+      ],
+      "emotion": "安心、基盤、落ち着き",
+      "volume": "中程度",
+      "frequency": "低音域中心"
+    },
+    "震": {
+      "symbol": "☳",
+      "base_sound": "雷鳴、衝撃音",
+      "keywords": ["衝撃", "混乱", "始まり"],
+      "specific_sounds": [
+        "雷の音（ゴロゴロ）",
+        "衝撃音（ドーン）",
+        "ガラスが割れる音"
+      ],
+      "emotion": "驚き、不安、緊張",
+      "volume": "大きめ（瞬間的）",
+      "frequency": "全帯域（衝撃）"
+    },
+    "巽": {
+      "symbol": "☴",
+      "base_sound": "風の音、流れる音",
+      "keywords": ["柔軟", "浸透", "対話"],
+      "specific_sounds": [
+        "そよ風の音",
+        "カーテンが揺れる音",
+        "流れる水の音（穏やか）"
+      ],
+      "emotion": "穏やか、柔軟、流動",
+      "volume": "小さめ",
+      "frequency": "中音域、空気感"
+    },
+    "坎": {
+      "symbol": "☵",
+      "base_sound": "水滴、深い低音",
+      "keywords": ["試練", "危機", "深さ"],
+      "specific_sounds": [
+        "水滴が落ちる音（ポチャン）",
+        "深い低音ドローン",
+        "水中の音（こもった音）"
+      ],
+      "emotion": "不安、重さ、試練",
+      "volume": "中程度（重さを表現）",
+      "frequency": "低音域中心"
+    },
+    "離": {
+      "symbol": "☲",
+      "base_sound": "火の音、輝く音",
+      "keywords": ["才能", "明知", "分離"],
+      "specific_sounds": [
+        "火が燃える音（パチパチ）",
+        "輝く音（キラキラ）",
+        "閃きの音"
+      ],
+      "emotion": "情熱、輝き、才能",
+      "volume": "中〜大",
+      "frequency": "中高音域"
+    },
+    "艮": {
+      "symbol": "☶",
+      "base_sound": "静寂、止まる音",
+      "keywords": ["待機", "停滞", "蓄積"],
+      "specific_sounds": [
+        "無音（意図的な静寂）",
+        "時計が止まる音",
+        "息を止める音"
+      ],
+      "emotion": "静止、待機、緊張（静かな）",
+      "volume": "非常に小さい〜無音",
+      "frequency": "ほぼなし"
+    },
+    "兌": {
+      "symbol": "☱",
+      "base_sound": "明るい音、水の跳ね",
+      "keywords": ["喜び", "成功", "和悦"],
+      "specific_sounds": [
+        "水が跳ねる音（軽やか）",
+        "笑い声（遠く）",
+        "明るいベル音"
+      ],
+      "emotion": "喜び、解放、幸福",
+      "volume": "中程度（軽やか）",
+      "frequency": "中高音域"
+    }
+  },
+
+  "transition_sounds": {
+    "positive": {
+      "description": "ポジティブな変化（成功への道）",
+      "pattern": "上昇音 + 到達音",
+      "example": "低音から高音へのスウィープ → 金属音",
+      "duration_sec": 1.5
+    },
+    "negative": {
+      "description": "ネガティブな変化（失敗への道）",
+      "pattern": "下降音 + 沈む音",
+      "example": "高音から低音へのスウィープ → 重い低音",
+      "duration_sec": 1.5
+    },
+    "neutral": {
+      "description": "中立的な変化",
+      "pattern": "フェードイン/アウト",
+      "example": "クロスフェード",
+      "duration_sec": 1.0
+    }
+  },
+
+  "motif_rules": {
+    "repetition": {
+      "description": "同じ状況が繰り返される場合、同じ音を使う",
+      "example": "昭和/平成/令和で坎が続く場合、毎回同じ水滴音を使う",
+      "effect": "視聴者が3回目で「また同じだ」と認識する"
+    },
+    "contrast": {
+      "description": "未来A/Bの対比では、音も対比させる",
+      "example": "未来A=さらに重い低音、未来B=解放の高音",
+      "effect": "選択の違いが音でも伝わる"
+    }
+  },
+
+  "recommended_libraries": [
+    "水滴・水の音: freesound.org で 'water drop' 検索",
+    "金属音: freesound.org で 'metal chime' 検索",
+    "低音ドローン: freesound.org で 'dark drone' 検索",
+    "上昇音: シンセサイザーで作成（フィルタースウィープ）"
+  ]
+}

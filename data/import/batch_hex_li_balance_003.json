@@ -1,0 +1,182 @@
+[
+  {
+    "target_name": "離輝き事例3-1",
+    "scale": "company",
+    "period": "1990-2024",
+    "story_summary": "注目を集めて成功した企業。",
+    "before_state": "安定・平和",
+    "trigger_type": "偶発・出会い",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "乾",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#離",
+      "#注目成功"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "エンタメ",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離→乾→震→乾 注目を集めて成長"
+  },
+  {
+    "target_name": "離輝き事例3-2",
+    "scale": "individual",
+    "period": "1990-2024",
+    "story_summary": "才能が認められて成功した人物。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "偶発・出会い",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "兌",
+    "action_hex": "震",
+    "after_hex": "離",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#離",
+      "#才能開花"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "エンタメ",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "離→兌→震→離 才能が認められる"
+  },
+  {
+    "target_name": "離明晰事例3-1",
+    "scale": "other",
+    "period": "1990-2024",
+    "story_summary": "明確なビジョンで成功した組織。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "安定・平和",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "震",
+    "after_hex": "艮",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#離",
+      "#ビジョン"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "社会・コミュニティ",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離→震→震→艮 明確なビジョンで安定"
+  },
+  {
+    "target_name": "離炎上事例3-1",
+    "scale": "company",
+    "period": "1990-2024",
+    "story_summary": "目立ちすぎて批判を浴びたケース。",
+    "before_state": "成長痛",
+    "trigger_type": "外部ショック",
+    "action_type": "守る・維持",
+    "after_state": "縮小安定・生存",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "艮",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "#離",
+      "#炎上"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "エンタメ",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "離→震→艮→艮 炎上で縮小"
+  },
+  {
+    "target_name": "離輝き消失事例3-1",
+    "scale": "individual",
+    "period": "1990-2024",
+    "story_summary": "一時の栄光が消えたケース。",
+    "before_state": "成長痛",
+    "trigger_type": "内部崩壊",
+    "action_type": "捨てる・撤退",
+    "after_state": "停滞・閉塞",
+    "before_hex": "離",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "艮",
+    "pattern_type": "Quiet_Fade",
+    "outcome": "Failure",
+    "free_tags": [
+      "#離",
+      "#栄光消失"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "生活・暮らし",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離→坎→巽→艮 輝きが消える"
+  }
+]

@@ -1,0 +1,140 @@
+{
+  "by_position": {
+    "1": {
+      "position": 1,
+      "description": "発芽期・始動期",
+      "total": 857,
+      "success": 574,
+      "failure": 283,
+      "success_rate": 0.6698
+    },
+    "2": {
+      "position": 2,
+      "description": "成長期・準備期",
+      "total": 1765,
+      "success": 1198,
+      "failure": 567,
+      "success_rate": 0.6788
+    },
+    "3": {
+      "position": 3,
+      "description": "転換期・岐路",
+      "total": 4445,
+      "success": 2461,
+      "failure": 1984,
+      "success_rate": 0.5537
+    },
+    "4": {
+      "position": 4,
+      "description": "拡大期・飛躍期",
+      "total": 879,
+      "success": 10,
+      "failure": 869,
+      "success_rate": 0.0114
+    },
+    "5": {
+      "position": 5,
+      "description": "成熟期・完成期",
+      "total": 701,
+      "success": 326,
+      "failure": 375,
+      "success_rate": 0.465
+    },
+    "6": {
+      "position": 6,
+      "description": "終末期・変革期",
+      "total": 800,
+      "success": 129,
+      "failure": 671,
+      "success_rate": 0.1613
+    }
+  },
+  "by_stage": {
+    "転換期・岐路": {
+      "stage": "転換期・岐路",
+      "total": 3434,
+      "success": 1718,
+      "failure": 1716,
+      "success_rate": 0.5003
+    },
+    "発芽期・始動期": {
+      "stage": "発芽期・始動期",
+      "total": 857,
+      "success": 574,
+      "failure": 283,
+      "success_rate": 0.6698
+    },
+    "全盛期・リーダー期": {
+      "stage": "全盛期・リーダー期",
+      "total": 701,
+      "success": 326,
+      "failure": 375,
+      "success_rate": 0.465
+    },
+    "衰退期・転換期・極み": {
+      "stage": "衰退期・転換期・極み",
+      "total": 800,
+      "success": 129,
+      "failure": 671,
+      "success_rate": 0.1613
+    },
+    "成熟期・接近期": {
+      "stage": "成熟期・接近期",
+      "total": 879,
+      "success": 10,
+      "failure": 869,
+      "success_rate": 0.0114
+    },
+    "成長期・基盤確立期": {
+      "stage": "成長期・基盤確立期",
+      "total": 1765,
+      "success": 1198,
+      "failure": 567,
+      "success_rate": 0.6788
+    }
+  },
+  "by_stance": {
+    "慎重・熟考": {
+      "stance": "慎重・熟考",
+      "total": 3434,
+      "success": 1718,
+      "failure": 1716,
+      "success_rate": 0.5003
+    },
+    "待機・潜伏": {
+      "stance": "待機・潜伏",
+      "total": 857,
+      "success": 574,
+      "failure": 283,
+      "success_rate": 0.6698
+    },
+    "決断・実行": {
+      "stance": "決断・実行",
+      "total": 701,
+      "success": 326,
+      "failure": 375,
+      "success_rate": 0.465
+    },
+    "撤退・譲渡": {
+      "stance": "撤退・譲渡",
+      "total": 800,
+      "success": 129,
+      "failure": 671,
+      "success_rate": 0.1613
+    },
+    "謙虚・調整": {
+      "stance": "謙虚・調整",
+      "total": 879,
+      "success": 10,
+      "failure": 869,
+      "success_rate": 0.0114
+    },
+    "着実・中庸": {
+      "stance": "着実・中庸",
+      "total": 1765,
+      "success": 1198,
+      "failure": 567,
+      "success_rate": 0.6788
+    }
+  }
+}

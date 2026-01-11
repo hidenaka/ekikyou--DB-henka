@@ -1,0 +1,4630 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>64卦遷移ネットワーク</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #main {
+            flex: 1;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            margin: 15px 0 10px 0;
+            color: #ffd700;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 5px;
+        }
+
+        .stats {
+            font-size: 0.85em;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .filter-group input[type="range"] {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .filter-value {
+            text-align: right;
+            font-size: 0.85em;
+            color: #00d4ff;
+        }
+
+        .legend {
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            font-size: 0.85em;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        #detail-panel {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        #detail-panel.active {
+            display: block;
+        }
+
+        #detail-panel h3 {
+            font-size: 1.2em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        #detail-panel .hex-info {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        #detail-panel .hex-info dt {
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        #detail-panel .hex-info dd {
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .transitions-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        .transition-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85em;
+        }
+
+        .transition-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .success-badge {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+
+        .success-high { background: #2ecc71; color: #000; }
+        .success-mid { background: #f1c40f; color: #000; }
+        .success-low { background: #e74c3c; color: #fff; }
+
+        #network {
+            width: 100%;
+            height: 100%;
+        }
+
+        .node {
+            cursor: pointer;
+        }
+
+        .node circle {
+            stroke: rgba(255, 255, 255, 0.5);
+            stroke-width: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .node:hover circle {
+            stroke: #fff;
+            stroke-width: 3px;
+            filter: brightness(1.3);
+        }
+
+        .node.selected circle {
+            stroke: #00d4ff;
+            stroke-width: 4px;
+        }
+
+        .node text {
+            font-size: 10px;
+            fill: #fff;
+            text-anchor: middle;
+            pointer-events: none;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .link {
+            fill: none;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .link:hover {
+            opacity: 0.8;
+        }
+
+        .link.highlighted {
+            opacity: 0.9;
+            stroke-width: 3px !important;
+        }
+
+        .link.dimmed {
+            opacity: 0.1;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 0.85em;
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .tooltip h4 {
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+
+        .controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .controls button {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+
+        .controls button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        #layout-mode {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        #layout-mode button {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #layout-mode button.active {
+            background: rgba(0, 212, 255, 0.3);
+            border-color: #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h1>64卦遷移ネットワーク</h1>
+            <div class="stats">
+                総事例数: 9,447件<br>
+                遷移パターン: 234種類
+            </div>
+
+            <h2>フィルター</h2>
+
+            <div class="filter-group">
+                <label>最小成功率: <span id="success-rate-value">0%</span></label>
+                <input type="range" id="success-rate-filter" min="0" max="100" value="0">
+            </div>
+
+            <div class="filter-group">
+                <label>最小件数: <span id="count-value">1</span></label>
+                <input type="range" id="count-filter" min="1" max="100" value="1">
+            </div>
+
+            <div class="filter-group">
+                <label>八卦グループ</label>
+                <select id="trigram-filter">
+                    <option value="all">すべて表示</option>
+                    <option value="乾">乾（天）- 創造</option>
+                    <option value="坤">坤（地）- 受容</option>
+                    <option value="震">震（雷）- 動き</option>
+                    <option value="巽">巽（風）- 浸透</option>
+                    <option value="坎">坎（水）- 危険</option>
+                    <option value="離">離（火）- 明るさ</option>
+                    <option value="艮">艮（山）- 停止</option>
+                    <option value="兌">兌（沢）- 喜び</option>
+                </select>
+            </div>
+
+            <h2>八卦カラー凡例</h2>
+            <div class="legend">
+                <div class="legend-item"><div class="legend-color" style="background: #FFD700"></div>乾（天）創造</div>
+                <div class="legend-item"><div class="legend-color" style="background: #8B4513"></div>坤（地）受容</div>
+                <div class="legend-item"><div class="legend-color" style="background: #FF4500"></div>震（雷）動き</div>
+                <div class="legend-item"><div class="legend-color" style="background: #32CD32"></div>巽（風）浸透</div>
+                <div class="legend-item"><div class="legend-color" style="background: #1E90FF"></div>坎（水）危険</div>
+                <div class="legend-item"><div class="legend-color" style="background: #FF6347"></div>離（火）明るさ</div>
+                <div class="legend-item"><div class="legend-color" style="background: #708090"></div>艮（山）停止</div>
+                <div class="legend-item"><div class="legend-color" style="background: #FF69B4"></div>兌（沢）喜び</div>
+            </div>
+
+            <h2>エッジ色（成功率）</h2>
+            <div class="legend">
+                <div class="legend-item"><div class="legend-color" style="background: #2ECC71"></div>80%以上</div>
+                <div class="legend-item"><div class="legend-color" style="background: #F1C40F"></div>50-79%</div>
+                <div class="legend-item"><div class="legend-color" style="background: #E67E22"></div>20-49%</div>
+                <div class="legend-item"><div class="legend-color" style="background: #E74C3C"></div>20%未満</div>
+            </div>
+
+            <div id="detail-panel">
+                <h3 id="detail-title">卦の詳細</h3>
+                <dl class="hex-info">
+                    <dt>読み</dt>
+                    <dd id="detail-reading">-</dd>
+                    <dt>キーワード</dt>
+                    <dd id="detail-keyword">-</dd>
+                    <dt>意味</dt>
+                    <dd id="detail-meaning">-</dd>
+                    <dt>八卦構成</dt>
+                    <dd id="detail-trigrams">-</dd>
+                    <dt>遷移元件数</dt>
+                    <dd id="detail-from">-</dd>
+                    <dt>遷移先件数</dt>
+                    <dd id="detail-to">-</dd>
+                    <dt>平均成功率</dt>
+                    <dd id="detail-success">-</dd>
+                </dl>
+                <h4 style="margin-top: 15px; font-size: 0.95em; color: #00d4ff;">主な遷移先</h4>
+                <div id="transitions-list" class="transitions-list"></div>
+            </div>
+        </div>
+
+        <div id="main">
+            <svg id="network"></svg>
+            <div class="controls">
+                <button id="zoom-in">拡大 +</button>
+                <button id="zoom-out">縮小 -</button>
+                <button id="reset-zoom">リセット</button>
+            </div>
+            <div id="layout-mode">
+                <button id="layout-circle" class="active">円形配置</button>
+                <button id="layout-force">力学配置</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tooltip" class="tooltip" style="display: none;"></div>
+
+    <script>
+        // データ
+        const nodes = [
+  {
+    "id": "乾為天",
+    "hexId": 1,
+    "chinese": "乾",
+    "reading": "けんいてん",
+    "keyword": "創造・剛健・リーダーシップ",
+    "meaning": "純粋な陽の力。創造性と積極的前進を示す。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "乾",
+    "color": "#FFD700",
+    "totalFrom": 727,
+    "totalTo": 1321,
+    "successRate": 0.264
+  },
+  {
+    "id": "坤為地",
+    "hexId": 2,
+    "chinese": "坤",
+    "reading": "こんいち",
+    "keyword": "受容・柔順・包容力",
+    "meaning": "純粋な陰の力。受容性と支える力を示す。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "坤",
+    "color": "#8B4513",
+    "totalFrom": 1049,
+    "totalTo": 2305,
+    "successRate": 0.529
+  },
+  {
+    "id": "水雷屯",
+    "hexId": 3,
+    "chinese": "屯",
+    "reading": "すいらいちゅん",
+    "keyword": "産みの苦しみ・困難な始まり",
+    "meaning": "新しいものが生まれる困難な時期。忍耐が必要。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "震",
+    "color": "#1E90FF",
+    "totalFrom": 21,
+    "totalTo": 3,
+    "successRate": 0.714
+  },
+  {
+    "id": "山水蒙",
+    "hexId": 4,
+    "chinese": "蒙",
+    "reading": "さんすいもう",
+    "keyword": "蒙昧・教育・啓発",
+    "meaning": "未熟さから学ぶ時期。指導と教育が重要。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "坎",
+    "color": "#708090",
+    "totalFrom": 8,
+    "totalTo": 0,
+    "successRate": 0.875
+  },
+  {
+    "id": "水天需",
+    "hexId": 5,
+    "chinese": "需",
+    "reading": "すいてんじゅ",
+    "keyword": "待機・準備・忍耐",
+    "meaning": "時機を待つべき時。準備を整え、焦らない。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "乾",
+    "color": "#1E90FF",
+    "totalFrom": 0,
+    "totalTo": 1,
+    "successRate": 0
+  },
+  {
+    "id": "天水訟",
+    "hexId": 6,
+    "chinese": "訟",
+    "reading": "てんすいしょう",
+    "keyword": "争い・訴訟・対立",
+    "meaning": "対立や紛争の時期。第三者の判断を仰ぐ。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "坎",
+    "color": "#FFD700",
+    "totalFrom": 2,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "地水師",
+    "hexId": 7,
+    "chinese": "師",
+    "reading": "ちすいし",
+    "keyword": "軍隊・組織・統率",
+    "meaning": "組織の力で困難に立ち向かう。規律が重要。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "坎",
+    "color": "#8B4513",
+    "totalFrom": 8,
+    "totalTo": 2,
+    "successRate": 0.875
+  },
+  {
+    "id": "水地比",
+    "hexId": 8,
+    "chinese": "比",
+    "reading": "すいちひ",
+    "keyword": "親和・協力・連帯",
+    "meaning": "仲間との協力、連帯の時期。信頼関係を築く。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "坤",
+    "color": "#1E90FF",
+    "totalFrom": 2,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "風天小畜",
+    "hexId": 9,
+    "chinese": "小畜",
+    "reading": "ふうてんしょうちく",
+    "keyword": "小さな蓄積・抑制",
+    "meaning": "大きな力を蓄えきれない。小さく貯める時期。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "乾",
+    "color": "#32CD32",
+    "totalFrom": 1,
+    "totalTo": 1,
+    "successRate": 1.0
+  },
+  {
+    "id": "天沢履",
+    "hexId": 10,
+    "chinese": "履",
+    "reading": "てんたくり",
+    "keyword": "礼儀・慎重・実践",
+    "meaning": "虎の尾を踏むような慎重さが必要。礼節を守る。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "兌",
+    "color": "#FFD700",
+    "totalFrom": 8,
+    "totalTo": 3,
+    "successRate": 0.25
+  },
+  {
+    "id": "地天泰",
+    "hexId": 11,
+    "chinese": "泰",
+    "reading": "ちてんたい",
+    "keyword": "平和・繁栄・調和",
+    "meaning": "天地が交わる最良の時。安定と繁栄の時期。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "乾",
+    "color": "#8B4513",
+    "totalFrom": 4,
+    "totalTo": 20,
+    "successRate": 0.75
+  },
+  {
+    "id": "天地否",
+    "hexId": 12,
+    "chinese": "否",
+    "reading": "てんちひ",
+    "keyword": "閉塞・停滞・不通",
+    "meaning": "天地が離れ通じない。閉塞の時期、耐える。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "坤",
+    "color": "#FFD700",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 0.0
+  },
+  {
+    "id": "天火同人",
+    "hexId": 13,
+    "chinese": "同人",
+    "reading": "てんかどうじん",
+    "keyword": "協調・同志・共感",
+    "meaning": "志を同じくする仲間との協力。公明正大に。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "離",
+    "color": "#FFD700",
+    "totalFrom": 8,
+    "totalTo": 13,
+    "successRate": 0.125
+  },
+  {
+    "id": "火天大有",
+    "hexId": 14,
+    "chinese": "大有",
+    "reading": "かてんたいゆう",
+    "keyword": "大いなる所有・繁栄",
+    "meaning": "豊かさと成功の時期。謙虚さを忘れずに。",
+    "upperTrigram": "離",
+    "lowerTrigram": "乾",
+    "color": "#FF6347",
+    "totalFrom": 3,
+    "totalTo": 25,
+    "successRate": 0.0
+  },
+  {
+    "id": "地山謙",
+    "hexId": 15,
+    "chinese": "謙",
+    "reading": "ちざんけん",
+    "keyword": "謙虚・謙遜・控えめ",
+    "meaning": "山が地の下にある象。謙虚さが吉を招く。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "艮",
+    "color": "#8B4513",
+    "totalFrom": 5,
+    "totalTo": 8,
+    "successRate": 0.6
+  },
+  {
+    "id": "雷地豫",
+    "hexId": 16,
+    "chinese": "豫",
+    "reading": "らいちよ",
+    "keyword": "喜び・準備・楽観",
+    "meaning": "雷が地上に響く象。楽しみと準備の時期。",
+    "upperTrigram": "震",
+    "lowerTrigram": "坤",
+    "color": "#FF4500",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "沢雷随",
+    "hexId": 17,
+    "chinese": "随",
+    "reading": "たくらいずい",
+    "keyword": "従う・適応・柔軟",
+    "meaning": "時流に従い、柔軟に適応する時期。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "震",
+    "color": "#FF69B4",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "山風蠱",
+    "hexId": 18,
+    "chinese": "蠱",
+    "reading": "さんぷうこ",
+    "keyword": "腐敗・改革・刷新",
+    "meaning": "古いものが腐る象。改革と刷新が必要。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "巽",
+    "color": "#708090",
+    "totalFrom": 2,
+    "totalTo": 0,
+    "successRate": 0.0
+  },
+  {
+    "id": "地沢臨",
+    "hexId": 19,
+    "chinese": "臨",
+    "reading": "ちたくりん",
+    "keyword": "臨む・接近・監督",
+    "meaning": "上から臨み見守る。指導的立場に立つ時期。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "兌",
+    "color": "#8B4513",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "風地観",
+    "hexId": 20,
+    "chinese": "観",
+    "reading": "ふうちかん",
+    "keyword": "観察・洞察・模範",
+    "meaning": "高いところから観察する。本質を見極める。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "坤",
+    "color": "#32CD32",
+    "totalFrom": 2,
+    "totalTo": 2,
+    "successRate": 0.5
+  },
+  {
+    "id": "火雷噬嗑",
+    "hexId": 21,
+    "chinese": "噬嗑",
+    "reading": "からいぜいごう",
+    "keyword": "噛み砕く・障害除去",
+    "meaning": "障害を噛み砕いて除去する。決断の時期。",
+    "upperTrigram": "離",
+    "lowerTrigram": "震",
+    "color": "#FF6347",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 0.0
+  },
+  {
+    "id": "山火賁",
+    "hexId": 22,
+    "chinese": "賁",
+    "reading": "さんかひ",
+    "keyword": "飾り・文化・美化",
+    "meaning": "山の下に火がある象。外見を整える時期。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "離",
+    "color": "#708090",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "山地剥",
+    "hexId": 23,
+    "chinese": "剥",
+    "reading": "さんちはく",
+    "keyword": "剥落・衰退・崩壊",
+    "meaning": "陽が削られていく象。衰退期、守りに徹する。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "坤",
+    "color": "#708090",
+    "totalFrom": 12,
+    "totalTo": 8,
+    "successRate": 0.25
+  },
+  {
+    "id": "地雷復",
+    "hexId": 24,
+    "chinese": "復",
+    "reading": "ちらいふく",
+    "keyword": "復帰・回復・再生",
+    "meaning": "一陽が復活する象。原点に立ち返る時期。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "震",
+    "color": "#8B4513",
+    "totalFrom": 2,
+    "totalTo": 8,
+    "successRate": 0.5
+  },
+  {
+    "id": "天雷无妄",
+    "hexId": 25,
+    "chinese": "无妄",
+    "reading": "てんらいむもう",
+    "keyword": "無妄・誠実・天命",
+    "meaning": "偽りのない誠実さ。天の理に従う。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "震",
+    "color": "#FFD700",
+    "totalFrom": 11,
+    "totalTo": 0,
+    "successRate": 0.182
+  },
+  {
+    "id": "山天大畜",
+    "hexId": 26,
+    "chinese": "大畜",
+    "reading": "さんてんたいちく",
+    "keyword": "大きな蓄積・抑制",
+    "meaning": "大きな力を蓄える時期。内に力を溜める。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "乾",
+    "color": "#708090",
+    "totalFrom": 1,
+    "totalTo": 1,
+    "successRate": 1.0
+  },
+  {
+    "id": "山雷頤",
+    "hexId": 27,
+    "chinese": "頤",
+    "reading": "さんらいい",
+    "keyword": "養い・養生・育成",
+    "meaning": "口の象。養い育てることが重要な時期。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "震",
+    "color": "#708090",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "沢風大過",
+    "hexId": 28,
+    "chinese": "大過",
+    "reading": "たくふうたいか",
+    "keyword": "過剰・無理・極端",
+    "meaning": "棟木がたわむ象。行き過ぎに注意。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "巽",
+    "color": "#FF69B4",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "坎為水",
+    "hexId": 29,
+    "chinese": "坎",
+    "reading": "かんいすい",
+    "keyword": "危険・試練・忍耐",
+    "meaning": "水が重なる象。困難が続くが誠実に対応。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "坎",
+    "color": "#1E90FF",
+    "totalFrom": 1973,
+    "totalTo": 851,
+    "successRate": 0.532
+  },
+  {
+    "id": "離為火",
+    "hexId": 30,
+    "chinese": "離",
+    "reading": "りいか",
+    "keyword": "明るさ・依存・輝き",
+    "meaning": "火が重なる象。明晰さと輝き。依存先を選ぶ。",
+    "upperTrigram": "離",
+    "lowerTrigram": "離",
+    "color": "#FF6347",
+    "totalFrom": 684,
+    "totalTo": 1046,
+    "successRate": 0.581
+  },
+  {
+    "id": "沢山咸",
+    "hexId": 31,
+    "chinese": "咸",
+    "reading": "たくざんかん",
+    "keyword": "感応・交流・共鳴",
+    "meaning": "男女の感応。相互作用と交流の時期。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "艮",
+    "color": "#FF69B4",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "雷風恒",
+    "hexId": 32,
+    "chinese": "恒",
+    "reading": "らいふうこう",
+    "keyword": "恒常・持続・不変",
+    "meaning": "変わらないこと。継続と忍耐の力。",
+    "upperTrigram": "震",
+    "lowerTrigram": "巽",
+    "color": "#FF4500",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "天山遯",
+    "hexId": 33,
+    "chinese": "遯",
+    "reading": "てんざんとん",
+    "keyword": "退却・隠遁・避難",
+    "meaning": "戦略的撤退の時期。退くことで守る。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "艮",
+    "color": "#FFD700",
+    "totalFrom": 2,
+    "totalTo": 4,
+    "successRate": 0.5
+  },
+  {
+    "id": "雷天大壮",
+    "hexId": 34,
+    "chinese": "大壮",
+    "reading": "らいてんたいそう",
+    "keyword": "大いなる力・勢い",
+    "meaning": "陽の力が盛んな時。勢いはあるが慎重に。",
+    "upperTrigram": "震",
+    "lowerTrigram": "乾",
+    "color": "#FF4500",
+    "totalFrom": 2,
+    "totalTo": 1,
+    "successRate": 0.5
+  },
+  {
+    "id": "火地晋",
+    "hexId": 35,
+    "chinese": "晋",
+    "reading": "かちしん",
+    "keyword": "進む・昇進・発展",
+    "meaning": "太陽が地上に昇る象。前進と発展の時期。",
+    "upperTrigram": "離",
+    "lowerTrigram": "坤",
+    "color": "#FF6347",
+    "totalFrom": 0,
+    "totalTo": 1,
+    "successRate": 0
+  },
+  {
+    "id": "地火明夷",
+    "hexId": 36,
+    "chinese": "明夷",
+    "reading": "ちかめいい",
+    "keyword": "傷つく明るさ・潜伏",
+    "meaning": "太陽が地下に沈む象。才能を隠し耐える。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "離",
+    "color": "#8B4513",
+    "totalFrom": 4,
+    "totalTo": 9,
+    "successRate": 0.75
+  },
+  {
+    "id": "風火家人",
+    "hexId": 37,
+    "chinese": "家人",
+    "reading": "ふうかかじん",
+    "keyword": "家庭・組織・内部",
+    "meaning": "家庭の象。内部の調和と役割分担が重要。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "離",
+    "color": "#32CD32",
+    "totalFrom": 0,
+    "totalTo": 2,
+    "successRate": 0
+  },
+  {
+    "id": "火沢睽",
+    "hexId": 38,
+    "chinese": "睽",
+    "reading": "かたくけい",
+    "keyword": "背反・対立・相違",
+    "meaning": "火と水が背く象。意見の相違を乗り越える。",
+    "upperTrigram": "離",
+    "lowerTrigram": "兌",
+    "color": "#FF6347",
+    "totalFrom": 2,
+    "totalTo": 1,
+    "successRate": 0.5
+  },
+  {
+    "id": "水山蹇",
+    "hexId": 39,
+    "chinese": "蹇",
+    "reading": "すいざんけん",
+    "keyword": "困難・険阻・足踏み",
+    "meaning": "前進が困難な時期。立ち止まり考える。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "艮",
+    "color": "#1E90FF",
+    "totalFrom": 11,
+    "totalTo": 6,
+    "successRate": 0.818
+  },
+  {
+    "id": "雷水解",
+    "hexId": 40,
+    "chinese": "解",
+    "reading": "らいすいかい",
+    "keyword": "解放・解決・緩和",
+    "meaning": "困難からの解放。問題が解ける時期。",
+    "upperTrigram": "震",
+    "lowerTrigram": "坎",
+    "color": "#FF4500",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "山沢損",
+    "hexId": 41,
+    "chinese": "損",
+    "reading": "さんたくそん",
+    "keyword": "損・減らす・献身",
+    "meaning": "損して得取れ。自己犠牲が将来の益に。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "兌",
+    "color": "#708090",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "風雷益",
+    "hexId": 42,
+    "chinese": "益",
+    "reading": "ふうらいえき",
+    "keyword": "益・増やす・恩恵",
+    "meaning": "上から下へ恵みが下る。利益と発展の時期。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "震",
+    "color": "#32CD32",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "沢天夬",
+    "hexId": 43,
+    "chinese": "夬",
+    "reading": "たくてんかい",
+    "keyword": "決断・決裂・断行",
+    "meaning": "決然と断つ時。迷いを捨て決断する。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "乾",
+    "color": "#FF69B4",
+    "totalFrom": 2,
+    "totalTo": 0,
+    "successRate": 0.5
+  },
+  {
+    "id": "天風姤",
+    "hexId": 44,
+    "chinese": "姤",
+    "reading": "てんぷうこう",
+    "keyword": "出会い・遭遇・邂逅",
+    "meaning": "思わぬ出会いの時。一陰が侵入する警戒も。",
+    "upperTrigram": "乾",
+    "lowerTrigram": "巽",
+    "color": "#FFD700",
+    "totalFrom": 1,
+    "totalTo": 3,
+    "successRate": 0.0
+  },
+  {
+    "id": "沢地萃",
+    "hexId": 45,
+    "chinese": "萃",
+    "reading": "たくちすい",
+    "keyword": "集合・集結・結集",
+    "meaning": "人が集まる時期。求心力と統率が重要。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "坤",
+    "color": "#FF69B4",
+    "totalFrom": 0,
+    "totalTo": 1,
+    "successRate": 0
+  },
+  {
+    "id": "地風升",
+    "hexId": 46,
+    "chinese": "升",
+    "reading": "ちふうしょう",
+    "keyword": "上昇・昇進・成長",
+    "meaning": "木が地中から伸びる象。着実な上昇の時期。",
+    "upperTrigram": "坤",
+    "lowerTrigram": "巽",
+    "color": "#8B4513",
+    "totalFrom": 11,
+    "totalTo": 10,
+    "successRate": 0.636
+  },
+  {
+    "id": "沢水困",
+    "hexId": 47,
+    "chinese": "困",
+    "reading": "たくすいこん",
+    "keyword": "困窮・苦境・試練",
+    "meaning": "水が沢の下にある象。行き詰まりの時期。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "坎",
+    "color": "#FF69B4",
+    "totalFrom": 6,
+    "totalTo": 9,
+    "successRate": 0.667
+  },
+  {
+    "id": "水風井",
+    "hexId": 48,
+    "chinese": "井",
+    "reading": "すいふうせい",
+    "keyword": "井戸・源泉・不変",
+    "meaning": "井戸の象。変わらぬ価値と供給の源。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "巽",
+    "color": "#1E90FF",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "沢火革",
+    "hexId": 49,
+    "chinese": "革",
+    "reading": "たくかかく",
+    "keyword": "革命・変革・刷新",
+    "meaning": "皮を剥ぐ象。抜本的な変化の時期。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "離",
+    "color": "#FF69B4",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "火風鼎",
+    "hexId": 50,
+    "chinese": "鼎",
+    "reading": "かふうてい",
+    "keyword": "鼎・新体制・調和",
+    "meaning": "鼎（かなえ）の象。新しい秩序を作る時期。",
+    "upperTrigram": "離",
+    "lowerTrigram": "巽",
+    "color": "#FF6347",
+    "totalFrom": 1,
+    "totalTo": 11,
+    "successRate": 1.0
+  },
+  {
+    "id": "震為雷",
+    "hexId": 51,
+    "chinese": "震",
+    "reading": "しんいらい",
+    "keyword": "衝撃・覚醒・行動",
+    "meaning": "雷が重なる象。衝撃的出来事、覚醒と行動。",
+    "upperTrigram": "震",
+    "lowerTrigram": "震",
+    "color": "#FF4500",
+    "totalFrom": 1448,
+    "totalTo": 650,
+    "successRate": 0.388
+  },
+  {
+    "id": "艮為山",
+    "hexId": 52,
+    "chinese": "艮",
+    "reading": "ごんいさん",
+    "keyword": "停止・静止・内省",
+    "meaning": "山が重なる象。止まることの重要性。",
+    "upperTrigram": "艮",
+    "lowerTrigram": "艮",
+    "color": "#708090",
+    "totalFrom": 2200,
+    "totalTo": 1684,
+    "successRate": 0.418
+  },
+  {
+    "id": "風山漸",
+    "hexId": 53,
+    "chinese": "漸",
+    "reading": "ふうざんぜん",
+    "keyword": "漸進・段階・着実",
+    "meaning": "徐々に進む象。急がず段階を踏む。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "艮",
+    "color": "#32CD32",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "雷沢帰妹",
+    "hexId": 54,
+    "chinese": "帰妹",
+    "reading": "らいたくきまい",
+    "keyword": "従属・副次・縁組",
+    "meaning": "妹を嫁がせる象。副次的立場を受け入れる。",
+    "upperTrigram": "震",
+    "lowerTrigram": "兌",
+    "color": "#FF4500",
+    "totalFrom": 1,
+    "totalTo": 0,
+    "successRate": 1.0
+  },
+  {
+    "id": "雷火豊",
+    "hexId": 55,
+    "chinese": "豊",
+    "reading": "らいかほう",
+    "keyword": "豊か・繁栄・盛大",
+    "meaning": "雷と火が輝く象。最盛期、盛大な時。",
+    "upperTrigram": "震",
+    "lowerTrigram": "離",
+    "color": "#FF4500",
+    "totalFrom": 2,
+    "totalTo": 0,
+    "successRate": 0.0
+  },
+  {
+    "id": "火山旅",
+    "hexId": 56,
+    "chinese": "旅",
+    "reading": "かざんりょ",
+    "keyword": "旅・流浪・一時的",
+    "meaning": "旅人の象。定着せず移動する時期。",
+    "upperTrigram": "離",
+    "lowerTrigram": "艮",
+    "color": "#FF6347",
+    "totalFrom": 0,
+    "totalTo": 2,
+    "successRate": 0
+  },
+  {
+    "id": "巽為風",
+    "hexId": 57,
+    "chinese": "巽",
+    "reading": "そんいふう",
+    "keyword": "従順・浸透・柔軟",
+    "meaning": "風が重なる象。柔らかく浸透する力。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "巽",
+    "color": "#32CD32",
+    "totalFrom": 518,
+    "totalTo": 740,
+    "successRate": 0.649
+  },
+  {
+    "id": "兌為沢",
+    "hexId": 58,
+    "chinese": "兌",
+    "reading": "だいたく",
+    "keyword": "喜び・悦楽・交流",
+    "meaning": "沢が重なる象。喜びと交流の時期。",
+    "upperTrigram": "兌",
+    "lowerTrigram": "兌",
+    "color": "#FF69B4",
+    "totalFrom": 682,
+    "totalTo": 684,
+    "successRate": 0.635
+  },
+  {
+    "id": "風水渙",
+    "hexId": 59,
+    "chinese": "渙",
+    "reading": "ふうすいかん",
+    "keyword": "散らす・解散・拡散",
+    "meaning": "風が水を散らす象。散開と拡散の時期。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "坎",
+    "color": "#32CD32",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "水沢節",
+    "hexId": 60,
+    "chinese": "節",
+    "reading": "すいたくせつ",
+    "keyword": "節度・制限・節約",
+    "meaning": "節目の象。適度な制約と節度が重要。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "兌",
+    "color": "#1E90FF",
+    "totalFrom": 5,
+    "totalTo": 2,
+    "successRate": 0.8
+  },
+  {
+    "id": "風沢中孚",
+    "hexId": 61,
+    "chinese": "中孚",
+    "reading": "ふうたくちゅうふ",
+    "keyword": "誠・信頼・真心",
+    "meaning": "内に誠を抱く象。真心と信頼の力。",
+    "upperTrigram": "巽",
+    "lowerTrigram": "兌",
+    "color": "#32CD32",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "雷山小過",
+    "hexId": 62,
+    "chinese": "小過",
+    "reading": "らいざんしょうか",
+    "keyword": "小さな過ち・謙虚",
+    "meaning": "小さく越える象。控えめな行動が吉。",
+    "upperTrigram": "震",
+    "lowerTrigram": "艮",
+    "color": "#FF4500",
+    "totalFrom": 0,
+    "totalTo": 0,
+    "successRate": 0
+  },
+  {
+    "id": "水火既済",
+    "hexId": 63,
+    "chinese": "既済",
+    "reading": "すいかきせい",
+    "keyword": "完成・達成・調和",
+    "meaning": "水火が調和する象。一応の完成、油断禁物。",
+    "upperTrigram": "坎",
+    "lowerTrigram": "離",
+    "color": "#1E90FF",
+    "totalFrom": 0,
+    "totalTo": 1,
+    "successRate": 0
+  },
+  {
+    "id": "火水未済",
+    "hexId": 64,
+    "chinese": "未済",
+    "reading": "かすいびせい",
+    "keyword": "未完成・発展途上",
+    "meaning": "まだ終わらない象。次への可能性を秘める。",
+    "upperTrigram": "離",
+    "lowerTrigram": "坎",
+    "color": "#FF6347",
+    "totalFrom": 9,
+    "totalTo": 8,
+    "successRate": 0.667
+  }
+];
+        const links = [
+  {
+    "source": "乾為天",
+    "target": "坤為地",
+    "count": 229,
+    "successRate": 0.057,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 80,
+      "巽": 60,
+      "乾": 19,
+      "震": 17,
+      "離": 15,
+      "坤": 15,
+      "兌": 13,
+      "坎": 10
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "乾為天",
+    "target": "艮為山",
+    "count": 123,
+    "successRate": 0.211,
+    "mainAction": "震",
+    "actions": {
+      "震": 39,
+      "乾": 17,
+      "巽": 17,
+      "艮": 15,
+      "坎": 14,
+      "坤": 9,
+      "兌": 8,
+      "離": 4
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "乾為天",
+    "target": "坎為水",
+    "count": 118,
+    "successRate": 0.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 25,
+      "艮": 22,
+      "乾": 21,
+      "震": 16,
+      "巽": 13,
+      "坤": 9,
+      "離": 7,
+      "坎": 5
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "乾為天",
+    "target": "震為雷",
+    "count": 83,
+    "successRate": 0.699,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 55,
+      "離": 9,
+      "艮": 8,
+      "巽": 8,
+      "兌": 1,
+      "坤": 1,
+      "坎": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "乾為天",
+    "target": "巽為風",
+    "count": 67,
+    "successRate": 0.224,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 37,
+      "艮": 8,
+      "離": 6,
+      "坎": 6,
+      "乾": 4,
+      "兌": 4,
+      "坤": 1,
+      "震": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "乾為天",
+    "target": "離為火",
+    "count": 46,
+    "successRate": 0.826,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 21,
+      "震": 7,
+      "巽": 6,
+      "艮": 4,
+      "兌": 4,
+      "離": 3,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "乾為天",
+    "target": "乾為天",
+    "count": 32,
+    "successRate": 0.906,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 11,
+      "艮": 6,
+      "震": 5,
+      "兌": 5,
+      "離": 2,
+      "坎": 2,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "乾為天",
+    "target": "兌為沢",
+    "count": 20,
+    "successRate": 0.6,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 7,
+      "艮": 4,
+      "離": 4,
+      "乾": 3,
+      "坤": 2
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "乾為天",
+    "target": "火風鼎",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1,
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "乾為天",
+    "target": "地雷復",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1,
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "乾為天",
+    "target": "山地剥",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 2
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "乾為天",
+    "target": "地山謙",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "乾為天",
+    "target": "水雷屯",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "乾為天",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "兌為沢",
+    "target": "坤為地",
+    "count": 321,
+    "successRate": 0.592,
+    "mainAction": "震",
+    "actions": {
+      "震": 144,
+      "坎": 94,
+      "兌": 46,
+      "艮": 20,
+      "巽": 10,
+      "坤": 5,
+      "離": 2
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "兌為沢",
+    "target": "離為火",
+    "count": 143,
+    "successRate": 0.965,
+    "mainAction": "震",
+    "actions": {
+      "震": 57,
+      "坎": 39,
+      "兌": 27,
+      "巽": 8,
+      "艮": 7,
+      "乾": 3,
+      "離": 1,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "兌為沢",
+    "target": "艮為山",
+    "count": 90,
+    "successRate": 0.267,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 30,
+      "兌": 22,
+      "巽": 16,
+      "坤": 10,
+      "震": 9,
+      "坎": 3
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "兌為沢",
+    "target": "乾為天",
+    "count": 43,
+    "successRate": 1.0,
+    "mainAction": "震",
+    "actions": {
+      "震": 27,
+      "乾": 7,
+      "兌": 3,
+      "離": 2,
+      "艮": 2,
+      "巽": 1,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "兌為沢",
+    "target": "兌為沢",
+    "count": 24,
+    "successRate": 0.958,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 8,
+      "兌": 4,
+      "坤": 3,
+      "震": 3,
+      "巽": 2,
+      "乾": 2,
+      "離": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "兌為沢",
+    "target": "巽為風",
+    "count": 23,
+    "successRate": 0.478,
+    "mainAction": "離",
+    "actions": {
+      "離": 7,
+      "乾": 6,
+      "兌": 5,
+      "艮": 4,
+      "坤": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "兌為沢",
+    "target": "坎為水",
+    "count": 20,
+    "successRate": 0.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 10,
+      "艮": 6,
+      "乾": 2,
+      "坤": 1,
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "兌為沢",
+    "target": "震為雷",
+    "count": 12,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 5,
+      "離": 3,
+      "震": 2,
+      "乾": 1,
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "兌為沢",
+    "target": "沢水困",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1,
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "兌為沢",
+    "target": "沢地萃",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "兌為沢",
+    "target": "地山謙",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "兌為沢",
+    "target": "地雷復",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "兌為沢",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地天泰",
+    "target": "乾為天",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 2,
+      "震": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地天泰",
+    "target": "沢水困",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地山謙",
+    "target": "乾為天",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地山謙",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地山謙",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地山謙",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地水師",
+    "target": "天火同人",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 2,
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地水師",
+    "target": "火水未済",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地水師",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地水師",
+    "target": "水天需",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地水師",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地水師",
+    "target": "山天大畜",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地火明夷",
+    "target": "火天大有",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1,
+      "坎": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地火明夷",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地火明夷",
+    "target": "乾為天",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地雷復",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "震",
+    "actions": {
+      "震": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地雷復",
+    "target": "雷天大壮",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地風升",
+    "target": "乾為天",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1,
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地風升",
+    "target": "山地剥",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 2
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地風升",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地風升",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地風升",
+    "target": "火風鼎",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地風升",
+    "target": "地山謙",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地風升",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "地風升",
+    "target": "天火同人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "地風升",
+    "target": "風火家人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坎為水",
+    "target": "艮為山",
+    "count": 430,
+    "successRate": 0.409,
+    "mainAction": "震",
+    "actions": {
+      "震": 198,
+      "坎": 130,
+      "巽": 52,
+      "兌": 29,
+      "艮": 6,
+      "坤": 6,
+      "離": 5,
+      "乾": 4
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "坎為水",
+    "target": "坤為地",
+    "count": 388,
+    "successRate": 0.338,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 187,
+      "兌": 47,
+      "艮": 39,
+      "乾": 38,
+      "離": 37,
+      "巽": 15,
+      "坤": 13,
+      "震": 12
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "坎為水",
+    "target": "坎為水",
+    "count": 248,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 180,
+      "乾": 28,
+      "艮": 19,
+      "離": 10,
+      "坤": 5,
+      "巽": 4,
+      "震": 2
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "坎為水",
+    "target": "兌為沢",
+    "count": 247,
+    "successRate": 0.988,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 152,
+      "離": 27,
+      "巽": 25,
+      "乾": 21,
+      "艮": 9,
+      "坤": 6,
+      "震": 5,
+      "坎": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坎為水",
+    "target": "乾為天",
+    "count": 207,
+    "successRate": 0.99,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 125,
+      "離": 30,
+      "震": 14,
+      "兌": 13,
+      "艮": 11,
+      "坎": 6,
+      "巽": 5,
+      "坤": 3
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坎為水",
+    "target": "離為火",
+    "count": 206,
+    "successRate": 0.942,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 67,
+      "坎": 59,
+      "震": 40,
+      "艮": 11,
+      "巽": 11,
+      "兌": 9,
+      "離": 7,
+      "坤": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坎為水",
+    "target": "震為雷",
+    "count": 124,
+    "successRate": 0.597,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 40,
+      "乾": 30,
+      "坎": 30,
+      "艮": 15,
+      "離": 6,
+      "坤": 2,
+      "震": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "坎為水",
+    "target": "巽為風",
+    "count": 119,
+    "successRate": 0.202,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 58,
+      "乾": 23,
+      "坎": 18,
+      "兌": 12,
+      "艮": 4,
+      "坤": 3,
+      "震": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "坎為水",
+    "target": "火天大有",
+    "count": 2,
+    "successRate": 0.5,
+    "mainAction": "震",
+    "actions": {
+      "震": 1,
+      "乾": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "坎為水",
+    "target": "地山謙",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "坎為水",
+    "target": "水山蹇",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "坤為地",
+    "target": "坤為地",
+    "count": 305,
+    "successRate": 0.246,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 129,
+      "艮": 75,
+      "坤": 43,
+      "離": 17,
+      "巽": 12,
+      "兌": 12,
+      "震": 12,
+      "坎": 5
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "坤為地",
+    "target": "乾為天",
+    "count": 230,
+    "successRate": 0.991,
+    "mainAction": "震",
+    "actions": {
+      "震": 74,
+      "乾": 64,
+      "離": 23,
+      "艮": 22,
+      "兌": 22,
+      "巽": 12,
+      "坤": 7,
+      "坎": 6
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坤為地",
+    "target": "坎為水",
+    "count": 116,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 41,
+      "艮": 39,
+      "坤": 14,
+      "坎": 13,
+      "離": 6,
+      "震": 2,
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "坤為地",
+    "target": "兌為沢",
+    "count": 108,
+    "successRate": 0.833,
+    "mainAction": "離",
+    "actions": {
+      "離": 39,
+      "乾": 25,
+      "艮": 16,
+      "巽": 14,
+      "兌": 10,
+      "震": 3,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坤為地",
+    "target": "離為火",
+    "count": 105,
+    "successRate": 0.943,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 53,
+      "震": 22,
+      "兌": 8,
+      "坎": 7,
+      "巽": 6,
+      "坤": 5,
+      "離": 2,
+      "艮": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坤為地",
+    "target": "震為雷",
+    "count": 80,
+    "successRate": 0.125,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 63,
+      "艮": 7,
+      "離": 5,
+      "兌": 2,
+      "坤": 1,
+      "巽": 1,
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "坤為地",
+    "target": "艮為山",
+    "count": 77,
+    "successRate": 0.494,
+    "mainAction": "震",
+    "actions": {
+      "震": 30,
+      "坤": 11,
+      "艮": 8,
+      "乾": 8,
+      "巽": 8,
+      "兌": 8,
+      "離": 3,
+      "坎": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "坤為地",
+    "target": "巽為風",
+    "count": 24,
+    "successRate": 0.542,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 9,
+      "艮": 4,
+      "兌": 3,
+      "坤": 2,
+      "離": 2,
+      "震": 2,
+      "巽": 1,
+      "坎": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "坤為地",
+    "target": "地山謙",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "坤為地",
+    "target": "火風鼎",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "坤為地",
+    "target": "火地晋",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "坤為地",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天地否",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天山遯",
+    "target": "水山蹇",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天山遯",
+    "target": "乾為天",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天水訟",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天水訟",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天沢履",
+    "target": "火水未済",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1,
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天沢履",
+    "target": "離為火",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1,
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天沢履",
+    "target": "山地剥",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天沢履",
+    "target": "水雷屯",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天沢履",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天沢履",
+    "target": "水山蹇",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天火同人",
+    "target": "坎為水",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1,
+      "兌": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天火同人",
+    "target": "火風鼎",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天火同人",
+    "target": "火沢睽",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天火同人",
+    "target": "地火明夷",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天火同人",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天火同人",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天火同人",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "火山旅",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1,
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "水沢節",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 2
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "火風鼎",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "沢水困",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "地雷復",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "水山蹇",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "地火明夷",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "乾為天",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "天雷无妄",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "天風姤",
+    "target": "地火明夷",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山地剥",
+    "target": "離為火",
+    "count": 3,
+    "successRate": 0.333,
+    "mainAction": "離",
+    "actions": {
+      "離": 2,
+      "巽": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "山地剥",
+    "target": "火天大有",
+    "count": 2,
+    "successRate": 0.5,
+    "mainAction": "震",
+    "actions": {
+      "震": 1,
+      "離": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "山地剥",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山地剥",
+    "target": "沢水困",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山地剥",
+    "target": "火水未済",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山地剥",
+    "target": "火風鼎",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山地剥",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山地剥",
+    "target": "地火明夷",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山地剥",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山天大畜",
+    "target": "兌為沢",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "震",
+    "actions": {
+      "震": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山水蒙",
+    "target": "地天泰",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1,
+      "巽": 1,
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山水蒙",
+    "target": "乾為天",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山水蒙",
+    "target": "風地観",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "山水蒙",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山水蒙",
+    "target": "風天小畜",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山水蒙",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山沢損",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "震",
+    "actions": {
+      "震": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山火賁",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "山風蠱",
+    "target": "山地剥",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 2
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "巽為風",
+    "target": "艮為山",
+    "count": 269,
+    "successRate": 0.45,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 162,
+      "震": 46,
+      "艮": 41,
+      "坤": 13,
+      "坎": 4,
+      "乾": 1,
+      "離": 1,
+      "兌": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "巽為風",
+    "target": "乾為天",
+    "count": 80,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 60,
+      "乾": 15,
+      "離": 3,
+      "震": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "巽為風",
+    "target": "離為火",
+    "count": 79,
+    "successRate": 0.987,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 45,
+      "兌": 23,
+      "乾": 6,
+      "震": 4,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "巽為風",
+    "target": "坤為地",
+    "count": 42,
+    "successRate": 0.714,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 22,
+      "坤": 9,
+      "乾": 4,
+      "艮": 3,
+      "巽": 3,
+      "坎": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "巽為風",
+    "target": "兌為沢",
+    "count": 19,
+    "successRate": 0.947,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 9,
+      "兌": 4,
+      "坤": 3,
+      "震": 2,
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "巽為風",
+    "target": "巽為風",
+    "count": 18,
+    "successRate": 0.5,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 5,
+      "離": 5,
+      "兌": 3,
+      "巽": 2,
+      "艮": 2,
+      "震": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "巽為風",
+    "target": "坎為水",
+    "count": 7,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 3,
+      "坎": 2,
+      "坤": 1,
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "巽為風",
+    "target": "震為雷",
+    "count": 4,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 2,
+      "乾": 1,
+      "震": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水地比",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水地比",
+    "target": "乾為天",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水山蹇",
+    "target": "天火同人",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1,
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水山蹇",
+    "target": "乾為天",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1,
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水山蹇",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水山蹇",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水山蹇",
+    "target": "天山遯",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水山蹇",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水山蹇",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水山蹇",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水山蹇",
+    "target": "火風鼎",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水沢節",
+    "target": "乾為天",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1,
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水沢節",
+    "target": "地天泰",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1,
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水沢節",
+    "target": "坎為水",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水雷屯",
+    "target": "火天大有",
+    "count": 5,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 3,
+      "坤": 1,
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水雷屯",
+    "target": "乾為天",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 2,
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水雷屯",
+    "target": "地天泰",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1,
+      "巽": 1,
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水雷屯",
+    "target": "地火明夷",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1,
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水雷屯",
+    "target": "地水師",
+    "count": 2,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1,
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水雷屯",
+    "target": "兌為沢",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水雷屯",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水雷屯",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水雷屯",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "水雷屯",
+    "target": "沢水困",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "水雷屯",
+    "target": "天火同人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "沢天夬",
+    "target": "坤為地",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "沢天夬",
+    "target": "風地観",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "沢水困",
+    "target": "離為火",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1,
+      "坎": 1,
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "沢水困",
+    "target": "乾為天",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "沢水困",
+    "target": "地火明夷",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "沢水困",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "沢雷随",
+    "target": "天火同人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "沢風大過",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火天大有",
+    "target": "地火明夷",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火天大有",
+    "target": "地雷復",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火天大有",
+    "target": "火水未済",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火水未済",
+    "target": "兌為沢",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "震",
+    "actions": {
+      "震": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火水未済",
+    "target": "水雷屯",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火水未済",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火水未済",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火水未済",
+    "target": "天火同人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火水未済",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火水未済",
+    "target": "地雷復",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火水未済",
+    "target": "沢水困",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火水未済",
+    "target": "乾為天",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火沢睽",
+    "target": "天火同人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "火沢睽",
+    "target": "艮為山",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火雷噬嗑",
+    "target": "水山蹇",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "火風鼎",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "震",
+    "actions": {
+      "震": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "坤為地",
+    "count": 446,
+    "successRate": 0.186,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 94,
+      "巽": 94,
+      "坎": 56,
+      "乾": 55,
+      "震": 51,
+      "離": 45,
+      "兌": 43,
+      "坤": 8
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "艮為山",
+    "count": 357,
+    "successRate": 0.157,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 145,
+      "坎": 69,
+      "震": 39,
+      "兌": 36,
+      "巽": 34,
+      "乾": 30,
+      "離": 4
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "巽為風",
+    "count": 349,
+    "successRate": 0.046,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 244,
+      "乾": 28,
+      "震": 25,
+      "兌": 23,
+      "坎": 21,
+      "艮": 5,
+      "離": 2,
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "乾為天",
+    "count": 281,
+    "successRate": 0.993,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 122,
+      "震": 80,
+      "離": 46,
+      "巽": 12,
+      "兌": 11,
+      "艮": 6,
+      "坤": 2,
+      "坎": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "震為雷",
+    "count": 269,
+    "successRate": 0.591,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 109,
+      "乾": 71,
+      "震": 29,
+      "坎": 28,
+      "艮": 15,
+      "離": 13,
+      "坤": 2,
+      "兌": 2
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "艮為山",
+    "target": "離為火",
+    "count": 170,
+    "successRate": 0.941,
+    "mainAction": "震",
+    "actions": {
+      "震": 91,
+      "乾": 39,
+      "巽": 14,
+      "兌": 10,
+      "離": 6,
+      "艮": 6,
+      "坎": 3,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "兌為沢",
+    "count": 167,
+    "successRate": 0.916,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 67,
+      "離": 27,
+      "巽": 21,
+      "震": 21,
+      "乾": 17,
+      "艮": 11,
+      "坤": 3
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "坎為水",
+    "count": 143,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 42,
+      "震": 40,
+      "艮": 30,
+      "乾": 14,
+      "巽": 7,
+      "坤": 6,
+      "離": 3,
+      "兌": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "天沢履",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 2,
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "天風姤",
+    "count": 3,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 3
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "天山遯",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "火風鼎",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "天火同人",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1,
+      "兌": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "風火家人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "艮為山",
+    "target": "地雷復",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "地火明夷",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "火水未済",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "山地剥",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "艮為山",
+    "target": "沢水困",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "坤",
+    "actions": {
+      "坤": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "離為火",
+    "target": "乾為天",
+    "count": 169,
+    "successRate": 1.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 90,
+      "震": 63,
+      "兌": 6,
+      "巽": 4,
+      "離": 3,
+      "艮": 3
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "離為火",
+    "target": "艮為山",
+    "count": 148,
+    "successRate": 0.264,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 44,
+      "震": 39,
+      "巽": 30,
+      "坎": 19,
+      "坤": 11,
+      "兌": 3,
+      "乾": 2
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "離為火",
+    "target": "離為火",
+    "count": 92,
+    "successRate": 0.935,
+    "mainAction": "震",
+    "actions": {
+      "震": 39,
+      "兌": 19,
+      "乾": 17,
+      "巽": 8,
+      "艮": 4,
+      "離": 2,
+      "坎": 2,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "離為火",
+    "target": "坤為地",
+    "count": 79,
+    "successRate": 0.329,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 20,
+      "巽": 18,
+      "兌": 14,
+      "艮": 10,
+      "震": 10,
+      "坤": 4,
+      "離": 3
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "離為火",
+    "target": "巽為風",
+    "count": 67,
+    "successRate": 0.358,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 15,
+      "乾": 11,
+      "兌": 10,
+      "離": 10,
+      "艮": 8,
+      "震": 7,
+      "坎": 5,
+      "坤": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "離為火",
+    "target": "兌為沢",
+    "count": 52,
+    "successRate": 0.981,
+    "mainAction": "兌",
+    "actions": {
+      "兌": 12,
+      "震": 12,
+      "巽": 8,
+      "離": 8,
+      "艮": 7,
+      "乾": 4,
+      "坤": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "離為火",
+    "target": "坎為水",
+    "count": 50,
+    "successRate": 0.0,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 19,
+      "乾": 9,
+      "震": 9,
+      "艮": 6,
+      "巽": 3,
+      "坤": 2,
+      "兌": 2
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "離為火",
+    "target": "震為雷",
+    "count": 25,
+    "successRate": 0.04,
+    "mainAction": "震",
+    "actions": {
+      "震": 9,
+      "艮": 6,
+      "坎": 4,
+      "巽": 4,
+      "離": 1,
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "離為火",
+    "target": "火水未済",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "離為火",
+    "target": "地風升",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "雷天大壮",
+    "target": "火風鼎",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "雷天大壮",
+    "target": "離為火",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "雷沢帰妹",
+    "target": "地雷復",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "雷火豊",
+    "target": "沢水困",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "雷火豊",
+    "target": "坤為地",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "雷風恒",
+    "target": "地山謙",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "坤為地",
+    "count": 493,
+    "successRate": 0.057,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 170,
+      "巽": 102,
+      "艮": 57,
+      "震": 54,
+      "兌": 44,
+      "乾": 41,
+      "坤": 17,
+      "離": 8
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "震為雷",
+    "target": "乾為天",
+    "count": 258,
+    "successRate": 0.965,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 177,
+      "震": 20,
+      "離": 20,
+      "艮": 13,
+      "兌": 12,
+      "巽": 8,
+      "坤": 4,
+      "坎": 4
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "離為火",
+    "count": 188,
+    "successRate": 0.957,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 129,
+      "震": 22,
+      "艮": 11,
+      "坎": 9,
+      "離": 7,
+      "坤": 4,
+      "兌": 4,
+      "巽": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "艮為山",
+    "count": 181,
+    "successRate": 0.155,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 61,
+      "震": 59,
+      "坎": 24,
+      "兌": 13,
+      "艮": 11,
+      "乾": 11,
+      "坤": 1,
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "震為雷",
+    "target": "坎為水",
+    "count": 146,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 77,
+      "震": 19,
+      "艮": 14,
+      "坎": 13,
+      "巽": 12,
+      "兌": 5,
+      "離": 3,
+      "坤": 3
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "震為雷",
+    "target": "巽為風",
+    "count": 73,
+    "successRate": 0.397,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 38,
+      "兌": 12,
+      "坎": 8,
+      "艮": 6,
+      "巽": 5,
+      "震": 2,
+      "坤": 1,
+      "離": 1
+    },
+    "color": "#E67E22"
+  },
+  {
+    "source": "震為雷",
+    "target": "震為雷",
+    "count": 53,
+    "successRate": 0.075,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 20,
+      "震": 15,
+      "坎": 10,
+      "艮": 3,
+      "巽": 2,
+      "坤": 1,
+      "兌": 1,
+      "離": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "震為雷",
+    "target": "兌為沢",
+    "count": 44,
+    "successRate": 0.795,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 13,
+      "離": 11,
+      "乾": 6,
+      "坤": 4,
+      "兌": 4,
+      "震": 3,
+      "艮": 2,
+      "坎": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "震為雷",
+    "target": "火天大有",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "震",
+    "actions": {
+      "震": 1,
+      "乾": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "地山謙",
+    "count": 2,
+    "successRate": 0.5,
+    "mainAction": "坎",
+    "actions": {
+      "坎": 1,
+      "兌": 1
+    },
+    "color": "#F1C40F"
+  },
+  {
+    "source": "震為雷",
+    "target": "地風升",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 2
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "地天泰",
+    "count": 2,
+    "successRate": 1.0,
+    "mainAction": "離",
+    "actions": {
+      "離": 1,
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "天山遯",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "天火同人",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "震為雷",
+    "target": "水火既済",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "震為雷",
+    "target": "水山蹇",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "乾",
+    "actions": {
+      "乾": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "風地観",
+    "target": "地天泰",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  },
+  {
+    "source": "風地観",
+    "target": "火水未済",
+    "count": 1,
+    "successRate": 0.0,
+    "mainAction": "艮",
+    "actions": {
+      "艮": 1
+    },
+    "color": "#E74C3C"
+  },
+  {
+    "source": "風天小畜",
+    "target": "火天大有",
+    "count": 1,
+    "successRate": 1.0,
+    "mainAction": "巽",
+    "actions": {
+      "巽": 1
+    },
+    "color": "#2ECC71"
+  }
+];
+
+        // グローバル変数
+        let svg, g, node, link, simulation;
+        let currentLayout = 'circle';
+        let selectedNode = null;
+
+        // SVG設定
+        const width = document.getElementById('main').clientWidth;
+        const height = document.getElementById('main').clientHeight;
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const radius = Math.min(width, height) * 0.38;
+
+        // ズーム設定
+        const zoom = d3.zoom()
+            .scaleExtent([0.3, 4])
+            .on('zoom', (event) => {
+                g.attr('transform', event.transform);
+            });
+
+        // 初期化
+        function init() {
+            svg = d3.select('#network')
+                .attr('width', width)
+                .attr('height', height)
+                .call(zoom);
+
+            // 矢印マーカー定義
+            const defs = svg.append('defs');
+
+            // 成功率ごとの矢印マーカー
+            ['#2ECC71', '#F1C40F', '#E67E22', '#E74C3C'].forEach(color => {
+                defs.append('marker')
+                    .attr('id', 'arrow-' + color.replace('#', ''))
+                    .attr('viewBox', '0 -5 10 10')
+                    .attr('refX', 20)
+                    .attr('refY', 0)
+                    .attr('markerWidth', 6)
+                    .attr('markerHeight', 6)
+                    .attr('orient', 'auto')
+                    .append('path')
+                    .attr('d', 'M0,-5L10,0L0,5')
+                    .attr('fill', color);
+            });
+
+            g = svg.append('g');
+
+            // 円形配置の初期位置設定
+            nodes.forEach((d, i) => {
+                const angle = (i / nodes.length) * 2 * Math.PI - Math.PI / 2;
+                d.x = centerX + radius * Math.cos(angle);
+                d.y = centerY + radius * Math.sin(angle);
+                d.fx = d.x;
+                d.fy = d.y;
+            });
+
+            // リンク描画
+            link = g.append('g')
+                .selectAll('path')
+                .data(links)
+                .join('path')
+                .attr('class', 'link')
+                .attr('stroke', d => d.color)
+                .attr('stroke-width', d => Math.max(1, Math.log(d.count) * 0.8))
+                .attr('marker-end', d => 'url(#arrow-' + d.color.replace('#', '') + ')');
+
+            // ノード描画
+            node = g.append('g')
+                .selectAll('.node')
+                .data(nodes)
+                .join('g')
+                .attr('class', 'node')
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+
+            node.append('circle')
+                .attr('r', d => 8 + Math.log(d.totalFrom + 1) * 2)
+                .attr('fill', d => d.color);
+
+            node.append('text')
+                .attr('dy', -12)
+                .text(d => d.chinese);
+
+            // イベント設定
+            node.on('click', handleNodeClick)
+                .on('mouseover', handleNodeMouseover)
+                .on('mouseout', handleNodeMouseout);
+
+            link.on('mouseover', handleLinkMouseover)
+                .on('mouseout', handleLinkMouseout);
+
+            // 力学シミュレーション
+            simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+                .force('charge', d3.forceManyBody().strength(-200))
+                .force('center', d3.forceCenter(centerX, centerY))
+                .force('collision', d3.forceCollide().radius(20))
+                .on('tick', ticked)
+                .stop();
+
+            updatePositions();
+            applyFilters();
+        }
+
+        // 位置更新
+        function updatePositions() {
+            link.attr('d', d => {
+                const sourceNode = nodes.find(n => n.id === d.source.id || n.id === d.source);
+                const targetNode = nodes.find(n => n.id === d.target.id || n.id === d.target);
+                if (!sourceNode || !targetNode) return '';
+
+                const dx = targetNode.x - sourceNode.x;
+                const dy = targetNode.y - sourceNode.y;
+                const dr = Math.sqrt(dx * dx + dy * dy) * 2;
+
+                return `M${sourceNode.x},${sourceNode.y}A${dr},${dr} 0 0,1 ${targetNode.x},${targetNode.y}`;
+            });
+
+            node.attr('transform', d => `translate(${d.x},${d.y})`);
+        }
+
+        function ticked() {
+            updatePositions();
+        }
+
+        // ドラッグ処理
+        function dragstarted(event, d) {
+            if (currentLayout === 'force') {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+            if (currentLayout === 'circle') {
+                d.x = event.x;
+                d.y = event.y;
+                updatePositions();
+            }
+        }
+
+        function dragended(event, d) {
+            if (currentLayout === 'force') {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        }
+
+        // ノードクリック
+        function handleNodeClick(event, d) {
+            event.stopPropagation();
+
+            // 選択状態の切り替え
+            if (selectedNode === d) {
+                selectedNode = null;
+                node.classed('selected', false);
+                link.classed('highlighted', false).classed('dimmed', false);
+                document.getElementById('detail-panel').classList.remove('active');
+            } else {
+                selectedNode = d;
+                node.classed('selected', n => n === d);
+
+                // リンクのハイライト
+                link.classed('highlighted', l =>
+                    (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id
+                ).classed('dimmed', l =>
+                    (l.source.id || l.source) !== d.id && (l.target.id || l.target) !== d.id
+                );
+
+                // 詳細パネル更新
+                showDetails(d);
+            }
+        }
+
+        // 詳細表示
+        function showDetails(d) {
+            const panel = document.getElementById('detail-panel');
+            panel.classList.add('active');
+
+            document.getElementById('detail-title').textContent = d.id + '（' + d.chinese + '）';
+            document.getElementById('detail-reading').textContent = d.reading;
+            document.getElementById('detail-keyword').textContent = d.keyword;
+            document.getElementById('detail-meaning').textContent = d.meaning;
+            document.getElementById('detail-trigrams').textContent =
+                '上卦: ' + d.upperTrigram + ' / 下卦: ' + d.lowerTrigram;
+            document.getElementById('detail-from').textContent = d.totalFrom.toLocaleString() + '件';
+            document.getElementById('detail-to').textContent = d.totalTo.toLocaleString() + '件';
+            document.getElementById('detail-success').textContent =
+                (d.successRate * 100).toFixed(1) + '%';
+
+            // 遷移先リスト
+            const transitionsList = document.getElementById('transitions-list');
+            const outLinks = links.filter(l => (l.source.id || l.source) === d.id)
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 10);
+
+            if (outLinks.length > 0) {
+                transitionsList.innerHTML = outLinks.map(l => {
+                    const targetId = l.target.id || l.target;
+                    const successClass = l.successRate >= 0.8 ? 'success-high' :
+                                        l.successRate >= 0.5 ? 'success-mid' : 'success-low';
+                    return `<div class="transition-item">
+                        <span>→ ${targetId}</span>
+                        <span>
+                            <span class="success-badge ${successClass}">${(l.successRate * 100).toFixed(0)}%</span>
+                            <span style="color: #888; margin-left: 5px;">${l.count}件</span>
+                        </span>
+                    </div>`;
+                }).join('');
+            } else {
+                transitionsList.innerHTML = '<div style="color: #888;">遷移先データなし</div>';
+            }
+        }
+
+        // ノードマウスオーバー
+        function handleNodeMouseover(event, d) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = `
+                <h4>${d.id} (${d.chinese})</h4>
+                <div>${d.keyword}</div>
+                <div style="margin-top: 5px; color: #888;">
+                    遷移元: ${d.totalFrom}件 / 遷移先: ${d.totalTo}件
+                </div>
+            `;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (event.pageX + 10) + 'px';
+            tooltip.style.top = (event.pageY - 10) + 'px';
+        }
+
+        function handleNodeMouseout() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+
+        // リンクマウスオーバー
+        function handleLinkMouseover(event, d) {
+            const sourceId = d.source.id || d.source;
+            const targetId = d.target.id || d.target;
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = `
+                <h4>${sourceId} → ${targetId}</h4>
+                <div>件数: ${d.count}</div>
+                <div>成功率: ${(d.successRate * 100).toFixed(1)}%</div>
+                <div>主要アクション: ${d.mainAction}</div>
+            `;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (event.pageX + 10) + 'px';
+            tooltip.style.top = (event.pageY - 10) + 'px';
+        }
+
+        function handleLinkMouseout() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+
+        // フィルター適用
+        function applyFilters() {
+            const minSuccessRate = document.getElementById('success-rate-filter').value / 100;
+            const minCount = parseInt(document.getElementById('count-filter').value);
+            const trigramFilter = document.getElementById('trigram-filter').value;
+
+            // リンクフィルタリング
+            link.style('display', d => {
+                if (d.successRate < minSuccessRate) return 'none';
+                if (d.count < minCount) return 'none';
+                return 'block';
+            });
+
+            // ノードフィルタリング
+            node.style('opacity', d => {
+                if (trigramFilter !== 'all' && d.upperTrigram !== trigramFilter && d.lowerTrigram !== trigramFilter) {
+                    return 0.2;
+                }
+                return 1;
+            });
+        }
+
+        // レイアウト切り替え
+        function setLayout(mode) {
+            currentLayout = mode;
+
+            document.querySelectorAll('#layout-mode button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('layout-' + mode).classList.add('active');
+
+            if (mode === 'circle') {
+                simulation.stop();
+                nodes.forEach((d, i) => {
+                    const angle = (i / nodes.length) * 2 * Math.PI - Math.PI / 2;
+                    d.fx = centerX + radius * Math.cos(angle);
+                    d.fy = centerY + radius * Math.sin(angle);
+                    d.x = d.fx;
+                    d.y = d.fy;
+                });
+                updatePositions();
+            } else {
+                nodes.forEach(d => {
+                    d.fx = null;
+                    d.fy = null;
+                });
+                simulation.alpha(1).restart();
+            }
+        }
+
+        // イベントリスナー設定
+        document.getElementById('success-rate-filter').addEventListener('input', (e) => {
+            document.getElementById('success-rate-value').textContent = e.target.value + '%';
+            applyFilters();
+        });
+
+        document.getElementById('count-filter').addEventListener('input', (e) => {
+            document.getElementById('count-value').textContent = e.target.value;
+            applyFilters();
+        });
+
+        document.getElementById('trigram-filter').addEventListener('change', applyFilters);
+
+        document.getElementById('zoom-in').addEventListener('click', () => {
+            svg.transition().call(zoom.scaleBy, 1.3);
+        });
+
+        document.getElementById('zoom-out').addEventListener('click', () => {
+            svg.transition().call(zoom.scaleBy, 0.7);
+        });
+
+        document.getElementById('reset-zoom').addEventListener('click', () => {
+            svg.transition().call(zoom.transform, d3.zoomIdentity);
+        });
+
+        document.getElementById('layout-circle').addEventListener('click', () => setLayout('circle'));
+        document.getElementById('layout-force').addEventListener('click', () => setLayout('force'));
+
+        // 初期化実行
+        init();
+
+        // 背景クリックで選択解除（init後に設定）
+        svg.on('click', () => {
+            selectedNode = null;
+            node.classed('selected', false);
+            link.classed('highlighted', false).classed('dimmed', false);
+            document.getElementById('detail-panel').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

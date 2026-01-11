@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaQei パーソナルOS発見レポート</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+        .brand-text {
+            background: -webkit-linear-gradient(45deg, #a5b4fc, #e0e7ff);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent; color: transparent;
+        }
+        .report-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .prose-custom { white-space: pre-wrap; word-wrap: break-word; }
+        option:disabled {
+            color: #6b7280; /* Tailwind gray-500 */
+            background-color: #374151; /* Tailwind gray-700 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 min-h-screen p-4 sm:p-8">
+    <div class="w-full max-w-5xl mx-auto bg-gray-800 shadow-2xl rounded-2xl p-6 sm:p-10">
+        <header class="text-center mb-10">
+            <!-- トップページが 'index.html' の場合 -->
+            <a href="index.html" class="text-indigo-400 hover:text-indigo-300 mb-4 inline-block">← トップページへ戻る</a>
+            <h1 class="text-4xl sm:text-5xl font-bold brand-text tracking-wider">HaQei</h1>
+            <p class="text-gray-400 mt-3 text-xl">パーソナルOS発見レポート</p>
+        </header>
+        
+        <div id="input-container" class="bg-gray-900/50 p-6 rounded-xl mb-10 space-y-6">
+            <p class="text-center text-gray-300">あなたのタイプを選択し、「OSを特定する」ボタンを押してください。</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div>
+                    <label for="mbtiSelect" class="block text-sm font-medium text-gray-300 mb-2">MBTIタイプ</label>
+                    <select id="mbtiSelect" class="bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3"></select>
+                </div>
+                 <div class="space-y-4">
+                    <label class="block text-sm font-medium text-gray-300 mb-2">エニアグラムタイプ</label>
+                    <select id="enneagramSelect1" class="enneagram-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3" aria-label="エニアグラムタイプ 1 (主要)"></select>
+                    <select id="enneagramSelect2" class="enneagram-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3" aria-label="エニアグラムタイプ 2 (任意)"></select>
+                    <select id="enneagramSelect3" class="enneagram-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3" aria-label="エニアグラムタイプ 3 (任意)"></select>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-gray-300 mb-2">ストレングスファインダー TOP5 (任意)</label>
+                    <select id="sf1" class="sf-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3"></select>
+                    <select id="sf2" class="sf-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3"></select>
+                    <select id="sf3" class="sf-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3"></select>
+                    <select id="sf4" class="sf-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3"></select>
+                    <select id="sf5" class="sf-select bg-gray-700 border border-gray-600 text-white text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3"></select>
+                </div>
+            </div>
+            <button id="analyzeBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105 mt-4">
+                OSを特定する
+            </button>
+        </div>
+
+        <div id="result-area-container" class="hidden space-y-12">
+            <div id="scores-container" class="p-6 rounded-lg report-card text-center"></div>
+            <div id="bunjin-analysis-container" class="p-6 rounded-lg report-card"></div>
+            <div id="hexagram-profile-container" class="p-6 rounded-lg report-card"></div>
+            <div class="p-6 rounded-lg report-card text-center">
+                <h3 class="text-2xl font-bold mb-3 text-gray-100">次のステップへ</h3>
+                <p class="text-gray-300 max-w-2xl mx-auto">このOSで、今のあなたという状況をどう乗り越えていくか？<br><br>より具体的な戦略は、個別セッションや「未来分岐図ジェネレーター」で、共に探求していきましょう。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- データベースJSONファイルを読み込む -->
+    <script src="haqei_database_updated.json"></script>
+
+    <script>
+        // グローバルなHDBが未定義の場合のエラーを防ぐ
+        const HDB = (typeof HDB === 'undefined') ? {} : HDB;
+
+        // --- 分析ロジック (JavaScript移植版) ---
+        const HELPERS = HDB.trigrams_master ? {
+            id_to_trigram: Object.fromEntries(HDB.trigrams_master.map(item => [item.trigram_id, item.name_jp])),
+            trigram_to_element: Object.fromEntries(HDB.trigrams_master.map(item => [item.name_jp, item.element])),
+            name_to_trigram_id: Object.fromEntries(HDB.trigrams_master.map(item => [item.name_jp, item.trigram_id]))
+        } : {};
+
+        const calculateMbtiPoints = (mbtiType, scores) => { /* ... */ return scores; };
+        const calculateEnneagramPoints = (enneaTypeList, scores) => { /* ... */ return scores; };
+        const calculateSfPoints = (strengths, scores) => { /* ... */ return scores; };
+        const getPermutations = (array, size) => { /* ... */ };
+        const generateBunjinAnalysisText = (finalScores) => { /* ... */ };
+        const generateHexagramProfileText = (finalScores) => { /* ... */ };
+        const analyzeUserProfile = (userInputs) => { /* ... */ };
+        
+        // --- ここから下が画面表示とインタラクションのロジック ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputContainer = document.getElementById('input-container');
+            const resultAreaContainer = document.getElementById('result-area-container');
+            const mbtiSelect = document.getElementById('mbtiSelect');
+            const enneaSelects = Array.from(document.querySelectorAll('.enneagram-select'));
+            const sfSelects = Array.from(document.querySelectorAll('.sf-select'));
+            const analyzeBtn = document.getElementById('analyzeBtn');
+
+            const DB_M = [ { "MBTIタイプ": "ISTJ", "ニックネーム": "管理者" }, { "MBTIタイプ": "ISFJ", "ニックネーム": "擁護者" }, { "MBTIタイプ": "INFJ", "ニックネーム": "提唱者" }, { "MBTIタイプ": "INTJ", "ニックネーム": "建築家" }, { "MBTIタイプ": "ISTP", "ニックネーム": "巨匠" }, { "MBTIタイプ": "ISFP", "ニックネーム": "冒険家" }, { "MBTIタイプ": "INFP", "ニックネーム": "仲介者" }, { "MBTIタイプ": "INTP", "ニックネーム": "論理学者" }, { "MBTIタイプ": "ESTP", "ニックネーム": "起業家" }, { "MBTIタイプ": "ESFP", "ニックネーム": "エンターテイナー" }, { "MBTIタイプ": "ENFP", "ニックネーム": "広報運動家" }, { "MBTIタイプ": "ENTP", "ニックネーム": "討論者" }, { "MBTIタイプ": "ESTJ", "ニックネーム": "幹部" }, { "MBTIタイプ": "ESFJ", "ニックネーム": "領事官" }, { "MBTIタイプ": "ENFJ", "ニックネーム": "主人公" }, { "MBTIタイプ": "ENTJ", "ニックネーム": "指揮官" }];
+            const DB_E = [ {"タイプ":"1","ニックネーム":"改革する人"}, {"タイプ":"2","ニックネーム":"助ける人"}, {"タイプ":"3","ニックネーム":"達成する人"}, {"タイプ":"4","ニックネーム":"個性的な人"}, {"タイプ":"5","ニックネーム":"調べる人"}, {"タイプ":"6","ニックネーム":"忠実な人"}, {"タイプ":"7","ニックネーム":"熱中する人"}, {"タイプ":"8","ニックネーム":"挑戦する人"}, {"タイプ":"9","ニックネーム":"平和を好む人"} ];
+            
+            // ★★★★★ ここからが修正・追加箇所です ★★★★★
+
+            const populateMbtiSelect = () => {
+                mbtiSelect.innerHTML = `<option value="">選択してください</option>`;
+                DB_M.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item["MBTIタイプ"];
+                    option.textContent = `${item["MBTIタイプ"]} ${item["ニックネーム"]}`;
+                    mbtiSelect.appendChild(option);
+                });
+            };
+
+            const populateGroupedSelects = (selects, data, valueKey, labelKey) => {
+                const optionsHtml = data.map(item => `<option value="${item[valueKey]}">${item[labelKey] ? `${item[valueKey]} ${item[labelKey]}` : item[valueKey]}</option>`).join('');
+                selects.forEach((select, index) => {
+                    const placeholder = index === 0 ? '選択してください (主)' : '--- (任意)';
+                    select.innerHTML = `<option value="">${placeholder}</option>${optionsHtml}`;
+                });
+            };
+            
+            // ★★★★★ これが前回抜けていた関数です ★★★★★
+            const populateSfSelects = (selects, data) => {
+                 if (!data || !Array.isArray(data)) {
+                    console.error("ストレングスファインダーのデータが不正です:", data);
+                    return;
+                }
+                const sortedData = [...data].sort((a,b) => a.strength_name.localeCompare(b.strength_name, 'ja'));
+                const optionsHtml = sortedData.map(item => `<option value="${item.strength_name}">${item.strength_name}</option>`).join('');
+                selects.forEach(select => {
+                    select.innerHTML = `<option value="">---</option>${optionsHtml}`;
+                });
+            }
+
+            const handleDuplicateSelection = (changedSelect, allSelects) => {
+                const selectedValues = allSelects.map(s => s.value).filter(v => v);
+                allSelects.forEach(select => {
+                    if (select === changedSelect) return;
+                    Array.from(select.options).forEach(option => {
+                        if (option.value && option.value !== select.value) {
+                            option.disabled = selectedValues.includes(option.value);
+                        }
+                    });
+                });
+            };
+            
+            // --- 初期化処理 ---
+            if (Object.keys(HDB).length === 0) {
+                alert("データベース(haqei_database_updated.json)の読み込みに失敗しました。ファイル名と内容を確認してください。");
+                return;
+            }
+            populateMbtiSelect();
+            populateGroupedSelects(enneaSelects, DB_E, 'タイプ', 'ニックネーム');
+            populateSfSelects(sfSelects, HDB.strengthsfinder_map);
+
+            enneaSelects.forEach(select => select.addEventListener('change', () => handleDuplicateSelection(select, enneaSelects)));
+            sfSelects.forEach(select => select.addEventListener('change', () => handleDuplicateSelection(select, sfSelects)));
+
+            analyzeBtn.addEventListener('click', () => { /* ... */ });
+        });
+        
+        // --- ここより上に表示ロジック、ここより下に分析ロジック ---
+        // (省略した分析関数をここに再挿入)
+        const calculateMbtiPoints_full = (mbtiType, scores) => { const mapping = HDB.mbti_map?.find(m => m.mbti_type === mbtiType); if (mapping && mapping.hexagram_id) { const hexData = HDB.hexagrams_master?.find(h => h.hexagram_id === mapping.hexagram_id); if (hexData) { scores[HELPERS.id_to_trigram[hexData.upper_trigram_id]] += 10; scores[HELPERS.id_to_trigram[hexData.lower_trigram_id]] += 10; } } return scores; };
+        const calculateEnneagramPoints_full = (enneaTypeList, scores) => { const pointsByRank = [10, 5, 3]; enneaTypeList.forEach((enneaType, i) => { if (i >= pointsByRank.length) return; const points = pointsByRank[i]; const mapping = HDB.enneagram_map?.find(m => m.enneagram_type === parseInt(enneaType)); if (mapping && mapping.hexagram_id) { const hexData = HDB.hexagrams_master?.find(h => h.hexagram_id === mapping.hexagram_id); if (hexData) { const upperName = HELPERS.id_to_trigram[hexData.upper_trigram_id]; const lowerName = HELPERS.id_to_trigram[hexData.lower_trigram_id]; if (upperName === lowerName) { scores[upperName] += points * 2; } else { scores[upperName] += points; scores[lowerName] += points; } } } }); return scores; };
+        const calculateSfPoints_full = (strengths, scores) => { const pointsByRank = [15, 12, 10, 8, 5]; strengths.forEach((strengthName, i) => { if (!strengthName || i >= pointsByRank.length) return; const points = pointsByRank[i]; const mapping = HDB.strengthsfinder_map?.find(m => m.strength_name === strengthName); if (mapping && mapping.base_trigram_id) { const trigramName = HELPERS.id_to_trigram[mapping.base_trigram_id]; if (trigramName) { scores[trigramName] += points; } } }); return scores; };
+        const getPermutations_full = (array, size) => { function* p(array, length) { if (length === 1) { for (const e of array) yield [e]; return; } for (let i = 0; i < array.length; i++) { const first = array[i]; const rest = [...array.slice(0, i), ...array.slice(i + 1)]; for (const perm of p(rest, length - 1)) yield [first, ...perm]; } } return Array.from(p(array, size)); }
+        const generateBunjinAnalysisText_full = (finalScores) => { const sortedScores = Object.entries(finalScores).sort((a, b) => b[1] - a[1]); const top3Trigrams = sortedScores.slice(0, 3).filter(item => item[1] > 0).map(item => item[0]); if (top3Trigrams.length < 2) return "（分析に必要なエネルギーが不足しています）"; let bunjinIntro = `あなたの個性は、主に${top3Trigrams.length}つの「分人」が動かしています。\n\n`; top3Trigrams.forEach((name, i) => { bunjinIntro += `${i + 1}. 【${name}の分人】\n`; }); const synergyTexts = [], conflictTexts = []; const permutations = getPermutations_full(top3Trigrams, 2); permutations.forEach(([sourceName, targetName]) => { const sourceElement = HELPERS.trigram_to_element[sourceName]; const targetElement = HELPERS.trigram_to_element[targetName]; const rel = HDB.element_relationships?.find(r => r.source_element === sourceElement && r.target_element === targetElement); if (rel) { const text = rel.metaphor_text.replace('{source}', `【${sourceName}】`).replace('{target}', `【${targetName}】`); if (rel.relationship_type === '相生') { synergyTexts.push("・ " + text); } else { conflictTexts.push("・ " + text); } } }); let finalText = bunjinIntro; if (synergyTexts.length > 0) finalText += "\n✅ **シナジー（あなたの強みが生まれる流れ）**\n" + synergyTexts.join("\n"); if (conflictTexts.length > 0) finalText += "\n\n⚠️ **葛藤（あなたが成長するための課題）**\n" + conflictTexts.join("\n"); return finalText; };
+        const generateHexagramProfileText_full = (finalScores) => { const sortedScores = Object.entries(finalScores).sort((a, b) => b[1] - a[1]); if (sortedScores.length < 2 || sortedScores[1][1] === 0) return "あなたを象徴する卦を決定できませんでした。"; const upperTrigramName = sortedScores[0][0]; const lowerTrigramName = sortedScores[1][0]; const upperTrigramId = HELPERS.name_to_trigram_id[upperTrigramName]; const lowerTrigramId = HELPERS.name_to_trigram_id[lowerTrigramName]; const profileHex = HDB.hexagrams_master?.find(h => h.upper_trigram_id === upperTrigramId && h.lower_trigram_id === lowerTrigramId); if (profileHex) { let text = `あなたの統合的な人格は、64卦の中で**「${profileHex.hexagram_id}. ${profileHex.name_jp}」**として象徴されます。\n\n`; text += `これは、あなたのエネルギー1位である**【${upperTrigramName}】が「外卦（社会に見せる顔）」**、2位の**【${lowerTrigramName}】が「内卦（内面的な本質）」**となる組み合わせです。\n\n`; text += `**【${profileHex.name_jp}のキーワード】**\n${profileHex.keywords}\n\n`; text += `**【${profileHex.name_jp}の解説】**\n`; text += profileHex.description || "（詳細な解説はデータベースにありません）"; return text; } return `あなたを象徴する卦（上卦：${upperTrigramName}, 下卦：${lowerTrigramName}）は見つかりませんでした。`; };
+        const analyzeUserProfile_full = (userInputs) => { let scores = {'乾': 0, '兌': 0, '離': 0, '震': 0, '巽': 0, '坎': 0, '艮': 0, '坤': 0}; if (userInputs.mbti) scores = calculateMbtiPoints_full(userInputs.mbti, scores); if (userInputs.enneagram) scores = calculateEnneagramPoints_full(userInputs.enneagram, scores); if (userInputs.strengths && userInputs.strengths.length > 0) { scores = calculateSfPoints_full(userInputs.strengths, scores); } const finalScores = Object.fromEntries(Object.entries(scores).map(([k, v]) => [k, Math.round(v)])); const finalReport = { bunjin_analysis: generateBunjinAnalysisText_full(finalScores), hexagram_profile: generateHexagramProfileText_full(finalScores) }; return {'scores': finalScores, 'report': finalReport}; };
+        document.getElementById('analyzeBtn').addEventListener('click', () => {
+            const mbtiType = document.getElementById('mbtiSelect').value;
+            const enneagramTypes = Array.from(document.querySelectorAll('.enneagram-select')).map(s => s.value).filter(v => v);
+            const strengths = Array.from(document.querySelectorAll('.sf-select')).map(s => s.value).filter(v => v);
+            if (!mbtiType || enneagramTypes.length === 0) { alert('MBTIと、主要なエニアグラムタイプを少なくとも1つ選択してください。'); return; }
+            try {
+                const result = analyzeUserProfile_full({mbti: mbtiType, enneagram: enneagramTypes, strengths: strengths});
+                document.getElementById('scores-container').innerHTML = `<h3 class="text-2xl font-bold mb-4 text-indigo-300">あなたのOS構成エネルギー</h3><div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-lg">${Object.entries(result.scores).sort((a,b)=>b[1]-a[1]).map(([n,s])=>`<div><span class="font-bold text-gray-100">${n}:</span> <span class="text-indigo-300">${s}</span></div>`).join('')}</div>`;
+                document.getElementById('bunjin-analysis-container').innerHTML = `<h3 class="text-2xl font-bold mb-4 text-indigo-300">Part A: あなたの人格OSの内部構造（分人分析）</h3><div class="prose-custom">${formatTextToHtml(result.report.bunjin_analysis)}</div>`;
+                document.getElementById('hexagram-profile-container').innerHTML = `<h3 class="text-2xl font-bold mb-4 text-indigo-300">Part B: あなたを象徴する64卦プロファイル</h3><div class="prose-custom">${formatTextToHtml(result.report.hexagram_profile)}</div>`;
+                document.getElementById('input-container').classList.add('hidden');
+                document.getElementById('result-area-container').classList.remove('hidden');
+            } catch (error) { console.error('分析エラー:', error); alert(`分析中にエラーが発生しました。\n${error.message}`); }
+        });
+    </script>
+</body>
+</html>

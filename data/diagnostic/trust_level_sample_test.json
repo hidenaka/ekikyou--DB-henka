@@ -1,0 +1,618 @@
+{
+  "test_date": "2026-01-11 10:58:31",
+  "total_cases": 100,
+  "api_calls": 72,
+  "summary": {
+    "verified": 42,
+    "plausible": 29,
+    "unverified": 29
+  },
+  "details": {
+    "verified": [
+      {
+        "id": "unknown_0",
+        "target_name": "カザフスタン_独裁と経済成長の両立",
+        "scale": "country",
+        "reason": "wiki_match:カザフスタン"
+      },
+      {
+        "id": "unknown_1",
+        "target_name": "松坂大輔のメジャー挑戦失敗と帰国",
+        "scale": "individual",
+        "reason": "wiki_match:松坂大輔"
+      },
+      {
+        "id": "unknown_2",
+        "target_name": "観光協会のインバウンド対応中（2023-2024）",
+        "scale": "other",
+        "reason": "wiki_match:観光"
+      },
+      {
+        "id": "unknown_6",
+        "target_name": "シンガポール_リー・クアンユーの開発独裁",
+        "scale": "country",
+        "reason": "wiki_match:シンガポール"
+      },
+      {
+        "id": "unknown_8",
+        "target_name": "マイケル・ジョーダン（3度の引退と復帰）",
+        "scale": "individual",
+        "reason": "wiki_match:マイケル・ジョーダン"
+      },
+      {
+        "id": "unknown_10",
+        "target_name": "鳥山明",
+        "scale": "individual",
+        "reason": "wiki_match:鳥山明"
+      },
+      {
+        "id": "unknown_11",
+        "target_name": "徳川慶喜",
+        "scale": "individual",
+        "reason": "wiki_match:徳川慶喜"
+      },
+      {
+        "id": "unknown_16",
+        "target_name": "安藤百福",
+        "scale": "individual",
+        "reason": "wiki_match:安藤百福"
+      },
+      {
+        "id": "unknown_17",
+        "target_name": "森永製菓_キャラメルで国民的企業に",
+        "scale": "company",
+        "reason": "wiki_match:森永製菓"
+      },
+      {
+        "id": "unknown_18",
+        "target_name": "ギリシャ・債務危機からの復活（2010-2024）",
+        "scale": "country",
+        "reason": "wiki_match:ギリシャ"
+      },
+      {
+        "id": "unknown_24",
+        "target_name": "村田製作所",
+        "scale": "company",
+        "reason": "wiki_match:村田製作所"
+      },
+      {
+        "id": "unknown_25",
+        "target_name": "ホテル・旅館業界（2024年・中小苦境）",
+        "scale": "other",
+        "reason": "wiki_match:旅館"
+      },
+      {
+        "id": "unknown_27",
+        "target_name": "エジプト アラブの春後の混乱（2011-2024）",
+        "scale": "country",
+        "reason": "wiki_match:エジプト"
+      },
+      {
+        "id": "unknown_28",
+        "target_name": "規制緩和で新規参入急増（2023-2024）",
+        "scale": "other",
+        "reason": "wiki_match:規制緩和"
+      },
+      {
+        "id": "unknown_29",
+        "target_name": "会社_緩やかな技術革新への対応遅れ",
+        "scale": "company",
+        "reason": "wiki_match:会社"
+      },
+      {
+        "id": "unknown_32",
+        "target_name": "三世代同居家族A_介護と世代間葛藤",
+        "scale": "family",
+        "reason": "wiki_match:家族"
+      },
+      {
+        "id": "unknown_33",
+        "target_name": "安倍晋三（銃撃暗殺事件）",
+        "scale": "individual",
+        "reason": "wiki_match:安倍晋三"
+      },
+      {
+        "id": "unknown_36",
+        "target_name": "レバノン 経済崩壊（2019-2024）",
+        "scale": "country",
+        "reason": "wiki_match:レバノン"
+      },
+      {
+        "id": "unknown_37",
+        "target_name": "中国不動産バブル崩壊（2021-2024）",
+        "scale": "country",
+        "reason": "wiki_match:バブル崩壊"
+      },
+      {
+        "id": "unknown_41",
+        "target_name": "NTTドコモ（NTTグループ内での従属）",
+        "scale": "company",
+        "reason": "wiki_match:NTTドコモ"
+      },
+      {
+        "id": "unknown_44",
+        "target_name": "コメダ珈琲（FC展開と上場）",
+        "scale": "company",
+        "reason": "wiki_match:コメダ"
+      },
+      {
+        "id": "unknown_45",
+        "target_name": "セイコー クオーツ腕時計開発（1969）",
+        "scale": "company",
+        "reason": "wiki_match:腕時計"
+      },
+      {
+        "id": "unknown_46",
+        "target_name": "東芝が非上場化完了（2023）",
+        "scale": "company",
+        "reason": "wiki_match:東芝"
+      },
+      {
+        "id": "unknown_47",
+        "target_name": "イースタン航空 破綻（1991）",
+        "scale": "company",
+        "reason": "wiki_match:イースタン航空"
+      },
+      {
+        "id": "unknown_48",
+        "target_name": "Netflix・広告付きプラン導入で成長回復（2022-2024）",
+        "scale": "company",
+        "reason": "wiki_match:Netflix"
+      },
+      {
+        "id": "unknown_49",
+        "target_name": "資格取得_3科目中2科目合格_再挑戦中",
+        "scale": "individual",
+        "reason": "wiki_match:資格"
+      },
+      {
+        "id": "unknown_53",
+        "target_name": "スマートニュース（ユニコーン急落）",
+        "scale": "company",
+        "reason": "wiki_match:スマートニュース"
+      },
+      {
+        "id": "unknown_55",
+        "target_name": "徳川宗家_江戸幕府から華族へ",
+        "scale": "family",
+        "reason": "wiki_match:徳川宗家"
+      },
+      {
+        "id": "unknown_60",
+        "target_name": "大塚家具（親子対立で衰退）",
+        "scale": "family",
+        "reason": "wiki_match:大塚家具"
+      },
+      {
+        "id": "unknown_61",
+        "target_name": "バーガーキング日本撤退（1993-2001）",
+        "scale": "company",
+        "reason": "wiki_match:バーガーキング"
+      },
+      {
+        "id": "unknown_62",
+        "target_name": "マイカル 経営破綻（1963-2001）",
+        "scale": "company",
+        "reason": "wiki_match:マイカル"
+      },
+      {
+        "id": "unknown_65",
+        "target_name": "クラウドファンディング_目標80%達成_製品化",
+        "scale": "company",
+        "reason": "wiki_match:クラウドファンディング"
+      },
+      {
+        "id": "unknown_69",
+        "target_name": "日米半導体協力（2024年強化）",
+        "scale": "country",
+        "reason": "wiki_match:半導体"
+      },
+      {
+        "id": "unknown_78",
+        "target_name": "中村俊輔",
+        "scale": "individual",
+        "reason": "wiki_match:中村俊輔"
+      },
+      {
+        "id": "unknown_79",
+        "target_name": "児童虐待の増加傾向（2023-2024）",
+        "scale": "family",
+        "reason": "wiki_match:児童虐待"
+      },
+      {
+        "id": "unknown_81",
+        "target_name": "医療機関の経営改善中（2021-2024）",
+        "scale": "other",
+        "reason": "wiki_match:医療"
+      },
+      {
+        "id": "unknown_84",
+        "target_name": "日中国交正常化（1972）",
+        "scale": "country",
+        "reason": "wiki_match:日中国交正常化"
+      },
+      {
+        "id": "unknown_90",
+        "target_name": "GIGAスクール構想_1人1台端末",
+        "scale": "other",
+        "reason": "wiki_match:GIGAスクール構想"
+      },
+      {
+        "id": "unknown_91",
+        "target_name": "タクシー会社のライドシェア対応中（2023-2024）",
+        "scale": "company",
+        "reason": "wiki_match:タクシー"
+      },
+      {
+        "id": "unknown_95",
+        "target_name": "サイゼリヤ（低価格戦略確立まで）",
+        "scale": "company",
+        "reason": "wiki_match:サイゼリヤ"
+      },
+      {
+        "id": "unknown_96",
+        "target_name": "ロボット活用拡大中の工場（2020-2024）",
+        "scale": "company",
+        "reason": "wiki_match:ロボット"
+      },
+      {
+        "id": "unknown_99",
+        "target_name": "エア・ベルリン 破綻（2017）",
+        "scale": "company",
+        "reason": "wiki_match:エア・ベルリン"
+      }
+    ],
+    "plausible": [
+      {
+        "id": "unknown_3",
+        "target_name": "いじめ被害後の新天地（2015-2022）",
+        "scale": "individual",
+        "reason": "wiki_related:足尾から来た女"
+      },
+      {
+        "id": "unknown_7",
+        "target_name": "カルディコーヒーファーム 輸入食品ブームへの対応",
+        "scale": "company",
+        "reason": "wiki_related:サントリー"
+      },
+      {
+        "id": "unknown_12",
+        "target_name": "Mさん_30代_生活保護から宅建士取得",
+        "scale": "individual",
+        "reason": "wiki_related:M-1グランプリ"
+      },
+      {
+        "id": "unknown_15",
+        "target_name": "セイノーHD 路線トラックの挑戦（2015-2024）",
+        "scale": "company",
+        "reason": "wiki_related:本田技研工業"
+      },
+      {
+        "id": "unknown_23",
+        "target_name": "資格取得で異業種転職成功（2022-2024）",
+        "scale": "individual",
+        "reason": "wiki_related:ブラック企業"
+      },
+      {
+        "id": "unknown_31",
+        "target_name": "パナソニック プラズマ撤退（2007-2013）",
+        "scale": "company",
+        "reason": "wiki_related:プラズマディスプレイ"
+      },
+      {
+        "id": "unknown_35",
+        "target_name": "いじめサバイバーAさん_高校時代の壮絶ないじめを乗り越え",
+        "scale": "individual",
+        "reason": "wiki_related:サバイバー (日本のテレビ番組)"
+      },
+      {
+        "id": "unknown_38",
+        "target_name": "イスラエルのスタートアップ育成中（2020-2024）",
+        "scale": "country",
+        "reason": "wiki_related:起業"
+      },
+      {
+        "id": "unknown_39",
+        "target_name": "CCさん_20代_フリーランス志望",
+        "scale": "individual",
+        "reason": "wiki_related:軽自動車"
+      },
+      {
+        "id": "unknown_50",
+        "target_name": "I家_DV夫から逃げる",
+        "scale": "family",
+        "reason": "wiki_related:落語家"
+      },
+      {
+        "id": "unknown_52",
+        "target_name": "インドネシア大統領交代（2024）",
+        "scale": "country",
+        "reason": "wiki_related:インドネシアの歴史"
+      },
+      {
+        "id": "unknown_57",
+        "target_name": "AI活用で生産性劇的向上（2023-2024）",
+        "scale": "company",
+        "reason": "wiki_related:ロボティック・プロセス・オートメーション"
+      },
+      {
+        "id": "unknown_59",
+        "target_name": "Three Arrows Capital 破綻（2022）",
+        "scale": "company",
+        "reason": "wiki_related:ヘッジファンド"
+      },
+      {
+        "id": "unknown_63",
+        "target_name": "とんかつ屋・競争激化での生存（2010-2024）",
+        "scale": "company",
+        "reason": "wiki_related:写真週刊誌"
+      },
+      {
+        "id": "unknown_64",
+        "target_name": "グローバル人材採用中の企業（2021-2024）",
+        "scale": "company",
+        "reason": "wiki_related:リクルートホールディングス"
+      },
+      {
+        "id": "unknown_66",
+        "target_name": "生成AI導入による業務改革・三菱UFJ（2024年）",
+        "scale": "company",
+        "reason": "wiki_related:人工知能"
+      },
+      {
+        "id": "unknown_67",
+        "target_name": "キーエンスの利益蓄積モデル",
+        "scale": "company",
+        "reason": "wiki_related:スズキ (企業)"
+      },
+      {
+        "id": "unknown_68",
+        "target_name": "SNS疲れ後のデジタルデトックス（2018-2024）",
+        "scale": "individual",
+        "reason": "wiki_related:ハライチ"
+      },
+      {
+        "id": "unknown_72",
+        "target_name": "社会人大学院生として学習中（2022-2024）",
+        "scale": "individual",
+        "reason": "wiki_related:筑波大学"
+      },
+      {
+        "id": "unknown_73",
+        "target_name": "日本生命_生命保険業の確立",
+        "scale": "company",
+        "reason": "wiki_related:日本生命保険"
+      },
+      {
+        "id": "unknown_75",
+        "target_name": "コンビニの人手不足（2023-2024）",
+        "scale": "company",
+        "reason": "wiki_related:コンビニエンスストア"
+      },
+      {
+        "id": "unknown_76",
+        "target_name": "婚活失敗_02",
+        "scale": "individual",
+        "reason": "wiki_related:結婚活動"
+      },
+      {
+        "id": "unknown_82",
+        "target_name": "引っ越し_新環境獲得_コスト増加",
+        "scale": "individual",
+        "reason": "wiki_related:引越し"
+      },
+      {
+        "id": "unknown_83",
+        "target_name": "三味線教室・伝統芸能の継承（2000-2024）",
+        "scale": "individual",
+        "reason": "wiki_related:歌舞伎"
+      },
+      {
+        "id": "unknown_85",
+        "target_name": "業績低迷企業の苦戦（2023-2024）",
+        "scale": "company",
+        "reason": "wiki_related:総合スーパー"
+      },
+      {
+        "id": "unknown_86",
+        "target_name": "書道教室講師・デジタル時代での継続（2005-2024）",
+        "scale": "individual",
+        "reason": "wiki_related:NHK高校講座"
+      },
+      {
+        "id": "unknown_87",
+        "target_name": "BYD 中国EVメーカーの世界進出（2020-2024）",
+        "scale": "company",
+        "reason": "wiki_related:電気自動車"
+      },
+      {
+        "id": "unknown_93",
+        "target_name": "木工所・縮小安定（2015-2023）",
+        "scale": "company",
+        "reason": "wiki_related:工場"
+      },
+      {
+        "id": "unknown_94",
+        "target_name": "キリンビール_麦酒業界の覇者",
+        "scale": "company",
+        "reason": "wiki_related:麒麟麦酒"
+      }
+    ],
+    "unverified": [
+      {
+        "id": "unknown_4",
+        "target_name": "人気アプリ開発会社・プラットフォーム変更での危機（2018-2022）",
+        "scale": "company",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_5",
+        "target_name": "個人_TOEIC900点への道",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_9",
+        "target_name": "艮結果失敗事例011-3",
+        "scale": "other",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_13",
+        "target_name": "人気相撲力士・怪我からの復帰（2018-2022）",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_14",
+        "target_name": "人気ITコンサルタント・技術変化での危機（2015-2020）",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_19",
+        "target_name": "ウォーターサーバー市場 健康志向の浸透",
+        "scale": "other",
+        "reason": "no_results"
+      },
+      {
+        "id": "unknown_20",
+        "target_name": "艮結果失敗事例003-4",
+        "scale": "country",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_21",
+        "target_name": "人気サーファー・怪我からの復帰（2018-2022）",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_22",
+        "target_name": "離明晰事例4-1",
+        "scale": "other",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_26",
+        "target_name": "艮結果失敗事例013-5",
+        "scale": "family",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_30",
+        "target_name": "人気ブロガー・アルゴリズム変更での苦戦（2018-2022）",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_34",
+        "target_name": "震行動失敗事例009-4",
+        "scale": "family",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_40",
+        "target_name": "巽順応事例33-1",
+        "scale": "company",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_42",
+        "target_name": "個人_育休取得した男性管理職",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_43",
+        "target_name": "震行動失敗事例005-1",
+        "scale": "company",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_51",
+        "target_name": "人気計測器メーカー・デジタル化への対応（2016-2022）",
+        "scale": "company",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_54",
+        "target_name": "人気ヨガインストラクター・スタジオ閉鎖での危機（2020-2023）",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_56",
+        "target_name": "震行動失敗事例010-2",
+        "scale": "company",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_58",
+        "target_name": "離輝き事例18-2",
+        "scale": "individual",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_70",
+        "target_name": "巽順応事例42-2",
+        "scale": "individual",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_71",
+        "target_name": "震行動失敗事例008-1",
+        "scale": "company",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_74",
+        "target_name": "人気アパレル・ファストファッションとの競争（2008-2018）",
+        "scale": "company",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_77",
+        "target_name": "人気自治会・担い手不足での危機（2012-2022）",
+        "scale": "other",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_80",
+        "target_name": "坎結果失敗事例014-2",
+        "scale": "individual",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_88",
+        "target_name": "震結果失敗事例011-2",
+        "scale": "individual",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_89",
+        "target_name": "巽順応事例31-1",
+        "scale": "company",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_92",
+        "target_name": "個人_簿記から税理士へ",
+        "scale": "individual",
+        "reason": "generic_pattern"
+      },
+      {
+        "id": "unknown_97",
+        "target_name": "艮結果失敗事例032-5",
+        "scale": "family",
+        "reason": "id_pattern"
+      },
+      {
+        "id": "unknown_98",
+        "target_name": "坎結果失敗事例008-3",
+        "scale": "other",
+        "reason": "id_pattern"
+      }
+    ]
+  }
+}

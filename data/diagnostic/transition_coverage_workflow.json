@@ -1,0 +1,94 @@
+{
+  "workflow_name": "4段階遷移パターン網羅ワークフロー",
+  "created": "2026-01-05",
+  "last_updated": "2026-01-05",
+  "status": "active",
+  "goal": "4段階遷移パターンのカバー率を30%→70%に向上",
+  "initial_state": {
+    "total_patterns": 4096,
+    "covered_patterns": 1226,
+    "coverage_rate": 29.9,
+    "missing_patterns": 2870,
+    "total_cases": 8378
+  },
+  "current_state": {
+    "total_patterns": 4096,
+    "covered_patterns": 1339,
+    "coverage_rate": 32.7,
+    "missing_patterns": 2757,
+    "total_cases": 8449,
+    "new_patterns_added": 113,
+    "duplicates_removed": 413,
+    "unique_cases_added": 405
+  },
+  "batches_added_session": [
+    "batch_transition_targeted_013.json - 離→震→巽系",
+    "batch_transition_targeted_014.json - IT/音楽配信系",
+    "batch_transition_targeted_015.json - 危機/破綻系",
+    "batch_transition_targeted_016.json - AI/スタートアップ系",
+    "batch_transition_targeted_017.json - アフリカ/中東国家系",
+    "batch_transition_targeted_018.json - 飲食/デリバリー系",
+    "batch_transition_targeted_019.json - イベント/インフラ系",
+    "batch_transition_targeted_020.json - 自動車/プラットフォーム系",
+    "batch_transition_targeted_021.json - 金融業界系",
+    "batch_transition_targeted_022.json - 電機/製造業系",
+    "batch_transition_targeted_023.json - 鉄道/百貨店系",
+    "batch_transition_targeted_024.json - 消費財/化粧品系",
+    "batch_transition_targeted_025.json - 物流系",
+    "batch_transition_targeted_026.json - ゲーム系",
+    "batch_transition_targeted_027.json - 自動車EV系",
+    "batch_transition_targeted_028.json - 金融不正系",
+    "batch_transition_targeted_029.json - 危機国家系",
+    "batch_transition_targeted_030.json - FA/産業機械系",
+    "batch_transition_targeted_031.json - 艮→坎系/製造業危機系",
+    "batch_transition_targeted_032.json - 巽→震系/ゲーム業界系",
+    "batch_transition_targeted_033.json - 歴史/政治系",
+    "batch_transition_targeted_034.json - IT/金融転換系",
+    "batch_transition_targeted_035.json - 製造業転換系",
+    "batch_transition_targeted_036.json - 韓国/欧州企業系",
+    "batch_transition_targeted_037.json - 離→坎→巽→離系",
+    "batch_transition_targeted_038.json - 危機国家系2",
+    "batch_transition_targeted_039.json - 運輸系",
+    "batch_transition_targeted_040.json - アパレル/百貨店系",
+    "batch_transition_targeted_041.json - OA機器系",
+    "batch_transition_targeted_042.json - 重電/製造業系",
+    "batch_transition_targeted_043.json - 不動産/建設系",
+    "batch_transition_targeted_044.json - エネルギー系"
+  ],
+  "remaining_priority_patterns": [
+    "艮→坎→坤→乾",
+    "艮→坎→坎→乾",
+    "艮→坎→兌→震",
+    "艮→坎→兌→乾",
+    "巽→震→震→離",
+    "巽→震→震→坤"
+  ],
+  "phases": [
+    {
+      "id": "Phase1",
+      "name": "優先100パターン対応",
+      "target": 100,
+      "status": "in_progress",
+      "progress": 113
+    },
+    {
+      "id": "Phase2",
+      "name": "中優先500パターン対応",
+      "target": 500,
+      "status": "pending",
+      "progress": 0
+    }
+  ],
+  "resume_instructions": [
+    "1. python3 scripts/check_transition_coverage.py で現状確認",
+    "2. 重複確認: python3 -c で target_name 重複チェック実行",
+    "3. 未カバーパターンに対応する実事例を調査",
+    "4. batch_transition_targeted_XXX.json 形式で追加"
+  ],
+  "notes": [
+    "2026-01-05: 32.2%達成 (1,319パターン/8,332件)",
+    "2026-01-05: 32.7%達成 (1,339パターン/8,449件)",
+    "batch_transition_targeted_013〜044を追加（256件）",
+    "次回目標: 33%（約1,351パターン、あと12パターン）"
+  ]
+}

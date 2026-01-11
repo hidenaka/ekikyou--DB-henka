@@ -1,0 +1,127 @@
+{
+  "version": "1.1",
+  "description": "位相×勢×時の判定ルール（計算可能版）",
+
+  "phase_definitions": {
+    "乾": {"name": "創造・主導", "base_action": "攻める・挑戦", "risk_action": "耐える・潜伏"},
+    "坤": {"name": "受容・育成", "base_action": "守る・維持", "risk_action": "攻める・挑戦"},
+    "震": {"name": "覚醒・始動", "base_action": "攻める・挑戦", "risk_action": "耐える・潜伏"},
+    "巽": {"name": "浸透・適応", "base_action": "守る・維持", "risk_action": "攻める・挑戦"},
+    "坎": {"name": "試練・深化", "base_action": "耐える・潜伏", "risk_action": "逃げる・放置"},
+    "離": {"name": "明晰・発現", "base_action": "攻める・挑戦", "risk_action": "耐える・潜伏"},
+    "艮": {"name": "停止・内省", "base_action": "耐える・潜伏", "risk_action": "攻める・挑戦"},
+    "兌": {"name": "交流・喜悦", "base_action": "対話・融合", "risk_action": "耐える・潜伏"}
+  },
+
+  "momentum_rules": {
+    "calculation": {
+      "input_scores": ["Q1.score", "Q2.score", "Q5.score", "Q6.score"],
+      "formula": "average",
+      "thresholds": [
+        {"id": "ascending", "condition": "score >= 1.0", "label": "上昇の勢い"},
+        {"id": "stable", "condition": "-0.5 <= score < 1.0", "label": "安定"},
+        {"id": "descending", "condition": "-2.0 <= score < -0.5", "label": "下降の勢い"},
+        {"id": "chaotic", "condition": "score < -2.0", "label": "混乱"}
+      ]
+    },
+    "action_modifiers": {
+      "ascending": {
+        "boost": ["攻める・挑戦", "刷新・破壊"],
+        "penalty": ["耐える・潜伏", "逃げる・放置"],
+        "modifier": 1.2
+      },
+      "descending": {
+        "boost": ["耐える・潜伏", "守る・維持", "捨てる・撤退"],
+        "penalty": ["攻める・挑戦"],
+        "modifier": 1.2
+      },
+      "stable": {
+        "boost": ["守る・維持", "対話・融合"],
+        "penalty": [],
+        "modifier": 1.1
+      },
+      "chaotic": {
+        "boost": ["耐える・潜伏", "守る・維持"],
+        "penalty": ["攻める・挑戦", "刷新・破壊"],
+        "modifier": 1.3
+      }
+    }
+  },
+
+  "timing_rules": {
+    "calculation": {
+      "input_scores": ["Q3.score", "Q5.score", "Q6.score"],
+      "formula": "(Q3.score + Q5.score - Q6.score) / 3",
+      "thresholds": [
+        {"id": "act_now", "condition": "score >= 1.0", "label": "動くべき時"},
+        {"id": "adapt", "condition": "-1.0 <= score < 1.0", "label": "適応すべき時"},
+        {"id": "wait", "condition": "score < -1.0", "label": "待つべき時"}
+      ]
+    },
+    "action_modifiers": {
+      "act_now": {
+        "boost": ["攻める・挑戦", "刷新・破壊"],
+        "penalty": ["耐える・潜伏"],
+        "modifier": 1.3
+      },
+      "adapt": {
+        "boost": ["守る・維持", "対話・融合"],
+        "penalty": [],
+        "modifier": 1.0
+      },
+      "wait": {
+        "boost": ["耐える・潜伏", "守る・維持"],
+        "penalty": ["攻める・挑戦", "刷新・破壊"],
+        "modifier": 1.3
+      }
+    }
+  },
+
+  "composite_scoring": {
+    "description": "最終的な行動推奨スコアの計算方法",
+    "statistics_lookup_priority": {
+      "description": "条件が揃うほど精度が高いテーブルを優先使用",
+      "order": [
+        {"table": "by_state_trigger_action", "conditions": ["before_state", "trigger_type"], "priority": 1},
+        {"table": "by_before_state_action", "conditions": ["before_state"], "priority": 2},
+        {"table": "by_trigger_action", "conditions": ["trigger_type"], "priority": 3},
+        {"table": "by_before_hex_action", "conditions": ["before_hex"], "priority": 4}
+      ],
+      "fallback_rule": "条件が一致するテーブルのうち最も priority が低い（数字が小さい）ものを使用"
+    },
+    "steps": [
+      "1. statistics_lookup_priority に従い、条件に合致するテーブルから成功率を取得",
+      "2. primary_hex の base_action に +10、risk_action に -10",
+      "3. momentum_modifier を適用（boost: ×modifier、penalty: ×(1/modifier)）",
+      "4. timing_modifier を適用（同上）",
+      "5. Q8の preferred_action に +15",
+      "6. Q7の avoid_pattern に該当する失敗パターンが多い action に -20",
+      "7. 最終スコアでランキングし、上位3つを推奨"
+    ],
+    "output_format": {
+      "primary_recommendation": "最高スコアの行動",
+      "secondary_recommendations": ["2位", "3位"],
+      "warnings": "avoid_pattern に基づく警告",
+      "confidence": "サンプル数と成功率から算出"
+    }
+  },
+
+  "output_templates": {
+    "act_now_ascending": {
+      "judgment": "好機到来。積極的に動くべき時です。",
+      "detail": "状況は上向きで、見通しも立っています。この機会を逃さず行動を。"
+    },
+    "wait_descending": {
+      "judgment": "試練の時。耐えて力を蓄える時期です。",
+      "detail": "無理に動くと傷が深くなります。状況が落ち着くまで守りを固めて。"
+    },
+    "adapt_stable": {
+      "judgment": "安定期。基盤を固めつつ次の準備を。",
+      "detail": "大きな変化は必要ありません。今あるものを大切に育てる時期です。"
+    },
+    "adapt_chaotic": {
+      "judgment": "混乱の中。柔軟に対応しながら軸を保って。",
+      "detail": "方向性が見えにくい時期です。大きな決断は避け、状況を見極めて。"
+    }
+  }
+}

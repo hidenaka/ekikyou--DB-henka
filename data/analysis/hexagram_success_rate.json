@@ -1,0 +1,642 @@
+{
+  "1": {
+    "id": 1,
+    "name": "乾為天",
+    "keyword": "創造・剛健・リーダーシップ",
+    "total": 394,
+    "success": 142,
+    "failure": 252,
+    "other": 0,
+    "success_rate": 0.3604
+  },
+  "2": {
+    "id": 2,
+    "name": "坤為地",
+    "keyword": "受容・柔順・包容力",
+    "total": 782,
+    "success": 364,
+    "failure": 418,
+    "other": 0,
+    "success_rate": 0.4655
+  },
+  "3": {
+    "id": 3,
+    "name": "水雷屯",
+    "keyword": "産みの苦しみ・困難な始まり",
+    "total": 203,
+    "success": 50,
+    "failure": 153,
+    "other": 0,
+    "success_rate": 0.2463
+  },
+  "4": {
+    "id": 4,
+    "name": "山水蒙",
+    "keyword": "蒙昧・教育・啓発",
+    "total": 146,
+    "success": 57,
+    "failure": 89,
+    "other": 0,
+    "success_rate": 0.3904
+  },
+  "5": {
+    "id": 5,
+    "name": "水天需",
+    "keyword": "待機・準備・忍耐",
+    "total": 114,
+    "success": 21,
+    "failure": 93,
+    "other": 0,
+    "success_rate": 0.1842
+  },
+  "6": {
+    "id": 6,
+    "name": "天水訟",
+    "keyword": "争い・訴訟・対立",
+    "total": 195,
+    "success": 105,
+    "failure": 90,
+    "other": 0,
+    "success_rate": 0.5385
+  },
+  "7": {
+    "id": 7,
+    "name": "地水師",
+    "keyword": "軍隊・組織・統率",
+    "total": 194,
+    "success": 29,
+    "failure": 165,
+    "other": 0,
+    "success_rate": 0.1495
+  },
+  "8": {
+    "id": 8,
+    "name": "水地比",
+    "keyword": "親和・協力・連帯",
+    "total": 22,
+    "success": 16,
+    "failure": 6,
+    "other": 0,
+    "success_rate": 0.7273
+  },
+  "9": {
+    "id": 9,
+    "name": "風天小畜",
+    "keyword": "小さな蓄積・抑制",
+    "total": 55,
+    "success": 21,
+    "failure": 34,
+    "other": 0,
+    "success_rate": 0.3818
+  },
+  "10": {
+    "id": 10,
+    "name": "天沢履",
+    "keyword": "礼儀・慎重・実践",
+    "total": 41,
+    "success": 25,
+    "failure": 16,
+    "other": 0,
+    "success_rate": 0.6098
+  },
+  "11": {
+    "id": 11,
+    "name": "地天泰",
+    "keyword": "平和・繁栄・調和",
+    "total": 57,
+    "success": 5,
+    "failure": 52,
+    "other": 0,
+    "success_rate": 0.0877
+  },
+  "12": {
+    "id": 12,
+    "name": "天地否",
+    "keyword": "閉塞・停滞・不通",
+    "total": 36,
+    "success": 29,
+    "failure": 7,
+    "other": 0,
+    "success_rate": 0.8056
+  },
+  "13": {
+    "id": 13,
+    "name": "天火同人",
+    "keyword": "協調・同志・共感",
+    "total": 131,
+    "success": 117,
+    "failure": 14,
+    "other": 0,
+    "success_rate": 0.8931
+  },
+  "14": {
+    "id": 14,
+    "name": "火天大有",
+    "keyword": "大いなる所有・繁栄",
+    "total": 12,
+    "success": 3,
+    "failure": 9,
+    "other": 0,
+    "success_rate": 0.25
+  },
+  "15": {
+    "id": 15,
+    "name": "地山謙",
+    "keyword": "謙虚・謙遜・控えめ",
+    "total": 149,
+    "success": 21,
+    "failure": 128,
+    "other": 0,
+    "success_rate": 0.1409
+  },
+  "16": {
+    "id": 16,
+    "name": "雷地豫",
+    "keyword": "喜び・準備・楽観",
+    "total": 115,
+    "success": 109,
+    "failure": 6,
+    "other": 0,
+    "success_rate": 0.9478
+  },
+  "17": {
+    "id": 17,
+    "name": "沢雷随",
+    "keyword": "従う・適応・柔軟",
+    "total": 26,
+    "success": 19,
+    "failure": 7,
+    "other": 0,
+    "success_rate": 0.7308
+  },
+  "18": {
+    "id": 18,
+    "name": "山風蠱",
+    "keyword": "腐敗・改革・刷新",
+    "total": 60,
+    "success": 6,
+    "failure": 54,
+    "other": 0,
+    "success_rate": 0.1
+  },
+  "19": {
+    "id": 19,
+    "name": "地沢臨",
+    "keyword": "臨む・接近・監督",
+    "total": 45,
+    "success": 13,
+    "failure": 32,
+    "other": 0,
+    "success_rate": 0.2889
+  },
+  "20": {
+    "id": 20,
+    "name": "風地観",
+    "keyword": "観察・洞察・模範",
+    "total": 18,
+    "success": 16,
+    "failure": 2,
+    "other": 0,
+    "success_rate": 0.8889
+  },
+  "21": {
+    "id": 21,
+    "name": "火雷噬嗑",
+    "keyword": "噛み砕く・障害除去",
+    "total": 25,
+    "success": 13,
+    "failure": 12,
+    "other": 0,
+    "success_rate": 0.52
+  },
+  "22": {
+    "id": 22,
+    "name": "山火賁",
+    "keyword": "飾り・文化・美化",
+    "total": 53,
+    "success": 22,
+    "failure": 31,
+    "other": 0,
+    "success_rate": 0.4151
+  },
+  "23": {
+    "id": 23,
+    "name": "山地剥",
+    "keyword": "剥落・衰退・崩壊",
+    "total": 24,
+    "success": 13,
+    "failure": 11,
+    "other": 0,
+    "success_rate": 0.5417
+  },
+  "24": {
+    "id": 24,
+    "name": "地雷復",
+    "keyword": "復帰・回復・再生",
+    "total": 102,
+    "success": 7,
+    "failure": 95,
+    "other": 0,
+    "success_rate": 0.0686
+  },
+  "25": {
+    "id": 25,
+    "name": "天雷无妄",
+    "keyword": "無妄・誠実・天命",
+    "total": 299,
+    "success": 194,
+    "failure": 105,
+    "other": 0,
+    "success_rate": 0.6488
+  },
+  "26": {
+    "id": 26,
+    "name": "山天大畜",
+    "keyword": "大きな蓄積・抑制",
+    "total": 37,
+    "success": 19,
+    "failure": 18,
+    "other": 0,
+    "success_rate": 0.5135
+  },
+  "27": {
+    "id": 27,
+    "name": "山雷頤",
+    "keyword": "養い・養生・育成",
+    "total": 43,
+    "success": 12,
+    "failure": 31,
+    "other": 0,
+    "success_rate": 0.2791
+  },
+  "28": {
+    "id": 28,
+    "name": "沢風大過",
+    "keyword": "過剰・無理・極端",
+    "total": 25,
+    "success": 19,
+    "failure": 6,
+    "other": 0,
+    "success_rate": 0.76
+  },
+  "29": {
+    "id": 29,
+    "name": "坎為水",
+    "keyword": "危険・試練・忍耐",
+    "total": 616,
+    "success": 372,
+    "failure": 244,
+    "other": 0,
+    "success_rate": 0.6039
+  },
+  "30": {
+    "id": 30,
+    "name": "離為火",
+    "keyword": "明るさ・依存・輝き",
+    "total": 91,
+    "success": 49,
+    "failure": 42,
+    "other": 0,
+    "success_rate": 0.5385
+  },
+  "31": {
+    "id": 31,
+    "name": "沢山咸",
+    "keyword": "感応・交流・共鳴",
+    "total": 82,
+    "success": 77,
+    "failure": 5,
+    "other": 0,
+    "success_rate": 0.939
+  },
+  "32": {
+    "id": 32,
+    "name": "雷風恒",
+    "keyword": "恒常・持続・不変",
+    "total": 195,
+    "success": 133,
+    "failure": 62,
+    "other": 0,
+    "success_rate": 0.6821
+  },
+  "33": {
+    "id": 33,
+    "name": "天山遯",
+    "keyword": "退却・隠遁・避難",
+    "total": 329,
+    "success": 198,
+    "failure": 131,
+    "other": 0,
+    "success_rate": 0.6018
+  },
+  "34": {
+    "id": 34,
+    "name": "雷天大壮",
+    "keyword": "大いなる力・勢い",
+    "total": 70,
+    "success": 11,
+    "failure": 59,
+    "other": 0,
+    "success_rate": 0.1571
+  },
+  "35": {
+    "id": 35,
+    "name": "火地晋",
+    "keyword": "進む・昇進・発展",
+    "total": 16,
+    "success": 15,
+    "failure": 1,
+    "other": 0,
+    "success_rate": 0.9375
+  },
+  "36": {
+    "id": 36,
+    "name": "地火明夷",
+    "keyword": "傷つく明るさ・潜伏",
+    "total": 22,
+    "success": 9,
+    "failure": 13,
+    "other": 0,
+    "success_rate": 0.4091
+  },
+  "37": {
+    "id": 37,
+    "name": "風火家人",
+    "keyword": "家庭・組織・内部",
+    "total": 26,
+    "success": 15,
+    "failure": 11,
+    "other": 0,
+    "success_rate": 0.5769
+  },
+  "38": {
+    "id": 38,
+    "name": "火沢睽",
+    "keyword": "背反・対立・相違",
+    "total": 17,
+    "success": 4,
+    "failure": 13,
+    "other": 0,
+    "success_rate": 0.2353
+  },
+  "39": {
+    "id": 39,
+    "name": "水山蹇",
+    "keyword": "困難・険阻・足踏み",
+    "total": 189,
+    "success": 28,
+    "failure": 161,
+    "other": 0,
+    "success_rate": 0.1481
+  },
+  "40": {
+    "id": 40,
+    "name": "雷水解",
+    "keyword": "解放・解決・緩和",
+    "total": 552,
+    "success": 424,
+    "failure": 128,
+    "other": 0,
+    "success_rate": 0.7681
+  },
+  "41": {
+    "id": 41,
+    "name": "山沢損",
+    "keyword": "損・減らす・献身",
+    "total": 20,
+    "success": 14,
+    "failure": 6,
+    "other": 0,
+    "success_rate": 0.7
+  },
+  "42": {
+    "id": 42,
+    "name": "風雷益",
+    "keyword": "益・増やす・恩恵",
+    "total": 19,
+    "success": 15,
+    "failure": 4,
+    "other": 0,
+    "success_rate": 0.7895
+  },
+  "43": {
+    "id": 43,
+    "name": "沢天夬",
+    "keyword": "決断・決裂・断行",
+    "total": 19,
+    "success": 9,
+    "failure": 10,
+    "other": 0,
+    "success_rate": 0.4737
+  },
+  "44": {
+    "id": 44,
+    "name": "天風姤",
+    "keyword": "出会い・遭遇・邂逅",
+    "total": 29,
+    "success": 27,
+    "failure": 2,
+    "other": 0,
+    "success_rate": 0.931
+  },
+  "45": {
+    "id": 45,
+    "name": "沢地萃",
+    "keyword": "集合・集結・結集",
+    "total": 18,
+    "success": 17,
+    "failure": 1,
+    "other": 0,
+    "success_rate": 0.9444
+  },
+  "46": {
+    "id": 46,
+    "name": "地風升",
+    "keyword": "上昇・昇進・成長",
+    "total": 16,
+    "success": 12,
+    "failure": 4,
+    "other": 0,
+    "success_rate": 0.75
+  },
+  "47": {
+    "id": 47,
+    "name": "沢水困",
+    "keyword": "困窮・苦境・試練",
+    "total": 23,
+    "success": 20,
+    "failure": 3,
+    "other": 0,
+    "success_rate": 0.8696
+  },
+  "48": {
+    "id": 48,
+    "name": "水風井",
+    "keyword": "井戸・源泉・不変",
+    "total": 42,
+    "success": 29,
+    "failure": 13,
+    "other": 0,
+    "success_rate": 0.6905
+  },
+  "49": {
+    "id": 49,
+    "name": "沢火革",
+    "keyword": "革命・変革・刷新",
+    "total": 31,
+    "success": 29,
+    "failure": 2,
+    "other": 0,
+    "success_rate": 0.9355
+  },
+  "50": {
+    "id": 50,
+    "name": "火風鼎",
+    "keyword": "鼎・新体制・調和",
+    "total": 17,
+    "success": 14,
+    "failure": 3,
+    "other": 0,
+    "success_rate": 0.8235
+  },
+  "51": {
+    "id": 51,
+    "name": "震為雷",
+    "keyword": "衝撃・覚醒・行動",
+    "total": 770,
+    "success": 305,
+    "failure": 465,
+    "other": 0,
+    "success_rate": 0.3961
+  },
+  "52": {
+    "id": 52,
+    "name": "艮為山",
+    "keyword": "停止・静止・内省",
+    "total": 466,
+    "success": 247,
+    "failure": 219,
+    "other": 0,
+    "success_rate": 0.53
+  },
+  "53": {
+    "id": 53,
+    "name": "風山漸",
+    "keyword": "漸進・段階・着実",
+    "total": 283,
+    "success": 108,
+    "failure": 175,
+    "other": 0,
+    "success_rate": 0.3816
+  },
+  "54": {
+    "id": 54,
+    "name": "雷沢帰妹",
+    "keyword": "従属・副次・縁組",
+    "total": 273,
+    "success": 188,
+    "failure": 85,
+    "other": 0,
+    "success_rate": 0.6886
+  },
+  "55": {
+    "id": 55,
+    "name": "雷火豊",
+    "keyword": "豊か・繁栄・盛大",
+    "total": 265,
+    "success": 146,
+    "failure": 119,
+    "other": 0,
+    "success_rate": 0.5509
+  },
+  "56": {
+    "id": 56,
+    "name": "火山旅",
+    "keyword": "旅・流浪・一時的",
+    "total": 49,
+    "success": 37,
+    "failure": 12,
+    "other": 0,
+    "success_rate": 0.7551
+  },
+  "57": {
+    "id": 57,
+    "name": "巽為風",
+    "keyword": "従順・浸透・柔軟",
+    "total": 183,
+    "success": 137,
+    "failure": 46,
+    "other": 0,
+    "success_rate": 0.7486
+  },
+  "58": {
+    "id": 58,
+    "name": "兌為沢",
+    "keyword": "喜び・悦楽・交流",
+    "total": 144,
+    "success": 101,
+    "failure": 43,
+    "other": 0,
+    "success_rate": 0.7014
+  },
+  "59": {
+    "id": 59,
+    "name": "風水渙",
+    "keyword": "散らす・解散・拡散",
+    "total": 202,
+    "success": 31,
+    "failure": 171,
+    "other": 0,
+    "success_rate": 0.1535
+  },
+  "60": {
+    "id": 60,
+    "name": "水沢節",
+    "keyword": "節度・制限・節約",
+    "total": 181,
+    "success": 126,
+    "failure": 55,
+    "other": 0,
+    "success_rate": 0.6961
+  },
+  "61": {
+    "id": 61,
+    "name": "風沢中孚",
+    "keyword": "誠・信頼・真心",
+    "total": 18,
+    "success": 17,
+    "failure": 1,
+    "other": 0,
+    "success_rate": 0.9444
+  },
+  "62": {
+    "id": 62,
+    "name": "雷山小過",
+    "keyword": "小さな過ち・謙虚",
+    "total": 651,
+    "success": 218,
+    "failure": 433,
+    "other": 0,
+    "success_rate": 0.3349
+  },
+  "63": {
+    "id": 63,
+    "name": "水火既済",
+    "keyword": "完成・達成・調和",
+    "total": 78,
+    "success": 20,
+    "failure": 58,
+    "other": 0,
+    "success_rate": 0.2564
+  },
+  "64": {
+    "id": 64,
+    "name": "火水未済",
+    "keyword": "未完成・発展途上",
+    "total": 42,
+    "success": 29,
+    "failure": 13,
+    "other": 0,
+    "success_rate": 0.6905
+  }
+}

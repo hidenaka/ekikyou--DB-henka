@@ -1,0 +1,1046 @@
+{
+  "created_at": "2026-01-09T13:32:37.469417",
+  "train_samples": 5068,
+  "valid_samples": 1689,
+  "models": {
+    "probability": {
+      "type": "conditional_probability",
+      "train_accuracy": 72.73086029992108,
+      "valid_accuracy": 70.27827116637063,
+      "data": {
+        "conditional": {
+          "('停滞・閉塞', '攻める・挑戦')": {
+            "Mixed": 54,
+            "Success": 184,
+            "Failure": 34,
+            "PartialSuccess": 11
+          },
+          "('成長痛', '捨てる・撤退')": {
+            "Failure": 127,
+            "Success": 18,
+            "Mixed": 25,
+            "PartialSuccess": 1
+          },
+          "('安定・平和', '対話・融合')": {
+            "Success": 86,
+            "Failure": 69,
+            "Mixed": 7
+          },
+          "('混乱・カオス', '攻める・挑戦')": {
+            "Mixed": 8,
+            "Failure": 7,
+            "Success": 6,
+            "PartialSuccess": 1
+          },
+          "('混乱・カオス', '耐える・潜伏')": {
+            "Mixed": 13,
+            "Failure": 62,
+            "Success": 2,
+            "PartialSuccess": 2
+          },
+          "('安定・平和', '捨てる・撤退')": {
+            "Success": 14,
+            "Failure": 5,
+            "Mixed": 3
+          },
+          "('安定・平和', '攻める・挑戦')": {
+            "Success": 173,
+            "Failure": 49,
+            "PartialSuccess": 17,
+            "Mixed": 41
+          },
+          "('混乱・衰退', '攻める・挑戦')": {
+            "Success": 26,
+            "Mixed": 3
+          },
+          "('絶頂・慢心', '刷新・破壊')": {
+            "Success": 12,
+            "Failure": 16,
+            "Mixed": 19,
+            "PartialSuccess": 5
+          },
+          "('混乱・衰退', '耐える・潜伏')": {
+            "Success": 41,
+            "Failure": 105,
+            "Mixed": 25
+          },
+          "('安定成長・成功', '捨てる・撤退')": {
+            "Success": 80,
+            "Mixed": 15
+          },
+          "('成長痛', '攻める・挑戦')": {
+            "Failure": 124,
+            "Success": 193,
+            "PartialSuccess": 9,
+            "Mixed": 58
+          },
+          "('成長痛', '対話・融合')": {
+            "Mixed": 13,
+            "Success": 76,
+            "Failure": 34
+          },
+          "('どん底・危機', '守る・維持')": {
+            "PartialSuccess": 1,
+            "Failure": 3,
+            "Success": 8,
+            "Mixed": 3
+          },
+          "('混乱・衰退', '捨てる・撤退')": {
+            "Success": 77,
+            "Mixed": 54,
+            "Failure": 9
+          },
+          "('安定成長・成功', '耐える・潜伏')": {
+            "Success": 62,
+            "Mixed": 17
+          },
+          "('停滞・閉塞', '刷新・破壊')": {
+            "Failure": 22,
+            "Success": 87,
+            "Mixed": 23,
+            "PartialSuccess": 1
+          },
+          "('安定・平和', '守る・維持')": {
+            "Mixed": 33,
+            "Success": 76,
+            "Failure": 53,
+            "PartialSuccess": 2
+          },
+          "('絶頂・慢心', '逃げる・放置')": {
+            "Failure": 43,
+            "Mixed": 5
+          },
+          "('安定・平和', '耐える・潜伏')": {
+            "Success": 16,
+            "PartialSuccess": 1,
+            "Failure": 31,
+            "Mixed": 22
+          },
+          "('拡大・繁栄', '攻める・挑戦')": {
+            "Success": 33,
+            "Mixed": 2
+          },
+          "('停滞・閉塞', '守る・維持')": {
+            "Failure": 88,
+            "Mixed": 21,
+            "Success": 10,
+            "PartialSuccess": 1
+          },
+          "('混乱・衰退', '対話・融合')": {
+            "Success": 92
+          },
+          "('成長痛', '刷新・破壊')": {
+            "Success": 27,
+            "Mixed": 8,
+            "Failure": 8
+          },
+          "('どん底・危機', '攻める・挑戦')": {
+            "Success": 95,
+            "Mixed": 14,
+            "Failure": 7
+          },
+          "('混乱・カオス', '刷新・破壊')": {
+            "Success": 23,
+            "Failure": 5,
+            "Mixed": 9,
+            "PartialSuccess": 2
+          },
+          "('混乱・カオス', '分散・スピンオフ')": {
+            "Mixed": 2,
+            "Success": 1,
+            "Failure": 1
+          },
+          "('混乱・カオス', '対話・融合')": {
+            "Success": 23,
+            "Failure": 25,
+            "Mixed": 4,
+            "PartialSuccess": 2
+          },
+          "('絶頂・慢心', '捨てる・撤退')": {
+            "Failure": 12,
+            "Success": 7,
+            "PartialSuccess": 4,
+            "Mixed": 5
+          },
+          "('どん底・危機', '耐える・潜伏')": {
+            "Mixed": 35,
+            "Success": 72,
+            "Failure": 65,
+            "PartialSuccess": 3
+          },
+          "('安定・停止', '分散・スピンオフ')": {
+            "Mixed": 152,
+            "Success": 49
+          },
+          "('どん底・危機', '刷新・破壊')": {
+            "Success": 65,
+            "Mixed": 10,
+            "PartialSuccess": 1
+          },
+          "('安定・停止', '対話・融合')": {
+            "Success": 30
+          },
+          "('成長痛', '守る・維持')": {
+            "Mixed": 26,
+            "Failure": 63,
+            "Success": 22,
+            "PartialSuccess": 5
+          },
+          "('絶頂・慢心', '攻める・挑戦')": {
+            "Failure": 37,
+            "PartialSuccess": 2,
+            "Success": 7,
+            "Mixed": 9
+          },
+          "('どん底・危機', '対話・融合')": {
+            "Success": 22,
+            "Mixed": 8,
+            "PartialSuccess": 2
+          },
+          "('拡大・繁栄', '分散・スピンオフ')": {
+            "Mixed": 19,
+            "Success": 6
+          },
+          "('安定・平和', '分散・スピンオフ')": {
+            "Success": 15
+          },
+          "('安定・停止', '攻める・挑戦')": {
+            "Success": 54,
+            "Mixed": 3
+          },
+          "('成長・拡大', '攻める・挑戦')": {
+            "Success": 43
+          },
+          "('停滞・閉塞', '捨てる・撤退')": {
+            "Failure": 63,
+            "Success": 15,
+            "Mixed": 21,
+            "PartialSuccess": 1
+          },
+          "('安定・平和', '刷新・破壊')": {
+            "Failure": 50,
+            "Mixed": 35,
+            "Success": 49,
+            "PartialSuccess": 1
+          },
+          "('絶頂・慢心', '耐える・潜伏')": {
+            "Success": 8,
+            "Mixed": 22,
+            "Failure": 25,
+            "PartialSuccess": 5
+          },
+          "('混乱・衰退', '分散・スピンオフ')": {
+            "Success": 31,
+            "Mixed": 39
+          },
+          "('成長痛', '耐える・潜伏')": {
+            "Mixed": 107,
+            "Failure": 53,
+            "Success": 16,
+            "PartialSuccess": 3
+          },
+          "('停滞・閉塞', '対話・融合')": {
+            "Mixed": 25,
+            "Success": 113,
+            "Failure": 10,
+            "PartialSuccess": 1
+          },
+          "('停滞・閉塞', '耐える・潜伏')": {
+            "Mixed": 11,
+            "Failure": 85,
+            "Success": 8,
+            "PartialSuccess": 4
+          },
+          "('絶頂・慢心', '対話・融合')": {
+            "Mixed": 9,
+            "Failure": 23,
+            "Success": 5,
+            "PartialSuccess": 3
+          },
+          "('混乱・衰退', '逃げる・放置')": {
+            "Success": 6,
+            "Mixed": 1
+          },
+          "('安定・停止', '耐える・潜伏')": {
+            "Failure": 7,
+            "Success": 5,
+            "Mixed": 11
+          },
+          "('成長痛', '逃げる・放置')": {
+            "Failure": 29,
+            "Mixed": 2
+          },
+          "('どん底・危機', '分散・スピンオフ')": {
+            "Mixed": 3,
+            "Success": 4
+          },
+          "('停滞・閉塞', '分散・スピンオフ')": {
+            "Success": 16,
+            "Mixed": 9
+          },
+          "('調和・繁栄', '捨てる・撤退')": {
+            "Success": 9
+          },
+          "('混乱・カオス', '捨てる・撤退')": {
+            "Failure": 22,
+            "Success": 6,
+            "Mixed": 4,
+            "PartialSuccess": 1
+          },
+          "('絶頂・慢心', '守る・維持')": {
+            "Mixed": 19,
+            "Failure": 27,
+            "PartialSuccess": 1,
+            "Success": 2
+          },
+          "('どん底・危機', '逃げる・放置')": {
+            "Failure": 6,
+            "Success": 1,
+            "PartialSuccess": 1
+          },
+          "('混乱・衰退', '守る・維持')": {
+            "Success": 2
+          },
+          "('停滞・閉塞', '逃げる・放置')": {
+            "Failure": 11,
+            "Mixed": 2
+          },
+          "('成長痛', '分散・スピンオフ')": {
+            "Success": 5,
+            "Mixed": 1
+          },
+          "('安定・停止', '捨てる・撤退')": {
+            "Success": 1,
+            "Mixed": 7,
+            "Failure": 2
+          },
+          "('混乱・カオス', '逃げる・放置')": {
+            "Mixed": 1,
+            "Failure": 4
+          },
+          "('縮小安定・生存', '攻める・挑戦')": {
+            "Success": 3
+          },
+          "('どん底・危機', '捨てる・撤退')": {
+            "Failure": 2,
+            "Success": 13,
+            "Mixed": 8,
+            "PartialSuccess": 1
+          },
+          "('安定・平和', '逃げる・放置')": {
+            "Failure": 16,
+            "Mixed": 5,
+            "Success": 1
+          },
+          "('拡大・繁栄', '耐える・潜伏')": {
+            "Mixed": 2,
+            "Success": 2
+          },
+          "('安定成長・成功', '逃げる・放置')": {
+            "Mixed": 6,
+            "Success": 1
+          },
+          "('混乱・カオス', '守る・維持')": {
+            "PartialSuccess": 1,
+            "Mixed": 12,
+            "Success": 11,
+            "Failure": 2
+          },
+          "('急成長・拡大', '耐える・潜伏')": {
+            "Success": 1
+          },
+          "('絶頂・慢心', '分散・スピンオフ')": {
+            "Mixed": 3,
+            "Failure": 3
+          },
+          "('調和・繁栄', '逃げる・放置')": {
+            "Success": 2
+          },
+          "('成長・拡大', '耐える・潜伏')": {
+            "Mixed": 1,
+            "Failure": 2
+          },
+          "('拡大・繁栄', '捨てる・撤退')": {
+            "Failure": 1,
+            "Mixed": 3,
+            "Success": 5
+          },
+          "('安定・停止', '刷新・破壊')": {
+            "Mixed": 1,
+            "Success": 1
+          },
+          "('縮小安定・生存', '対話・融合')": {
+            "Mixed": 1,
+            "Success": 1
+          },
+          "('調和・繁栄', '耐える・潜伏')": {
+            "Success": 2
+          },
+          "('縮小安定・生存', '捨てる・撤退')": {
+            "Success": 2
+          },
+          "('成長・拡大', '逃げる・放置')": {
+            "Failure": 1
+          },
+          "('安定成長・成功', '分散・スピンオフ')": {
+            "Mixed": 1
+          },
+          "('縮小安定・生存', '守る・維持')": {
+            "Mixed": 1
+          },
+          "('混乱・衰退', '刷新・破壊')": {
+            "Success": 1
+          },
+          "('急成長・拡大', '捨てる・撤退')": {
+            "Success": 1
+          },
+          "('V字回復・大成功', '攻める・挑戦')": {
+            "Success": 1
+          }
+        },
+        "marginal_state": {
+          "停滞・閉塞": {
+            "Mixed": 166,
+            "Success": 433,
+            "Failure": 313,
+            "PartialSuccess": 19
+          },
+          "成長痛": {
+            "Failure": 438,
+            "Mixed": 240,
+            "Success": 357,
+            "PartialSuccess": 18
+          },
+          "安定・平和": {
+            "Success": 430,
+            "Failure": 273,
+            "Mixed": 146,
+            "PartialSuccess": 21
+          },
+          "混乱・カオス": {
+            "Mixed": 53,
+            "Success": 72,
+            "Failure": 128,
+            "PartialSuccess": 9
+          },
+          "混乱・衰退": {
+            "Success": 276,
+            "Failure": 114,
+            "Mixed": 122
+          },
+          "絶頂・慢心": {
+            "Success": 41,
+            "Failure": 186,
+            "Mixed": 91,
+            "PartialSuccess": 20
+          },
+          "安定成長・成功": {
+            "Success": 143,
+            "Mixed": 39
+          },
+          "どん底・危機": {
+            "PartialSuccess": 9,
+            "Success": 280,
+            "Mixed": 81,
+            "Failure": 83
+          },
+          "拡大・繁栄": {
+            "Success": 46,
+            "Mixed": 26,
+            "Failure": 1
+          },
+          "安定・停止": {
+            "Mixed": 174,
+            "Success": 140,
+            "Failure": 9
+          },
+          "成長・拡大": {
+            "Success": 43,
+            "Mixed": 1,
+            "Failure": 3
+          },
+          "調和・繁栄": {
+            "Success": 13
+          },
+          "縮小安定・生存": {
+            "Success": 6,
+            "Mixed": 2
+          },
+          "急成長・拡大": {
+            "Success": 2
+          },
+          "V字回復・大成功": {
+            "Success": 1
+          }
+        },
+        "marginal_action": {
+          "攻める・挑戦": {
+            "Mixed": 192,
+            "Success": 818,
+            "Failure": 258,
+            "PartialSuccess": 40
+          },
+          "捨てる・撤退": {
+            "Failure": 243,
+            "Success": 248,
+            "Mixed": 145,
+            "PartialSuccess": 8
+          },
+          "対話・融合": {
+            "Success": 448,
+            "Mixed": 67,
+            "Failure": 161,
+            "PartialSuccess": 8
+          },
+          "耐える・潜伏": {
+            "Mixed": 266,
+            "Success": 235,
+            "Failure": 435,
+            "PartialSuccess": 18
+          },
+          "刷新・破壊": {
+            "Success": 265,
+            "Failure": 101,
+            "Mixed": 105,
+            "PartialSuccess": 10
+          },
+          "守る・維持": {
+            "PartialSuccess": 11,
+            "Mixed": 115,
+            "Success": 131,
+            "Failure": 236
+          },
+          "逃げる・放置": {
+            "Failure": 110,
+            "Mixed": 22,
+            "Success": 11,
+            "PartialSuccess": 1
+          },
+          "分散・スピンオフ": {
+            "Mixed": 229,
+            "Success": 127,
+            "Failure": 4
+          }
+        },
+        "overall": {
+          "Mixed": 1141,
+          "Failure": 1548,
+          "Success": 2283,
+          "PartialSuccess": 96
+        }
+      }
+    },
+    "yao_action": {
+      "type": "yao_position_action",
+      "train_accuracy": 71.27071823204419,
+      "valid_accuracy": 68.62048549437537,
+      "data": {
+        "(4, '攻める・挑戦')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.7,
+          "distribution": {
+            "Mixed": 57,
+            "Success": 238,
+            "Failure": 34,
+            "PartialSuccess": 11
+          },
+          "total_samples": 340
+        },
+        "(3, '捨てる・撤退')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.45930232558139533,
+          "distribution": {
+            "Failure": 158,
+            "Success": 101,
+            "Mixed": 83,
+            "PartialSuccess": 2
+          },
+          "total_samples": 344
+        },
+        "(5, '対話・融合')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.5308641975308642,
+          "distribution": {
+            "Success": 86,
+            "Failure": 69,
+            "Mixed": 7
+          },
+          "total_samples": 162
+        },
+        "(3, '攻める・挑戦')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.5172413793103449,
+          "distribution": {
+            "Mixed": 69,
+            "Success": 225,
+            "Failure": 131,
+            "PartialSuccess": 10
+          },
+          "total_samples": 435
+        },
+        "(3, '耐える・潜伏')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.5128205128205128,
+          "distribution": {
+            "Mixed": 145,
+            "Success": 59,
+            "Failure": 220,
+            "PartialSuccess": 5
+          },
+          "total_samples": 429
+        },
+        "(5, '捨てる・撤退')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.7,
+          "distribution": {
+            "Success": 28,
+            "Failure": 6,
+            "Mixed": 6
+          },
+          "total_samples": 40
+        },
+        "(5, '攻める・挑戦')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.6550632911392406,
+          "distribution": {
+            "Success": 207,
+            "Failure": 49,
+            "PartialSuccess": 17,
+            "Mixed": 43
+          },
+          "total_samples": 316
+        },
+        "(6, '刷新・破壊')": {
+          "predicted_outcome": "Mixed",
+          "confidence": 0.36538461538461536,
+          "distribution": {
+            "Success": 12,
+            "Failure": 16,
+            "Mixed": 19,
+            "PartialSuccess": 5
+          },
+          "total_samples": 52
+        },
+        "(2, '捨てる・撤退')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.84375,
+          "distribution": {
+            "Success": 81,
+            "Mixed": 15
+          },
+          "total_samples": 96
+        },
+        "(3, '対話・融合')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.7100371747211895,
+          "distribution": {
+            "Mixed": 17,
+            "Success": 191,
+            "Failure": 59,
+            "PartialSuccess": 2
+          },
+          "total_samples": 269
+        },
+        "(1, '守る・維持')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.5333333333333333,
+          "distribution": {
+            "PartialSuccess": 1,
+            "Failure": 3,
+            "Success": 8,
+            "Mixed": 3
+          },
+          "total_samples": 15
+        },
+        "(2, '耐える・潜伏')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.7590361445783133,
+          "distribution": {
+            "Success": 63,
+            "Mixed": 18,
+            "Failure": 2
+          },
+          "total_samples": 83
+        },
+        "(4, '刷新・破壊')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.6518518518518519,
+          "distribution": {
+            "Failure": 22,
+            "Success": 88,
+            "Mixed": 24,
+            "PartialSuccess": 1
+          },
+          "total_samples": 135
+        },
+        "(5, '守る・維持')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.4634146341463415,
+          "distribution": {
+            "Mixed": 33,
+            "Success": 76,
+            "Failure": 53,
+            "PartialSuccess": 2
+          },
+          "total_samples": 164
+        },
+        "(6, '逃げる・放置')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.8958333333333334,
+          "distribution": {
+            "Failure": 43,
+            "Mixed": 5
+          },
+          "total_samples": 48
+        },
+        "(5, '耐える・潜伏')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.40789473684210525,
+          "distribution": {
+            "Success": 20,
+            "PartialSuccess": 1,
+            "Failure": 31,
+            "Mixed": 24
+          },
+          "total_samples": 76
+        },
+        "(4, '守る・維持')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.7333333333333333,
+          "distribution": {
+            "Failure": 88,
+            "Mixed": 21,
+            "Success": 10,
+            "PartialSuccess": 1
+          },
+          "total_samples": 120
+        },
+        "(3, '刷新・破壊')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.6144578313253012,
+          "distribution": {
+            "Success": 51,
+            "Mixed": 17,
+            "Failure": 13,
+            "PartialSuccess": 2
+          },
+          "total_samples": 83
+        },
+        "(1, '攻める・挑戦')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.8189655172413793,
+          "distribution": {
+            "Success": 95,
+            "Mixed": 14,
+            "Failure": 7
+          },
+          "total_samples": 116
+        },
+        "(3, '分散・スピンオフ')": {
+          "predicted_outcome": "Mixed",
+          "confidence": 0.525,
+          "distribution": {
+            "Mixed": 42,
+            "Success": 37,
+            "Failure": 1
+          },
+          "total_samples": 80
+        },
+        "(6, '捨てる・撤退')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.4,
+          "distribution": {
+            "Failure": 12,
+            "Success": 9,
+            "PartialSuccess": 4,
+            "Mixed": 5
+          },
+          "total_samples": 30
+        },
+        "(1, '耐える・潜伏')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.4114285714285714,
+          "distribution": {
+            "Mixed": 35,
+            "Success": 72,
+            "Failure": 65,
+            "PartialSuccess": 3
+          },
+          "total_samples": 175
+        },
+        "(4, '分散・スピンオフ')": {
+          "predicted_outcome": "Mixed",
+          "confidence": 0.7123893805309734,
+          "distribution": {
+            "Mixed": 161,
+            "Success": 65
+          },
+          "total_samples": 226
+        },
+        "(1, '刷新・破壊')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.8552631578947368,
+          "distribution": {
+            "Success": 65,
+            "Mixed": 10,
+            "PartialSuccess": 1
+          },
+          "total_samples": 76
+        },
+        "(4, '対話・融合')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.7988826815642458,
+          "distribution": {
+            "Success": 143,
+            "Mixed": 25,
+            "Failure": 10,
+            "PartialSuccess": 1
+          },
+          "total_samples": 179
+        },
+        "(3, '守る・維持')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.4513888888888889,
+          "distribution": {
+            "Mixed": 38,
+            "Failure": 65,
+            "Success": 35,
+            "PartialSuccess": 6
+          },
+          "total_samples": 144
+        },
+        "(6, '攻める・挑戦')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.6379310344827587,
+          "distribution": {
+            "Failure": 37,
+            "Success": 10,
+            "PartialSuccess": 2,
+            "Mixed": 9
+          },
+          "total_samples": 58
+        },
+        "(1, '対話・融合')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.6875,
+          "distribution": {
+            "Success": 22,
+            "Mixed": 8,
+            "PartialSuccess": 2
+          },
+          "total_samples": 32
+        },
+        "(5, '分散・スピンオフ')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.525,
+          "distribution": {
+            "Mixed": 19,
+            "Success": 21
+          },
+          "total_samples": 40
+        },
+        "(2, '攻める・挑戦')": {
+          "predicted_outcome": "Success",
+          "confidence": 1.0,
+          "distribution": {
+            "Success": 43
+          },
+          "total_samples": 43
+        },
+        "(4, '捨てる・撤退')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.5909090909090909,
+          "distribution": {
+            "Failure": 65,
+            "Success": 16,
+            "Mixed": 28,
+            "PartialSuccess": 1
+          },
+          "total_samples": 110
+        },
+        "(5, '刷新・破壊')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.37037037037037035,
+          "distribution": {
+            "Failure": 50,
+            "Mixed": 35,
+            "Success": 49,
+            "PartialSuccess": 1
+          },
+          "total_samples": 135
+        },
+        "(6, '耐える・潜伏')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.4166666666666667,
+          "distribution": {
+            "Success": 8,
+            "Mixed": 22,
+            "Failure": 25,
+            "PartialSuccess": 5
+          },
+          "total_samples": 60
+        },
+        "(4, '耐える・潜伏')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.7022900763358778,
+          "distribution": {
+            "Mixed": 22,
+            "Failure": 92,
+            "Success": 13,
+            "PartialSuccess": 4
+          },
+          "total_samples": 131
+        },
+        "(6, '対話・融合')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.5476190476190477,
+          "distribution": {
+            "Mixed": 10,
+            "Failure": 23,
+            "Success": 6,
+            "PartialSuccess": 3
+          },
+          "total_samples": 42
+        },
+        "(3, '逃げる・放置')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.7674418604651163,
+          "distribution": {
+            "Success": 6,
+            "Failure": 33,
+            "Mixed": 4
+          },
+          "total_samples": 43
+        },
+        "(1, '分散・スピンオフ')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.5714285714285714,
+          "distribution": {
+            "Mixed": 3,
+            "Success": 4
+          },
+          "total_samples": 7
+        },
+        "(6, '守る・維持')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.54,
+          "distribution": {
+            "Mixed": 20,
+            "Failure": 27,
+            "PartialSuccess": 1,
+            "Success": 2
+          },
+          "total_samples": 50
+        },
+        "(1, '逃げる・放置')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.75,
+          "distribution": {
+            "Failure": 6,
+            "Success": 1,
+            "PartialSuccess": 1
+          },
+          "total_samples": 8
+        },
+        "(4, '逃げる・放置')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.8461538461538461,
+          "distribution": {
+            "Failure": 11,
+            "Mixed": 2
+          },
+          "total_samples": 13
+        },
+        "(1, '捨てる・撤退')": {
+          "predicted_outcome": "Success",
+          "confidence": 0.5416666666666666,
+          "distribution": {
+            "Failure": 2,
+            "Success": 13,
+            "Mixed": 8,
+            "PartialSuccess": 1
+          },
+          "total_samples": 24
+        },
+        "(5, '逃げる・放置')": {
+          "predicted_outcome": "Failure",
+          "confidence": 0.6666666666666666,
+          "distribution": {
+            "Failure": 16,
+            "Success": 3,
+            "Mixed": 5
+          },
+          "total_samples": 24
+        },
+        "(2, '逃げる・放置')": {
+          "predicted_outcome": "Mixed",
+          "confidence": 0.75,
+          "distribution": {
+            "Mixed": 6,
+            "Failure": 1,
+            "Success": 1
+          },
+          "total_samples": 8
+        },
+        "(6, '分散・スピンオフ')": {
+          "predicted_outcome": "Mixed",
+          "confidence": 0.5,
+          "distribution": {
+            "Mixed": 3,
+            "Failure": 3
+          },
+          "total_samples": 6
+        },
+        "(2, '分散・スピンオフ')": {
+          "predicted_outcome": "Mixed",
+          "confidence": 1.0,
+          "distribution": {
+            "Mixed": 1
+          },
+          "total_samples": 1
+        }
+      }
+    }
+  },
+  "state_to_yao": {
+    "絶頂・慢心": 6,
+    "安定・平和": 5,
+    "成長痛": 3,
+    "停滞・閉塞": 4,
+    "混乱・カオス": 3,
+    "どん底・危機": 1,
+    "混乱・衰退": 3,
+    "安定・停止": 4,
+    "安定成長・成功": 2,
+    "拡大・繁栄": 5,
+    "成長・拡大": 2,
+    "縮小安定・生存": 6,
+    "調和・繁栄": 5,
+    "V字回復・大成功": 5,
+    "急成長・拡大": 2
+  },
+  "action_normalize": {
+    "攻める・挑戦": "攻める・挑戦",
+    "拡大・攻め": "攻める・挑戦",
+    "集中・拡大": "攻める・挑戦",
+    "輝く・表現": "攻める・挑戦",
+    "守る・維持": "守る・維持",
+    "逃げる・守る": "守る・維持",
+    "捨てる・撤退": "捨てる・撤退",
+    "捨てる・転換": "捨てる・撤退",
+    "撤退・収縮": "捨てる・撤退",
+    "撤退・縮小": "捨てる・撤退",
+    "耐える・潜伏": "耐える・潜伏",
+    "対話・融合": "対話・融合",
+    "交流・発表": "対話・融合",
+    "刷新・破壊": "刷新・破壊",
+    "逃げる・放置": "逃げる・放置",
+    "撤退・逃げる": "逃げる・放置",
+    "逃げる・分散": "逃げる・放置",
+    "分散・スピンオフ": "分散・スピンオフ",
+    "分散・探索": "分散・スピンオフ",
+    "分散・多角化": "分散・スピンオフ",
+    "分散・独立": "分散・スピンオフ",
+    "分散する・独立する": "分散・スピンオフ"
+  }
+}

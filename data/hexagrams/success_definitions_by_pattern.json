@@ -1,0 +1,333 @@
+{
+  "_metadata": {
+    "description": "pattern_type別の成功定義。cases.jsonlの9,447件の実データ分析に基づく",
+    "generated_at": "2026-01-11",
+    "data_source": "data/raw/cases.jsonl"
+  },
+  "Shock_Recovery": {
+    "success_meaning": "危機から脱出し安定成長または新生へ到達",
+    "success_rate": 74.7,
+    "total_cases": 1142,
+    "success_indicators": [
+      "存続確保",
+      "黒字転換・安定化",
+      "V字回復",
+      "変質・新生による再出発"
+    ],
+    "failure_meaning": "危機から脱出できず崩壊・消滅",
+    "failure_indicators": [
+      "事業継続断念",
+      "破産・清算",
+      "吸収合併（主体性喪失）"
+    ],
+    "typical_duration": "2-5年",
+    "typical_before_states": ["どん底・危機", "安定・平和（からの急落）", "成長痛"],
+    "typical_after_states": ["安定成長・成功", "変質・新生", "V字回復・大成功"],
+    "typical_triggers": ["外部ショック", "意図的決断", "内部矛盾・自壊"],
+    "typical_actions": ["耐える・潜伏", "攻める・挑戦", "刷新・破壊"],
+    "typical_before_hex": ["坎", "兌", "艮"],
+    "typical_after_hex": ["坤", "離", "乾"],
+    "key_insight": "外部ショックが主因。耐える姿勢と攻めの姿勢の使い分けが重要"
+  },
+  "Breakthrough": {
+    "success_meaning": "新しい地位・市場を確立し持続的成長軌道に乗る",
+    "success_rate": 96.9,
+    "total_cases": 786,
+    "success_indicators": [
+      "市場シェア獲得",
+      "業界リーダーへの躍進",
+      "持続成長の確立",
+      "拡大・繁栄の達成"
+    ],
+    "failure_meaning": "突破できず停滞または後退",
+    "failure_indicators": [
+      "市場参入失敗",
+      "競合に敗北",
+      "資金枯渇"
+    ],
+    "typical_duration": "1-3年",
+    "typical_before_states": ["安定・停止", "停滞・閉塞", "安定・平和"],
+    "typical_after_states": ["持続成長・大成功", "拡大・繁栄", "成長・拡大"],
+    "typical_triggers": ["自然推移", "意図的決断", "外部ショック"],
+    "typical_actions": ["攻める・挑戦", "集中・拡大", "分散・探索"],
+    "typical_before_hex": ["艮", "離", "震"],
+    "typical_after_hex": ["乾", "震", "離"],
+    "key_insight": "停止状態からの脱却が典型。攻めの姿勢が成功の鍵"
+  },
+  "Steady_Growth": {
+    "success_meaning": "安定した成長を維持・継続し大成功に至る",
+    "success_rate": 90.4,
+    "total_cases": 1257,
+    "success_indicators": [
+      "持続的な成長維持",
+      "市場地位の強化",
+      "収益の安定・拡大",
+      "組織の発展"
+    ],
+    "failure_meaning": "成長が止まり停滞または衰退へ",
+    "failure_indicators": [
+      "成長率低下",
+      "市場シェア喪失",
+      "競争力低下"
+    ],
+    "typical_duration": "3-10年",
+    "typical_before_states": ["安定・平和", "成長痛", "停滞・閉塞"],
+    "typical_after_states": ["持続成長・大成功", "安定成長・成功", "安定・平和"],
+    "typical_triggers": ["意図的決断", "偶発・出会い", "外部ショック"],
+    "typical_actions": ["攻める・挑戦", "対話・融合", "守る・維持"],
+    "typical_before_hex": ["震", "坤", "艮"],
+    "typical_after_hex": ["乾", "離", "坤"],
+    "key_insight": "意図的決断による攻めの姿勢が重要。乾・離への到達が成功パターン"
+  },
+  "Pivot_Success": {
+    "success_meaning": "方向転換により新たな成長軌道を確立",
+    "success_rate": 76.4,
+    "total_cases": 986,
+    "success_indicators": [
+      "新規事業の軌道化",
+      "変質・新生の達成",
+      "新市場での地位確立",
+      "持続成長への移行"
+    ],
+    "failure_meaning": "転換が失敗し元の停滞または衰退へ",
+    "failure_indicators": [
+      "新規事業の失敗",
+      "既存事業も毀損",
+      "方向性の迷走"
+    ],
+    "typical_duration": "2-5年",
+    "typical_before_states": ["停滞・閉塞", "安定・平和", "成長痛"],
+    "typical_after_states": ["変質・新生", "安定成長・成功", "持続成長・大成功"],
+    "typical_triggers": ["意図的決断", "外部ショック", "偶発・出会い"],
+    "typical_actions": ["攻める・挑戦", "刷新・破壊", "対話・融合"],
+    "typical_before_hex": ["艮", "坤", "巽"],
+    "typical_after_hex": ["坤", "兌", "離"],
+    "key_insight": "停滞からの脱出が目的。意図的決断と攻めの姿勢が成功要因"
+  },
+  "Crisis_Pivot": {
+    "success_meaning": "危機的状況から転換し安定または新たな喜びを獲得",
+    "success_rate": 70.2,
+    "total_cases": 820,
+    "success_indicators": [
+      "危機からの脱出",
+      "安定状態への復帰",
+      "新たな交流・喜びの獲得",
+      "方向転換の成功"
+    ],
+    "failure_meaning": "危機から抜け出せず混乱が継続",
+    "failure_indicators": [
+      "混乱の長期化",
+      "更なる悪化",
+      "転換失敗"
+    ],
+    "typical_duration": "1-3年",
+    "typical_before_states": ["混乱・衰退", "安定成長・成功（からの急落）", "成長痛"],
+    "typical_after_states": ["安定・平和", "喜び・交流", "混乱・衰退（継続）"],
+    "typical_triggers": ["外部ショック", "意図的決断", "内部矛盾・自壊"],
+    "typical_actions": ["捨てる・転換", "交流・発表", "対話・融合"],
+    "typical_before_hex": ["坎", "兌", "艮"],
+    "typical_after_hex": ["震", "兌", "坤"],
+    "key_insight": "外部ショックが契機。捨てる勇気と新たな交流が成功の鍵"
+  },
+  "Endurance": {
+    "success_meaning": "困難を耐え抜き安定状態を維持",
+    "success_rate": 46.1,
+    "total_cases": 759,
+    "success_indicators": [
+      "存続の確保",
+      "安定状態の維持",
+      "縮小しつつも生存",
+      "次の機会への温存"
+    ],
+    "failure_meaning": "耐えきれず衰退・消滅",
+    "failure_indicators": [
+      "事業継続困難",
+      "資源枯渇",
+      "長期停滞固定化"
+    ],
+    "typical_duration": "3-10年",
+    "typical_before_states": ["安定・平和", "成長痛", "どん底・危機"],
+    "typical_after_states": ["安定・平和", "縮小安定・生存", "停滞・閉塞"],
+    "typical_triggers": ["外部ショック", "意図的決断", "内部崩壊"],
+    "typical_actions": ["耐える・潜伏", "守る・維持", "攻める・挑戦"],
+    "typical_before_hex": ["坎", "坤", "震"],
+    "typical_after_hex": ["坤", "艮", "兌"],
+    "key_insight": "成功率は約半分。耐えるだけでなく守りの姿勢との組み合わせが重要"
+  },
+  "Hubris_Collapse": {
+    "success_meaning": "慢心からの崩壊を回避し軟着陸（極めて稀）",
+    "success_rate": 1.6,
+    "total_cases": 774,
+    "success_indicators": [
+      "早期の危機認識",
+      "抜本的改革の実行",
+      "縮小安定への移行"
+    ],
+    "failure_meaning": "慢心により判断を誤り崩壊・消滅",
+    "failure_indicators": [
+      "経営判断の失敗",
+      "市場変化への対応遅延",
+      "組織の硬直化",
+      "致命的な過信"
+    ],
+    "typical_duration": "1-5年（崩壊まで）",
+    "typical_before_states": ["絶頂・慢心", "成長痛", "安定・平和"],
+    "typical_after_states": ["崩壊・消滅", "混乱・カオス", "縮小安定・生存"],
+    "typical_triggers": ["内部崩壊", "外部ショック", "意図的決断（失敗）"],
+    "typical_actions": ["攻める・挑戦（失敗）", "逃げる・放置", "守る・維持"],
+    "typical_before_hex": ["乾", "震", "離"],
+    "typical_after_hex": ["坤", "坎", "艮"],
+    "key_insight": "絶頂からの急落が典型。攻めの姿勢が裏目に出るケースが多い"
+  },
+  "Slow_Decline": {
+    "success_meaning": "（定義上、成功はない）",
+    "success_rate": 0.0,
+    "total_cases": 1034,
+    "success_indicators": [],
+    "failure_meaning": "徐々に衰退し最終的に崩壊または縮小",
+    "failure_indicators": [
+      "市場地位の低下",
+      "収益悪化の継続",
+      "人材流出",
+      "競争力喪失"
+    ],
+    "typical_duration": "5-15年",
+    "typical_before_states": ["停滞・閉塞", "成長痛", "安定・平和"],
+    "typical_after_states": ["崩壊・消滅", "縮小安定・生存", "停滞・閉塞"],
+    "typical_triggers": ["外部ショック", "内部崩壊", "意図的決断"],
+    "typical_actions": ["耐える・潜伏", "守る・維持", "捨てる・撤退"],
+    "typical_before_hex": ["艮", "坎", "坤"],
+    "typical_after_hex": ["坤", "坎", "艮"],
+    "key_insight": "停滞からの脱出失敗。守りの姿勢が長期化を招く"
+  },
+  "Failed_Attempt": {
+    "success_meaning": "（定義上、成功はない）",
+    "success_rate": 1.0,
+    "total_cases": 489,
+    "success_indicators": [],
+    "failure_meaning": "試みが失敗し撤退または崩壊",
+    "failure_indicators": [
+      "新規事業の失敗",
+      "投資回収不能",
+      "市場参入失敗",
+      "技術開発頓挫"
+    ],
+    "typical_duration": "1-3年",
+    "typical_before_states": ["成長痛", "安定・平和", "停滞・閉塞"],
+    "typical_after_states": ["崩壊・消滅", "縮小安定・生存", "停滞・閉塞"],
+    "typical_triggers": ["意図的決断", "外部ショック", "内部崩壊"],
+    "typical_actions": ["捨てる・撤退", "攻める・挑戦", "刷新・破壊"],
+    "typical_before_hex": ["震", "艮", "兌"],
+    "typical_after_hex": ["艮", "坤", "坎"],
+    "key_insight": "成長痛の段階での判断ミス。攻めと撤退のタイミング誤り"
+  },
+  "Managed_Decline": {
+    "success_meaning": "計画的な縮小で安定的な撤退を実現",
+    "success_rate": 24.5,
+    "total_cases": 367,
+    "success_indicators": [
+      "秩序ある撤退",
+      "縮小安定の達成",
+      "資産の適切な処分",
+      "次への布石"
+    ],
+    "failure_meaning": "管理できず混乱した衰退",
+    "failure_indicators": [
+      "無秩序な崩壊",
+      "ステークホルダーへの損害",
+      "撤退失敗"
+    ],
+    "typical_duration": "2-5年",
+    "typical_before_states": ["混乱・衰退", "成長痛", "停滞・閉塞"],
+    "typical_after_states": ["安定・停止", "縮小安定・生存", "安定・平和"],
+    "typical_triggers": ["外部ショック", "内部矛盾・自壊", "意図的決断"],
+    "typical_actions": ["捨てる・転換", "耐える・潜伏", "捨てる・撤退"],
+    "typical_before_hex": ["坎", "震", "離"],
+    "typical_after_hex": ["艮", "坤", "巽"],
+    "key_insight": "外部ショック後の対応が鍵。計画的な撤退・転換が成功要因"
+  },
+  "Stagnation": {
+    "success_meaning": "（定義上、成功はない）",
+    "success_rate": 0.0,
+    "total_cases": 349,
+    "success_indicators": [],
+    "failure_meaning": "停滞が固定化し脱出不能",
+    "failure_indicators": [
+      "成長機会の喪失",
+      "変化への抵抗",
+      "組織の硬直化",
+      "イノベーション欠如"
+    ],
+    "typical_duration": "5-20年",
+    "typical_before_states": ["停滞・閉塞", "安定・平和", "どん底・危機"],
+    "typical_after_states": ["停滞・閉塞", "縮小安定・生存", "崩壊・消滅"],
+    "typical_triggers": ["外部ショック", "内部崩壊", "意図的決断"],
+    "typical_actions": ["守る・維持", "耐える・潜伏", "対話・融合"],
+    "typical_before_hex": ["艮", "坎", "巽"],
+    "typical_after_hex": ["艮", "坤", "坎"],
+    "key_insight": "艮（山・停止）の固定化。守りの姿勢の継続が停滞を深化させる"
+  },
+  "Exploration": {
+    "success_meaning": "探索により新たな方向性を発見",
+    "success_rate": 0.3,
+    "total_cases": 330,
+    "success_indicators": [
+      "新規領域の発見",
+      "可能性の拡大"
+    ],
+    "failure_meaning": "探索が方向性を見失い混乱へ",
+    "failure_indicators": [
+      "方向性の迷走",
+      "リソースの分散",
+      "焦点の喪失"
+    ],
+    "typical_duration": "1-3年",
+    "typical_before_states": ["安定・停止", "混乱・衰退", "拡大・繁栄"],
+    "typical_after_states": ["混乱・衰退", "分岐・様子見", "変質・新生"],
+    "typical_triggers": ["自然推移", "外部ショック", "内部矛盾・自壊"],
+    "typical_actions": ["分散・探索", "刷新・破壊", "対話・融合"],
+    "typical_before_hex": ["艮", "坎", "乾"],
+    "typical_after_hex": ["巽", "離"],
+    "key_insight": "探索自体は成功ではなく過程。巽（風・柔軟）への移行が多いが混乱リスク高"
+  },
+  "Quiet_Fade": {
+    "success_meaning": "（定義上、成功はない）",
+    "success_rate": 0.0,
+    "total_cases": 182,
+    "success_indicators": [],
+    "failure_meaning": "静かに衰退し消滅",
+    "failure_indicators": [
+      "存在感の低下",
+      "市場からの退出",
+      "関係者の離散"
+    ],
+    "typical_duration": "3-10年",
+    "typical_before_states": ["停滞・閉塞", "成長痛", "混乱・カオス"],
+    "typical_after_states": ["崩壊・消滅", "停滞・閉塞", "縮小安定・生存"],
+    "typical_triggers": ["内部崩壊", "外部ショック", "意図的決断"],
+    "typical_actions": ["捨てる・撤退", "守る・維持", "耐える・潜伏"],
+    "typical_before_hex": ["艮", "坎", "離"],
+    "typical_after_hex": ["艮", "坤", "巽"],
+    "key_insight": "目立たない衰退。内部崩壊が主因で回復の兆しがない"
+  },
+  "Decline": {
+    "success_meaning": "（定義上、成功はない）",
+    "success_rate": 0.0,
+    "total_cases": 172,
+    "success_indicators": [],
+    "failure_meaning": "衰退が継続し回復不能",
+    "failure_indicators": [
+      "継続的な悪化",
+      "底打ちしない",
+      "回復見込みなし"
+    ],
+    "typical_duration": "継続中",
+    "typical_before_states": ["混乱・衰退", "安定・停止"],
+    "typical_after_states": ["混乱・衰退"],
+    "typical_triggers": ["自然推移", "外部ショック"],
+    "typical_actions": ["耐える・潜伏", "撤退・縮小"],
+    "typical_before_hex": ["坎", "艮"],
+    "typical_after_hex": ["坎"],
+    "key_insight": "坎（水・危険）からの脱出失敗。耐えるだけでは状況改善せず"
+  }
+}

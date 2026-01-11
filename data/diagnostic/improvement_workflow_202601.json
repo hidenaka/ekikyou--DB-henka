@@ -1,0 +1,74 @@
+{
+  "workflow_name": "データ品質改善ワークフロー Phase2",
+  "created": "2026-01-04",
+  "completed": "2026-01-04",
+  "status": "completed",
+  "goal": "main_domain補完、八卦バランス修正、歴史事例追加、Individual失敗追加",
+  "initial_state": {
+    "total_cases": 7372,
+    "main_domain_missing": 1421,
+    "main_domain_rate": 80.7,
+    "hex_distribution": {
+      "坎": 1833, "艮": 1808, "震": 1154, "坤": 810,
+      "乾": 592, "兌": 547, "離": 436, "巽": 192
+    },
+    "pre_1900_cases": 147,
+    "individual_failure_rate": 23.8
+  },
+  "final_state": {
+    "total_cases": 8378,
+    "main_domain_rate": 100.0,
+    "hex_distribution": {
+      "坎": 1833, "艮": 1808, "震": 1154, "坤": 810,
+      "乾": 592, "兌": 622, "離": 536, "巽": 524
+    },
+    "pre_1900_cases": 403,
+    "individual_failure_rate": 28.2,
+    "overall_failure_rate": 30.6
+  },
+  "phases": [
+    {
+      "id": "A",
+      "name": "Main Domain補完",
+      "description": "未設定1,421件にmain_domainを自動付与",
+      "result": "100%補完達成",
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "B",
+      "name": "八卦バランス修正",
+      "description": "巽/離/兌の事例を追加して分布を均等化",
+      "result": "巽192→524件, 離436→536件, 兌547→622件",
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "C",
+      "name": "歴史事例追加",
+      "description": "Pre-1900の歴史的事例を追加",
+      "result": "147→403件達成",
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "D",
+      "name": "Individual失敗追加",
+      "description": "個人の失敗事例を追加して失敗率を28%に",
+      "result": "23.8%→28.2%達成",
+      "status": "completed",
+      "progress": 100
+    }
+  ],
+  "summary": {
+    "total_added": 1006,
+    "improvements": [
+      "main_domain未設定: 1,421件 → 0件",
+      "巽(Xun): 192件 → 524件 (+332)",
+      "離(Li): 436件 → 536件 (+100)",
+      "兌(Dui): 547件 → 622件 (+75)",
+      "Pre-1900: 147件 → 403件 (+256)",
+      "Individual失敗率: 23.8% → 28.2%"
+    ]
+  }
+}

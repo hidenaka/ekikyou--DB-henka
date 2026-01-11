@@ -1,0 +1,2399 @@
+{
+  "transitions": {
+    "乾為天": {
+      "坤為地": {
+        "count": 229,
+        "success_rate": 0.057,
+        "main_action": "艮",
+        "actions": {
+          "艮": 80,
+          "巽": 60,
+          "乾": 19,
+          "震": 17,
+          "離": 15,
+          "坤": 15,
+          "兌": 13,
+          "坎": 10
+        }
+      },
+      "艮為山": {
+        "count": 123,
+        "success_rate": 0.211,
+        "main_action": "震",
+        "actions": {
+          "震": 39,
+          "乾": 17,
+          "巽": 17,
+          "艮": 15,
+          "坎": 14,
+          "坤": 9,
+          "兌": 8,
+          "離": 4
+        }
+      },
+      "坎為水": {
+        "count": 118,
+        "success_rate": 0.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 25,
+          "艮": 22,
+          "乾": 21,
+          "震": 16,
+          "巽": 13,
+          "坤": 9,
+          "離": 7,
+          "坎": 5
+        }
+      },
+      "震為雷": {
+        "count": 83,
+        "success_rate": 0.699,
+        "main_action": "乾",
+        "actions": {
+          "乾": 55,
+          "離": 9,
+          "艮": 8,
+          "巽": 8,
+          "兌": 1,
+          "坤": 1,
+          "坎": 1
+        }
+      },
+      "巽為風": {
+        "count": 67,
+        "success_rate": 0.224,
+        "main_action": "巽",
+        "actions": {
+          "巽": 37,
+          "艮": 8,
+          "離": 6,
+          "坎": 6,
+          "乾": 4,
+          "兌": 4,
+          "坤": 1,
+          "震": 1
+        }
+      },
+      "離為火": {
+        "count": 46,
+        "success_rate": 0.826,
+        "main_action": "乾",
+        "actions": {
+          "乾": 21,
+          "震": 7,
+          "巽": 6,
+          "艮": 4,
+          "兌": 4,
+          "離": 3,
+          "坤": 1
+        }
+      },
+      "乾為天": {
+        "count": 32,
+        "success_rate": 0.906,
+        "main_action": "乾",
+        "actions": {
+          "乾": 11,
+          "艮": 6,
+          "震": 5,
+          "兌": 5,
+          "離": 2,
+          "坎": 2,
+          "坤": 1
+        }
+      },
+      "兌為沢": {
+        "count": 20,
+        "success_rate": 0.6,
+        "main_action": "巽",
+        "actions": {
+          "巽": 7,
+          "艮": 4,
+          "離": 4,
+          "乾": 3,
+          "坤": 2
+        }
+      },
+      "火風鼎": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1,
+          "艮": 1
+        }
+      },
+      "地雷復": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1,
+          "離": 1
+        }
+      },
+      "山地剥": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 2
+        }
+      },
+      "地山謙": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "水雷屯": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    },
+    "兌為沢": {
+      "坤為地": {
+        "count": 321,
+        "success_rate": 0.592,
+        "main_action": "震",
+        "actions": {
+          "震": 144,
+          "坎": 94,
+          "兌": 46,
+          "艮": 20,
+          "巽": 10,
+          "坤": 5,
+          "離": 2
+        }
+      },
+      "離為火": {
+        "count": 143,
+        "success_rate": 0.965,
+        "main_action": "震",
+        "actions": {
+          "震": 57,
+          "坎": 39,
+          "兌": 27,
+          "巽": 8,
+          "艮": 7,
+          "乾": 3,
+          "離": 1,
+          "坤": 1
+        }
+      },
+      "艮為山": {
+        "count": 90,
+        "success_rate": 0.267,
+        "main_action": "艮",
+        "actions": {
+          "艮": 30,
+          "兌": 22,
+          "巽": 16,
+          "坤": 10,
+          "震": 9,
+          "坎": 3
+        }
+      },
+      "乾為天": {
+        "count": 43,
+        "success_rate": 1.0,
+        "main_action": "震",
+        "actions": {
+          "震": 27,
+          "乾": 7,
+          "兌": 3,
+          "離": 2,
+          "艮": 2,
+          "巽": 1,
+          "坤": 1
+        }
+      },
+      "兌為沢": {
+        "count": 24,
+        "success_rate": 0.958,
+        "main_action": "艮",
+        "actions": {
+          "艮": 8,
+          "兌": 4,
+          "坤": 3,
+          "震": 3,
+          "巽": 2,
+          "乾": 2,
+          "離": 2
+        }
+      },
+      "巽為風": {
+        "count": 23,
+        "success_rate": 0.478,
+        "main_action": "離",
+        "actions": {
+          "離": 7,
+          "乾": 6,
+          "兌": 5,
+          "艮": 4,
+          "坤": 1
+        }
+      },
+      "坎為水": {
+        "count": 20,
+        "success_rate": 0.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 10,
+          "艮": 6,
+          "乾": 2,
+          "坤": 1,
+          "巽": 1
+        }
+      },
+      "震為雷": {
+        "count": 12,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 5,
+          "離": 3,
+          "震": 2,
+          "乾": 1,
+          "艮": 1
+        }
+      },
+      "沢水困": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1,
+          "乾": 1
+        }
+      },
+      "沢地萃": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "地山謙": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地雷復": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "地天泰": {
+      "乾為天": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 2,
+          "震": 1
+        }
+      },
+      "沢水困": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "地山謙": {
+      "乾為天": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 2
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      }
+    },
+    "地水師": {
+      "天火同人": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 2,
+          "離": 1
+        }
+      },
+      "火水未済": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "水天需": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "山天大畜": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "地火明夷": {
+      "火天大有": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1,
+          "坎": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "乾為天": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "地雷復": {
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "震",
+        "actions": {
+          "震": 1
+        }
+      },
+      "雷天大壮": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "地風升": {
+      "乾為天": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1,
+          "巽": 1
+        }
+      },
+      "山地剥": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 2
+        }
+      },
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "火風鼎": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "地山謙": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "天火同人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "風火家人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "坎為水": {
+      "艮為山": {
+        "count": 430,
+        "success_rate": 0.409,
+        "main_action": "震",
+        "actions": {
+          "震": 198,
+          "坎": 130,
+          "巽": 52,
+          "兌": 29,
+          "艮": 6,
+          "坤": 6,
+          "離": 5,
+          "乾": 4
+        }
+      },
+      "坤為地": {
+        "count": 388,
+        "success_rate": 0.338,
+        "main_action": "坎",
+        "actions": {
+          "坎": 187,
+          "兌": 47,
+          "艮": 39,
+          "乾": 38,
+          "離": 37,
+          "巽": 15,
+          "坤": 13,
+          "震": 12
+        }
+      },
+      "坎為水": {
+        "count": 248,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 180,
+          "乾": 28,
+          "艮": 19,
+          "離": 10,
+          "坤": 5,
+          "巽": 4,
+          "震": 2
+        }
+      },
+      "兌為沢": {
+        "count": 247,
+        "success_rate": 0.988,
+        "main_action": "兌",
+        "actions": {
+          "兌": 152,
+          "離": 27,
+          "巽": 25,
+          "乾": 21,
+          "艮": 9,
+          "坤": 6,
+          "震": 5,
+          "坎": 2
+        }
+      },
+      "乾為天": {
+        "count": 207,
+        "success_rate": 0.99,
+        "main_action": "乾",
+        "actions": {
+          "乾": 125,
+          "離": 30,
+          "震": 14,
+          "兌": 13,
+          "艮": 11,
+          "坎": 6,
+          "巽": 5,
+          "坤": 3
+        }
+      },
+      "離為火": {
+        "count": 206,
+        "success_rate": 0.942,
+        "main_action": "乾",
+        "actions": {
+          "乾": 67,
+          "坎": 59,
+          "震": 40,
+          "艮": 11,
+          "巽": 11,
+          "兌": 9,
+          "離": 7,
+          "坤": 2
+        }
+      },
+      "震為雷": {
+        "count": 124,
+        "success_rate": 0.597,
+        "main_action": "巽",
+        "actions": {
+          "巽": 40,
+          "乾": 30,
+          "坎": 30,
+          "艮": 15,
+          "離": 6,
+          "坤": 2,
+          "震": 1
+        }
+      },
+      "巽為風": {
+        "count": 119,
+        "success_rate": 0.202,
+        "main_action": "巽",
+        "actions": {
+          "巽": 58,
+          "乾": 23,
+          "坎": 18,
+          "兌": 12,
+          "艮": 4,
+          "坤": 3,
+          "震": 1
+        }
+      },
+      "火天大有": {
+        "count": 2,
+        "success_rate": 0.5,
+        "main_action": "震",
+        "actions": {
+          "震": 1,
+          "乾": 1
+        }
+      },
+      "地山謙": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "水山蹇": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    },
+    "坤為地": {
+      "坤為地": {
+        "count": 305,
+        "success_rate": 0.246,
+        "main_action": "乾",
+        "actions": {
+          "乾": 129,
+          "艮": 75,
+          "坤": 43,
+          "離": 17,
+          "巽": 12,
+          "兌": 12,
+          "震": 12,
+          "坎": 5
+        }
+      },
+      "乾為天": {
+        "count": 230,
+        "success_rate": 0.991,
+        "main_action": "震",
+        "actions": {
+          "震": 74,
+          "乾": 64,
+          "離": 23,
+          "艮": 22,
+          "兌": 22,
+          "巽": 12,
+          "坤": 7,
+          "坎": 6
+        }
+      },
+      "坎為水": {
+        "count": 116,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 41,
+          "艮": 39,
+          "坤": 14,
+          "坎": 13,
+          "離": 6,
+          "震": 2,
+          "巽": 1
+        }
+      },
+      "兌為沢": {
+        "count": 108,
+        "success_rate": 0.833,
+        "main_action": "離",
+        "actions": {
+          "離": 39,
+          "乾": 25,
+          "艮": 16,
+          "巽": 14,
+          "兌": 10,
+          "震": 3,
+          "坤": 1
+        }
+      },
+      "離為火": {
+        "count": 105,
+        "success_rate": 0.943,
+        "main_action": "乾",
+        "actions": {
+          "乾": 53,
+          "震": 22,
+          "兌": 8,
+          "坎": 7,
+          "巽": 6,
+          "坤": 5,
+          "離": 2,
+          "艮": 2
+        }
+      },
+      "震為雷": {
+        "count": 80,
+        "success_rate": 0.125,
+        "main_action": "乾",
+        "actions": {
+          "乾": 63,
+          "艮": 7,
+          "離": 5,
+          "兌": 2,
+          "坤": 1,
+          "巽": 1,
+          "坎": 1
+        }
+      },
+      "艮為山": {
+        "count": 77,
+        "success_rate": 0.494,
+        "main_action": "震",
+        "actions": {
+          "震": 30,
+          "坤": 11,
+          "艮": 8,
+          "乾": 8,
+          "巽": 8,
+          "兌": 8,
+          "離": 3,
+          "坎": 1
+        }
+      },
+      "巽為風": {
+        "count": 24,
+        "success_rate": 0.542,
+        "main_action": "乾",
+        "actions": {
+          "乾": 9,
+          "艮": 4,
+          "兌": 3,
+          "坤": 2,
+          "離": 2,
+          "震": 2,
+          "巽": 1,
+          "坎": 1
+        }
+      },
+      "地山謙": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "火風鼎": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "火地晋": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "天地否": {
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "天山遯": {
+      "水山蹇": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "乾為天": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "天水訟": {
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 1
+        }
+      },
+      "地風升": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "天沢履": {
+      "火水未済": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1,
+          "坎": 1
+        }
+      },
+      "離為火": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1,
+          "艮": 1
+        }
+      },
+      "山地剥": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "水雷屯": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "地風升": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "水山蹇": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      }
+    },
+    "天火同人": {
+      "坎為水": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1,
+          "兌": 1
+        }
+      },
+      "火風鼎": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "火沢睽": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地火明夷": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      }
+    },
+    "天雷无妄": {
+      "火山旅": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1,
+          "坎": 1
+        }
+      },
+      "水沢節": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 2
+        }
+      },
+      "火風鼎": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "沢水困": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "地雷復": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "水山蹇": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      },
+      "地火明夷": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "乾為天": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "天風姤": {
+      "地火明夷": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      }
+    },
+    "山地剥": {
+      "離為火": {
+        "count": 3,
+        "success_rate": 0.333,
+        "main_action": "離",
+        "actions": {
+          "離": 2,
+          "巽": 1
+        }
+      },
+      "火天大有": {
+        "count": 2,
+        "success_rate": 0.5,
+        "main_action": "震",
+        "actions": {
+          "震": 1,
+          "離": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      },
+      "沢水困": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "火水未済": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "火風鼎": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "地風升": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地火明夷": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      }
+    },
+    "山天大畜": {
+      "兌為沢": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "震",
+        "actions": {
+          "震": 1
+        }
+      }
+    },
+    "山水蒙": {
+      "地天泰": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1,
+          "巽": 1,
+          "離": 1
+        }
+      },
+      "乾為天": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "風地観": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "風天小畜": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      }
+    },
+    "山沢損": {
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "震",
+        "actions": {
+          "震": 1
+        }
+      }
+    },
+    "山火賁": {
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 1
+        }
+      }
+    },
+    "山風蠱": {
+      "山地剥": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 2
+        }
+      }
+    },
+    "巽為風": {
+      "艮為山": {
+        "count": 269,
+        "success_rate": 0.45,
+        "main_action": "巽",
+        "actions": {
+          "巽": 162,
+          "震": 46,
+          "艮": 41,
+          "坤": 13,
+          "坎": 4,
+          "乾": 1,
+          "離": 1,
+          "兌": 1
+        }
+      },
+      "乾為天": {
+        "count": 80,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 60,
+          "乾": 15,
+          "離": 3,
+          "震": 2
+        }
+      },
+      "離為火": {
+        "count": 79,
+        "success_rate": 0.987,
+        "main_action": "巽",
+        "actions": {
+          "巽": 45,
+          "兌": 23,
+          "乾": 6,
+          "震": 4,
+          "坤": 1
+        }
+      },
+      "坤為地": {
+        "count": 42,
+        "success_rate": 0.714,
+        "main_action": "兌",
+        "actions": {
+          "兌": 22,
+          "坤": 9,
+          "乾": 4,
+          "艮": 3,
+          "巽": 3,
+          "坎": 1
+        }
+      },
+      "兌為沢": {
+        "count": 19,
+        "success_rate": 0.947,
+        "main_action": "巽",
+        "actions": {
+          "巽": 9,
+          "兌": 4,
+          "坤": 3,
+          "震": 2,
+          "離": 1
+        }
+      },
+      "巽為風": {
+        "count": 18,
+        "success_rate": 0.5,
+        "main_action": "乾",
+        "actions": {
+          "乾": 5,
+          "離": 5,
+          "兌": 3,
+          "巽": 2,
+          "艮": 2,
+          "震": 1
+        }
+      },
+      "坎為水": {
+        "count": 7,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 3,
+          "坎": 2,
+          "坤": 1,
+          "艮": 1
+        }
+      },
+      "震為雷": {
+        "count": 4,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 2,
+          "乾": 1,
+          "震": 1
+        }
+      }
+    },
+    "水地比": {
+      "地天泰": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 1
+        }
+      },
+      "乾為天": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "水山蹇": {
+      "天火同人": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1,
+          "兌": 1
+        }
+      },
+      "乾為天": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1,
+          "巽": 1
+        }
+      },
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 1
+        }
+      },
+      "地風升": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "天山遯": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "火風鼎": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "水沢節": {
+      "乾為天": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1,
+          "兌": 1
+        }
+      },
+      "地天泰": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1,
+          "兌": 1
+        }
+      },
+      "坎為水": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "水雷屯": {
+      "火天大有": {
+        "count": 5,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 3,
+          "坤": 1,
+          "兌": 1
+        }
+      },
+      "乾為天": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 2,
+          "離": 1
+        }
+      },
+      "地天泰": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1,
+          "巽": 1,
+          "離": 1
+        }
+      },
+      "地火明夷": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1,
+          "坎": 1
+        }
+      },
+      "地水師": {
+        "count": 2,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1,
+          "巽": 1
+        }
+      },
+      "兌為沢": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "地風升": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "沢水困": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      },
+      "天火同人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    },
+    "沢天夬": {
+      "坤為地": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "風地観": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "沢水困": {
+      "離為火": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1,
+          "坎": 1,
+          "兌": 1
+        }
+      },
+      "乾為天": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地火明夷": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "沢雷随": {
+      "天火同人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    },
+    "沢風大過": {
+      "地風升": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 1
+        }
+      }
+    },
+    "火天大有": {
+      "地火明夷": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地雷復": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "火水未済": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "火水未済": {
+      "兌為沢": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "震",
+        "actions": {
+          "震": 1
+        }
+      },
+      "水雷屯": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "地風升": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "天火同人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "地天泰": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "地雷復": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "沢水困": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1
+        }
+      },
+      "乾為天": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      }
+    },
+    "火沢睽": {
+      "天火同人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "艮為山": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    },
+    "火雷噬嗑": {
+      "水山蹇": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      }
+    },
+    "火風鼎": {
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "震",
+        "actions": {
+          "震": 1
+        }
+      }
+    },
+    "艮為山": {
+      "坤為地": {
+        "count": 446,
+        "success_rate": 0.186,
+        "main_action": "艮",
+        "actions": {
+          "艮": 94,
+          "巽": 94,
+          "坎": 56,
+          "乾": 55,
+          "震": 51,
+          "離": 45,
+          "兌": 43,
+          "坤": 8
+        }
+      },
+      "艮為山": {
+        "count": 357,
+        "success_rate": 0.157,
+        "main_action": "艮",
+        "actions": {
+          "艮": 145,
+          "坎": 69,
+          "震": 39,
+          "兌": 36,
+          "巽": 34,
+          "乾": 30,
+          "離": 4
+        }
+      },
+      "巽為風": {
+        "count": 349,
+        "success_rate": 0.046,
+        "main_action": "巽",
+        "actions": {
+          "巽": 244,
+          "乾": 28,
+          "震": 25,
+          "兌": 23,
+          "坎": 21,
+          "艮": 5,
+          "離": 2,
+          "坤": 1
+        }
+      },
+      "乾為天": {
+        "count": 281,
+        "success_rate": 0.993,
+        "main_action": "乾",
+        "actions": {
+          "乾": 122,
+          "震": 80,
+          "離": 46,
+          "巽": 12,
+          "兌": 11,
+          "艮": 6,
+          "坤": 2,
+          "坎": 2
+        }
+      },
+      "震為雷": {
+        "count": 269,
+        "success_rate": 0.591,
+        "main_action": "巽",
+        "actions": {
+          "巽": 109,
+          "乾": 71,
+          "震": 29,
+          "坎": 28,
+          "艮": 15,
+          "離": 13,
+          "坤": 2,
+          "兌": 2
+        }
+      },
+      "離為火": {
+        "count": 170,
+        "success_rate": 0.941,
+        "main_action": "震",
+        "actions": {
+          "震": 91,
+          "乾": 39,
+          "巽": 14,
+          "兌": 10,
+          "離": 6,
+          "艮": 6,
+          "坎": 3,
+          "坤": 1
+        }
+      },
+      "兌為沢": {
+        "count": 167,
+        "success_rate": 0.916,
+        "main_action": "兌",
+        "actions": {
+          "兌": 67,
+          "離": 27,
+          "巽": 21,
+          "震": 21,
+          "乾": 17,
+          "艮": 11,
+          "坤": 3
+        }
+      },
+      "坎為水": {
+        "count": 143,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 42,
+          "震": 40,
+          "艮": 30,
+          "乾": 14,
+          "巽": 7,
+          "坤": 6,
+          "離": 3,
+          "兌": 1
+        }
+      },
+      "天沢履": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "兌",
+        "actions": {
+          "兌": 2,
+          "巽": 1
+        }
+      },
+      "天風姤": {
+        "count": 3,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 3
+        }
+      },
+      "天山遯": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 2
+        }
+      },
+      "火風鼎": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 2
+        }
+      },
+      "天火同人": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1,
+          "兌": 1
+        }
+      },
+      "風火家人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "地雷復": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "地火明夷": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "火水未済": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "山地剥": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      },
+      "沢水困": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "坤",
+        "actions": {
+          "坤": 1
+        }
+      }
+    },
+    "離為火": {
+      "乾為天": {
+        "count": 169,
+        "success_rate": 1.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 90,
+          "震": 63,
+          "兌": 6,
+          "巽": 4,
+          "離": 3,
+          "艮": 3
+        }
+      },
+      "艮為山": {
+        "count": 148,
+        "success_rate": 0.264,
+        "main_action": "艮",
+        "actions": {
+          "艮": 44,
+          "震": 39,
+          "巽": 30,
+          "坎": 19,
+          "坤": 11,
+          "兌": 3,
+          "乾": 2
+        }
+      },
+      "離為火": {
+        "count": 92,
+        "success_rate": 0.935,
+        "main_action": "震",
+        "actions": {
+          "震": 39,
+          "兌": 19,
+          "乾": 17,
+          "巽": 8,
+          "艮": 4,
+          "離": 2,
+          "坎": 2,
+          "坤": 1
+        }
+      },
+      "坤為地": {
+        "count": 79,
+        "success_rate": 0.329,
+        "main_action": "坎",
+        "actions": {
+          "坎": 20,
+          "巽": 18,
+          "兌": 14,
+          "艮": 10,
+          "震": 10,
+          "坤": 4,
+          "離": 3
+        }
+      },
+      "巽為風": {
+        "count": 67,
+        "success_rate": 0.358,
+        "main_action": "巽",
+        "actions": {
+          "巽": 15,
+          "乾": 11,
+          "兌": 10,
+          "離": 10,
+          "艮": 8,
+          "震": 7,
+          "坎": 5,
+          "坤": 1
+        }
+      },
+      "兌為沢": {
+        "count": 52,
+        "success_rate": 0.981,
+        "main_action": "兌",
+        "actions": {
+          "兌": 12,
+          "震": 12,
+          "巽": 8,
+          "離": 8,
+          "艮": 7,
+          "乾": 4,
+          "坤": 1
+        }
+      },
+      "坎為水": {
+        "count": 50,
+        "success_rate": 0.0,
+        "main_action": "坎",
+        "actions": {
+          "坎": 19,
+          "乾": 9,
+          "震": 9,
+          "艮": 6,
+          "巽": 3,
+          "坤": 2,
+          "兌": 2
+        }
+      },
+      "震為雷": {
+        "count": 25,
+        "success_rate": 0.04,
+        "main_action": "震",
+        "actions": {
+          "震": 9,
+          "艮": 6,
+          "坎": 4,
+          "巽": 4,
+          "離": 1,
+          "乾": 1
+        }
+      },
+      "火水未済": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "地風升": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    },
+    "雷天大壮": {
+      "火風鼎": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      },
+      "離為火": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      }
+    },
+    "雷沢帰妹": {
+      "地雷復": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "雷火豊": {
+      "沢水困": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1
+        }
+      },
+      "坤為地": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    },
+    "雷風恒": {
+      "地山謙": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "震為雷": {
+      "坤為地": {
+        "count": 493,
+        "success_rate": 0.057,
+        "main_action": "坎",
+        "actions": {
+          "坎": 170,
+          "巽": 102,
+          "艮": 57,
+          "震": 54,
+          "兌": 44,
+          "乾": 41,
+          "坤": 17,
+          "離": 8
+        }
+      },
+      "乾為天": {
+        "count": 258,
+        "success_rate": 0.965,
+        "main_action": "乾",
+        "actions": {
+          "乾": 177,
+          "震": 20,
+          "離": 20,
+          "艮": 13,
+          "兌": 12,
+          "巽": 8,
+          "坤": 4,
+          "坎": 4
+        }
+      },
+      "離為火": {
+        "count": 188,
+        "success_rate": 0.957,
+        "main_action": "乾",
+        "actions": {
+          "乾": 129,
+          "震": 22,
+          "艮": 11,
+          "坎": 9,
+          "離": 7,
+          "坤": 4,
+          "兌": 4,
+          "巽": 2
+        }
+      },
+      "艮為山": {
+        "count": 181,
+        "success_rate": 0.155,
+        "main_action": "巽",
+        "actions": {
+          "巽": 61,
+          "震": 59,
+          "坎": 24,
+          "兌": 13,
+          "艮": 11,
+          "乾": 11,
+          "坤": 1,
+          "離": 1
+        }
+      },
+      "坎為水": {
+        "count": 146,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 77,
+          "震": 19,
+          "艮": 14,
+          "坎": 13,
+          "巽": 12,
+          "兌": 5,
+          "離": 3,
+          "坤": 3
+        }
+      },
+      "巽為風": {
+        "count": 73,
+        "success_rate": 0.397,
+        "main_action": "乾",
+        "actions": {
+          "乾": 38,
+          "兌": 12,
+          "坎": 8,
+          "艮": 6,
+          "巽": 5,
+          "震": 2,
+          "坤": 1,
+          "離": 1
+        }
+      },
+      "震為雷": {
+        "count": 53,
+        "success_rate": 0.075,
+        "main_action": "乾",
+        "actions": {
+          "乾": 20,
+          "震": 15,
+          "坎": 10,
+          "艮": 3,
+          "巽": 2,
+          "坤": 1,
+          "兌": 1,
+          "離": 1
+        }
+      },
+      "兌為沢": {
+        "count": 44,
+        "success_rate": 0.795,
+        "main_action": "巽",
+        "actions": {
+          "巽": 13,
+          "離": 11,
+          "乾": 6,
+          "坤": 4,
+          "兌": 4,
+          "震": 3,
+          "艮": 2,
+          "坎": 1
+        }
+      },
+      "火天大有": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "震",
+        "actions": {
+          "震": 1,
+          "乾": 1
+        }
+      },
+      "地山謙": {
+        "count": 2,
+        "success_rate": 0.5,
+        "main_action": "坎",
+        "actions": {
+          "坎": 1,
+          "兌": 1
+        }
+      },
+      "地風升": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 2
+        }
+      },
+      "地天泰": {
+        "count": 2,
+        "success_rate": 1.0,
+        "main_action": "離",
+        "actions": {
+          "離": 1,
+          "艮": 1
+        }
+      },
+      "天山遯": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "天火同人": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "水火既済": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      },
+      "水山蹇": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "乾",
+        "actions": {
+          "乾": 1
+        }
+      }
+    },
+    "風地観": {
+      "地天泰": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      },
+      "火水未済": {
+        "count": 1,
+        "success_rate": 0.0,
+        "main_action": "艮",
+        "actions": {
+          "艮": 1
+        }
+      }
+    },
+    "風天小畜": {
+      "火天大有": {
+        "count": 1,
+        "success_rate": 1.0,
+        "main_action": "巽",
+        "actions": {
+          "巽": 1
+        }
+      }
+    }
+  },
+  "metadata": {
+    "total_cases": 9447,
+    "unique_hexagrams": 52,
+    "unique_before_hexagrams": 46,
+    "unique_after_hexagrams": 37,
+    "total_transition_patterns": 234,
+    "generated_at": "2026-01-11"
+  }
+}

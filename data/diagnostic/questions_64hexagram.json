@@ -1,0 +1,127 @@
+{
+  "version": "1.0",
+  "description": "64卦384爻判定用の質問セット",
+
+  "structure": {
+    "lower_trigram": "内卦（自分の内側・本質）を決定する質問群",
+    "upper_trigram": "外卦（外部環境・状況）を決定する質問群",
+    "line_position": "爻位（段階）を決定する質問"
+  },
+
+  "trigram_mapping": {
+    "乾": {"keywords": ["強い", "積極的", "創造", "リーダー"], "nature": "天・創造"},
+    "兌": {"keywords": ["喜び", "交流", "言葉", "楽しい"], "nature": "沢・喜悦"},
+    "離": {"keywords": ["明るい", "知性", "情熱", "表現"], "nature": "火・明晰"},
+    "震": {"keywords": ["動く", "衝撃", "始まり", "活発"], "nature": "雷・震動"},
+    "巽": {"keywords": ["柔軟", "浸透", "従う", "適応"], "nature": "風・浸透"},
+    "坎": {"keywords": ["困難", "深い", "危険", "水"], "nature": "水・険難"},
+    "艮": {"keywords": ["止まる", "静か", "山", "内省"], "nature": "山・静止"},
+    "坤": {"keywords": ["受容", "柔順", "育む", "従う"], "nature": "地・受容"}
+  },
+
+  "questions": {
+    "inner": [
+      {
+        "id": "I1",
+        "category": "lower_trigram",
+        "text": "あなたの内面は今、どのような状態ですか？",
+        "options": [
+          {"value": "strong_active", "label": "強い意志があり、積極的に動きたい", "weights": {"乾": 3, "震": 2}},
+          {"value": "joyful_open", "label": "明るく、人と交流したい気持ち", "weights": {"兌": 3, "離": 2}},
+          {"value": "clear_passionate", "label": "明確なビジョンがあり、情熱がある", "weights": {"離": 3, "乾": 2}},
+          {"value": "restless_energetic", "label": "落ち着かず、何かを始めたい衝動", "weights": {"震": 3, "巽": 1}},
+          {"value": "flexible_adaptive", "label": "柔軟に状況に合わせたい", "weights": {"巽": 3, "坤": 2}},
+          {"value": "troubled_deep", "label": "深い悩みや困難を抱えている", "weights": {"坎": 3, "艮": 1}},
+          {"value": "still_reflective", "label": "静かに内省し、立ち止まっている", "weights": {"艮": 3, "坤": 1}},
+          {"value": "receptive_patient", "label": "受け入れ、待つ姿勢でいる", "weights": {"坤": 3, "巽": 2}}
+        ]
+      },
+      {
+        "id": "I2",
+        "category": "lower_trigram",
+        "text": "あなたが今、最も必要としているものは？",
+        "options": [
+          {"value": "power_initiative", "label": "力・主導権・決断力", "weights": {"乾": 3}},
+          {"value": "joy_connection", "label": "喜び・人とのつながり", "weights": {"兌": 3}},
+          {"value": "clarity_insight", "label": "明確さ・洞察・理解", "weights": {"離": 3}},
+          {"value": "action_change", "label": "行動・変化・突破", "weights": {"震": 3}},
+          {"value": "flexibility_adaptation", "label": "柔軟性・適応力", "weights": {"巽": 3}},
+          {"value": "depth_truth", "label": "深さ・真実・本質", "weights": {"坎": 3}},
+          {"value": "stillness_reflection", "label": "静けさ・内省・安定", "weights": {"艮": 3}},
+          {"value": "support_nurturing", "label": "支え・受容・育み", "weights": {"坤": 3}}
+        ]
+      }
+    ],
+    "outer": [
+      {
+        "id": "O1",
+        "category": "upper_trigram",
+        "text": "あなたを取り巻く外部環境はどのような状態ですか？",
+        "options": [
+          {"value": "powerful_competitive", "label": "競争が激しく、強さが求められる", "weights": {"乾": 3, "震": 1}},
+          {"value": "social_communicative", "label": "交流が盛んで、コミュニケーションが重要", "weights": {"兌": 3, "離": 1}},
+          {"value": "visible_scrutinized", "label": "注目されており、明るみに出やすい", "weights": {"離": 3, "兌": 1}},
+          {"value": "turbulent_changing", "label": "激しく変動し、衝撃的な出来事がある", "weights": {"震": 3, "坎": 1}},
+          {"value": "fluid_infiltrating", "label": "じわじわ浸透する変化が起きている", "weights": {"巽": 3, "坤": 1}},
+          {"value": "dangerous_difficult", "label": "危険や困難が多い環境", "weights": {"坎": 3, "艮": 1}},
+          {"value": "blocked_stagnant", "label": "停滞し、進みにくい状況", "weights": {"艮": 3, "坤": 1}},
+          {"value": "stable_supportive", "label": "安定しており、受け入れてくれる環境", "weights": {"坤": 3, "巽": 1}}
+        ]
+      },
+      {
+        "id": "O2",
+        "category": "upper_trigram",
+        "text": "周囲の人々や組織はあなたに何を求めていますか？",
+        "options": [
+          {"value": "leadership_strength", "label": "リーダーシップ・強さ・決断", "weights": {"乾": 3}},
+          {"value": "harmony_communication", "label": "調和・コミュニケーション・協調", "weights": {"兌": 3}},
+          {"value": "visibility_expression", "label": "目に見える成果・表現・発信", "weights": {"離": 3}},
+          {"value": "action_movement", "label": "行動・変化・スピード", "weights": {"震": 3}},
+          {"value": "adaptation_obedience", "label": "適応・従順・浸透", "weights": {"巽": 3}},
+          {"value": "depth_persistence", "label": "深さ・粘り強さ・誠実さ", "weights": {"坎": 3}},
+          {"value": "patience_stability", "label": "忍耐・安定・慎重さ", "weights": {"艮": 3}},
+          {"value": "support_nurturing", "label": "支え・包容力・育成", "weights": {"坤": 3}}
+        ]
+      }
+    ],
+    "line": [
+      {
+        "id": "L1",
+        "category": "line_position",
+        "text": "この状況において、あなたはどの段階にいますか？",
+        "options": [
+          {"value": "1", "label": "始まったばかり、または始める前", "description": "まだ実績がなく、人に認められていない", "line": 1},
+          {"value": "2", "label": "基礎を作っている段階", "description": "着実に準備や修行をしている。まだ表舞台ではない", "line": 2},
+          {"value": "3", "label": "次のステージに進もうとしている", "description": "転換点。内から外へ出る境目", "line": 3},
+          {"value": "4", "label": "新しい環境に入ったばかり", "description": "上のステージに入ったが、まだ地位が不安定", "line": 4},
+          {"value": "5", "label": "中心的な立場にいる", "description": "責任と権限を持ち、決定権がある", "line": 5},
+          {"value": "6", "label": "頂点、または終わりに近い", "description": "これ以上進めない。一つのサイクルの終わり", "line": 6}
+        ]
+      },
+      {
+        "id": "L2",
+        "category": "line_position",
+        "text": "この物事に関わり始めてからどのくらいですか？",
+        "options": [
+          {"value": "1", "label": "ほとんど始まっていない", "line": 1},
+          {"value": "2", "label": "始めて間もない（序盤）", "line": 2},
+          {"value": "3", "label": "しばらく経った（中盤に入る前）", "line": 3},
+          {"value": "4", "label": "中盤を過ぎた", "line": 4},
+          {"value": "5", "label": "かなり進んでいる（終盤に近い）", "line": 5},
+          {"value": "6", "label": "ほぼ完了、または終わりに近い", "line": 6}
+        ]
+      }
+    ]
+  },
+
+  "scoring": {
+    "trigram_determination": {
+      "method": "weighted_sum",
+      "description": "各質問のweightsを合算し、最大値の八卦を選択"
+    },
+    "line_determination": {
+      "method": "average",
+      "description": "line質問の回答を平均し、最も近い爻位を選択"
+    }
+  }
+}

@@ -1,0 +1,1417 @@
+{
+  "version": "1.1",
+  "description": "条件付き統計集計テーブル（拡張版）",
+  "by_before_hex_action": {
+    "艮": {
+      "刷新・破壊": {
+        "total": 12,
+        "success_rate": 66.7,
+        "failure_rate": 8.3,
+        "mixed_rate": 25.0,
+        "partial_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 25,
+        "success_rate": 96.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 4.0
+      },
+      "耐える・潜伏": {
+        "total": 13,
+        "success_rate": 69.2,
+        "failure_rate": 7.7,
+        "mixed_rate": 15.4,
+        "partial_rate": 7.7
+      },
+      "守る・維持": {
+        "total": 8,
+        "success_rate": 50.0,
+        "failure_rate": 25.0,
+        "mixed_rate": 12.5,
+        "partial_rate": 12.5
+      },
+      "逃げる・放置": {
+        "total": 5,
+        "success_rate": 0.0,
+        "failure_rate": 60.0,
+        "mixed_rate": 20.0,
+        "partial_rate": 20.0
+      },
+      "捨てる・撤退": {
+        "total": 7,
+        "success_rate": 71.4,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 28.6
+      },
+      "対話・融合": {
+        "total": 12,
+        "success_rate": 83.3,
+        "failure_rate": 0.0,
+        "mixed_rate": 8.3,
+        "partial_rate": 8.3
+      },
+      "分散・スピンオフ": {
+        "total": 6,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      }
+    },
+    "坎": {
+      "耐える・潜伏": {
+        "total": 39,
+        "success_rate": 53.8,
+        "failure_rate": 17.9,
+        "mixed_rate": 15.4,
+        "partial_rate": 12.8
+      },
+      "刷新・破壊": {
+        "total": 29,
+        "success_rate": 93.1,
+        "failure_rate": 0.0,
+        "mixed_rate": 3.4,
+        "partial_rate": 3.4
+      },
+      "対話・融合": {
+        "total": 10,
+        "success_rate": 60.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 30.0,
+        "partial_rate": 10.0
+      },
+      "捨てる・撤退": {
+        "total": 6,
+        "success_rate": 50.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 16.7,
+        "partial_rate": 33.3
+      },
+      "攻める・挑戦": {
+        "total": 103,
+        "success_rate": 71.8,
+        "failure_rate": 6.8,
+        "mixed_rate": 20.4,
+        "partial_rate": 1.0
+      },
+      "守る・維持": {
+        "total": 6,
+        "success_rate": 66.7,
+        "failure_rate": 33.3,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "逃げる・放置": {
+        "total": 4,
+        "success_rate": 0.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 100.0,
+        "partial_rate": 0.0
+      },
+      "分散・スピンオフ": {
+        "total": 6,
+        "success_rate": 33.3,
+        "failure_rate": 16.7,
+        "mixed_rate": 33.3,
+        "partial_rate": 16.7
+      }
+    },
+    "坤": {
+      "刷新・破壊": {
+        "total": 10,
+        "success_rate": 80.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 20.0,
+        "partial_rate": 0.0
+      },
+      "捨てる・撤退": {
+        "total": 3,
+        "success_rate": 66.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 33.3,
+        "partial_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 281,
+        "success_rate": 24.9,
+        "failure_rate": 32.0,
+        "mixed_rate": 27.4,
+        "partial_rate": 15.7
+      },
+      "逃げる・放置": {
+        "total": 16,
+        "success_rate": 0.0,
+        "failure_rate": 87.5,
+        "mixed_rate": 12.5,
+        "partial_rate": 0.0
+      },
+      "分散・スピンオフ": {
+        "total": 5,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "対話・融合": {
+        "total": 11,
+        "success_rate": 90.9,
+        "failure_rate": 0.0,
+        "mixed_rate": 9.1,
+        "partial_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 62,
+        "success_rate": 17.7,
+        "failure_rate": 40.3,
+        "mixed_rate": 37.1,
+        "partial_rate": 4.8
+      },
+      "耐える・潜伏": {
+        "total": 81,
+        "success_rate": 9.9,
+        "failure_rate": 75.3,
+        "mixed_rate": 7.4,
+        "partial_rate": 7.4
+      }
+    },
+    "乾": {
+      "攻める・挑戦": {
+        "total": 32,
+        "success_rate": 28.1,
+        "failure_rate": 50.0,
+        "mixed_rate": 18.8,
+        "partial_rate": 3.1
+      },
+      "逃げる・放置": {
+        "total": 18,
+        "success_rate": 0.0,
+        "failure_rate": 72.2,
+        "mixed_rate": 27.8,
+        "partial_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 11,
+        "success_rate": 0.0,
+        "failure_rate": 63.6,
+        "mixed_rate": 36.4,
+        "partial_rate": 0.0
+      },
+      "分散・スピンオフ": {
+        "total": 4,
+        "success_rate": 50.0,
+        "failure_rate": 25.0,
+        "mixed_rate": 25.0,
+        "partial_rate": 0.0
+      },
+      "耐える・潜伏": {
+        "total": 24,
+        "success_rate": 37.5,
+        "failure_rate": 20.8,
+        "mixed_rate": 29.2,
+        "partial_rate": 12.5
+      },
+      "刷新・破壊": {
+        "total": 12,
+        "success_rate": 58.3,
+        "failure_rate": 8.3,
+        "mixed_rate": 16.7,
+        "partial_rate": 16.7
+      },
+      "対話・融合": {
+        "total": 7,
+        "success_rate": 42.9,
+        "failure_rate": 14.3,
+        "mixed_rate": 0.0,
+        "partial_rate": 42.9
+      },
+      "捨てる・撤退": {
+        "total": 4,
+        "success_rate": 50.0,
+        "failure_rate": 25.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 25.0
+      }
+    },
+    "震": {
+      "攻める・挑戦": {
+        "total": 227,
+        "success_rate": 55.9,
+        "failure_rate": 23.3,
+        "mixed_rate": 16.3,
+        "partial_rate": 4.4
+      },
+      "刷新・破壊": {
+        "total": 8,
+        "success_rate": 87.5,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 12.5
+      },
+      "耐える・潜伏": {
+        "total": 35,
+        "success_rate": 14.3,
+        "failure_rate": 68.6,
+        "mixed_rate": 8.6,
+        "partial_rate": 8.6
+      },
+      "守る・維持": {
+        "total": 24,
+        "success_rate": 37.5,
+        "failure_rate": 16.7,
+        "mixed_rate": 25.0,
+        "partial_rate": 20.8
+      },
+      "逃げる・放置": {
+        "total": 6,
+        "success_rate": 0.0,
+        "failure_rate": 50.0,
+        "mixed_rate": 50.0,
+        "partial_rate": 0.0
+      }
+    },
+    "離": {
+      "攻める・挑戦": {
+        "total": 6,
+        "success_rate": 50.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 50.0,
+        "partial_rate": 0.0
+      },
+      "対話・融合": {
+        "total": 5,
+        "success_rate": 20.0,
+        "failure_rate": 20.0,
+        "mixed_rate": 40.0,
+        "partial_rate": 20.0
+      },
+      "刷新・破壊": {
+        "total": 5,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "耐える・潜伏": {
+        "total": 13,
+        "success_rate": 23.1,
+        "failure_rate": 7.7,
+        "mixed_rate": 69.2,
+        "partial_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 8,
+        "success_rate": 12.5,
+        "failure_rate": 0.0,
+        "mixed_rate": 75.0,
+        "partial_rate": 12.5
+      }
+    },
+    "兌": {
+      "攻める・挑戦": {
+        "total": 9,
+        "success_rate": 44.4,
+        "failure_rate": 22.2,
+        "mixed_rate": 22.2,
+        "partial_rate": 11.1
+      },
+      "守る・維持": {
+        "total": 13,
+        "success_rate": 23.1,
+        "failure_rate": 0.0,
+        "mixed_rate": 46.2,
+        "partial_rate": 30.8
+      },
+      "刷新・破壊": {
+        "total": 3,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "耐える・潜伏": {
+        "total": 18,
+        "success_rate": 5.6,
+        "failure_rate": 22.2,
+        "mixed_rate": 22.2,
+        "partial_rate": 50.0
+      },
+      "捨てる・撤退": {
+        "total": 3,
+        "success_rate": 66.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 33.3
+      }
+    },
+    "巽": {
+      "守る・維持": {
+        "total": 22,
+        "success_rate": 18.2,
+        "failure_rate": 0.0,
+        "mixed_rate": 63.6,
+        "partial_rate": 18.2
+      },
+      "逃げる・放置": {
+        "total": 3,
+        "success_rate": 0.0,
+        "failure_rate": 33.3,
+        "mixed_rate": 66.7,
+        "partial_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 8,
+        "success_rate": 0.0,
+        "failure_rate": 37.5,
+        "mixed_rate": 50.0,
+        "partial_rate": 12.5
+      },
+      "耐える・潜伏": {
+        "total": 11,
+        "success_rate": 0.0,
+        "failure_rate": 9.1,
+        "mixed_rate": 72.7,
+        "partial_rate": 18.2
+      }
+    }
+  },
+  "by_before_state_action": {
+    "停滞・閉塞": {
+      "刷新・破壊": {
+        "total": 15,
+        "success_rate": 80.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 20.0,
+        "partial_rate": 0.0
+      },
+      "捨てる・撤退": {
+        "total": 6,
+        "success_rate": 66.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 16.7,
+        "partial_rate": 16.7
+      },
+      "攻める・挑戦": {
+        "total": 150,
+        "success_rate": 34.0,
+        "failure_rate": 22.7,
+        "mixed_rate": 32.7,
+        "partial_rate": 10.7
+      },
+      "逃げる・放置": {
+        "total": 13,
+        "success_rate": 0.0,
+        "failure_rate": 61.5,
+        "mixed_rate": 30.8,
+        "partial_rate": 7.7
+      },
+      "対話・融合": {
+        "total": 11,
+        "success_rate": 72.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 18.2,
+        "partial_rate": 9.1
+      },
+      "耐える・潜伏": {
+        "total": 37,
+        "success_rate": 29.7,
+        "failure_rate": 45.9,
+        "mixed_rate": 10.8,
+        "partial_rate": 13.5
+      },
+      "守る・維持": {
+        "total": 23,
+        "success_rate": 43.5,
+        "failure_rate": 13.0,
+        "mixed_rate": 34.8,
+        "partial_rate": 8.7
+      },
+      "分散・スピンオフ": {
+        "total": 7,
+        "success_rate": 85.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 14.3,
+        "partial_rate": 0.0
+      }
+    },
+    "混乱・カオス": {
+      "耐える・潜伏": {
+        "total": 26,
+        "success_rate": 26.9,
+        "failure_rate": 7.7,
+        "mixed_rate": 50.0,
+        "partial_rate": 15.4
+      },
+      "攻める・挑戦": {
+        "total": 19,
+        "success_rate": 31.6,
+        "failure_rate": 26.3,
+        "mixed_rate": 31.6,
+        "partial_rate": 10.5
+      },
+      "対話・融合": {
+        "total": 11,
+        "success_rate": 36.4,
+        "failure_rate": 9.1,
+        "mixed_rate": 36.4,
+        "partial_rate": 18.2
+      },
+      "捨てる・撤退": {
+        "total": 4,
+        "success_rate": 75.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 25.0
+      },
+      "刷新・破壊": {
+        "total": 11,
+        "success_rate": 81.8,
+        "failure_rate": 9.1,
+        "mixed_rate": 0.0,
+        "partial_rate": 9.1
+      },
+      "守る・維持": {
+        "total": 21,
+        "success_rate": 14.3,
+        "failure_rate": 0.0,
+        "mixed_rate": 71.4,
+        "partial_rate": 14.3
+      }
+    },
+    "どん底・危機": {
+      "刷新・破壊": {
+        "total": 24,
+        "success_rate": 87.5,
+        "failure_rate": 0.0,
+        "mixed_rate": 8.3,
+        "partial_rate": 4.2
+      },
+      "対話・融合": {
+        "total": 3,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 99,
+        "success_rate": 73.7,
+        "failure_rate": 5.1,
+        "mixed_rate": 20.2,
+        "partial_rate": 1.0
+      },
+      "耐える・潜伏": {
+        "total": 27,
+        "success_rate": 48.1,
+        "failure_rate": 22.2,
+        "mixed_rate": 14.8,
+        "partial_rate": 14.8
+      },
+      "分散・スピンオフ": {
+        "total": 3,
+        "success_rate": 66.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 33.3,
+        "partial_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 6,
+        "success_rate": 50.0,
+        "failure_rate": 33.3,
+        "mixed_rate": 0.0,
+        "partial_rate": 16.7
+      }
+    },
+    "成長痛": {
+      "攻める・挑戦": {
+        "total": 236,
+        "success_rate": 56.4,
+        "failure_rate": 22.5,
+        "mixed_rate": 16.1,
+        "partial_rate": 5.1
+      },
+      "分散・スピンオフ": {
+        "total": 3,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "刷新・破壊": {
+        "total": 8,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "耐える・潜伏": {
+        "total": 51,
+        "success_rate": 19.6,
+        "failure_rate": 49.0,
+        "mixed_rate": 21.6,
+        "partial_rate": 9.8
+      },
+      "守る・維持": {
+        "total": 33,
+        "success_rate": 27.3,
+        "failure_rate": 12.1,
+        "mixed_rate": 36.4,
+        "partial_rate": 24.2
+      },
+      "対話・融合": {
+        "total": 4,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "捨てる・撤退": {
+        "total": 5,
+        "success_rate": 80.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 20.0
+      },
+      "逃げる・放置": {
+        "total": 6,
+        "success_rate": 0.0,
+        "failure_rate": 50.0,
+        "mixed_rate": 50.0,
+        "partial_rate": 0.0
+      }
+    },
+    "安定・平和": {
+      "攻める・挑戦": {
+        "total": 152,
+        "success_rate": 26.3,
+        "failure_rate": 36.8,
+        "mixed_rate": 19.1,
+        "partial_rate": 17.8
+      },
+      "刷新・破壊": {
+        "total": 4,
+        "success_rate": 50.0,
+        "failure_rate": 25.0,
+        "mixed_rate": 25.0,
+        "partial_rate": 0.0
+      },
+      "分散・スピンオフ": {
+        "total": 6,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 57,
+        "success_rate": 17.5,
+        "failure_rate": 42.1,
+        "mixed_rate": 36.8,
+        "partial_rate": 3.5
+      },
+      "耐える・潜伏": {
+        "total": 62,
+        "success_rate": 11.3,
+        "failure_rate": 74.2,
+        "mixed_rate": 11.3,
+        "partial_rate": 3.2
+      },
+      "対話・融合": {
+        "total": 12,
+        "success_rate": 91.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 8.3,
+        "partial_rate": 0.0
+      },
+      "逃げる・放置": {
+        "total": 12,
+        "success_rate": 0.0,
+        "failure_rate": 75.0,
+        "mixed_rate": 25.0,
+        "partial_rate": 0.0
+      }
+    },
+    "絶頂・慢心": {
+      "逃げる・放置": {
+        "total": 20,
+        "success_rate": 0.0,
+        "failure_rate": 70.0,
+        "mixed_rate": 30.0,
+        "partial_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 29,
+        "success_rate": 6.9,
+        "failure_rate": 62.1,
+        "mixed_rate": 27.6,
+        "partial_rate": 3.4
+      },
+      "守る・維持": {
+        "total": 14,
+        "success_rate": 7.1,
+        "failure_rate": 50.0,
+        "mixed_rate": 28.6,
+        "partial_rate": 14.3
+      },
+      "耐える・潜伏": {
+        "total": 31,
+        "success_rate": 25.8,
+        "failure_rate": 25.8,
+        "mixed_rate": 19.4,
+        "partial_rate": 29.0
+      },
+      "刷新・破壊": {
+        "total": 16,
+        "success_rate": 75.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 12.5,
+        "partial_rate": 12.5
+      },
+      "対話・融合": {
+        "total": 7,
+        "success_rate": 42.9,
+        "failure_rate": 14.3,
+        "mixed_rate": 0.0,
+        "partial_rate": 42.9
+      },
+      "捨てる・撤退": {
+        "total": 7,
+        "success_rate": 57.1,
+        "failure_rate": 14.3,
+        "mixed_rate": 0.0,
+        "partial_rate": 28.6
+      }
+    },
+    "V字回復・大成功": {
+      "攻める・挑戦": {
+        "total": 3,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      }
+    },
+    "縮小安定・生存": {
+      "攻める・挑戦": {
+        "total": 3,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      }
+    }
+  },
+  "by_trigger_action": {
+    "外部ショック": {
+      "刷新・破壊": {
+        "total": 27,
+        "success_rate": 81.5,
+        "failure_rate": 0.0,
+        "mixed_rate": 11.1,
+        "partial_rate": 7.4
+      },
+      "耐える・潜伏": {
+        "total": 146,
+        "success_rate": 17.1,
+        "failure_rate": 52.7,
+        "mixed_rate": 19.2,
+        "partial_rate": 11.0
+      },
+      "対話・融合": {
+        "total": 10,
+        "success_rate": 70.0,
+        "failure_rate": 10.0,
+        "mixed_rate": 10.0,
+        "partial_rate": 10.0
+      },
+      "攻める・挑戦": {
+        "total": 69,
+        "success_rate": 33.3,
+        "failure_rate": 39.1,
+        "mixed_rate": 23.2,
+        "partial_rate": 4.3
+      },
+      "守る・維持": {
+        "total": 67,
+        "success_rate": 10.4,
+        "failure_rate": 28.4,
+        "mixed_rate": 41.8,
+        "partial_rate": 19.4
+      },
+      "逃げる・放置": {
+        "total": 10,
+        "success_rate": 0.0,
+        "failure_rate": 80.0,
+        "mixed_rate": 20.0,
+        "partial_rate": 0.0
+      },
+      "分散・スピンオフ": {
+        "total": 7,
+        "success_rate": 57.1,
+        "failure_rate": 0.0,
+        "mixed_rate": 42.9,
+        "partial_rate": 0.0
+      },
+      "捨てる・撤退": {
+        "total": 6,
+        "success_rate": 50.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 50.0
+      }
+    },
+    "内部崩壊": {
+      "刷新・破壊": {
+        "total": 19,
+        "success_rate": 78.9,
+        "failure_rate": 10.5,
+        "mixed_rate": 0.0,
+        "partial_rate": 10.5
+      },
+      "捨てる・撤退": {
+        "total": 5,
+        "success_rate": 40.0,
+        "failure_rate": 20.0,
+        "mixed_rate": 20.0,
+        "partial_rate": 20.0
+      },
+      "逃げる・放置": {
+        "total": 34,
+        "success_rate": 0.0,
+        "failure_rate": 61.8,
+        "mixed_rate": 35.3,
+        "partial_rate": 2.9
+      },
+      "守る・維持": {
+        "total": 31,
+        "success_rate": 6.5,
+        "failure_rate": 48.4,
+        "mixed_rate": 35.5,
+        "partial_rate": 9.7
+      },
+      "攻める・挑戦": {
+        "total": 31,
+        "success_rate": 16.1,
+        "failure_rate": 67.7,
+        "mixed_rate": 12.9,
+        "partial_rate": 3.2
+      },
+      "耐える・潜伏": {
+        "total": 40,
+        "success_rate": 12.5,
+        "failure_rate": 65.0,
+        "mixed_rate": 12.5,
+        "partial_rate": 10.0
+      },
+      "対話・融合": {
+        "total": 10,
+        "success_rate": 30.0,
+        "failure_rate": 10.0,
+        "mixed_rate": 30.0,
+        "partial_rate": 30.0
+      },
+      "分散・スピンオフ": {
+        "total": 3,
+        "success_rate": 0.0,
+        "failure_rate": 66.7,
+        "mixed_rate": 0.0,
+        "partial_rate": 33.3
+      }
+    },
+    "偶発・出会い": {
+      "攻める・挑戦": {
+        "total": 100,
+        "success_rate": 66.0,
+        "failure_rate": 16.0,
+        "mixed_rate": 18.0,
+        "partial_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 12,
+        "success_rate": 75.0,
+        "failure_rate": 8.3,
+        "mixed_rate": 16.7,
+        "partial_rate": 0.0
+      },
+      "対話・融合": {
+        "total": 6,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "耐える・潜伏": {
+        "total": 7,
+        "success_rate": 85.7,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 14.3
+      }
+    },
+    "意図的決断": {
+      "捨てる・撤退": {
+        "total": 14,
+        "success_rate": 78.6,
+        "failure_rate": 0.0,
+        "mixed_rate": 7.1,
+        "partial_rate": 14.3
+      },
+      "攻める・挑戦": {
+        "total": 491,
+        "success_rate": 44.2,
+        "failure_rate": 21.8,
+        "mixed_rate": 22.8,
+        "partial_rate": 11.2
+      },
+      "刷新・破壊": {
+        "total": 32,
+        "success_rate": 84.4,
+        "failure_rate": 0.0,
+        "mixed_rate": 15.6,
+        "partial_rate": 0.0
+      },
+      "分散・スピンオフ": {
+        "total": 11,
+        "success_rate": 100.0,
+        "failure_rate": 0.0,
+        "mixed_rate": 0.0,
+        "partial_rate": 0.0
+      },
+      "対話・融合": {
+        "total": 22,
+        "success_rate": 77.3,
+        "failure_rate": 0.0,
+        "mixed_rate": 13.6,
+        "partial_rate": 9.1
+      },
+      "耐える・潜伏": {
+        "total": 41,
+        "success_rate": 48.8,
+        "failure_rate": 2.4,
+        "mixed_rate": 29.3,
+        "partial_rate": 19.5
+      },
+      "守る・維持": {
+        "total": 44,
+        "success_rate": 40.9,
+        "failure_rate": 11.4,
+        "mixed_rate": 43.2,
+        "partial_rate": 4.5
+      },
+      "逃げる・放置": {
+        "total": 11,
+        "success_rate": 0.0,
+        "failure_rate": 54.5,
+        "mixed_rate": 45.5,
+        "partial_rate": 0.0
+      }
+    }
+  },
+  "by_state_trigger_action": {
+    "停滞・閉塞": {
+      "外部ショック": {
+        "刷新・破壊": {
+          "total": 7,
+          "success_rate": 100.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        },
+        "守る・維持": {
+          "total": 11,
+          "success_rate": 36.4,
+          "failure_rate": 27.3,
+          "mixed_rate": 18.2,
+          "partial_rate": 18.2
+        },
+        "耐える・潜伏": {
+          "total": 16,
+          "success_rate": 12.5,
+          "failure_rate": 75.0,
+          "mixed_rate": 12.5,
+          "partial_rate": 0.0
+        },
+        "攻める・挑戦": {
+          "total": 5,
+          "success_rate": 20.0,
+          "failure_rate": 40.0,
+          "mixed_rate": 40.0,
+          "partial_rate": 0.0
+        }
+      },
+      "内部崩壊": {
+        "逃げる・放置": {
+          "total": 9,
+          "success_rate": 0.0,
+          "failure_rate": 55.6,
+          "mixed_rate": 33.3,
+          "partial_rate": 11.1
+        },
+        "耐える・潜伏": {
+          "total": 5,
+          "success_rate": 0.0,
+          "failure_rate": 100.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        }
+      },
+      "偶発・出会い": {
+        "攻める・挑戦": {
+          "total": 23,
+          "success_rate": 60.9,
+          "failure_rate": 30.4,
+          "mixed_rate": 8.7,
+          "partial_rate": 0.0
+        }
+      },
+      "意図的決断": {
+        "攻める・挑戦": {
+          "total": 120,
+          "success_rate": 29.2,
+          "failure_rate": 20.0,
+          "mixed_rate": 37.5,
+          "partial_rate": 13.3
+        },
+        "刷新・破壊": {
+          "total": 7,
+          "success_rate": 57.1,
+          "failure_rate": 0.0,
+          "mixed_rate": 42.9,
+          "partial_rate": 0.0
+        },
+        "対話・融合": {
+          "total": 6,
+          "success_rate": 66.7,
+          "failure_rate": 0.0,
+          "mixed_rate": 16.7,
+          "partial_rate": 16.7
+        },
+        "耐える・潜伏": {
+          "total": 12,
+          "success_rate": 41.7,
+          "failure_rate": 0.0,
+          "mixed_rate": 16.7,
+          "partial_rate": 41.7
+        },
+        "守る・維持": {
+          "total": 9,
+          "success_rate": 55.6,
+          "failure_rate": 0.0,
+          "mixed_rate": 44.4,
+          "partial_rate": 0.0
+        }
+      }
+    },
+    "混乱・カオス": {
+      "外部ショック": {
+        "耐える・潜伏": {
+          "total": 15,
+          "success_rate": 20.0,
+          "failure_rate": 6.7,
+          "mixed_rate": 53.3,
+          "partial_rate": 20.0
+        },
+        "攻める・挑戦": {
+          "total": 7,
+          "success_rate": 28.6,
+          "failure_rate": 28.6,
+          "mixed_rate": 28.6,
+          "partial_rate": 14.3
+        },
+        "守る・維持": {
+          "total": 6,
+          "success_rate": 0.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 83.3,
+          "partial_rate": 16.7
+        }
+      },
+      "意図的決断": {
+        "攻める・挑戦": {
+          "total": 8,
+          "success_rate": 25.0,
+          "failure_rate": 25.0,
+          "mixed_rate": 50.0,
+          "partial_rate": 0.0
+        },
+        "守る・維持": {
+          "total": 8,
+          "success_rate": 25.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 75.0,
+          "partial_rate": 0.0
+        }
+      },
+      "内部崩壊": {
+        "刷新・破壊": {
+          "total": 5,
+          "success_rate": 60.0,
+          "failure_rate": 20.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 20.0
+        },
+        "耐える・潜伏": {
+          "total": 8,
+          "success_rate": 37.5,
+          "failure_rate": 12.5,
+          "mixed_rate": 37.5,
+          "partial_rate": 12.5
+        },
+        "守る・維持": {
+          "total": 6,
+          "success_rate": 0.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 66.7,
+          "partial_rate": 33.3
+        }
+      }
+    },
+    "どん底・危機": {
+      "内部崩壊": {
+        "刷新・破壊": {
+          "total": 5,
+          "success_rate": 100.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        }
+      },
+      "外部ショック": {
+        "刷新・破壊": {
+          "total": 8,
+          "success_rate": 75.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 12.5,
+          "partial_rate": 12.5
+        },
+        "攻める・挑戦": {
+          "total": 10,
+          "success_rate": 90.0,
+          "failure_rate": 10.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        },
+        "耐える・潜伏": {
+          "total": 16,
+          "success_rate": 37.5,
+          "failure_rate": 31.2,
+          "mixed_rate": 12.5,
+          "partial_rate": 18.8
+        }
+      },
+      "意図的決断": {
+        "耐える・潜伏": {
+          "total": 8,
+          "success_rate": 75.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 25.0,
+          "partial_rate": 0.0
+        },
+        "攻める・挑戦": {
+          "total": 63,
+          "success_rate": 66.7,
+          "failure_rate": 6.3,
+          "mixed_rate": 25.4,
+          "partial_rate": 1.6
+        },
+        "刷新・破壊": {
+          "total": 11,
+          "success_rate": 90.9,
+          "failure_rate": 0.0,
+          "mixed_rate": 9.1,
+          "partial_rate": 0.0
+        }
+      },
+      "偶発・出会い": {
+        "攻める・挑戦": {
+          "total": 23,
+          "success_rate": 82.6,
+          "failure_rate": 0.0,
+          "mixed_rate": 17.4,
+          "partial_rate": 0.0
+        }
+      }
+    },
+    "成長痛": {
+      "外部ショック": {
+        "攻める・挑戦": {
+          "total": 12,
+          "success_rate": 50.0,
+          "failure_rate": 25.0,
+          "mixed_rate": 25.0,
+          "partial_rate": 0.0
+        },
+        "守る・維持": {
+          "total": 14,
+          "success_rate": 0.0,
+          "failure_rate": 14.3,
+          "mixed_rate": 42.9,
+          "partial_rate": 42.9
+        },
+        "耐える・潜伏": {
+          "total": 36,
+          "success_rate": 19.4,
+          "failure_rate": 52.8,
+          "mixed_rate": 19.4,
+          "partial_rate": 8.3
+        }
+      },
+      "意図的決断": {
+        "攻める・挑戦": {
+          "total": 178,
+          "success_rate": 56.7,
+          "failure_rate": 23.6,
+          "mixed_rate": 12.9,
+          "partial_rate": 6.7
+        },
+        "刷新・破壊": {
+          "total": 6,
+          "success_rate": 100.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        },
+        "耐える・潜伏": {
+          "total": 8,
+          "success_rate": 37.5,
+          "failure_rate": 0.0,
+          "mixed_rate": 37.5,
+          "partial_rate": 25.0
+        },
+        "守る・維持": {
+          "total": 12,
+          "success_rate": 41.7,
+          "failure_rate": 8.3,
+          "mixed_rate": 33.3,
+          "partial_rate": 16.7
+        }
+      },
+      "内部崩壊": {
+        "攻める・挑戦": {
+          "total": 7,
+          "success_rate": 0.0,
+          "failure_rate": 85.7,
+          "mixed_rate": 14.3,
+          "partial_rate": 0.0
+        },
+        "耐える・潜伏": {
+          "total": 7,
+          "success_rate": 0.0,
+          "failure_rate": 85.7,
+          "mixed_rate": 14.3,
+          "partial_rate": 0.0
+        }
+      },
+      "偶発・出会い": {
+        "攻める・挑戦": {
+          "total": 39,
+          "success_rate": 66.7,
+          "failure_rate": 5.1,
+          "mixed_rate": 28.2,
+          "partial_rate": 0.0
+        }
+      }
+    },
+    "安定・平和": {
+      "意図的決断": {
+        "攻める・挑戦": {
+          "total": 107,
+          "success_rate": 29.9,
+          "failure_rate": 28.0,
+          "mixed_rate": 18.7,
+          "partial_rate": 23.4
+        },
+        "分散・スピンオフ": {
+          "total": 6,
+          "success_rate": 100.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        },
+        "耐える・潜伏": {
+          "total": 9,
+          "success_rate": 44.4,
+          "failure_rate": 11.1,
+          "mixed_rate": 33.3,
+          "partial_rate": 11.1
+        },
+        "守る・維持": {
+          "total": 14,
+          "success_rate": 42.9,
+          "failure_rate": 28.6,
+          "mixed_rate": 28.6,
+          "partial_rate": 0.0
+        },
+        "対話・融合": {
+          "total": 8,
+          "success_rate": 100.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        },
+        "逃げる・放置": {
+          "total": 5,
+          "success_rate": 0.0,
+          "failure_rate": 80.0,
+          "mixed_rate": 20.0,
+          "partial_rate": 0.0
+        }
+      },
+      "内部崩壊": {
+        "逃げる・放置": {
+          "total": 6,
+          "success_rate": 0.0,
+          "failure_rate": 66.7,
+          "mixed_rate": 33.3,
+          "partial_rate": 0.0
+        },
+        "守る・維持": {
+          "total": 13,
+          "success_rate": 7.7,
+          "failure_rate": 69.2,
+          "mixed_rate": 23.1,
+          "partial_rate": 0.0
+        },
+        "耐える・潜伏": {
+          "total": 11,
+          "success_rate": 0.0,
+          "failure_rate": 100.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 0.0
+        },
+        "攻める・挑戦": {
+          "total": 7,
+          "success_rate": 0.0,
+          "failure_rate": 85.7,
+          "mixed_rate": 14.3,
+          "partial_rate": 0.0
+        }
+      },
+      "偶発・出会い": {
+        "攻める・挑戦": {
+          "total": 14,
+          "success_rate": 42.9,
+          "failure_rate": 50.0,
+          "mixed_rate": 7.1,
+          "partial_rate": 0.0
+        }
+      },
+      "外部ショック": {
+        "守る・維持": {
+          "total": 27,
+          "success_rate": 3.7,
+          "failure_rate": 37.0,
+          "mixed_rate": 51.9,
+          "partial_rate": 7.4
+        },
+        "耐える・潜伏": {
+          "total": 41,
+          "success_rate": 4.9,
+          "failure_rate": 82.9,
+          "mixed_rate": 9.8,
+          "partial_rate": 2.4
+        },
+        "攻める・挑戦": {
+          "total": 24,
+          "success_rate": 8.3,
+          "failure_rate": 54.2,
+          "mixed_rate": 29.2,
+          "partial_rate": 8.3
+        }
+      }
+    },
+    "絶頂・慢心": {
+      "内部崩壊": {
+        "逃げる・放置": {
+          "total": 13,
+          "success_rate": 0.0,
+          "failure_rate": 69.2,
+          "mixed_rate": 30.8,
+          "partial_rate": 0.0
+        },
+        "守る・維持": {
+          "total": 7,
+          "success_rate": 14.3,
+          "failure_rate": 42.9,
+          "mixed_rate": 28.6,
+          "partial_rate": 14.3
+        },
+        "攻める・挑戦": {
+          "total": 9,
+          "success_rate": 0.0,
+          "failure_rate": 77.8,
+          "mixed_rate": 22.2,
+          "partial_rate": 0.0
+        },
+        "耐える・潜伏": {
+          "total": 8,
+          "success_rate": 25.0,
+          "failure_rate": 25.0,
+          "mixed_rate": 12.5,
+          "partial_rate": 37.5
+        },
+        "刷新・破壊": {
+          "total": 6,
+          "success_rate": 83.3,
+          "failure_rate": 0.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 16.7
+        }
+      },
+      "外部ショック": {
+        "攻める・挑戦": {
+          "total": 9,
+          "success_rate": 11.1,
+          "failure_rate": 66.7,
+          "mixed_rate": 22.2,
+          "partial_rate": 0.0
+        },
+        "守る・維持": {
+          "total": 6,
+          "success_rate": 0.0,
+          "failure_rate": 66.7,
+          "mixed_rate": 16.7,
+          "partial_rate": 16.7
+        },
+        "逃げる・放置": {
+          "total": 7,
+          "success_rate": 0.0,
+          "failure_rate": 71.4,
+          "mixed_rate": 28.6,
+          "partial_rate": 0.0
+        },
+        "耐える・潜伏": {
+          "total": 22,
+          "success_rate": 22.7,
+          "failure_rate": 27.3,
+          "mixed_rate": 22.7,
+          "partial_rate": 27.3
+        },
+        "刷新・破壊": {
+          "total": 10,
+          "success_rate": 70.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 20.0,
+          "partial_rate": 10.0
+        },
+        "捨てる・撤退": {
+          "total": 5,
+          "success_rate": 60.0,
+          "failure_rate": 0.0,
+          "mixed_rate": 0.0,
+          "partial_rate": 40.0
+        }
+      },
+      "意図的決断": {
+        "攻める・挑戦": {
+          "total": 11,
+          "success_rate": 9.1,
+          "failure_rate": 45.5,
+          "mixed_rate": 36.4,
+          "partial_rate": 9.1
+        }
+      }
+    }
+  }
+}

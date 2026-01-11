@@ -1,0 +1,42 @@
+[
+  {
+    "target_name": "NVIDIA（AI半導体の王者）",
+    "scale": "company",
+    "period": "2022-2025",
+    "story_summary": "1993年創業、ジェンスン・フアンCEO。GPUメーカーからAI半導体の覇者へ。2023年度決算で売上高前期比2.3倍、純利益6.8倍。2023年Q2売上高135億ドル（前年同期比101%増）、Q3売上高181億ドル（同206%増）。AI半導体シェア約7割。2024年6月に時価総額3兆ドル突破、6月18日に3.3兆ドルで世界トップに。2025年7月に世界初の時価総額4兆ドル達成（トヨタの約15倍）。「アクセラレーテッド・コンピューティングと生成AIは転換点を迎えた」とフアンCEO。",
+    "before_state": "成長痛",
+    "trigger_type": "外部ショック",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "離",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": ["#ジェンスンフアン", "#GPU", "#AI半導体", "#時価総額4兆ドル", "#シェア7割"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "GPU企業の成長（震）→生成AI革命という機会（離）→積極的なAI投資（乾）→時価総額世界一（乾）"
+  },
+  {
+    "target_name": "ARM（ソフトバンク傘下からIPO）",
+    "scale": "company",
+    "period": "2016-2023",
+    "story_summary": "英国発の半導体設計企業。全スマートフォンの99%に搭載されるチップアーキテクチャを設計。2016年、ソフトバンクが320億ドル（約4.7兆円）で買収し非上場化。2023年9月13日、ナスダックにIPO。1ADS51ドルで48.7億ドル（約7180億円）を調達、2023年最大のIPOに。初日に株価25%上昇。インテル、Apple、NVIDIA、サムスン、TSMCが投資家として参加。IPO後もソフトバンクGが約90%を保有。AI半導体への期待で評価額600-700億ドル。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "変質・新生",
+    "before_hex": "坤",
+    "trigger_hex": "離",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": ["#ソフトバンク", "#半導体設計", "#2023年最大IPO", "#7180億円調達", "#スマホ99%"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "非上場の安定期（坤）→IPOという革新的決断（離）→積極的な市場参入（乾）→新たな成長へ（震）"
+  }
+]

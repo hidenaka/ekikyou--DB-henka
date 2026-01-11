@@ -1,0 +1,334 @@
+{
+  "version": "1.1",
+  "description": "失敗回避ルート辞書（pattern_type連携版）",
+  "pattern_action_risk": {
+    "Shock_Recovery": {
+      "刷新・破壊": {
+        "total": 41,
+        "failure_rate": 0.0
+      },
+      "対話・融合": {
+        "total": 11,
+        "failure_rate": 0.0
+      },
+      "捨てる・撤退": {
+        "total": 7,
+        "failure_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 83,
+        "failure_rate": 0.0
+      },
+      "耐える・潜伏": {
+        "total": 51,
+        "failure_rate": 2.0
+      },
+      "守る・維持": {
+        "total": 25,
+        "failure_rate": 0.0
+      }
+    },
+    "Endurance": {
+      "耐える・潜伏": {
+        "total": 60,
+        "failure_rate": 20.0
+      },
+      "守る・維持": {
+        "total": 32,
+        "failure_rate": 9.4
+      },
+      "攻める・挑戦": {
+        "total": 76,
+        "failure_rate": 38.2
+      },
+      "対話・融合": {
+        "total": 7,
+        "failure_rate": 0.0
+      }
+    },
+    "Pivot_Success": {
+      "刷新・破壊": {
+        "total": 19,
+        "failure_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 181,
+        "failure_rate": 0.0
+      },
+      "捨てる・撤退": {
+        "total": 15,
+        "failure_rate": 0.0
+      },
+      "分散・スピンオフ": {
+        "total": 14,
+        "failure_rate": 0.0
+      },
+      "対話・融合": {
+        "total": 13,
+        "failure_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 12,
+        "failure_rate": 0.0
+      }
+    },
+    "Hubris_Collapse": {
+      "逃げる・放置": {
+        "total": 24,
+        "failure_rate": 66.7
+      },
+      "攻める・挑戦": {
+        "total": 84,
+        "failure_rate": 79.8
+      },
+      "守る・維持": {
+        "total": 10,
+        "failure_rate": 70.0
+      },
+      "耐える・潜伏": {
+        "total": 10,
+        "failure_rate": 80.0
+      }
+    },
+    "Slow_Decline": {
+      "守る・維持": {
+        "total": 51,
+        "failure_rate": 58.8
+      },
+      "逃げる・放置": {
+        "total": 26,
+        "failure_rate": 65.4
+      },
+      "耐える・潜伏": {
+        "total": 96,
+        "failure_rate": 86.5
+      },
+      "攻める・挑戦": {
+        "total": 82,
+        "failure_rate": 91.5
+      }
+    },
+    "Steady_Growth": {
+      "刷新・破壊": {
+        "total": 14,
+        "failure_rate": 0.0
+      },
+      "攻める・挑戦": {
+        "total": 185,
+        "failure_rate": 0.0
+      },
+      "守る・維持": {
+        "total": 24,
+        "failure_rate": 0.0
+      },
+      "耐える・潜伏": {
+        "total": 13,
+        "failure_rate": 0.0
+      },
+      "対話・融合": {
+        "total": 11,
+        "failure_rate": 0.0
+      }
+    }
+  },
+  "high_risk_state_action": [
+    {
+      "before_state": "安定・平和",
+      "action_type": "逃げる・放置",
+      "failure_rate": 75.0,
+      "sample_size": 12,
+      "warning": "「安定・平和」で「逃げる・放置」は失敗率75.0%"
+    },
+    {
+      "before_state": "安定・平和",
+      "action_type": "耐える・潜伏",
+      "failure_rate": 74.2,
+      "sample_size": 62,
+      "warning": "「安定・平和」で「耐える・潜伏」は失敗率74.2%"
+    },
+    {
+      "before_state": "絶頂・慢心",
+      "action_type": "逃げる・放置",
+      "failure_rate": 70.0,
+      "sample_size": 20,
+      "warning": "「絶頂・慢心」で「逃げる・放置」は失敗率70.0%"
+    },
+    {
+      "before_state": "絶頂・慢心",
+      "action_type": "攻める・挑戦",
+      "failure_rate": 62.1,
+      "sample_size": 29,
+      "warning": "「絶頂・慢心」で「攻める・挑戦」は失敗率62.1%"
+    },
+    {
+      "before_state": "停滞・閉塞",
+      "action_type": "逃げる・放置",
+      "failure_rate": 61.5,
+      "sample_size": 13,
+      "warning": "「停滞・閉塞」で「逃げる・放置」は失敗率61.5%"
+    },
+    {
+      "before_state": "成長痛",
+      "action_type": "逃げる・放置",
+      "failure_rate": 50.0,
+      "sample_size": 6,
+      "warning": "「成長痛」で「逃げる・放置」は失敗率50.0%"
+    },
+    {
+      "before_state": "絶頂・慢心",
+      "action_type": "守る・維持",
+      "failure_rate": 50.0,
+      "sample_size": 14,
+      "warning": "「絶頂・慢心」で「守る・維持」は失敗率50.0%"
+    },
+    {
+      "before_state": "成長痛",
+      "action_type": "耐える・潜伏",
+      "failure_rate": 49.0,
+      "sample_size": 51,
+      "warning": "「成長痛」で「耐える・潜伏」は失敗率49.0%"
+    },
+    {
+      "before_state": "停滞・閉塞",
+      "action_type": "耐える・潜伏",
+      "failure_rate": 45.9,
+      "sample_size": 37,
+      "warning": "「停滞・閉塞」で「耐える・潜伏」は失敗率45.9%"
+    },
+    {
+      "before_state": "安定・平和",
+      "action_type": "守る・維持",
+      "failure_rate": 42.1,
+      "sample_size": 57,
+      "warning": "「安定・平和」で「守る・維持」は失敗率42.1%"
+    }
+  ],
+  "low_risk_state_action": [
+    {
+      "before_state": "安定・平和",
+      "action_type": "対話・融合",
+      "success_rate": 91.7,
+      "failure_rate": 0.0,
+      "sample_size": 12,
+      "recommendation": "「安定・平和」で「対話・融合」は成功率91.7%"
+    },
+    {
+      "before_state": "どん底・危機",
+      "action_type": "刷新・破壊",
+      "success_rate": 87.5,
+      "failure_rate": 0.0,
+      "sample_size": 24,
+      "recommendation": "「どん底・危機」で「刷新・破壊」は成功率87.5%"
+    },
+    {
+      "before_state": "混乱・カオス",
+      "action_type": "刷新・破壊",
+      "success_rate": 81.8,
+      "failure_rate": 9.1,
+      "sample_size": 11,
+      "recommendation": "「混乱・カオス」で「刷新・破壊」は成功率81.8%"
+    },
+    {
+      "before_state": "停滞・閉塞",
+      "action_type": "刷新・破壊",
+      "success_rate": 80.0,
+      "failure_rate": 0.0,
+      "sample_size": 15,
+      "recommendation": "「停滞・閉塞」で「刷新・破壊」は成功率80.0%"
+    },
+    {
+      "before_state": "絶頂・慢心",
+      "action_type": "刷新・破壊",
+      "success_rate": 75.0,
+      "failure_rate": 0.0,
+      "sample_size": 16,
+      "recommendation": "「絶頂・慢心」で「刷新・破壊」は成功率75.0%"
+    },
+    {
+      "before_state": "どん底・危機",
+      "action_type": "攻める・挑戦",
+      "success_rate": 73.7,
+      "failure_rate": 5.1,
+      "sample_size": 99,
+      "recommendation": "「どん底・危機」で「攻める・挑戦」は成功率73.7%"
+    },
+    {
+      "before_state": "停滞・閉塞",
+      "action_type": "対話・融合",
+      "success_rate": 72.7,
+      "failure_rate": 0.0,
+      "sample_size": 11,
+      "recommendation": "「停滞・閉塞」で「対話・融合」は成功率72.7%"
+    }
+  ],
+  "pattern_warnings": {
+    "Hubris_Collapse": {
+      "description": "絶頂からの転落パターン",
+      "warning": "成功に酔って判断を誤りやすい時期です",
+      "high_risk_actions": [
+        "攻める・挑戦",
+        "逃げる・放置"
+      ],
+      "recommended_actions": [
+        "守る・維持",
+        "耐える・潜伏"
+      ]
+    },
+    "Slow_Decline": {
+      "description": "じわじわ衰退パターン",
+      "warning": "変化を避けると状況は悪化します",
+      "high_risk_actions": [
+        "耐える・潜伏",
+        "逃げる・放置"
+      ],
+      "recommended_actions": [
+        "刷新・破壊",
+        "攻める・挑戦"
+      ]
+    },
+    "Shock_Recovery": {
+      "description": "ショックからの回復パターン",
+      "warning": "焦って動くと傷が深くなります",
+      "high_risk_actions": [
+        "攻める・挑戦"
+      ],
+      "recommended_actions": [
+        "耐える・潜伏",
+        "守る・維持"
+      ]
+    },
+    "Endurance": {
+      "description": "耐久・持久パターン",
+      "warning": "長期戦の覚悟が必要です",
+      "high_risk_actions": [
+        "逃げる・放置"
+      ],
+      "recommended_actions": [
+        "耐える・潜伏",
+        "守る・維持"
+      ]
+    },
+    "Pivot_Success": {
+      "description": "方向転換パターン",
+      "warning": "変化のタイミングを見極めることが重要です",
+      "high_risk_actions": [
+        "耐える・潜伏"
+      ],
+      "recommended_actions": [
+        "刷新・破壊",
+        "攻める・挑戦"
+      ]
+    },
+    "Steady_Growth": {
+      "description": "着実成長パターン",
+      "warning": "急がず着実に進むことが成功の鍵です",
+      "high_risk_actions": [
+        "刷新・破壊"
+      ],
+      "recommended_actions": [
+        "守る・維持",
+        "攻める・挑戦"
+      ]
+    }
+  }
+}

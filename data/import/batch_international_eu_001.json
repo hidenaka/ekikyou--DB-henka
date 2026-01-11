@@ -1,0 +1,362 @@
+[
+  {
+    "target_name": "ノキア携帯事業衰退（2007-2014）",
+    "scale": "company",
+    "period": "2007-2014",
+    "story_summary": "ノキアがスマホ時代に対応できず、携帯電話事業をMicrosoftに売却した。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "どん底・危機",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "坎",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Failure",
+    "free_tags": [
+      "#ノキア",
+      "#携帯",
+      "#衰退"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離（王者）→震（iPhone）→坎（苦戦）→坎（売却）。巨人の没落"
+  },
+  {
+    "target_name": "ノキア通信機器復活（2015-2024）",
+    "scale": "company",
+    "period": "2015-2024",
+    "story_summary": "ノキアが通信機器メーカーとして復活し、5G市場で存在感を示した。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "持続成長・大成功",
+    "before_hex": "坎",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#ノキア",
+      "#5G",
+      "#通信"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "坎（衰退）→乾（転換）→乾（復活）→乾（成長）。B2Bへの転身"
+  },
+  {
+    "target_name": "VW排ガス不正（2015-2020）",
+    "scale": "company",
+    "period": "2015-2020",
+    "story_summary": "フォルクスワーゲンの排ガス不正が発覚し、巨額の罰金とブランド毀損に直面した。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "どん底・危機",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "坎",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#VW",
+      "#排ガス",
+      "#不正"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離（成功）→震（発覚）→坎（危機）→坎（信頼失墜）。不正の代償"
+  },
+  {
+    "target_name": "VW EV転換（2019-2024）",
+    "scale": "company",
+    "period": "2019-2024",
+    "story_summary": "VWがEVシフトを加速し、ID.シリーズで電動化市場に参入した。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "変質・新生",
+    "before_hex": "坎",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "巽",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#VW",
+      "#EV",
+      "#電動化"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "坎（危機）→乾（転換）→乾（投資）→巽（模索）。電動化への挑戦"
+  },
+  {
+    "target_name": "Brexit決定と混乱（2016-2020）",
+    "scale": "country",
+    "period": "2016-2020",
+    "story_summary": "英国がEU離脱を決定し、政治・経済の混乱が続いた。",
+    "before_state": "安定・平和",
+    "trigger_type": "外部ショック",
+    "action_type": "刷新・破壊",
+    "after_state": "どん底・危機",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "坎",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#Brexit",
+      "#英国",
+      "#EU"
+    ],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "艮（現状）→震（投票）→乾（離脱）→坎（混乱）。歴史的転換点"
+  },
+  {
+    "target_name": "ARM売却とNVIDIA破談（2020-2022）",
+    "scale": "company",
+    "period": "2020-2022",
+    "story_summary": "ソフトバンクがARMをNVIDIAに売却しようとしたが規制で断念し、IPOへ。",
+    "before_state": "安定・平和",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・スピンオフ",
+    "after_state": "持続成長・大成功",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#ARM",
+      "#半導体",
+      "#IPO"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "艮（保有）→震（売却交渉）→巽（規制）→乾（IPO成功）。半導体設計の覇者"
+  },
+  {
+    "target_name": "ASML半導体装置独占（2015-2024）",
+    "scale": "company",
+    "period": "2015-2024",
+    "story_summary": "オランダのASMLがEUV露光装置で世界独占状態となり、半導体産業の鍵を握った。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#ASML",
+      "#半導体",
+      "#EUV"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離（成長）→乾（開発）→乾（独占）→乾（支配）。半導体製造の要"
+  },
+  {
+    "target_name": "SAP クラウド転換（2015-2024）",
+    "scale": "company",
+    "period": "2015-2024",
+    "story_summary": "SAPがクラウドERPへの転換を進め、サブスクリプションモデルに移行した。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "持続成長・大成功",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#SAP",
+      "#クラウド",
+      "#ERP"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "艮（オンプレ）→乾（転換）→乾（クラウド）→乾（成長）。企業ITの進化"
+  },
+  {
+    "target_name": "シーメンス デジタル化成功（2014-2024）",
+    "scale": "company",
+    "period": "2014-2024",
+    "story_summary": "シーメンスがデジタルツインなどで産業デジタル化をリードし、収益構造を転換した。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "持続成長・大成功",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#シーメンス",
+      "#デジタル",
+      "#産業"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "艮（重電）→乾（デジタル）→乾（転換）→乾（成長）。老舗の変革"
+  },
+  {
+    "target_name": "Spotifyの赤字継続と黒字化（2018-2024）",
+    "scale": "company",
+    "period": "2018-2024",
+    "story_summary": "Spotifyが長年の赤字からコスト削減で黒字化に成功し、音楽配信の王者に。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "持続成長・大成功",
+    "before_hex": "坎",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#Spotify",
+      "#音楽",
+      "#黒字化"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "坎（赤字）→乾（改革）→乾（効率化）→乾（黒字）。ストリーミングの勝者"
+  }
+]

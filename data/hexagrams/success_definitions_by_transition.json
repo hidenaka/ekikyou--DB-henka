@@ -1,0 +1,668 @@
+{
+  "_metadata": {
+    "description": "八卦→八卦遷移別の成功定義。cases.jsonlの9,447件の実データ分析に基づく",
+    "generated_at": "2026-01-11",
+    "data_source": "data/raw/cases.jsonl",
+    "difficulty_scale": {
+      "low": "成功率90%以上",
+      "medium": "成功率70-89%",
+      "high": "成功率40-69%",
+      "very_high": "成功率40%未満"
+    }
+  },
+  "乾→乾": {
+    "success_meaning": "絶頂・創造性を維持継続",
+    "success_rate": 91,
+    "total_cases": 35,
+    "difficulty": "low",
+    "typical_actions": ["乾", "艮", "震"],
+    "typical_patterns": ["Steady_Growth", "Shock_Recovery"],
+    "strategic_insight": "乾（創造力）の維持には艮（抑制）も必要。過剰な前進は慢心に繋がる",
+    "recommended_approach": "攻めと守りのバランス、定期的な内省"
+  },
+  "乾→坤": {
+    "success_meaning": "創造から安定への軟着陸（非常に困難）",
+    "success_rate": 6,
+    "total_cases": 244,
+    "difficulty": "very_high",
+    "typical_actions": ["艮", "巽", "乾"],
+    "typical_patterns": ["Hubris_Collapse", "Slow_Decline"],
+    "strategic_insight": "絶頂からの急落パターン。慢心による崩壊が大半",
+    "recommended_approach": "早期の危機認識、謙虚さの維持、計画的な権限移譲",
+    "warning": "この遷移は多くの場合失敗を意味する"
+  },
+  "乾→震": {
+    "success_meaning": "創造力を新たな動きに転換",
+    "success_rate": 69,
+    "total_cases": 84,
+    "difficulty": "high",
+    "typical_actions": ["乾", "離", "艮"],
+    "typical_patterns": ["Breakthrough", "Crisis_Pivot"],
+    "strategic_insight": "創造から行動へ。離（明確化）がブリッジとして有効",
+    "recommended_approach": "ビジョンの明確化、積極的な行動、但し過信に注意"
+  },
+  "乾→巽": {
+    "success_meaning": "創造力を柔軟性・適応力に転換",
+    "success_rate": 22,
+    "total_cases": 67,
+    "difficulty": "very_high",
+    "typical_actions": ["巽", "艮", "離"],
+    "typical_patterns": ["Exploration", "Shock_Recovery"],
+    "strategic_insight": "剛から柔への転換は困難。探索期に入ると方向性を見失いやすい",
+    "recommended_approach": "明確な目的を持った柔軟化、焦点の維持"
+  },
+  "乾→坎": {
+    "success_meaning": "（この遷移での成功はほぼ不可能）",
+    "success_rate": 0,
+    "total_cases": 129,
+    "difficulty": "very_high",
+    "typical_actions": ["兌", "艮", "乾"],
+    "typical_patterns": ["Hubris_Collapse", "Slow_Decline"],
+    "strategic_insight": "絶頂から危機への転落。慢心が最大の原因",
+    "recommended_approach": "この遷移は回避すべき。兌や艮の行動は危機を深める",
+    "warning": "成功率0%。慢心・過信の典型的結末"
+  },
+  "乾→離": {
+    "success_meaning": "創造力を明確なビジョン・名声に転換",
+    "success_rate": 68,
+    "total_cases": 60,
+    "difficulty": "high",
+    "typical_actions": ["乾", "艮", "巽"],
+    "typical_patterns": ["Steady_Growth", "Hubris_Collapse"],
+    "strategic_insight": "成功と崩壊の分岐点。乾の行動継続か、艮での抑制かが鍵",
+    "recommended_approach": "創造と可視化のバランス、過度な自己顕示を避ける"
+  },
+  "乾→艮": {
+    "success_meaning": "創造から安定・停止への転換",
+    "success_rate": 21,
+    "total_cases": 124,
+    "difficulty": "very_high",
+    "typical_actions": ["震", "乾", "巽"],
+    "typical_patterns": ["Hubris_Collapse", "Slow_Decline"],
+    "strategic_insight": "絶頂からの急停止。計画的停止でなければ崩壊に近い",
+    "recommended_approach": "意図的な停止であれば成功可能。震や乾の行動は過剰"
+  },
+  "乾→兌": {
+    "success_meaning": "創造力を喜び・交流に転換",
+    "success_rate": 60,
+    "total_cases": 20,
+    "difficulty": "high",
+    "typical_actions": ["巽", "艮", "離"],
+    "typical_patterns": ["Shock_Recovery", "Pivot_Success"],
+    "strategic_insight": "創造から交流へ。柔軟な姿勢（巽）が転換を助ける",
+    "recommended_approach": "人間関係・対外発信への注力、創造一辺倒からの脱却"
+  },
+  "坤→乾": {
+    "success_meaning": "受容・安定から創造・リーダーシップへ躍進",
+    "success_rate": 98,
+    "total_cases": 249,
+    "difficulty": "low",
+    "typical_actions": ["震", "乾", "艮"],
+    "typical_patterns": ["Steady_Growth", "Breakthrough"],
+    "strategic_insight": "最も成功率の高い遷移の一つ。震（行動）が起爆剤",
+    "recommended_approach": "積極的な行動、創造的イニシアチブ、自信を持った前進"
+  },
+  "坤→坤": {
+    "success_meaning": "安定・受容状態の維持",
+    "success_rate": 24,
+    "total_cases": 308,
+    "difficulty": "very_high",
+    "typical_actions": ["乾", "艮", "坤"],
+    "typical_patterns": ["Slow_Decline", "Endurance"],
+    "strategic_insight": "停滞の固定化リスク。乾の行動で打破を試みるも失敗多い",
+    "recommended_approach": "現状維持は衰退を意味する。小さな変化から始める"
+  },
+  "坤→震": {
+    "success_meaning": "安定から積極的行動への転換",
+    "success_rate": 12,
+    "total_cases": 80,
+    "difficulty": "very_high",
+    "typical_actions": ["乾", "艮", "離"],
+    "typical_patterns": ["Pivot_Success", "Endurance"],
+    "strategic_insight": "安定からの急な動きは失敗しやすい。準備不足が原因",
+    "recommended_approach": "段階的な活性化、離（明確化）を経てから行動"
+  },
+  "坤→巽": {
+    "success_meaning": "安定から柔軟な探索へ",
+    "success_rate": 56,
+    "total_cases": 25,
+    "difficulty": "high",
+    "typical_actions": ["乾", "艮", "離"],
+    "typical_patterns": ["Pivot_Success", "Steady_Growth"],
+    "strategic_insight": "安定基盤からの柔軟化。成功率は中程度",
+    "recommended_approach": "安定を活かした探索、リスクを抑えた新規開拓"
+  },
+  "坤→坎": {
+    "success_meaning": "（この遷移での成功はほぼ不可能）",
+    "success_rate": 0,
+    "total_cases": 117,
+    "difficulty": "very_high",
+    "typical_actions": ["乾", "艮", "坤"],
+    "typical_patterns": ["Slow_Decline", "Hubris_Collapse"],
+    "strategic_insight": "安定から危機への転落。外部変化への対応遅れが原因",
+    "recommended_approach": "この遷移は回避すべき。早期の変化対応が必要",
+    "warning": "成功率0%。変化への適応失敗の結果"
+  },
+  "坤→離": {
+    "success_meaning": "安定から明確なビジョン・名声の獲得",
+    "success_rate": 93,
+    "total_cases": 114,
+    "difficulty": "low",
+    "typical_actions": ["乾", "震", "巽"],
+    "typical_patterns": ["Pivot_Success", "Steady_Growth"],
+    "strategic_insight": "安定基盤からの躍進。乾や震の積極行動が成功に導く",
+    "recommended_approach": "安定を活かした積極的な発信、ビジョンの明確化"
+  },
+  "坤→艮": {
+    "success_meaning": "安定から意図的停止・内省へ",
+    "success_rate": 47,
+    "total_cases": 83,
+    "difficulty": "high",
+    "typical_actions": ["震", "艮", "坤"],
+    "typical_patterns": ["Steady_Growth", "Shock_Recovery"],
+    "strategic_insight": "安定から停止は計画的であれば有効。震が意外に多い",
+    "recommended_approach": "意図的な停止と内省、次の行動への準備期間として活用"
+  },
+  "坤→兌": {
+    "success_meaning": "安定から喜び・交流の獲得",
+    "success_rate": 83,
+    "total_cases": 108,
+    "difficulty": "medium",
+    "typical_actions": ["離", "乾", "艮"],
+    "typical_patterns": ["Pivot_Success", "Steady_Growth"],
+    "strategic_insight": "安定から交流へ。離（明確化・発信）が橋渡しとして有効",
+    "recommended_approach": "対外発信の強化、コミュニケーションの活性化"
+  },
+  "震→乾": {
+    "success_meaning": "行動力を創造・リーダーシップに昇華",
+    "success_rate": 97,
+    "total_cases": 262,
+    "difficulty": "low",
+    "typical_actions": ["乾", "震", "離"],
+    "typical_patterns": ["Steady_Growth", "Breakthrough"],
+    "strategic_insight": "行動から創造への自然な進化。乾の継続が成功の鍵",
+    "recommended_approach": "積極的な前進の継続、創造性への転換"
+  },
+  "震→坤": {
+    "success_meaning": "行動から安定・収束（非常に困難）",
+    "success_rate": 7,
+    "total_cases": 499,
+    "difficulty": "very_high",
+    "typical_actions": ["坎", "巽", "艮"],
+    "typical_patterns": ["Failed_Attempt", "Hubris_Collapse"],
+    "strategic_insight": "行動が失敗し収束するパターン。坎（危機対応）が多い",
+    "recommended_approach": "この遷移は失敗を意味することが多い。行動の見直しが必要",
+    "warning": "成功率7%。行動が裏目に出た典型"
+  },
+  "震→震": {
+    "success_meaning": "行動力の維持継続",
+    "success_rate": 8,
+    "total_cases": 53,
+    "difficulty": "very_high",
+    "typical_actions": ["乾", "震", "坎"],
+    "typical_patterns": ["Crisis_Pivot", "Endurance"],
+    "strategic_insight": "行動の継続は難しい。乾への昇華か、坎への転落が多い",
+    "recommended_approach": "行動の方向性確認、持続可能な形への転換",
+    "warning": "行動だけでは持続困難。創造（乾）への転換を目指すべき"
+  },
+  "震→巽": {
+    "success_meaning": "行動力を柔軟性に転換",
+    "success_rate": 40,
+    "total_cases": 73,
+    "difficulty": "very_high",
+    "typical_actions": ["乾", "兌", "坎"],
+    "typical_patterns": ["Steady_Growth", "Pivot_Success"],
+    "strategic_insight": "剛から柔への転換。成功率は中程度だが難易度は高い",
+    "recommended_approach": "状況に応じた柔軟化、乾（創造）や兌（交流）を活用"
+  },
+  "震→坎": {
+    "success_meaning": "（この遷移での成功はほぼ不可能）",
+    "success_rate": 0,
+    "total_cases": 148,
+    "difficulty": "very_high",
+    "typical_actions": ["乾", "震", "艮"],
+    "typical_patterns": ["Hubris_Collapse", "Failed_Attempt"],
+    "strategic_insight": "行動が危機を招く。過剰な攻めが裏目に",
+    "recommended_approach": "この遷移は回避すべき。行動の抑制と見直しが必要",
+    "warning": "成功率0%。過剰行動の典型的結末"
+  },
+  "震→離": {
+    "success_meaning": "行動を明確なビジョン・成果に転換",
+    "success_rate": 95,
+    "total_cases": 190,
+    "difficulty": "low",
+    "typical_actions": ["乾", "震", "艮"],
+    "typical_patterns": ["Steady_Growth", "Breakthrough"],
+    "strategic_insight": "行動から可視化への自然な進化。乾の継続が鍵",
+    "recommended_approach": "行動の成果を明確化、ビジョンの発信"
+  },
+  "震→艮": {
+    "success_meaning": "行動から意図的停止へ",
+    "success_rate": 15,
+    "total_cases": 181,
+    "difficulty": "very_high",
+    "typical_actions": ["巽", "震", "坎"],
+    "typical_patterns": ["Failed_Attempt", "Slow_Decline"],
+    "strategic_insight": "行動の失敗による停止が多い。計画的停止は少ない",
+    "recommended_approach": "停止が必要な場合は巽（柔軟化）を経由",
+    "warning": "失敗による停止が大半。意図的であっても困難"
+  },
+  "震→兌": {
+    "success_meaning": "行動を交流・喜びに転換",
+    "success_rate": 80,
+    "total_cases": 45,
+    "difficulty": "medium",
+    "typical_actions": ["巽", "離", "乾"],
+    "typical_patterns": ["Pivot_Success", "Shock_Recovery"],
+    "strategic_insight": "行動から交流へ。巽（柔軟性）が橋渡しに有効",
+    "recommended_approach": "対人関係の強化、柔軟なコミュニケーション"
+  },
+  "巽→乾": {
+    "success_meaning": "柔軟性を創造・リーダーシップに転換",
+    "success_rate": 100,
+    "total_cases": 81,
+    "difficulty": "low",
+    "typical_actions": ["巽", "乾", "離"],
+    "typical_patterns": ["Steady_Growth", "Pivot_Success"],
+    "strategic_insight": "最高の成功率。柔軟な探索から創造への進化",
+    "recommended_approach": "柔軟性を維持しつつ創造的リーダーシップを発揮"
+  },
+  "巽→坤": {
+    "success_meaning": "柔軟性から安定への収束",
+    "success_rate": 72,
+    "total_cases": 43,
+    "difficulty": "medium",
+    "typical_actions": ["兌", "坤", "巽"],
+    "typical_patterns": ["Pivot_Success", "Steady_Growth"],
+    "strategic_insight": "柔軟な探索の結果、安定を得る。兌（交流）が有効",
+    "recommended_approach": "探索結果の安定化、関係性の構築"
+  },
+  "巽→震": {
+    "success_meaning": "柔軟性を積極的行動に転換",
+    "success_rate": 0,
+    "total_cases": 4,
+    "difficulty": "very_high",
+    "typical_actions": ["艮", "乾", "震"],
+    "typical_patterns": ["Pivot_Success", "Endurance"],
+    "strategic_insight": "データ少数。柔軟から剛への転換は稀",
+    "recommended_approach": "乾（創造）を経由しての行動化が推奨"
+  },
+  "巽→巽": {
+    "success_meaning": "柔軟性の維持継続",
+    "success_rate": 50,
+    "total_cases": 18,
+    "difficulty": "high",
+    "typical_actions": ["乾", "離", "兌"],
+    "typical_patterns": ["Pivot_Success", "Endurance"],
+    "strategic_insight": "柔軟性の維持は中程度の成功率。方向性が必要",
+    "recommended_approach": "乾（創造）や離（明確化）で方向性を与える"
+  },
+  "巽→坎": {
+    "success_meaning": "（この遷移での成功はほぼ不可能）",
+    "success_rate": 0,
+    "total_cases": 7,
+    "difficulty": "very_high",
+    "typical_actions": ["乾", "坎", "坤"],
+    "typical_patterns": ["Slow_Decline", "Hubris_Collapse"],
+    "strategic_insight": "柔軟性が危機に繋がるのは稀だが致命的",
+    "recommended_approach": "この遷移は回避すべき。方向性の喪失を防ぐ",
+    "warning": "成功率0%。方向性喪失の結果"
+  },
+  "巽→離": {
+    "success_meaning": "柔軟性を明確なビジョンに転換",
+    "success_rate": 98,
+    "total_cases": 80,
+    "difficulty": "low",
+    "typical_actions": ["巽", "兌", "乾"],
+    "typical_patterns": ["Steady_Growth", "Pivot_Success"],
+    "strategic_insight": "探索から明確化への自然な進化。高成功率",
+    "recommended_approach": "探索結果の明確化、ビジョンの発信"
+  },
+  "巽→艮": {
+    "success_meaning": "柔軟性から意図的停止へ",
+    "success_rate": 45,
+    "total_cases": 271,
+    "difficulty": "high",
+    "typical_actions": ["巽", "震", "艮"],
+    "typical_patterns": ["Slow_Decline", "Crisis_Pivot"],
+    "strategic_insight": "探索の結果が停止になるケースが多い。計画的停止は少ない",
+    "recommended_approach": "停止は一時的なものとし、次の行動を計画"
+  },
+  "巽→兌": {
+    "success_meaning": "柔軟性を喜び・交流に転換",
+    "success_rate": 95,
+    "total_cases": 19,
+    "difficulty": "low",
+    "typical_actions": ["巽", "兌", "坤"],
+    "typical_patterns": ["Pivot_Success", "Shock_Recovery"],
+    "strategic_insight": "柔軟な姿勢が交流を生む。自然な進化",
+    "recommended_approach": "コミュニケーションの活性化、関係性の構築"
+  },
+  "坎→乾": {
+    "success_meaning": "危機からリーダーシップ・創造性を回復",
+    "success_rate": 99,
+    "total_cases": 228,
+    "difficulty": "low",
+    "typical_actions": ["乾", "離", "兌"],
+    "typical_patterns": ["Shock_Recovery", "Steady_Growth"],
+    "strategic_insight": "危機からの劇的復活。乾（創造）と離（明確化）が鍵",
+    "recommended_approach": "積極的なリーダーシップ発揮、ビジョンの明確化、対外発信"
+  },
+  "坎→坤": {
+    "success_meaning": "危機から安定への復帰",
+    "success_rate": 34,
+    "total_cases": 403,
+    "difficulty": "very_high",
+    "typical_actions": ["坎", "兌", "艮"],
+    "typical_patterns": ["Slow_Decline", "Shock_Recovery"],
+    "strategic_insight": "危機からの安定回復は困難。坎（耐える）だけでは不足",
+    "recommended_approach": "耐えるだけでなく兌（交流）や積極的行動が必要"
+  },
+  "坎→震": {
+    "success_meaning": "危機から積極的行動への転換",
+    "success_rate": 60,
+    "total_cases": 124,
+    "difficulty": "high",
+    "typical_actions": ["巽", "乾", "坎"],
+    "typical_patterns": ["Crisis_Pivot", "Slow_Decline"],
+    "strategic_insight": "危機からの行動転換。巽（柔軟性）が橋渡しに有効",
+    "recommended_approach": "柔軟な姿勢で行動を開始、状況を見ながら積極化"
+  },
+  "坎→巽": {
+    "success_meaning": "危機から柔軟な探索へ",
+    "success_rate": 20,
+    "total_cases": 119,
+    "difficulty": "very_high",
+    "typical_actions": ["巽", "乾", "坎"],
+    "typical_patterns": ["Exploration", "Shock_Recovery"],
+    "strategic_insight": "危機からの探索は方向性を見失いやすい",
+    "recommended_approach": "探索に明確な目的を持つ、乾（創造）への転換を目指す"
+  },
+  "坎→坎": {
+    "success_meaning": "（この遷移での成功はない）",
+    "success_rate": 0,
+    "total_cases": 251,
+    "difficulty": "very_high",
+    "typical_actions": ["坎", "乾", "艮"],
+    "typical_patterns": ["Decline", "Endurance"],
+    "strategic_insight": "危機の継続。耐えるだけでは脱出不能",
+    "recommended_approach": "現状維持は更なる悪化を招く。積極的な転換が必須",
+    "warning": "成功率0%。危機の固定化・深化"
+  },
+  "坎→離": {
+    "success_meaning": "危機から明確なビジョン・名声を獲得",
+    "success_rate": 94,
+    "total_cases": 214,
+    "difficulty": "low",
+    "typical_actions": ["乾", "坎", "震"],
+    "typical_patterns": ["Shock_Recovery", "Breakthrough"],
+    "strategic_insight": "危機からの躍進。乾（創造）と震（行動）が鍵",
+    "recommended_approach": "積極的なビジョン発信、創造的リーダーシップ"
+  },
+  "坎→艮": {
+    "success_meaning": "危機から一時的停止・内省へ",
+    "success_rate": 41,
+    "total_cases": 432,
+    "difficulty": "high",
+    "typical_actions": ["震", "坎", "巽"],
+    "typical_patterns": ["Managed_Decline", "Stagnation"],
+    "strategic_insight": "危機からの停止は計画的撤退か停滞固定化か",
+    "recommended_approach": "意図的停止であれば次の行動を計画。震（行動）で打破も可能"
+  },
+  "坎→兌": {
+    "success_meaning": "危機から喜び・交流を獲得",
+    "success_rate": 99,
+    "total_cases": 248,
+    "difficulty": "low",
+    "typical_actions": ["兌", "離", "巽"],
+    "typical_patterns": ["Crisis_Pivot", "Shock_Recovery"],
+    "strategic_insight": "危機から交流への転換。兌（交流）自体が行動として有効",
+    "recommended_approach": "対外発信の強化、人間関係の再構築、協力関係の構築"
+  },
+  "離→乾": {
+    "success_meaning": "明確なビジョンを創造・リーダーシップに昇華",
+    "success_rate": 100,
+    "total_cases": 175,
+    "difficulty": "low",
+    "typical_actions": ["乾", "震", "兌"],
+    "typical_patterns": ["Breakthrough", "Steady_Growth"],
+    "strategic_insight": "最高の成功率。ビジョンから創造への自然な進化",
+    "recommended_approach": "積極的なリーダーシップ発揮、行動と創造の継続"
+  },
+  "離→坤": {
+    "success_meaning": "ビジョンから安定への収束",
+    "success_rate": 34,
+    "total_cases": 83,
+    "difficulty": "very_high",
+    "typical_actions": ["巽", "坎", "兌"],
+    "typical_patterns": ["Hubris_Collapse", "Pivot_Success"],
+    "strategic_insight": "輝きから平凡への転落が多い。計画的収束は少ない",
+    "recommended_approach": "意図的な安定化であれば巽（柔軟性）を活用"
+  },
+  "離→震": {
+    "success_meaning": "ビジョンを積極的行動に転換",
+    "success_rate": 8,
+    "total_cases": 26,
+    "difficulty": "very_high",
+    "typical_actions": ["震", "艮", "坎"],
+    "typical_patterns": ["Slow_Decline", "Steady_Growth"],
+    "strategic_insight": "ビジョンから行動への転換は意外に困難",
+    "recommended_approach": "乾（創造）を経由しての行動化が推奨"
+  },
+  "離→巽": {
+    "success_meaning": "ビジョンを柔軟な探索に転換",
+    "success_rate": 36,
+    "total_cases": 67,
+    "difficulty": "very_high",
+    "typical_actions": ["巽", "乾", "兌"],
+    "typical_patterns": ["Pivot_Success", "Managed_Decline"],
+    "strategic_insight": "明確さから柔軟さへの転換は方向性喪失リスク",
+    "recommended_approach": "目的を持った柔軟化、乾（創造）で方向性維持"
+  },
+  "離→坎": {
+    "success_meaning": "（この遷移での成功はほぼ不可能）",
+    "success_rate": 0,
+    "total_cases": 53,
+    "difficulty": "very_high",
+    "typical_actions": ["坎", "乾", "震"],
+    "typical_patterns": ["Hubris_Collapse", "Slow_Decline"],
+    "strategic_insight": "輝きから危機への転落。名声の裏返し",
+    "recommended_approach": "この遷移は回避すべき。謙虚さの維持が重要",
+    "warning": "成功率0%。過度な自己顕示の結果"
+  },
+  "離→離": {
+    "success_meaning": "明確なビジョン・名声の維持継続",
+    "success_rate": 93,
+    "total_cases": 92,
+    "difficulty": "low",
+    "typical_actions": ["震", "兌", "乾"],
+    "typical_patterns": ["Steady_Growth", "Breakthrough"],
+    "strategic_insight": "輝きの維持。震（行動）と兌（交流）で活性化",
+    "recommended_approach": "継続的な発信、行動と交流のバランス"
+  },
+  "離→艮": {
+    "success_meaning": "ビジョンから意図的停止・内省へ",
+    "success_rate": 26,
+    "total_cases": 149,
+    "difficulty": "very_high",
+    "typical_actions": ["艮", "震", "巽"],
+    "typical_patterns": ["Hubris_Collapse", "Quiet_Fade"],
+    "strategic_insight": "輝きから停止は衰退の兆候が多い",
+    "recommended_approach": "意図的停止であれば次の行動を明確に。衰退回避が優先"
+  },
+  "離→兌": {
+    "success_meaning": "ビジョンを喜び・交流に転換",
+    "success_rate": 98,
+    "total_cases": 53,
+    "difficulty": "low",
+    "typical_actions": ["震", "兌", "巽"],
+    "typical_patterns": ["Shock_Recovery", "Pivot_Success"],
+    "strategic_insight": "ビジョンから交流への自然な進化。高成功率",
+    "recommended_approach": "対外発信の強化、人間関係の構築"
+  },
+  "艮→乾": {
+    "success_meaning": "停止・内省から創造・リーダーシップへ躍進",
+    "success_rate": 99,
+    "total_cases": 296,
+    "difficulty": "low",
+    "typical_actions": ["乾", "震", "離"],
+    "typical_patterns": ["Steady_Growth", "Breakthrough"],
+    "strategic_insight": "停止からの劇的復活。乾（創造）と震（行動）が鍵",
+    "recommended_approach": "積極的なリーダーシップ発揮、行動開始"
+  },
+  "艮→坤": {
+    "success_meaning": "停止から安定への移行",
+    "success_rate": 19,
+    "total_cases": 452,
+    "difficulty": "very_high",
+    "typical_actions": ["艮", "巽", "坎"],
+    "typical_patterns": ["Slow_Decline", "Quiet_Fade"],
+    "strategic_insight": "停止から安定は衰退パターンが多い",
+    "recommended_approach": "積極的な変化が必要。現状維持は衰退を意味する",
+    "warning": "成功率19%。停止の固定化による衰退"
+  },
+  "艮→震": {
+    "success_meaning": "停止から積極的行動への転換",
+    "success_rate": 59,
+    "total_cases": 269,
+    "difficulty": "high",
+    "typical_actions": ["巽", "乾", "震"],
+    "typical_patterns": ["Breakthrough", "Crisis_Pivot"],
+    "strategic_insight": "停止からの行動化。巽（柔軟性）が橋渡しに有効",
+    "recommended_approach": "段階的な活性化、柔軟な姿勢から行動へ"
+  },
+  "艮→巽": {
+    "success_meaning": "停止から柔軟な探索へ",
+    "success_rate": 5,
+    "total_cases": 350,
+    "difficulty": "very_high",
+    "typical_actions": ["巽", "乾", "震"],
+    "typical_patterns": ["Exploration", "Shock_Recovery"],
+    "strategic_insight": "停止からの探索は方向性を見失いやすい",
+    "recommended_approach": "探索に明確な目的を持つ。乾（創造）への転換を目指す",
+    "warning": "成功率5%。方向性喪失のリスクが高い"
+  },
+  "艮→坎": {
+    "success_meaning": "（この遷移での成功はほぼ不可能）",
+    "success_rate": 0,
+    "total_cases": 146,
+    "difficulty": "very_high",
+    "typical_actions": ["坎", "震", "艮"],
+    "typical_patterns": ["Slow_Decline", "Hubris_Collapse"],
+    "strategic_insight": "停止から危機への転落。変化対応の遅れが原因",
+    "recommended_approach": "この遷移は回避すべき。早期の変化が必要",
+    "warning": "成功率0%。停滞による衰退の典型"
+  },
+  "艮→離": {
+    "success_meaning": "停止から明確なビジョン・名声の獲得",
+    "success_rate": 91,
+    "total_cases": 184,
+    "difficulty": "low",
+    "typical_actions": ["震", "乾", "巽"],
+    "typical_patterns": ["Pivot_Success", "Breakthrough"],
+    "strategic_insight": "停止からの躍進。震（行動）と乾（創造）が鍵",
+    "recommended_approach": "積極的な行動開始、ビジョンの明確化と発信"
+  },
+  "艮→艮": {
+    "success_meaning": "停止・内省の維持継続",
+    "success_rate": 16,
+    "total_cases": 358,
+    "difficulty": "very_high",
+    "typical_actions": ["艮", "坎", "震"],
+    "typical_patterns": ["Stagnation", "Failed_Attempt"],
+    "strategic_insight": "停止の固定化。停滞または失敗が大半",
+    "recommended_approach": "現状維持は衰退を意味する。変化が必須",
+    "warning": "成功率16%。停滞の典型パターン"
+  },
+  "艮→兌": {
+    "success_meaning": "停止から喜び・交流の獲得",
+    "success_rate": 92,
+    "total_cases": 169,
+    "difficulty": "low",
+    "typical_actions": ["兌", "離", "震"],
+    "typical_patterns": ["Breakthrough", "Pivot_Success"],
+    "strategic_insight": "停止から交流への転換。兌（交流）自体が有効な行動",
+    "recommended_approach": "対外発信の開始、人間関係の構築"
+  },
+  "兌→乾": {
+    "success_meaning": "喜び・交流を創造・リーダーシップに昇華",
+    "success_rate": 100,
+    "total_cases": 46,
+    "difficulty": "low",
+    "typical_actions": ["震", "乾", "艮"],
+    "typical_patterns": ["Steady_Growth", "Shock_Recovery"],
+    "strategic_insight": "交流から創造への自然な進化。高成功率",
+    "recommended_approach": "人間関係を活かした創造的リーダーシップ"
+  },
+  "兌→坤": {
+    "success_meaning": "喜びから安定への収束",
+    "success_rate": 59,
+    "total_cases": 322,
+    "difficulty": "high",
+    "typical_actions": ["震", "坎", "兌"],
+    "typical_patterns": ["Crisis_Pivot", "Shock_Recovery"],
+    "strategic_insight": "喜びから安定は中程度の成功率。危機対応が多い",
+    "recommended_approach": "震（行動）で積極化、坎（耐える）で安定化"
+  },
+  "兌→震": {
+    "success_meaning": "喜びを積極的行動に転換",
+    "success_rate": 8,
+    "total_cases": 13,
+    "difficulty": "very_high",
+    "typical_actions": ["坤", "離", "艮"],
+    "typical_patterns": ["Hubris_Collapse", "Shock_Recovery"],
+    "strategic_insight": "データ少数だが成功率は低い",
+    "recommended_approach": "乾（創造）を経由しての行動化が推奨"
+  },
+  "兌→巽": {
+    "success_meaning": "喜びを柔軟な探索に転換",
+    "success_rate": 50,
+    "total_cases": 24,
+    "difficulty": "high",
+    "typical_actions": ["離", "乾", "兌"],
+    "typical_patterns": ["Pivot_Success", "Endurance"],
+    "strategic_insight": "交流から探索への転換は中程度の成功率",
+    "recommended_approach": "離（明確化）で方向性を与えつつ探索"
+  },
+  "兌→坎": {
+    "success_meaning": "（この遷移での成功はほぼ不可能）",
+    "success_rate": 0,
+    "total_cases": 22,
+    "difficulty": "very_high",
+    "typical_actions": ["兌", "艮", "乾"],
+    "typical_patterns": ["Hubris_Collapse", "Failed_Attempt"],
+    "strategic_insight": "喜びから危機への転落。過度な楽観が原因",
+    "recommended_approach": "この遷移は回避すべき。現実認識が重要",
+    "warning": "成功率0%。楽観主義の落とし穴"
+  },
+  "兌→離": {
+    "success_meaning": "喜びを明確なビジョン・名声に転換",
+    "success_rate": 97,
+    "total_cases": 143,
+    "difficulty": "low",
+    "typical_actions": ["震", "坎", "兌"],
+    "typical_patterns": ["Shock_Recovery", "Crisis_Pivot"],
+    "strategic_insight": "交流からビジョンへの自然な進化。高成功率",
+    "recommended_approach": "対外発信の強化、ビジョンの明確化"
+  },
+  "兌→艮": {
+    "success_meaning": "喜びから意図的停止・内省へ",
+    "success_rate": 27,
+    "total_cases": 90,
+    "difficulty": "very_high",
+    "typical_actions": ["艮", "兌", "巽"],
+    "typical_patterns": ["Stagnation", "Shock_Recovery"],
+    "strategic_insight": "喜びから停止は計画的でなければ停滞に",
+    "recommended_approach": "意図的停止は次の行動を明確に。停滞回避が優先"
+  },
+  "兌→兌": {
+    "success_meaning": "喜び・交流の維持継続",
+    "success_rate": 96,
+    "total_cases": 25,
+    "difficulty": "low",
+    "typical_actions": ["艮", "兌", "巽"],
+    "typical_patterns": ["Endurance", "Steady_Growth"],
+    "strategic_insight": "交流の維持。艮（抑制）や巽（柔軟性）で安定化",
+    "recommended_approach": "バランスの取れた交流維持、過度にならない節度"
+  }
+}

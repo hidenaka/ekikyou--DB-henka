@@ -1,0 +1,182 @@
+[
+  {
+    "target_name": "兌喜び事例10-1",
+    "scale": "company",
+    "period": "1990-2024",
+    "story_summary": "顧客満足を追求して成功した企業。",
+    "before_state": "安定・平和",
+    "trigger_type": "偶発・出会い",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "兌",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#兌",
+      "#顧客満足"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "小売・サービス",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "兌→乾→震→乾 顧客重視で成長"
+  },
+  {
+    "target_name": "兌喜び事例10-2",
+    "scale": "individual",
+    "period": "1990-2024",
+    "story_summary": "人を喜ばせることで成功した人物。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "偶発・出会い",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "兌",
+    "trigger_hex": "兌",
+    "action_hex": "震",
+    "after_hex": "離",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#兌",
+      "#人気者"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "エンタメ",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "兌→兌→震→離 人気で成功"
+  },
+  {
+    "target_name": "兌交流事例10-1",
+    "scale": "other",
+    "period": "1990-2024",
+    "story_summary": "コミュニケーションで成功した組織。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "対話・融合",
+    "after_state": "安定・平和",
+    "before_hex": "兌",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "艮",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#兌",
+      "#交流"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "社会・コミュニティ",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "兌→震→巽→艮 交流で安定"
+  },
+  {
+    "target_name": "兌表面事例10-1",
+    "scale": "company",
+    "period": "1990-2024",
+    "story_summary": "見せかけの人気が崩れたケース。",
+    "before_state": "成長痛",
+    "trigger_type": "外部ショック",
+    "action_type": "守る・維持",
+    "after_state": "縮小安定・生存",
+    "before_hex": "兌",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "艮",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "#兌",
+      "#見せかけ"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "ビジネス",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "兌→震→艮→艮 人気が離れる"
+  },
+  {
+    "target_name": "兌楽観事例10-1",
+    "scale": "individual",
+    "period": "1990-2024",
+    "story_summary": "楽観的すぎて失敗したケース。",
+    "before_state": "成長痛",
+    "trigger_type": "内部崩壊",
+    "action_type": "攻める・挑戦",
+    "after_state": "崩壊・消滅",
+    "before_hex": "兌",
+    "trigger_hex": "坎",
+    "action_hex": "震",
+    "after_hex": "坤",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#兌",
+      "#楽観失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "main_domain": "生活・暮らし",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "兌→坎→震→坤 楽観が仇に"
+  }
+]

@@ -69,6 +69,16 @@ class PatternType(str, Enum):
     SLOW_DECLINE = "Slow_Decline"
     # 長期的な持続成長パターン
     STEADY_GROWTH = "Steady_Growth"
+    # 既存追加パターン
+    CRISIS_PIVOT = "Crisis_Pivot"
+    BREAKTHROUGH = "Breakthrough"
+    EXPLORATION = "Exploration"
+    MANAGED_DECLINE = "Managed_Decline"
+    DECLINE = "Decline"
+    # バイアス補正用の新パターン
+    QUIET_FADE = "Quiet_Fade"          # 静かに消滅（話題にならず消えた）
+    STAGNATION = "Stagnation"          # 停滞のまま終了（何も起きなかった）
+    FAILED_ATTEMPT = "Failed_Attempt"  # 挑戦したが失敗（普通の失敗）
 
 class Outcome(str, Enum):
     SUCCESS = "Success"
@@ -114,8 +124,37 @@ class Case(BaseModel):
     classical_after_hexagram: Optional[str] = None
     logic_memo: Optional[str] = None
 
+    # 384爻（変爻）情報 - 各変化でどの爻が変化したか (1-6)
+    # 1=初爻, 2=二爻, 3=三爻, 4=四爻, 5=五爻, 6=上爻
+    changing_lines_1: Optional[List[int]] = None  # before_hex → trigger_hex での変爻
+    changing_lines_2: Optional[List[int]] = None  # trigger_hex → action_hex での変爻
+    changing_lines_3: Optional[List[int]] = None  # action_hex → after_hex での変爻
+
+    # 拡張フィールド
+    main_domain: Optional[str] = None  # 分野（例：IT・通信、自動車、金融等）
+    country: Optional[str] = None  # 国名
+    sources: Optional[List[str]] = None  # ソースURL等
+    hexagram_id: Optional[int] = None  # 卦番号（1-64）
+    hexagram_name: Optional[str] = None  # 卦名（例：火沢睽）
+    yao_context: Optional[str] = None  # 卦との関連説明
+    yao_analysis: Optional[dict] = None  # 爻分析（自動生成）
+
     @field_validator("target_name", "period", "story_summary")
     def not_empty(cls, v: str):
         if not isinstance(v, str) or not v.strip():
             raise ValueError("must be a non-empty string")
         return v.strip()
+
+    @field_validator("changing_lines_1", "changing_lines_2", "changing_lines_3")
+    def validate_changing_lines(cls, v: Optional[List[int]]):
+        """変爻は1-6の範囲内でなければならない"""
+        if v is not None:
+            if not isinstance(v, list):
+                raise ValueError("changing_lines must be a list or None")
+            for line in v:
+                if not isinstance(line, int) or line < 1 or line > 6:
+                    raise ValueError("changing lines must be integers between 1 and 6")
+            # 重複チェック
+            if len(v) != len(set(v)):
+                raise ValueError("changing lines must not contain duplicates")
+        return v

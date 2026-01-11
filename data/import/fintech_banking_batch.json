@@ -1,0 +1,42 @@
+[
+  {
+    "target_name": "Silicon Valley Bank（取り付け騒ぎで破綻）",
+    "scale": "company",
+    "period": "2021-2023",
+    "story_summary": "テック・スタートアップ向け銀行として成長、2022年末時点で総資産約2090億ドル（約28兆円）、預金1754億ドル。2021年以降、急増する預金を長期証券で運用。しかしFRBの利上げで債券価格下落、含み損発生。預金総額の約86%が保険対象外の大口預金。2023年3月9日、ベンチャーキャピタルが預金引き出しを呼びかけ、24時間で420億ドルが流出。翌10日に破綻、2008年金融危機以降最大の銀行破綻に。FDICが「システミックリスク例外規定」発動で預金全額保護。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "逃げる・放置",
+    "after_state": "崩壊・消滅",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": ["#取り付け騒ぎ", "#420億ドル流出", "#金利リスク", "#2008年以降最大", "#FDIC"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "テック銀行の栄光（乾）→利上げで含み損発生（坎）→リスク管理できず（巽）→24時間で破綻（坤）"
+  },
+  {
+    "target_name": "Robinhood（GameStopミーム株騒動）",
+    "scale": "company",
+    "period": "2013-2021",
+    "story_summary": "「投資の民主化」を掲げ手数料無料の株取引アプリを提供。PFOF（Payment for Order Flow）で収益化。業界全体をゼロ手数料に誘導。2021年1月、RedditのWallStreetBetsユーザーがGameStop株を買い占め、空売りヘッジファンドに損失を与える。株価暴騰でRobinhoodは5億ドルの融資限度を超過、10億ドル以上を緊急調達。1月28日にGameStop等の取引制限を発表し株価急落。「市場操作」と批判され集団訴訟。2021年7月にIPO。",
+    "before_state": "成長痛",
+    "trigger_type": "外部ショック",
+    "action_type": "守る・維持",
+    "after_state": "混乱・カオス",
+    "before_hex": "震",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "坎",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Mixed",
+    "free_tags": ["#ミーム株", "#GameStop", "#手数料無料", "#PFOF", "#集団訴訟"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "急成長中のフィンテック（震）→ミーム株騒動の衝撃（震）→取引制限で守りの対応（艮）→信頼失墜と混乱（坎）"
+  }
+]

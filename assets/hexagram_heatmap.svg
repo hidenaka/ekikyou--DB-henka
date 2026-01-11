@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 2340" width="490" height="2340">
+<defs>
+    <linearGradient id="legendGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#f44336"/>
+        <stop offset="50%" style="stop-color:#ffeb3b"/>
+        <stop offset="100%" style="stop-color:#4caf50"/>
+    </linearGradient>
+    <style>
+        .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+        .header { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #333; }
+        .group-header { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: white; }
+        .hex-name { font-family: Arial, sans-serif; font-size: 9px; fill: #333; }
+        .cell-text { font-family: Arial, sans-serif; font-size: 8px; fill: #333; text-anchor: middle; }
+        .legend-text { font-family: Arial, sans-serif; font-size: 10px; fill: #666; }
+    </style>
+</defs>
+
+<!-- Background -->
+<rect width="100%" height="100%" fill="white"/>
+
+<!-- Title -->
+<text x="245.0" y="25" text-anchor="middle" class="title">64卦 x 6爻 成功率ヒートマップ</text>
+
+<!-- Headers -->
+<text x="95.0" y="50" text-anchor="middle" class="header">卦名</text>
+<text x="195.0" y="50" text-anchor="middle" class="header">初爻</text>
+<text x="245.0" y="50" text-anchor="middle" class="header">二爻</text>
+<text x="295.0" y="50" text-anchor="middle" class="header">三爻</text>
+<text x="345.0" y="50" text-anchor="middle" class="header">四爻</text>
+<text x="395.0" y="50" text-anchor="middle" class="header">五爻</text>
+<text x="445.0" y="50" text-anchor="middle" class="header">上爻</text>
+<rect x="20" y="60" width="450" height="25" fill="#1a237e"/>
+<text x="30" y="78" class="group-header">乾（けん）- 天・創造</text>
+<text x="25" y="105" class="hex-name">1. 乾為天</text>
+<rect x="170" y="85" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="85" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="103.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="85" width="50" height="30" fill="#3ac03e" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="103.0" class="cell-text" fill="#000">87%</text>
+<rect x="320" y="85" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="85" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="103.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="85" width="50" height="30" fill="#f99538" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="103.0" class="cell-text" fill="#fff">19%</text>
+<text x="25" y="135" class="hex-name">6. 天水訟</text>
+<rect x="170" y="115" width="50" height="30" fill="#48b24c" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="133.0" class="cell-text" fill="#000">73%</text>
+<rect x="220" y="115" width="50" height="30" fill="#36c43a" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="133.0" class="cell-text" fill="#000">91%</text>
+<rect x="270" y="115" width="50" height="30" fill="#66b74c" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="133.0" class="cell-text" fill="#000">65%</text>
+<rect x="320" y="115" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="133.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="115" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="115" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="165" class="hex-name">10. 天沢履</text>
+<rect x="170" y="145" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="145" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="163.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="145" width="50" height="30" fill="#9cc946" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="163.0" class="cell-text" fill="#000">56%</text>
+<rect x="320" y="145" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="145" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="163.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="145" width="50" height="30" fill="#faac39" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="163.0" class="cell-text" fill="#fff">25%</text>
+<text x="25" y="195" class="hex-name">12. 天地否</text>
+<rect x="170" y="175" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="193.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="175" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="193.0" class="cell-text" fill="#000">50%</text>
+<rect x="270" y="175" width="50" height="30" fill="#45b549" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="193.0" class="cell-text" fill="#000">76%</text>
+<rect x="320" y="175" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="175" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="193.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="175" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="225" class="hex-name">13. 天火同人</text>
+<rect x="170" y="205" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="205" width="50" height="30" fill="#32c836" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="223.0" class="cell-text" fill="#000">95%</text>
+<rect x="270" y="205" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="223.0" class="cell-text" fill="#000">100%</text>
+<rect x="320" y="205" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="205" width="50" height="30" fill="#3ebc42" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="223.0" class="cell-text" fill="#000">83%</text>
+<rect x="420" y="205" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="223.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="255" class="hex-name">25. 天雷无妄</text>
+<rect x="170" y="235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="235" width="50" height="30" fill="#3bbf3f" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="253.0" class="cell-text" fill="#000">86%</text>
+<rect x="270" y="235" width="50" height="30" fill="#a8ce45" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="253.0" class="cell-text" fill="#000">54%</text>
+<rect x="320" y="235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="285" class="hex-name">33. 天山遯</text>
+<rect x="170" y="265" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="265" width="50" height="30" fill="#32c836" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="283.0" class="cell-text" fill="#000">95%</text>
+<rect x="270" y="265" width="50" height="30" fill="#3ac03e" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="283.0" class="cell-text" fill="#000">87%</text>
+<rect x="320" y="265" width="50" height="30" fill="#f55336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="283.0" class="cell-text" fill="#fff">4%</text>
+<rect x="370" y="265" width="50" height="30" fill="#f66937" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="283.0" class="cell-text" fill="#fff">9%</text>
+<rect x="420" y="265" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="283.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="315" class="hex-name">44. 天風姤</text>
+<rect x="170" y="295" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="295" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="295" width="50" height="30" fill="#31c935" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="313.0" class="cell-text" fill="#000">96%</text>
+<rect x="320" y="295" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="295" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="295" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="313.0" class="cell-text" fill="#fff">0%</text>
+<rect x="20" y="325" width="450" height="25" fill="#00838f"/>
+<text x="30" y="343" class="group-header">兌（だ）- 沢・喜悦</text>
+<text x="25" y="370" class="hex-name">17. 沢雷随</text>
+<rect x="170" y="350" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="350" width="50" height="30" fill="#3ebc42" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="368.0" class="cell-text" fill="#000">83%</text>
+<rect x="270" y="350" width="50" height="30" fill="#55b24e" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="368.0" class="cell-text" fill="#000">68%</text>
+<rect x="320" y="350" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="350" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="350" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="368.0" class="cell-text" fill="#000">100%</text>
+<text x="25" y="400" class="hex-name">28. 沢風大過</text>
+<rect x="170" y="380" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="398.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="380" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="398.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="380" width="50" height="30" fill="#f77f37" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="398.0" class="cell-text" fill="#fff">14%</text>
+<rect x="320" y="380" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="380" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="380" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="430" class="hex-name">31. 沢山咸</text>
+<rect x="170" y="410" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="410" width="50" height="30" fill="#87c349" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="428.0" class="cell-text" fill="#000">60%</text>
+<rect x="270" y="410" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="428.0" class="cell-text" fill="#000">100%</text>
+<rect x="320" y="410" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="410" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="428.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="410" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="460" class="hex-name">43. 沢天夬</text>
+<rect x="170" y="440" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="440" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="458.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="440" width="50" height="30" fill="#e8e33d" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="458.0" class="cell-text" fill="#000">43%</text>
+<rect x="320" y="440" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="440" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="440" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="458.0" class="cell-text" fill="#000">50%</text>
+<text x="25" y="490" class="hex-name">45. 沢地萃</text>
+<rect x="170" y="470" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="470" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="488.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="470" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="488.0" class="cell-text" fill="#000">100%</text>
+<rect x="320" y="470" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="470" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="470" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="520" class="hex-name">47. 沢水困</text>
+<rect x="170" y="500" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="518.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="500" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="518.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="500" width="50" height="30" fill="#40ba44" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="518.0" class="cell-text" fill="#000">81%</text>
+<rect x="320" y="500" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="500" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="500" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="550" class="hex-name">49. 沢火革</text>
+<rect x="170" y="530" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="530" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="548.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="530" width="50" height="30" fill="#3cbe40" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="548.0" class="cell-text" fill="#000">85%</text>
+<rect x="320" y="530" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="530" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="548.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="530" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="548.0" class="cell-text" fill="#000">50%</text>
+<text x="25" y="580" class="hex-name">58. 兌為沢</text>
+<rect x="170" y="560" width="50" height="30" fill="#47b44b" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="578.0" class="cell-text" fill="#000">75%</text>
+<rect x="220" y="560" width="50" height="30" fill="#32c836" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="578.0" class="cell-text" fill="#000">95%</text>
+<rect x="270" y="560" width="50" height="30" fill="#48b24c" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="578.0" class="cell-text" fill="#000">73%</text>
+<rect x="320" y="560" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="560" width="50" height="30" fill="#fdd33a" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="578.0" class="cell-text" fill="#000">34%</text>
+<rect x="420" y="560" width="50" height="30" fill="#69b94c" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="578.0" class="cell-text" fill="#000">65%</text>
+<rect x="20" y="590" width="450" height="25" fill="#c62828"/>
+<text x="30" y="608" class="group-header">離（り）- 火・明晰</text>
+<text x="25" y="635" class="hex-name">14. 火天大有</text>
+<rect x="170" y="615" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="615" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="615" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="633.0" class="cell-text" fill="#000">50%</text>
+<rect x="320" y="615" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="615" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="615" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="633.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="665" class="hex-name">21. 火雷噬嗑</text>
+<rect x="170" y="645" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="645" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="663.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="645" width="50" height="30" fill="#aace44" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="663.0" class="cell-text" fill="#000">54%</text>
+<rect x="320" y="645" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="645" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="645" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="695" class="hex-name">30. 離為火</text>
+<rect x="170" y="675" width="50" height="30" fill="#98c847" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="693.0" class="cell-text" fill="#000">57%</text>
+<rect x="220" y="675" width="50" height="30" fill="#33c837" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="693.0" class="cell-text" fill="#000">95%</text>
+<rect x="270" y="675" width="50" height="30" fill="#fdcf3a" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="693.0" class="cell-text" fill="#000">33%</text>
+<rect x="320" y="675" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="693.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="675" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="693.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="675" width="50" height="30" fill="#40ba44" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="693.0" class="cell-text" fill="#000">81%</text>
+<text x="25" y="725" class="hex-name">35. 火地晋</text>
+<rect x="170" y="705" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="705" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="705" width="50" height="30" fill="#34c638" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="723.0" class="cell-text" fill="#000">93%</text>
+<rect x="320" y="705" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="705" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="705" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="755" class="hex-name">38. 火沢睽</text>
+<rect x="170" y="735" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="753.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="735" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="735" width="50" height="30" fill="#f99138" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="753.0" class="cell-text" fill="#fff">18%</text>
+<rect x="320" y="735" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="735" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="735" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="785" class="hex-name">50. 火風鼎</text>
+<rect x="170" y="765" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="765" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="765" width="50" height="30" fill="#3fbb43" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="783.0" class="cell-text" fill="#000">82%</text>
+<rect x="320" y="765" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="765" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="765" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="815" class="hex-name">56. 火山旅</text>
+<rect x="170" y="795" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="795" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="795" width="50" height="30" fill="#3bbf3f" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="813.0" class="cell-text" fill="#000">86%</text>
+<rect x="320" y="795" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="813.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="795" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="795" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="845" class="hex-name">64. 火水未済</text>
+<rect x="170" y="825" width="50" height="30" fill="#47b44b" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="843.0" class="cell-text" fill="#000">75%</text>
+<rect x="220" y="825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="825" width="50" height="30" fill="#55b24e" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="843.0" class="cell-text" fill="#000">68%</text>
+<rect x="320" y="825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="20" y="855" width="450" height="25" fill="#558b2f"/>
+<text x="30" y="873" class="group-header">震（しん）- 雷・動き</text>
+<text x="25" y="900" class="hex-name">16. 雷地豫</text>
+<rect x="170" y="880" width="50" height="30" fill="#38c23c" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="898.0" class="cell-text" fill="#000">89%</text>
+<rect x="220" y="880" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="898.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="880" width="50" height="30" fill="#30cb34" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="898.0" class="cell-text" fill="#000">98%</text>
+<rect x="320" y="880" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="898.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="880" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="880" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="930" class="hex-name">32. 雷風恒</text>
+<rect x="170" y="910" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="928.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="910" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="910" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="928.0" class="cell-text" fill="#000">100%</text>
+<rect x="320" y="910" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="928.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="910" width="50" height="30" fill="#78be4a" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="928.0" class="cell-text" fill="#000">62%</text>
+<rect x="420" y="910" width="50" height="30" fill="#41b945" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="928.0" class="cell-text" fill="#000">80%</text>
+<text x="25" y="960" class="hex-name">34. 雷天大壮</text>
+<rect x="170" y="940" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="940" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="958.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="940" width="50" height="30" fill="#39c13d" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="958.0" class="cell-text" fill="#000">88%</text>
+<rect x="320" y="940" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="940" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="958.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="940" width="50" height="30" fill="#f55a36" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="958.0" class="cell-text" fill="#fff">5%</text>
+<text x="25" y="990" class="hex-name">40. 雷水解</text>
+<rect x="170" y="970" width="50" height="30" fill="#46b44a" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="988.0" class="cell-text" fill="#000">75%</text>
+<rect x="220" y="970" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="988.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="970" width="50" height="30" fill="#3dbd41" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="988.0" class="cell-text" fill="#000">84%</text>
+<rect x="320" y="970" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="988.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="970" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="970" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1020" class="hex-name">51. 震為雷</text>
+<rect x="170" y="1000" width="50" height="30" fill="#50b04f" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1018.0" class="cell-text" fill="#000">69%</text>
+<rect x="220" y="1000" width="50" height="30" fill="#36c43a" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1018.0" class="cell-text" fill="#000">91%</text>
+<rect x="270" y="1000" width="50" height="30" fill="#faa438" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1018.0" class="cell-text" fill="#fff">23%</text>
+<rect x="320" y="1000" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1000" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1018.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1000" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1050" class="hex-name">54. 雷沢帰妹</text>
+<rect x="170" y="1030" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1030" width="50" height="30" fill="#45b549" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1048.0" class="cell-text" fill="#000">76%</text>
+<rect x="270" y="1030" width="50" height="30" fill="#59b34e" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1048.0" class="cell-text" fill="#000">67%</text>
+<rect x="320" y="1030" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1048.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1030" width="50" height="30" fill="#aecf44" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1048.0" class="cell-text" fill="#000">53%</text>
+<rect x="420" y="1030" width="50" height="30" fill="#fdcf3a" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1048.0" class="cell-text" fill="#000">33%</text>
+<text x="25" y="1080" class="hex-name">55. 雷火豊</text>
+<rect x="170" y="1060" width="50" height="30" fill="#47b44b" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1078.0" class="cell-text" fill="#000">75%</text>
+<rect x="220" y="1060" width="50" height="30" fill="#78be4a" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1078.0" class="cell-text" fill="#000">62%</text>
+<rect x="270" y="1060" width="50" height="30" fill="#5ab34e" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1078.0" class="cell-text" fill="#000">67%</text>
+<rect x="320" y="1060" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1078.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1060" width="50" height="30" fill="#5fb54d" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1078.0" class="cell-text" fill="#000">66%</text>
+<rect x="420" y="1060" width="50" height="30" fill="#f55636" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1078.0" class="cell-text" fill="#fff">4%</text>
+<text x="25" y="1110" class="hex-name">62. 雷山小過</text>
+<rect x="170" y="1090" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1090" width="50" height="30" fill="#fccb3a" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1108.0" class="cell-text" fill="#000">32%</text>
+<rect x="270" y="1090" width="50" height="30" fill="#37c33b" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1108.0" class="cell-text" fill="#000">90%</text>
+<rect x="320" y="1090" width="50" height="30" fill="#f44a36" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1108.0" class="cell-text" fill="#fff">1%</text>
+<rect x="370" y="1090" width="50" height="30" fill="#f5e73c" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1108.0" class="cell-text" fill="#000">41%</text>
+<rect x="420" y="1090" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1108.0" class="cell-text" fill="#fff">0%</text>
+<rect x="20" y="1120" width="450" height="25" fill="#6a1b9a"/>
+<text x="30" y="1138" class="group-header">巽（そん）- 風・浸透</text>
+<text x="25" y="1165" class="hex-name">9. 風天小畜</text>
+<rect x="170" y="1145" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1145" width="50" height="30" fill="#f88e38" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1163.0" class="cell-text" fill="#fff">17%</text>
+<rect x="270" y="1145" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1163.0" class="cell-text" fill="#000">100%</text>
+<rect x="320" y="1145" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1145" width="50" height="30" fill="#fdcf3a" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1163.0" class="cell-text" fill="#000">33%</text>
+<rect x="420" y="1145" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1195" class="hex-name">20. 風地観</text>
+<rect x="170" y="1175" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1175" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1193.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1175" width="50" height="30" fill="#3bbf3f" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1193.0" class="cell-text" fill="#000">86%</text>
+<rect x="320" y="1175" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1175" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1175" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1225" class="hex-name">37. 風火家人</text>
+<rect x="170" y="1205" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1223.0" class="cell-text" fill="#fff">0%</text>
+<rect x="220" y="1205" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1223.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1205" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1223.0" class="cell-text" fill="#000">50%</text>
+<rect x="320" y="1205" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1223.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1205" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1223.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1205" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1223.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1255" class="hex-name">42. 風雷益</text>
+<rect x="170" y="1235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="1235" width="50" height="30" fill="#43b747" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1253.0" class="cell-text" fill="#000">78%</text>
+<rect x="320" y="1235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1235" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1285" class="hex-name">53. 風山漸</text>
+<rect x="170" y="1265" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1265" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1283.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="1265" width="50" height="30" fill="#39c13d" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1283.0" class="cell-text" fill="#000">88%</text>
+<rect x="320" y="1265" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1283.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1265" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1283.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="1265" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1315" class="hex-name">57. 巽為風</text>
+<rect x="170" y="1295" width="50" height="30" fill="#fcc239" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1313.0" class="cell-text" fill="#000">30%</text>
+<rect x="220" y="1295" width="50" height="30" fill="#33c737" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1313.0" class="cell-text" fill="#000">94%</text>
+<rect x="270" y="1295" width="50" height="30" fill="#78be4a" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1313.0" class="cell-text" fill="#000">62%</text>
+<rect x="320" y="1295" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1313.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1295" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1313.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1295" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1313.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1345" class="hex-name">59. 風水渙</text>
+<rect x="170" y="1325" width="50" height="30" fill="#4ab04e" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1343.0" class="cell-text" fill="#000">71%</text>
+<rect x="220" y="1325" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1343.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="1325" width="50" height="30" fill="#f77c37" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1343.0" class="cell-text" fill="#fff">13%</text>
+<rect x="320" y="1325" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1325" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1325" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1375" class="hex-name">61. 風沢中孚</text>
+<rect x="170" y="1355" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1355" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1373.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1355" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1373.0" class="cell-text" fill="#000">100%</text>
+<rect x="320" y="1355" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1355" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1373.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1355" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1373.0" class="cell-text" fill="#fff">0%</text>
+<rect x="20" y="1385" width="450" height="25" fill="#0d47a1"/>
+<text x="30" y="1403" class="group-header">坎（かん）- 水・危険</text>
+<text x="25" y="1430" class="hex-name">3. 水雷屯</text>
+<rect x="170" y="1410" width="50" height="30" fill="#34c638" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1428.0" class="cell-text" fill="#000">93%</text>
+<rect x="220" y="1410" width="50" height="30" fill="#37c33b" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1428.0" class="cell-text" fill="#000">90%</text>
+<rect x="270" y="1410" width="50" height="30" fill="#f88337" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1428.0" class="cell-text" fill="#fff">15%</text>
+<rect x="320" y="1410" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1428.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1410" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1410" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1460" class="hex-name">5. 水天需</text>
+<rect x="170" y="1440" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1440" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1458.0" class="cell-text" fill="#fff">0%</text>
+<rect x="270" y="1440" width="50" height="30" fill="#fcea3b" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1458.0" class="cell-text" fill="#000">40%</text>
+<rect x="320" y="1440" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1440" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1458.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="1440" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1458.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1490" class="hex-name">8. 水地比</text>
+<rect x="170" y="1470" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1488.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="1470" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1488.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1470" width="50" height="30" fill="#91c647" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1488.0" class="cell-text" fill="#000">58%</text>
+<rect x="320" y="1470" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1470" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1488.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="1470" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1520" class="hex-name">29. 坎為水</text>
+<rect x="170" y="1500" width="50" height="30" fill="#69b94c" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1518.0" class="cell-text" fill="#000">64%</text>
+<rect x="220" y="1500" width="50" height="30" fill="#fee23a" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1518.0" class="cell-text" fill="#000">37%</text>
+<rect x="270" y="1500" width="50" height="30" fill="#47b44b" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1518.0" class="cell-text" fill="#000">75%</text>
+<rect x="320" y="1500" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1518.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1500" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1500" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1550" class="hex-name">39. 水山蹇</text>
+<rect x="170" y="1530" width="50" height="30" fill="#5fb54d" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1548.0" class="cell-text" fill="#000">66%</text>
+<rect x="220" y="1530" width="50" height="30" fill="#a8cd45" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1548.0" class="cell-text" fill="#000">54%</text>
+<rect x="270" y="1530" width="50" height="30" fill="#6eba4c" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1548.0" class="cell-text" fill="#000">64%</text>
+<rect x="320" y="1530" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1548.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1530" width="50" height="30" fill="#f55f36" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1548.0" class="cell-text" fill="#fff">6%</text>
+<rect x="420" y="1530" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1548.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1580" class="hex-name">48. 水風井</text>
+<rect x="170" y="1560" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1578.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="1560" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="1560" width="50" height="30" fill="#36c43a" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1578.0" class="cell-text" fill="#000">91%</text>
+<rect x="320" y="1560" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1578.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1560" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1578.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1560" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1578.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1610" class="hex-name">60. 水沢節</text>
+<rect x="170" y="1590" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1590" width="50" height="30" fill="#3bbf3f" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1608.0" class="cell-text" fill="#000">86%</text>
+<rect x="270" y="1590" width="50" height="30" fill="#fbb039" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1608.0" class="cell-text" fill="#fff">26%</text>
+<rect x="320" y="1590" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1608.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1590" width="50" height="30" fill="#faa038" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1608.0" class="cell-text" fill="#fff">22%</text>
+<rect x="420" y="1590" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1608.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1640" class="hex-name">63. 水火既済</text>
+<rect x="170" y="1620" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1638.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="1620" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1638.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1620" width="50" height="30" fill="#faad39" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1638.0" class="cell-text" fill="#fff">25%</text>
+<rect x="320" y="1620" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1620" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1638.0" class="cell-text" fill="#000">50%</text>
+<rect x="420" y="1620" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1638.0" class="cell-text" fill="#fff">0%</text>
+<rect x="20" y="1650" width="450" height="25" fill="#4e342e"/>
+<text x="30" y="1668" class="group-header">艮（ごん）- 山・停止</text>
+<text x="25" y="1695" class="hex-name">4. 山水蒙</text>
+<rect x="170" y="1675" width="50" height="30" fill="#41b945" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1693.0" class="cell-text" fill="#000">80%</text>
+<rect x="220" y="1675" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1693.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1675" width="50" height="30" fill="#fdd93a" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1693.0" class="cell-text" fill="#000">35%</text>
+<rect x="320" y="1675" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1675" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1675" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1725" class="hex-name">18. 山風蠱</text>
+<rect x="170" y="1705" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1723.0" class="cell-text" fill="#000">50%</text>
+<rect x="220" y="1705" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1723.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1705" width="50" height="30" fill="#f44b36" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1723.0" class="cell-text" fill="#fff">1%</text>
+<rect x="320" y="1705" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1723.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1705" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1705" width="50" height="30" fill="#87c349" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1723.0" class="cell-text" fill="#000">60%</text>
+<text x="25" y="1755" class="hex-name">22. 山火賁</text>
+<rect x="170" y="1735" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1735" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1753.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1735" width="50" height="30" fill="#f55836" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1753.0" class="cell-text" fill="#fff">5%</text>
+<rect x="320" y="1735" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1735" width="50" height="30" fill="#32c836" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1753.0" class="cell-text" fill="#000">95%</text>
+<rect x="420" y="1735" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1753.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1785" class="hex-name">23. 山地剥</text>
+<rect x="170" y="1765" width="50" height="30" fill="#41b945" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1783.0" class="cell-text" fill="#000">80%</text>
+<rect x="220" y="1765" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="1765" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1783.0" class="cell-text" fill="#000">50%</text>
+<rect x="320" y="1765" width="50" height="30" fill="#fdcf3a" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1783.0" class="cell-text" fill="#000">33%</text>
+<rect x="370" y="1765" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1783.0" class="cell-text" fill="#fff">0%</text>
+<rect x="420" y="1765" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1783.0" class="cell-text" fill="#000">100%</text>
+<text x="25" y="1815" class="hex-name">26. 山天大畜</text>
+<rect x="170" y="1795" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1813.0" class="cell-text" fill="#fff">0%</text>
+<rect x="220" y="1795" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="1795" width="50" height="30" fill="#a2cb45" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1813.0" class="cell-text" fill="#000">55%</text>
+<rect x="320" y="1795" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1795" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1813.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1795" width="50" height="30" fill="#fdd93a" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1813.0" class="cell-text" fill="#000">35%</text>
+<text x="25" y="1845" class="hex-name">27. 山雷頤</text>
+<rect x="170" y="1825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="1825" width="50" height="30" fill="#fbb839" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1843.0" class="cell-text" fill="#fff">27%</text>
+<rect x="320" y="1825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="1825" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="1875" class="hex-name">41. 山沢損</text>
+<rect x="170" y="1855" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1855" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="270" y="1855" width="50" height="30" fill="#3dbd41" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1873.0" class="cell-text" fill="#000">84%</text>
+<rect x="320" y="1855" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="1855" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1873.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1855" width="50" height="30" fill="#fdcf3a" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1873.0" class="cell-text" fill="#000">33%</text>
+<text x="25" y="1905" class="hex-name">52. 艮為山</text>
+<rect x="170" y="1885" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="1885" width="50" height="30" fill="#97c847" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1903.0" class="cell-text" fill="#000">57%</text>
+<rect x="270" y="1885" width="50" height="30" fill="#43b747" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1903.0" class="cell-text" fill="#000">78%</text>
+<rect x="320" y="1885" width="50" height="30" fill="#f44636" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1903.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1885" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1903.0" class="cell-text" fill="#000">50%</text>
+<rect x="420" y="1885" width="50" height="30" fill="#87c349" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1903.0" class="cell-text" fill="#000">60%</text>
+<rect x="20" y="1915" width="450" height="25" fill="#37474f"/>
+<text x="30" y="1933" class="group-header">坤（こん）- 地・受容</text>
+<text x="25" y="1960" class="hex-name">2. 坤為地</text>
+<rect x="170" y="1940" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1958.0" class="cell-text" fill="#000">100%</text>
+<rect x="220" y="1940" width="50" height="30" fill="#44b648" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1958.0" class="cell-text" fill="#000">77%</text>
+<rect x="270" y="1940" width="50" height="30" fill="#d5dd3f" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1958.0" class="cell-text" fill="#000">47%</text>
+<rect x="320" y="1940" width="50" height="30" fill="#f44f36" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1958.0" class="cell-text" fill="#fff">2%</text>
+<rect x="370" y="1940" width="50" height="30" fill="#c0d542" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1958.0" class="cell-text" fill="#000">50%</text>
+<rect x="420" y="1940" width="50" height="30" fill="#f44536" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1958.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="1990" class="hex-name">7. 地水師</text>
+<rect x="170" y="1970" width="50" height="30" fill="#faa839" stroke="#ddd" stroke-width="0.5"/>
+<text x="195.0" y="1988.0" class="cell-text" fill="#fff">24%</text>
+<rect x="220" y="1970" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="1988.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="1970" width="50" height="30" fill="#f55e36" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="1988.0" class="cell-text" fill="#fff">6%</text>
+<rect x="320" y="1970" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="1988.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="1970" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="1988.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="1970" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="1988.0" class="cell-text" fill="#000">100%</text>
+<text x="25" y="2020" class="hex-name">11. 地天泰</text>
+<rect x="170" y="2000" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="2000" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="2018.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="2000" width="50" height="30" fill="#f55436" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="2018.0" class="cell-text" fill="#fff">4%</text>
+<rect x="320" y="2000" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="2000" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="2018.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="2000" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="2018.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="2050" class="hex-name">15. 地山謙</text>
+<rect x="170" y="2030" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="2030" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="2048.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="2030" width="50" height="30" fill="#f3e73c" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="2048.0" class="cell-text" fill="#000">41%</text>
+<rect x="320" y="2030" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="345.0" y="2048.0" class="cell-text" fill="#fff">0%</text>
+<rect x="370" y="2030" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="2048.0" class="cell-text" fill="#000">50%</text>
+<rect x="420" y="2030" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="2048.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="2080" class="hex-name">19. 地沢臨</text>
+<rect x="170" y="2060" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="2060" width="50" height="30" fill="#f55f36" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="2078.0" class="cell-text" fill="#fff">6%</text>
+<rect x="270" y="2060" width="50" height="30" fill="#87c349" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="2078.0" class="cell-text" fill="#000">60%</text>
+<rect x="320" y="2060" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="2060" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="2060" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="2078.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="2110" class="hex-name">24. 地雷復</text>
+<rect x="170" y="2090" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="2090" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="2108.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="2090" width="50" height="30" fill="#f55b36" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="2108.0" class="cell-text" fill="#fff">5%</text>
+<rect x="320" y="2090" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="2090" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="420" y="2090" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<text x="25" y="2140" class="hex-name">36. 地火明夷</text>
+<rect x="170" y="2120" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="2120" width="50" height="30" fill="#c3d742" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="2138.0" class="cell-text" fill="#000">50%</text>
+<rect x="270" y="2120" width="50" height="30" fill="#f7e83b" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="2138.0" class="cell-text" fill="#000">41%</text>
+<rect x="320" y="2120" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="2120" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="2138.0" class="cell-text" fill="#000">100%</text>
+<rect x="420" y="2120" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="2138.0" class="cell-text" fill="#fff">0%</text>
+<text x="25" y="2170" class="hex-name">46. 地風升</text>
+<rect x="170" y="2150" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="220" y="2150" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="245.0" y="2168.0" class="cell-text" fill="#000">100%</text>
+<rect x="270" y="2150" width="50" height="30" fill="#2dcd31" stroke="#ddd" stroke-width="0.5"/>
+<text x="295.0" y="2168.0" class="cell-text" fill="#000">100%</text>
+<rect x="320" y="2150" width="50" height="30" fill="#e0e0e0" stroke="#ddd" stroke-width="0.5"/>
+<rect x="370" y="2150" width="50" height="30" fill="#41b945" stroke="#ddd" stroke-width="0.5"/>
+<text x="395.0" y="2168.0" class="cell-text" fill="#000">80%</text>
+<rect x="420" y="2150" width="50" height="30" fill="#f44336" stroke="#ddd" stroke-width="0.5"/>
+<text x="445.0" y="2168.0" class="cell-text" fill="#fff">0%</text>
+
+<!-- Legend -->
+<rect x="20" y="2200" width="200" height="15" fill="url(#legendGrad)" stroke="#ccc"/>
+<text x="20" y="2230" class="legend-text">0% (失敗)</text>
+<text x="190" y="2230" class="legend-text">100% (成功)</text>
+<rect x="270" y="2200" width="15" height="15" fill="#e0e0e0" stroke="#ccc"/>
+<text x="290" y="2212" class="legend-text">データなし</text>
+</svg>

@@ -1,0 +1,362 @@
+[
+  {
+    "target_name": "プラザ合意と円高（1985）",
+    "scale": "country",
+    "period": "1985",
+    "story_summary": "プラザ合意で円高が進み、日本経済は輸出産業の苦境とバブル経済への転換を迎えた。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "変質・新生",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "巽",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#プラザ合意",
+      "#円高",
+      "#1985"
+    ],
+    "source_type": "article",
+    "credibility_rank": "S",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離（繁栄）→震（合意）→坎（円高）→巽（転換）。バブルの序章"
+  },
+  {
+    "target_name": "日本電電公社民営化（1985）",
+    "scale": "company",
+    "period": "1985",
+    "story_summary": "電電公社がNTTとして民営化され、通信自由化の幕開けとなった。",
+    "before_state": "安定・平和",
+    "trigger_type": "外部ショック",
+    "action_type": "刷新・破壊",
+    "after_state": "持続成長・大成功",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#NTT",
+      "#民営化",
+      "#通信"
+    ],
+    "source_type": "article",
+    "credibility_rank": "S",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "艮（公社）→震（改革）→乾（民営化）→乾（成長）。通信革命の始まり"
+  },
+  {
+    "target_name": "国鉄分割民営化（1987）",
+    "scale": "company",
+    "period": "1987",
+    "story_summary": "国鉄がJR7社に分割民営化され、鉄道サービスが大きく改善した。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "外部ショック",
+    "action_type": "刷新・破壊",
+    "after_state": "持続成長・大成功",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#国鉄",
+      "#JR",
+      "#民営化"
+    ],
+    "source_type": "article",
+    "credibility_rank": "S",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "坎（赤字）→震（改革）→乾（分割）→乾（再生）。鉄道の再生"
+  },
+  {
+    "target_name": "バブル景気（1986-1991）",
+    "scale": "country",
+    "period": "1986-1991",
+    "story_summary": "日本経済がバブル景気に沸き、地価・株価が異常な高騰を見せた。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "離",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#バブル",
+      "#1980年代",
+      "#日本"
+    ],
+    "source_type": "article",
+    "credibility_rank": "S",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "離（成長）→乾（拡大）→乾（過熱）→離（頂点）。狂乱の時代"
+  },
+  {
+    "target_name": "任天堂ファミコン革命（1983-1990）",
+    "scale": "company",
+    "period": "1983-1990",
+    "story_summary": "任天堂がファミコンで家庭用ゲーム市場を創造し、世界的企業に成長した。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#任天堂",
+      "#ファミコン",
+      "#ゲーム"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "艮（花札）→乾（革新）→乾（発売）→乾（支配）。ゲーム革命"
+  },
+  {
+    "target_name": "ソニー ウォークマン成功（1979-1990）",
+    "scale": "company",
+    "period": "1979-1990",
+    "story_summary": "ソニーのウォークマンが世界的ヒットとなり、携帯音楽プレーヤーの文化を創造した。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#ソニー",
+      "#ウォークマン",
+      "#音楽"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "離（成長）→乾（革新）→乾（発売）→乾（文化）。音楽を持ち歩く"
+  },
+  {
+    "target_name": "ホンダF1初優勝（1986-1991）",
+    "scale": "company",
+    "period": "1986-1991",
+    "story_summary": "ホンダがF1でエンジン供給し、マクラーレン・ホンダとして黄金時代を築いた。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#ホンダ",
+      "#F1",
+      "#モータースポーツ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離（挑戦）→乾（開発）→乾（勝利）→乾（王者）。F1の覇者"
+  },
+  {
+    "target_name": "トヨタ レクサス誕生（1989）",
+    "scale": "company",
+    "period": "1989",
+    "story_summary": "トヨタが高級車ブランド「レクサス」を北米で立ち上げ、成功を収めた。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#トヨタ",
+      "#レクサス",
+      "#高級車"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "離（成長）→乾（挑戦）→乾（参入）→乾（成功）。高級車市場への進出"
+  },
+  {
+    "target_name": "日本航空事故と信頼回復（1985-1990）",
+    "scale": "company",
+    "period": "1985-1990",
+    "story_summary": "日航機墜落事故後、JALは安全対策を強化し、信頼回復に努めた。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "安定・平和",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "艮",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#JAL",
+      "#事故",
+      "#安全"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "離（成長）→震（事故）→坎（対策）→艮（回復）。悲劇からの再建"
+  },
+  {
+    "target_name": "ダイエー全盛期（1980-1990）",
+    "scale": "company",
+    "period": "1980-1990",
+    "story_summary": "ダイエーが流通革命を牽引し、小売業界の覇者として君臨した。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "離",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#ダイエー",
+      "#流通",
+      "#小売"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "離（成長）→乾（拡大）→乾（支配）→乾（全盛）。流通の革命児"
+  }
+]

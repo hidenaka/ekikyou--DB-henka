@@ -1,0 +1,103 @@
+{
+  "version": "1.0",
+  "description": "時間軸・フェーズの目安",
+
+  "phase_duration": {
+    "description": "各位相の典型的な持続期間（目安）",
+    "individual": {
+      "どん底・危機": {"min_months": 3, "typical_months": 12, "max_months": 36, "note": "回復には1-3年が一般的"},
+      "停滞・閉塞": {"min_months": 6, "typical_months": 24, "max_months": 60, "note": "長期化しやすい。意識的な変化が必要"},
+      "混乱・カオス": {"min_months": 1, "typical_months": 6, "max_months": 18, "note": "比較的短期。方向性を見つけると収束"},
+      "成長痛": {"min_months": 6, "typical_months": 18, "max_months": 36, "note": "成長に伴う苦しみ。乗り越えると次のステージへ"},
+      "安定・平和": {"min_months": 12, "typical_months": 36, "max_months": null, "note": "維持可能だが、慢心に注意"},
+      "絶頂・慢心": {"min_months": 6, "typical_months": 24, "max_months": 48, "note": "長くは続かない。次の変化への準備を"}
+    },
+    "company": {
+      "どん底・危機": {"min_months": 6, "typical_months": 24, "max_months": 60, "note": "企業再生には2-5年"},
+      "停滞・閉塞": {"min_months": 12, "typical_months": 36, "max_months": 84, "note": "組織の惰性が強い。変革には時間がかかる"},
+      "混乱・カオス": {"min_months": 3, "typical_months": 12, "max_months": 36, "note": "M&A後、経営交代後などに発生"},
+      "成長痛": {"min_months": 12, "typical_months": 36, "max_months": 60, "note": "急成長企業の典型。組織化が課題"},
+      "安定・平和": {"min_months": 24, "typical_months": 60, "max_months": null, "note": "成熟期。イノベーションのジレンマに注意"},
+      "絶頂・慢心": {"min_months": 12, "typical_months": 36, "max_months": 60, "note": "業界トップ時に発生しやすい"}
+    }
+  },
+
+  "transition_timing": {
+    "description": "状態遷移の典型的なタイミング",
+    "patterns": [
+      {
+        "from": "絶頂・慢心",
+        "to": "どん底・危機",
+        "typical_trigger": "外部ショック",
+        "speed": "急速（3-12ヶ月）",
+        "warning_signs": ["競合の台頭を軽視", "顧客の声を聞かなくなる", "内部の警告を無視"]
+      },
+      {
+        "from": "どん底・危機",
+        "to": "安定・平和",
+        "typical_trigger": "意図的決断",
+        "speed": "緩やか（18-36ヶ月）",
+        "success_factors": ["リーダーシップの刷新", "コア事業への集中", "ステークホルダーの支援"]
+      },
+      {
+        "from": "停滞・閉塞",
+        "to": "成長痛",
+        "typical_trigger": "意図的決断",
+        "speed": "中程度（6-18ヶ月）",
+        "success_factors": ["新規事業・新市場への挑戦", "若手の登用", "外部人材の活用"]
+      },
+      {
+        "from": "安定・平和",
+        "to": "停滞・閉塞",
+        "typical_trigger": "内部崩壊",
+        "speed": "緩やか（24-48ヶ月）",
+        "warning_signs": ["成長率の鈍化", "人材流出", "イノベーションの減少"]
+      },
+      {
+        "from": "混乱・カオス",
+        "to": "安定・平和",
+        "typical_trigger": "意図的決断",
+        "speed": "中程度（12-24ヶ月）",
+        "success_factors": ["方向性の明確化", "組織の再編", "コミュニケーションの強化"]
+      }
+    ]
+  },
+
+  "action_timing": {
+    "description": "行動タイプ別の効果発現タイミング",
+    "攻める・挑戦": {
+      "effect_start": "1-3ヶ月",
+      "peak_effect": "6-12ヶ月",
+      "risk_window": "最初の6ヶ月",
+      "note": "早期に成果が見えないと挫折しやすい"
+    },
+    "守る・維持": {
+      "effect_start": "即時",
+      "peak_effect": "3-6ヶ月",
+      "risk_window": "12ヶ月以降（停滞リスク）",
+      "note": "長期化すると機会損失に"
+    },
+    "耐える・潜伏": {
+      "effect_start": "6-12ヶ月",
+      "peak_effect": "18-36ヶ月",
+      "risk_window": "最初の6ヶ月（挫折）と24ヶ月以降（長期化）",
+      "note": "忍耐が必要。出口戦略を持つこと"
+    }
+  },
+
+  "seasonal_factors": {
+    "description": "時期による影響（参考）",
+    "business_cycle": {
+      "Q1": "年度計画・予算期。変革の好機",
+      "Q2": "実行期。攻めの行動が効果的",
+      "Q3": "中間見直し期。軌道修正の好機",
+      "Q4": "決算期。守りの行動が適切"
+    },
+    "life_stage": {
+      "20代": "攻めが有効。失敗してもリカバリー可能",
+      "30代": "攻めと守りのバランス。家族を考慮",
+      "40代": "選択と集中。ミッドライフクライシスに注意",
+      "50代以降": "守りと継承。次世代への橋渡し"
+    }
+  }
+}

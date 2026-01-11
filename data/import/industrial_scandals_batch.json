@@ -1,0 +1,42 @@
+[
+  {
+    "target_name": "フォルクスワーゲン（ディーゼル排ガス不正）",
+    "scale": "company",
+    "period": "2007-2020",
+    "story_summary": "2007年、CEO・ヴィンターコルンが販売台数600万台から1000万台超を目指す計画を発表、ディーゼルがその中核。2015年9月18日、米EPAが不正を発表。「EA189」型エンジンで検査時のみ排ガス浄化装置を作動させ、実走行時は最大40倍の汚染物質を排出する不正ソフトを搭載。対象車両は全世界1100万台。罰金・費用は250億ポンド（3.4兆円）以上。EU新車ディーゼルシェアは2015年52%から2020年28%に激減。欧州自動車メーカー電動化シフトの転換点に。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "逃げる・放置",
+    "after_state": "混乱・カオス",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "坎",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Mixed",
+    "free_tags": ["#ディーゼルゲート", "#排ガス不正", "#3.4兆円", "#1100万台", "#EV転換点"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "世界一を目指す野心（乾）→不正発覚という危機（坎）→問題を隠蔽（巽）→信頼失墜と業界変革（坎）"
+  },
+  {
+    "target_name": "Boeing（737 MAX墜落事故）",
+    "scale": "company",
+    "period": "2018-2021",
+    "story_summary": "2018年10月ライオン・エア610便墜落（189人死亡）、2019年3月エチオピア航空302便墜落（157人死亡）。計346人犠牲。原因はMCAS（操縦性補正システム）が単一センサー依存で誤作動。2019年3月11日、世界的に737 MAX運航停止。2019年4月の新規受注ゼロ。ガルーダ、フライアディール等がキャンセル。2020年12月米国で運航再開、日本は2021年2月解除。史上最長の運航停止措置となった。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "守る・維持",
+    "after_state": "停滞・閉塞",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "艮",
+    "after_hex": "艮",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Mixed",
+    "free_tags": ["#737MAX", "#MCAS", "#346人死亡", "#運航停止", "#品質管理"],
+    "source_type": "news",
+    "credibility_rank": "S",
+    "logic_memo": "航空機大手の慢心（乾）→連続墜落事故という危機（坎）→守りの対応（艮）→長期運航停止と信頼低下（艮）"
+  }
+]
