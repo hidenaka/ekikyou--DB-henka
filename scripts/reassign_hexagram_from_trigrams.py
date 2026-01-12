@@ -203,7 +203,9 @@ def process_cases(input_path: Path, output_path: Path, backup: bool = True) -> d
                     continue
 
                 # hexagram_idを計算
-                result = get_hexagram_id(before_hex, trigger_hex)
+                # マッピングテーブルは(上卦, 下卦)の順なので引数を逆にする
+                # before_hex=下卦(内卦), trigger_hex=上卦(外卦)
+                result = get_hexagram_id(trigger_hex, before_hex)
 
                 if result is None:
                     stats["invalid_trigram"] += 1
