@@ -555,7 +555,11 @@ def judge_hexagram(case: Dict, hexagram_master: Dict) -> int:
         total = sum(weights)
         weights = [w/total for w in weights]
 
-        # 重み付きランダム選択
+        # 閾値判定: 最上位が50%以上なら確定選択（安定性確保）
+        if weights[0] >= 0.5:
+            return top_candidates[0][0]
+
+        # 重み付きランダム選択（最上位が50%未満の場合のみ）
         r = random.random()
         cumulative = 0
         for (hex_id, score), weight in zip(top_candidates, weights):
@@ -664,6 +668,11 @@ def judge_yao_position(case: Dict, hexagram_id: int, yao_master: Dict) -> int:
     total = sum(weights)
     weights = [w/total for w in weights]
 
+    # 閾値判定: 最上位が50%以上なら確定選択（安定性確保）
+    if weights[0] >= 0.5:
+        return top_yao[0][0]
+
+    # 重み付きランダム選択（最上位が50%未満の場合のみ）
     r = random.random()
     cumulative = 0
     for (yao, score), weight in zip(top_yao, weights):
