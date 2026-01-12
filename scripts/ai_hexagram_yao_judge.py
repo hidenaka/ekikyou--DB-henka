@@ -239,10 +239,12 @@ YAO_SPECIFIC_KEYWORD_SCORE = 5.0  # 爻固有キーワードボーナス（新�
 YAO_MASTER_MATCH_SCORE = 1.5      # yao_masterマッチスコア（改善: 1.0→1.5）
 YAO_STATE_HINT_SCORE = 2.0        # before/after_stateからのヒント（新規）
 
-# 希少爻ブースト係数（1爻・2爻の過少対策）
+# 希少爻ブースト係数（バランス調整版v2）
 RARE_YAO_BOOST: Dict[int, float] = {
-    1: 2.8,  # 3.6% → 目標15%程度
-    2: 2.0,  # 8.1% → 目標15%程度
+    1: 1.6,  # 緩和: 2.8→1.6（目標15%程度）
+    2: 1.4,  # 緩和: 2.0→1.4（目標15%程度）
+    4: 1.5,  # 新規: 4爻が空セル多いため追加
+    6: 1.3,  # 新規: 6爻が空セル多いため追加
 }
 
 # パターンタイプ → 爻位の傾向（改善版：1爻・2爻を強化）
@@ -537,37 +539,62 @@ def judge_hexagram(case: Dict, hexagram_master: Dict) -> int:
 
 def judge_yao_position(case: Dict, hexagram_id: int, yao_master: Dict) -> int:
     """
-    事例の内容から爻位（1-6）を判定する
+    事例の内容から爻位（1-6）を判定する（強化版v2）
 
     判定優先度:
-    1. pattern_type からの傾向
-    2. outcome による調整
-    3. story_summary のキーワードマッチ
+    0. 爻固有キーワードマッチ（最優先、+5.0/回）
+    1. pattern_type からの傾向（+2.0）
+    2. before_state / after_state からのヒント（各+2.0）
+    3. outcome による調整（乗算）
+    4. 従来キーワードマッチ（+3.5）
+    5. 卦固有の爻位意味からマッチ（+1.5）
+    6. 希少爻ブースト（1爻: 2.8x, 2爻: 2.0x）
     """
     pattern_type = case.get("pattern_type", "")
     outcome = case.get("outcome", "Mixed")
+    before_state = case.get("before_state", "")
+    after_state = case.get("after_state", "")
     story = case.get("story_summary", "")
+    target_name = case.get("target_name", "")
+    combined_text = story + " " + target_name
 
-    # 爻位のスコア
-    yao_scores: Dict[int, float] = {i: 1.0 for i in range(1, 7)}
+    # 爻位のスコア（初期値を低めに設定して差をつけやすくする）
+    yao_scores: Dict[int, float] = {i: 0.5 for i in range(1, 7)}
+
+    # 0. 爻固有キーワードマッチ（最優先）- 新規
+    for yao, keywords in YAO_SPECIFIC_KEYWORDS.items():
+        match_count = sum(1 for kw in keywords if kw in combined_text)
+        if match_count > 0:
+            # 最大3回分までカウント（過剰なマッチを防ぐ）
+            yao_scores[yao] += YAO_SPECIFIC_KEYWORD_SCORE * min(match_count, 3)
 
     # 1. pattern_type からの傾向
     if pattern_type in PATTERN_YAO_TENDENCY:
         for yao in PATTERN_YAO_TENDENCY[pattern_type]:
-            yao_scores[yao] += 2.0
+            yao_scores[yao] += YAO_PATTERN_SCORE
 
-    # 2. outcome による調整
+    # 2. before_state からのヒント - 新規
+    if before_state in BEFORE_STATE_YAO_HINTS:
+        for yao in BEFORE_STATE_YAO_HINTS[before_state]:
+            yao_scores[yao] += YAO_STATE_HINT_SCORE
+
+    # 3. after_state からのヒント - 新規
+    if after_state in AFTER_STATE_YAO_HINTS:
+        for yao in AFTER_STATE_YAO_HINTS[after_state]:
+            yao_scores[yao] += YAO_STATE_HINT_SCORE
+
+    # 4. outcome による調整（乗算）
     if outcome in OUTCOME_YAO_ADJUSTMENT:
         for yao, weight in OUTCOME_YAO_ADJUSTMENT[outcome].items():
             yao_scores[yao] *= weight
 
-    # 3. story_summary のキーワードマッチ
+    # 5. 従来のキーワードマッチ（互換性維持、重み増加）
     for yao, keywords in YAO_KEYWORDS.items():
         for kw in keywords:
-            if kw in story:
-                yao_scores[yao] += 1.5
+            if kw in combined_text:
+                yao_scores[yao] += YAO_KEYWORD_BASE_SCORE
 
-    # 4. 卦固有の爻位意味からマッチ（yao_master参照）
+    # 6. 卦固有の爻位意味からマッチ（yao_master参照）
     hex_str = str(hexagram_id)
     if hex_str in yao_master:
         yao_data = yao_master[hex_str].get("yao", {})
@@ -579,14 +606,25 @@ def judge_yao_position(case: Dict, hexagram_id: int, yao_master: Dict) -> int:
             # modernの一部がstoryに含まれるか
             for phrase in modern.split():
                 if len(phrase) >= 2 and phrase in story:
-                    yao_scores[yao_num] += 1.0
+                    yao_scores[yao_num] += YAO_MASTER_MATCH_SCORE
+
+            # sns_styleもチェック
+            if sns and len(sns) > 3:
+                for phrase in sns.split():
+                    if len(phrase) >= 2 and phrase in story:
+                        yao_scores[yao_num] += YAO_MASTER_MATCH_SCORE * 0.5
+
+    # 7. 希少爻ブースト適用（1爻・2爻の過少対策）- 新規
+    for yao in list(yao_scores.keys()):
+        if yao in RARE_YAO_BOOST:
+            yao_scores[yao] *= RARE_YAO_BOOST[yao]
 
     # スコアが高い順にソート
     sorted_yao = sorted(yao_scores.items(), key=lambda x: x[1], reverse=True)
 
-    # 上位2つの中から重み付きランダム選択
-    top_yao = sorted_yao[:2]
-    weights = [y[1] for y in top_yao]
+    # 上位3つの中から重み付きランダム選択（多様性確保）
+    top_yao = sorted_yao[:3]
+    weights = [max(y[1], 0.1) for y in top_yao]  # 最低値を保証
     total = sum(weights)
     weights = [w/total for w in weights]
 
