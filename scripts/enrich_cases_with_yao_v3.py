@@ -292,7 +292,7 @@ def get_yao_phrase(hexagram_id: int, yao_position: int, yao_phrases: dict) -> di
     return yao_phrases.get(key, {"classic": "", "modern": ""})
 
 
-def enrich_case(case: dict, recommendations: dict, compatibility: dict, transitions: dict, yao_phrases: dict) -> dict:
+def enrich_case(case: dict, recommendations: dict, compatibility: dict, transitions: dict, yao_phrases: dict, detailed_recs: dict = None) -> dict:
     enriched = case.copy()
 
     before_hex_name = case.get("classical_before_hexagram", "")
@@ -317,6 +317,11 @@ def enrich_case(case: dict, recommendations: dict, compatibility: dict, transiti
 
     yao_rec = recommendations.get(str(yao_position), {})
 
+    # 詳細な384爻アドバイスを取得
+    detailed_advice = {}
+    if detailed_recs and before_hex_id:
+        detailed_advice = get_detailed_yao_advice(before_hex_id, yao_position, detailed_recs)
+
     enriched["yao_analysis"] = {
         "before_hexagram_id": before_hex_id,
         "before_yao_position": yao_position,
@@ -336,6 +341,7 @@ def enrich_case(case: dict, recommendations: dict, compatibility: dict, transiti
         "prediction_analysis": analysis,
         "recommended_actions": yao_rec.get("recommended_actions", []),
         "avoid_actions": yao_rec.get("avoid_actions", []),
+        "detailed_yao_advice": detailed_advice,
     }
 
     return enriched
@@ -349,15 +355,50 @@ def load_yao_phrases() -> dict:
     return {}
 
 
+def load_detailed_recommendations() -> dict:
+    """384爻の詳細推奨データを読み込む"""
+    detailed_file = BASE_DIR / "data" / "reference" / "yao_recommendations.json"
+    if detailed_file.exists():
+        with open(detailed_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        # yao_id をキーにした辞書に変換（例: "01_1" -> {...}）
+        result = {}
+        for rec in data.get("recommendations", []):
+            yao_id = rec.get("yao_id", "")
+            if yao_id:
+                result[yao_id] = rec
+        return result
+    return {}
+
+
+def get_detailed_yao_advice(hexagram_id: int, yao_position: int, detailed_recs: dict) -> dict:
+    """384爻の詳細アドバイスを取得"""
+    if not hexagram_id or not yao_position:
+        return {}
+    yao_id = f"{hexagram_id:02d}_{yao_position}"
+    rec = detailed_recs.get(yao_id, {})
+    if rec:
+        return {
+            "yao_id": yao_id,
+            "hexagram_group": rec.get("hexagram_group", ""),
+            "stage": rec.get("stage", ""),
+            "recommendations": rec.get("recommendations", {}),
+            "avoid": rec.get("avoid", {})
+        }
+    return {}
+
+
 def main():
     print("=== ケースデータへの爻情報付与（v3 改善版）===\n")
 
     print("1. マッピングデータ読み込み...")
     recommendations, compatibility, transitions = load_mappings()
     yao_phrases = load_yao_phrases()
+    detailed_recs = load_detailed_recommendations()
     print(f"   - 爻推奨: {len(recommendations)} 件")
     print(f"   - 適合性マトリクス: {len(compatibility)} × 6 件")
     print(f"   - 爻辞: {len(yao_phrases)} 件")
+    print(f"   - 詳細384爻: {len(detailed_recs)} 件")
     print(f"   - パターン上書き: {len([k for k,v in PATTERN_OUTCOME_OVERRIDE.items() if v])} 件")
 
     print("\n2. ケースデータ読み込み...")
@@ -376,7 +417,7 @@ def main():
     pattern_stats = {}
 
     for case in cases:
-        enriched = enrich_case(case, recommendations, compatibility, transitions, yao_phrases)
+        enriched = enrich_case(case, recommendations, compatibility, transitions, yao_phrases, detailed_recs)
         enriched_cases.append(enriched)
 
         yao_analysis = enriched.get("yao_analysis", {})

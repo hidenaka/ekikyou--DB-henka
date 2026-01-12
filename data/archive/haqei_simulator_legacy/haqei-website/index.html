@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaQei - あなたの物語を読み解く、次世代の自己分析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+        .brand-text {
+            background: -webkit-linear-gradient(45deg, #a5b4fc, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- ヘッダー -->
+    <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold brand-text tracking-wider">HaQei</div>
+            <div>
+                <a href="#services" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">サービス</a>
+                <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">HaQeiとは</a>
+                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition duration-300">お問い合わせ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero-bg py-20 sm:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight">
+                    あなたの<span class="brand-text">取扱説明書</span>と<br class="sm:hidden">
+                    <span class="brand-text">人生の地図</span>を、今、一つに。
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-300">
+                    性格分析だけでは、人生の「なぜ？」は解けない。HaQeiは、あなたの「人格OS」と「今の状況」を掛け合わせ、あなただけの最適な戦略を導き出す、次世代の自己分析メソッドです。
+                </p>
+                <div class="mt-10">
+                    <a href="#services" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        サービスを見る
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- サービス紹介セクション -->
+        <section id="services" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">HaQeiが提供するサービス</h2>
+                    <p class="mt-4 text-gray-400">あなたの悩みや目的に合わせて、最適な分析ツールとコンサルティングをご提供します。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- パーソナルOS発見レポート -->
+                    <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                        <h3 class="text-2xl font-bold text-indigo-300 mb-4">パーソナルOS発見レポート</h3>
+                        <p class="text-gray-400 mb-6">MBTI/エニアグラムから、あなたの魂のOS（人格卦）を特定。強み、課題、陥りがちな罠までを網羅した、あなただけの取扱説明書です。</p>
+                        <a href="os_report.html" class="font-bold text-white hover:text-indigo-300 transition duration-300">ツールを試す →</a>
+                    </div>
+
+                    <!-- 未来分岐図ジェネレーター -->
+                    <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                        <h3 class="text-2xl font-bold text-indigo-300 mb-4">未来分岐図ジェネレーター</h3>
+                        <p class="text-gray-400 mb-6">今のあなたの選択が、未来をどう変えるか。「行動」と「停滞」の8通りの未来をシミュレーションし、運命の軌跡を可視化します。</p>
+                        <!-- ★★★ ここを修正しました ★★★ -->
+                        <a href="8stories.html" class="font-bold text-white hover:text-indigo-300 transition duration-300">ツールを試す →</a>
+                    </div>
+                    
+                    <!-- 個別コンサルティング -->
+                    <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                        <h3 class="text-2xl font-bold text-indigo-300 mb-4">個別コンサルティング</h3>
+                        <p class="text-gray-400 mb-6">チャットまたは音声通話で、あなたの固有の悩みに深く寄り添います。人格と状況をクロス分析し、具体的なアクションプランを共に創り上げます。</p>
+                        <a href="#contact" class="font-bold text-white hover:text-indigo-300 transition duration-300">詳細を見る →</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HaQeiとはセクション -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">なぜ、HaQeiは生まれたのか？</h2>
+                    <p class="mt-6 text-gray-300 leading-relaxed">
+                        私自身、数々の自己分析を繰り返しながらも、憧れの人と同じステージに立とうとしては、全くついていけず、絶望する経験をしました。その絶望の先で見つけたのは、「自分にできること」と「できないこと」を知り、その上で「自分だけの道」を見つけ出すことの重要性でした。<br><br>
+                        HaQeiは、あなたが「自分でも、楽しく、楽にできて、しかも人の役に立てること」が必ずあると伝えるために生まれました。過去を智慧に変え、未来の可能性を照らし出す、あなたのための羅針盤です。
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/1f2937/a5b4fc?text=HaQei" alt="HaQeiのイメージ画像" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </section>
+        
+        <!-- お問い合わせ(CTA)セクション -->
+        <section id="contact" class="bg-gray-900 py-20">
+             <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl sm:text-4xl font-bold text-white">あなたの物語を、始めましょう</h2>
+                 <p class="mt-4 max-w-xl mx-auto text-gray-400">まず、あなたのOSを知ることから。ご質問や個別コンサルティングのご依頼は、こちらからお気軽にお問い合わせください。</p>
+                 <div class="mt-8">
+                     <a href="mailto:info@haqei.example.com" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                         お問い合わせはこちら
+                     </a>
+                 </div>
+             </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-400">
+            <p>&copy; 2025 HaQei. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
