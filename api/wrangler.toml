@@ -1,0 +1,11 @@
+name = "haqei-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "haqei-db"
+database_id = "local"  # 本番デプロイ時に実際のIDに変更
+
+[vars]
+ALLOWED_ORIGINS = "https://haqei.com,http://localhost:3000"
