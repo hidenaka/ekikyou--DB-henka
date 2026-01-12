@@ -56,6 +56,9 @@ class ParsedSituation:
     inferred_state: str  # 安定・危機・混乱・成長・衰退・変革
     inferred_pattern: str  # pattern_type推定
     confidence: float
+    # 複合状況対応
+    secondary_state: Optional[str] = None  # 2番目に強い状態
+    all_matched_categories: List[str] = field(default_factory=list)  # 全マッチカテゴリ
 
 @dataclass
 class ParsedGoal:
@@ -221,39 +224,100 @@ GOAL_KEYWORDS = {
 }
 
 
+# 同義語辞書（キーワード展開用）
+SYNONYMS = {
+    "競争": ["ライバル", "競合", "シェア争い"],
+    "対立": ["衝突", "摩擦", "不和", "確執"],
+    "危機": ["ピンチ", "窮地", "瀬戸際", "崖っぷち"],
+    "成長": ["伸び", "上昇", "拡大", "躍進"],
+    "停滞": ["低迷", "足踏み", "頭打ち", "伸び悩み"],
+    "変化": ["転換", "シフト", "移行", "変革"],
+    "迷い": ["悩み", "葛藤", "ジレンマ", "板挟み"],
+}
+
+
+def expand_synonyms(text: str) -> str:
+    """テキスト内の同義語を展開（検出力向上）"""
+    expanded = text
+    for base_word, synonyms in SYNONYMS.items():
+        for syn in synonyms:
+            if syn in text and base_word not in text:
+                expanded += f" {base_word}"
+                break
+    return expanded
+
+
 def parse_situation(text: str) -> ParsedSituation:
     """
     ユーザーの状況テキストをパースして構造化データに変換
-    """
-    text_lower = text.lower()
-    matched_keywords = []
-    matched_categories = []
 
+    改善点:
+    - 同義語展開による検出力向上
+    - カテゴリ別スコアリングで複合状況に対応
+    - 2番目に強い状態も返す（secondary_state）
+    """
+    # 同義語展開
+    expanded_text = expand_synonyms(text)
+
+    matched_keywords = []
+    category_scores: Dict[str, float] = {}
+
+    # カテゴリ別にスコア計算
     for category, data in SITUATION_KEYWORDS.items():
+        score = 0.0
+        matched_in_category = []
+
         for kw in data["keywords"]:
-            if kw in text:
-                matched_keywords.append(kw)
-                if category not in matched_categories:
-                    matched_categories.append(category)
+            if kw in expanded_text:
+                matched_in_category.append(kw)
+                # キーワードの長さに応じた重み付け（長いキーワードはより具体的）
+                weight = 1.0 + len(kw) * 0.1
+                score += weight
+
+        if matched_in_category:
+            category_scores[category] = score
+            matched_keywords.extend(matched_in_category)
+
+    # 重複除去
+    matched_keywords = list(dict.fromkeys(matched_keywords))
+
+    # スコア順にソート
+    sorted_categories = sorted(category_scores.items(), key=lambda x: x[1], reverse=True)
+    all_matched_categories = [cat for cat, _ in sorted_categories]
 
     # 最も優先度の高いカテゴリを選択
-    if matched_categories:
-        primary_category = matched_categories[0]
+    if sorted_categories:
+        primary_category = sorted_categories[0][0]
         data = SITUATION_KEYWORDS[primary_category]
         inferred_state = data["state"]
         inferred_pattern = data["patterns"][0] if data["patterns"] else "Strategic_Patience"
-        confidence = min(0.5 + len(matched_keywords) * 0.1, 0.9)
+
+        # 信頼度：スコアとマッチ数に基づく
+        primary_score = sorted_categories[0][1]
+        confidence = min(0.4 + primary_score * 0.1 + len(matched_keywords) * 0.05, 0.95)
+
+        # 2番目に強い状態
+        secondary_state = None
+        if len(sorted_categories) >= 2:
+            secondary_category = sorted_categories[1][0]
+            secondary_data = SITUATION_KEYWORDS[secondary_category]
+            # 2番目のスコアが1番目の50%以上なら有意
+            if sorted_categories[1][1] >= sorted_categories[0][1] * 0.5:
+                secondary_state = secondary_data["state"]
     else:
         inferred_state = "混乱・不安定"
         inferred_pattern = "Strategic_Patience"
         confidence = 0.3
+        secondary_state = None
 
     return ParsedSituation(
         raw_text=text,
         keywords=matched_keywords,
         inferred_state=inferred_state,
         inferred_pattern=inferred_pattern,
-        confidence=confidence
+        confidence=confidence,
+        secondary_state=secondary_state,
+        all_matched_categories=all_matched_categories
     )
 
 
@@ -364,7 +428,8 @@ def judge_hexagram_deterministic(
     判定優先度:
     1. キーワード直接マッチ（最優先）
     2. 状態ベースの候補選択
-    3. パターンによる微調整
+    3. 複合状況（secondary_state）の考慮
+    4. パターンによる微調整
     """
     reasoning = []
     scores: Dict[int, float] = {}
@@ -382,7 +447,14 @@ def judge_hexagram_deterministic(
             scores[hex_id] = scores.get(hex_id, 0) + base_score * 5
         reasoning.append(f"状態「{parsed.inferred_state}」から候補選択")
 
-    # 3. パターンによる微調整
+    # 3. 複合状況：secondary_stateがある場合は追加スコア
+    if parsed.secondary_state and parsed.secondary_state in STATE_TO_HEXAGRAM:
+        for hex_id, base_score in STATE_TO_HEXAGRAM[parsed.secondary_state]:
+            # 副次的状態は主状態の30%の重みで加算
+            scores[hex_id] = scores.get(hex_id, 0) + base_score * 1.5
+        reasoning.append(f"複合状況「{parsed.secondary_state}」も考慮")
+
+    # 4. パターンによる微調整
     if parsed.inferred_pattern in PATTERN_HEXAGRAM_ADJUSTMENT:
         for hex_id, multiplier in PATTERN_HEXAGRAM_ADJUSTMENT[parsed.inferred_pattern].items():
             if hex_id in scores:
@@ -509,17 +581,50 @@ def get_prediction_engine() -> PredictionEngine:
     return _prediction_engine
 
 
-# 64卦ID→八卦（before_hex）のマッピング
-HEXAGRAM_TO_TRIGRAM = {
-    1: "乾", 2: "坤", 3: "坎", 4: "艮", 5: "坎", 6: "乾", 7: "坤", 8: "坎",
-    9: "巽", 10: "乾", 11: "坤", 12: "乾", 13: "乾", 14: "離", 15: "坤", 16: "震",
-    17: "兌", 18: "艮", 19: "坤", 20: "巽", 21: "離", 22: "艮", 23: "艮", 24: "坤",
-    25: "乾", 26: "艮", 27: "艮", 28: "兌", 29: "坎", 30: "離", 31: "兌", 32: "震",
-    33: "乾", 34: "震", 35: "離", 36: "坤", 37: "巽", 38: "離", 39: "坎", 40: "震",
-    41: "艮", 42: "巽", 43: "兌", 44: "乾", 45: "兌", 46: "坤", 47: "兌", 48: "坎",
-    49: "兌", 50: "離", 51: "震", 52: "艮", 53: "巽", 54: "震", 55: "震", 56: "離",
-    57: "巽", 58: "兌", 59: "巽", 60: "坎", 61: "巽", 62: "震", 63: "坎", 64: "離",
-}
+# 64卦ID→八卦（before_hex）のマッピング（hexagram_masterから自動生成）
+_hexagram_to_trigram_cache: Optional[Dict[int, str]] = None
+
+
+def get_hexagram_to_trigram() -> Dict[int, str]:
+    """
+    hexagram_master.jsonから64卦ID→上卦（八卦）のマッピングを自動生成
+
+    上卦（upper_trigram）を使用する理由:
+    - 上卦は外側・現れ・状況を表す
+    - PredictionEngineのbefore_hexは状況の八卦を表す
+    """
+    global _hexagram_to_trigram_cache
+    if _hexagram_to_trigram_cache is not None:
+        return _hexagram_to_trigram_cache
+
+    hexagram_master = load_hexagram_master()
+    mapping = {}
+
+    for hex_id_str, data in hexagram_master.items():
+        try:
+            hex_id = int(hex_id_str)
+            # upper_trigramを使用（外側・状況を表す）
+            upper = data.get("upper_trigram", "")
+            if upper:
+                mapping[hex_id] = upper
+        except (ValueError, KeyError):
+            continue
+
+    # フォールバック：マッピングが空の場合はハードコード値を使用
+    if not mapping:
+        mapping = {
+            1: "乾", 2: "坤", 3: "坎", 4: "艮", 5: "坎", 6: "乾", 7: "坤", 8: "坎",
+            9: "巽", 10: "乾", 11: "坤", 12: "乾", 13: "乾", 14: "離", 15: "坤", 16: "震",
+            17: "兌", 18: "艮", 19: "坤", 20: "巽", 21: "離", 22: "艮", 23: "艮", 24: "坤",
+            25: "乾", 26: "艮", 27: "艮", 28: "兌", 29: "坎", 30: "離", 31: "兌", 32: "震",
+            33: "乾", 34: "震", 35: "離", 36: "坤", 37: "巽", 38: "離", 39: "坎", 40: "震",
+            41: "艮", 42: "巽", 43: "兌", 44: "乾", 45: "兌", 46: "坤", 47: "兌", 48: "坎",
+            49: "兌", 50: "離", 51: "震", 52: "艮", 53: "巽", 54: "震", 55: "震", 56: "離",
+            57: "巽", 58: "兌", 59: "巽", 60: "坎", 61: "巽", 62: "震", 63: "坎", 64: "離",
+        }
+
+    _hexagram_to_trigram_cache = mapping
+    return mapping
 
 
 def search_similar_cases(
@@ -539,7 +644,8 @@ def search_similar_cases(
     engine = get_prediction_engine()
 
     # hexagram_id → before_hex（八卦）に変換
-    before_hex = HEXAGRAM_TO_TRIGRAM.get(hexagram_id, "坎")
+    hexagram_to_trigram = get_hexagram_to_trigram()
+    before_hex = hexagram_to_trigram.get(hexagram_id, "坎")
 
     # インデックスを使用して候補を絞り込み
     candidates = []
