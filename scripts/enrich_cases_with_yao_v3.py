@@ -295,10 +295,29 @@ def get_yao_phrase(hexagram_id: int, yao_position: int, yao_phrases: dict) -> di
 def enrich_case(case: dict, recommendations: dict, compatibility: dict, transitions: dict, yao_phrases: dict, detailed_recs: dict = None) -> dict:
     enriched = case.copy()
 
-    before_hex_name = case.get("classical_before_hexagram", "")
-    before_hex_id = parse_hexagram_name(before_hex_name)
+    # まずhexagram_idフィールドを優先的に使用
+    before_hex_id = case.get("hexagram_id")
+    if not before_hex_id:
+        before_hex_name = case.get("classical_before_hexagram", "")
+        before_hex_id = parse_hexagram_name(before_hex_name)
 
-    yao_position = diagnose_yao_position(case)
+    # changing_lines_2があればそれを使用（pattern_typeに応じて選択）
+    changing_lines = case.get("changing_lines_2")
+    pattern_type = case.get("pattern_type", "")
+
+    # 衰退・崩壊系パターンは終点（後の爻）を使用、成長系は始点を使用
+    ENDPOINT_PATTERNS = {
+        'Hubris_Collapse', 'Slow_Decline', 'Quiet_Fade', 'Managed_Decline',
+        'Shock_Recovery', 'Crisis_Pivot', 'Failed_Attempt'
+    }
+
+    if changing_lines and len(changing_lines) > 0:
+        if pattern_type in ENDPOINT_PATTERNS and len(changing_lines) > 1:
+            yao_position = changing_lines[-1]  # 終点を使用
+        else:
+            yao_position = changing_lines[0]   # 始点を使用
+    else:
+        yao_position = diagnose_yao_position(case)
 
     action_type = case.get("action_type", "")
     pattern_type = case.get("pattern_type", "")

@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """
-多視点卦解釈生成スクリプト
+多視点卦解釈生成スクリプト v2
 
-各事例に対して、異なる視点から複数の卦解釈を生成し、
-信頼度0.50以上のものをinterpretations配列に追加する。
+各事例に対して、本体データの卦(yao_analysis.before_hexagram_id)を使用し、
+Primary解釈として採用。互卦・覆卦・錯卦を追加解釈として生成する。
+
+新設計:
+- Primary: yao_analysis.before_hexagram_idをそのまま使用
+- Nuclear（互卦）: 内なる構造を表す卦
+- Inverted（覆卦）: 上下反転した視点
+- Complementary（錯卦）: 陰陽反転した対極的視点
 
 使用法:
     python3 scripts/generate_interpretations.py              # 通常実行
@@ -25,11 +31,20 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 CASES_PATH = PROJECT_ROOT / "data" / "raw" / "cases.jsonl"
 HEXAGRAM_MASTER_PATH = PROJECT_ROOT / "data" / "hexagrams" / "hexagram_master.json"
 
+# hexagram_transformationsモジュールをインポート
+from hexagram_transformations import (
+    get_nuclear_hexagram,
+    get_inverted_hexagram,
+    get_complementary_hexagram,
+    HEXAGRAM_BY_ID,
+    TRIGRAM_LINES,
+    hexagram_to_lines,
+)
+
 # 八卦の定義
 TRIGRAMS = ["乾", "坤", "震", "巽", "坎", "離", "艮", "兌"]
 
 # 64卦テーブル (下卦, 上卦) -> (卦番号, 卦名)
-# 行: 下卦 (乾坤震巽坎離艮兌), 列: 上卦 (乾坤震巽坎離艮兌)
 HEXAGRAM_TABLE = {
     ("乾", "乾"): (1, "乾為天"),
     ("乾", "坤"): (12, "天地否"),
@@ -104,6 +119,11 @@ HEXAGRAM_TABLE = {
     ("兌", "兌"): (58, "兌為沢"),
 }
 
+# 逆引きテーブル (爻から八卦名)
+LINES_TO_TRIGRAM = {
+    tuple(v): k for k, v in TRIGRAM_LINES.items()
+}
+
 # 視点タイプの定義
 @dataclass
 class PerspectiveType:
@@ -151,36 +171,12 @@ PERSPECTIVES = {
     ),
 }
 
-# before_stateから推奨八卦へのマッピング
-BEFORE_STATE_TRIGRAM_MAP = {
-    "絶頂・慢心": {"primary": "乾", "alt": "離"},
-    "停滞・閉塞": {"primary": "艮", "alt": "坤"},
-    "混乱・カオス": {"primary": "坎", "alt": "震"},
-    "成長痛": {"primary": "震", "alt": "巽"},
-    "どん底・危機": {"primary": "坎", "alt": "艮"},
-    "安定・平和": {"primary": "坤", "alt": "兌"},
-    "V字回復・大成功": {"primary": "乾", "alt": "離"},
-    "縮小安定・生存": {"primary": "艮", "alt": "坤"},
-}
-
-# trigger_typeから推奨八卦へのマッピング
-TRIGGER_TYPE_TRIGRAM_MAP = {
-    "外部ショック": {"primary": "震", "alt": "坎"},
-    "内部崩壊": {"primary": "坎", "alt": "離"},
-    "意図的決断": {"primary": "乾", "alt": "離"},
-    "偶発・出会い": {"primary": "兌", "alt": "巽"},
-}
-
-# action_typeから推奨八卦へのマッピング
-ACTION_TYPE_TRIGRAM_MAP = {
-    "攻める・挑戦": "乾",
-    "守る・維持": "艮",
-    "捨てる・撤退": "巽",
-    "耐える・潜伏": "坤",
-    "対話・融合": "兌",
-    "刷新・破壊": "離",
-    "逃げる・放置": "坎",
-    "分散・スピンオフ": "巽",
+# 解釈タイプごとの視点マッピング（多様性を確保するため、typeごとに異なる視点を推奨）
+TYPE_PERSPECTIVE_PRIORITY = {
+    "primary": ["shock_response", "strategic_action", "transformation"],
+    "nuclear": ["endurance", "crisis_survival", "adaptation"],  # 内なる構造→忍耐・危機生存
+    "inverted": ["adaptation", "transformation", "endurance"],  # 上下反転→視点の転換
+    "complementary": ["crisis_survival", "endurance", "shock_response"],  # 対極→危機・忍耐
 }
 
 # patternと八卦の相性
@@ -219,10 +215,20 @@ YAO_STAGES = {
     6: "終末期・過熱期",
 }
 
+# 解釈タイプの説明
+INTERPRETATION_TYPE_DESC = {
+    "primary": "本卦（主要な象意）",
+    "nuclear": "互卦（内なる構造・潜在的傾向）",
+    "inverted": "覆卦（視点を反転した解釈）",
+    "complementary": "錯卦（対極的・補完的視点）",
+}
+
+
 @dataclass
 class Interpretation:
-    """解釈データクラス"""
+    """解釈データクラス（拡張版）"""
     rank: int
+    type: str  # "primary", "nuclear", "inverted", "complementary"
     confidence: float
     perspective: str
     hexagram_id: int
@@ -241,12 +247,21 @@ def load_hexagram_master() -> Dict:
     return {}
 
 
+def get_hexagram_info(hexagram_id: int) -> Optional[Tuple[str, str, str]]:
+    """卦IDから(下卦, 上卦, 卦名)を取得"""
+    if hexagram_id not in HEXAGRAM_BY_ID:
+        return None
+    lower, upper, name = HEXAGRAM_BY_ID[hexagram_id]
+    return (lower, upper, name)
+
+
 def get_hexagram_by_trigrams(lower: str, upper: str) -> Optional[Tuple[int, str]]:
     """八卦の組み合わせから卦を取得"""
     return HEXAGRAM_TABLE.get((lower, upper))
 
 
-def calculate_semantic_match(case: Dict, perspective: PerspectiveType) -> float:
+def calculate_semantic_match(case: Dict, perspective: PerspectiveType,
+                             lower: str, upper: str) -> float:
     """
     セマンティックマッチスコアを計算 (max 0.30)
     事例の内容が視点の八卦とどれだけ合致するか
@@ -260,46 +275,25 @@ def calculate_semantic_match(case: Dict, perspective: PerspectiveType) -> float:
     # 視点の主要八卦との一致を確認
     for trigram in perspective.primary_trigrams:
         if trigram == before_hex:
-            score += 0.075
+            score += 0.05
         if trigram == trigger_hex:
-            score += 0.075
+            score += 0.05
         if trigram == action_hex:
-            score += 0.075
+            score += 0.05
         if trigram == after_hex:
-            score += 0.075
+            score += 0.05
+        # 解釈の卦との一致
+        if trigram == lower:
+            score += 0.05
+        if trigram == upper:
+            score += 0.05
 
     return min(score, 0.30)
 
 
-def calculate_trigram_flow(case: Dict, lower: str, upper: str) -> float:
-    """
-    八卦フロー整合性スコアを計算 (max 0.25)
-    before→trigger→action→afterの流れと卦の一貫性
-    """
-    score = 0.0
-    before_hex = case.get("before_hex", "")
-    trigger_hex = case.get("trigger_hex", "")
-    action_hex = case.get("action_hex", "")
-    after_hex = case.get("after_hex", "")
-
-    # 下卦が内面（before/action）と一致
-    if lower == before_hex:
-        score += 0.08
-    if lower == action_hex:
-        score += 0.05
-
-    # 上卦が外面（trigger/after）と一致
-    if upper == trigger_hex:
-        score += 0.08
-    if upper == after_hex:
-        score += 0.04
-
-    return min(score, 0.25)
-
-
 def calculate_pattern_fit(case: Dict, lower: str, upper: str) -> float:
     """
-    パターン適合スコアを計算 (max 0.20)
+    パターン適合スコアを計算 (max 0.25)
     pattern_typeと八卦の相性
     """
     pattern = case.get("pattern_type", "")
@@ -307,19 +301,18 @@ def calculate_pattern_fit(case: Dict, lower: str, upper: str) -> float:
         return 0.10  # デフォルトスコア
 
     affinity = PATTERN_TRIGRAM_AFFINITY[pattern]
-    lower_score = affinity.get(lower, 0.3) * 0.10
-    upper_score = affinity.get(upper, 0.3) * 0.10
+    lower_score = affinity.get(lower, 0.3) * 0.125
+    upper_score = affinity.get(upper, 0.3) * 0.125
 
-    return min(lower_score + upper_score, 0.20)
+    return min(lower_score + upper_score, 0.25)
 
 
 def calculate_yao_fit(case: Dict, yao_position: int) -> float:
     """
-    爻位置適合スコアを計算 (max 0.15)
+    爻位置適合スコアを計算 (max 0.20)
     事例の段階と爻位置の一致度
     """
     before_state = case.get("before_state", "")
-    after_state = case.get("after_state", "")
 
     # 状態から推測される爻位置との比較
     state_yao_map = {
@@ -337,18 +330,18 @@ def calculate_yao_fit(case: Dict, yao_position: int) -> float:
     diff = abs(yao_position - expected_yao)
 
     if diff == 0:
-        return 0.15
+        return 0.20
     elif diff == 1:
-        return 0.10
+        return 0.15
     elif diff == 2:
-        return 0.05
+        return 0.08
     else:
-        return 0.02
+        return 0.03
 
 
 def calculate_outcome_fit(case: Dict, lower: str, upper: str) -> float:
     """
-    結果適合スコアを計算 (max 0.10)
+    結果適合スコアを計算 (max 0.15)
     outcomeと八卦の相性
     """
     outcome = case.get("outcome", "")
@@ -356,28 +349,89 @@ def calculate_outcome_fit(case: Dict, lower: str, upper: str) -> float:
         return 0.05  # デフォルトスコア
 
     affinity = OUTCOME_TRIGRAM_AFFINITY[outcome]
-    lower_score = affinity.get(lower, 0.3) * 0.05
-    upper_score = affinity.get(upper, 0.3) * 0.05
+    lower_score = affinity.get(lower, 0.3) * 0.075
+    upper_score = affinity.get(upper, 0.3) * 0.075
 
-    return min(lower_score + upper_score, 0.10)
+    return min(lower_score + upper_score, 0.15)
+
+
+def calculate_type_bonus(interp_type: str) -> float:
+    """
+    解釈タイプに応じたボーナス/ペナルティ (max 0.10)
+    - primary: 最も信頼度が高い
+    - nuclear: やや低い（内なる傾向なので）
+    - inverted: 中程度
+    - complementary: やや低い（対極的なので）
+    """
+    bonuses = {
+        "primary": 0.10,
+        "nuclear": 0.04,
+        "inverted": 0.06,
+        "complementary": 0.02,
+    }
+    return bonuses.get(interp_type, 0.0)
 
 
 def calculate_confidence(case: Dict, perspective: PerspectiveType,
-                         lower: str, upper: str, yao_position: int) -> float:
+                         lower: str, upper: str, yao_position: int,
+                         interp_type: str) -> float:
     """
     総合信頼度を計算 (max 1.0)
     """
-    semantic = calculate_semantic_match(case, perspective)
-    flow = calculate_trigram_flow(case, lower, upper)
+    semantic = calculate_semantic_match(case, perspective, lower, upper)
     pattern = calculate_pattern_fit(case, lower, upper)
     yao = calculate_yao_fit(case, yao_position)
     outcome = calculate_outcome_fit(case, lower, upper)
+    type_bonus = calculate_type_bonus(interp_type)
 
-    return round(semantic + flow + pattern + yao + outcome, 3)
+    return round(semantic + pattern + yao + outcome + type_bonus, 3)
+
+
+def select_best_perspective(case: Dict, lower: str, upper: str,
+                           yao_position: int, interp_type: str,
+                           used_perspectives: set) -> Tuple[PerspectiveType, float]:
+    """
+    最適な視点を選択し、信頼度を返す
+    """
+    priority_perspectives = TYPE_PERSPECTIVE_PRIORITY.get(interp_type, list(PERSPECTIVES.keys()))
+
+    best_perspective = None
+    best_confidence = 0.0
+
+    # 優先視点から試す
+    for pname in priority_perspectives:
+        if pname in used_perspectives:
+            continue
+        perspective = PERSPECTIVES[pname]
+        conf = calculate_confidence(case, perspective, lower, upper, yao_position, interp_type)
+        if conf > best_confidence:
+            best_confidence = conf
+            best_perspective = perspective
+
+    # 優先視点で見つからない場合、全視点から探す
+    if best_perspective is None:
+        for pname, perspective in PERSPECTIVES.items():
+            if pname in used_perspectives:
+                continue
+            conf = calculate_confidence(case, perspective, lower, upper, yao_position, interp_type)
+            if conf > best_confidence:
+                best_confidence = conf
+                best_perspective = perspective
+
+    # 使用済み視点しかない場合、最高スコアの視点を再利用
+    if best_perspective is None:
+        for pname, perspective in PERSPECTIVES.items():
+            conf = calculate_confidence(case, perspective, lower, upper, yao_position, interp_type)
+            if conf > best_confidence:
+                best_confidence = conf
+                best_perspective = perspective
+
+    return best_perspective, best_confidence
 
 
 def generate_rationale(case: Dict, perspective: PerspectiveType,
-                       hexagram_name: str, yao_position: int) -> str:
+                       hexagram_name: str, yao_position: int,
+                       interp_type: str) -> str:
     """解釈の理由を生成"""
     perspective_desc = {
         "shock_response": "危機対応時の衝撃と反射的行動を重視",
@@ -388,12 +442,13 @@ def generate_rationale(case: Dict, perspective: PerspectiveType,
         "crisis_survival": "危機回避と生存戦略を重視",
     }
 
+    type_desc = INTERPRETATION_TYPE_DESC.get(interp_type, "")
     base_rationale = perspective_desc.get(perspective.name, "多角的視点からの解釈")
 
     action = case.get("action_type", "")
     pattern = case.get("pattern_type", "")
 
-    rationale = f"{base_rationale}。"
+    rationale = f"【{type_desc}】{base_rationale}。"
     rationale += f"{hexagram_name}の象意が{action}の行動と呼応し、"
     rationale += f"{pattern}パターンを示唆する。"
     rationale += f"第{yao_position}爻（{YAO_STAGES.get(yao_position, '不明')}）の段階。"
@@ -428,125 +483,199 @@ def determine_yao_position(case: Dict) -> int:
     return state_yao_map.get(before_state, 3)
 
 
-def get_alternative_trigrams(case: Dict) -> List[Tuple[str, str]]:
-    """事例から代替の八卦ペアを生成"""
-    alternatives = []
-
-    before_state = case.get("before_state", "")
-    trigger_type = case.get("trigger_type", "")
-    action_type = case.get("action_type", "")
-
-    # before_stateから下卦候補を取得
-    before_map = BEFORE_STATE_TRIGRAM_MAP.get(before_state, {})
-    lower_candidates = [before_map.get("primary"), before_map.get("alt")]
-    lower_candidates = [t for t in lower_candidates if t]
-
-    # trigger_typeから上卦候補を取得
-    trigger_map = TRIGGER_TYPE_TRIGRAM_MAP.get(trigger_type, {})
-    upper_candidates = [trigger_map.get("primary"), trigger_map.get("alt")]
-    upper_candidates = [t for t in upper_candidates if t]
-
-    # action_typeからも候補を追加
-    action_trigram = ACTION_TYPE_TRIGRAM_MAP.get(action_type)
-    if action_trigram:
-        lower_candidates.append(action_trigram)
-
-    # 組み合わせを生成
-    for lower in lower_candidates[:2]:
-        for upper in upper_candidates[:2]:
-            if lower and upper:
-                alternatives.append((lower, upper))
-
-    return list(set(alternatives))
-
-
 def generate_interpretations_for_case(case: Dict) -> List[Dict]:
-    """事例に対して複数の解釈を生成"""
+    """
+    事例に対して複数の解釈を生成
+
+    新ロジック:
+    1. Primary: yao_analysis.before_hexagram_id をそのまま使用
+    2. Nuclear（互卦）: get_nuclear_hexagram() で計算
+    3. Inverted（覆卦）: get_inverted_hexagram() で計算
+    4. Complementary（錯卦）: 信頼度0.50以上なら追加
+    """
     interpretations = []
+    used_perspectives = set()
     seen_hexagrams = set()
 
-    before_hex = case.get("before_hex", "")
-    trigger_hex = case.get("trigger_hex", "")
     yao_position = determine_yao_position(case)
 
-    # 1. プライマリ解釈（既存の八卦を使用）
-    primary_hex = get_hexagram_by_trigrams(before_hex, trigger_hex)
-    if primary_hex:
-        hex_id, hex_name = primary_hex
-        seen_hexagrams.add(hex_id)
+    # 1. Primary解釈: yao_analysis.before_hexagram_id を使用
+    yao_analysis = case.get("yao_analysis") or {}
+    primary_hex_id = yao_analysis.get("before_hexagram_id") if yao_analysis else None
 
-        # 最適な視点を選択
-        best_perspective = None
-        best_confidence = 0.0
+    if primary_hex_id and primary_hex_id in HEXAGRAM_BY_ID:
+        hex_info = get_hexagram_info(primary_hex_id)
+        if hex_info:
+            lower, upper, hex_name = hex_info
+            seen_hexagrams.add(primary_hex_id)
 
-        for perspective in PERSPECTIVES.values():
-            conf = calculate_confidence(case, perspective, before_hex, trigger_hex, yao_position)
-            if conf > best_confidence:
-                best_confidence = conf
-                best_perspective = perspective
-
-        if best_perspective and best_confidence >= 0.50:
-            interp = Interpretation(
-                rank=1,
-                confidence=best_confidence,
-                perspective=best_perspective.name,
-                hexagram_id=hex_id,
-                hexagram_name=hex_name,
-                yao_position=yao_position,
-                lower_trigram=before_hex,
-                upper_trigram=trigger_hex,
-                rationale=generate_rationale(case, best_perspective, hex_name, yao_position)
+            perspective, confidence = select_best_perspective(
+                case, lower, upper, yao_position, "primary", used_perspectives
             )
-            interpretations.append(asdict(interp))
 
-    # 2. 代替解釈（異なる視点から）
-    alt_trigrams = get_alternative_trigrams(case)
-
-    for lower, upper in alt_trigrams:
-        hex_info = get_hexagram_by_trigrams(lower, upper)
-        if not hex_info:
-            continue
-
-        hex_id, hex_name = hex_info
-        if hex_id in seen_hexagrams:
-            continue
-
-        # 各視点で評価
-        for perspective in PERSPECTIVES.values():
-            # この視点の主要八卦と一致するか確認
-            if lower not in perspective.primary_trigrams and upper not in perspective.primary_trigrams:
-                continue
-
-            conf = calculate_confidence(case, perspective, lower, upper, yao_position)
-            if conf >= 0.50:
-                seen_hexagrams.add(hex_id)
-                rank = len(interpretations) + 1
-
+            # Primary解釈は本体データの卦なので、閾値に関係なく常に生成
+            # (信頼度が低くても本卦として採用する)
+            if perspective:
+                # 信頼度が低い場合でも最低0.50を保証
+                confidence = max(confidence, 0.50)
+                used_perspectives.add(perspective.name)
                 interp = Interpretation(
-                    rank=rank,
-                    confidence=conf,
+                    rank=1,
+                    type="primary",
+                    confidence=confidence,
                     perspective=perspective.name,
-                    hexagram_id=hex_id,
+                    hexagram_id=primary_hex_id,
                     hexagram_name=hex_name,
                     yao_position=yao_position,
                     lower_trigram=lower,
                     upper_trigram=upper,
-                    rationale=generate_rationale(case, perspective, hex_name, yao_position)
+                    rationale=generate_rationale(case, perspective, hex_name, yao_position, "primary")
                 )
                 interpretations.append(asdict(interp))
 
-                if len(interpretations) >= 3:
-                    break
+    # Primary解釈がない場合、before_hex + trigger_hex にフォールバック
+    if not interpretations:
+        before_hex = case.get("before_hex", "")
+        trigger_hex = case.get("trigger_hex", "")
+        fallback_hex = get_hexagram_by_trigrams(before_hex, trigger_hex)
 
-        if len(interpretations) >= 3:
-            break
+        if fallback_hex:
+            hex_id, hex_name = fallback_hex
+            seen_hexagrams.add(hex_id)
 
-    # 信頼度でソートし、ランクを更新
-    interpretations.sort(key=lambda x: x["confidence"], reverse=True)
+            perspective, confidence = select_best_perspective(
+                case, before_hex, trigger_hex, yao_position, "primary", used_perspectives
+            )
+
+            if perspective and confidence >= 0.50:
+                used_perspectives.add(perspective.name)
+                interp = Interpretation(
+                    rank=1,
+                    type="primary",
+                    confidence=confidence,
+                    perspective=perspective.name,
+                    hexagram_id=hex_id,
+                    hexagram_name=hex_name,
+                    yao_position=yao_position,
+                    lower_trigram=before_hex,
+                    upper_trigram=trigger_hex,
+                    rationale=generate_rationale(case, perspective, hex_name, yao_position, "primary")
+                )
+                interpretations.append(asdict(interp))
+                primary_hex_id = hex_id  # 互卦等の計算用
+
+    # Primary卦がない場合は終了
+    if not primary_hex_id:
+        return interpretations
+
+    # 2. Nuclear（互卦）解釈
+    try:
+        nuclear_id, nuclear_name = get_nuclear_hexagram(primary_hex_id)
+        if nuclear_id not in seen_hexagrams:
+            hex_info = get_hexagram_info(nuclear_id)
+            if hex_info:
+                lower, upper, _ = hex_info
+
+                perspective, confidence = select_best_perspective(
+                    case, lower, upper, yao_position, "nuclear", used_perspectives
+                )
+
+                if perspective and confidence >= 0.50:
+                    seen_hexagrams.add(nuclear_id)
+                    used_perspectives.add(perspective.name)
+                    rank = len(interpretations) + 1
+
+                    interp = Interpretation(
+                        rank=rank,
+                        type="nuclear",
+                        confidence=confidence,
+                        perspective=perspective.name,
+                        hexagram_id=nuclear_id,
+                        hexagram_name=nuclear_name,
+                        yao_position=yao_position,
+                        lower_trigram=lower,
+                        upper_trigram=upper,
+                        rationale=generate_rationale(case, perspective, nuclear_name, yao_position, "nuclear")
+                    )
+                    interpretations.append(asdict(interp))
+    except (ValueError, KeyError):
+        pass  # 互卦計算エラーは無視
+
+    # 3. Inverted（覆卦）解釈
+    try:
+        inverted_id, inverted_name = get_inverted_hexagram(primary_hex_id)
+        if inverted_id not in seen_hexagrams:
+            hex_info = get_hexagram_info(inverted_id)
+            if hex_info:
+                lower, upper, _ = hex_info
+
+                perspective, confidence = select_best_perspective(
+                    case, lower, upper, yao_position, "inverted", used_perspectives
+                )
+
+                if perspective and confidence >= 0.50:
+                    seen_hexagrams.add(inverted_id)
+                    used_perspectives.add(perspective.name)
+                    rank = len(interpretations) + 1
+
+                    interp = Interpretation(
+                        rank=rank,
+                        type="inverted",
+                        confidence=confidence,
+                        perspective=perspective.name,
+                        hexagram_id=inverted_id,
+                        hexagram_name=inverted_name,
+                        yao_position=yao_position,
+                        lower_trigram=lower,
+                        upper_trigram=upper,
+                        rationale=generate_rationale(case, perspective, inverted_name, yao_position, "inverted")
+                    )
+                    interpretations.append(asdict(interp))
+    except (ValueError, KeyError):
+        pass  # 覆卦計算エラーは無視
+
+    # 4. Complementary（錯卦）解釈
+    try:
+        comp_id, comp_name = get_complementary_hexagram(primary_hex_id)
+        if comp_id not in seen_hexagrams:
+            hex_info = get_hexagram_info(comp_id)
+            if hex_info:
+                lower, upper, _ = hex_info
+
+                perspective, confidence = select_best_perspective(
+                    case, lower, upper, yao_position, "complementary", used_perspectives
+                )
+
+                if perspective and confidence >= 0.50:
+                    seen_hexagrams.add(comp_id)
+                    used_perspectives.add(perspective.name)
+                    rank = len(interpretations) + 1
+
+                    interp = Interpretation(
+                        rank=rank,
+                        type="complementary",
+                        confidence=confidence,
+                        perspective=perspective.name,
+                        hexagram_id=comp_id,
+                        hexagram_name=comp_name,
+                        yao_position=yao_position,
+                        lower_trigram=lower,
+                        upper_trigram=upper,
+                        rationale=generate_rationale(case, perspective, comp_name, yao_position, "complementary")
+                    )
+                    interpretations.append(asdict(interp))
+    except (ValueError, KeyError):
+        pass  # 錯卦計算エラーは無視
+
+    # ソート: primaryを最優先、その後は信頼度順
+    # type優先度: primary > nuclear > inverted > complementary
+    type_priority = {"primary": 0, "nuclear": 1, "inverted": 2, "complementary": 3}
+    interpretations.sort(key=lambda x: (type_priority.get(x["type"], 9), -x["confidence"]))
+
     for i, interp in enumerate(interpretations):
         interp["rank"] = i + 1
 
-    return interpretations[:3]
+    return interpretations[:4]  # 最大4解釈
 
 
 def process_cases(dry_run: bool = False, force: bool = False) -> None:
@@ -574,6 +703,10 @@ def process_cases(dry_run: bool = False, force: bool = False) -> None:
     generated = 0
     total_interpretations = 0
 
+    # 統計用
+    type_counts = {"primary": 0, "nuclear": 0, "inverted": 0, "complementary": 0}
+    perspective_counts = {p: 0 for p in PERSPECTIVES}
+
     for i, case in enumerate(cases):
         # 進捗表示
         if (i + 1) % 500 == 0:
@@ -592,6 +725,11 @@ def process_cases(dry_run: bool = False, force: bool = False) -> None:
             generated += 1
             total_interpretations += len(interpretations)
 
+            # 統計更新
+            for interp in interpretations:
+                type_counts[interp["type"]] = type_counts.get(interp["type"], 0) + 1
+                perspective_counts[interp["perspective"]] = perspective_counts.get(interp["perspective"], 0) + 1
+
         processed += 1
 
     print()
@@ -602,6 +740,17 @@ def process_cases(dry_run: bool = False, force: bool = False) -> None:
     print(f"総解釈数: {total_interpretations}")
     if generated > 0:
         print(f"平均解釈数: {total_interpretations / generated:.2f}")
+
+    print()
+    print("=== 解釈タイプ別 ===")
+    for t, count in type_counts.items():
+        print(f"  {t}: {count}")
+
+    print()
+    print("=== 視点別 ===")
+    for p, count in sorted(perspective_counts.items(), key=lambda x: -x[1]):
+        if count > 0:
+            print(f"  {p}: {count}")
 
     # 保存
     if not dry_run:
@@ -629,7 +778,7 @@ def process_cases(dry_run: bool = False, force: bool = False) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="多視点卦解釈生成スクリプト"
+        description="多視点卦解釈生成スクリプト v2 (Primary + Nuclear/Inverted/Complementary)"
     )
     parser.add_argument(
         "--dry-run",

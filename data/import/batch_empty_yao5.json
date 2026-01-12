@@ -1,0 +1,662 @@
+[
+  {
+    "target_name": "エンロン",
+    "scale": "company",
+    "period": "1998-2001",
+    "story_summary": "米エネルギー大手エンロンは全盛期に売上高1000億ドル超、株価90ドルを記録。しかし不正会計が発覚し2001年に破綻。CEOの慢心と内部統制の欠如が原因。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "不正会計",
+      "企業破綻",
+      "エネルギー"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 3,
+    "hexagram_name": "屯",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "エネルギー",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "ノキア",
+    "scale": "company",
+    "period": "2007-2013",
+    "story_summary": "フィンランドのノキアは2007年に携帯電話市場シェア40%超で世界首位。しかしiPhone登場後、スマホ対応の遅れで急落。2013年に携帯事業をマイクロソフトに売却。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "捨てる・撤退",
+    "after_state": "崩壊・消滅",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "坎",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Failure",
+    "free_tags": [
+      "携帯電話",
+      "スマートフォン",
+      "事業売却"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 6,
+    "hexagram_name": "訟",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "通信機器",
+    "country": "フィンランド"
+  },
+  {
+    "target_name": "大英帝国",
+    "scale": "country",
+    "period": "1914-1947",
+    "story_summary": "20世紀初頭、世界の4分の1を支配した大英帝国。二度の世界大戦で疲弊し、1947年インド独立を皮切りに植民地が次々と独立。帝国は緩やかに解体。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "捨てる・撤退",
+    "after_state": "安定・平和",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "艮",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Mixed",
+    "free_tags": [
+      "植民地独立",
+      "世界大戦",
+      "帝国解体"
+    ],
+    "source_type": "book",
+    "credibility_rank": "A",
+    "hexagram_id": 8,
+    "hexagram_name": "比",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "政治",
+    "country": "イギリス"
+  },
+  {
+    "target_name": "タイガー・ウッズ",
+    "scale": "individual",
+    "period": "2009-2019",
+    "story_summary": "ゴルフ界の帝王タイガー・ウッズは2009年のスキャンダルで転落。その後、背中の手術を4回受け引退も囁かれたが、2019年マスターズで劇的復活優勝。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "耐える・潜伏",
+    "after_state": "V字回復・大成功",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "坤",
+    "after_hex": "震",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": [
+      "ゴルフ",
+      "スキャンダル",
+      "復活"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 10,
+    "hexagram_name": "履",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "スポーツ",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "ソニー",
+    "scale": "company",
+    "period": "2000-2012",
+    "story_summary": "ソニーはウォークマン・プレステで絶頂期を迎えたが、2000年代にiPod・スマホに敗北。テレビ事業も10年連続赤字。2012年に大規模リストラを断行。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "捨てる・撤退",
+    "after_state": "停滞・閉塞",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "坎",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Mixed",
+    "free_tags": [
+      "家電",
+      "デジタル化",
+      "リストラ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 11,
+    "hexagram_name": "泰",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "家電",
+    "country": "日本"
+  },
+  {
+    "target_name": "コダック",
+    "scale": "company",
+    "period": "1996-2012",
+    "story_summary": "コダックは写真フィルム市場で圧倒的シェアを誇ったが、デジタル化への対応が遅れ2012年に破産申請。皮肉にもデジカメを最初に発明したのはコダック自身。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "フィルム",
+      "デジタル化",
+      "破産"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 12,
+    "hexagram_name": "否",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "写真・映像",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "アップル（スティーブ・ジョブズ復帰）",
+    "scale": "company",
+    "period": "1997-2007",
+    "story_summary": "1997年倒産寸前だったアップルにジョブズが復帰。iMac、iPod、iPhoneと革新的製品を投入し、2007年には時価総額でデルを抜き復活を果たした。",
+    "before_state": "どん底・危機",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "V字回復・大成功",
+    "before_hex": "坤",
+    "trigger_hex": "震",
+    "action_hex": "離",
+    "after_hex": "乾",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": [
+      "IT",
+      "イノベーション",
+      "復活"
+    ],
+    "source_type": "book",
+    "credibility_rank": "A",
+    "hexagram_id": 13,
+    "hexagram_name": "同人",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "IT",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "ベアリングス銀行",
+    "scale": "company",
+    "period": "1993-1995",
+    "story_summary": "233年の歴史を持つ英ベアリングス銀行は、シンガポール支店のトレーダー、ニック・リーソンの不正取引で14億ドルの損失を出し1995年に破綻。",
+    "before_state": "安定・平和",
+    "trigger_type": "内部崩壊",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "艮",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "銀行",
+      "不正取引",
+      "破綻"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 17,
+    "hexagram_name": "随",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "金融",
+    "country": "イギリス"
+  },
+  {
+    "target_name": "東芝",
+    "scale": "company",
+    "period": "2006-2017",
+    "story_summary": "東芝は原子力事業への過剰投資と不正会計で経営危機に。ウェスチングハウス買収が裏目に出て2017年に債務超過、半導体事業売却を余儀なくされた。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "捨てる・撤退",
+    "after_state": "どん底・危機",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "艮",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "原子力",
+      "不正会計",
+      "債務超過"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 18,
+    "hexagram_name": "蠱",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "電機",
+    "country": "日本"
+  },
+  {
+    "target_name": "マイケル・ジャクソン",
+    "scale": "individual",
+    "period": "1993-2009",
+    "story_summary": "キング・オブ・ポップとして絶頂を極めたマイケル・ジャクソンは、児童虐待疑惑で名声が失墜。2009年の復活コンサート直前に急死した。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "どん底・危機",
+    "before_hex": "離",
+    "trigger_hex": "坎",
+    "action_hex": "坤",
+    "after_hex": "坎",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Failure",
+    "free_tags": [
+      "音楽",
+      "スキャンダル",
+      "急死"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 22,
+    "hexagram_name": "賁",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "エンターテインメント",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "リーマン・ブラザーズ",
+    "scale": "company",
+    "period": "2006-2008",
+    "story_summary": "158年の歴史を持つ米投資銀行リーマン・ブラザーズは、サブプライムローンへの過剰投資で2008年に破綻。負債総額6130億ドルは米史上最大の倒産。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "投資銀行",
+      "サブプライム",
+      "金融危機"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 23,
+    "hexagram_name": "剥",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "金融",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "山一證券",
+    "scale": "company",
+    "period": "1990-1997",
+    "story_summary": "日本四大証券の一角・山一證券は、バブル崩壊後の損失隠しが発覚し1997年に自主廃業。社長の「社員は悪くありません」の涙の会見が象徴的だった。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "離",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "証券",
+      "バブル崩壊",
+      "自主廃業"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 28,
+    "hexagram_name": "大過",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "金融",
+    "country": "日本"
+  },
+  {
+    "target_name": "ギリシャ財政危機",
+    "scale": "country",
+    "period": "2009-2018",
+    "story_summary": "ユーロ加盟で繁栄を謳歌したギリシャは、2009年に財政赤字粉飾が発覚し債務危機に。EU・IMFの支援を受けながら緊縮財政を実施、2018年に支援脱却。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "耐える・潜伏",
+    "after_state": "安定・平和",
+    "before_hex": "兌",
+    "trigger_hex": "坎",
+    "action_hex": "坤",
+    "after_hex": "艮",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Mixed",
+    "free_tags": [
+      "財政危機",
+      "ユーロ",
+      "緊縮財政"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 39,
+    "hexagram_name": "蹇",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "政治",
+    "country": "ギリシャ"
+  },
+  {
+    "target_name": "ネットフリックス",
+    "scale": "company",
+    "period": "2011-2013",
+    "story_summary": "ネットフリックスは2011年に料金値上げと事業分離発表で株価80%下落。しかしオリジナルコンテンツ「ハウス・オブ・カード」投入で復活、ストリーミングの覇者に。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "V字回復・大成功",
+    "before_hex": "震",
+    "trigger_hex": "離",
+    "action_hex": "乾",
+    "after_hex": "離",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": [
+      "動画配信",
+      "オリジナルコンテンツ",
+      "復活"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 42,
+    "hexagram_name": "益",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "IT",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "シアーズ",
+    "scale": "company",
+    "period": "2005-2018",
+    "story_summary": "かつて米小売最大手だったシアーズは、アマゾン台頭とKマート合併の失敗で衰退。2018年に破産申請、130年の歴史に幕を下ろした。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "外部ショック",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Failure",
+    "free_tags": [
+      "小売",
+      "Eコマース",
+      "破産"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 43,
+    "hexagram_name": "夬",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "小売",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "ウィーワーク",
+    "scale": "company",
+    "period": "2017-2019",
+    "story_summary": "ウィーワークは470億ドルの評価額でIPO目前だったが、創業者の奇行とガバナンス問題が露呈し上場撤回。評価額は80億ドルに急落、CEOは退任。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "捨てる・撤退",
+    "after_state": "どん底・危機",
+    "before_hex": "離",
+    "trigger_hex": "坎",
+    "action_hex": "艮",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "スタートアップ",
+      "IPO",
+      "ガバナンス"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 44,
+    "hexagram_name": "姤",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "不動産",
+    "country": "アメリカ"
+  },
+  {
+    "target_name": "ブラックベリー",
+    "scale": "company",
+    "period": "2007-2016",
+    "story_summary": "ブラックベリーはビジネス向けスマホで一世を風靡したが、iPhoneとAndroidの台頭で市場シェアを失い2016年にハードウェア事業から撤退。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "捨てる・撤退",
+    "after_state": "崩壊・消滅",
+    "before_hex": "離",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "坎",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Failure",
+    "free_tags": [
+      "スマートフォン",
+      "ビジネス向け",
+      "撤退"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 48,
+    "hexagram_name": "井",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "通信機器",
+    "country": "カナダ"
+  },
+  {
+    "target_name": "ソフトバンク・ビジョンファンド",
+    "scale": "company",
+    "period": "2017-2020",
+    "story_summary": "孫正義率いるビジョンファンドは1000億ドル規模でウィーワーク等に投資。しかし多くの投資先が不振で2020年度に1.8兆円の赤字を計上。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "外部ショック",
+    "action_type": "守る・維持",
+    "after_state": "混乱・カオス",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "艮",
+    "after_hex": "坎",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Mixed",
+    "free_tags": [
+      "投資ファンド",
+      "スタートアップ",
+      "巨額損失"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 55,
+    "hexagram_name": "豊",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "金融",
+    "country": "日本"
+  },
+  {
+    "target_name": "トーマス・クック",
+    "scale": "company",
+    "period": "2011-2019",
+    "story_summary": "178年の歴史を持つ英旅行大手トーマス・クックは、オンライン旅行サイトの台頭と負債増加で2019年に破綻。15万人の旅行者が海外で足止めに。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "外部ショック",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Failure",
+    "free_tags": [
+      "旅行",
+      "オンライン化",
+      "破綻"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 56,
+    "hexagram_name": "旅",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "旅行",
+    "country": "イギリス"
+  },
+  {
+    "target_name": "FTX",
+    "scale": "company",
+    "period": "2021-2022",
+    "story_summary": "仮想通貨取引所FTXは320億ドルの評価で急成長したが、顧客資金の流用が発覚し2022年に破綻。創業者サム・バンクマン・フリードは詐欺罪で逮捕された。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "逃げる・放置",
+    "after_state": "どん底・危機",
+    "before_hex": "離",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "仮想通貨",
+      "詐欺",
+      "破綻"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 59,
+    "hexagram_name": "渙",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "金融",
+    "country": "バハマ"
+  },
+  {
+    "target_name": "日本航空（JAL）",
+    "scale": "company",
+    "period": "2008-2012",
+    "story_summary": "日本航空は2010年に会社更生法を申請し経営破綻。稲盛和夫を会長に迎え、大規模リストラと意識改革を実施、2012年に再上場を果たした。",
+    "before_state": "どん底・危機",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "V字回復・大成功",
+    "before_hex": "坤",
+    "trigger_hex": "震",
+    "action_hex": "離",
+    "after_hex": "兌",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": [
+      "航空",
+      "経営破綻",
+      "再上場"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 62,
+    "hexagram_name": "小過",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "航空",
+    "country": "日本"
+  },
+  {
+    "target_name": "ゼネラル・エレクトリック（GE）",
+    "scale": "company",
+    "period": "2001-2018",
+    "story_summary": "かつて世界最大の時価総額を誇ったGEは、金融事業の損失とコングロマリット戦略の失敗で株価90%下落。2018年にダウ平均から除外された。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "分散・スピンオフ",
+    "after_state": "崩壊・消滅",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "艮",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Mixed",
+    "free_tags": [
+      "コングロマリット",
+      "金融",
+      "分社化"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "hexagram_id": 63,
+    "hexagram_name": "既済",
+    "changing_lines_2": [
+      5
+    ],
+    "main_domain": "総合電機",
+    "country": "アメリカ"
+  }
+]
