@@ -26,6 +26,12 @@ from pathlib import Path
 from typing import Optional, Dict, List, Tuple, Any
 from dataclasses import dataclass, field, asdict
 import re
+import sys
+
+# 同一ディレクトリのモジュールをインポート
+sys.path.insert(0, str(Path(__file__).parent))
+from route_navigator import RouteNavigator, ACTION_MEANINGS as ROUTE_ACTION_MEANINGS
+from prediction_engine import PredictionEngine
 
 # ==============================================================================
 # パス設定
@@ -477,68 +483,107 @@ def judge_goal_hexagram(parsed_goal: ParsedGoal, hexagram_master: Dict) -> Hexag
 
 
 # ==============================================================================
-# 類似事例検索
+# 類似事例検索（PredictionEngineのインデックス活用）
 # ==============================================================================
+
+# PredictionEngineインスタンス（キャッシュ）
+_prediction_engine: Optional[PredictionEngine] = None
+
+
+def get_prediction_engine() -> PredictionEngine:
+    """PredictionEngineのシングルトンインスタンスを取得"""
+    global _prediction_engine
+    if _prediction_engine is None:
+        _prediction_engine = PredictionEngine()
+    return _prediction_engine
+
+
+# 64卦ID→八卦（before_hex）のマッピング
+HEXAGRAM_TO_TRIGRAM = {
+    1: "乾", 2: "坤", 3: "坎", 4: "艮", 5: "坎", 6: "乾", 7: "坤", 8: "坎",
+    9: "巽", 10: "乾", 11: "坤", 12: "乾", 13: "乾", 14: "離", 15: "坤", 16: "震",
+    17: "兌", 18: "艮", 19: "坤", 20: "巽", 21: "離", 22: "艮", 23: "艮", 24: "坤",
+    25: "乾", 26: "艮", 27: "艮", 28: "兌", 29: "坎", 30: "離", 31: "兌", 32: "震",
+    33: "乾", 34: "震", 35: "離", 36: "坤", 37: "巽", 38: "離", 39: "坎", 40: "震",
+    41: "艮", 42: "巽", 43: "兌", 44: "乾", 45: "兌", 46: "坤", 47: "兌", 48: "坎",
+    49: "兌", 50: "離", 51: "震", 52: "艮", 53: "巽", 54: "震", 55: "震", 56: "離",
+    57: "巽", 58: "兌", 59: "巽", 60: "坎", 61: "巽", 62: "震", 63: "坎", 64: "離",
+}
+
 
 def search_similar_cases(
     hexagram_id: int,
     yao_position: int,
     keywords: List[str],
-    cases_path: Path = CASES_PATH,
+    cases_path: Path = CASES_PATH,  # 後方互換性のため残す（使用しない）
     limit: int = 3
 ) -> List[SimilarCase]:
     """
-    類似事例を検索
+    類似事例を検索（PredictionEngineのインデックス活用でO(1)検索）
+
+    改善点:
+    - 全件スキャン(O(n))からインデックス検索(O(1))に変更
+    - PredictionEngineの構築済みインデックスを再利用
     """
+    engine = get_prediction_engine()
+
+    # hexagram_id → before_hex（八卦）に変換
+    before_hex = HEXAGRAM_TO_TRIGRAM.get(hexagram_id, "坎")
+
+    # インデックスを使用して候補を絞り込み
+    candidates = []
+
+    # 1. before_hex一致の事例を取得（インデックス検索 O(1)）
+    for action_type in ["攻める・挑戦", "守る・維持", "捨てる・撤退", "耐える・潜伏",
+                        "対話・融合", "刷新・破壊", "逃げる・放置", "分散・スピンオフ"]:
+        key = (before_hex, action_type)
+        for case in engine.hex_action_index.get(key, []):
+            # 重複チェック
+            case_id = case.get("id", case.get("transition_id", "unknown"))
+            if not any(c[0] == case_id for c in candidates):
+                candidates.append((case_id, case))
+
+    # 候補がなければ全事例から探す（フォールバック）
+    if not candidates:
+        for case in engine.cases[:100]:  # 最大100件に制限
+            case_id = case.get("id", case.get("transition_id", "unknown"))
+            if case.get("hexagram_id") == hexagram_id:
+                candidates.append((case_id, case))
+
+    # スコア計算とSimilarCase変換
     similar_cases = []
+    for case_id, case in candidates[:50]:  # 最大50件でスコア計算
+        score = 0.3  # 基本スコア
 
-    if not cases_path.exists():
-        return similar_cases
+        # hexagram_idが一致
+        if case.get("hexagram_id") == hexagram_id:
+            score += 0.4
 
-    with open(cases_path, "r", encoding="utf-8") as f:
-        for line in f:
-            if not line.strip():
-                continue
-            try:
-                case = json.loads(line)
+        # 爻が一致
+        case_yao = case.get("changing_lines_2", [None])
+        if case_yao and case_yao[0] == yao_position:
+            score += 0.2
 
-                # 卦と爻のマッチ
-                case_hex = case.get("hexagram_id")
-                case_yao = case.get("changing_lines_2", [None])[0] if case.get("changing_lines_2") else None
+        # キーワードマッチ
+        story = case.get("story_summary", "")
+        for kw in keywords:
+            if kw in story:
+                score += 0.05
 
-                if case_hex != hexagram_id:
-                    continue
+        # 信頼度が高いものを優先
+        trust = case.get("trust_level", "unverified")
+        if trust == "verified":
+            score += 0.15
+        elif trust == "plausible":
+            score += 0.08
 
-                # スコア計算
-                score = 0.5
-
-                # 爻が一致
-                if case_yao == yao_position:
-                    score += 0.3
-
-                # キーワードマッチ
-                story = case.get("story_summary", "")
-                for kw in keywords:
-                    if kw in story:
-                        score += 0.1
-
-                # 信頼度が高いものを優先
-                trust = case.get("trust_level", "unverified")
-                if trust == "verified":
-                    score += 0.2
-                elif trust == "plausible":
-                    score += 0.1
-
-                similar_cases.append(SimilarCase(
-                    case_id=case.get("id", "unknown"),
-                    target_name=case.get("target_name", "不明"),
-                    story_summary=story[:200] + "..." if len(story) > 200 else story,
-                    outcome=case.get("outcome", "不明"),
-                    similarity_score=min(score, 1.0)
-                ))
-
-            except json.JSONDecodeError:
-                continue
+        similar_cases.append(SimilarCase(
+            case_id=case_id,
+            target_name=case.get("target_name", "不明"),
+            story_summary=story[:200] + "..." if len(story) > 200 else story,
+            outcome=case.get("outcome", "不明"),
+            similarity_score=min(score, 1.0)
+        ))
 
     # スコア順にソートして上位を返す
     similar_cases.sort(key=lambda x: x.similarity_score, reverse=True)
@@ -574,10 +619,10 @@ def load_yao_master(path: Path = YAO_MASTER_PATH) -> Dict:
         return json.load(f)
 
 
-# 八卦アクションの意味と具体的行動
+# 八卦アクションの意味と具体的行動（route_navigator.pyから拡張）
 ACTION_MEANINGS = {
     "乾": {
-        "meaning": "積極的にリードする",
+        "meaning": ROUTE_ACTION_MEANINGS.get("乾", "積極的にリードする"),
         "actions": [
             "自ら先頭に立って行動を起こす",
             "強い意志で決断を下す",
@@ -585,7 +630,7 @@ ACTION_MEANINGS = {
         ]
     },
     "坤": {
-        "meaning": "受容し支える",
+        "meaning": ROUTE_ACTION_MEANINGS.get("坤", "受容し支える"),
         "actions": [
             "相手の意見をまず受け入れる",
             "サポート役に徹する",
@@ -593,7 +638,7 @@ ACTION_MEANINGS = {
         ]
     },
     "震": {
-        "meaning": "積極的に動く・衝撃を与える",
+        "meaning": ROUTE_ACTION_MEANINGS.get("震", "積極的に動く・衝撃を与える"),
         "actions": [
             "今すぐ行動を起こす",
             "変化のきっかけを作る",
@@ -601,7 +646,7 @@ ACTION_MEANINGS = {
         ]
     },
     "巽": {
-        "meaning": "柔軟に浸透する・交渉する",
+        "meaning": ROUTE_ACTION_MEANINGS.get("巽", "柔軟に浸透する・交渉する"),
         "actions": [
             "時間をかけて少しずつ働きかける",
             "対話と交渉で解決を図る",
@@ -609,7 +654,7 @@ ACTION_MEANINGS = {
         ]
     },
     "坎": {
-        "meaning": "困難に耐える・深く掘り下げる",
+        "meaning": ROUTE_ACTION_MEANINGS.get("坎", "困難に耐える・深く掘り下げる"),
         "actions": [
             "困難から逃げずに向き合う",
             "問題の本質を深く分析する",
@@ -617,7 +662,7 @@ ACTION_MEANINGS = {
         ]
     },
     "離": {
-        "meaning": "明確化する・可視化する",
+        "meaning": ROUTE_ACTION_MEANINGS.get("離", "明確化する・可視化する"),
         "actions": [
             "状況を明確に言語化する",
             "情報を可視化して共有する",
@@ -625,7 +670,7 @@ ACTION_MEANINGS = {
         ]
     },
     "艮": {
-        "meaning": "止まる・守る・蓄積する",
+        "meaning": ROUTE_ACTION_MEANINGS.get("艮", "止まる・守る・蓄積する"),
         "actions": [
             "一度立ち止まって考える",
             "無理に動かず現状を維持する",
@@ -633,7 +678,7 @@ ACTION_MEANINGS = {
         ]
     },
     "兌": {
-        "meaning": "喜びを与える・対話する",
+        "meaning": ROUTE_ACTION_MEANINGS.get("兌", "喜びを与える・対話する"),
         "actions": [
             "笑顔とポジティブな態度で接する",
             "相手を喜ばせることを考える",
@@ -643,15 +688,32 @@ ACTION_MEANINGS = {
 }
 
 
+# RouteNavigatorインスタンス（キャッシュ）
+_route_navigator: Optional[RouteNavigator] = None
+
+
+def get_route_navigator() -> RouteNavigator:
+    """RouteNavigatorのシングルトンインスタンスを取得"""
+    global _route_navigator
+    if _route_navigator is None:
+        _route_navigator = RouteNavigator()
+    return _route_navigator
+
+
 def find_route(
     from_hexagram: int,
     to_hexagram: int,
-    transitions: Dict,
+    transitions: Dict,  # 後方互換性のため残す（使用しない）
     hexagram_master: Dict,
-    max_steps: int = 5
+    max_steps: int = 5,
+    use_high_success: bool = True
 ) -> List[RouteStep]:
     """
-    現在卦から目標卦への変化ルートを探索（BFS）
+    現在卦から目標卦への変化ルートを探索
+
+    route_navigator.pyのRouteNavigatorクラスを活用:
+    - 最短ルート（BFS）
+    - 高成功率ルート（Dijkstra）
     """
     # 卦名の取得ヘルパー
     def get_hex_name(hex_id: int) -> str:
@@ -664,45 +726,81 @@ def find_route(
     if from_hexagram == to_hexagram:
         return []
 
-    # BFSで探索
-    queue = [(from_name, [])]
-    visited = {from_name}
+    # RouteNavigatorを使用
+    navigator = get_route_navigator()
 
-    while queue:
-        current, path = queue.pop(0)
+    # 高成功率ルートを優先、なければ最短ルート
+    route = None
+    if use_high_success:
+        route = navigator.find_high_success_route(from_name, to_name, max_steps=max_steps)
 
-        if len(path) >= max_steps:
-            continue
+    if route is None or not route.steps:
+        route = navigator.find_shortest_route(from_name, to_name, max_steps=max_steps)
 
-        if current not in transitions:
-            continue
+    if route is None or not route.steps:
+        return []  # ルートが見つからない
 
-        for next_hex, data in transitions[current].items():
-            if next_hex in visited:
-                continue
+    # RouteNavigatorのTransitionStepをRouteStepに変換
+    result = []
+    for step in route.steps:
+        action = step.action
+        action_data = ACTION_MEANINGS.get(action, {"meaning": "行動する", "actions": []})
 
-            action = data.get("main_action", "巽")
-            success_rate = data.get("success_rate", 0.5)
+        result.append(RouteStep(
+            from_hexagram=navigator.normalizer.get_display_name(step.from_hex),
+            to_hexagram=navigator.normalizer.get_display_name(step.to_hex),
+            action=action,
+            action_meaning=action_data["meaning"],
+            success_rate=step.success_rate,
+            recommended_actions=action_data.get("actions", [])
+        ))
+
+    return result
+
+
+def find_alternative_routes(
+    from_hexagram: int,
+    to_hexagram: int,
+    hexagram_master: Dict,
+    max_routes: int = 3
+) -> List[Tuple[str, List[RouteStep], float]]:
+    """
+    複数の代替ルートを探索
+
+    Returns:
+        List of (ルート名, ステップリスト, 総合成功率)
+    """
+    def get_hex_name(hex_id: int) -> str:
+        return hexagram_master.get(str(hex_id), {}).get("name", f"卦{hex_id}")
+
+    from_name = get_hex_name(from_hexagram)
+    to_name = get_hex_name(to_hexagram)
+
+    if from_hexagram == to_hexagram:
+        return []
+
+    navigator = get_route_navigator()
+    routes = navigator.find_alternative_routes(from_name, to_name, max_routes=max_routes)
+
+    result = []
+    for title, route in routes:
+        steps = []
+        for step in route.steps:
+            action = step.action
             action_data = ACTION_MEANINGS.get(action, {"meaning": "行動する", "actions": []})
 
-            step = RouteStep(
-                from_hexagram=current,
-                to_hexagram=next_hex,
+            steps.append(RouteStep(
+                from_hexagram=navigator.normalizer.get_display_name(step.from_hex),
+                to_hexagram=navigator.normalizer.get_display_name(step.to_hex),
                 action=action,
                 action_meaning=action_data["meaning"],
-                success_rate=success_rate,
+                success_rate=step.success_rate,
                 recommended_actions=action_data.get("actions", [])
-            )
+            ))
 
-            new_path = path + [step]
+        result.append((title, steps, route.total_success_rate))
 
-            if next_hex == to_name:
-                return new_path
-
-            visited.add(next_hex)
-            queue.append((next_hex, new_path))
-
-    return []  # ルートが見つからない
+    return result
 
 
 # ==============================================================================
