@@ -94,6 +94,14 @@ class RouteStep:
     recommended_actions: List[str]
 
 @dataclass
+class AlternativeRoute:
+    """代替ルート"""
+    title: str  # "最短ルート", "高成功率ルート (閾値70%)" など
+    steps: List[RouteStep]
+    total_success_rate: float
+
+
+@dataclass
 class ConsultationResult:
     """相談結果（完全版）"""
     # 入力
@@ -109,7 +117,7 @@ class ConsultationResult:
     goal_hexagram: HexagramJudgment
     goal_interpretation: Dict[str, str]
 
-    # 変化ルート
+    # 変化ルート（メイン）
     route: List[RouteStep]
     total_steps: int
     total_success_rate: float
@@ -121,6 +129,9 @@ class ConsultationResult:
     immediate_action: str
     step_by_step_actions: List[str]
     warnings: List[str]
+
+    # 代替ルート（オプション）
+    alternative_routes: List[AlternativeRoute] = field(default_factory=list)
 
 # ==============================================================================
 # 自然言語パーサー
@@ -815,7 +826,8 @@ def generate_feedback(
     route: List[RouteStep],
     similar_cases: List[SimilarCase],
     hexagram_master: Dict,
-    yao_master: Dict
+    yao_master: Dict,
+    alternative_routes: Optional[List[Tuple[str, List[RouteStep], float]]] = None
 ) -> ConsultationResult:
     """
     統合的なフィードバックを生成
@@ -862,6 +874,20 @@ def generate_feedback(
     for step in route:
         total_success_rate *= step.success_rate
 
+    # 代替ルートをAlternativeRouteオブジェクトに変換
+    alt_route_objects = []
+    if alternative_routes:
+        for title, steps, success_rate in alternative_routes:
+            # メインルートと同じルートはスキップ
+            if steps and route and len(steps) == len(route):
+                if all(s1.to_hexagram == s2.to_hexagram for s1, s2 in zip(steps, route)):
+                    continue
+            alt_route_objects.append(AlternativeRoute(
+                title=title,
+                steps=steps,
+                total_success_rate=success_rate
+            ))
+
     return ConsultationResult(
         situation_text=situation_text,
         goal_text=goal_text,
@@ -873,6 +899,7 @@ def generate_feedback(
         route=route,
         total_steps=len(route),
         total_success_rate=total_success_rate,
+        alternative_routes=alt_route_objects,
         similar_cases=similar_cases,
         immediate_action=immediate_action,
         step_by_step_actions=step_by_step_actions,
@@ -938,6 +965,17 @@ def format_result_text(result: ConsultationResult) -> str:
         for action in result.step_by_step_actions:
             lines.append(f"    {action}")
 
+    # 代替ルートの表示
+    if result.alternative_routes:
+        lines.append(f"\n  【代替ルート】")
+        for alt_route in result.alternative_routes:
+            lines.append(f"\n  ◆ {alt_route.title} - 総合成功率: {alt_route.total_success_rate:.0%}")
+            if alt_route.steps:
+                for i, step in enumerate(alt_route.steps):
+                    lines.append(f"      {i+1}. {step.from_hexagram} → {step.to_hexagram} | {step.action}（{step.action_meaning}）| {step.success_rate:.0%}")
+            else:
+                lines.append(f"      （ルートなし）")
+
     lines.append(f"\n{'─' * 70}")
     lines.append("【今すぐやるべきこと】")
     lines.append(f"  {result.immediate_action}")
@@ -995,12 +1033,20 @@ def run_consultation(
     current_hex = judge_hexagram_deterministic(parsed_situation, hexagram_master)
     goal_hex = judge_goal_hexagram(parsed_goal, hexagram_master)
 
-    # ルートを探索
+    # ルートを探索（メイン）
     route = find_route(
         current_hex.hexagram_id,
         goal_hex.hexagram_id,
         transitions,
         hexagram_master
+    )
+
+    # 代替ルートを探索
+    alternative_routes = find_alternative_routes(
+        current_hex.hexagram_id,
+        goal_hex.hexagram_id,
+        hexagram_master,
+        max_routes=3
     )
 
     # 類似事例を検索
@@ -1019,7 +1065,8 @@ def run_consultation(
         route,
         similar_cases,
         hexagram_master,
-        yao_master
+        yao_master,
+        alternative_routes=alternative_routes
     )
 
     # 出力
