@@ -1,12 +1,432 @@
 [
-  {"target_name": "羽田空港衝突事故で航空業界衝撃（2024）","scale": "other","period": "2024","story_summary": "羽田空港で航空機衝突事故が発生し、航空業界に衝撃を与えた。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#羽田空港", "#事故", "#航空"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 95,"evidence_notes": "羽田空港で航空機衝突事故発生し航空業界に衝撃","logic_memo": "艮（日常）→震（事故）→坎（対応）→震（業界衝撃）。安全の教訓"},
-  {"target_name": "JR各社が運賃値上げ（2023-2024）","scale": "company","period": "2023-2024","story_summary": "JR各社が運賃値上げを実施し、公共交通の料金体系が変化した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "安定・停止","before_hex": "艮","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#JR", "#運賃", "#値上げ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.jreast.co.jp/"],"confidence_percent": 90,"evidence_notes": "JR各社運賃値上げ実施し公共交通料金体系変化","logic_memo": "艮（据置）→震（値上げ）→乾（収益）→震（料金変化）。インフラの維持"},
-  {"target_name": "航空業界でサステナブル燃料導入（2023-2024）","scale": "other","period": "2023-2024","story_summary": "航空業界でSAF（持続可能な航空燃料）の導入が本格化した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#SAF", "#航空", "#脱炭素"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "エネルギー・環境","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "航空業界でSAF（持続可能な航空燃料）導入本格化","logic_memo": "艮（従来燃料）→震（規制）→巽（SAF）→震（導入加速）。空の脱炭素"},
-  {"target_name": "宅配便値上げで物流変化（2023-2024）","scale": "other","period": "2023-2024","story_summary": "宅配便の値上げが相次ぎ、物流コストへの意識が変化した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#宅配便", "#値上げ", "#物流"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.yamato-hd.co.jp/"],"confidence_percent": 90,"evidence_notes": "宅配便値上げ相次ぎ物流コストへの意識変化","logic_memo": "艮（据置）→震（値上げ）→艮（抑制）→震（意識変化）。物流の価値"},
-  {"target_name": "再配達削減の取り組み進む（2023-2024）","scale": "other","period": "2023-2024","story_summary": "再配達削減に向けた取り組みが進み、宅配ボックス等が普及した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#再配達", "#宅配ボックス", "#物流"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "再配達削減に向けた取り組み進み宅配ボックス等普及","logic_memo": "坎（再配達問題）→震（対策）→巽（普及）→震（変化）。ラストワンマイル"},
-  {"target_name": "タクシー業界でDX進展（2023-2024）","scale": "other","period": "2023-2024","story_summary": "タクシー業界でアプリ配車等のDXが進展し、利便性が向上した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#タクシー", "#DX", "#アプリ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "タクシー業界でアプリ配車等DX進展し利便性向上","logic_memo": "艮（従来）→震（アプリ）→巽（普及）→震（変化）。移動のDX"},
-  {"target_name": "鉄道各社でバリアフリー化進展（2022-2024）","scale": "other","period": "2022-2024","story_summary": "鉄道各社でバリアフリー化が進展し、誰もが使いやすい駅が増えた。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#バリアフリー", "#鉄道", "#駅"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "鉄道各社でバリアフリー化進展し誰もが使いやすい駅増えた","logic_memo": "艮（従来）→乾（投資）→乾（整備）→震（進展）。やさしい駅"},
-  {"target_name": "高速道路料金見直し議論（2024）","scale": "other","period": "2024","story_summary": "高速道路料金の見直し議論が活発化し、料金体系の変更が検討された。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#高速道路", "#料金", "#見直し"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "高速道路料金見直し議論活発化し料金体系変更検討","logic_memo": "艮（現状）→震（議論）→巽（検討）→震（変化）。道路の未来"},
-  {"target_name": "国際線復活で空港にぎわう（2023-2024）","scale": "other","period": "2023-2024","story_summary": "国際線が本格復活し、日本の空港が再びにぎわいを取り戻した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#国際線", "#空港", "#復活"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "交通・運輸","sources": ["https://www.narita-airport.jp/"],"confidence_percent": 95,"evidence_notes": "国際線本格復活し日本の空港再びにぎわい取り戻した","logic_memo": "坎（コロナ）→震（回復）→乾（増便）→震（にぎわい）。空の復活"},
-  {"target_name": "リニア中央新幹線工事進捗（2022-2024）","scale": "other","period": "2022-2024","story_summary": "リニア中央新幹線の工事が進み、開業に向けた動きが加速した。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Mixed","free_tags": ["#リニア", "#中央新幹線", "#工事"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "交通・運輸","sources": ["https://linear-chuo-shinkansen.jr-central.co.jp/"],"confidence_percent": 85,"evidence_notes": "リニア中央新幹線工事進み開業に向けた動き加速","logic_memo": "艮（計画）→乾（着工）→乾（進捗）→震（加速）。夢の超特急"}
+  {
+    "target_name": "羽田空港衝突事故で航空業界衝撃（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "羽田空港で航空機衝突事故が発生し、航空業界に衝撃を与えた。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#羽田空港",
+      "#事故",
+      "#航空"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "羽田空港で航空機衝突事故発生し航空業界に衝撃",
+    "logic_memo": "艮（日常）→震（事故）→坎（対応）→震（業界衝撃）。安全の教訓"
+  },
+  {
+    "target_name": "JR各社が運賃値上げ（2023-2024）",
+    "scale": "company",
+    "period": "2023-2024",
+    "story_summary": "JR各社が運賃値上げを実施し、公共交通の料金体系が変化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "安定・停止",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#JR",
+      "#運賃",
+      "#値上げ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.jreast.co.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "JR各社運賃値上げ実施し公共交通料金体系変化",
+    "logic_memo": "艮（据置）→震（値上げ）→乾（収益）→震（料金変化）。インフラの維持"
+  },
+  {
+    "target_name": "航空業界でサステナブル燃料導入（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "航空業界でSAF（持続可能な航空燃料）の導入が本格化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#SAF",
+      "#航空",
+      "#脱炭素"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "エネルギー・環境",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "航空業界でSAF（持続可能な航空燃料）導入本格化",
+    "logic_memo": "艮（従来燃料）→震（規制）→巽（SAF）→震（導入加速）。空の脱炭素"
+  },
+  {
+    "target_name": "宅配便値上げで物流変化（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "宅配便の値上げが相次ぎ、物流コストへの意識が変化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#宅配便",
+      "#値上げ",
+      "#物流"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.yamato-hd.co.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "宅配便値上げ相次ぎ物流コストへの意識変化",
+    "logic_memo": "艮（据置）→震（値上げ）→艮（抑制）→震（意識変化）。物流の価値"
+  },
+  {
+    "target_name": "再配達削減の取り組み進む（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "再配達削減に向けた取り組みが進み、宅配ボックス等が普及した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#再配達",
+      "#宅配ボックス",
+      "#物流"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "再配達削減に向けた取り組み進み宅配ボックス等普及",
+    "logic_memo": "坎（再配達問題）→震（対策）→巽（普及）→震（変化）。ラストワンマイル"
+  },
+  {
+    "target_name": "タクシー業界でDX進展（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "タクシー業界でアプリ配車等のDXが進展し、利便性が向上した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#タクシー",
+      "#DX",
+      "#アプリ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "タクシー業界でアプリ配車等DX進展し利便性向上",
+    "logic_memo": "艮（従来）→震（アプリ）→巽（普及）→震（変化）。移動のDX"
+  },
+  {
+    "target_name": "鉄道各社でバリアフリー化進展（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "鉄道各社でバリアフリー化が進展し、誰もが使いやすい駅が増えた。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#バリアフリー",
+      "#鉄道",
+      "#駅"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "鉄道各社でバリアフリー化進展し誰もが使いやすい駅増えた",
+    "logic_memo": "艮（従来）→乾（投資）→乾（整備）→震（進展）。やさしい駅"
+  },
+  {
+    "target_name": "高速道路料金見直し議論（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "高速道路料金の見直し議論が活発化し、料金体系の変更が検討された。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#高速道路",
+      "#料金",
+      "#見直し"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "高速道路料金見直し議論活発化し料金体系変更検討",
+    "logic_memo": "艮（現状）→震（議論）→巽（検討）→震（変化）。道路の未来"
+  },
+  {
+    "target_name": "国際線復活で空港にぎわう（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "国際線が本格復活し、日本の空港が再びにぎわいを取り戻した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#国際線",
+      "#空港",
+      "#復活"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://www.narita-airport.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "国際線本格復活し日本の空港再びにぎわい取り戻した",
+    "logic_memo": "坎（コロナ）→震（回復）→乾（増便）→震（にぎわい）。空の復活"
+  },
+  {
+    "target_name": "リニア中央新幹線工事進捗（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "リニア中央新幹線の工事が進み、開業に向けた動きが加速した。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#リニア",
+      "#中央新幹線",
+      "#工事"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "交通・運輸",
+    "sources": [
+      "https://linear-chuo-shinkansen.jr-central.co.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "リニア中央新幹線工事進み開業に向けた動き加速",
+    "logic_memo": "艮（計画）→乾（着工）→乾（進捗）→震（加速）。夢の超特急"
+  }
 ]

@@ -1,12 +1,432 @@
 [
-  {"target_name": "円キャリートレード巻き戻しで市場激震（2024）","scale": "other","period": "2024","story_summary": "円キャリートレードの巻き戻しにより世界の金融市場が激震した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#キャリートレード", "#円", "#金融市場"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "金融","sources": ["https://www.boj.or.jp/"],"confidence_percent": 90,"evidence_notes": "円キャリートレード巻き戻しにより世界金融市場激震","logic_memo": "艮（安定）→震（巻戻し）→坎（急落）→震（市場激震）。金融の連鎖"},
-  {"target_name": "地銀再編が加速（2022-2024）","scale": "other","period": "2022-2024","story_summary": "地方銀行の再編・統合が加速し、金融地図が変化した。","before_state": "混乱・衰退","trigger_type": "自然推移","action_type": "撤退・収縮","after_state": "安定・停止","before_hex": "坎","trigger_hex": "巽","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#地銀", "#再編", "#統合"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "金融","sources": ["https://www.fsa.go.jp/"],"confidence_percent": 85,"evidence_notes": "地方銀行再編・統合加速し金融地図変化","logic_memo": "坎（低迷）→巽（検討）→艮（統合）→震（変化）。地方金融の未来"},
-  {"target_name": "ネット証券の台頭で証券業界変化（2022-2024）","scale": "other","period": "2022-2024","story_summary": "ネット証券の台頭により、証券業界の構図が変化した。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ネット証券", "#証券", "#DX"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "金融","sources": ["https://www.jsda.or.jp/"],"confidence_percent": 85,"evidence_notes": "ネット証券台頭により証券業界構図変化","logic_memo": "乾（成長）→巽（変化）→巽（台頭）→震（業界変化）。証券のDX"},
-  {"target_name": "暗号資産規制強化で市場変化（2022-2024）","scale": "other","period": "2022-2024","story_summary": "暗号資産への規制が強化され、市場環境が変化した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "安定・停止","before_hex": "坎","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#暗号資産", "#規制", "#市場"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "金融","sources": ["https://www.fsa.go.jp/"],"confidence_percent": 85,"evidence_notes": "暗号資産への規制強化され市場環境変化","logic_memo": "坎（混乱）→震（規制）→艮（抑制）→震（環境変化）。秩序への道"},
-  {"target_name": "デジタル給与払い解禁（2023）","scale": "other","period": "2023","story_summary": "デジタル給与払いが解禁され、給与の受け取り方に変化が生まれた。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#デジタル給与", "#PayPay", "#解禁"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "金融","sources": ["https://www.mhlw.go.jp/"],"confidence_percent": 85,"evidence_notes": "デジタル給与払い解禁され給与受け取り方に変化","logic_memo": "艮（銀行）→震（解禁）→巽（選択）→震（変化）。給与の未来"},
-  {"target_name": "CBDC（デジタル円）検討進む（2022-2024）","scale": "other","period": "2022-2024","story_summary": "中央銀行デジタル通貨（CBDC）の検討が進み、通貨の未来が議論された。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#CBDC", "#デジタル円", "#通貨"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "金融","sources": ["https://www.boj.or.jp/"],"confidence_percent": 85,"evidence_notes": "中央銀行デジタル通貨CBDC検討進み通貨の未来議論","logic_memo": "艮（現金）→巽（検討）→巽（実証）→震（進展）。通貨のDX"},
-  {"target_name": "キャッシュレス決済比率40%超え（2024）","scale": "other","period": "2024","story_summary": "キャッシュレス決済の比率が40%を超え、決済の変革が進んだ。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#キャッシュレス", "#決済", "#40%"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "金融","sources": ["https://www.meti.go.jp/"],"confidence_percent": 90,"evidence_notes": "キャッシュレス決済比率40%超え決済変革進んだ","logic_memo": "乾（普及）→乾（拡大）→乾（成長）→震（40%突破）。現金離れ"},
-  {"target_name": "保険業界でDX競争激化（2022-2024）","scale": "other","period": "2022-2024","story_summary": "保険業界でデジタル化競争が激化し、サービスが変化した。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#保険", "#DX", "#競争"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "金融","sources": ["https://www.fsa.go.jp/"],"confidence_percent": 85,"evidence_notes": "保険業界でデジタル化競争激化しサービス変化","logic_memo": "艮（従来）→巽（DX）→巽（競争）→震（変化）。保険のDX"},
-  {"target_name": "インボイス制度開始で事業者対応（2023）","scale": "other","period": "2023","story_summary": "インボイス制度が開始され、中小事業者の対応が進んだ。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#インボイス", "#税制", "#事業者"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "金融","sources": ["https://www.nta.go.jp/"],"confidence_percent": 90,"evidence_notes": "インボイス制度開始され中小事業者対応進んだ","logic_memo": "艮（従来）→震（制度開始）→巽（対応）→震（変化）。税制の転換"},
-  {"target_name": "相続税・贈与税改正で資産移転変化（2024）","scale": "other","period": "2024","story_summary": "相続税・贈与税の改正により、資産移転の方法が変化した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#相続税", "#贈与税", "#改正"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "金融","sources": ["https://www.nta.go.jp/"],"confidence_percent": 85,"evidence_notes": "相続税・贈与税改正により資産移転方法変化","logic_memo": "艮（従来）→震（改正）→巽（対応）→震（変化）。資産承継の新時代"}
+  {
+    "target_name": "円キャリートレード巻き戻しで市場激震（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "円キャリートレードの巻き戻しにより世界の金融市場が激震した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#キャリートレード",
+      "#円",
+      "#金融市場"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.boj.or.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "円キャリートレード巻き戻しにより世界金融市場激震",
+    "logic_memo": "艮（安定）→震（巻戻し）→坎（急落）→震（市場激震）。金融の連鎖"
+  },
+  {
+    "target_name": "地銀再編が加速（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "地方銀行の再編・統合が加速し、金融地図が変化した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "自然推移",
+    "action_type": "撤退・収縮",
+    "after_state": "安定・停止",
+    "before_hex": "坎",
+    "trigger_hex": "巽",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#地銀",
+      "#再編",
+      "#統合"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "地方銀行再編・統合加速し金融地図変化",
+    "logic_memo": "坎（低迷）→巽（検討）→艮（統合）→震（変化）。地方金融の未来"
+  },
+  {
+    "target_name": "ネット証券の台頭で証券業界変化（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "ネット証券の台頭により、証券業界の構図が変化した。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ネット証券",
+      "#証券",
+      "#DX"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.jsda.or.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "ネット証券台頭により証券業界構図変化",
+    "logic_memo": "乾（成長）→巽（変化）→巽（台頭）→震（業界変化）。証券のDX"
+  },
+  {
+    "target_name": "暗号資産規制強化で市場変化（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "暗号資産への規制が強化され、市場環境が変化した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "安定・停止",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#暗号資産",
+      "#規制",
+      "#市場"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "暗号資産への規制強化され市場環境変化",
+    "logic_memo": "坎（混乱）→震（規制）→艮（抑制）→震（環境変化）。秩序への道"
+  },
+  {
+    "target_name": "デジタル給与払い解禁（2023）",
+    "scale": "other",
+    "period": "2023",
+    "story_summary": "デジタル給与払いが解禁され、給与の受け取り方に変化が生まれた。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#デジタル給与",
+      "#PayPay",
+      "#解禁"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.mhlw.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "デジタル給与払い解禁され給与受け取り方に変化",
+    "logic_memo": "艮（銀行）→震（解禁）→巽（選択）→震（変化）。給与の未来"
+  },
+  {
+    "target_name": "CBDC（デジタル円）検討進む（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "中央銀行デジタル通貨（CBDC）の検討が進み、通貨の未来が議論された。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#CBDC",
+      "#デジタル円",
+      "#通貨"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.boj.or.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "中央銀行デジタル通貨CBDC検討進み通貨の未来議論",
+    "logic_memo": "艮（現金）→巽（検討）→巽（実証）→震（進展）。通貨のDX"
+  },
+  {
+    "target_name": "キャッシュレス決済比率40%超え（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "キャッシュレス決済の比率が40%を超え、決済の変革が進んだ。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#キャッシュレス",
+      "#決済",
+      "#40%"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "キャッシュレス決済比率40%超え決済変革進んだ",
+    "logic_memo": "乾（普及）→乾（拡大）→乾（成長）→震（40%突破）。現金離れ"
+  },
+  {
+    "target_name": "保険業界でDX競争激化（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "保険業界でデジタル化競争が激化し、サービスが変化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#保険",
+      "#DX",
+      "#競争"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "保険業界でデジタル化競争激化しサービス変化",
+    "logic_memo": "艮（従来）→巽（DX）→巽（競争）→震（変化）。保険のDX"
+  },
+  {
+    "target_name": "インボイス制度開始で事業者対応（2023）",
+    "scale": "other",
+    "period": "2023",
+    "story_summary": "インボイス制度が開始され、中小事業者の対応が進んだ。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#インボイス",
+      "#税制",
+      "#事業者"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.nta.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "インボイス制度開始され中小事業者対応進んだ",
+    "logic_memo": "艮（従来）→震（制度開始）→巽（対応）→震（変化）。税制の転換"
+  },
+  {
+    "target_name": "相続税・贈与税改正で資産移転変化（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "相続税・贈与税の改正により、資産移転の方法が変化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#相続税",
+      "#贈与税",
+      "#改正"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.nta.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "相続税・贈与税改正により資産移転方法変化",
+    "logic_memo": "艮（従来）→震（改正）→巽（対応）→震（変化）。資産承継の新時代"
+  }
 ]

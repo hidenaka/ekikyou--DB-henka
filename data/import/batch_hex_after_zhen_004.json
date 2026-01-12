@@ -1,7 +1,177 @@
 [
-  {"target_name": "震結果失敗事例004-1","scale": "company","period": "1990-2024","story_summary": "成長したが最終的に崩壊したケース。","before_state": "成長痛","trigger_type": "内部崩壊","action_type": "攻める・挑戦","after_state": "崩壊・消滅","before_hex": "震","trigger_hex": "坎","action_hex": "震","after_hex": "坤","pattern_type": "Hubris_Collapse","outcome": "Failure","free_tags": ["#震","#成長崩壊"],"source_type": "article","credibility_rank": "B","changing_lines_1": [1,4],"changing_lines_2": [2,5],"changing_lines_3": [3,6],"logic_memo": "震→坎→震→坤 成長後崩壊"},
-  {"target_name": "震結果失敗事例004-2","scale": "individual","period": "1990-2024","story_summary": "一時的に成功したが失敗したケース。","before_state": "安定・平和","trigger_type": "意図的決断","action_type": "刷新・破壊","after_state": "縮小安定・生存","before_hex": "艮","trigger_hex": "乾","action_hex": "震","after_hex": "艮","pattern_type": "Failed_Attempt","outcome": "Failure","free_tags": ["#震","#一時的成功"],"source_type": "article","credibility_rank": "B","changing_lines_1": [2,5],"changing_lines_2": [3,6],"changing_lines_3": [1,4],"logic_memo": "艮→乾→震→艮 一時的成功後戻る"},
-  {"target_name": "震結果失敗事例004-3","scale": "other","period": "1990-2024","story_summary": "拡大したが維持できなかったケース。","before_state": "成長痛","trigger_type": "外部ショック","action_type": "攻める・挑戦","after_state": "混乱・カオス","before_hex": "震","trigger_hex": "震","action_hex": "震","after_hex": "坎","pattern_type": "Failed_Attempt","outcome": "Failure","free_tags": ["#震","#維持失敗"],"source_type": "article","credibility_rank": "B","changing_lines_1": [1,4],"changing_lines_2": [2,5],"changing_lines_3": [3,6],"logic_memo": "震→震→震→坎 維持できず混乱"},
-  {"target_name": "震結果失敗事例004-4","scale": "company","period": "1990-2024","story_summary": "急成長後に失速したケース。","before_state": "絶頂・慢心","trigger_type": "内部崩壊","action_type": "刷新・破壊","after_state": "停滞・閉塞","before_hex": "乾","trigger_hex": "坎","action_hex": "震","after_hex": "艮","pattern_type": "Hubris_Collapse","outcome": "Failure","free_tags": ["#震","#急成長失速"],"source_type": "article","credibility_rank": "B","changing_lines_1": [2,5],"changing_lines_2": [3,6],"changing_lines_3": [1,4],"logic_memo": "乾→坎→震→艮 急成長後失速"},
-  {"target_name": "震結果失敗事例004-5","scale": "country","period": "1990-2024","story_summary": "改革が失敗したケース。","before_state": "停滞・閉塞","trigger_type": "意図的決断","action_type": "刷新・破壊","after_state": "崩壊・消滅","before_hex": "艮","trigger_hex": "乾","action_hex": "震","after_hex": "坤","pattern_type": "Failed_Attempt","outcome": "Failure","free_tags": ["#震","#改革失敗"],"source_type": "article","credibility_rank": "B","changing_lines_1": [1,4],"changing_lines_2": [2,5],"changing_lines_3": [3,6],"logic_memo": "艮→乾→震→坤 改革が崩壊を招く"}
+  {
+    "target_name": "震結果失敗事例004-1",
+    "scale": "company",
+    "period": "1990-2024",
+    "story_summary": "成長したが最終的に崩壊したケース。",
+    "before_state": "成長痛",
+    "trigger_type": "内部崩壊",
+    "action_type": "攻める・挑戦",
+    "after_state": "崩壊・消滅",
+    "before_hex": "震",
+    "trigger_hex": "坎",
+    "action_hex": "震",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#成長崩壊"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "震→坎→震→坤 成長後崩壊"
+  },
+  {
+    "target_name": "震結果失敗事例004-2",
+    "scale": "individual",
+    "period": "1990-2024",
+    "story_summary": "一時的に成功したが失敗したケース。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "縮小安定・生存",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "艮",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#一時的成功"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "艮→乾→震→艮 一時的成功後戻る"
+  },
+  {
+    "target_name": "震結果失敗事例004-3",
+    "scale": "other",
+    "period": "1990-2024",
+    "story_summary": "拡大したが維持できなかったケース。",
+    "before_state": "成長痛",
+    "trigger_type": "外部ショック",
+    "action_type": "攻める・挑戦",
+    "after_state": "混乱・カオス",
+    "before_hex": "震",
+    "trigger_hex": "震",
+    "action_hex": "震",
+    "after_hex": "坎",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#維持失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "震→震→震→坎 維持できず混乱"
+  },
+  {
+    "target_name": "震結果失敗事例004-4",
+    "scale": "company",
+    "period": "1990-2024",
+    "story_summary": "急成長後に失速したケース。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "刷新・破壊",
+    "after_state": "停滞・閉塞",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "震",
+    "after_hex": "艮",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#急成長失速"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "乾→坎→震→艮 急成長後失速"
+  },
+  {
+    "target_name": "震結果失敗事例004-5",
+    "scale": "country",
+    "period": "1990-2024",
+    "story_summary": "改革が失敗したケース。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "崩壊・消滅",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "坤",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#改革失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "艮→乾→震→坤 改革が崩壊を招く"
+  }
 ]

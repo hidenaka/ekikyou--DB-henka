@@ -1,12 +1,432 @@
 [
-  {"target_name": "ボーイング品質問題で激震（2024）","scale": "company","period": "2024","story_summary": "ボーイングで品質問題が相次ぎ、航空業界に激震が走った。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "坎","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Failure","free_tags": ["#ボーイング", "#品質", "#航空"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "アメリカ","main_domain": "製造","sources": ["https://www.boeing.com/"],"confidence_percent": 95,"evidence_notes": "ボーイングで品質問題相次ぎ航空業界に激震","logic_memo": "坎（問題）→震（事故）→坎（混乱）→震（激震）。巨人の危機"},
-  {"target_name": "ダイハツ不正で親会社巻き込む（2024）","scale": "company","period": "2024","story_summary": "ダイハツの認証不正が発覚し、親会社トヨタを巻き込む事態となった。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Failure","free_tags": ["#ダイハツ", "#不正", "#認証"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "製造","sources": ["https://www.daihatsu.co.jp/"],"confidence_percent": 95,"evidence_notes": "ダイハツ認証不正発覚し親会社トヨタ巻き込む事態","logic_memo": "艮（安定）→震（発覚）→艮（出荷停止）→震（業界激震）。品質の信頼"},
-  {"target_name": "日野自動車不正で再建中（2022-2024）","scale": "company","period": "2022-2024","story_summary": "日野自動車がエンジン不正問題から再建に取り組んでいる。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "坎","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#日野", "#不正", "#再建"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "製造","sources": ["https://www.hino.co.jp/"],"confidence_percent": 90,"evidence_notes": "日野自動車エンジン不正問題から再建に取り組み中","logic_memo": "坎（不正）→震（発覚）→坎（再建）→震（激変）。信頼回復への道"},
-  {"target_name": "豊田自動織機でも不正発覚（2024）","scale": "company","period": "2024","story_summary": "豊田自動織機でもエンジン認証不正が発覚し、トヨタグループに衝撃が走った。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Failure","free_tags": ["#豊田自動織機", "#不正", "#認証"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "製造","sources": ["https://www.toyota-shokki.co.jp/"],"confidence_percent": 95,"evidence_notes": "豊田自動織機エンジン認証不正発覚しトヨタグループに衝撃","logic_memo": "艮（安定）→震（発覚）→艮（対応）→震（衝撃）。グループの危機"},
-  {"target_name": "損保大手4社で価格調整問題（2023-2024）","scale": "company","period": "2023-2024","story_summary": "損保大手4社で保険料の価格調整問題が発覚し、業界が揺れた。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Failure","free_tags": ["#損保", "#価格調整", "#カルテル"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "金融","sources": ["https://www.fsa.go.jp/"],"confidence_percent": 95,"evidence_notes": "損保大手4社で保険料価格調整問題発覚し業界揺れた","logic_memo": "艮（慣行）→震（発覚）→艮（対応）→震（業界激震）。護送船団の終わり"},
-  {"target_name": "ビッグモーター不正で業界変革（2023-2024）","scale": "company","period": "2023-2024","story_summary": "ビッグモーターの不正が発覚し、中古車業界に変革をもたらした。","before_state": "拡大・繁栄","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "乾","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Failure","free_tags": ["#ビッグモーター", "#不正", "#中古車"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "小売・サービス","sources": ["https://www.nikkei.com/"],"confidence_percent": 95,"evidence_notes": "ビッグモーター不正発覚し中古車業界に変革もたらした","logic_memo": "乾（成長）→震（発覚）→艮（崩壊）→震（業界変革）。不正の代償"},
-  {"target_name": "小林製薬サプリ問題で危機（2024）","scale": "company","period": "2024","story_summary": "小林製薬のサプリメントで健康被害が発生し、企業が危機に陥った。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Failure","free_tags": ["#小林製薬", "#サプリ", "#健康被害"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "医療・製薬","sources": ["https://www.kobayashi.co.jp/"],"confidence_percent": 95,"evidence_notes": "小林製薬サプリメントで健康被害発生し企業危機","logic_memo": "艮（安定）→震（問題）→坎（対応）→震（危機）。信頼の崩壊"},
-  {"target_name": "ENEOSがHD制に移行（2024）","scale": "company","period": "2024","story_summary": "ENEOSが持株会社制に移行し、事業構造の改革を進めた。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "安定・停止","before_hex": "坎","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#ENEOS", "#持株会社", "#改革"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "エネルギー・環境","sources": ["https://www.eneos.co.jp/"],"confidence_percent": 85,"evidence_notes": "ENEOS持株会社制移行し事業構造改革進めた","logic_memo": "坎（課題）→震（決断）→巽（再編）→震（変革）。エネルギー転換"},
-  {"target_name": "東芝が非上場化完了（2023）","scale": "company","period": "2023","story_summary": "東芝が非上場化を完了し、再建に向けた新たな段階に入った。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "安定・停止","before_hex": "坎","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#東芝", "#非上場化", "#再建"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "製造","sources": ["https://www.global.toshiba/"],"confidence_percent": 95,"evidence_notes": "東芝非上場化完了し再建に向けた新段階入った","logic_memo": "坎（混乱）→震（買収）→艮（非公開）→震（転換）。名門の再出発"},
-  {"target_name": "三菱UFJがデジタル銀行強化（2023-2024）","scale": "company","period": "2023-2024","story_summary": "三菱UFJがデジタル銀行サービスを強化し、次世代金融への対応を進めた。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#三菱UFJ", "#デジタル銀行", "#DX"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "金融","sources": ["https://www.mufg.jp/"],"confidence_percent": 85,"evidence_notes": "三菱UFJデジタル銀行サービス強化し次世代金融への対応進めた","logic_memo": "艮（従来）→巽（デジタル）→巽（強化）→震（変革）。銀行のDX"}
+  {
+    "target_name": "ボーイング品質問題で激震（2024）",
+    "scale": "company",
+    "period": "2024",
+    "story_summary": "ボーイングで品質問題が相次ぎ、航空業界に激震が走った。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "free_tags": [
+      "#ボーイング",
+      "#品質",
+      "#航空"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "アメリカ",
+    "main_domain": "製造",
+    "sources": [
+      "https://www.boeing.com/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "ボーイングで品質問題相次ぎ航空業界に激震",
+    "logic_memo": "坎（問題）→震（事故）→坎（混乱）→震（激震）。巨人の危機"
+  },
+  {
+    "target_name": "ダイハツ不正で親会社巻き込む（2024）",
+    "scale": "company",
+    "period": "2024",
+    "story_summary": "ダイハツの認証不正が発覚し、親会社トヨタを巻き込む事態となった。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "free_tags": [
+      "#ダイハツ",
+      "#不正",
+      "#認証"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "製造",
+    "sources": [
+      "https://www.daihatsu.co.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "ダイハツ認証不正発覚し親会社トヨタ巻き込む事態",
+    "logic_memo": "艮（安定）→震（発覚）→艮（出荷停止）→震（業界激震）。品質の信頼"
+  },
+  {
+    "target_name": "日野自動車不正で再建中（2022-2024）",
+    "scale": "company",
+    "period": "2022-2024",
+    "story_summary": "日野自動車がエンジン不正問題から再建に取り組んでいる。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#日野",
+      "#不正",
+      "#再建"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "製造",
+    "sources": [
+      "https://www.hino.co.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "日野自動車エンジン不正問題から再建に取り組み中",
+    "logic_memo": "坎（不正）→震（発覚）→坎（再建）→震（激変）。信頼回復への道"
+  },
+  {
+    "target_name": "豊田自動織機でも不正発覚（2024）",
+    "scale": "company",
+    "period": "2024",
+    "story_summary": "豊田自動織機でもエンジン認証不正が発覚し、トヨタグループに衝撃が走った。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "free_tags": [
+      "#豊田自動織機",
+      "#不正",
+      "#認証"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "製造",
+    "sources": [
+      "https://www.toyota-shokki.co.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "豊田自動織機エンジン認証不正発覚しトヨタグループに衝撃",
+    "logic_memo": "艮（安定）→震（発覚）→艮（対応）→震（衝撃）。グループの危機"
+  },
+  {
+    "target_name": "損保大手4社で価格調整問題（2023-2024）",
+    "scale": "company",
+    "period": "2023-2024",
+    "story_summary": "損保大手4社で保険料の価格調整問題が発覚し、業界が揺れた。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "free_tags": [
+      "#損保",
+      "#価格調整",
+      "#カルテル"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "損保大手4社で保険料価格調整問題発覚し業界揺れた",
+    "logic_memo": "艮（慣行）→震（発覚）→艮（対応）→震（業界激震）。護送船団の終わり"
+  },
+  {
+    "target_name": "ビッグモーター不正で業界変革（2023-2024）",
+    "scale": "company",
+    "period": "2023-2024",
+    "story_summary": "ビッグモーターの不正が発覚し、中古車業界に変革をもたらした。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "乾",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "free_tags": [
+      "#ビッグモーター",
+      "#不正",
+      "#中古車"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "小売・サービス",
+    "sources": [
+      "https://www.nikkei.com/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "ビッグモーター不正発覚し中古車業界に変革もたらした",
+    "logic_memo": "乾（成長）→震（発覚）→艮（崩壊）→震（業界変革）。不正の代償"
+  },
+  {
+    "target_name": "小林製薬サプリ問題で危機（2024）",
+    "scale": "company",
+    "period": "2024",
+    "story_summary": "小林製薬のサプリメントで健康被害が発生し、企業が危機に陥った。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "free_tags": [
+      "#小林製薬",
+      "#サプリ",
+      "#健康被害"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "医療・製薬",
+    "sources": [
+      "https://www.kobayashi.co.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "小林製薬サプリメントで健康被害発生し企業危機",
+    "logic_memo": "艮（安定）→震（問題）→坎（対応）→震（危機）。信頼の崩壊"
+  },
+  {
+    "target_name": "ENEOSがHD制に移行（2024）",
+    "scale": "company",
+    "period": "2024",
+    "story_summary": "ENEOSが持株会社制に移行し、事業構造の改革を進めた。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "安定・停止",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#ENEOS",
+      "#持株会社",
+      "#改革"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "エネルギー・環境",
+    "sources": [
+      "https://www.eneos.co.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "ENEOS持株会社制移行し事業構造改革進めた",
+    "logic_memo": "坎（課題）→震（決断）→巽（再編）→震（変革）。エネルギー転換"
+  },
+  {
+    "target_name": "東芝が非上場化完了（2023）",
+    "scale": "company",
+    "period": "2023",
+    "story_summary": "東芝が非上場化を完了し、再建に向けた新たな段階に入った。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "安定・停止",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#東芝",
+      "#非上場化",
+      "#再建"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "製造",
+    "sources": [
+      "https://www.global.toshiba/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "東芝非上場化完了し再建に向けた新段階入った",
+    "logic_memo": "坎（混乱）→震（買収）→艮（非公開）→震（転換）。名門の再出発"
+  },
+  {
+    "target_name": "三菱UFJがデジタル銀行強化（2023-2024）",
+    "scale": "company",
+    "period": "2023-2024",
+    "story_summary": "三菱UFJがデジタル銀行サービスを強化し、次世代金融への対応を進めた。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#三菱UFJ",
+      "#デジタル銀行",
+      "#DX"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "sources": [
+      "https://www.mufg.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "三菱UFJデジタル銀行サービス強化し次世代金融への対応進めた",
+    "logic_memo": "艮（従来）→巽（デジタル）→巽（強化）→震（変革）。銀行のDX"
+  }
 ]

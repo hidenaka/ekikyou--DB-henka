@@ -1,12 +1,432 @@
 [
-  {"target_name": "紅麴問題で機能性食品規制強化（2024）","scale": "other","period": "2024","story_summary": "紅麴サプリ問題を受け、機能性表示食品の規制強化が議論された。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#紅麴", "#サプリ", "#規制"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "医療・製薬","sources": ["https://www.caa.go.jp/"],"confidence_percent": 95,"evidence_notes": "紅麴サプリ問題受け機能性表示食品規制強化議論","logic_memo": "艮（自由）→震（問題）→艮（規制）→震（議論激化）。信頼回復へ"},
-  {"target_name": "政治とカネ問題で自民党揺れる（2023-2024）","scale": "other","period": "2023-2024","story_summary": "政治資金問題が相次ぎ発覚し、自民党の支持率が低下した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Failure","free_tags": ["#政治", "#資金", "#自民党"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "国家・政治","sources": ["https://www.soumu.go.jp/"],"confidence_percent": 95,"evidence_notes": "政治資金問題相次ぎ発覚し自民党支持率低下","logic_memo": "艮（政権）→震（発覚）→坎（混乱）→震（激震）。政治の信頼"},
-  {"target_name": "岸田首相退陣で政局激変（2024）","scale": "other","period": "2024","story_summary": "岸田首相が総裁選不出馬を表明し、政局が大きく動いた。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "坎","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#岸田首相", "#退陣", "#政局"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "国家・政治","sources": ["https://www.kantei.go.jp/"],"confidence_percent": 95,"evidence_notes": "岸田首相総裁選不出馬表明し政局大きく動いた","logic_memo": "坎（低支持）→震（表明）→艮（退陣）→震（政局変動）。首相交代"},
-  {"target_name": "衆院選で与党過半数割れ（2024）","scale": "other","period": "2024","story_summary": "衆議院選挙で与党が過半数を割り、政治に激震が走った。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#衆院選", "#与党", "#過半数"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "国家・政治","sources": ["https://www.soumu.go.jp/"],"confidence_percent": 95,"evidence_notes": "衆議院選挙で与党過半数割り政治に激震","logic_memo": "艮（政権）→震（選挙）→艮（敗北）→震（激震）。国民の審判"},
-  {"target_name": "少数与党で国会運営難航（2024）","scale": "other","period": "2024","story_summary": "少数与党となり、国会運営が難航する事態となった。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "坎","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#国会", "#少数与党", "#運営"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "国家・政治","sources": ["https://www.shugiin.go.jp/"],"confidence_percent": 90,"evidence_notes": "少数与党となり国会運営難航する事態","logic_memo": "坎（選挙敗北）→震（開会）→坎（難航）→震（混乱）。政治の停滞"},
-  {"target_name": "デジタル庁の取り組み本格化（2022-2024）","scale": "other","period": "2022-2024","story_summary": "デジタル庁の取り組みが本格化し、行政のデジタル化が進んだ。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#デジタル庁", "#DX", "#行政"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "国家・政治","sources": ["https://www.digital.go.jp/"],"confidence_percent": 85,"evidence_notes": "デジタル庁取り組み本格化し行政デジタル化進んだ","logic_memo": "艮（紙）→震（設立）→巽（推進）→震（本格化）。行政のDX"},
-  {"target_name": "安全保障環境激変で防衛費増（2022-2024）","scale": "other","period": "2022-2024","story_summary": "安全保障環境の激変を受け、防衛費の大幅増額が決定された。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#安全保障", "#防衛費", "#増額"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "国家・政治","sources": ["https://www.mod.go.jp/"],"confidence_percent": 95,"evidence_notes": "安全保障環境激変受け防衛費大幅増額決定","logic_memo": "艮（従来）→震（ウクライナ）→乾（増額）→震（政策転換）。防衛の転換"},
-  {"target_name": "経済安全保障推進法施行（2022-2024）","scale": "other","period": "2022-2024","story_summary": "経済安全保障推進法が施行され、経済政策に新たな視点が加わった。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#経済安全保障", "#法律", "#政策"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "国家・政治","sources": ["https://www.cas.go.jp/"],"confidence_percent": 90,"evidence_notes": "経済安全保障推進法施行され経済政策に新たな視点加わった","logic_memo": "艮（従来）→震（法施行）→巽（推進）→震（政策転換）。経済と安保"},
-  {"target_name": "こども家庭庁発足で子育て政策変化（2023）","scale": "other","period": "2023","story_summary": "こども家庭庁が発足し、子育て政策の司令塔としての役割を担い始めた。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#こども家庭庁", "#子育て", "#政策"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "国家・政治","sources": ["https://www.cfa.go.jp/"],"confidence_percent": 90,"evidence_notes": "こども家庭庁発足し子育て政策の司令塔としての役割担い始めた","logic_memo": "坎（少子化）→震（発足）→巽（推進）→震（政策変化）。こども第一"},
-  {"target_name": "異次元の少子化対策発表（2023）","scale": "other","period": "2023","story_summary": "政府が異次元の少子化対策を発表し、政策の転換が注目された。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "混乱・衰退","before_hex": "坎","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#少子化", "#異次元", "#政策"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "国家・政治","sources": ["https://www.kantei.go.jp/"],"confidence_percent": 90,"evidence_notes": "政府異次元少子化対策発表し政策転換注目","logic_memo": "坎（危機）→震（発表）→乾（投資）→震（政策転換）。次元を超えて"}
+  {
+    "target_name": "紅麴問題で機能性食品規制強化（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "紅麴サプリ問題を受け、機能性表示食品の規制強化が議論された。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#紅麴",
+      "#サプリ",
+      "#規制"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "医療・製薬",
+    "sources": [
+      "https://www.caa.go.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "紅麴サプリ問題受け機能性表示食品規制強化議論",
+    "logic_memo": "艮（自由）→震（問題）→艮（規制）→震（議論激化）。信頼回復へ"
+  },
+  {
+    "target_name": "政治とカネ問題で自民党揺れる（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "政治資金問題が相次ぎ発覚し、自民党の支持率が低下した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "free_tags": [
+      "#政治",
+      "#資金",
+      "#自民党"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.soumu.go.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "政治資金問題相次ぎ発覚し自民党支持率低下",
+    "logic_memo": "艮（政権）→震（発覚）→坎（混乱）→震（激震）。政治の信頼"
+  },
+  {
+    "target_name": "岸田首相退陣で政局激変（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "岸田首相が総裁選不出馬を表明し、政局が大きく動いた。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#岸田首相",
+      "#退陣",
+      "#政局"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.kantei.go.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "岸田首相総裁選不出馬表明し政局大きく動いた",
+    "logic_memo": "坎（低支持）→震（表明）→艮（退陣）→震（政局変動）。首相交代"
+  },
+  {
+    "target_name": "衆院選で与党過半数割れ（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "衆議院選挙で与党が過半数を割り、政治に激震が走った。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#衆院選",
+      "#与党",
+      "#過半数"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.soumu.go.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "衆議院選挙で与党過半数割り政治に激震",
+    "logic_memo": "艮（政権）→震（選挙）→艮（敗北）→震（激震）。国民の審判"
+  },
+  {
+    "target_name": "少数与党で国会運営難航（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "少数与党となり、国会運営が難航する事態となった。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#国会",
+      "#少数与党",
+      "#運営"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.shugiin.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "少数与党となり国会運営難航する事態",
+    "logic_memo": "坎（選挙敗北）→震（開会）→坎（難航）→震（混乱）。政治の停滞"
+  },
+  {
+    "target_name": "デジタル庁の取り組み本格化（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "デジタル庁の取り組みが本格化し、行政のデジタル化が進んだ。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#デジタル庁",
+      "#DX",
+      "#行政"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.digital.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "デジタル庁取り組み本格化し行政デジタル化進んだ",
+    "logic_memo": "艮（紙）→震（設立）→巽（推進）→震（本格化）。行政のDX"
+  },
+  {
+    "target_name": "安全保障環境激変で防衛費増（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "安全保障環境の激変を受け、防衛費の大幅増額が決定された。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#安全保障",
+      "#防衛費",
+      "#増額"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.mod.go.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "安全保障環境激変受け防衛費大幅増額決定",
+    "logic_memo": "艮（従来）→震（ウクライナ）→乾（増額）→震（政策転換）。防衛の転換"
+  },
+  {
+    "target_name": "経済安全保障推進法施行（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "経済安全保障推進法が施行され、経済政策に新たな視点が加わった。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#経済安全保障",
+      "#法律",
+      "#政策"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.cas.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "経済安全保障推進法施行され経済政策に新たな視点加わった",
+    "logic_memo": "艮（従来）→震（法施行）→巽（推進）→震（政策転換）。経済と安保"
+  },
+  {
+    "target_name": "こども家庭庁発足で子育て政策変化（2023）",
+    "scale": "other",
+    "period": "2023",
+    "story_summary": "こども家庭庁が発足し、子育て政策の司令塔としての役割を担い始めた。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#こども家庭庁",
+      "#子育て",
+      "#政策"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.cfa.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "こども家庭庁発足し子育て政策の司令塔としての役割担い始めた",
+    "logic_memo": "坎（少子化）→震（発足）→巽（推進）→震（政策変化）。こども第一"
+  },
+  {
+    "target_name": "異次元の少子化対策発表（2023）",
+    "scale": "other",
+    "period": "2023",
+    "story_summary": "政府が異次元の少子化対策を発表し、政策の転換が注目された。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "混乱・衰退",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#少子化",
+      "#異次元",
+      "#政策"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.kantei.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "政府異次元少子化対策発表し政策転換注目",
+    "logic_memo": "坎（危機）→震（発表）→乾（投資）→震（政策転換）。次元を超えて"
+  }
 ]

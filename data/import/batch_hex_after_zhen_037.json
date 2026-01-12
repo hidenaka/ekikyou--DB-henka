@@ -1,12 +1,432 @@
 [
-  {"target_name": "ワーケーション普及で観光変化（2022-2024）","scale": "other","period": "2022-2024","story_summary": "ワーケーションの普及により、観光地の在り方が変化した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ワーケーション", "#観光", "#テレワーク"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "ワーケーション普及により観光地在り方変化","logic_memo": "艮（従来）→震（コロナ）→巽（普及）→震（変化）。働きながら旅する"},
-  {"target_name": "アドベンチャーツーリズム注目（2022-2024）","scale": "other","period": "2022-2024","story_summary": "体験型のアドベンチャーツーリズムが注目を集めた。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#アドベンチャー", "#体験", "#観光"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.jnto.go.jp/"],"confidence_percent": 85,"evidence_notes": "体験型アドベンチャーツーリズム注目集めた","logic_memo": "艮（観光）→巽（体験）→巽（展開）→震（注目）。体験の価値"},
-  {"target_name": "サステナブルツーリズムの広がり（2022-2024）","scale": "other","period": "2022-2024","story_summary": "環境に配慮したサステナブルツーリズムへの関心が高まった。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#サステナブル", "#環境", "#観光"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.env.go.jp/"],"confidence_percent": 85,"evidence_notes": "環境配慮したサステナブルツーリズムへの関心高まった","logic_memo": "艮（従来）→巽（意識）→巽（広がり）→震（関心）。責任ある旅"},
-  {"target_name": "高付加価値旅行市場拡大（2023-2024）","scale": "other","period": "2023-2024","story_summary": "高付加価値な旅行体験への需要が増加し、市場が拡大した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#高付加価値", "#富裕層", "#旅行"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.jnto.go.jp/"],"confidence_percent": 85,"evidence_notes": "高付加価値旅行体験への需要増加し市場拡大","logic_memo": "坎（コロナ）→震（回復）→乾（高級化）→震（拡大）。質の観光"},
-  {"target_name": "夜間経済（ナイトタイムエコノミー）推進（2023-2024）","scale": "other","period": "2023-2024","story_summary": "夜間経済の活性化に向けた取り組みが各地で進んだ。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ナイトエコノミー", "#夜間", "#観光"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "夜間経済活性化に向けた取り組み各地で進んだ","logic_memo": "艮（日中）→巽（夜間）→巽（推進）→震（活性化）。夜の魅力"},
-  {"target_name": "IR（統合型リゾート）構想進展（2022-2024）","scale": "other","period": "2022-2024","story_summary": "大阪を中心にIR構想が進展し、観光産業の変革が期待された。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Mixed","free_tags": ["#IR", "#カジノ", "#統合型リゾート"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "大阪中心にIR構想進展し観光産業変革期待","logic_memo": "艮（計画）→震（承認）→乾（開発）→震（進展）。エンタメの未来"},
-  {"target_name": "デジタルノマドビザ検討（2023-2024）","scale": "other","period": "2023-2024","story_summary": "デジタルノマド向けのビザ制度が検討され、新たな人材受入れが議論された。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#デジタルノマド", "#ビザ", "#人材"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "国家・政治","sources": ["https://www.moj.go.jp/"],"confidence_percent": 85,"evidence_notes": "デジタルノマド向けビザ制度検討され新たな人材受入れ議論","logic_memo": "艮（従来）→巽（検討）→巽（導入）→震（変化）。人材の流動化"},
-  {"target_name": "民泊規制緩和で宿泊変化（2023-2024）","scale": "other","period": "2023-2024","story_summary": "民泊の規制緩和により、宿泊の選択肢が広がった。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#民泊", "#規制緩和", "#宿泊"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "民泊規制緩和により宿泊選択肢広がった","logic_memo": "艮（ホテル）→震（緩和）→巽（参入）→震（変化）。泊まる選択"},
-  {"target_name": "古民家再生で地域活性化（2022-2024）","scale": "other","period": "2022-2024","story_summary": "古民家を再生した宿泊施設等が増加し、地域の活性化に貢献した。","before_state": "混乱・衰退","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#古民家", "#再生", "#地域活性"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.mlit.go.jp/"],"confidence_percent": 85,"evidence_notes": "古民家再生した宿泊施設等増加し地域活性化貢献","logic_memo": "坎（空き家）→巽（再生）→巽（活用）→震（活性化）。古きを生かす"},
-  {"target_name": "酒蔵ツーリズム人気（2022-2024）","scale": "other","period": "2022-2024","story_summary": "酒蔵を巡るツーリズムが人気を集め、日本酒の魅力が再発見された。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#酒蔵", "#ツーリズム", "#日本酒"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "観光・旅行","sources": ["https://www.jnto.go.jp/"],"confidence_percent": 85,"evidence_notes": "酒蔵巡るツーリズム人気集め日本酒魅力再発見","logic_memo": "艮（従来）→巽（体験）→巽（人気）→震（注目）。酒の文化"}
+  {
+    "target_name": "ワーケーション普及で観光変化（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "ワーケーションの普及により、観光地の在り方が変化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ワーケーション",
+      "#観光",
+      "#テレワーク"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "ワーケーション普及により観光地在り方変化",
+    "logic_memo": "艮（従来）→震（コロナ）→巽（普及）→震（変化）。働きながら旅する"
+  },
+  {
+    "target_name": "アドベンチャーツーリズム注目（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "体験型のアドベンチャーツーリズムが注目を集めた。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#アドベンチャー",
+      "#体験",
+      "#観光"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.jnto.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "体験型アドベンチャーツーリズム注目集めた",
+    "logic_memo": "艮（観光）→巽（体験）→巽（展開）→震（注目）。体験の価値"
+  },
+  {
+    "target_name": "サステナブルツーリズムの広がり（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "環境に配慮したサステナブルツーリズムへの関心が高まった。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#サステナブル",
+      "#環境",
+      "#観光"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.env.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "環境配慮したサステナブルツーリズムへの関心高まった",
+    "logic_memo": "艮（従来）→巽（意識）→巽（広がり）→震（関心）。責任ある旅"
+  },
+  {
+    "target_name": "高付加価値旅行市場拡大（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "高付加価値な旅行体験への需要が増加し、市場が拡大した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#高付加価値",
+      "#富裕層",
+      "#旅行"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.jnto.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "高付加価値旅行体験への需要増加し市場拡大",
+    "logic_memo": "坎（コロナ）→震（回復）→乾（高級化）→震（拡大）。質の観光"
+  },
+  {
+    "target_name": "夜間経済（ナイトタイムエコノミー）推進（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "夜間経済の活性化に向けた取り組みが各地で進んだ。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ナイトエコノミー",
+      "#夜間",
+      "#観光"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "夜間経済活性化に向けた取り組み各地で進んだ",
+    "logic_memo": "艮（日中）→巽（夜間）→巽（推進）→震（活性化）。夜の魅力"
+  },
+  {
+    "target_name": "IR（統合型リゾート）構想進展（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "大阪を中心にIR構想が進展し、観光産業の変革が期待された。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#IR",
+      "#カジノ",
+      "#統合型リゾート"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "大阪中心にIR構想進展し観光産業変革期待",
+    "logic_memo": "艮（計画）→震（承認）→乾（開発）→震（進展）。エンタメの未来"
+  },
+  {
+    "target_name": "デジタルノマドビザ検討（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "デジタルノマド向けのビザ制度が検討され、新たな人材受入れが議論された。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#デジタルノマド",
+      "#ビザ",
+      "#人材"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "国家・政治",
+    "sources": [
+      "https://www.moj.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "デジタルノマド向けビザ制度検討され新たな人材受入れ議論",
+    "logic_memo": "艮（従来）→巽（検討）→巽（導入）→震（変化）。人材の流動化"
+  },
+  {
+    "target_name": "民泊規制緩和で宿泊変化（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "民泊の規制緩和により、宿泊の選択肢が広がった。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#民泊",
+      "#規制緩和",
+      "#宿泊"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "民泊規制緩和により宿泊選択肢広がった",
+    "logic_memo": "艮（ホテル）→震（緩和）→巽（参入）→震（変化）。泊まる選択"
+  },
+  {
+    "target_name": "古民家再生で地域活性化（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "古民家を再生した宿泊施設等が増加し、地域の活性化に貢献した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#古民家",
+      "#再生",
+      "#地域活性"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "古民家再生した宿泊施設等増加し地域活性化貢献",
+    "logic_memo": "坎（空き家）→巽（再生）→巽（活用）→震（活性化）。古きを生かす"
+  },
+  {
+    "target_name": "酒蔵ツーリズム人気（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "酒蔵を巡るツーリズムが人気を集め、日本酒の魅力が再発見された。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#酒蔵",
+      "#ツーリズム",
+      "#日本酒"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "観光・旅行",
+    "sources": [
+      "https://www.jnto.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "酒蔵巡るツーリズム人気集め日本酒魅力再発見",
+    "logic_memo": "艮（従来）→巽（体験）→巽（人気）→震（注目）。酒の文化"
+  }
 ]

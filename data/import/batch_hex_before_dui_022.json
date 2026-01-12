@@ -14,14 +14,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#町工場", "#大手依存", "#自立"],
+    "free_tags": [
+      "#町工場",
+      "#大手依存",
+      "#自立"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "大手依存町工場が発注削減で危機。7年技術汎用化・新規開拓で自立",
     "logic_memo": "兌（安定）→震（発注削減）→震（転換）→坤（自立）。技術で勝負"
@@ -41,14 +56,29 @@
     "after_hex": "離",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#精密機械", "#円高", "#国内回帰"],
+    "free_tags": [
+      "#精密機械",
+      "#円高",
+      "#国内回帰"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "輸出中心精密機械が円高で収益悪化。5年国内回帰・高付加価値化で復活",
     "logic_memo": "兌（成功）→震（円高）→震（転換）→離（復活）。為替への対応"
@@ -68,14 +98,29 @@
     "after_hex": "坤",
     "pattern_type": "Endurance",
     "outcome": "Success",
-    "free_tags": ["#金型", "#海外競合", "#超精密"],
+    "free_tags": [
+      "#金型",
+      "#海外競合",
+      "#超精密"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "高品質金型が中韓競争で苦戦。8年超精密分野特化で差別化",
     "logic_memo": "兌（品質）→震（価格競争）→坎（特化努力）→坤（差別化）。精密の極み"
@@ -95,14 +140,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Mixed",
-    "free_tags": ["#部品", "#EV化", "#転換"],
+    "free_tags": [
+      "#部品",
+      "#EV化",
+      "#転換"
+    ],
     "source_type": "news",
     "credibility_rank": "A",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 85,
     "evidence_notes": "エンジン部品高シェアがEV化で需要減危機。5年EV部品・新分野で転換",
     "logic_memo": "兌（シェア）→震（EV化）→震（転換）→坤（存続）。モビリティの変化"
@@ -122,14 +182,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#素材", "#環境規制", "#代替開発"],
+    "free_tags": [
+      "#素材",
+      "#環境規制",
+      "#代替開発"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "化学素材高シェアが環境規制で主力に規制。6年代替素材開発で存続",
     "logic_memo": "兌（シェア）→震（規制）→震（開発）→坤（存続）。グリーンへの転換"
@@ -149,14 +224,29 @@
     "after_hex": "坤",
     "pattern_type": "Endurance",
     "outcome": "Success",
-    "free_tags": ["#繊維", "#安価競争", "#機能性"],
+    "free_tags": [
+      "#繊維",
+      "#安価競争",
+      "#機能性"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "高品質繊維がアジア安価品競争で苦戦。8年機能性繊維特化で差別化",
     "logic_memo": "兌（品質）→震（価格競争）→坎（特化努力）→坤（差別化）。素材の革新"
@@ -176,14 +266,29 @@
     "after_hex": "坤",
     "pattern_type": "Shock_Recovery",
     "outcome": "Mixed",
-    "free_tags": ["#食品工場", "#異物混入", "#品質管理"],
+    "free_tags": [
+      "#食品工場",
+      "#異物混入",
+      "#品質管理"
+    ],
     "source_type": "news",
     "credibility_rank": "A",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.maff.go.jp/"],
+    "sources": [
+      "https://www.maff.go.jp/"
+    ],
     "confidence_percent": 85,
     "evidence_notes": "大手取引食品工場が異物混入で契約解除。4年品質刷新・新規開拓で再建",
     "logic_memo": "兌（安定）→震（異物混入）→坎（改善努力）→坤（再建）。食の安全"
@@ -203,14 +308,29 @@
     "after_hex": "離",
     "pattern_type": "Shock_Recovery",
     "outcome": "Success",
-    "free_tags": ["#半導体装置", "#市況", "#復活"],
+    "free_tags": [
+      "#半導体装置",
+      "#市況",
+      "#復活"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "半導体装置高シェアが市況悪化で受注減。3年コスト削減・新分野で復活",
     "logic_memo": "兌（シェア）→震（市況悪化）→坎（コスト削減）→離（復活）。シリコンサイクル"
@@ -230,14 +350,29 @@
     "after_hex": "離",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#工作機械", "#中国競合", "#IoT"],
+    "free_tags": [
+      "#工作機械",
+      "#中国競合",
+      "#IoT"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "高精度工作機械が中国競合で苦戦。7年IoT・超高精度化で差別化",
     "logic_memo": "兌（精度）→震（中国競合）→震（転換）→離（差別化）。製造の進化"
@@ -257,14 +392,29 @@
     "after_hex": "離",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#計測器", "#デジタル化", "#IoT"],
+    "free_tags": [
+      "#計測器",
+      "#デジタル化",
+      "#IoT"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.meti.go.jp/"],
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "アナログ計測器高シェアがデジタル化で需要減。6年IoTセンサー・分析転換",
     "logic_memo": "兌（シェア）→震（デジタル化）→震（転換）→離（成功）。計測の進化"

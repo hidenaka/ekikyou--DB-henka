@@ -1,0 +1,431 @@
+[
+  {
+    "target_name": "スタートアップ・困難な創業期を乗り越え（2018-2022）",
+    "scale": "company",
+    "period": "2018-2022",
+    "story_summary": "新興企業が困難な創業期を経験。産みの苦しみを乗り越えて基盤を構築した。",
+    "before_state": "どん底・危機",
+    "trigger_type": "意図的決断",
+    "action_type": "耐える・潜伏",
+    "after_state": "安定成長・成功",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Endurance",
+    "outcome": "Success",
+    "free_tags": [
+      "#創業",
+      "#困難",
+      "#屯"
+    ],
+    "source_type": "news",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      3
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      4,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "スタートアップ",
+    "evidence_notes": "スタートアップの創業期困難",
+    "logic_memo": "坎→震→坎→震 創業の苦しみ"
+  },
+  {
+    "target_name": "メルカリ・創業困難から上場（2013-2018）",
+    "scale": "company",
+    "period": "2013-2018",
+    "story_summary": "メルカリは創業初期の困難を乗り越えた。産みの苦しみの中で成長し日本初のユニコーンとなった。",
+    "before_state": "どん底・危機",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": [
+      "#創業",
+      "#困難",
+      "#屯"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      6
+    ],
+    "changing_lines_2": [
+      1,
+      4
+    ],
+    "changing_lines_3": [
+      3,
+      5
+    ],
+    "country": "日本",
+    "main_domain": "IT",
+    "evidence_notes": "メルカリの創業から上場",
+    "logic_memo": "坎→震→乾→震 困難から躍進"
+  },
+  {
+    "target_name": "コンプライアンス重視企業の堅実経営（2015-2024）",
+    "scale": "company",
+    "period": "2015-2024",
+    "story_summary": "礼儀と慎重さを重視する経営で持続的成長。コンプライアンスを徹底して信頼を構築した。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "守る・維持",
+    "after_state": "安定・平和",
+    "before_hex": "乾",
+    "trigger_hex": "兌",
+    "action_hex": "艮",
+    "after_hex": "兌",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#礼儀",
+      "#慎重",
+      "#履"
+    ],
+    "source_type": "news",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      6
+    ],
+    "changing_lines_3": [
+      3,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "evidence_notes": "コンプライアンス重視経営",
+    "logic_memo": "乾→兌→艮→兌 礼節で成長"
+  },
+  {
+    "target_name": "業界団体の協調で危機克服（2020-2022）",
+    "scale": "other",
+    "period": "2020-2022",
+    "story_summary": "コロナ禍で業界団体が協調して対応。同志が集まり困難を乗り越えた。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "外部ショック",
+    "action_type": "対話・融合",
+    "after_state": "安定・平和",
+    "before_hex": "坎",
+    "trigger_hex": "離",
+    "action_hex": "離",
+    "after_hex": "乾",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": [
+      "#協調",
+      "#同志",
+      "#同人"
+    ],
+    "source_type": "news",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "業界団体",
+    "evidence_notes": "コロナ禍での業界協調",
+    "logic_memo": "坎→離→離→乾 協調で克服"
+  },
+  {
+    "target_name": "オープンソースコミュニティの協力（2000-2020）",
+    "scale": "other",
+    "period": "2000-2020",
+    "story_summary": "オープンソース開発者が協調して大規模プロジェクトを成功。同志が集まり技術革新を実現。",
+    "before_state": "成長痛",
+    "trigger_type": "偶発・出会い",
+    "action_type": "対話・融合",
+    "after_state": "安定・平和",
+    "before_hex": "乾",
+    "trigger_hex": "離",
+    "action_hex": "離",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#協力",
+      "#同志",
+      "#同人"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      6
+    ],
+    "changing_lines_2": [
+      1,
+      3
+    ],
+    "changing_lines_3": [
+      4,
+      5
+    ],
+    "country": "アメリカ",
+    "main_domain": "IT",
+    "evidence_notes": "Linuxなどオープンソース開発",
+    "logic_memo": "乾→離→離→乾 協力で革新"
+  },
+  {
+    "target_name": "予期せぬ成功を収めた企業（2015-2020）",
+    "scale": "company",
+    "period": "2015-2020",
+    "story_summary": "予期せぬ市場変化で思わぬ成功。誠実な経営が天の恵みを呼んだ。",
+    "before_state": "安定・平和",
+    "trigger_type": "偶発・出会い",
+    "action_type": "守る・維持",
+    "after_state": "持続成長・大成功",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "艮",
+    "after_hex": "乾",
+    "pattern_type": "Shock_Recovery",
+    "outcome": "Success",
+    "free_tags": [
+      "#予期せぬ",
+      "#誠実",
+      "#无妄"
+    ],
+    "source_type": "news",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      4,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      2
+    ],
+    "country": "日本",
+    "main_domain": "製造業",
+    "evidence_notes": "予期せぬ成功事例",
+    "logic_memo": "艮→乾→艮→乾 誠実で成功"
+  },
+  {
+    "target_name": "M&Aでの感応と調和（2018-2022）",
+    "scale": "company",
+    "period": "2018-2022",
+    "story_summary": "M&A後の組織統合で感応と調和を重視。心を通わせて統合を成功させた。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "意図的決断",
+    "action_type": "対話・融合",
+    "after_state": "安定・平和",
+    "before_hex": "兌",
+    "trigger_hex": "艮",
+    "action_hex": "兌",
+    "after_hex": "艮",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#感応",
+      "#調和",
+      "#咸"
+    ],
+    "source_type": "news",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      3
+    ],
+    "changing_lines_2": [
+      2,
+      6
+    ],
+    "changing_lines_3": [
+      4,
+      5
+    ],
+    "country": "日本",
+    "main_domain": "金融",
+    "evidence_notes": "M&A後の組織統合",
+    "logic_memo": "兌→艮→兌→艮 心の統合"
+  },
+  {
+    "target_name": "不本意な結婚で苦悩する家族（2010-2020）",
+    "scale": "family",
+    "period": "2010-2020",
+    "story_summary": "不本意な状況での結びつきが苦悩を生んだ。帰妹の象のように困難な関係。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "停滞・閉塞",
+    "before_hex": "兌",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "艮",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#不本意",
+      "#結婚",
+      "#帰妹"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      2,
+      5
+    ],
+    "country": "日本",
+    "main_domain": "家族",
+    "evidence_notes": "不本意な結婚の苦悩",
+    "logic_memo": "兌→震→坎→艮 不本意な結合"
+  },
+  {
+    "target_name": "海外駐在員の旅人生活（2015-2020）",
+    "scale": "individual",
+    "period": "2015-2020",
+    "story_summary": "海外駐在で旅人のような生活。定まらぬ中でも成長を遂げた。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "分散・スピンオフ",
+    "after_state": "安定成長・成功",
+    "before_hex": "離",
+    "trigger_hex": "艮",
+    "action_hex": "巽",
+    "after_hex": "艮",
+    "pattern_type": "Endurance",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#旅",
+      "#駐在",
+      "#旅"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      3
+    ],
+    "changing_lines_2": [
+      2,
+      6
+    ],
+    "changing_lines_3": [
+      4,
+      5
+    ],
+    "country": "日本",
+    "main_domain": "キャリア",
+    "evidence_notes": "海外駐在員の生活",
+    "logic_memo": "離→艮→巽→艮 旅の人生"
+  },
+  {
+    "target_name": "組織崩壊後の離散（2018-2022）",
+    "scale": "company",
+    "period": "2018-2022",
+    "story_summary": "組織が崩壊し人材が離散。渙の象のように散り散りになった。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "内部崩壊",
+    "action_type": "分散・スピンオフ",
+    "after_state": "停滞・閉塞",
+    "before_hex": "坎",
+    "trigger_hex": "坎",
+    "action_hex": "巽",
+    "after_hex": "艮",
+    "pattern_type": "Slow_Decline",
+    "outcome": "Failure",
+    "free_tags": [
+      "#離散",
+      "#崩壊",
+      "#渙"
+    ],
+    "source_type": "news",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      6
+    ],
+    "changing_lines_3": [
+      3,
+      5
+    ],
+    "country": "日本",
+    "main_domain": "スタートアップ",
+    "evidence_notes": "組織崩壊と人材離散",
+    "logic_memo": "坎→坎→巽→艮 離散の悲哀"
+  },
+  {
+    "target_name": "分散型組織への移行成功（2020-2024）",
+    "scale": "company",
+    "period": "2020-2024",
+    "story_summary": "コロナ禍でリモートワークに移行し分散型組織を構築。離散を活かして新たな形を作った。",
+    "before_state": "混乱・カオス",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・スピンオフ",
+    "after_state": "安定・平和",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "乾",
+    "pattern_type": "Pivot_Success",
+    "outcome": "Success",
+    "free_tags": [
+      "#分散",
+      "#リモート",
+      "#渙"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "IT",
+    "evidence_notes": "分散型組織への移行",
+    "logic_memo": "坎→震→巽→乾 分散で成功"
+  }
+]

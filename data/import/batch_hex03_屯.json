@@ -1,0 +1,102 @@
+[
+  {
+    "transition_id": "HEX03_YAO1_001",
+    "target_name": "メルカリ 創業準備期",
+    "scale": "company",
+    "period": "2012-2013",
+    "story_summary": "山田進太郎は石のように動かず待ち、フリマアプリの構想を練った。創業準備期に磐桓として基盤を固め、タイミングを見極めてからローンチ。屯の初爻、動かず待つ忍耐が後の成功につながった。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "意図的決断",
+    "action_type": "耐える・潜伏",
+    "after_state": "変質・新生",
+    "before_hex": "艮",
+    "trigger_hex": "離",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Endurance",
+    "outcome": "Success",
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "IT",
+    "free_tags": [
+      "#創業準備",
+      "#待機",
+      "#メルカリ"
+    ]
+  },
+  {
+    "transition_id": "HEX03_YAO2_001",
+    "target_name": "スペースX 初期の試行錯誤",
+    "scale": "company",
+    "period": "2006-2008",
+    "story_summary": "SpaceXは最初の3回のロケット打ち上げに失敗し、行きつ戻りつの困難な時期を過ごした。屯如邅如、試行錯誤を繰り返しながらも諦めず、4回目で成功。産みの苦しみを乗り越えた典型例。",
+    "before_state": "どん底・危機",
+    "trigger_type": "意図的決断",
+    "action_type": "守る・維持",
+    "after_state": "変質・新生",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "離",
+    "after_hex": "乾",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Success",
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "宇宙",
+    "free_tags": [
+      "#試行錯誤",
+      "#失敗から成功",
+      "#SpaceX"
+    ]
+  },
+  {
+    "transition_id": "HEX03_YAO3_001",
+    "target_name": "Theranos エリザベス・ホームズの迷走",
+    "scale": "company",
+    "period": "2014-2018",
+    "story_summary": "Theranosは案内なく鹿を追うように、未知の領域で迷走した。血液検査技術が未完成のまま拡大を急ぎ、詐欺として崩壊。即鹿無虞、準備不足で未知に飛び込んだ失敗の典型。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "偶発・出会い",
+    "action_type": "攻める・挑戦",
+    "after_state": "崩壊・消滅",
+    "before_hex": "震",
+    "trigger_hex": "離",
+    "action_hex": "乾",
+    "after_hex": "坤",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "医療",
+    "free_tags": [
+      "#詐欺",
+      "#迷走",
+      "#未知領域"
+    ]
+  },
+  {
+    "transition_id": "HEX03_YAO6_001",
+    "target_name": "ソ連崩壊後のロシア 1990年代の苦難",
+    "scale": "country",
+    "period": "1991-1999",
+    "story_summary": "ソ連崩壊後のロシアは血の涙を流すような極限の苦難を経験。ハイパーインフレ、犯罪の横行、経済崩壊と、建国期の産みの苦しみを極限まで味わった。屯の上爻、最も辛い時期を象徴。",
+    "before_state": "どん底・危機",
+    "trigger_type": "外部ショック",
+    "action_type": "刷新・破壊",
+    "after_state": "停滞・閉塞",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "離",
+    "after_hex": "坎",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Failure",
+    "source_type": "book",
+    "credibility_rank": "A",
+    "main_domain": "国家運営",
+    "free_tags": [
+      "#極限苦難",
+      "#ソ連崩壊",
+      "#血の涙"
+    ]
+  }
+]

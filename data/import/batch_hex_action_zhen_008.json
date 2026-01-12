@@ -1,7 +1,177 @@
 [
-  {"target_name": "震行動失敗事例008-1","scale": "company","period": "2000-2024","story_summary": "積極攻勢が裏目に出て失敗したケース。","before_state": "成長痛","trigger_type": "外部ショック","action_type": "攻める・挑戦","after_state": "崩壊・消滅","before_hex": "震","trigger_hex": "震","action_hex": "震","after_hex": "坤","pattern_type": "Failed_Attempt","outcome": "Failure","free_tags": ["#震","#攻勢失敗"],"source_type": "article","credibility_rank": "B","changing_lines_1": [1,4],"changing_lines_2": [2,5],"changing_lines_3": [3,6],"logic_memo": "震→震→震→坤 積極攻勢が裏目"},
-  {"target_name": "震行動失敗事例008-2","scale": "company","period": "2000-2024","story_summary": "タイミング悪い拡大で失敗したケース。","before_state": "安定・平和","trigger_type": "意図的決断","action_type": "刷新・破壊","after_state": "混乱・カオス","before_hex": "艮","trigger_hex": "乾","action_hex": "震","after_hex": "坎","pattern_type": "Hubris_Collapse","outcome": "Failure","free_tags": ["#震","#拡大失敗"],"source_type": "article","credibility_rank": "B","changing_lines_1": [2,5],"changing_lines_2": [3,6],"changing_lines_3": [1,4],"logic_memo": "艮→乾→震→坎 拡大タイミング失敗"},
-  {"target_name": "震行動失敗事例008-3","scale": "individual","period": "2000-2024","story_summary": "性急な行動で失敗したケース。","before_state": "成長痛","trigger_type": "意図的決断","action_type": "攻める・挑戦","after_state": "縮小安定・生存","before_hex": "震","trigger_hex": "乾","action_hex": "震","after_hex": "艮","pattern_type": "Failed_Attempt","outcome": "Failure","free_tags": ["#震","#性急失敗"],"source_type": "article","credibility_rank": "B","changing_lines_1": [1,4],"changing_lines_2": [2,5],"changing_lines_3": [3,6],"logic_memo": "震→乾→震→艮 性急さが裏目"},
-  {"target_name": "震行動失敗事例008-4","scale": "family","period": "2000-2024","story_summary": "急激な変化を求めて失敗したケース。","before_state": "停滞・閉塞","trigger_type": "意図的決断","action_type": "刷新・破壊","after_state": "どん底・危機","before_hex": "艮","trigger_hex": "乾","action_hex": "震","after_hex": "坎","pattern_type": "Failed_Attempt","outcome": "Failure","free_tags": ["#震","#急変失敗"],"source_type": "article","credibility_rank": "B","changing_lines_1": [2,5],"changing_lines_2": [3,6],"changing_lines_3": [1,4],"logic_memo": "艮→乾→震→坎 急変が裏目"},
-  {"target_name": "震行動失敗事例008-5","scale": "country","period": "2000-2024","story_summary": "強硬政策が失敗したケース。","before_state": "成長痛","trigger_type": "意図的決断","action_type": "攻める・挑戦","after_state": "停滞・閉塞","before_hex": "震","trigger_hex": "乾","action_hex": "震","after_hex": "艮","pattern_type": "Failed_Attempt","outcome": "Failure","free_tags": ["#震","#政策失敗"],"source_type": "article","credibility_rank": "B","changing_lines_1": [1,4],"changing_lines_2": [2,5],"changing_lines_3": [3,6],"logic_memo": "震→乾→震→艮 強硬策が裏目"}
+  {
+    "target_name": "震行動失敗事例008-1",
+    "scale": "company",
+    "period": "2000-2024",
+    "story_summary": "積極攻勢が裏目に出て失敗したケース。",
+    "before_state": "成長痛",
+    "trigger_type": "外部ショック",
+    "action_type": "攻める・挑戦",
+    "after_state": "崩壊・消滅",
+    "before_hex": "震",
+    "trigger_hex": "震",
+    "action_hex": "震",
+    "after_hex": "坤",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#攻勢失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "震→震→震→坤 積極攻勢が裏目"
+  },
+  {
+    "target_name": "震行動失敗事例008-2",
+    "scale": "company",
+    "period": "2000-2024",
+    "story_summary": "タイミング悪い拡大で失敗したケース。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "混乱・カオス",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "坎",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#拡大失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "艮→乾→震→坎 拡大タイミング失敗"
+  },
+  {
+    "target_name": "震行動失敗事例008-3",
+    "scale": "individual",
+    "period": "2000-2024",
+    "story_summary": "性急な行動で失敗したケース。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "縮小安定・生存",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "艮",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#性急失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "震→乾→震→艮 性急さが裏目"
+  },
+  {
+    "target_name": "震行動失敗事例008-4",
+    "scale": "family",
+    "period": "2000-2024",
+    "story_summary": "急激な変化を求めて失敗したケース。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "意図的決断",
+    "action_type": "刷新・破壊",
+    "after_state": "どん底・危機",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "坎",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#急変失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "logic_memo": "艮→乾→震→坎 急変が裏目"
+  },
+  {
+    "target_name": "震行動失敗事例008-5",
+    "scale": "country",
+    "period": "2000-2024",
+    "story_summary": "強硬政策が失敗したケース。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "停滞・閉塞",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "震",
+    "after_hex": "艮",
+    "pattern_type": "Failed_Attempt",
+    "outcome": "Failure",
+    "free_tags": [
+      "#震",
+      "#政策失敗"
+    ],
+    "source_type": "article",
+    "credibility_rank": "B",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "logic_memo": "震→乾→震→艮 強硬策が裏目"
+  }
 ]

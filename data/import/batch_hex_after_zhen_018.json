@@ -1,12 +1,432 @@
 [
-  {"target_name": "物価高で家計激変（2022-2024）","scale": "individual","period": "2022-2024","story_summary": "急激な物価上昇により一般家庭の家計管理が大きく変化した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#物価高", "#家計", "#インフレ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.stat.go.jp/"],"confidence_percent": 90,"evidence_notes": "急激な物価上昇により一般家庭家計管理大きく変化","logic_memo": "艮（安定）→震（物価高）→坎（耐える）→震（生活激変）。家計の危機"},
-  {"target_name": "賃上げで生活向上（2024）","scale": "individual","period": "2024","story_summary": "大企業を中心とした賃上げにより労働者の生活が改善した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#賃上げ", "#給料", "#生活"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.mhlw.go.jp/"],"confidence_percent": 90,"evidence_notes": "大企業中心賃上げにより労働者生活改善","logic_memo": "坎（物価高）→震（賃上げ）→乾（収入増）→震（生活向上）。好循環の始まり"},
-  {"target_name": "フリーランス保護法で働き方変化（2024）","scale": "individual","period": "2024","story_summary": "フリーランス保護法施行により、独立して働く人の環境が変化した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#フリーランス", "#法律", "#働き方"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.mhlw.go.jp/"],"confidence_percent": 85,"evidence_notes": "フリーランス保護法施行で独立して働く人環境変化","logic_memo": "坎（不安定）→震（法施行）→巽（対応）→震（環境変化）。保護の確立"},
-  {"target_name": "ChatGPTで仕事効率化（2023-2024）","scale": "individual","period": "2023-2024","story_summary": "ChatGPTなどAIツールの活用で多くの人の仕事が効率化された。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ChatGPT", "#AI", "#効率化"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "生活・暮らし","sources": ["https://openai.com/"],"confidence_percent": 90,"evidence_notes": "ChatGPTなどAIツール活用で多くの人の仕事効率化","logic_memo": "艮（従来）→震（AI登場）→巽（活用）→震（効率革命）。AIパートナー"},
-  {"target_name": "副業解禁で収入増（2022-2024）","scale": "individual","period": "2022-2024","story_summary": "副業解禁の流れが加速し、複数の収入源を持つ人が増加した。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#副業", "#収入", "#働き方改革"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.mhlw.go.jp/"],"confidence_percent": 85,"evidence_notes": "副業解禁流れ加速し複数収入源持つ人増加","logic_memo": "艮（本業のみ）→巽（解禁）→巽（開始）→震（収入増）。多様な働き方"},
-  {"target_name": "リスキリングで転職成功（2023-2024）","scale": "individual","period": "2023-2024","story_summary": "リスキリング支援制度を活用し、新しいキャリアに転身する人が増えた。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#リスキリング", "#転職", "#キャリア"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.mhlw.go.jp/"],"confidence_percent": 85,"evidence_notes": "リスキリング支援制度活用し新しいキャリアに転身する人増えた","logic_memo": "坎（行き詰まり）→震（制度）→巽（学習）→震（転身）。学び直しの力"},
-  {"target_name": "ポイント経済圏拡大で消費変化（2023-2024）","scale": "individual","period": "2023-2024","story_summary": "各社のポイント経済圏が拡大し、消費者の購買行動が変化した。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ポイント", "#経済圏", "#消費"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.rakuten.co.jp/"],"confidence_percent": 85,"evidence_notes": "各社ポイント経済圏拡大し消費者購買行動変化","logic_memo": "艮（現金）→巽（ポイント）→巽（活用）→震（消費変化）。ポイント経済"},
-  {"target_name": "健康意識向上で生活習慣変化（2022-2024）","scale": "individual","period": "2022-2024","story_summary": "コロナ禍を経て健康意識が向上し、生活習慣が大きく変化した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#健康", "#生活習慣", "#コロナ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.mhlw.go.jp/"],"confidence_percent": 85,"evidence_notes": "コロナ禍経て健康意識向上し生活習慣大きく変化","logic_memo": "坎（コロナ）→震（気づき）→巽（改善）→震（習慣変化）。健康への目覚め"},
-  {"target_name": "マイナンバーカード普及で行政手続き変化（2023-2024）","scale": "individual","period": "2023-2024","story_summary": "マイナンバーカードの普及により行政手続きのデジタル化が進んだ。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Mixed","free_tags": ["#マイナンバー", "#デジタル化", "#行政"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.digital.go.jp/"],"confidence_percent": 85,"evidence_notes": "マイナンバーカード普及により行政手続きデジタル化進んだ","logic_memo": "艮（紙手続き）→震（カード）→巽（活用）→震（デジタル化）。行政DX"},
-  {"target_name": "電気代高騰で省エネ意識向上（2022-2024）","scale": "individual","period": "2022-2024","story_summary": "電気料金の高騰により一般家庭の省エネ意識が向上した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "耐える・潜伏","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "坎","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#電気代", "#省エネ", "#家計"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "生活・暮らし","sources": ["https://www.meti.go.jp/"],"confidence_percent": 90,"evidence_notes": "電気料金高騰により一般家庭省エネ意識向上","logic_memo": "艮（安定）→震（高騰）→坎（耐える）→震（意識変化）。エネルギー危機"}
+  {
+    "target_name": "物価高で家計激変（2022-2024）",
+    "scale": "individual",
+    "period": "2022-2024",
+    "story_summary": "急激な物価上昇により一般家庭の家計管理が大きく変化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#物価高",
+      "#家計",
+      "#インフレ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.stat.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "急激な物価上昇により一般家庭家計管理大きく変化",
+    "logic_memo": "艮（安定）→震（物価高）→坎（耐える）→震（生活激変）。家計の危機"
+  },
+  {
+    "target_name": "賃上げで生活向上（2024）",
+    "scale": "individual",
+    "period": "2024",
+    "story_summary": "大企業を中心とした賃上げにより労働者の生活が改善した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#賃上げ",
+      "#給料",
+      "#生活"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.mhlw.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "大企業中心賃上げにより労働者生活改善",
+    "logic_memo": "坎（物価高）→震（賃上げ）→乾（収入増）→震（生活向上）。好循環の始まり"
+  },
+  {
+    "target_name": "フリーランス保護法で働き方変化（2024）",
+    "scale": "individual",
+    "period": "2024",
+    "story_summary": "フリーランス保護法施行により、独立して働く人の環境が変化した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#フリーランス",
+      "#法律",
+      "#働き方"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.mhlw.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "フリーランス保護法施行で独立して働く人環境変化",
+    "logic_memo": "坎（不安定）→震（法施行）→巽（対応）→震（環境変化）。保護の確立"
+  },
+  {
+    "target_name": "ChatGPTで仕事効率化（2023-2024）",
+    "scale": "individual",
+    "period": "2023-2024",
+    "story_summary": "ChatGPTなどAIツールの活用で多くの人の仕事が効率化された。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ChatGPT",
+      "#AI",
+      "#効率化"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://openai.com/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "ChatGPTなどAIツール活用で多くの人の仕事効率化",
+    "logic_memo": "艮（従来）→震（AI登場）→巽（活用）→震（効率革命）。AIパートナー"
+  },
+  {
+    "target_name": "副業解禁で収入増（2022-2024）",
+    "scale": "individual",
+    "period": "2022-2024",
+    "story_summary": "副業解禁の流れが加速し、複数の収入源を持つ人が増加した。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#副業",
+      "#収入",
+      "#働き方改革"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.mhlw.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "副業解禁流れ加速し複数収入源持つ人増加",
+    "logic_memo": "艮（本業のみ）→巽（解禁）→巽（開始）→震（収入増）。多様な働き方"
+  },
+  {
+    "target_name": "リスキリングで転職成功（2023-2024）",
+    "scale": "individual",
+    "period": "2023-2024",
+    "story_summary": "リスキリング支援制度を活用し、新しいキャリアに転身する人が増えた。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#リスキリング",
+      "#転職",
+      "#キャリア"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.mhlw.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "リスキリング支援制度活用し新しいキャリアに転身する人増えた",
+    "logic_memo": "坎（行き詰まり）→震（制度）→巽（学習）→震（転身）。学び直しの力"
+  },
+  {
+    "target_name": "ポイント経済圏拡大で消費変化（2023-2024）",
+    "scale": "individual",
+    "period": "2023-2024",
+    "story_summary": "各社のポイント経済圏が拡大し、消費者の購買行動が変化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ポイント",
+      "#経済圏",
+      "#消費"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.rakuten.co.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "各社ポイント経済圏拡大し消費者購買行動変化",
+    "logic_memo": "艮（現金）→巽（ポイント）→巽（活用）→震（消費変化）。ポイント経済"
+  },
+  {
+    "target_name": "健康意識向上で生活習慣変化（2022-2024）",
+    "scale": "individual",
+    "period": "2022-2024",
+    "story_summary": "コロナ禍を経て健康意識が向上し、生活習慣が大きく変化した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#健康",
+      "#生活習慣",
+      "#コロナ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.mhlw.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "コロナ禍経て健康意識向上し生活習慣大きく変化",
+    "logic_memo": "坎（コロナ）→震（気づき）→巽（改善）→震（習慣変化）。健康への目覚め"
+  },
+  {
+    "target_name": "マイナンバーカード普及で行政手続き変化（2023-2024）",
+    "scale": "individual",
+    "period": "2023-2024",
+    "story_summary": "マイナンバーカードの普及により行政手続きのデジタル化が進んだ。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#マイナンバー",
+      "#デジタル化",
+      "#行政"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.digital.go.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "マイナンバーカード普及により行政手続きデジタル化進んだ",
+    "logic_memo": "艮（紙手続き）→震（カード）→巽（活用）→震（デジタル化）。行政DX"
+  },
+  {
+    "target_name": "電気代高騰で省エネ意識向上（2022-2024）",
+    "scale": "individual",
+    "period": "2022-2024",
+    "story_summary": "電気料金の高騰により一般家庭の省エネ意識が向上した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "坎",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#電気代",
+      "#省エネ",
+      "#家計"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "生活・暮らし",
+    "sources": [
+      "https://www.meti.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "電気料金高騰により一般家庭省エネ意識向上",
+    "logic_memo": "艮（安定）→震（高騰）→坎（耐える）→震（意識変化）。エネルギー危機"
+  }
 ]

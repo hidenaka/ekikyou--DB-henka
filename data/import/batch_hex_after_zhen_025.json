@@ -1,12 +1,432 @@
 [
-  {"target_name": "生成AIで創作活動激変（2023-2024）","scale": "other","period": "2023-2024","story_summary": "生成AIの登場で音楽、イラスト、文章など創作活動が激変した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "分散・探索","after_state": "混乱・衰退","before_hex": "艮","trigger_hex": "震","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#生成AI", "#創作", "#クリエイター"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "エンターテインメント","sources": ["https://www.bunka.go.jp/"],"confidence_percent": 90,"evidence_notes": "生成AI登場で音楽、イラスト、文章など創作活動激変","logic_memo": "艮（従来）→震（AI登場）→巽（活用）→震（創作激変）。AIと創造性"},
-  {"target_name": "動画配信サービス競争激化（2022-2024）","scale": "other","period": "2022-2024","story_summary": "Netflix、Amazon等の動画配信サービスの競争が激化し、業界が再編された。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "分散・探索","after_state": "混乱・衰退","before_hex": "乾","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#動画配信", "#Netflix", "#競争"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "アメリカ","main_domain": "エンターテインメント","sources": ["https://variety.com/"],"confidence_percent": 90,"evidence_notes": "Netflix、Amazon等動画配信サービス競争激化し業界再編","logic_memo": "乾（成長）→巽（競争）→巽（淘汰）→震（業界再編）。配信戦争"},
-  {"target_name": "K-POP世界席巻が継続（2022-2024）","scale": "other","period": "2022-2024","story_summary": "K-POPの世界的人気が継続し、音楽産業に影響を与え続けた。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#KPOP", "#音楽", "#韓流"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "韓国","main_domain": "エンターテインメント","sources": ["https://www.billboard.com/"],"confidence_percent": 90,"evidence_notes": "K-POP世界的人気継続し音楽産業に影響与え続けた","logic_memo": "乾（人気）→乾（拡大）→乾（成長）→震（席巻）。韓流の力"},
-  {"target_name": "日本アニメが世界で評価高まる（2022-2024）","scale": "other","period": "2022-2024","story_summary": "日本アニメの国際的評価が高まり、関連ビジネスが拡大した。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#アニメ", "#日本", "#世界"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "エンターテインメント","sources": ["https://www.animenewsnetwork.com/"],"confidence_percent": 90,"evidence_notes": "日本アニメ国際的評価高まり関連ビジネス拡大","logic_memo": "乾（人気）→乾（拡大）→乾（成長）→震（評価向上）。クールジャパン"},
-  {"target_name": "ゲーム実況・配信が職業に定着（2022-2024）","scale": "other","period": "2022-2024","story_summary": "ゲーム実況や配信が職業として社会に定着した。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ゲーム実況", "#配信", "#YouTuber"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "エンターテインメント","sources": ["https://www.youtube.com/"],"confidence_percent": 85,"evidence_notes": "ゲーム実況や配信が職業として社会に定着","logic_memo": "乾（成長）→乾（拡大）→乾（定着）→震（職業化）。新しい働き方"},
-  {"target_name": "VTuber市場が急拡大（2022-2024）","scale": "other","period": "2022-2024","story_summary": "VTuber市場が急拡大し、エンターテインメント産業の一角を占めた。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#VTuber", "#バーチャル", "#エンタメ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "エンターテインメント","sources": ["https://hololive.hololivepro.com/"],"confidence_percent": 85,"evidence_notes": "VTuber市場急拡大しエンターテインメント産業の一角占めた","logic_memo": "乾（成長）→乾（拡大）→乾（急成長）→震（産業化）。バーチャルの時代"},
-  {"target_name": "TikTokが若者文化を席巻（2022-2024）","scale": "other","period": "2022-2024","story_summary": "TikTokが若者の情報収集やトレンド発信の中心となった。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#TikTok", "#若者", "#SNS"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "エンターテインメント","sources": ["https://www.tiktok.com/"],"confidence_percent": 90,"evidence_notes": "TikTokが若者の情報収集やトレンド発信の中心に","logic_memo": "乾（普及）→乾（拡大）→乾（席巻）→震（文化の中心）。ショート動画時代"},
-  {"target_name": "ポッドキャスト市場拡大（2022-2024）","scale": "other","period": "2022-2024","story_summary": "ポッドキャスト市場が拡大し、音声メディアが再評価された。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ポッドキャスト", "#音声", "#メディア"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "エンターテインメント","sources": ["https://podcasts.apple.com/"],"confidence_percent": 85,"evidence_notes": "ポッドキャスト市場拡大し音声メディア再評価","logic_memo": "艮（ニッチ）→乾（成長）→乾（拡大）→震（市場拡大）。音声の復権"},
-  {"target_name": "ライブエンタメ完全復活（2023-2024）","scale": "other","period": "2023-2024","story_summary": "コロナ禍で停滞したライブエンタメが完全復活し、過去最高の動員を記録した。","before_state": "混乱・衰退","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "坎","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Success","free_tags": ["#ライブ", "#コンサート", "#復活"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "エンターテインメント","sources": ["https://pia.jp/"],"confidence_percent": 90,"evidence_notes": "コロナ禍で停滞したライブエンタメ完全復活し過去最高動員記録","logic_memo": "坎（コロナ禍）→震（回復）→乾（拡大）→震（完全復活）。リアルの価値"},
-  {"target_name": "メタバース熱が冷める（2023-2024）","scale": "other","period": "2023-2024","story_summary": "メタバースへの期待が一時的に後退し、現実的な活用法が模索された。","before_state": "拡大・繁栄","trigger_type": "外部ショック","action_type": "撤退・収縮","after_state": "混乱・衰退","before_hex": "乾","trigger_hex": "震","action_hex": "艮","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#メタバース", "#VR", "#期待"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "アメリカ","main_domain": "テクノロジー","sources": ["https://www.meta.com/"],"confidence_percent": 85,"evidence_notes": "メタバースへの期待一時的に後退し現実的活用法模索","logic_memo": "乾（期待）→震（現実）→艮（見直し）→震（冷却）。バブルの終焉"}
+  {
+    "target_name": "生成AIで創作活動激変（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "生成AIの登場で音楽、イラスト、文章など創作活動が激変した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "分散・探索",
+    "after_state": "混乱・衰退",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#生成AI",
+      "#創作",
+      "#クリエイター"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://www.bunka.go.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "生成AI登場で音楽、イラスト、文章など創作活動激変",
+    "logic_memo": "艮（従来）→震（AI登場）→巽（活用）→震（創作激変）。AIと創造性"
+  },
+  {
+    "target_name": "動画配信サービス競争激化（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "Netflix、Amazon等の動画配信サービスの競争が激化し、業界が再編された。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "混乱・衰退",
+    "before_hex": "乾",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#動画配信",
+      "#Netflix",
+      "#競争"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "アメリカ",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://variety.com/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "Netflix、Amazon等動画配信サービス競争激化し業界再編",
+    "logic_memo": "乾（成長）→巽（競争）→巽（淘汰）→震（業界再編）。配信戦争"
+  },
+  {
+    "target_name": "K-POP世界席巻が継続（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "K-POPの世界的人気が継続し、音楽産業に影響を与え続けた。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#KPOP",
+      "#音楽",
+      "#韓流"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "韓国",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://www.billboard.com/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "K-POP世界的人気継続し音楽産業に影響与え続けた",
+    "logic_memo": "乾（人気）→乾（拡大）→乾（成長）→震（席巻）。韓流の力"
+  },
+  {
+    "target_name": "日本アニメが世界で評価高まる（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "日本アニメの国際的評価が高まり、関連ビジネスが拡大した。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#アニメ",
+      "#日本",
+      "#世界"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://www.animenewsnetwork.com/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "日本アニメ国際的評価高まり関連ビジネス拡大",
+    "logic_memo": "乾（人気）→乾（拡大）→乾（成長）→震（評価向上）。クールジャパン"
+  },
+  {
+    "target_name": "ゲーム実況・配信が職業に定着（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "ゲーム実況や配信が職業として社会に定着した。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ゲーム実況",
+      "#配信",
+      "#YouTuber"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://www.youtube.com/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "ゲーム実況や配信が職業として社会に定着",
+    "logic_memo": "乾（成長）→乾（拡大）→乾（定着）→震（職業化）。新しい働き方"
+  },
+  {
+    "target_name": "VTuber市場が急拡大（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "VTuber市場が急拡大し、エンターテインメント産業の一角を占めた。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#VTuber",
+      "#バーチャル",
+      "#エンタメ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://hololive.hololivepro.com/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "VTuber市場急拡大しエンターテインメント産業の一角占めた",
+    "logic_memo": "乾（成長）→乾（拡大）→乾（急成長）→震（産業化）。バーチャルの時代"
+  },
+  {
+    "target_name": "TikTokが若者文化を席巻（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "TikTokが若者の情報収集やトレンド発信の中心となった。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#TikTok",
+      "#若者",
+      "#SNS"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://www.tiktok.com/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "TikTokが若者の情報収集やトレンド発信の中心に",
+    "logic_memo": "乾（普及）→乾（拡大）→乾（席巻）→震（文化の中心）。ショート動画時代"
+  },
+  {
+    "target_name": "ポッドキャスト市場拡大（2022-2024）",
+    "scale": "other",
+    "period": "2022-2024",
+    "story_summary": "ポッドキャスト市場が拡大し、音声メディアが再評価された。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ポッドキャスト",
+      "#音声",
+      "#メディア"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://podcasts.apple.com/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "ポッドキャスト市場拡大し音声メディア再評価",
+    "logic_memo": "艮（ニッチ）→乾（成長）→乾（拡大）→震（市場拡大）。音声の復権"
+  },
+  {
+    "target_name": "ライブエンタメ完全復活（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "コロナ禍で停滞したライブエンタメが完全復活し、過去最高の動員を記録した。",
+    "before_state": "混乱・衰退",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "坎",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Success",
+    "free_tags": [
+      "#ライブ",
+      "#コンサート",
+      "#復活"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "エンターテインメント",
+    "sources": [
+      "https://pia.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "コロナ禍で停滞したライブエンタメ完全復活し過去最高動員記録",
+    "logic_memo": "坎（コロナ禍）→震（回復）→乾（拡大）→震（完全復活）。リアルの価値"
+  },
+  {
+    "target_name": "メタバース熱が冷める（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "メタバースへの期待が一時的に後退し、現実的な活用法が模索された。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "外部ショック",
+    "action_type": "撤退・収縮",
+    "after_state": "混乱・衰退",
+    "before_hex": "乾",
+    "trigger_hex": "震",
+    "action_hex": "艮",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#メタバース",
+      "#VR",
+      "#期待"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "アメリカ",
+    "main_domain": "テクノロジー",
+    "sources": [
+      "https://www.meta.com/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "メタバースへの期待一時的に後退し現実的活用法模索",
+    "logic_memo": "乾（期待）→震（現実）→艮（見直し）→震（冷却）。バブルの終焉"
+  }
 ]

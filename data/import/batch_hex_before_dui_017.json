@@ -14,14 +14,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Mixed",
-    "free_tags": ["#地方銀行", "#マイナス金利", "#フィー"],
+    "free_tags": [
+      "#地方銀行",
+      "#マイナス金利",
+      "#フィー"
+    ],
     "source_type": "news",
     "credibility_rank": "A",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.fsa.go.jp/"],
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
     "confidence_percent": 85,
     "evidence_notes": "地域No.1地銀がマイナス金利で収益悪化。6年フィー・コンサル強化。存続",
     "logic_memo": "兌（トップ）→震（マイナス金利）→震（転換）→坤（存続）。地域金融の役割"
@@ -41,14 +56,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Mixed",
-    "free_tags": ["#信用金庫", "#人口減少", "#合併"],
+    "free_tags": [
+      "#信用金庫",
+      "#人口減少",
+      "#合併"
+    ],
     "source_type": "news",
     "credibility_rank": "A",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.fsa.go.jp/"],
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
     "confidence_percent": 85,
     "evidence_notes": "地域密着信金が人口減で預金・貸出減。10年合併・統廃合。存続",
     "logic_memo": "兌（信頼）→坎（人口減）→震（合併）→坤（縮小存続）。地域の支え"
@@ -68,14 +98,29 @@
     "after_hex": "離",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#損保", "#自動運転", "#サイバー保険"],
+    "free_tags": [
+      "#損保",
+      "#自動運転",
+      "#サイバー保険"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.fsa.go.jp/"],
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "自動車保険高シェア損保が自動運転を見据え。5年サイバー・新リスク商品転換",
     "logic_memo": "兌（シェア）→震（自動運転）→震（転換）→離（成功）。リスクの再定義"
@@ -95,14 +140,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#生保", "#少子高齢化", "#医療保険"],
+    "free_tags": [
+      "#生保",
+      "#少子高齢化",
+      "#医療保険"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.fsa.go.jp/"],
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "死亡保険高シェア生保が少子高齢化で契約減。7年医療・介護シフト。存続",
     "logic_memo": "兌（シェア）→坎（少子高齢化）→震（シフト）→坤（存続）。保障の形"
@@ -122,14 +182,29 @@
     "after_hex": "坤",
     "pattern_type": "Endurance",
     "outcome": "Success",
-    "free_tags": ["#証券", "#ネット競争", "#資産運用"],
+    "free_tags": [
+      "#証券",
+      "#ネット競争",
+      "#資産運用"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.fsa.go.jp/"],
+    "sources": [
+      "https://www.fsa.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "富裕層向け証券がネット証券競争で苦戦。7年コンサル・相続対策で差別化",
     "logic_memo": "兌（人気）→震（ネット競争）→坎（差別化努力）→坤（存続）。対面の価値"
@@ -149,14 +224,29 @@
     "after_hex": "坤",
     "pattern_type": "Managed_Decline",
     "outcome": "Mixed",
-    "free_tags": ["#不動産", "#リーマン", "#縮小"],
+    "free_tags": [
+      "#不動産",
+      "#リーマン",
+      "#縮小"
+    ],
     "source_type": "news",
     "credibility_rank": "A",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.mlit.go.jp/"],
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
     "confidence_percent": 85,
     "evidence_notes": "リーマン前急成長不動産が市況悪化で危機。7年資産売却・縮小で再建",
     "logic_memo": "兌（成長）→震（リーマン）→艮（縮小）→坤（存続）。生き残り優先"
@@ -176,14 +266,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#住宅", "#少子化", "#リフォーム"],
+    "free_tags": [
+      "#住宅",
+      "#少子化",
+      "#リフォーム"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.mlit.go.jp/"],
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "注文住宅高シェアが少子化で需要減。7年リフォーム・賃貸シフト。存続",
     "logic_memo": "兌（シェア）→坎（少子化）→震（シフト）→坤（存続）。住まいの形"
@@ -203,14 +308,29 @@
     "after_hex": "坤",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#建設", "#公共事業削減", "#民間"],
+    "free_tags": [
+      "#建設",
+      "#公共事業削減",
+      "#民間"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.mlit.go.jp/"],
+    "sources": [
+      "https://www.mlit.go.jp/"
+    ],
     "confidence_percent": 80,
     "evidence_notes": "公共工事安定建設が事業削減で売上減。8年民間・維持管理シフト。存続",
     "logic_memo": "兌（安定）→坎（削減）→震（シフト）→坤（存続）。インフラを支える"
@@ -230,14 +350,29 @@
     "after_hex": "離",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#設計事務所", "#BIM", "#デジタル"],
+    "free_tags": [
+      "#設計事務所",
+      "#BIM",
+      "#デジタル"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [2, 5],
-    "changing_lines_2": [3, 6],
-    "changing_lines_3": [1, 4],
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
     "country": "日本",
-    "sources": ["https://www.jia.or.jp/"],
+    "sources": [
+      "https://www.jia.or.jp/"
+    ],
     "confidence_percent": 75,
     "evidence_notes": "受賞歴設計事務所がBIM普及で対応遅れ。7年デジタル人材・改革で復活",
     "logic_memo": "兌（評価）→震（BIM）→震（改革）→離（復活）。設計の進化"
@@ -257,14 +392,29 @@
     "after_hex": "離",
     "pattern_type": "Crisis_Pivot",
     "outcome": "Success",
-    "free_tags": ["#法律事務所", "#リーガルテック", "#AI"],
+    "free_tags": [
+      "#法律事務所",
+      "#リーガルテック",
+      "#AI"
+    ],
     "source_type": "news",
     "credibility_rank": "B",
-    "changing_lines_1": [3, 5],
-    "changing_lines_2": [2, 4],
-    "changing_lines_3": [1, 6],
+    "changing_lines_1": [
+      3,
+      5
+    ],
+    "changing_lines_2": [
+      2,
+      4
+    ],
+    "changing_lines_3": [
+      1,
+      6
+    ],
     "country": "日本",
-    "sources": ["https://www.nichibenren.or.jp/"],
+    "sources": [
+      "https://www.nichibenren.or.jp/"
+    ],
     "confidence_percent": 75,
     "evidence_notes": "大企業顧客法律事務所がリーガルテックで危機感。6年AI活用・効率化で差別化",
     "logic_memo": "兌（評判）→震（リーガルテック）→震（改革）→離（差別化成功）。法務の進化"

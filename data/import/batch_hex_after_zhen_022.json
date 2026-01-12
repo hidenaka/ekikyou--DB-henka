@@ -1,12 +1,432 @@
 [
-  {"target_name": "パリ五輪で世界が熱狂（2024）","scale": "other","period": "2024","story_summary": "パリオリンピックが開催され、世界中がスポーツの祭典に熱狂した。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "輝く・表現","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "離","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#パリ五輪", "#オリンピック", "#スポーツ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "フランス","main_domain": "スポーツ","sources": ["https://olympics.com/"],"confidence_percent": 95,"evidence_notes": "パリオリンピック開催され世界中がスポーツ祭典に熱狂","logic_memo": "艮（準備）→震（開催）→離（輝き）→震（熱狂）。100年ぶりのパリ"},
-  {"target_name": "大谷翔平がドジャースで大活躍（2024）","scale": "individual","period": "2024","story_summary": "大谷翔平がドジャースに移籍し、50-50達成とワールドシリーズ制覇を果たした。","before_state": "拡大・繁栄","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#大谷翔平", "#ドジャース", "#野球"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "アメリカ","main_domain": "スポーツ","sources": ["https://www.mlb.com/"],"confidence_percent": 95,"evidence_notes": "大谷翔平ドジャース移籍し50-50達成とワールドシリーズ制覇","logic_memo": "乾（活躍）→震（移籍）→乾（大活躍）→震（歴史的偉業）。二刀流の頂点"},
-  {"target_name": "井上尚弥が4団体統一王者に（2023-2024）","scale": "individual","period": "2023-2024","story_summary": "井上尚弥がスーパーバンタム級4団体統一を達成し、世界に衝撃を与えた。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#井上尚弥", "#ボクシング", "#統一王者"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "スポーツ","sources": ["https://www.boxingnews.jp/"],"confidence_percent": 95,"evidence_notes": "井上尚弥スーパーバンタム級4団体統一達成し世界に衝撃","logic_memo": "乾（王者）→乾（挑戦）→乾（統一）→震（衝撃）。モンスターの伝説"},
-  {"target_name": "藤井聡太が八冠達成（2023）","scale": "individual","period": "2023","story_summary": "藤井聡太が将棋の全八大タイトルを制覇し、史上初の八冠を達成した。","before_state": "拡大・繁栄","trigger_type": "自然推移","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "乾","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#藤井聡太", "#将棋", "#八冠"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "スポーツ","sources": ["https://www.shogi.or.jp/"],"confidence_percent": 95,"evidence_notes": "藤井聡太が将棋全八大タイトル制覇し史上初八冠達成","logic_memo": "乾（王者）→乾（挑戦）→乾（制覇）→震（歴史的瞬間）。将棋界の金字塔"},
-  {"target_name": "サッカー日本代表がアジア杯準優勝（2024）","scale": "other","period": "2024","story_summary": "サッカー日本代表がアジアカップで決勝に進出し、準優勝を果たした。","before_state": "拡大・繁栄","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "混乱・衰退","before_hex": "乾","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Crisis_Pivot","outcome": "Mixed","free_tags": ["#サッカー", "#日本代表", "#アジアカップ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "スポーツ","sources": ["https://www.jfa.jp/"],"confidence_percent": 90,"evidence_notes": "サッカー日本代表アジアカップ決勝進出し準優勝","logic_memo": "乾（好調）→震（大会）→乾（勝ち進み）→震（敗戦）。あと一歩の悔しさ"},
-  {"target_name": "ゴルフ松山英樹がマスターズ優勝争い（2024）","scale": "individual","period": "2024","story_summary": "松山英樹がマスターズで優勝争いを演じ、日本中を沸かせた。","before_state": "拡大・繁栄","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#松山英樹", "#ゴルフ", "#マスターズ"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "スポーツ","sources": ["https://www.masters.com/"],"confidence_percent": 90,"evidence_notes": "松山英樹マスターズで優勝争い演じ日本中沸かせた","logic_memo": "乾（好調）→震（大会）→乾（活躍）→震（熱狂）。世界への挑戦"},
-  {"target_name": "テニス世界ランキングで日本人活躍（2024）","scale": "individual","period": "2024","story_summary": "テニスで日本人選手が世界ランキングで躍進し、注目を集めた。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#テニス", "#世界ランキング", "#日本人"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "スポーツ","sources": ["https://www.atptour.com/"],"confidence_percent": 85,"evidence_notes": "テニスで日本人選手世界ランキングで躍進し注目","logic_memo": "艮（無名）→震（勝利）→乾（躍進）→震（注目）。テニス界の新星"},
-  {"target_name": "バレーボール男子がパリ五輪で躍進（2024）","scale": "other","period": "2024","story_summary": "バレーボール男子日本代表がパリ五輪で躍進し、メダル争いを演じた。","before_state": "安定・停止","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#バレーボール", "#パリ五輪", "#日本代表"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "スポーツ","sources": ["https://www.jva.or.jp/"],"confidence_percent": 90,"evidence_notes": "バレーボール男子日本代表パリ五輪で躍進しメダル争い","logic_memo": "艮（低迷）→震（大会）→乾（躍進）→震（快進撃）。復活のバレー"},
-  {"target_name": "eスポーツがオリンピック種目に検討（2024）","scale": "other","period": "2024","story_summary": "eスポーツのオリンピック正式種目化に向けた議論が本格化した。","before_state": "安定・停止","trigger_type": "自然推移","action_type": "分散・探索","after_state": "拡大・繁栄","before_hex": "艮","trigger_hex": "巽","action_hex": "巽","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#eスポーツ", "#オリンピック", "#ゲーム"],"source_type": "news","credibility_rank": "A","changing_lines_1": [1, 4],"changing_lines_2": [2, 5],"changing_lines_3": [3, 6],"country": "日本","main_domain": "スポーツ","sources": ["https://olympics.com/"],"confidence_percent": 85,"evidence_notes": "eスポーツオリンピック正式種目化に向けた議論本格化","logic_memo": "艮（エンタメ）→巽（検討）→巽（議論）→震（検討本格化）。デジタルスポーツ"},
-  {"target_name": "ラグビー日本代表が世界と互角（2023-2024）","scale": "other","period": "2023-2024","story_summary": "ラグビー日本代表が世界の強豪と互角に戦い、成長を示した。","before_state": "拡大・繁栄","trigger_type": "外部ショック","action_type": "集中・拡大","after_state": "拡大・繁栄","before_hex": "乾","trigger_hex": "震","action_hex": "乾","after_hex": "震","pattern_type": "Breakthrough","outcome": "Success","free_tags": ["#ラグビー", "#日本代表", "#世界"],"source_type": "news","credibility_rank": "A","changing_lines_1": [2, 5],"changing_lines_2": [3, 6],"changing_lines_3": [1, 4],"country": "日本","main_domain": "スポーツ","sources": ["https://www.rugby-japan.jp/"],"confidence_percent": 85,"evidence_notes": "ラグビー日本代表世界強豪と互角に戦い成長示した","logic_memo": "乾（成長）→震（対戦）→乾（健闘）→震（互角）。世界への挑戦"}
+  {
+    "target_name": "パリ五輪で世界が熱狂（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "パリオリンピックが開催され、世界中がスポーツの祭典に熱狂した。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "輝く・表現",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "離",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#パリ五輪",
+      "#オリンピック",
+      "#スポーツ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "フランス",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://olympics.com/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "パリオリンピック開催され世界中がスポーツ祭典に熱狂",
+    "logic_memo": "艮（準備）→震（開催）→離（輝き）→震（熱狂）。100年ぶりのパリ"
+  },
+  {
+    "target_name": "大谷翔平がドジャースで大活躍（2024）",
+    "scale": "individual",
+    "period": "2024",
+    "story_summary": "大谷翔平がドジャースに移籍し、50-50達成とワールドシリーズ制覇を果たした。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#大谷翔平",
+      "#ドジャース",
+      "#野球"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "アメリカ",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.mlb.com/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "大谷翔平ドジャース移籍し50-50達成とワールドシリーズ制覇",
+    "logic_memo": "乾（活躍）→震（移籍）→乾（大活躍）→震（歴史的偉業）。二刀流の頂点"
+  },
+  {
+    "target_name": "井上尚弥が4団体統一王者に（2023-2024）",
+    "scale": "individual",
+    "period": "2023-2024",
+    "story_summary": "井上尚弥がスーパーバンタム級4団体統一を達成し、世界に衝撃を与えた。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#井上尚弥",
+      "#ボクシング",
+      "#統一王者"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.boxingnews.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "井上尚弥スーパーバンタム級4団体統一達成し世界に衝撃",
+    "logic_memo": "乾（王者）→乾（挑戦）→乾（統一）→震（衝撃）。モンスターの伝説"
+  },
+  {
+    "target_name": "藤井聡太が八冠達成（2023）",
+    "scale": "individual",
+    "period": "2023",
+    "story_summary": "藤井聡太が将棋の全八大タイトルを制覇し、史上初の八冠を達成した。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "自然推移",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#藤井聡太",
+      "#将棋",
+      "#八冠"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.shogi.or.jp/"
+    ],
+    "confidence_percent": 95,
+    "evidence_notes": "藤井聡太が将棋全八大タイトル制覇し史上初八冠達成",
+    "logic_memo": "乾（王者）→乾（挑戦）→乾（制覇）→震（歴史的瞬間）。将棋界の金字塔"
+  },
+  {
+    "target_name": "サッカー日本代表がアジア杯準優勝（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "サッカー日本代表がアジアカップで決勝に進出し、準優勝を果たした。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "混乱・衰退",
+    "before_hex": "乾",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Crisis_Pivot",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#サッカー",
+      "#日本代表",
+      "#アジアカップ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.jfa.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "サッカー日本代表アジアカップ決勝進出し準優勝",
+    "logic_memo": "乾（好調）→震（大会）→乾（勝ち進み）→震（敗戦）。あと一歩の悔しさ"
+  },
+  {
+    "target_name": "ゴルフ松山英樹がマスターズ優勝争い（2024）",
+    "scale": "individual",
+    "period": "2024",
+    "story_summary": "松山英樹がマスターズで優勝争いを演じ、日本中を沸かせた。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#松山英樹",
+      "#ゴルフ",
+      "#マスターズ"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.masters.com/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "松山英樹マスターズで優勝争い演じ日本中沸かせた",
+    "logic_memo": "乾（好調）→震（大会）→乾（活躍）→震（熱狂）。世界への挑戦"
+  },
+  {
+    "target_name": "テニス世界ランキングで日本人活躍（2024）",
+    "scale": "individual",
+    "period": "2024",
+    "story_summary": "テニスで日本人選手が世界ランキングで躍進し、注目を集めた。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#テニス",
+      "#世界ランキング",
+      "#日本人"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.atptour.com/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "テニスで日本人選手世界ランキングで躍進し注目",
+    "logic_memo": "艮（無名）→震（勝利）→乾（躍進）→震（注目）。テニス界の新星"
+  },
+  {
+    "target_name": "バレーボール男子がパリ五輪で躍進（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "バレーボール男子日本代表がパリ五輪で躍進し、メダル争いを演じた。",
+    "before_state": "安定・停止",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#バレーボール",
+      "#パリ五輪",
+      "#日本代表"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.jva.or.jp/"
+    ],
+    "confidence_percent": 90,
+    "evidence_notes": "バレーボール男子日本代表パリ五輪で躍進しメダル争い",
+    "logic_memo": "艮（低迷）→震（大会）→乾（躍進）→震（快進撃）。復活のバレー"
+  },
+  {
+    "target_name": "eスポーツがオリンピック種目に検討（2024）",
+    "scale": "other",
+    "period": "2024",
+    "story_summary": "eスポーツのオリンピック正式種目化に向けた議論が本格化した。",
+    "before_state": "安定・停止",
+    "trigger_type": "自然推移",
+    "action_type": "分散・探索",
+    "after_state": "拡大・繁栄",
+    "before_hex": "艮",
+    "trigger_hex": "巽",
+    "action_hex": "巽",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#eスポーツ",
+      "#オリンピック",
+      "#ゲーム"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      1,
+      4
+    ],
+    "changing_lines_2": [
+      2,
+      5
+    ],
+    "changing_lines_3": [
+      3,
+      6
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://olympics.com/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "eスポーツオリンピック正式種目化に向けた議論本格化",
+    "logic_memo": "艮（エンタメ）→巽（検討）→巽（議論）→震（検討本格化）。デジタルスポーツ"
+  },
+  {
+    "target_name": "ラグビー日本代表が世界と互角（2023-2024）",
+    "scale": "other",
+    "period": "2023-2024",
+    "story_summary": "ラグビー日本代表が世界の強豪と互角に戦い、成長を示した。",
+    "before_state": "拡大・繁栄",
+    "trigger_type": "外部ショック",
+    "action_type": "集中・拡大",
+    "after_state": "拡大・繁栄",
+    "before_hex": "乾",
+    "trigger_hex": "震",
+    "action_hex": "乾",
+    "after_hex": "震",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#ラグビー",
+      "#日本代表",
+      "#世界"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "changing_lines_1": [
+      2,
+      5
+    ],
+    "changing_lines_2": [
+      3,
+      6
+    ],
+    "changing_lines_3": [
+      1,
+      4
+    ],
+    "country": "日本",
+    "main_domain": "スポーツ",
+    "sources": [
+      "https://www.rugby-japan.jp/"
+    ],
+    "confidence_percent": 85,
+    "evidence_notes": "ラグビー日本代表世界強豪と互角に戦い成長示した",
+    "logic_memo": "乾（成長）→震（対戦）→乾（健闘）→震（互角）。世界への挑戦"
+  }
 ]
