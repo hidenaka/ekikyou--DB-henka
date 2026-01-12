@@ -30,6 +30,132 @@ HEXAGRAM_MASTER_PATH = PROJECT_ROOT / "data/hexagrams/hexagram_master.json"
 YAO_MASTER_PATH = PROJECT_ROOT / "data/hexagrams/yao_master.json"
 
 # ==============================================================================
+# 改善版スコアリング定数（v2）
+# ==============================================================================
+
+# 基本スコア定数
+PATTERN_BASE_SCORE = 5.0       # pattern_typeの最大スコア
+PATTERN_DECAY = 0.5            # 順位ごとの減衰
+STATE_SCORE = 2.0              # before/after_stateのスコア
+KEYWORD_BASE_SCORE = 4.0       # キーワードマッチ基本スコア（改善: 1.5→4.0）
+MEANING_PHRASE_SCORE = 1.0     # meaning部分一致スコア（改善: 0.5→1.0）
+
+# 新規追加スコア
+HEXAGRAM_NAME_BONUS = 10.0     # 卦名完全一致ボーナス（新規）
+SPECIFIC_KEYWORD_SCORE = 3.0   # 卦固有キーワードボーナス（新規）
+
+# ==============================================================================
+# 卦名エイリアス（短縮名→卦ID）- 直接マッチ用
+# ==============================================================================
+HEXAGRAM_NAME_ALIASES: Dict[int, List[str]] = {
+    1: ["乾", "乾為天"],
+    2: ["坤", "坤為地"],
+    3: ["屯", "水雷屯", "スタートアップ苦難", "創業苦難"],
+    4: ["蒙", "山水蒙"],
+    5: ["需", "水天需"],
+    6: ["訟", "天水訟"],
+    7: ["師", "地水師", "大規模動員", "組織力結集"],
+    8: ["比", "水地比"],
+    9: ["小畜", "風天小畜"],
+    10: ["履", "天沢履", "虎の尾", "コンプライアンス重視"],
+    11: ["泰", "地天泰"],
+    12: ["否", "天地否"],
+    13: ["同人", "天火同人", "業界連合", "オープンイノベーション"],
+    14: ["大有", "火天大有"],
+    15: ["謙", "地山謙"],
+    16: ["豫", "雷地豫"],
+    17: ["随", "沢雷随"],
+    18: ["蠱", "山風蠱"],
+    19: ["臨", "地沢臨"],
+    20: ["観", "風地観"],
+    21: ["噬嗑", "火雷噬嗑"],
+    22: ["賁", "山火賁"],
+    23: ["剥", "山地剥"],
+    24: ["復", "地雷復"],
+    25: ["无妄", "天雷无妄", "誠実経営", "天災", "不可抗力"],
+    26: ["大畜", "山天大畜", "内部留保", "人材蓄積", "技術蓄積"],
+    27: ["頤", "山雷頤"],
+    28: ["大過", "沢風大過", "過剰投資", "バブル", "オーバーストレッチ"],
+    29: ["坎", "坎為水"],
+    30: ["離", "離為火"],
+    31: ["咸", "沢山咸", "顧客共感", "市場感応"],
+    32: ["恒", "雷風恒"],
+    33: ["遯", "天山遯"],
+    34: ["大壮", "雷天大壮", "積極攻勢", "勢いに乗る"],
+    35: ["晋", "火地晋"],
+    36: ["明夷", "地火明夷"],
+    37: ["家人", "風火家人"],
+    38: ["睽", "火沢睽"],
+    39: ["蹇", "水山蹇"],
+    40: ["解", "雷水解"],
+    41: ["損", "山沢損"],
+    42: ["益", "風雷益"],
+    43: ["夬", "沢天夬"],
+    44: ["姤", "天風姤"],
+    45: ["萃", "沢地萃", "人材集結", "チームビルディング"],
+    46: ["升", "地風升"],
+    47: ["困", "沢水困"],
+    48: ["井", "水風井"],
+    49: ["革", "沢火革"],
+    50: ["鼎", "火風鼎"],
+    51: ["震", "震為雷"],
+    52: ["艮", "艮為山"],
+    53: ["漸", "風山漸"],
+    54: ["帰妹", "雷沢帰妹", "被買収", "子会社化"],
+    55: ["豊", "雷火豊"],
+    56: ["旅", "火山旅", "海外展開", "一時プロジェクト"],
+    57: ["巽", "巽為風"],
+    58: ["兌", "兌為沢"],
+    59: ["渙", "風水渙", "分社化", "スピンオフ", "組織分散"],
+    60: ["節", "水沢節"],
+    61: ["中孚", "風沢中孚"],
+    62: ["小過", "雷山小過"],
+    63: ["既済", "水火既済"],
+    64: ["未済", "火水未済"],
+}
+
+# ==============================================================================
+# 卦固有キーワード辞書（希少卦の識別強化）
+# ==============================================================================
+HEXAGRAM_SPECIFIC_KEYWORDS: Dict[int, List[str]] = {
+    3: ["産みの苦しみ", "困難な始まり", "創業の苦労", "立ち上げ期", "新規参入の壁", "スタートアップ初期", "創業期混乱"],
+    7: ["大規模動員", "組織力結集", "統率強化", "全社プロジェクト", "総力戦", "軍事的", "組織的対応"],
+    10: ["虎の尾を踏む", "慎重に", "礼儀正しく", "コンプライアンス", "危険を避け", "リスク管理", "法務重視", "ガバナンス"],
+    13: ["同志が集まり", "業界団体", "コンソーシアム", "標準化活動", "オープンソース", "同業協調", "志の共有"],
+    25: ["誠実", "天命", "無妄", "偽りなき", "正道経営", "予期せぬ事態", "自然災害", "不可抗力"],
+    26: ["蓄積", "蓄える", "内部留保", "人材育成", "力を溜める", "抑制", "養成", "貯蓄", "内に力", "R&D投資", "技術蓄積", "設備投資準備"],
+    28: ["過剰", "無理", "行き過ぎ", "オーバー", "バブル", "負債過多", "棟木がたわむ", "極端"],
+    31: ["顧客共感", "市場感応", "感情的つながり", "共鳴", "相互作用", "心を通わせ"],
+    34: ["勢いに乗り", "積極的に拡大", "大いなる力", "攻勢に出る", "勢い", "積極拡大"],
+    44: ["偶発的機会", "予期せぬ出会い", "リスク含む出会い", "突然の商談"],
+    45: ["人材集結", "チームビルディング", "組織拡大", "求心力", "採用強化"],
+    54: ["従属", "副次的", "買収される", "子会社化", "連合参加", "統合される側"],
+    56: ["旅人", "海外赴任", "プロジェクト型", "一時的拠点", "定まらぬ"],
+    59: ["離散", "分社化", "スピンオフ", "事業分離", "分権化", "組織分散", "散り散り"],
+}
+
+# ==============================================================================
+# 希少卦ブースト係数（カバレッジ均等化用）
+# ==============================================================================
+RARE_HEXAGRAM_BOOST: Dict[int, float] = {
+    26: 2.0,  # 大畜 - 最優先
+    25: 2.0,  # 无妄
+    13: 2.0,  # 同人
+    54: 2.0,  # 帰妹
+    10: 1.8,  # 履
+    45: 1.8,  # 萃
+    28: 1.8,  # 大過
+    59: 1.8,  # 渙
+    3: 1.5,   # 屯
+    7: 1.5,   # 師
+    31: 1.5,  # 咸
+    34: 1.5,  # 大壮
+    44: 1.5,  # 姤
+    56: 1.5,  # 旅
+    6: 1.3,   # 訟
+}
+
+# ==============================================================================
 # 64卦のカテゴリ分類（内容ベース判定用）
 # ==============================================================================
 
@@ -180,13 +306,16 @@ def load_reference_data() -> Tuple[Dict, Dict]:
 
 def judge_hexagram(case: Dict, hexagram_master: Dict) -> int:
     """
-    事例の内容から64卦を判定する
+    事例の内容から64卦を判定する（改善版v2）
 
-    判定優先度:
-    1. pattern_type からの候補
-    2. before_state / after_state からの候補
-    3. outcome による重み付け
-    4. story_summary のキーワードマッチ
+    判定優先度（新規追加あり）:
+    0. 卦名完全一致（最優先、+10.0）
+    1. 卦固有キーワードマッチ（+3.0/回）
+    2. pattern_type からの候補（+5.0〜0.5）
+    3. before_state / after_state からの候補（各+2.0）
+    4. outcome による重み付け（乗算）
+    5. story_summary のキーワードマッチ（+4.0）
+    6. 希少卦ブースト（乗算）
     """
     pattern_type = case.get("pattern_type", "")
     outcome = case.get("outcome", "Mixed")
@@ -197,45 +326,64 @@ def judge_hexagram(case: Dict, hexagram_master: Dict) -> int:
     # 候補卦をスコア付きで収集
     candidates: Dict[int, float] = {}
 
-    # 1. pattern_type からの候補（最優先）
+    # 0. 卦名完全一致ボーナス（最優先）- 新規追加
+    for hex_id, aliases in HEXAGRAM_NAME_ALIASES.items():
+        for alias in aliases:
+            if alias in story:
+                candidates[hex_id] = candidates.get(hex_id, 0) + HEXAGRAM_NAME_BONUS
+                break  # 同一卦で複数マッチしても1回分
+
+    # 1. 卦固有キーワードマッチ - 新規追加
+    for hex_id, keywords in HEXAGRAM_SPECIFIC_KEYWORDS.items():
+        match_count = sum(1 for kw in keywords if kw in story)
+        if match_count > 0:
+            candidates[hex_id] = candidates.get(hex_id, 0) + (SPECIFIC_KEYWORD_SCORE * min(match_count, 3))
+
+    # 2. pattern_type からの候補
     if pattern_type in PATTERN_TO_HEXAGRAMS:
         for i, hex_id in enumerate(PATTERN_TO_HEXAGRAMS[pattern_type]):
             # 優先度に応じてスコア（先頭ほど高い）
-            candidates[hex_id] = candidates.get(hex_id, 0) + (5 - i * 0.5)
+            score = max(PATTERN_BASE_SCORE - i * PATTERN_DECAY, 0.5)
+            candidates[hex_id] = candidates.get(hex_id, 0) + score
 
-    # 2. before_state からの候補
+    # 3. before_state からの候補
     if before_state in BEFORE_STATE_HINTS:
         for hex_id in BEFORE_STATE_HINTS[before_state]:
-            candidates[hex_id] = candidates.get(hex_id, 0) + 2
+            candidates[hex_id] = candidates.get(hex_id, 0) + STATE_SCORE
 
-    # 3. after_state からの候補
+    # 4. after_state からの候補
     if after_state in AFTER_STATE_HINTS:
         for hex_id in AFTER_STATE_HINTS[after_state]:
-            candidates[hex_id] = candidates.get(hex_id, 0) + 2
+            candidates[hex_id] = candidates.get(hex_id, 0) + STATE_SCORE
 
-    # 4. outcome による重み調整
+    # 5. outcome による重み調整
     if outcome in OUTCOME_HEXAGRAM_WEIGHTS:
         for hex_id, weight in OUTCOME_HEXAGRAM_WEIGHTS[outcome].items():
             if hex_id in candidates:
                 candidates[hex_id] *= weight
 
-    # 5. story_summary からキーワードマッチ
+    # 6. story_summary からキーワードマッチ（重み増加版）
     for hex_id_str, hex_data in hexagram_master.items():
         hex_id = int(hex_id_str)
         keyword = hex_data.get("keyword", "")
         meaning = hex_data.get("meaning", "")
 
-        # キーワードがstoryに含まれるか
+        # キーワードがstoryに含まれるか（重み増加: 1.5→4.0）
         keywords = keyword.split("・")
         for kw in keywords:
             if kw and kw in story:
-                candidates[hex_id] = candidates.get(hex_id, 0) + 1.5
+                candidates[hex_id] = candidates.get(hex_id, 0) + KEYWORD_BASE_SCORE
 
-        # meaningの一部がstoryに含まれるか
+        # meaningの一部がstoryに含まれるか（重み増加: 0.5→1.0）
         if len(meaning) > 4:
             for phrase in [meaning[i:i+4] for i in range(0, len(meaning)-3, 2)]:
                 if phrase in story:
-                    candidates[hex_id] = candidates.get(hex_id, 0) + 0.5
+                    candidates[hex_id] = candidates.get(hex_id, 0) + MEANING_PHRASE_SCORE
+
+    # 7. 希少卦ブースト適用 - 新規追加
+    for hex_id in list(candidates.keys()):
+        if hex_id in RARE_HEXAGRAM_BOOST:
+            candidates[hex_id] *= RARE_HEXAGRAM_BOOST[hex_id]
 
     # スコアが高い順にソート
     if candidates:
