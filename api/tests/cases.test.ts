@@ -88,39 +88,36 @@ function createMockDb(cases: Case[]): MockD1Database {
 
           let filtered = [...cases];
 
+          // WHERE句の条件を順番に処理
+          // argsは WHERE句の ? に対応するバインド値（最後の2つはLIMITとOFFSET）
+          const whereArgs = args.slice(0, -2);
+
           // パターンタイプでフィルター
-          if (sqlLower.includes('pattern_type')) {
-            const patternArg = args.find(a => typeof a === 'string' && mockCases.some(c => c.pattern_type === a));
+          if (sqlLower.includes('pattern_type = ?')) {
+            const patternArg = whereArgs.find(a => typeof a === 'string' && a.includes('_'));
             if (patternArg) {
               filtered = filtered.filter(c => c.pattern_type === patternArg);
             }
           }
 
           // 八卦でフィルター
-          if (sqlLower.includes('before_trigram') && !sqlLower.includes('?')) {
-            // SQL内に直接値が含まれている場合の処理（簡易版）
-          }
-          const beforeArg = args.find((a, i) => {
-            const validTrigrams = ['乾', '坤', '震', '巽', '坎', '離', '艮', '兌'];
-            return typeof a === 'string' && validTrigrams.includes(a) && i === 0;
-          });
-          const afterArg = args.find((a, i) => {
-            const validTrigrams = ['乾', '坤', '震', '巽', '坎', '離', '艮', '兌'];
-            return typeof a === 'string' && validTrigrams.includes(a) && i === 1;
-          });
-
-          if (beforeArg && afterArg) {
+          const validTrigrams = ['乾', '坤', '震', '巽', '坎', '離', '艮', '兌'];
+          const trigramArgs = whereArgs.filter(a => typeof a === 'string' && validTrigrams.includes(a));
+          if (trigramArgs.length === 2) {
+            const [beforeArg, afterArg] = trigramArgs;
             filtered = filtered.filter(c => c.before_trigram === beforeArg && c.after_trigram === afterArg);
           }
 
           // scaleでフィルター
-          const scaleArg = args.find(a => a === 'company' || a === 'individual' || a === 'family' || a === 'nation');
+          const scaleArg = whereArgs.find(a => a === 'company' || a === 'individual' || a === 'family' || a === 'nation');
           if (scaleArg) {
             filtered = filtered.filter(c => c.scale === scaleArg);
           }
 
-          // 最大20件
-          filtered = filtered.slice(0, 20);
+          // 最大20件（LIMITに従う）
+          const limitArg = args[args.length - 2];
+          const limit = typeof limitArg === 'number' ? limitArg : 20;
+          filtered = filtered.slice(0, limit);
 
           return { results: filtered as T[] };
         }
@@ -205,7 +202,8 @@ describe('searchCases - 空の結果', () => {
   it('該当なしの場合は空配列を返す', async () => {
     // Arrange
     const db = createMockDb(mockCases);
-    const params: CaseSearchParams = { pattern_type: 'NonExistent' as 'Shock_Recovery' };
+    // 存在しないパターンタイプ（'_'を含む形式で）
+    const params: CaseSearchParams = { pattern_type: 'NonExistent_Pattern' as 'Shock_Recovery' };
 
     // Act
     const result = await searchCases(db as unknown as D1Database, params);
