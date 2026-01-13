@@ -118,50 +118,98 @@ def parse_source_url(url: str) -> dict:
     }
 
 
-def check_coi(target_name: str, sources: list) -> str:
+def check_coi_unified(target_name: str, sources: list) -> str:
     """
-    COI（利益相反）ステータスを判定
+    COI（利益相反）ステータスを統一ルールで判定（改訂版 v1.1）
+
+    改訂ポイント:
+    1. ソースなし → unknown（一律）
+    2. 企業公式ドメイン → self
+    3. 政府機関/報道機関 → none
+    4. 上記以外 → unknown
 
     Args:
         target_name: 事例の対象名
         sources: ソースURLリスト
 
     Returns:
-        "none" | "self" | "affiliated" | "unknown"
+        "none" | "self" | "unknown"
     """
-    if not sources:
+    # Step 1: ソースがない場合 → unknown
+    if not sources or all(s is None for s in sources):
         return "unknown"
 
+    # 有効なソースのみ抽出（検索URLを除外）
+    valid_sources = []
+    for source in sources:
+        if source:
+            if "google.com/search" in source or "bing.com/search" in source or "search?q=" in source:
+                continue  # 検索URLは無効
+            valid_sources.append(source)
+
+    if not valid_sources:
+        return "unknown"
+
+    # Step 2: ドメインを解析
     target_lower = target_name.lower() if target_name else ""
 
-    # 企業名のキーワードを抽出
+    # 企業名キーワードを抽出（事例の対象名から）
     company_keywords = []
-    # 日本企業
-    jp_companies = ["トヨタ", "toyota", "日産", "nissan", "ホンダ", "honda",
-                    "ソフトバンク", "softbank", "楽天", "rakuten", "任天堂", "nintendo",
-                    "三井", "mitsui", "三菱", "mitsubishi", "volkswagen", "vw",
-                    "amazon", "spacex", "openai", "who", "横浜"]
-
-    for keyword in jp_companies:
+    keyword_patterns = [
+        "toyota", "nissan", "honda", "softbank", "rakuten", "nintendo",
+        "mitsui", "mitsubishi", "volkswagen", "vw", "amazon", "spacex",
+        "openai", "who", "evergrande", "碧桂園", "リーマン", "山一"
+    ]
+    for keyword in keyword_patterns:
         if keyword in target_lower:
             company_keywords.append(keyword)
 
-    # 各ソースをチェック
-    for source in sources:
-        if not source:
-            continue
+    # 政府機関・報道機関のドメイン
+    THIRD_PARTY_DOMAINS = {
+        # 政府機関
+        ".go.jp", ".gov", ".gov.uk", "bundesregierung.de", ".int",
+        # 報道機関
+        "nikkei.com", "asahi.com", "yomiuri.co.jp", "mainichi.jp",
+        "reuters.com", "bloomberg.com", "wsj.com", "nytimes.com",
+        # 業界団体
+        "jada.or.jp", "scaj.org",
+    }
+
+    # 企業公式パターン
+    CORPORATE_PATTERNS = [
+        "corp.", "ir.", "investor.", "aboutamazon",
+        "-global.com", ".co.jp", "volkswagen.com", "spacex.com"
+    ]
+
+    for source in valid_sources:
         source_lower = source.lower()
 
-        # 企業名がドメインに含まれているかチェック
-        for keyword in company_keywords:
-            if keyword in source_lower:
-                return "self"
+        # Step 2a: 企業公式ドメインチェック
+        # パターンマッチ
+        for pattern in CORPORATE_PATTERNS:
+            if pattern in source_lower:
+                # 企業名が対象と一致するかチェック
+                for keyword in company_keywords:
+                    if keyword in source_lower:
+                        return "self"
+                # 明確な企業公式パターン（rakuten, nissan等）
+                if "rakuten" in source_lower or "nissan" in source_lower:
+                    return "self"
 
-        # 政府機関のソースはCOI noneとして扱う
-        if any(gov in source_lower for gov in [".go.jp", ".gov", "bundesregierung"]):
-            return "none"
+        # Step 2b: 政府機関・報道機関チェック
+        for domain in THIRD_PARTY_DOMAINS:
+            if domain in source_lower:
+                return "none"
 
-    return "none"
+    # Step 2c: 上記以外 → unknown
+    return "unknown"
+
+
+def check_coi(target_name: str, sources: list) -> str:
+    """
+    後方互換性のためのラッパー（内部でcheck_coi_unifiedを呼び出し）
+    """
+    return check_coi_unified(target_name, sources)
 
 
 def determine_source_quality(sources: list) -> tuple[str, str]:
@@ -205,7 +253,7 @@ class Reviewer1:
     厳格な検証者
 
     - 一次ソースがないとverifiedにしない
-    - COIに厳しい（企業名がドメインに含まれればself）
+    - COI判定は統一ルール（check_coi_unified）を使用
     """
 
     @staticmethod
@@ -227,34 +275,15 @@ class Reviewer1:
             outcome_status = "unverified"
             verification_confidence = confidence
 
-        # COI判定（厳格）
-        coi_status = "unknown"
-        for source in sources:
-            if source:
-                parsed = parse_source_url(source)
-                domain = parsed.get("domain", "")
-
-                # 企業名がドメインに含まれるかを厳密にチェック
-                target_words = re.findall(r'[a-zA-Z]+', target_name.lower())
-                for word in target_words:
-                    if len(word) >= 4 and word in domain:
-                        coi_status = "self"
-                        break
-
-                # 政府機関はnone
-                if any(gov in domain for gov in [".go.jp", ".gov", "who.int", "bundesregierung"]):
-                    coi_status = "none"
-
-        if coi_status == "unknown" and sources:
-            # デフォルトはnoneに
-            coi_status = "none"
+        # COI判定（統一ルール v1.1）
+        coi_status = check_coi_unified(target_name, sources)
 
         return {
             "pilot_id": case.get("pilot_id"),
             "outcome_status": outcome_status,
             "verification_confidence": verification_confidence,
             "coi_status": coi_status,
-            "reviewer_notes": "厳格判定: 一次ソース必須"
+            "reviewer_notes": "厳格判定: 一次ソース必須, COI統一ルールv1.1"
         }
 
 
@@ -263,7 +292,7 @@ class Reviewer2:
     中庸な検証者
 
     - 二次ソース（新聞等）でもverified_correctとする場合あり
-    - COIは明確な場合のみself
+    - COI判定は統一ルール（check_coi_unified）を使用
     """
 
     @staticmethod
@@ -288,24 +317,15 @@ class Reviewer2:
             outcome_status = "unverified"
             verification_confidence = "none"
 
-        # COI判定（中庸）
-        coi_status = "none"
-        for source in sources:
-            if source:
-                parsed = parse_source_url(source)
-                domain = parsed.get("domain", "")
-
-                # 明確に企業公式サイトの場合のみself
-                if any(corp in domain for corp in ["corp.", "ir.", "investor", "aboutamazon", "volkswagen", "spacex", "nissan-global", "rakuten"]):
-                    coi_status = "self"
-                    break
+        # COI判定（統一ルール v1.1）
+        coi_status = check_coi_unified(target_name, sources)
 
         return {
             "pilot_id": case.get("pilot_id"),
             "outcome_status": outcome_status,
             "verification_confidence": verification_confidence,
             "coi_status": coi_status,
-            "reviewer_notes": "中庸判定: 二次ソースも信頼"
+            "reviewer_notes": "中庸判定: 二次ソースも信頼, COI統一ルールv1.1"
         }
 
 

@@ -174,6 +174,66 @@ outcome_status = unverified の場合:
 | 評価主張（最高、革新的、成功） | 二次ソースで裏取り必須 |
 | 比較主張（業界1位、競合より優れている） | 二次ソースで裏取り必須 |
 
+#### coi_status 判定フロー（改訂版 v1.1）
+
+**背景**: IAA測定でκ=0.333（要改善）となった主因:
+1. ソースなしケース: R1=unknown, R2=none で不一致
+2. 企業公式ドメイン: 判定基準が不統一
+
+**改訂ルール**:
+
+```
+[判定フロー]
+
+1. ソースがない（null/空配列/検索URLのみ）
+   → `unknown`（一律）
+
+2. ソースあり:
+   a. ドメインが対象企業名を含む
+      例: toyota.co.jp, nissan-global.com, rakuten.co.jp
+      → `self`
+
+   b. 政府機関（.go.jp, .gov, .int）または報道機関
+      例: nikkei.com, asahi.com, reuters.com, mlit.go.jp
+      → `none`
+
+   c. 上記以外
+      → `unknown`
+```
+
+#### COI判定ドメインリスト（機械判定用）
+
+**企業公式と見なすパターン（→ self）**:
+
+| パターン | 説明 | 例 |
+|---------|------|-----|
+| `corp.{company}.*` | 企業公式サイト | corp.rakuten.co.jp |
+| `ir.{company}.*` | IR情報サイト | ir.toyota.co.jp |
+| `investor.{company}.*` | 投資家向けサイト | investor.nvidia.com |
+| `{company}.co.jp` | 日本企業公式 | toyota.co.jp |
+| `{company}.com` | グローバル企業公式 | volkswagen.com |
+| `{company}-global.com` | グローバル展開企業 | nissan-global.com |
+| `about{company}.com` | 企業情報サイト | aboutamazon.com |
+
+**第三者と見なすパターン（→ none）**:
+
+| カテゴリ | ドメイン例 |
+|---------|-----------|
+| 政府機関 | .go.jp, .gov, .gov.uk, bundesregierung.de |
+| 国際機関 | who.int, un.org, imf.org |
+| 報道機関（日本） | nikkei.com, asahi.com, yomiuri.co.jp, mainichi.jp |
+| 報道機関（海外） | reuters.com, bloomberg.com, wsj.com, nytimes.com |
+| 業界団体 | jada.or.jp, scaj.org |
+
+**判定不能（→ unknown）**:
+
+| ケース | 説明 |
+|--------|------|
+| ソースなし | sources が null または空 |
+| 検索URLのみ | google.com/search, bing.com/search |
+| 百科事典 | wikipedia.org（引用降下が必要） |
+| 不明ドメイン | 上記パターンに該当しない |
+
 ---
 
 ## 3. フィールド間の関係図
