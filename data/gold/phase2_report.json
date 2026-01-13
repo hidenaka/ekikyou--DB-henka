@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-01-13T22:07:33.173081",
+  "phase": "2_evaluation_set",
+  "codex_compliance": {
+    "stratified_sampling": true,
+    "double_labeling_protocol": true,
+    "proper_scoring_foundation": true
+  },
+  "sampling": {
+    "target_size": 500,
+    "actual_size": 500,
+    "tier_distribution": {
+      "gold": 125,
+      "silver": 175,
+      "bronze": 100,
+      "quarantine": 100
+    },
+    "outcome_distribution": {
+      "Success": 227,
+      "Failure": 175,
+      "Mixed": 74,
+      "PartialSuccess": 24
+    }
+  },
+  "verification_status": {
+    "pending": 500,
+    "in_review": 0,
+    "completed": 0,
+    "disputed": 0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "fields_to_verify": [
+    {
+      "name": "outcome_verified",
+      "description": "結果（Success/Failure/Mixed）が事実として正しいか",
+      "options": [
+        "correct",
+        "incorrect",
+        "unverifiable"
+      ]
+    },
+    {
+      "name": "source_quality",
+      "description": "情報源の品質",
+      "options": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "unreliable"
+      ]
+    },
+    {
+      "name": "factual_accuracy",
+      "description": "記載内容の事実正確性",
+      "options": [
+        "accurate",
+        "minor_error",
+        "major_error",
+        "unverifiable"
+      ]
+    },
+    {
+      "name": "coi_assessment",
+      "description": "利益相反の有無",
+      "options": [
+        "none",
+        "potential",
+        "clear",
+        "unknown"
+      ]
+    }
+  ],
+  "adjudication_rules": {
+    "agreement_threshold": 0.8,
+    "disagreement_resolution": "third_reviewer"
+  },
+  "documentation": {
+    "evidence_url_required": true,
+    "notes_required_for_error": true
+  }
+}
