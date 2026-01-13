@@ -3204,5 +3204,581 @@
       "before_yao_position": 6,
       "before_yao_meaning": "履を視て祥を考う：過去を振り返り次を模索。"
     }
+  },
+  {
+    "target_name": "Google Glass市場時期待機",
+    "scale": "company",
+    "period": "2013-2023",
+    "story_summary": "Google Glassは消費者向けで失敗後、法人向けに転換して市場成熟を待った。AR市場が成熟するまで10年間忍耐。",
+    "before_state": "成長痛",
+    "trigger_type": "外部ショック",
+    "action_type": "耐える・潜伏",
+    "after_state": "縮小安定・生存",
+    "before_hex": "震",
+    "trigger_hex": "坎",
+    "action_hex": "坤",
+    "after_hex": "艮",
+    "pattern_type": "Managed_Decline",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#Google Glass",
+      "#AR",
+      "#待機"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.google.com/glass/"
+    ],
+    "hexagram_id": 5,
+    "hexagram_name": "水天需",
+    "yao_analysis": {
+      "before_hexagram_id": 5,
+      "before_hexagram_name": "水天需",
+      "before_yao_position": 2,
+      "before_yao_meaning": "沙に需う：市場の成熟を待つ。焦らず時を待つ。"
+    }
+  },
+  {
+    "target_name": "Blue Origin宇宙旅行待機",
+    "scale": "company",
+    "period": "2000-2024",
+    "story_summary": "Jeff Bezosのブルーオリジンは「亀のように着実に」をモットーに、20年以上かけて宇宙旅行事業を開発。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "耐える・潜伏",
+    "after_state": "安定成長・成功",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "坤",
+    "after_hex": "兌",
+    "pattern_type": "Endurance",
+    "outcome": "PartialSuccess",
+    "free_tags": [
+      "#Blue Origin",
+      "#宇宙",
+      "#Bezos"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.blueorigin.com/"
+    ],
+    "hexagram_id": 5,
+    "hexagram_name": "水天需",
+    "yao_analysis": {
+      "before_hexagram_id": 5,
+      "before_hexagram_name": "水天需",
+      "before_yao_position": 4,
+      "before_yao_meaning": "血に需う：困難な中でも忍耐強く待つ。"
+    }
+  },
+  {
+    "target_name": "Quantumコンピュータ産業の忍耐",
+    "scale": "other",
+    "period": "2000-2024",
+    "story_summary": "IBM、Google、マイクロソフトは量子コンピュータに数十年投資。実用化はまだ先だが、長期的な果実を待ち続けている。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "耐える・潜伏",
+    "after_state": "成長痛",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "坤",
+    "after_hex": "震",
+    "pattern_type": "Endurance",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#量子コンピュータ",
+      "#IBM",
+      "#Google"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.ibm.com/quantum"
+    ],
+    "hexagram_id": 5,
+    "hexagram_name": "水天需",
+    "yao_analysis": {
+      "before_hexagram_id": 5,
+      "before_hexagram_name": "水天需",
+      "before_yao_position": 6,
+      "before_yao_meaning": "穴に入る：長期の忍耐の果てに成果を待つ。"
+    }
+  },
+  {
+    "target_name": "Airbnbと各都市の規制闘争",
+    "scale": "company",
+    "period": "2014-2024",
+    "story_summary": "Airbnbは世界中の都市で民泊規制と戦った。ニューヨーク、パリ、東京などで法廷闘争や交渉を経て、合法化を勝ち取った。",
+    "before_state": "成長痛",
+    "trigger_type": "規制変更",
+    "action_type": "攻める・挑戦",
+    "after_state": "安定成長・成功",
+    "before_hex": "震",
+    "trigger_hex": "坎",
+    "action_hex": "乾",
+    "after_hex": "兌",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#Airbnb",
+      "#民泊規制",
+      "#交渉"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.airbnb.com/"
+    ],
+    "hexagram_id": 6,
+    "hexagram_name": "天水訟",
+    "yao_analysis": {
+      "before_hexagram_id": 6,
+      "before_hexagram_name": "天水訟",
+      "before_yao_position": 1,
+      "before_yao_meaning": "事を永くせず：争いを長引かせない。戦略的な交渉。"
+    }
+  },
+  {
+    "target_name": "Spotify vs Apple Music公正競争訴え",
+    "scale": "company",
+    "period": "2019-2024",
+    "story_summary": "SpotifyはAppleのApp Store手数料が不公正だとEUに提訴。反トラスト調査の末、EUはAppleに巨額制裁金を科した。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "安定成長・成功",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "兌",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#Spotify",
+      "#Apple",
+      "#EU"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "SE",
+    "sources": [
+      "https://newsroom.spotify.com/"
+    ],
+    "hexagram_id": 6,
+    "hexagram_name": "天水訟",
+    "yao_analysis": {
+      "before_hexagram_id": 6,
+      "before_hexagram_name": "天水訟",
+      "before_yao_position": 3,
+      "before_yao_meaning": "旧徳を食む：実績を武器に戦う。正当な訴えが認められる。"
+    }
+  },
+  {
+    "target_name": "Microsoft Azureインフラ構築",
+    "scale": "company",
+    "period": "2010-2024",
+    "story_summary": "MicrosoftはAzureで世界中にデータセンターを構築。数十万人の組織を動員し、AWSに次ぐクラウドインフラを確立。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#Microsoft",
+      "#Azure",
+      "#クラウド"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://azure.microsoft.com/"
+    ],
+    "hexagram_id": 7,
+    "hexagram_name": "地水師",
+    "yao_analysis": {
+      "before_hexagram_id": 7,
+      "before_hexagram_name": "地水師",
+      "before_yao_position": 2,
+      "before_yao_meaning": "師に在りて中す：組織の中心で正しく統率。"
+    }
+  },
+  {
+    "target_name": "Alibaba双11イベント組織",
+    "scale": "company",
+    "period": "2009-2024",
+    "story_summary": "Alibabaは独身の日セールで数百万の出品者と物流網を統率。24時間で数十兆円の取引を処理する組織力を構築。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#Alibaba",
+      "#双11",
+      "#組織"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "retail",
+    "country": "CN",
+    "sources": [
+      "https://www.alibabagroup.com/"
+    ],
+    "hexagram_id": 7,
+    "hexagram_name": "地水師",
+    "yao_analysis": {
+      "before_hexagram_id": 7,
+      "before_hexagram_name": "地水師",
+      "before_yao_position": 4,
+      "before_yao_meaning": "師左次す：戦略的に体制を整えて前進。"
+    }
+  },
+  {
+    "target_name": "Netflix制作体制の構築",
+    "scale": "company",
+    "period": "2013-2024",
+    "story_summary": "Netflixはオリジナルコンテンツ制作のため、世界中に制作拠点を構築。数千人のクリエイターを統率するシステムを確立。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#Netflix",
+      "#コンテンツ",
+      "#制作"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "entertainment",
+    "country": "US",
+    "sources": [
+      "https://about.netflix.com/"
+    ],
+    "hexagram_id": 7,
+    "hexagram_name": "地水師",
+    "yao_analysis": {
+      "before_hexagram_id": 7,
+      "before_hexagram_name": "地水師",
+      "before_yao_position": 5,
+      "before_yao_meaning": "長子師を帥ゆ：正統なリーダーが組織を率いる。"
+    }
+  },
+  {
+    "target_name": "WeWorkの組織崩壊",
+    "scale": "company",
+    "period": "2019-2023",
+    "story_summary": "WeWorkは急拡大の果てに組織統率が効かなくなった。IPO失敗、創業者退任、最終的に破産申請。組織の暴走の末路。",
+    "before_state": "絶頂・慢心",
+    "trigger_type": "内部崩壊",
+    "action_type": "守る・維持",
+    "after_state": "崩壊・消滅",
+    "before_hex": "乾",
+    "trigger_hex": "坎",
+    "action_hex": "艮",
+    "after_hex": "坤",
+    "pattern_type": "Hubris_Collapse",
+    "outcome": "Failure",
+    "free_tags": [
+      "#WeWork",
+      "#破産",
+      "#組織崩壊"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "business",
+    "country": "US",
+    "sources": [
+      "https://www.wework.com/"
+    ],
+    "hexagram_id": 7,
+    "hexagram_name": "地水師",
+    "yao_analysis": {
+      "before_hexagram_id": 7,
+      "before_hexagram_name": "地水師",
+      "before_yao_position": 6,
+      "before_yao_meaning": "大君命有り：大きな組織を率いる責任。統率の失敗。"
+    }
+  },
+  {
+    "target_name": "Apache Software Foundation",
+    "scale": "other",
+    "period": "1999-2024",
+    "story_summary": "Apache財団は企業の垣根を越えてオープンソースソフトウェアを開発。競合企業が協力して共通基盤を構築する連帯の象徴。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "対話・融合",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "兌",
+    "action_hex": "兌",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#Apache",
+      "#オープンソース",
+      "#協力"
+    ],
+    "source_type": "official",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.apache.org/"
+    ],
+    "hexagram_id": 8,
+    "hexagram_name": "水地比",
+    "yao_analysis": {
+      "before_hexagram_id": 8,
+      "before_hexagram_name": "水地比",
+      "before_yao_position": 1,
+      "before_yao_meaning": "孚有りて之に比す：誠意をもって協力関係を構築。"
+    }
+  },
+  {
+    "target_name": "World Wide Web Consortium (W3C)",
+    "scale": "other",
+    "period": "1994-2024",
+    "story_summary": "W3Cは企業を超えてWeb標準を策定。競合企業が協力してHTMLやCSSの標準を定め、インターネットの発展に貢献。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "対話・融合",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "兌",
+    "action_hex": "兌",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#W3C",
+      "#Web標準",
+      "#協力"
+    ],
+    "source_type": "official",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.w3.org/"
+    ],
+    "hexagram_id": 8,
+    "hexagram_name": "水地比",
+    "yao_analysis": {
+      "before_hexagram_id": 8,
+      "before_hexagram_name": "水地比",
+      "before_yao_position": 5,
+      "before_yao_meaning": "比を顕かにす：協力関係を公にする。標準化の連帯。"
+    }
+  },
+  {
+    "target_name": "IKEA持続可能経営",
+    "scale": "company",
+    "period": "2000-2024",
+    "story_summary": "IKEAは環境負荷削減と低価格を両立。慎重に持続可能な素材調達を進め、礼節ある企業姿勢で顧客信頼を獲得。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "守る・維持",
+    "after_state": "持続成長・大成功",
+    "before_hex": "坤",
+    "trigger_hex": "離",
+    "action_hex": "艮",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#IKEA",
+      "#持続可能",
+      "#家具"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "retail",
+    "country": "SE",
+    "sources": [
+      "https://www.ikea.com/"
+    ],
+    "hexagram_id": 10,
+    "hexagram_name": "天沢履",
+    "yao_analysis": {
+      "before_hexagram_id": 10,
+      "before_hexagram_name": "天沢履",
+      "before_yao_position": 1,
+      "before_yao_meaning": "素履往く：質素に進む。持続可能な道を歩む。"
+    }
+  },
+  {
+    "target_name": "Patagonia環境経営",
+    "scale": "company",
+    "period": "1990-2024",
+    "story_summary": "Patagoniaは「地球が唯一の株主」を掲げ、環境保全を最優先に経営。利益より理念を重視する礼節ある姿勢で支持を得る。",
+    "before_state": "安定・平和",
+    "trigger_type": "意図的決断",
+    "action_type": "守る・維持",
+    "after_state": "持続成長・大成功",
+    "before_hex": "坤",
+    "trigger_hex": "離",
+    "action_hex": "艮",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#Patagonia",
+      "#環境",
+      "#理念経営"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "retail",
+    "country": "US",
+    "sources": [
+      "https://www.patagonia.com/"
+    ],
+    "hexagram_id": 10,
+    "hexagram_name": "天沢履",
+    "yao_analysis": {
+      "before_hexagram_id": 10,
+      "before_hexagram_name": "天沢履",
+      "before_yao_position": 2,
+      "before_yao_meaning": "履道坦坦：道を平らに歩む。理念を貫く経営。"
+    }
+  },
+  {
+    "target_name": "ServiceNowプラットフォーム戦略",
+    "scale": "company",
+    "period": "2004-2024",
+    "story_summary": "ServiceNowは企業ITサービス管理で慎重に市場を開拓。派手さより実直さを重視し、SaaS市場で確固たる地位を築いた。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "乾",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Steady_Growth",
+    "outcome": "Success",
+    "free_tags": [
+      "#ServiceNow",
+      "#ITSM",
+      "#SaaS"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.servicenow.com/"
+    ],
+    "hexagram_id": 10,
+    "hexagram_name": "天沢履",
+    "yao_analysis": {
+      "before_hexagram_id": 10,
+      "before_hexagram_name": "天沢履",
+      "before_yao_position": 4,
+      "before_yao_meaning": "虎尾を履む：慎重に進めば吉。地道な市場開拓。"
+    }
+  },
+  {
+    "target_name": "Workday人事システム転換",
+    "scale": "company",
+    "period": "2005-2024",
+    "story_summary": "WorkdayはPeoplesoftの元幹部が創業し、クラウド人事システムで成功。過去の経験を活かしながら、慎重に新市場を開拓。",
+    "before_state": "成長痛",
+    "trigger_type": "意図的決断",
+    "action_type": "攻める・挑戦",
+    "after_state": "持続成長・大成功",
+    "before_hex": "震",
+    "trigger_hex": "離",
+    "action_hex": "乾",
+    "after_hex": "乾",
+    "pattern_type": "Breakthrough",
+    "outcome": "Success",
+    "free_tags": [
+      "#Workday",
+      "#人事システム",
+      "#SaaS"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.workday.com/"
+    ],
+    "hexagram_id": 10,
+    "hexagram_name": "天沢履",
+    "yao_analysis": {
+      "before_hexagram_id": 10,
+      "before_hexagram_name": "天沢履",
+      "before_yao_position": 5,
+      "before_yao_meaning": "夬履す：決断して進む。経験を活かした堅実な成長。"
+    }
+  },
+  {
+    "target_name": "HPのPC・プリンター分社化",
+    "scale": "company",
+    "period": "2015-2024",
+    "story_summary": "HPは2015年にPC/プリンター部門を分社化。過去の栄光を振り返りながら、新たな成長を模索中。慎重な再編の継続。",
+    "before_state": "停滞・閉塞",
+    "trigger_type": "意図的決断",
+    "action_type": "分散・スピンオフ",
+    "after_state": "縮小安定・生存",
+    "before_hex": "艮",
+    "trigger_hex": "離",
+    "action_hex": "巽",
+    "after_hex": "艮",
+    "pattern_type": "Managed_Decline",
+    "outcome": "Mixed",
+    "free_tags": [
+      "#HP",
+      "#分社化",
+      "#再編"
+    ],
+    "source_type": "news",
+    "credibility_rank": "A",
+    "main_domain": "technology",
+    "country": "US",
+    "sources": [
+      "https://www.hp.com/"
+    ],
+    "hexagram_id": 10,
+    "hexagram_name": "天沢履",
+    "yao_analysis": {
+      "before_hexagram_id": 10,
+      "before_hexagram_name": "天沢履",
+      "before_yao_position": 6,
+      "before_yao_meaning": "履を視て祥を考う：過去を振り返り次を模索。"
+    }
   }
 ]
