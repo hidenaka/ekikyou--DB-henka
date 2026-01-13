@@ -1,0 +1,50 @@
+{
+  "phase": "beta_pilot_verification",
+  "completed_at": "2026-01-13T22:50:00+09:00",
+  "status": "completed",
+  "iaa_results": {
+    "final_version": "v2",
+    "all_fields_passed": true,
+    "kappa_by_field": {
+      "outcome_status": {"kappa": 0.796, "agreement": "90.0%", "verdict": "pass"},
+      "verification_confidence": {"kappa": 1.0, "agreement": "100%", "verdict": "excellent"},
+      "coi_status": {"kappa": 1.0, "agreement": "100%", "verdict": "excellent"}
+    },
+    "overall_agreement": "100%"
+  },
+  "improvements_made": {
+    "coi_status_fix": {
+      "before": {"kappa": 0.333, "verdict": "needs_improvement"},
+      "after": {"kappa": 1.0, "verdict": "excellent"},
+      "fix": "ソースなしケース→一律unknown、企業公式ドメイン判定ルール統一"
+    }
+  },
+  "verified_fields": [
+    "outcome_status",
+    "verification_confidence",
+    "coi_status"
+  ],
+  "dropped_fields": [],
+  "pilot_statistics": {
+    "total_cases": 30,
+    "verified_correct": 16,
+    "verified_incorrect": 0,
+    "unverified": 14,
+    "coi_self_detected": 2,
+    "coi_unknown": 18
+  },
+  "deliverables": [
+    "data/pilot/reviewer_1_results.jsonl",
+    "data/pilot/reviewer_2_results.jsonl",
+    "data/pilot/iaa_report_v2.json",
+    "docs/label_definitions_v1.md (updated v1.1)"
+  ],
+  "next_phase": {
+    "name": "gamma_scaled_implementation",
+    "tasks": [
+      "評価セット300件への拡大適用",
+      "Wikipedia引用→主張紐付けパイロット",
+      "高価値事例の優先検証"
+    ]
+  }
+}
