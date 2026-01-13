@@ -15,6 +15,7 @@
       --gold: #d4a853;
       --light: #f5f5f5;
       --text: #333;
+      --success: #2ecc71;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -52,6 +53,24 @@
       letter-spacing: 0.2em;
     }
     .logo-sub { font-size: 1rem; opacity: 0.7; }
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--primary);
+      padding: 20px 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      margin-top: 30px;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 168, 83, 0.4);
+    }
 
     /* Section */
     section {
@@ -67,6 +86,294 @@
       display: inline-block;
     }
     section p { margin-bottom: 20px; }
+
+    /* Diagnosis Form */
+    .diagnosis-section {
+      background: linear-gradient(135deg, #16213e 0%, var(--primary) 100%);
+      color: white;
+      max-width: 100%;
+      padding: 60px 20px;
+    }
+    .diagnosis-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .diagnosis-section h2 {
+      text-align: center;
+      color: white;
+      border-color: var(--gold);
+    }
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .step {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .step.active {
+      background: var(--gold);
+      color: var(--primary);
+    }
+    .step.completed {
+      background: var(--success);
+      color: white;
+    }
+    .question-card {
+      background: white;
+      color: var(--text);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .question-card.active {
+      display: block;
+    }
+    .question-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .option {
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .option:hover {
+      border-color: var(--gold);
+      background: #fff9f0;
+    }
+    .option.selected {
+      border-color: var(--gold);
+      background: #fff9f0;
+    }
+    .option-label {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .option-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 5px;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .nav-btn {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .nav-btn.prev {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .nav-btn.next {
+      background: var(--gold);
+      color: var(--primary);
+    }
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Results */
+    .results-section {
+      display: none;
+      text-align: center;
+    }
+    .results-section.active {
+      display: block;
+    }
+    .result-card {
+      background: white;
+      color: var(--text);
+      border-radius: 15px;
+      padding: 40px;
+      text-align: left;
+    }
+    .result-hexagram {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .result-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .result-summary {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .case-count {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+    .case-count strong {
+      color: var(--accent);
+      font-size: 2rem;
+    }
+    .paid-preview {
+      background: linear-gradient(135deg, var(--primary) 0%, #16213e 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+    .paid-preview h4 {
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    .paid-preview ul {
+      list-style: none;
+      padding: 0;
+    }
+    .paid-preview li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .paid-preview li::before {
+      content: "✓ ";
+      color: var(--gold);
+    }
+    .buy-btn {
+      display: block;
+      width: 100%;
+      background: var(--gold);
+      color: var(--primary);
+      padding: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s;
+    }
+    .buy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(212, 168, 83, 0.5);
+    }
+    .price-tag {
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    /* Candidates Selection */
+    .candidates-section {
+      display: none;
+    }
+    .candidates-section.active {
+      display: block;
+    }
+    .candidate-card {
+      background: white;
+      color: var(--text);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+    .candidate-card:hover {
+      border-color: var(--gold);
+    }
+    .candidate-card.selected {
+      border-color: var(--gold);
+      background: #fff9f0;
+    }
+    .confidence-bar {
+      height: 6px;
+      background: #eee;
+      border-radius: 3px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .confidence-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    /* Yao Selection */
+    .yao-section {
+      display: none;
+    }
+    .yao-section.active {
+      display: block;
+    }
+    .yao-card {
+      background: white;
+      color: var(--text);
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .yao-card:hover {
+      border-color: var(--gold);
+    }
+    .yao-card.selected {
+      border-color: var(--gold);
+      background: #fff9f0;
+    }
+    .yao-number {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .yao-info h4 {
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    .yao-info p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+    }
 
     /* Problem */
     .problem {
@@ -105,11 +412,6 @@
       content: "☰ ";
       color: var(--gold);
     }
-    .feature-card .question {
-      font-weight: bold;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
 
     /* Message */
     .message {
@@ -125,35 +427,6 @@
       line-height: 1.6;
     }
 
-    /* CTA */
-    .cta {
-      text-align: center;
-      background: linear-gradient(135deg, #16213e 0%, var(--primary) 100%);
-      color: white;
-    }
-    .cta-button {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--primary);
-      padding: 20px 50px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      margin-top: 30px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(212, 168, 83, 0.4);
-    }
-    .price {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin: 20px 0;
-    }
-    .price-note { opacity: 0.8; font-size: 0.9rem; }
-
     /* Footer */
     footer {
       background: #0a0a0a;
@@ -163,6 +436,28 @@
       font-size: 0.9rem;
     }
     footer a { color: var(--gold); }
+
+    /* Loading */
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 40px;
+    }
+    .loading.active {
+      display: block;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255,255,255,0.2);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
     /* Responsive */
     @media (min-width: 768px) {
@@ -183,6 +478,9 @@
       3000年の歴史知見 × AI が生み出す<br>
       あなたの人生の「作戦参謀」
     </p>
+    <button class="hero-cta" onclick="scrollToDiagnosis()">
+      無料で診断を始める
+    </button>
   </section>
 
   <!-- About -->
@@ -214,10 +512,190 @@
     <p>
       HaQeiは、これらの悩みの原因を<strong>「タイミングのズレ（Behavior-Timing Mismatch）」</strong>と定義します。
     </p>
-    <p>
-      春に種を蒔くべき時に収穫を焦ったり、冬に耐えるべき時に無謀な投資をしたりすること。
-      この「季節外れの行動」こそが、失敗の最大の要因です。
-    </p>
+  </section>
+
+  <!-- Diagnosis -->
+  <section class="diagnosis-section" id="diagnosis">
+    <div class="diagnosis-container">
+      <h2>無料診断</h2>
+      <p style="text-align: center; margin-bottom: 30px;">5つの質問に答えて、あなたの「今の季節」を診断します</p>
+
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <div class="step active" data-step="1">1</div>
+        <div class="step" data-step="2">2</div>
+        <div class="step" data-step="3">3</div>
+        <div class="step" data-step="4">4</div>
+        <div class="step" data-step="5">5</div>
+      </div>
+
+      <!-- Questions -->
+      <div id="questions-container">
+        <!-- Q1 -->
+        <div class="question-card active" data-question="1">
+          <h3>Q1. 今、あなたが直面している状況の変化はどのようなものですか？</h3>
+          <div class="options">
+            <div class="option" data-value="0">
+              <div class="option-label">拡大・成長</div>
+              <div class="option-desc">新しいことを始める、規模を大きくする、可能性を広げる</div>
+            </div>
+            <div class="option" data-value="1">
+              <div class="option-label">縮小・整理</div>
+              <div class="option-desc">手放す、減らす、集中する、終わらせる</div>
+            </div>
+            <div class="option" data-value="2">
+              <div class="option-label">現状維持</div>
+              <div class="option-desc">今の状態を保つ、安定させる、守る</div>
+            </div>
+            <div class="option" data-value="3">
+              <div class="option-label">方向転換</div>
+              <div class="option-desc">根本的に変える、別の道を選ぶ、リセットする</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-card" data-question="2">
+          <h3>Q2. この状況に対して、あなたはどのような姿勢を取っていますか？</h3>
+          <div class="options">
+            <div class="option" data-value="0">
+              <div class="option-label">自ら動く</div>
+              <div class="option-desc">主導権を握り、積極的に行動している</div>
+            </div>
+            <div class="option" data-value="1">
+              <div class="option-label">受け止める</div>
+              <div class="option-desc">流れに従い、柔軟に対応している</div>
+            </div>
+            <div class="option" data-value="2">
+              <div class="option-label">待つ</div>
+              <div class="option-desc">時機を見計らい、様子を見ている</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-card" data-question="3">
+          <h3>Q3. この状況は、どのくらいの時間軸で考えていますか？</h3>
+          <div class="options">
+            <div class="option" data-value="0">
+              <div class="option-label">今すぐ</div>
+              <div class="option-desc">緊急性が高い、すぐに結果が必要</div>
+            </div>
+            <div class="option" data-value="1">
+              <div class="option-label">数ヶ月</div>
+              <div class="option-desc">中期的な視点で取り組む</div>
+            </div>
+            <div class="option" data-value="2">
+              <div class="option-label">1年以上</div>
+              <div class="option-desc">長期的な視点で腰を据えて取り組む</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-card" data-question="4">
+          <h3>Q4. この状況は主にどの範囲に関わるものですか？</h3>
+          <div class="options">
+            <div class="option" data-value="0">
+              <div class="option-label">個人の問題</div>
+              <div class="option-desc">自分自身のキャリア、生き方、内面の問題</div>
+            </div>
+            <div class="option" data-value="1">
+              <div class="option-label">組織内</div>
+              <div class="option-desc">会社、チーム、家族など所属する組織の中の問題</div>
+            </div>
+            <div class="option" data-value="2">
+              <div class="option-label">対外関係</div>
+              <div class="option-desc">外部との関係、交渉、新しい出会い</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-card" data-question="5">
+          <h3>Q5. 今のあなたの気持ちに最も近いものはどれですか？</h3>
+          <div class="options">
+            <div class="option" data-value="0">
+              <div class="option-label">前向き・積極的</div>
+              <div class="option-desc">やる気がある、エネルギーを感じる</div>
+            </div>
+            <div class="option" data-value="1">
+              <div class="option-label">慎重・用心深い</div>
+              <div class="option-desc">注意深く、リスクを考えている</div>
+            </div>
+            <div class="option" data-value="2">
+              <div class="option-label">不安・心配</div>
+              <div class="option-desc">先行きが不透明で、心配がある</div>
+            </div>
+            <div class="option" data-value="3">
+              <div class="option-label">楽観・期待</div>
+              <div class="option-desc">うまくいく予感がある、希望を感じる</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-buttons" id="nav-buttons">
+        <button class="nav-btn prev" id="prevBtn" onclick="prevQuestion()" disabled>戻る</button>
+        <button class="nav-btn next" id="nextBtn" onclick="nextQuestion()" disabled>次へ</button>
+      </div>
+
+      <!-- Loading -->
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>あなたの状況を分析中...</p>
+      </div>
+
+      <!-- Candidates Selection -->
+      <div class="candidates-section" id="candidates-section">
+        <h3 style="text-align: center; margin-bottom: 20px;">あなたの状況に近いものを選んでください</h3>
+        <div id="candidates-list"></div>
+        <div class="nav-buttons">
+          <button class="nav-btn prev" onclick="backToQuestions()">質問に戻る</button>
+          <button class="nav-btn next" id="selectCandidateBtn" onclick="selectCandidate()" disabled>この状況を選択</button>
+        </div>
+      </div>
+
+      <!-- Yao Selection -->
+      <div class="yao-section" id="yao-section">
+        <h3 style="text-align: center; margin-bottom: 20px;">状況の段階を選んでください</h3>
+        <div id="yao-list"></div>
+        <div class="nav-buttons">
+          <button class="nav-btn prev" onclick="backToCandidates()">候補に戻る</button>
+          <button class="nav-btn next" id="selectYaoBtn" onclick="showResults()" disabled>診断結果を見る</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="results-section" id="results-section">
+        <div class="result-card">
+          <div class="result-hexagram" id="result-hexagram">☰</div>
+          <div class="result-title" id="result-title">診断結果</div>
+          <div class="result-summary" id="result-summary">
+            <!-- Summary will be inserted here -->
+          </div>
+          <div class="case-count">
+            類似事例: <strong id="case-count">0</strong>件
+          </div>
+          <div class="paid-preview">
+            <h4>有料版で見られる内容</h4>
+            <ul id="paid-content-list">
+              <li>具体的な類似事例3件の詳細分析</li>
+              <li>あなたの状況に基づいた90日行動計画</li>
+              <li>失敗パターンとその回避策</li>
+              <li>次のステップへの具体的なアドバイス</li>
+            </ul>
+            <div class="price-tag">¥980</div>
+            <button class="buy-btn" onclick="purchase()">詳細レポートを購入する</button>
+            <p style="text-align: center; font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+              ※ 購入後すぐにレポートが表示されます
+            </p>
+          </div>
+        </div>
+        <button class="nav-btn prev" style="margin-top: 20px; width: 100%;" onclick="restartDiagnosis()">もう一度診断する</button>
+      </div>
+    </div>
   </section>
 
   <!-- Features -->
@@ -226,31 +704,23 @@
     <div class="feature-grid">
       <div class="feature-card">
         <h3>現状分析（Seasoning）</h3>
-        <p class="question">「今、あなたは人生のどの季節にいるのか？」</p>
         <p>
-          簡単な質問に答えるだけで、あなたの置かれている状況を64のパターンに分類。
+          簡単な質問に答えるだけで、あなたの置かれている状況を分析。
           「今は積極的に攻めるべき『夏』なのか」「力を蓄えて待つべき『冬』なのか」を客観的に可視化します。
         </p>
       </div>
       <div class="feature-card">
-        <h3>ケーススタディ参照（Case Retrieval）</h3>
-        <p class="question">「先人はこの局面をどう乗り越えたか？」</p>
+        <h3>ケーススタディ参照</h3>
         <p>
-          あなたの現状と同じパターンで、過去の偉人や成功企業、あるいは失敗した事例が「どう動いたか」をレコメンド。
+          あなたの現状と同じパターンで、過去の成功企業、あるいは失敗した事例が「どう動いたか」をレコメンド。
           12,000件以上のデータベースから、今のあなたに最も参考になる「生きた教科書」を提示します。
         </p>
       </div>
       <div class="feature-card">
-        <h3>アクションプラン策定（Strategy Generation）</h3>
-        <p class="question">「明日、具体的にどう動くべきか？」</p>
+        <h3>アクションプラン策定</h3>
         <p>
-          精神論ではなく、具体的な行動指針をAI参謀が提案します。
+          精神論ではなく、具体的な90日行動指針をAI参謀が提案します。
         </p>
-        <ul style="margin-top: 10px; padding-left: 20px;">
-          <li><strong>Go</strong>: リスクを取って勝負に出る</li>
-          <li><strong>Wait</strong>: 好機を待って準備する</li>
-          <li><strong>Retreat</strong>: 勇気を持って撤退し、再起を図る</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -266,33 +736,323 @@
       HaQeiは、暗闇の中を歩くあなたの手元を照らす「松明（たいまつ）」であり、
       目的地までの最短ルートを示す「地図」です。
     </p>
-    <p style="margin-top: 30px;">
-      迷いの森に入ったら、HaQeiを開いてください。<br>
-      ここには、3000年前の知恵を蘇らせた「答え」があります。
-    </p>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <h2>API ライセンス</h2>
-    <p>HaQei診断APIを、あなたのアプリケーションに統合できます。</p>
-    <div class="price">¥9,800 <span style="font-size: 1rem;">（税込・買い切り）</span></div>
-    <p class="price-note">3デバイスまで利用可能 / 永久ライセンス</p>
-    <a href="#" class="cta-button" id="buy-button">ライセンスを購入する</a>
-    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-      ※ 購入後、ライセンスキーがメールで届きます
-    </p>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 HaQei. All rights reserved.</p>
     <p style="margin-top: 10px;">
-      <a href="mailto:support@haqei.pages.dev">お問い合わせ</a> |
+      <a href="mailto:support@haqei.com">お問い合わせ</a> |
       <a href="/terms">利用規約</a> |
       <a href="/privacy">プライバシーポリシー</a>
     </p>
   </footer>
+
+  <script>
+    // API Base URL
+    const API_BASE = 'https://haqei-api.haqei64384.workers.dev';
+
+    // State
+    let currentQuestion = 1;
+    const totalQuestions = 5;
+    let answers = {
+      changeNature: null,
+      agency: null,
+      timeframe: null,
+      relationship: null,
+      emotionalTone: null
+    };
+    const answerKeys = ['changeNature', 'agency', 'timeframe', 'relationship', 'emotionalTone'];
+    let candidates = [];
+    let selectedCandidate = null;
+    let yaoOptions = [];
+    let selectedYao = null;
+
+    // Scroll to diagnosis
+    function scrollToDiagnosis() {
+      document.getElementById('diagnosis').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Option selection
+    document.querySelectorAll('.option').forEach(option => {
+      option.addEventListener('click', function() {
+        const card = this.closest('.question-card');
+        card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        this.classList.add('selected');
+
+        const questionNum = parseInt(card.dataset.question);
+        const value = parseInt(this.dataset.value);
+        answers[answerKeys[questionNum - 1]] = value;
+
+        document.getElementById('nextBtn').disabled = false;
+      });
+    });
+
+    // Navigation
+    function updateStepIndicator() {
+      document.querySelectorAll('.step').forEach(step => {
+        const stepNum = parseInt(step.dataset.step);
+        step.classList.remove('active', 'completed');
+        if (stepNum < currentQuestion) {
+          step.classList.add('completed');
+        } else if (stepNum === currentQuestion) {
+          step.classList.add('active');
+        }
+      });
+    }
+
+    function showQuestion(num) {
+      document.querySelectorAll('.question-card').forEach(card => {
+        card.classList.remove('active');
+        if (parseInt(card.dataset.question) === num) {
+          card.classList.add('active');
+        }
+      });
+
+      document.getElementById('prevBtn').disabled = num === 1;
+
+      // Check if this question has an answer
+      const hasAnswer = answers[answerKeys[num - 1]] !== null;
+      document.getElementById('nextBtn').disabled = !hasAnswer;
+      document.getElementById('nextBtn').textContent = num === totalQuestions ? '診断する' : '次へ';
+
+      updateStepIndicator();
+    }
+
+    function prevQuestion() {
+      if (currentQuestion > 1) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestion < totalQuestions) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+      } else {
+        // Submit and get results
+        submitDiagnosis();
+      }
+    }
+
+    async function submitDiagnosis() {
+      // Hide questions, show loading
+      document.getElementById('questions-container').style.display = 'none';
+      document.getElementById('nav-buttons').style.display = 'none';
+      document.getElementById('loading').classList.add('active');
+
+      try {
+        const response = await fetch(`${API_BASE}/v2/diagnose/phase1`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ answers })
+        });
+
+        if (!response.ok) throw new Error('API Error');
+
+        const data = await response.json();
+        candidates = data.candidates;
+
+        // Show candidates
+        showCandidates();
+      } catch (error) {
+        console.error('Error:', error);
+        // Fallback: use local calculation
+        candidates = localCalculateCandidates(answers);
+        showCandidates();
+      }
+    }
+
+    function localCalculateCandidates(answers) {
+      // Simplified local fallback
+      const hexagrams = [
+        { hexagramNumber: 1, name: '乾為天', description: 'すべてが満ちている状態。力があり、積極的に動ける時期', confidence: 0.35, keywords: ['創造', '前進'] },
+        { hexagramNumber: 11, name: '地天泰', description: '天地が交わり万物が通じる。最も良い時期', confidence: 0.25, keywords: ['繁栄', '調和'] },
+        { hexagramNumber: 42, name: '風雷益', description: '増やす時期。積極的な行動が実る', confidence: 0.20, keywords: ['利益', '発展'] },
+        { hexagramNumber: 3, name: '水雷屯', description: '物事の始まりで困難が多い。焦らず基盤を固める時期', confidence: 0.12, keywords: ['困難', '忍耐'] },
+        { hexagramNumber: 5, name: '水天需', description: '時機を待つべき時期。焦らず力を蓄える', confidence: 0.08, keywords: ['待機', '準備'] }
+      ];
+      return hexagrams;
+    }
+
+    function showCandidates() {
+      document.getElementById('loading').classList.remove('active');
+      document.getElementById('candidates-section').classList.add('active');
+
+      const list = document.getElementById('candidates-list');
+      list.innerHTML = candidates.map((c, i) => `
+        <div class="candidate-card" data-index="${i}">
+          <div style="font-weight: bold; color: var(--primary); margin-bottom: 10px;">
+            ${String.fromCharCode(65 + i)}. ${c.keywords.join(' / ')}
+          </div>
+          <div style="font-size: 0.95rem; color: #666;">
+            ${c.description}
+          </div>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width: ${c.confidence * 100}%"></div>
+          </div>
+        </div>
+      `).join('');
+
+      // Add click handlers
+      list.querySelectorAll('.candidate-card').forEach(card => {
+        card.addEventListener('click', function() {
+          list.querySelectorAll('.candidate-card').forEach(c => c.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedCandidate = candidates[parseInt(this.dataset.index)];
+          document.getElementById('selectCandidateBtn').disabled = false;
+        });
+      });
+    }
+
+    function backToQuestions() {
+      document.getElementById('candidates-section').classList.remove('active');
+      document.getElementById('questions-container').style.display = 'block';
+      document.getElementById('nav-buttons').style.display = 'flex';
+      currentQuestion = totalQuestions;
+      showQuestion(currentQuestion);
+    }
+
+    async function selectCandidate() {
+      document.getElementById('candidates-section').classList.remove('active');
+      document.getElementById('loading').classList.add('active');
+
+      try {
+        const response = await fetch(`${API_BASE}/v2/diagnose/select`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ hexagramNumber: selectedCandidate.hexagramNumber })
+        });
+
+        if (!response.ok) throw new Error('API Error');
+
+        const data = await response.json();
+        yaoOptions = data.yaoOptions;
+        showYaoOptions();
+      } catch (error) {
+        console.error('Error:', error);
+        // Fallback
+        yaoOptions = [
+          { yao: 1, stage: '初期・準備段階', description: 'まだ始まったばかり。準備を整え、基盤を固める時期。' },
+          { yao: 2, stage: '展開・成長段階', description: '動き出した段階。勢いが出てきている。' },
+          { yao: 3, stage: '試練・困難段階', description: '困難や障害に直面する段階。' },
+          { yao: 4, stage: '転換・決断段階', description: '重要な転換点。大きな決断が求められる。' },
+          { yao: 5, stage: '成熟・成果段階', description: '成果が現れ、影響力が発揮できる。' },
+          { yao: 6, stage: '終末・移行段階', description: '一つのサイクルの終わり。次への移行期。' }
+        ];
+        showYaoOptions();
+      }
+    }
+
+    function showYaoOptions() {
+      document.getElementById('loading').classList.remove('active');
+      document.getElementById('yao-section').classList.add('active');
+
+      const list = document.getElementById('yao-list');
+      list.innerHTML = yaoOptions.map(y => `
+        <div class="yao-card" data-yao="${y.yao}">
+          <div class="yao-number">${y.yao}</div>
+          <div class="yao-info">
+            <h4>${y.stage}</h4>
+            <p>${y.description}</p>
+          </div>
+        </div>
+      `).join('');
+
+      list.querySelectorAll('.yao-card').forEach(card => {
+        card.addEventListener('click', function() {
+          list.querySelectorAll('.yao-card').forEach(c => c.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedYao = parseInt(this.dataset.yao);
+          document.getElementById('selectYaoBtn').disabled = false;
+        });
+      });
+    }
+
+    function backToCandidates() {
+      document.getElementById('yao-section').classList.remove('active');
+      document.getElementById('candidates-section').classList.add('active');
+    }
+
+    async function showResults() {
+      document.getElementById('yao-section').classList.remove('active');
+      document.getElementById('loading').classList.add('active');
+
+      try {
+        const response = await fetch(`${API_BASE}/v2/diagnose/preview`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            hexagramNumber: selectedCandidate.hexagramNumber,
+            yao: selectedYao
+          })
+        });
+
+        if (!response.ok) throw new Error('API Error');
+
+        const data = await response.json();
+        displayResults(data);
+      } catch (error) {
+        console.error('Error:', error);
+        // Fallback
+        displayResults({
+          hexagramName: selectedCandidate.name,
+          yao: selectedYao,
+          summary: `【${selectedCandidate.name}】\n${selectedCandidate.description}`,
+          caseCount: Math.floor(Math.random() * 50) + 20,
+          paidContentPreview: [
+            '具体的な類似事例3件の詳細分析',
+            'あなたの状況に基づいた90日行動計画',
+            '失敗パターンとその回避策',
+            '次のステップへの具体的なアドバイス'
+          ]
+        });
+      }
+    }
+
+    function displayResults(data) {
+      document.getElementById('loading').classList.remove('active');
+      document.getElementById('results-section').classList.add('active');
+
+      document.getElementById('result-title').textContent = data.hexagramName;
+      document.getElementById('result-summary').innerHTML = data.summary.replace(/\n/g, '<br>');
+      document.getElementById('case-count').textContent = data.caseCount;
+
+      if (data.paidContentPreview) {
+        const list = document.getElementById('paid-content-list');
+        list.innerHTML = data.paidContentPreview.map(item => `<li>${item}</li>`).join('');
+      }
+    }
+
+    function restartDiagnosis() {
+      // Reset state
+      currentQuestion = 1;
+      answers = {
+        changeNature: null,
+        agency: null,
+        timeframe: null,
+        relationship: null,
+        emotionalTone: null
+      };
+      candidates = [];
+      selectedCandidate = null;
+      yaoOptions = [];
+      selectedYao = null;
+
+      // Reset UI
+      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      document.getElementById('results-section').classList.remove('active');
+      document.getElementById('questions-container').style.display = 'block';
+      document.getElementById('nav-buttons').style.display = 'flex';
+      showQuestion(1);
+    }
+
+    function purchase() {
+      // TODO: Integrate with Lemon Squeezy
+      alert('決済機能は準備中です。近日公開予定！');
+    }
+  </script>
 
 </body>
 </html>

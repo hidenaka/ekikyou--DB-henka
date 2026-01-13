@@ -9,6 +9,15 @@ import { handleWebhookRequest } from './webhook';
 import { checkRateLimit, rateLimitResponse, DEFAULT_RATE_LIMIT } from './ratelimit';
 import { computeDiagnosis, createPreviewResponse, createFullResponse, type DiagnosisInput } from './diagnose';
 import { searchCases, findSimilarCases, type CaseSearchParams } from './cases';
+// v2 診断エンジン
+import {
+  processPhase1,
+  processPhase2,
+  getYaoOptions,
+  generatePreview,
+  PHASE1_QUESTIONS,
+  type Phase1Answers
+} from './diagnose-v2';
 
 export interface Env {
   DB: D1Database;
@@ -116,6 +125,102 @@ export default {
         return json(result, corsHeaders);
       }
 
+      // ============================================================
+      // v2 診断API（新設計: Top-k候補 + ユーザー選択方式）
+      // ============================================================
+
+      // v2: 質問一覧取得
+      if (path === '/v2/diagnose/questions' && request.method === 'GET') {
+        return json({ questions: PHASE1_QUESTIONS }, corsHeaders);
+      }
+
+      // v2: Phase 1 - 初期絞り込み
+      if (path === '/v2/diagnose/phase1' && request.method === 'POST') {
+        const body = await request.json() as { answers: Phase1Answers };
+        const result = processPhase1(body.answers);
+        return json(result, corsHeaders);
+      }
+
+      // v2: Phase 2 - 追加質問処理
+      if (path === '/v2/diagnose/phase2' && request.method === 'POST') {
+        const body = await request.json() as {
+          phase1Answers: Phase1Answers;
+          phase2Answers: Record<string, number>;
+        };
+        const result = processPhase2(body.phase1Answers, body.phase2Answers);
+        return json(result, corsHeaders);
+      }
+
+      // v2: Phase 3 - ユーザー選択後の爻オプション取得
+      if (path === '/v2/diagnose/select' && request.method === 'POST') {
+        const body = await request.json() as { hexagramNumber: number };
+        const result = getYaoOptions(body.hexagramNumber);
+        return json(result, corsHeaders);
+      }
+
+      // v2: Phase 4 - プレビュー（無料）
+      if (path === '/v2/diagnose/preview' && request.method === 'POST') {
+        const body = await request.json() as { hexagramNumber: number; yao: number };
+
+        // DBから類似事例数を取得
+        let caseCount = 0;
+        try {
+          const countResult = await env.DB.prepare(
+            `SELECT COUNT(*) as count FROM cases
+             WHERE trigger_hex_number = ? OR result_hex_number = ?`
+          ).bind(body.hexagramNumber, body.hexagramNumber).first<{ count: number }>();
+          caseCount = countResult?.count || 0;
+        } catch {
+          // DBエラー時は0件として処理
+          caseCount = 0;
+        }
+
+        const result = generatePreview(body.hexagramNumber, body.yao, caseCount);
+        return json(result, corsHeaders);
+      }
+
+      // v2: Phase 4 - フル分析（有料・認証必要）
+      if (path === '/v2/diagnose/full' && request.method === 'POST') {
+        const authHeader = request.headers.get('Authorization');
+        const licenseKey = extractLicenseKey(authHeader);
+
+        if (!licenseKey) {
+          return json({ error: 'Unauthorized: License key required' }, corsHeaders, 401);
+        }
+
+        const validation = await validateLicense(licenseKey, env.DB);
+        if (!validation.valid) {
+          return json({ error: 'Unauthorized: Invalid license key' }, corsHeaders, 401);
+        }
+
+        const body = await request.json() as { hexagramNumber: number; yao: number };
+
+        // 類似事例を取得
+        let similarCases: unknown[] = [];
+        try {
+          const casesResult = await env.DB.prepare(
+            `SELECT entity_name, domain, description, outcome, source_url
+             FROM cases
+             WHERE (trigger_hex_number = ? OR result_hex_number = ?)
+               AND yao_position = ?
+             LIMIT 5`
+          ).bind(body.hexagramNumber, body.hexagramNumber, body.yao).all();
+          similarCases = casesResult.results || [];
+        } catch {
+          similarCases = [];
+        }
+
+        const preview = generatePreview(body.hexagramNumber, body.yao, similarCases.length);
+
+        return json({
+          ...preview,
+          similarCases,
+          actionPlan: generateActionPlan(body.hexagramNumber, body.yao),
+          failurePatterns: generateFailurePatterns(body.hexagramNumber),
+          isFullVersion: true
+        }, corsHeaders);
+      }
+
       // 404
       return json({ error: 'Not Found' }, corsHeaders, 404);
 
@@ -153,4 +258,58 @@ function getCorsHeaders(request: Request, allowedOrigins: string): Headers {
   headers.set('Access-Control-Max-Age', '86400');
 
   return headers;
+}
+
+// 90日行動計画生成（有料版用）
+function generateActionPlan(hexagramNumber: number, yao: number): string[] {
+  const yaoPlans: Record<number, string[]> = {
+    1: [
+      '【1-30日】準備期間: 情報収集と計画立案に集中する',
+      '【31-60日】小さな一歩: 低リスクな実験を開始する',
+      '【61-90日】振り返り: 結果を分析し、次のステップを決定'
+    ],
+    2: [
+      '【1-30日】展開期: 計画を実行に移し、フィードバックを集める',
+      '【31-60日】調整期: 得られた知見をもとに軌道修正',
+      '【61-90日】加速期: 成功パターンを拡大する'
+    ],
+    3: [
+      '【1-30日】課題直視: 問題の根本原因を特定する',
+      '【31-60日】対策実行: 優先順位をつけて一つずつ解決',
+      '【61-90日】予防策: 同じ問題が起きない仕組みを構築'
+    ],
+    4: [
+      '【1-30日】選択肢整理: 可能な選択肢を洗い出す',
+      '【31-60日】決断実行: 最善の選択を行い、コミットする',
+      '【61-90日】結果検証: 決断の結果を評価し、必要なら修正'
+    ],
+    5: [
+      '【1-30日】成果確認: 達成したことを整理し、次の目標を設定',
+      '【31-60日】影響拡大: 成功を他の領域にも展開',
+      '【61-90日】持続化: 成果を維持する仕組みを作る'
+    ],
+    6: [
+      '【1-30日】収束準備: 現フェーズの締めくくりを計画',
+      '【31-60日】引き継ぎ: 次のステージへの移行準備',
+      '【61-90日】新章開始: 新しいサイクルの第一歩を踏み出す'
+    ]
+  };
+
+  return yaoPlans[yao] || yaoPlans[1];
+}
+
+// 失敗パターン生成（有料版用）
+function generateFailurePatterns(hexagramNumber: number): string[] {
+  // 卦の特性に基づく失敗パターン
+  const patterns: string[] = [
+    '焦って動きすぎる: 時機を待たずに行動し、機会を逃す',
+    '変化を恐れすぎる: 必要な変化を先延ばしにして状況が悪化',
+    '一人で抱え込む: 協力を求めず、限界を超えて疲弊',
+    '過去に固執する: 古い方法に執着し、新しい可能性を見逃す',
+    '楽観しすぎる: リスクを過小評価し、備えを怠る'
+  ];
+
+  // 卦番号に基づいて順序を変える（多様性のため）
+  const offset = hexagramNumber % patterns.length;
+  return [...patterns.slice(offset), ...patterns.slice(0, offset)].slice(0, 3);
 }
