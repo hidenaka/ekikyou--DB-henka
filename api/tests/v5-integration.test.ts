@@ -4,8 +4,9 @@
  */
 
 import { describe, it, expect, beforeAll } from 'vitest';
-import * as fs from 'fs';
-import * as path from 'path';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import {
   diagnose,
   createDiagnoseResponse,
@@ -16,11 +17,15 @@ import {
 } from '../src/v5/index';
 import { UserAnswers, Rubric } from '../src/v5/types';
 
+// ESM対応の__dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 describe('v5統合テスト（実ルーブリック）', () => {
   beforeAll(() => {
     clearRubricCache();
-    const rubricPath = path.join(__dirname, '../../data/rubric_v1.json');
-    const rubricContent = fs.readFileSync(rubricPath, 'utf-8');
+    const rubricPath = join(__dirname, '../../data/rubric_v1.json');
+    const rubricContent = readFileSync(rubricPath, 'utf-8');
     const rubric: Rubric = JSON.parse(rubricContent);
     setRubric(rubric);
   });

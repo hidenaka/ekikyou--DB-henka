@@ -11,12 +11,18 @@
     "db:init": "wrangler d1 execute haqei-db --local --file=schema.sql",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": ["cloudflare", "workers", "haqei", "iching"],
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "haqei",
+    "iching"
+  ],
   "author": "",
   "license": "ISC",
   "description": "HaQei Diagnosis API - Cloudflare Workers",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260111.0",
+    "@types/node": "^25.0.8",
     "typescript": "^5.9.3",
     "vitest": "^2.1.8",
     "wrangler": "^4.58.0"
