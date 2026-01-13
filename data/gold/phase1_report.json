@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-01-13T22:06:13.225862",
+  "phase": "1_source_roles",
+  "codex_compliance": {
+    "role_based_classification": true,
+    "wikipedia_as_pointer": true,
+    "youtube_official_detection": true,
+    "url_normalization": true
+  },
+  "source_statistics": {
+    "total_sources": 11207,
+    "role_distribution": {
+      "primary_source": 4603,
+      "rejected": 2690,
+      "context_only": 2203,
+      "pointer_to_sources": 1391,
+      "secondary_source": 320
+    },
+    "pointer_count": 1391,
+    "youtube_official": 0
+  },
+  "case_statistics": {
+    "total_cases": 12871,
+    "case_role_distribution": {
+      "has_primary": 4563,
+      "rejected_or_none": 4791,
+      "context_only": 1935,
+      "pointer_only": 1291,
+      "has_secondary": 291
+    }
+  }
+}
