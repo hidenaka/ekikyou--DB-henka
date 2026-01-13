@@ -54,19 +54,25 @@ def main():
     print("Phase 4: success_level実測化")
     print("=" * 60)
 
-    # Goldセットを使用（最も信頼できるデータ）
-    gold_path = DATA_DIR / 'gold' / 'verified_cases.jsonl'
-    if not gold_path.exists():
-        print("エラー: Goldセットがありません。Phase 1-2を先に実行してください。")
+    # Gold + Silverセットを使用（v3対応）
+    cases = []
+
+    for tier in ['gold', 'silver']:
+        tier_path = DATA_DIR / 'gold' / f'{tier}_cases_v3.jsonl'
+        if tier_path.exists():
+            with open(tier_path, 'r') as f:
+                for line in f:
+                    if line.strip():
+                        case = json.loads(line)
+                        case['_tier'] = tier  # Tier情報を付加
+                        cases.append(case)
+            print(f"  {tier}: {sum(1 for c in cases if c.get('_tier') == tier)}件")
+
+    if not cases:
+        print("エラー: Gold/Silverセットがありません。Phase 1-2 v3を先に実行してください。")
         return
 
-    cases = []
-    with open(gold_path, 'r') as f:
-        for line in f:
-            if line.strip():
-                cases.append(json.loads(line))
-
-    print(f"Gold事例数: {len(cases)}")
+    print(f"合計事例数: {len(cases)}")
 
     # 統計収集: hexagram × yao × pattern_type
     stats = defaultdict(lambda: {'total': 0, 'success_sum': 0.0, 'outcomes': []})

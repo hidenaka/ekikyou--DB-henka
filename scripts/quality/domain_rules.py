@@ -66,15 +66,29 @@ REDIRECT_NORMALIZATION = {
 # 4. Tier定義（拡張版）
 # ============================================
 DOMAIN_TIERS = {
-    # Tier 1: 公式・政府・学術（最高信頼）
+    # Tier 1: 公式・政府・学術・国際機関（最高信頼）
     'tier1_official': {
         'patterns': [
-            r'\.go\.jp$', r'\.gov$', r'\.gov\.uk$',
-            r'\.gouv\.fr$', r'bundesregierung\.de',
-            r'gouvernement\.fr', r'\.go\.kr$',
-            r'\.ac\.jp$', r'\.edu$', r'\.ac\.uk$',
+            # 日本政府・学術
+            r'\.go\.jp$', r'\.ac\.jp$',
+            # 米国
+            r'\.gov$', r'\.edu$',
+            # 欧州（サブドメインありとトップレベルドメイン直接の両方に対応）
+            r'gov\.uk$', r'\.ac\.uk$', r'\.gouv\.fr$',
+            r'bundesregierung\.de', r'gouvernement\.fr',
+            r'ec\.europa\.eu', r'europa\.eu$',
+            # アジア
+            r'\.go\.kr$', r'gov\.cn$', r'india\.gov\.in$',
+            r'indonesia\.go\.id$',
+            # その他
+            r'gov\.br$', r'government\.ru$',
+            # 国際機関
+            r'imf\.org$', r'worldbank\.org$', r'un\.org$',
+            r'oecd\.org$', r'who\.int$', r'wto\.org$',
+            # 中央銀行
+            r'boj\.or\.jp$', r'federalreserve\.gov$',
         ],
-        'description': '政府・学術機関',
+        'description': '政府・学術・国際機関',
         'source_type_override': 'official',
     },
 
@@ -94,31 +108,48 @@ DOMAIN_TIERS = {
         'source_type_override': 'news',
     },
 
-    # Tier 3: ビジネス・テック専門メディア
+    # Tier 3: ビジネス・テック専門メディア + 参考情報源
     'tier3_specialist': {
         'patterns': [
+            # ビジネス誌
             r'toyokeizai\.net$', r'diamond\.jp$', r'newspicks\.com$',
             r'president\.jp$', r'businessinsider\.jp$', r'forbesjapan\.com$',
+            # テックメディア
             r'techcrunch\.com$', r'theverge\.com$', r'wired\.(com|jp)$',
             r'itmedia\.co\.jp$', r'impress\.co\.jp$', r'cnet\.com$',
             r'zdnet\.com$', r'arstechnica\.com$',
+            # 百科事典（二次情報源、検証用参考）
+            r'wikipedia\.org$', r'britannica\.com$',
         ],
-        'description': '専門メディア',
+        'description': '専門メディア・参考情報源',
         'source_type_override': 'news',
     },
 
     # Tier 4: 企業公式（IR/PR/About限定）
     'tier4_corporate': {
         'patterns': [
-            # 日本企業
+            # 日本企業（製造業）
             r'sony\.(com|co\.jp)', r'toyota', r'toshiba',
-            r'softbank', r'panasonic\.com', r'mitsubishi\.com',
-            r'sharp', r'fastretailing\.com', r'uniqlo\.com',
-            r'rakuten\.co\.jp',
-            # 海外企業
+            r'panasonic\.com', r'mitsubishi\.com', r'sharp',
+            r'hitachi\.(com|co\.jp)', r'honda', r'nissan',
+            r'nintendo\.(com|co\.jp)', r'canon\.(com|co\.jp)',
+            r'nikon\.(com|co\.jp)', r'fujifilm', r'boeing\.com',
+            # 日本企業（サービス・小売・金融）
+            r'softbank', r'rakuten\.co\.jp', r'linecorp\.com',
+            r'fastretailing\.com', r'uniqlo\.com',
+            r'aeon\.(info|co\.jp)', r'7andi\.com', r'seven-i\.com',
+            r'mcdonalds\.(com|co\.jp)', r'mitsui\.com',
+            r'sumitomo', r'marubeni\.com',
+            # 海外テック
             r'apple\.com', r'google', r'amazon', r'meta\.com',
             r'nvidia\.com', r'tesla\.com', r'netflix\.com',
             r'openai\.com', r'microsoft\.com', r'spacex\.com',
+            r'airbnb\.com', r'zoom\.us', r'uber\.com',
+            r'tiktok\.com', r'bytedance\.com',
+            # 海外その他
+            r'gm\.com', r'ford\.com', r'disney', r'walmart\.com',
+            # スポーツ・エンタメ
+            r'mlb\.com', r'nba\.com', r'nfl\.com', r'jfa\.jp',
         ],
         'description': '企業公式サイト',
         'source_type_override': 'official',
