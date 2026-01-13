@@ -103,3 +103,29 @@ python3 scripts/diagnostic_engine.py
 - **司令塔**: `/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/20260109AI易経事業`
 - **作業完了時**: 「メインハブで進捗報告してください」とユーザーに伝える
 - **詳細**: 必要時のみ `.docs/hub_sync.md` を参照
+
+---
+
+## 🔍 LLM Debate（Codex批評）
+
+**重要な判断時には、Codex (GPT-5.2) に批評を依頼すること。**
+
+### 必須発動ケース
+- 新しいアーキテクチャや設計パターンを提案する時
+- 重要なビジネス戦略・方針を立案する時
+- ユーザーから「批評して」「これでいいか確認して」と言われた時
+
+### 発動しないケース
+- 単純なコード修正・リファクタリング
+- ファイル操作・配置変更のみ
+- 質問への回答のみ
+
+### 実行方法
+```bash
+node .claude/skills/llm-debate/scripts/llm-debate.js \
+  --topic "{議題}" \
+  --claude-opinion "{自分の提案や意見}"
+```
+
+**出力先**: `debate/llm-debate-{日付}-{議題}/`
+
