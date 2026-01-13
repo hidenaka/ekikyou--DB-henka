@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-01-13T11:16:28.833849",
+  "generated_at": "2026-01-13T12:30:26.440565",
   "workflow": "ワークフロー_64卦爻補充_2026-01",
   "statistics": {
     "total_cells": 384,
-    "covered": 350,
-    "covered_percent": 91.1,
-    "missing": 34,
-    "missing_percent": 8.9,
-    "low_count_cells": 126
+    "covered": 384,
+    "covered_percent": 100.0,
+    "missing": 0,
+    "missing_percent": 0.0,
+    "low_count_cells": 160
   },
   "phase_progress": {
     "Phase1": {
@@ -20,98 +20,27 @@
     "Phase2": {
       "name": "高優先(4爻欠損卦10卦)",
       "total": 40,
-      "done": 33,
-      "percent": 82.5,
-      "missing": [
-        {
-          "hexagram_id": 25,
-          "yao": 1
-        },
-        {
-          "hexagram_id": 25,
-          "yao": 4
-        },
-        {
-          "hexagram_id": 25,
-          "yao": 6
-        },
-        {
-          "hexagram_id": 38,
-          "yao": 2
-        },
-        {
-          "hexagram_id": 44,
-          "yao": 1
-        },
-        {
-          "hexagram_id": 56,
-          "yao": 2
-        },
-        {
-          "hexagram_id": 56,
-          "yao": 6
-        }
-      ]
+      "done": 40,
+      "percent": 100.0,
+      "missing": []
     },
     "Phase3": {
       "name": "中優先(第4爻全般)",
       "total": 64,
-      "done": 58,
-      "percent": 90.6,
-      "missing": [
-        {
-          "hexagram_id": 5,
-          "yao": 4
-        },
-        {
-          "hexagram_id": 6,
-          "yao": 4
-        },
-        {
-          "hexagram_id": 7,
-          "yao": 4
-        },
-        {
-          "hexagram_id": 16,
-          "yao": 4
-        },
-        {
-          "hexagram_id": 25,
-          "yao": 4
-        },
-        {
-          "hexagram_id": 54,
-          "yao": 4
-        }
-      ]
+      "done": 64,
+      "percent": 100.0,
+      "missing": []
     },
     "Phase4": {
       "name": "中優先(第1爻全般)",
       "total": 64,
-      "done": 60,
-      "percent": 93.8,
-      "missing": [
-        {
-          "hexagram_id": 10,
-          "yao": 1
-        },
-        {
-          "hexagram_id": 25,
-          "yao": 1
-        },
-        {
-          "hexagram_id": 41,
-          "yao": 1
-        },
-        {
-          "hexagram_id": 44,
-          "yao": 1
-        }
-      ]
+      "done": 64,
+      "percent": 100.0,
+      "missing": []
     },
     "Phase5": {
       "name": "少量マス補強",
-      "total": 126,
+      "total": 160,
       "done": 0,
       "percent": 0,
       "cells": [
@@ -157,8 +86,18 @@
         },
         {
           "hexagram_id": 5,
+          "yao": 2,
+          "count": 1
+        },
+        {
+          "hexagram_id": 5,
           "yao": 3,
           "count": 5
+        },
+        {
+          "hexagram_id": 5,
+          "yao": 4,
+          "count": 1
         },
         {
           "hexagram_id": 5,
@@ -186,6 +125,16 @@
           "count": 1
         },
         {
+          "hexagram_id": 6,
+          "yao": 4,
+          "count": 2
+        },
+        {
+          "hexagram_id": 6,
+          "yao": 6,
+          "count": 2
+        },
+        {
           "hexagram_id": 7,
           "yao": 2,
           "count": 1
@@ -196,9 +145,29 @@
           "count": 5
         },
         {
+          "hexagram_id": 7,
+          "yao": 4,
+          "count": 1
+        },
+        {
+          "hexagram_id": 7,
+          "yao": 5,
+          "count": 1
+        },
+        {
+          "hexagram_id": 7,
+          "yao": 6,
+          "count": 1
+        },
+        {
           "hexagram_id": 8,
           "yao": 1,
           "count": 1
+        },
+        {
+          "hexagram_id": 8,
+          "yao": 2,
+          "count": 2
         },
         {
           "hexagram_id": 8,
@@ -212,12 +181,27 @@
         },
         {
           "hexagram_id": 10,
+          "yao": 1,
+          "count": 1
+        },
+        {
+          "hexagram_id": 10,
+          "yao": 2,
+          "count": 1
+        },
+        {
+          "hexagram_id": 10,
           "yao": 3,
           "count": 5
         },
         {
           "hexagram_id": 10,
           "yao": 4,
+          "count": 1
+        },
+        {
+          "hexagram_id": 10,
+          "yao": 5,
           "count": 1
         },
         {
@@ -248,6 +232,11 @@
         {
           "hexagram_id": 16,
           "yao": 3,
+          "count": 2
+        },
+        {
+          "hexagram_id": 16,
+          "yao": 4,
           "count": 2
         },
         {
@@ -292,6 +281,11 @@
         },
         {
           "hexagram_id": 19,
+          "yao": 2,
+          "count": 1
+        },
+        {
+          "hexagram_id": 19,
           "yao": 6,
           "count": 4
         },
@@ -327,12 +321,42 @@
         },
         {
           "hexagram_id": 25,
+          "yao": 1,
+          "count": 4
+        },
+        {
+          "hexagram_id": 25,
+          "yao": 2,
+          "count": 3
+        },
+        {
+          "hexagram_id": 25,
+          "yao": 4,
+          "count": 2
+        },
+        {
+          "hexagram_id": 25,
+          "yao": 5,
+          "count": 1
+        },
+        {
+          "hexagram_id": 25,
+          "yao": 6,
+          "count": 2
+        },
+        {
+          "hexagram_id": 26,
+          "yao": 4,
+          "count": 1
+        },
+        {
+          "hexagram_id": 26,
           "yao": 5,
           "count": 1
         },
         {
           "hexagram_id": 26,
-          "yao": 4,
+          "yao": 6,
           "count": 1
         },
         {
@@ -421,6 +445,11 @@
           "count": 1
         },
         {
+          "hexagram_id": 34,
+          "yao": 6,
+          "count": 2
+        },
+        {
           "hexagram_id": 35,
           "yao": 1,
           "count": 1
@@ -462,6 +491,11 @@
         },
         {
           "hexagram_id": 38,
+          "yao": 2,
+          "count": 2
+        },
+        {
+          "hexagram_id": 38,
           "yao": 4,
           "count": 2
         },
@@ -474,6 +508,21 @@
           "hexagram_id": 39,
           "yao": 4,
           "count": 5
+        },
+        {
+          "hexagram_id": 39,
+          "yao": 5,
+          "count": 2
+        },
+        {
+          "hexagram_id": 41,
+          "yao": 1,
+          "count": 1
+        },
+        {
+          "hexagram_id": 41,
+          "yao": 2,
+          "count": 1
         },
         {
           "hexagram_id": 41,
@@ -503,6 +552,11 @@
         {
           "hexagram_id": 43,
           "yao": 6,
+          "count": 1
+        },
+        {
+          "hexagram_id": 44,
+          "yao": 1,
           "count": 1
         },
         {
@@ -597,13 +651,28 @@
         },
         {
           "hexagram_id": 54,
+          "yao": 2,
+          "count": 1
+        },
+        {
+          "hexagram_id": 54,
           "yao": 3,
           "count": 3
         },
         {
           "hexagram_id": 54,
+          "yao": 4,
+          "count": 1
+        },
+        {
+          "hexagram_id": 54,
           "yao": 5,
           "count": 3
+        },
+        {
+          "hexagram_id": 54,
+          "yao": 6,
+          "count": 2
         },
         {
           "hexagram_id": 55,
@@ -622,6 +691,11 @@
         },
         {
           "hexagram_id": 56,
+          "yao": 2,
+          "count": 2
+        },
+        {
+          "hexagram_id": 56,
           "yao": 3,
           "count": 4
         },
@@ -634,6 +708,11 @@
           "hexagram_id": 56,
           "yao": 5,
           "count": 1
+        },
+        {
+          "hexagram_id": 56,
+          "yao": 6,
+          "count": 2
         },
         {
           "hexagram_id": 57,
@@ -653,6 +732,11 @@
         {
           "hexagram_id": 57,
           "yao": 5,
+          "count": 2
+        },
+        {
+          "hexagram_id": 57,
+          "yao": 6,
           "count": 2
         },
         {
@@ -669,6 +753,11 @@
           "hexagram_id": 58,
           "yao": 3,
           "count": 3
+        },
+        {
+          "hexagram_id": 58,
+          "yao": 6,
+          "count": 2
         },
         {
           "hexagram_id": 59,
@@ -691,9 +780,19 @@
           "count": 1
         },
         {
+          "hexagram_id": 59,
+          "yao": 6,
+          "count": 2
+        },
+        {
           "hexagram_id": 60,
           "yao": 1,
           "count": 1
+        },
+        {
+          "hexagram_id": 60,
+          "yao": 2,
+          "count": 2
         },
         {
           "hexagram_id": 60,
@@ -748,566 +847,7 @@
       ]
     }
   },
-  "hexagram_summaries": [
-    {
-      "hexagram_id": 25,
-      "hexagram_name": "天雷无妄",
-      "missing_count": 4,
-      "missing_yaos": [
-        1,
-        2,
-        4,
-        6
-      ],
-      "present_yaos": [
-        [
-          3,
-          13
-        ],
-        [
-          5,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 7,
-      "hexagram_name": "地水師",
-      "missing_count": 3,
-      "missing_yaos": [
-        4,
-        5,
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          10
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          3,
-          5
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 10,
-      "hexagram_name": "天沢履",
-      "missing_count": 3,
-      "missing_yaos": [
-        1,
-        2,
-        5
-      ],
-      "present_yaos": [
-        [
-          3,
-          5
-        ],
-        [
-          4,
-          1
-        ],
-        [
-          6,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 54,
-      "hexagram_name": "雷沢帰妹",
-      "missing_count": 3,
-      "missing_yaos": [
-        2,
-        4,
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          2
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          5,
-          3
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 5,
-      "hexagram_name": "水天需",
-      "missing_count": 2,
-      "missing_yaos": [
-        2,
-        4
-      ],
-      "present_yaos": [
-        [
-          1,
-          7
-        ],
-        [
-          3,
-          5
-        ],
-        [
-          5,
-          1
-        ],
-        [
-          6,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 6,
-      "hexagram_name": "天水訟",
-      "missing_count": 2,
-      "missing_yaos": [
-        4,
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          1
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          3,
-          1
-        ],
-        [
-          5,
-          6
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 26,
-      "hexagram_name": "山天大畜",
-      "missing_count": 2,
-      "missing_yaos": [
-        5,
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          37
-        ],
-        [
-          2,
-          23
-        ],
-        [
-          3,
-          7
-        ],
-        [
-          4,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 41,
-      "hexagram_name": "山沢損",
-      "missing_count": 2,
-      "missing_yaos": [
-        1,
-        2
-      ],
-      "present_yaos": [
-        [
-          3,
-          63
-        ],
-        [
-          4,
-          49
-        ],
-        [
-          5,
-          17
-        ],
-        [
-          6,
-          4
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 56,
-      "hexagram_name": "火山旅",
-      "missing_count": 2,
-      "missing_yaos": [
-        2,
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          2
-        ],
-        [
-          3,
-          4
-        ],
-        [
-          4,
-          2
-        ],
-        [
-          5,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 8,
-      "hexagram_name": "水地比",
-      "missing_count": 1,
-      "missing_yaos": [
-        2
-      ],
-      "present_yaos": [
-        [
-          1,
-          1
-        ],
-        [
-          3,
-          14
-        ],
-        [
-          4,
-          8
-        ],
-        [
-          5,
-          1
-        ],
-        [
-          6,
-          20
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 16,
-      "hexagram_name": "雷地豫",
-      "missing_count": 1,
-      "missing_yaos": [
-        4
-      ],
-      "present_yaos": [
-        [
-          1,
-          15
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          3,
-          2
-        ],
-        [
-          5,
-          1
-        ],
-        [
-          6,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 19,
-      "hexagram_name": "地沢臨",
-      "missing_count": 1,
-      "missing_yaos": [
-        2
-      ],
-      "present_yaos": [
-        [
-          1,
-          1
-        ],
-        [
-          3,
-          50
-        ],
-        [
-          4,
-          68
-        ],
-        [
-          5,
-          10
-        ],
-        [
-          6,
-          4
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 34,
-      "hexagram_name": "雷天大壮",
-      "missing_count": 1,
-      "missing_yaos": [
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          14
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          3,
-          1
-        ],
-        [
-          4,
-          2
-        ],
-        [
-          5,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 38,
-      "hexagram_name": "火沢睽",
-      "missing_count": 1,
-      "missing_yaos": [
-        2
-      ],
-      "present_yaos": [
-        [
-          1,
-          11
-        ],
-        [
-          3,
-          10
-        ],
-        [
-          4,
-          2
-        ],
-        [
-          5,
-          6
-        ],
-        [
-          6,
-          5
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 39,
-      "hexagram_name": "水山蹇",
-      "missing_count": 1,
-      "missing_yaos": [
-        5
-      ],
-      "present_yaos": [
-        [
-          1,
-          22
-        ],
-        [
-          2,
-          40
-        ],
-        [
-          3,
-          72
-        ],
-        [
-          4,
-          5
-        ],
-        [
-          6,
-          110
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 44,
-      "hexagram_name": "天風姤",
-      "missing_count": 1,
-      "missing_yaos": [
-        1
-      ],
-      "present_yaos": [
-        [
-          2,
-          3
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          4,
-          1
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          6,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 57,
-      "hexagram_name": "巽為風",
-      "missing_count": 1,
-      "missing_yaos": [
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          17
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          4,
-          3
-        ],
-        [
-          5,
-          2
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 58,
-      "hexagram_name": "兌為沢",
-      "missing_count": 1,
-      "missing_yaos": [
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          2
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          4,
-          8
-        ],
-        [
-          5,
-          19
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 59,
-      "hexagram_name": "風水渙",
-      "missing_count": 1,
-      "missing_yaos": [
-        6
-      ],
-      "present_yaos": [
-        [
-          1,
-          13
-        ],
-        [
-          2,
-          4
-        ],
-        [
-          3,
-          5
-        ],
-        [
-          4,
-          1
-        ],
-        [
-          5,
-          1
-        ]
-      ]
-    },
-    {
-      "hexagram_id": 60,
-      "hexagram_name": "水沢節",
-      "missing_count": 1,
-      "missing_yaos": [
-        2
-      ],
-      "present_yaos": [
-        [
-          1,
-          1
-        ],
-        [
-          3,
-          9
-        ],
-        [
-          4,
-          5
-        ],
-        [
-          5,
-          1
-        ],
-        [
-          6,
-          2
-        ]
-      ]
-    }
-  ],
+  "hexagram_summaries": [],
   "coverage_matrix": {
     "55": {
       "5": 51,
@@ -1521,7 +1061,9 @@
       "3": 7,
       "2": 23,
       "1": 37,
-      "4": 1
+      "4": 1,
+      "5": 1,
+      "6": 1
     },
     "62": {
       "3": 39,
@@ -1550,21 +1092,26 @@
     "54": {
       "3": 3,
       "1": 2,
-      "5": 3
+      "5": 3,
+      "2": 1,
+      "4": 1,
+      "6": 2
     },
     "39": {
       "3": 72,
       "6": 110,
       "4": 5,
       "2": 40,
-      "1": 22
+      "1": 22,
+      "5": 2
     },
     "44": {
       "5": 5,
       "2": 3,
       "4": 1,
       "3": 3,
-      "6": 1
+      "6": 1,
+      "1": 1
     },
     "3": {
       "4": 3,
@@ -1586,7 +1133,9 @@
       "4": 2,
       "1": 2,
       "5": 1,
-      "3": 4
+      "3": 4,
+      "2": 2,
+      "6": 2
     },
     "61": {
       "2": 28,
@@ -1601,14 +1150,16 @@
       "3": 50,
       "5": 10,
       "6": 4,
-      "1": 1
+      "1": 1,
+      "2": 1
     },
     "59": {
       "4": 1,
       "5": 1,
       "3": 5,
       "2": 4,
-      "1": 13
+      "1": 13,
+      "6": 2
     },
     "22": {
       "4": 15,
@@ -1631,20 +1182,24 @@
       "6": 5,
       "3": 10,
       "1": 11,
-      "4": 2
+      "4": 2,
+      "2": 2
     },
     "5": {
       "3": 5,
       "5": 1,
       "1": 7,
-      "6": 1
+      "6": 1,
+      "2": 1,
+      "4": 1
     },
     "8": {
       "6": 20,
       "4": 8,
       "3": 14,
       "5": 1,
-      "1": 1
+      "1": 1,
+      "2": 2
     },
     "4": {
       "6": 3,
@@ -1659,14 +1214,16 @@
       "2": 1,
       "5": 19,
       "4": 8,
-      "1": 2
+      "1": 2,
+      "6": 2
     },
     "60": {
       "4": 5,
       "3": 9,
       "1": 1,
       "6": 2,
-      "5": 1
+      "5": 1,
+      "2": 2
     },
     "17": {
       "4": 3,
@@ -1681,20 +1238,24 @@
       "1": 15,
       "2": 2,
       "3": 2,
-      "6": 1
+      "6": 1,
+      "4": 2
     },
     "57": {
       "3": 3,
       "4": 3,
       "5": 2,
       "2": 2,
-      "1": 17
+      "1": 17,
+      "6": 2
     },
     "6": {
       "5": 6,
       "2": 2,
       "3": 1,
-      "1": 1
+      "1": 1,
+      "4": 2,
+      "6": 2
     },
     "29": {
       "6": 86,
@@ -1724,7 +1285,9 @@
       "6": 4,
       "3": 63,
       "4": 49,
-      "5": 17
+      "5": 17,
+      "1": 1,
+      "2": 1
     },
     "20": {
       "5": 4,
@@ -1745,7 +1308,10 @@
     "10": {
       "4": 1,
       "3": 5,
-      "6": 1
+      "6": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1
     },
     "31": {
       "5": 20,
@@ -1758,7 +1324,10 @@
     "7": {
       "3": 5,
       "1": 10,
-      "2": 1
+      "2": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1
     },
     "45": {
       "3": 2,
@@ -1781,11 +1350,16 @@
       "2": 2,
       "3": 1,
       "4": 2,
-      "5": 1
+      "5": 1,
+      "6": 2
     },
     "25": {
       "5": 1,
-      "3": 13
+      "3": 13,
+      "1": 4,
+      "2": 3,
+      "4": 2,
+      "6": 2
     }
   }
 }
