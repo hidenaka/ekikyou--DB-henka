@@ -8,20 +8,6 @@ import { Rubric, ClassProfile } from './types';
 let cachedRubric: Rubric | null = null;
 
 /**
- * ルーブリックを読み込む（Node.js環境用）
- */
-export async function loadRubricFromFile(filePath: string): Promise<Rubric> {
-  if (cachedRubric) {
-    return cachedRubric;
-  }
-
-  const fs = await import('fs').then((m) => m.promises);
-  const content = await fs.readFile(filePath, 'utf-8');
-  cachedRubric = JSON.parse(content) as Rubric;
-  return cachedRubric;
-}
-
-/**
  * ルーブリックを直接設定（Cloudflare Workers等用）
  */
 export function setRubric(rubric: Rubric): void {

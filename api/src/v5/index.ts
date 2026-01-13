@@ -37,7 +37,6 @@ export {
 
 // ルーブリック管理
 export {
-  loadRubricFromFile,
   setRubric,
   getRubric,
   clearRubricCache,

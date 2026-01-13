@@ -18,6 +18,16 @@ import {
   PHASE1_QUESTIONS,
   type Phase1Answers
 } from './diagnose-v2';
+// v5 診断エンジン（JS距離ベース384直接ランキング）
+import {
+  diagnoseV5,
+  createPreviewResponseV5,
+  createFullResponseV5,
+  validateAnswers,
+  getV5Questions,
+  initializeV5,
+} from './v5/handler';
+import type { UserAnswers } from './v5/types';
 
 export interface Env {
   DB: D1Database;
@@ -218,6 +228,91 @@ export default {
           actionPlan: generateActionPlan(body.hexagramNumber, body.yao),
           failurePatterns: generateFailurePatterns(body.hexagramNumber),
           isFullVersion: true
+        }, corsHeaders);
+      }
+
+      // ============================================================
+      // v5 診断API（限定ベータ: JS距離 + 384直接ランキング）
+      // ============================================================
+
+      // v5: 質問一覧取得
+      if (path === '/v5/diagnose/questions' && request.method === 'GET') {
+        return json(getV5Questions(), corsHeaders);
+      }
+
+      // v5: 診断実行（プレビュー - 無料版）
+      if (path === '/v5/diagnose/preview' && request.method === 'POST') {
+        const body = await request.json() as { answers: unknown };
+
+        if (!validateAnswers(body.answers)) {
+          return json({ error: 'Invalid answers format' }, corsHeaders, 400);
+        }
+
+        const result = diagnoseV5(body.answers as UserAnswers);
+        const preview = createPreviewResponseV5(result);
+        return json(preview, corsHeaders);
+      }
+
+      // v5: 診断実行（フル分析 - 有料版・認証必要）
+      if (path === '/v5/diagnose/full' && request.method === 'POST') {
+        const authHeader = request.headers.get('Authorization');
+        const licenseKey = extractLicenseKey(authHeader);
+
+        if (!licenseKey) {
+          return json({ error: 'Unauthorized: License key required' }, corsHeaders, 401);
+        }
+
+        const validation = await validateLicense(licenseKey, env.DB);
+        if (!validation.valid) {
+          return json({ error: 'Unauthorized: Invalid license key' }, corsHeaders, 401);
+        }
+
+        const body = await request.json() as { answers: unknown };
+
+        if (!validateAnswers(body.answers)) {
+          return json({ error: 'Invalid answers format' }, corsHeaders, 400);
+        }
+
+        const result = diagnoseV5(body.answers as UserAnswers);
+
+        // 類似事例を取得
+        const top = result.response.topCandidates[0];
+        let similarCases: unknown[] = [];
+        try {
+          const casesResult = await env.DB.prepare(
+            `SELECT entity_name, domain, description, outcome, source_url
+             FROM cases
+             WHERE (trigger_hex_number = ? OR result_hex_number = ?)
+               AND yao_position = ?
+             LIMIT 5`
+          ).bind(top.hexagram, top.hexagram, top.yao).all();
+          similarCases = casesResult.results || [];
+        } catch {
+          similarCases = [];
+        }
+
+        const fullResponse = createFullResponseV5(result, similarCases);
+        return json({ ...fullResponse, similarCases }, corsHeaders);
+      }
+
+      // v5: デバッグ用 - 全ランキング取得（開発環境のみ）
+      if (path === '/v5/diagnose/debug/ranking' && request.method === 'POST') {
+        // 本番では無効化
+        const isDev = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
+        if (!isDev) {
+          return json({ error: 'Debug endpoint not available in production' }, corsHeaders, 403);
+        }
+
+        const body = await request.json() as { answers: unknown };
+        if (!validateAnswers(body.answers)) {
+          return json({ error: 'Invalid answers format' }, corsHeaders, 400);
+        }
+
+        const result = diagnoseV5(body.answers as UserAnswers);
+        return json({
+          resultId: result.response.resultId,
+          ranking: result.fullRanking.slice(0, 50), // 上位50件のみ
+          version: result.response.version,
         }, corsHeaders);
       }
 
