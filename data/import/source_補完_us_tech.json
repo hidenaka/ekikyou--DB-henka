@@ -1,0 +1,191 @@
+[
+  {
+    "target_name": "Microsoft",
+    "pattern": "Pivot_Success",
+    "sources_to_add": [
+      "https://news.microsoft.com/source/2025/07/30/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results/",
+      "https://news.microsoft.com/2025/04/30/microsoft-cloud-and-ai-strength-drives-third-quarter-results"
+    ],
+    "note": "Satya Nadella CEO就任後のクラウド転換成功、Azure売上39%成長"
+  },
+  {
+    "target_name": "Netflix",
+    "pattern": "Pivot_Success",
+    "sources_to_add": [
+      "https://ir.netflix.net/investor-news-and-events/financial-releases/default.aspx",
+      "https://about.netflix.com/en/news/what-we-watched-a-netflix-engagement-report"
+    ],
+    "note": "DVDレンタルからストリーミングへの転換、2.7億加入者達成"
+  },
+  {
+    "target_name": "IBM",
+    "pattern": "Managed_Decline",
+    "sources_to_add": [
+      "https://newsroom.ibm.com/2020-10-08-IBM-To-Accelerate-Hybrid-Cloud-Growth-Strategy-And-Execute-Spin-Off-Of-Market-Leading-Managed-Infrastructure-Services-Unit",
+      "https://newsroom.ibm.com/Accelerating-our-future-and-growth-strategy"
+    ],
+    "note": "Kyndrylスピンオフ、ハイブリッドクラウド戦略への集中"
+  },
+  {
+    "target_name": "Meta (Facebook)",
+    "pattern": "Crisis_Pivot",
+    "sources_to_add": [
+      "https://www.bloomberg.com/news/articles/2023-03-14/meta-to-cut-10-000-jobs-eliminate-5-000-more-vacant-positions",
+      "https://about.meta.com/what-is-the-metaverse/"
+    ],
+    "note": "メタバース投資からAI転換、2023年効率化の年で大規模リストラ"
+  },
+  {
+    "target_name": "Airbnb",
+    "pattern": "Shock_Recovery",
+    "sources_to_add": [
+      "https://news.airbnb.com/airbnb-fourth-quarter-and-full-year-2021-financial-results/",
+      "https://news.airbnb.com/the-travel-recovery-has-become-a-travel-revolution/"
+    ],
+    "note": "パンデミック後の旅行需要回復、2021年過去最高の年に"
+  },
+  {
+    "target_name": "Intel",
+    "pattern": "Slow_Decline",
+    "sources_to_add": [
+      "https://www.bloomberg.com/news/articles/2024-04-02/intel-financial-update-shows-losses-at-factories-widened-in-2023",
+      "https://www.cnbc.com/2024/04/26/intel-dominated-us-chip-industry-now-struggling-to-stay-relevant.html"
+    ],
+    "note": "製造遅延と財務悪化、2024年15%人員削減、TSMCに遅れ"
+  },
+  {
+    "target_name": "GM (General Motors)",
+    "pattern": "Pivot_Success",
+    "sources_to_add": [
+      "https://investor.gm.com/news-releases/news-release-details/gm-sees-new-vehicles-and-improving-ev-profitability-driving",
+      "https://investor.gm.com/news-releases/news-release-details/gm-will-boost-ev-and-av-investments-35-billion-through-2025/"
+    ],
+    "note": "EV転換、北米EV販売2位、2024年Q3記録的EV販売"
+  },
+  {
+    "target_name": "Disney",
+    "pattern": "Crisis_Pivot",
+    "sources_to_add": [
+      "https://thewaltdisneycompany.com/the-walt-disney-company-board-of-directors-appoints-robert-a-iger-as-chief-executive-officer/",
+      "https://thewaltdisneycompany.com/disney-shareholders-bob-iger-remarks/"
+    ],
+    "note": "Bob Iger復帰、ストリーミング黒字化へ構造改革、55億ドル以上のコスト削減"
+  },
+  {
+    "target_name": "Apple",
+    "pattern": "Steady_Growth",
+    "sources_to_add": [
+      "https://www.apple.com/newsroom/2026/01/2025-marked-a-record-breaking-year-for-apple-services/",
+      "https://www.apple.com/newsroom/2025/01/apple-reports-first-quarter-results/"
+    ],
+    "note": "サービス収益過去最高、2025年Q1売上1243億ドル"
+  },
+  {
+    "target_name": "Amazon",
+    "pattern": "Steady_Growth",
+    "sources_to_add": [
+      "https://ir.aboutamazon.com/news-release/news-release-details/2025/Amazon-com-Announces-Fourth-Quarter-Results/default.aspx",
+      "https://www.aboutamazon.com/news/aws/aws-open-ai-workloads-compute-infrastructure"
+    ],
+    "note": "AWS売上1076億ドル(2024年)、営業利益398億ドル"
+  },
+  {
+    "target_name": "Google (Alphabet)",
+    "pattern": "Steady_Growth",
+    "sources_to_add": [
+      "https://blog.google/inside-google/message-ceo/alphabet-earnings-q3-2025/",
+      "https://abc.xyz/assets/a3/91/6d1950c148fa84c7d699abe05284/2024q4-alphabet-earnings-release.pdf"
+    ],
+    "note": "史上初の1000億ドル四半期達成、Cloud成長加速、AI主導"
+  },
+  {
+    "target_name": "FTX",
+    "pattern": "Hubris_Collapse",
+    "sources_to_add": [
+      "https://www.sec.gov/newsroom/press-releases/2022-219",
+      "https://www.cnbc.com/2022/11/11/sam-bankman-frieds-cryptocurrency-exchange-ftx-files-for-bankruptcy.html"
+    ],
+    "note": "2022年11月破産、90億ドル顧客資金消失、SBF懲役25年"
+  },
+  {
+    "target_name": "NVIDIA",
+    "pattern": "Breakthrough",
+    "sources_to_add": [
+      "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2024",
+      "https://nvidianews.nvidia.com/news/computer-industry-ai-factories-data-centers"
+    ],
+    "note": "AI GPU需要急増、データセンター売上記録更新、Blackwell/Rubin発表"
+  },
+  {
+    "target_name": "Tesla",
+    "pattern": "Breakthrough",
+    "sources_to_add": [
+      "https://ir.tesla.com/press-release/tesla-fourth-quarter-2024-production-deliveries-and-deployments",
+      "https://www.tesla.com/blog/master-plan-part-3"
+    ],
+    "note": "2024年Q4納車49.5万台、累計納車・展開量過去最高"
+  },
+  {
+    "target_name": "Uber",
+    "pattern": "Crisis_Pivot",
+    "sources_to_add": [
+      "https://investor.uber.com/news-events/news/press-release-details/2024/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2023/default.aspx",
+      "https://investor.uber.com/news-events/news/press-release-details/2025/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2024/default.aspx"
+    ],
+    "note": "2023年転換点、初のGAAP営業利益10億ドル超、2024年過去最高業績"
+  },
+  {
+    "target_name": "Oracle",
+    "pattern": "Pivot_Success",
+    "sources_to_add": [
+      "https://www.oracle.com/news/announcement/ocw24-oracle-cloud-success-navigator-helps-customers-accelerate-success-2024-09-10/",
+      "https://www.oracle.com/news/announcement/oracle-recognized-as-a-leader-in-the-2025-idc-marketscape-report-for-worldwide-public-cloud-infrastructure-as-a-service-2025-02-06/"
+    ],
+    "note": "クラウドERP転換成功、SAP抜きERP首位、IDC MarketScapeリーダー認定"
+  },
+  {
+    "target_name": "Salesforce",
+    "pattern": "Steady_Growth",
+    "sources_to_add": [
+      "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results/default.aspx",
+      "https://www.salesforce.com/news/stories/idc-crm-market-share-ranking-2024/"
+    ],
+    "note": "CRM世界1位11年連続、FY25売上379億ドル、FY30目標600億ドル以上"
+  },
+  {
+    "target_name": "Ford Motor",
+    "pattern": "Pivot_Success",
+    "sources_to_add": [
+      "https://media.ford.com/content/fordmedia/fna/us/en/news/2021/05/19/all-electric-ford-f-150-lightning.html",
+      "https://media.ford.com/content/fordmedia/fna/us/en/news/2023/08/01/ford-restarts-expanded-rouge-electric-vehicle-center--f-150-ligh.html"
+    ],
+    "note": "F-150 Lightning発売、Ford Blue/Model e/Pro3事業体制構築"
+  },
+  {
+    "target_name": "Zoom",
+    "pattern": "Shock_Recovery",
+    "sources_to_add": [
+      "https://investors.zoom.us/",
+      "https://www.bloomberg.com/news/videos/2021-03-02/zoom-signals-growth-after-the-pandemic-video"
+    ],
+    "note": "パンデミック中191%成長、日次ユーザー1000万→2億人、AI Companion展開へ転換"
+  },
+  {
+    "target_name": "SpaceX",
+    "pattern": "Breakthrough",
+    "sources_to_add": [
+      "https://www.spacex.com/vehicles/starship",
+      "https://www.bloomberg.com/news/articles/2024-10-13/elon-musk-s-spacex-to-attempt-ambitious-booster-catch-on-starship-flight"
+    ],
+    "note": "2024年138回打上げ、Starship Flight 5ブースターキャッチ成功"
+  },
+  {
+    "target_name": "OpenAI",
+    "pattern": "Breakthrough",
+    "sources_to_add": [
+      "https://openai.com/index/gpt-4-research/",
+      "https://openai.com/index/hello-gpt-4o/"
+    ],
+    "note": "ChatGPT週間1億人以上利用、GPT-4/GPT-4o発表、AI業界をリード"
+  }
+]
