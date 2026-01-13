@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-13T22:29:53.796134",
+    "reviewer_1_file": "data/pilot/test/reviewer_1_results.jsonl",
+    "reviewer_2_file": "data/pilot/test/reviewer_2_results.jsonl",
+    "common_cases": 10,
+    "r1_only_cases": 0,
+    "r2_only_cases": 0
+  },
+  "overall_agreement": 0.5,
+  "kappa_by_field": {
+    "outcome_status": 0.75,
+    "verification_confidence": 0.545,
+    "coi_status": 0.833
+  },
+  "agreement_by_field": {
+    "outcome_status": {
+      "rate": 0.9,
+      "agree": 9,
+      "total": 10
+    },
+    "verification_confidence": {
+      "rate": 0.7,
+      "agree": 7,
+      "total": 10
+    },
+    "coi_status": {
+      "rate": 0.9,
+      "agree": 9,
+      "total": 10
+    }
+  },
+  "disagreements": [
+    {
+      "pilot_id": "P002",
+      "field": "verification_confidence",
+      "r1": "medium",
+      "r2": "high"
+    },
+    {
+      "pilot_id": "P004",
+      "field": "verification_confidence",
+      "r1": "high",
+      "r2": "medium"
+    },
+    {
+      "pilot_id": "P005",
+      "field": "verification_confidence",
+      "r1": "high",
+      "r2": "medium"
+    },
+    {
+      "pilot_id": "P008",
+      "field": "outcome_status",
+      "r1": "verified_correct",
+      "r2": "verified_incorrect"
+    },
+    {
+      "pilot_id": "P010",
+      "field": "coi_status",
+      "r1": "none",
+      "r2": "self"
+    }
+  ],
+  "recommendation": "優良(k>=0.8): coi_status; 合格(k>=0.7): outcome_status; 要改善(k<0.7): verification_confidence",
+  "validation_errors": null
+}
