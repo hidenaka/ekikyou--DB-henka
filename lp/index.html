@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HaQei（ハケイ）- 3000年の知恵 × AI で導く、あなたの次の一手</title>
+  <meta name="description" content="易経に基づいた意思決定サポートサービス。12,000件以上の事例データベースから、最適な「次の一手」を導き出します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --accent: #e94560;
+      --gold: #d4a853;
+      --light: #f5f5f5;
+      --text: #333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #16213e 100%);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      opacity: 0.9;
+      margin-bottom: 40px;
+    }
+    .logo {
+      font-size: 4rem;
+      margin-bottom: 30px;
+      letter-spacing: 0.2em;
+    }
+    .logo-sub { font-size: 1rem; opacity: 0.7; }
+
+    /* Section */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--gold);
+      display: inline-block;
+    }
+    section p { margin-bottom: 20px; }
+
+    /* Problem */
+    .problem {
+      background: var(--light);
+    }
+    .problem-list {
+      list-style: none;
+      margin: 30px 0;
+    }
+    .problem-list li {
+      padding: 15px 20px;
+      background: white;
+      margin-bottom: 10px;
+      border-left: 4px solid var(--accent);
+      font-style: italic;
+    }
+
+    /* Features */
+    .features { background: white; }
+    .feature-grid {
+      display: grid;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .feature-card {
+      padding: 30px;
+      background: var(--light);
+      border-radius: 10px;
+    }
+    .feature-card h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    .feature-card h3::before {
+      content: "☰ ";
+      color: var(--gold);
+    }
+    .feature-card .question {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    /* Message */
+    .message {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+    }
+    .message h2 { border-color: var(--gold); }
+    .message blockquote {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 30px 0;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #16213e 0%, var(--primary) 100%);
+      color: white;
+    }
+    .cta-button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--primary);
+      padding: 20px 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      margin-top: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 168, 83, 0.4);
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin: 20px 0;
+    }
+    .price-note { opacity: 0.8; font-size: 0.9rem; }
+
+    /* Footer */
+    footer {
+      background: #0a0a0a;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--gold); }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="logo">☰ HaQei</div>
+    <div class="logo-sub">ハケイ</div>
+    <h1>
+      <span>「攻めるべき時」</span>と<span>「退くべき時」</span>を<br>科学する。
+    </h1>
+    <p class="subtitle">
+      3000年の歴史知見 × AI が生み出す<br>
+      あなたの人生の「作戦参謀」
+    </p>
+  </section>
+
+  <!-- About -->
+  <section>
+    <h2>HaQeiとは</h2>
+    <p>
+      HaQei（ハケイ）は、3000年前の中国で生まれた兵法・帝王学の原点『易経』を、
+      最新の生成AI技術で解析し、現代人のための「生存戦略」として提供する意思決定サポートサービスです。
+    </p>
+    <p>
+      <strong>12,000件以上</strong>の歴史的・現代的企業の成功・失敗事例（ケーススタディ）をデータベース化。
+      「変化には一定のパターンがある」というロジックに基づき、
+      あなたが今直面している状況を分析し、最適な「次の一手」を導き出します。
+    </p>
+    <p style="font-size: 1.2rem; font-weight: bold; color: var(--accent);">
+      占いではありません。これは、数千年の人類の経験則を凝縮した「判断の地図」です。
+    </p>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <h2>こんな悩みはありませんか？</h2>
+    <p>現代は「正解のない時代（VUCA）」と言われます。多くの人が、以下の不安を抱えています。</p>
+    <ul class="problem-list">
+      <li>「今の努力は正しい方向なのか？」</li>
+      <li>「このまま進むべきか、撤退すべきか？」</li>
+      <li>「なぜか自分だけが上手くいかない」</li>
+    </ul>
+    <p>
+      HaQeiは、これらの悩みの原因を<strong>「タイミングのズレ（Behavior-Timing Mismatch）」</strong>と定義します。
+    </p>
+    <p>
+      春に種を蒔くべき時に収穫を焦ったり、冬に耐えるべき時に無謀な投資をしたりすること。
+      この「季節外れの行動」こそが、失敗の最大の要因です。
+    </p>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>3つのコア機能</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>現状分析（Seasoning）</h3>
+        <p class="question">「今、あなたは人生のどの季節にいるのか？」</p>
+        <p>
+          簡単な質問に答えるだけで、あなたの置かれている状況を64のパターンに分類。
+          「今は積極的に攻めるべき『夏』なのか」「力を蓄えて待つべき『冬』なのか」を客観的に可視化します。
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>ケーススタディ参照（Case Retrieval）</h3>
+        <p class="question">「先人はこの局面をどう乗り越えたか？」</p>
+        <p>
+          あなたの現状と同じパターンで、過去の偉人や成功企業、あるいは失敗した事例が「どう動いたか」をレコメンド。
+          12,000件以上のデータベースから、今のあなたに最も参考になる「生きた教科書」を提示します。
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>アクションプラン策定（Strategy Generation）</h3>
+        <p class="question">「明日、具体的にどう動くべきか？」</p>
+        <p>
+          精神論ではなく、具体的な行動指針をAI参謀が提案します。
+        </p>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+          <li><strong>Go</strong>: リスクを取って勝負に出る</li>
+          <li><strong>Wait</strong>: 好機を待って準備する</li>
+          <li><strong>Retreat</strong>: 勇気を持って撤退し、再起を図る</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Message -->
+  <section class="message">
+    <h2>ブランドメッセージ</h2>
+    <blockquote>
+      「運命」なんて言葉で片付けない。<br>
+      あなたの人生は、あなたが戦略的にコントロールできる。
+    </blockquote>
+    <p>
+      HaQeiは、暗闇の中を歩くあなたの手元を照らす「松明（たいまつ）」であり、
+      目的地までの最短ルートを示す「地図」です。
+    </p>
+    <p style="margin-top: 30px;">
+      迷いの森に入ったら、HaQeiを開いてください。<br>
+      ここには、3000年前の知恵を蘇らせた「答え」があります。
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>API ライセンス</h2>
+    <p>HaQei診断APIを、あなたのアプリケーションに統合できます。</p>
+    <div class="price">¥9,800 <span style="font-size: 1rem;">（税込・買い切り）</span></div>
+    <p class="price-note">3デバイスまで利用可能 / 永久ライセンス</p>
+    <a href="#" class="cta-button" id="buy-button">ライセンスを購入する</a>
+    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+      ※ 購入後、ライセンスキーがメールで届きます
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 HaQei. All rights reserved.</p>
+    <p style="margin-top: 10px;">
+      <a href="mailto:support@haqei.pages.dev">お問い合わせ</a> |
+      <a href="/terms">利用規約</a> |
+      <a href="/privacy">プライバシーポリシー</a>
+    </p>
+  </footer>
+
+</body>
+</html>
