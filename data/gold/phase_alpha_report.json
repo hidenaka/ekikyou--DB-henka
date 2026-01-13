@@ -1,0 +1,48 @@
+{
+  "phase": "alpha_definition_establishment",
+  "completed_at": "2026-01-13T22:35:00+09:00",
+  "status": "completed",
+  "deliverables": {
+    "label_definitions": {
+      "path": "docs/label_definitions_v1.md",
+      "fields_defined": 4,
+      "fields": ["outcome_status", "source_role", "verification_confidence", "coi_status"],
+      "codex_issues_addressed": [
+        "correct/incorrect vs minor/major_error 分離",
+        "ドメイン=信頼性の前提排除",
+        "二軸分離評価（source_role + coi_status）"
+      ]
+    },
+    "pilot_verification_set": {
+      "path": "data/pilot/pilot_verification_30.jsonl",
+      "total_cases": 30,
+      "stratification": {
+        "verified": 10,
+        "high_quality_unverified": 10,
+        "low_quality": 10
+      },
+      "source_population": 12871
+    },
+    "iaa_toolkit": {
+      "template": "docs/verification_template.md",
+      "calculator": "scripts/quality/calculate_iaa.py",
+      "metrics": ["cohens_kappa", "overall_agreement", "disagreement_analysis"],
+      "pass_criteria": {
+        "excellent": "kappa >= 0.8",
+        "pass": "kappa >= 0.7",
+        "needs_improvement": "kappa < 0.7"
+      }
+    }
+  },
+  "next_steps": {
+    "phase_beta": {
+      "description": "小規模パイロット検証",
+      "tasks": [
+        "2名の検証者がpilot_verification_30.jsonlを独立検証",
+        "calculate_iaa.pyでIAA測定",
+        "kappa < 0.7のフィールドは定義見直しまたは削除",
+        "Wikipedia引用→主張紐付けを30件で検証"
+      ]
+    }
+  }
+}
