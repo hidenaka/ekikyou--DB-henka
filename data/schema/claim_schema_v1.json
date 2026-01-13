@@ -1,0 +1,85 @@
+{
+  "version": "v1",
+  "generated_at": "2026-01-13T22:09:20.636128",
+  "claim_types": [
+    "verifiable_fact",
+    "inference",
+    "evaluation",
+    "opinion"
+  ],
+  "evidence_types": [
+    "primary_source",
+    "secondary_source",
+    "tertiary_source",
+    "no_evidence"
+  ],
+  "coi_types": [
+    "none",
+    "self",
+    "affiliated",
+    "sponsored",
+    "unknown"
+  ],
+  "sample_case": {
+    "id": "sample_001",
+    "target_name": "サンプル株式会社",
+    "outcome": "Success",
+    "sources": [
+      "https://example.go.jp/ir/report.pdf",
+      "https://nikkei.com/article/xxx"
+    ],
+    "trust_level": "verified",
+    "outcome_status": "verified",
+    "claims": [
+      {
+        "claim_id": "c001",
+        "claim_text": "2023年3月期の売上高は1,000億円に達した",
+        "claim_type": "verifiable_fact",
+        "is_core": true,
+        "evidence": [
+          {
+            "source_index": 0,
+            "evidence_type": "primary_source",
+            "excerpt": "売上高 100,000百万円",
+            "verified": true
+          }
+        ],
+        "contradictions": [],
+        "coi": "none",
+        "verified": true
+      },
+      {
+        "claim_id": "c002",
+        "claim_text": "3年連続の増収増益を達成",
+        "claim_type": "verifiable_fact",
+        "is_core": true,
+        "evidence": [
+          {
+            "source_index": 1,
+            "evidence_type": "secondary_source",
+            "excerpt": "同社は3年連続で増収増益",
+            "verified": true
+          }
+        ],
+        "contradictions": [],
+        "coi": "none",
+        "verified": true
+      },
+      {
+        "claim_id": "c003",
+        "claim_text": "業界で最も革新的な企業と評価されている",
+        "claim_type": "evaluation",
+        "is_core": false,
+        "evidence": [],
+        "contradictions": [],
+        "coi": "none",
+        "verified": false
+      }
+    ],
+    "core_claims_summary": {
+      "outcome_claim_id": "c002",
+      "target_claim_id": "c001",
+      "timeline_claim_id": null
+    }
+  }
+}
