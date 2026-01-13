@@ -1,0 +1,101 @@
+[
+  {
+    "target_name": "Alibaba",
+    "pattern": "Slow_Decline",
+    "sources_to_add": [
+      "https://www.alibabagroup.com/en-US/investor-relations",
+      "https://www.businesswire.com/news/home/20250219393026/en/Alibaba-Group-Announces-December-Quarter-2024-Results"
+    ],
+    "note": "公式IR + BusinessWire決算発表"
+  },
+  {
+    "target_name": "Tencent",
+    "pattern": "Managed_Decline",
+    "sources_to_add": [
+      "https://www.tencent.com/en-us/investors/financial-reports.html",
+      "https://static.www.tencent.com/uploads/2025/04/08/1132b72b565389d1b913aea60a648d73.pdf"
+    ],
+    "note": "公式IR + 2024年度報告書PDF"
+  },
+  {
+    "target_name": "Huawei",
+    "pattern": "Shock_Recovery",
+    "sources_to_add": [
+      "https://www.huawei.com/en/annual-report/2024",
+      "https://www.cnbc.com/2025/03/31/huawei-2024-revenue-surges-to-near-record-high-on-smartphone-comeback.html"
+    ],
+    "note": "公式年次報告書 + CNBC記事"
+  },
+  {
+    "target_name": "XPeng",
+    "pattern": "Crisis_Pivot",
+    "sources_to_add": [
+      "https://www.xpeng.com/news/0192dc9e420392323be38a0282ad01e2",
+      "https://www.bloomberg.com/news/articles/2024-11-19/xpeng-earnings-beat-estimates-as-new-ev-models-bolster-sales"
+    ],
+    "note": "公式ニュース + Bloomberg記事"
+  },
+  {
+    "target_name": "Xiaomi",
+    "pattern": "Steady_Growth",
+    "sources_to_add": [
+      "https://ir.mi.com/",
+      "https://technode.com/2025/03/19/xiaomi-reported-50-62-billion-revenue-in-2024-pledges-970-million-for-ai-development/"
+    ],
+    "note": "公式IR + TechNode記事"
+  },
+  {
+    "target_name": "Samsung Electronics",
+    "pattern": "Shock_Recovery",
+    "sources_to_add": [
+      "https://www.samsung.com/global/ir/",
+      "https://news.samsung.com/global/samsung-electronics-announces-fourth-quarter-and-fy-2024-results"
+    ],
+    "note": "公式IR + Samsung Newsroom"
+  },
+  {
+    "target_name": "Volkswagen",
+    "pattern": "Crisis_Pivot",
+    "sources_to_add": [
+      "https://www.volkswagen-group.com/en/investors-15766",
+      "https://www.volkswagen-group.com/en/press-releases/volkswagen-group-with-solid-fy-2024-results-and-a-robust-outlook-19043"
+    ],
+    "note": "公式IR + 公式プレスリリース"
+  },
+  {
+    "target_name": "Nokia",
+    "pattern": "Slow_Decline",
+    "sources_to_add": [
+      "https://www.nokia.com/about-us/investors/",
+      "https://www.nokia.com/about-us/news/releases/2025/01/30/nokia-corporation-financial-report-for-q4-and-full-year-2024/"
+    ],
+    "note": "公式IR + 2024年決算発表"
+  },
+  {
+    "target_name": "Mercedes-Benz",
+    "pattern": "Pivot_Success",
+    "sources_to_add": [
+      "https://group.mercedes-benz.com/investors/",
+      "https://group.mercedes-benz.com/investors/reports-news/annual-reports/2024/"
+    ],
+    "note": "公式IR + 2024年年次報告"
+  },
+  {
+    "target_name": "SAP",
+    "pattern": "Pivot_Success",
+    "sources_to_add": [
+      "https://www.sap.com/investors/en.html",
+      "https://news.sap.com/2024/01/sap-updates-its-ambition-2025-and-announces-transformation-program-for-2024/"
+    ],
+    "note": "公式IR + クラウド変革発表"
+  },
+  {
+    "target_name": "BMW",
+    "pattern": "Steady_Growth",
+    "sources_to_add": [
+      "https://www.bmwgroup.com/en/investor-relations.html",
+      "https://www.press.bmwgroup.com/global/article/detail/T0448840EN/bmw-group-report-2024"
+    ],
+    "note": "公式IR + BMW Group Report 2024"
+  }
+]
