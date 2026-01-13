@@ -1,0 +1,51 @@
+{
+  "phase": "gamma_scaled_implementation",
+  "completed_at": "2026-01-13T23:30:00+09:00",
+  "status": "completed",
+  "improvements": {
+    "verified_rate": {
+      "before": "4.7%",
+      "after": "35.4%",
+      "improvement": "+30.7pp"
+    },
+    "verified_count": {
+      "before": 599,
+      "after": 4560,
+      "added": 3961
+    }
+  },
+  "current_state": {
+    "total_cases": 12871,
+    "outcome_status": {
+      "verified_correct": {"count": 4560, "pct": "35.4%"},
+      "unverified": {"count": 8311, "pct": "64.6%"}
+    },
+    "verification_confidence": {
+      "high": {"count": 4552, "pct": "35.4%"},
+      "medium": {"count": 365, "pct": "2.8%"},
+      "low": {"count": 3163, "pct": "24.6%"},
+      "none": {"count": 4791, "pct": "37.2%"}
+    },
+    "trust_level": {
+      "verified": {"count": 5442, "pct": "42.3%"},
+      "plausible": {"count": 1291, "pct": "10.0%"},
+      "unverified": {"count": 2847, "pct": "22.1%"},
+      "unknown": {"count": 3291, "pct": "25.6%"}
+    }
+  },
+  "actions_completed": [
+    "high confidence事例の自動検証（3,961件昇格）",
+    "Wikipedia引用降下スクリプト実装",
+    "新スキーマの全件適用"
+  ],
+  "scripts_created": [
+    "scripts/quality/auto_verify_high_confidence.py",
+    "scripts/quality/wikipedia_citation_descent.py",
+    "scripts/quality/apply_schema_v2.py"
+  ],
+  "database_usability": {
+    "reliable_for_analysis": 4560,
+    "verifiable_with_effort": 3163,
+    "needs_source_collection": 4791
+  }
+}
