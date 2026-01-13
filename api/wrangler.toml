@@ -5,7 +5,7 @@ compatibility_date = "2024-01-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "haqei-db"
-database_id = "local"  # 本番デプロイ時に実際のIDに変更
+database_id = "4e8038d3-1834-4348-b67d-b73a665085c7"
 
 [vars]
-ALLOWED_ORIGINS = "https://haqei.com,http://localhost:3000"
+ALLOWED_ORIGINS = "https://haqei.pages.dev,https://haqei.com,http://localhost:3000"

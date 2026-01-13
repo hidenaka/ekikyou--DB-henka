@@ -87,6 +87,12 @@ DOMAIN_TIERS = {
             r'oecd\.org$', r'who\.int$', r'wto\.org$',
             # 中央銀行
             r'boj\.or\.jp$', r'federalreserve\.gov$',
+            # 業界団体・協会
+            r'riaj\.or\.jp$', r'eiren\.org$', r'joc\.or\.jp$',
+            r'jata-net\.or\.jp$', r'cesa\.or\.jp$',
+            r'whc\.unesco\.org$',
+            # 海外規制当局
+            r'sec\.gov$', r'fca\.org\.uk$', r'ecb\.europa\.eu$',
         ],
         'description': '政府・学術・国際機関',
         'source_type_override': 'official',
@@ -150,6 +156,19 @@ DOMAIN_TIERS = {
             r'gm\.com', r'ford\.com', r'disney', r'walmart\.com',
             # スポーツ・エンタメ
             r'mlb\.com', r'nba\.com', r'nfl\.com', r'jfa\.jp',
+            r'npb\.jp$',
+            # アジア大手
+            r'samsung\.com', r'tsmc\.com', r'alibaba\.com',
+            r'tencent\.com', r'huawei\.com',
+            # 欧州大手
+            r'siemens\.com', r'volkswagen', r'lvmh\.com',
+            r'nestle\.com', r'unilever\.com',
+            # 日本追加
+            r'kyocera\.co\.jp', r'nec\.com', r'fujitsu\.com',
+            r'keyence\.co\.jp', r'jal\.com', r'ana\.co\.jp',
+            # 米国追加
+            r'berkshirehathaway\.com', r'jpmorgan\.com',
+            r'goldmansachs\.com', r'blackrock\.com',
         ],
         'description': '企業公式サイト',
         'source_type_override': 'official',

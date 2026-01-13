@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-01-13T16:27:37.394892",
+  "generated_at": "2026-01-13T16:33:00.223531",
   "version": "v3",
   "input_count": 12849,
   "tiers": {
-    "gold": 930,
-    "silver": 2156,
-    "bronze": 4732,
+    "gold": 939,
+    "silver": 2169,
+    "bronze": 4710,
     "quarantine": 5031
   },
   "verified_distribution": {
-    "gold": 930,
-    "silver": 146,
+    "gold": 939,
+    "silver": 145,
     "quarantine": 295,
-    "bronze": 110
+    "bronze": 102
   },
   "outcome_by_tier": {
     "quarantine": {
@@ -22,22 +22,22 @@
       "Mixed": 391
     },
     "gold": {
-      "Success": 513,
+      "Success": 521,
       "Mixed": 276,
-      "Failure": 131,
+      "Failure": 132,
       "PartialSuccess": 10
     },
     "silver": {
-      "Success": 865,
-      "Failure": 622,
-      "Mixed": 599,
+      "Success": 872,
+      "Failure": 623,
+      "Mixed": 604,
       "PartialSuccess": 70
     },
     "bronze": {
-      "Success": 2727,
-      "Mixed": 1012,
-      "Failure": 877,
-      "PartialSuccess": 116
+      "Success": 2712,
+      "Failure": 875,
+      "PartialSuccess": 116,
+      "Mixed": 1007
     }
   }
 }
