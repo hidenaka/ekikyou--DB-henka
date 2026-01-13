@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-13T23:01:20.103197",
+    "reviewer_1_file": "data/pilot/reviewer_1_results.jsonl",
+    "reviewer_2_file": "data/pilot/reviewer_2_results.jsonl",
+    "common_cases": 30,
+    "r1_only_cases": 0,
+    "r2_only_cases": 0
+  },
+  "overall_agreement": 0.633,
+  "kappa_by_field": {
+    "outcome_status": 0.796,
+    "verification_confidence": 1.0,
+    "coi_status": 0.333
+  },
+  "agreement_by_field": {
+    "outcome_status": {
+      "rate": 0.9,
+      "agree": 27,
+      "total": 30
+    },
+    "verification_confidence": {
+      "rate": 1.0,
+      "agree": 30,
+      "total": 30
+    },
+    "coi_status": {
+      "rate": 0.733,
+      "agree": 22,
+      "total": 30
+    }
+  },
+  "disagreements": [
+    {
+      "pilot_id": "P008",
+      "field": "coi_status",
+      "r1": "none",
+      "r2": "self"
+    },
+    {
+      "pilot_id": "P009",
+      "field": "coi_status",
+      "r1": "none",
+      "r2": "self"
+    },
+    {
+      "pilot_id": "P012",
+      "field": "outcome_status",
+      "r1": "unverified",
+      "r2": "verified_correct"
+    },
+    {
+      "pilot_id": "P017",
+      "field": "outcome_status",
+      "r1": "unverified",
+      "r2": "verified_correct"
+    },
+    {
+      "pilot_id": "P018",
+      "field": "outcome_status",
+      "r1": "unverified",
+      "r2": "verified_correct"
+    },
+    {
+      "pilot_id": "P022",
+      "field": "coi_status",
+      "r1": "unknown",
+      "r2": "none"
+    },
+    {
+      "pilot_id": "P024",
+      "field": "coi_status",
+      "r1": "unknown",
+      "r2": "none"
+    },
+    {
+      "pilot_id": "P025",
+      "field": "coi_status",
+      "r1": "unknown",
+      "r2": "none"
+    },
+    {
+      "pilot_id": "P026",
+      "field": "coi_status",
+      "r1": "unknown",
+      "r2": "none"
+    },
+    {
+      "pilot_id": "P028",
+      "field": "coi_status",
+      "r1": "unknown",
+      "r2": "none"
+    },
+    {
+      "pilot_id": "P029",
+      "field": "coi_status",
+      "r1": "unknown",
+      "r2": "none"
+    }
+  ],
+  "recommendation": "優良(k>=0.8): verification_confidence; 合格(k>=0.7): outcome_status; 要改善(k<0.7): coi_status",
+  "validation_errors": null
+}
