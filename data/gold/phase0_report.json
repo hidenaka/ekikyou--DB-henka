@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-01-13T22:04:17.521454",
+  "phase": "0_outcome_tristate",
+  "codex_compliance": {
+    "outcome_status_added": true,
+    "verified_subset_stats": true,
+    "unknown_rate_kpi": true
+  },
+  "overall_statistics": {
+    "total_cases": 12871,
+    "verified_count": 1481,
+    "unverified_count": 11390,
+    "unknown_rate": 0.884935125475876,
+    "verified_outcomes": {
+      "Success": 908,
+      "Mixed": 376,
+      "Failure": 185,
+      "PartialSuccess": 12
+    },
+    "success_rate_verified": 0.8307410795974383,
+    "success_failure_ratio_verified": 4.908108108108108
+  },
+  "tier_statistics": {
+    "quarantine": {
+      "total": 4956,
+      "verified": 239,
+      "unverified": 4717,
+      "verified_success": 187,
+      "verified_failure": 21,
+      "unknown_rate": 0.9517756255044391,
+      "success_rate_verified": 0.8990384615384616
+    },
+    "gold": {
+      "total": 717,
+      "verified": 717,
+      "unverified": 0,
+      "verified_success": 367,
+      "verified_failure": 113,
+      "unknown_rate": 0.0,
+      "success_rate_verified": 0.7645833333333333
+    },
+    "silver": {
+      "total": 5325,
+      "verified": 409,
+      "unverified": 4916,
+      "verified_success": 266,
+      "verified_failure": 45,
+      "unknown_rate": 0.9231924882629108,
+      "success_rate_verified": 0.8553054662379421
+    },
+    "bronze": {
+      "total": 1873,
+      "verified": 116,
+      "unverified": 1757,
+      "verified_success": 88,
+      "verified_failure": 6,
+      "unknown_rate": 0.9380672717565403,
+      "success_rate_verified": 0.9361702127659575
+    }
+  },
+  "comparison": {
+    "old_success_rate": 0.5973661276266099,
+    "new_success_rate": 0.8307410795974383,
+    "overestimation": -0.23337495197082836
+  },
+  "new_kpis": {
+    "unknown_rate": 0.884935125475876,
+    "unknown_rate_target": 0.5,
+    "success_rate_verified": 0.8307410795974383
+  }
+}
