@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-01-13T21:54:39.849381",
+  "version": "v4",
+  "codex_compliance": {
+    "gold_two_tier": true,
+    "coi_registry": true,
+    "evidence_independence": true,
+    "verifiable_to_silver": true
+  },
+  "input_count": 12871,
+  "tiers": {
+    "gold": 717,
+    "silver": 5325,
+    "bronze": 1873,
+    "quarantine": 4956
+  },
+  "sub_tiers": {
+    "gold_verified": 717,
+    "gold_verifiable": 4209
+  },
+  "coi_stats": {
+    "self": 472,
+    "unknown": 196,
+    "none": 4
+  },
+  "evidence_stats": {
+    "same_domain": 73,
+    "single_source": 7548,
+    "independent": 294
+  },
+  "verified_distribution": {
+    "gold": 717,
+    "silver": 409,
+    "quarantine": 239,
+    "bronze": 116
+  },
+  "outcome_by_tier": {
+    "quarantine": {
+      "Success": 1995,
+      "PartialSuccess": 63,
+      "Failure": 2519,
+      "Mixed": 379
+    },
+    "gold": {
+      "Success": 367,
+      "Mixed": 231,
+      "Failure": 113,
+      "PartialSuccess": 6
+    },
+    "silver": {
+      "Success": 2507,
+      "Failure": 1389,
+      "Mixed": 1282,
+      "PartialSuccess": 147
+    },
+    "bronze": {
+      "Success": 1300,
+      "PartialSuccess": 44,
+      "Failure": 137,
+      "Mixed": 392
+    }
+  }
+}
