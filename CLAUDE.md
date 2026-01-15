@@ -68,7 +68,7 @@ mcp__memory__open_nodes(["データ品質改善ワークフロー_2026-01"])
 
 易経（八卦）を用いた変化・遷移のデータベース。企業・個人・家族・国家などの実例を、八卦（乾/坤/震/巽/坎/離/艮/兌）とパターン分類で構造化。
 
-**目標**: 10,000事例（現在約5,500件）
+**目標**: 20,000事例（現在約12,800件）
 **方針**: 実データのみ（ニュース・公式資料ベース）
 
 ## 基本コマンド
@@ -127,5 +127,36 @@ node .claude/skills/llm-debate/scripts/llm-debate.js \
   --claude-opinion "{自分の提案や意見}"
 ```
 
+
 **出力先**: `debate/llm-debate-{日付}-{議題}/`
+
+
+---
+
+## 🔮 易経専門家（Ekikyo Expert）
+
+**易経の解釈・予測・事例検索を行う専門家サブエージェント**
+
+### モード（状況に応じて使い分ける）
+- **Consult (相談)**: ユーザーの悩みに対し、共感・分析・アドバイスを提示。
+- **Analyze (分析)**: 卦や爻の構造（互卦・裏卦・之卦）を詳細に技術解析。
+- **Predict (予測)**: 現状（本卦）から未来（之卦）への遷移シナリオを作成。
+- **Search (検索)**: 過去の事例（12,800件）から類似パターンを検索。
+
+### 実行スクリプト（日本語要約）
+```bash
+# 卦の分析 (例: 火天大有・五爻)
+python3 .claude/skills/ekikyo-expert/scripts/ekikyo_expert.py analyze 14 --lines 5
+
+# 変化の予測 (例: 乾為天の五爻変 → 火天大有)
+python3 .claude/skills/ekikyo-expert/scripts/ekikyo_expert.py predict 1 --lines 5
+
+# 日本語要約にキーワード検索
+python3 .claude/skills/ekikyo-expert/scripts/ekikyo_expert.py search "待つべき時" --limit 5
+```
+
+### 知識ソース / データ
+- `.claude/skills/ekikyo-expert/knowledge/` - 解釈ルール、ビジネス応用
+- `prompts/` - 各モードの振る舞いガイド
+- `data/reference/iching_texts_ctext_legge_ja.json` - 古典＋英訳＋日本語要約
 
