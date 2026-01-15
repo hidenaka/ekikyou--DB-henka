@@ -1,109 +1,14 @@
 {
-  "total_canonical": 10866,
+  "total_canonical": 10885,
   "coverage": {
     "total_cells": 384,
     "covered": 376,
-    "thin_1": 19,
-    "thin_2": 102,
+    "thin_1": 0,
+    "thin_2": 121,
     "thin_3_5": 76,
     "good": 179
   },
   "thin_cells": [
-    {
-      "hexagram_id": 22,
-      "yao": 1,
-      "count": 1
-    },
-    {
-      "hexagram_id": 22,
-      "yao": 2,
-      "count": 1
-    },
-    {
-      "hexagram_id": 25,
-      "yao": 1,
-      "count": 1
-    },
-    {
-      "hexagram_id": 25,
-      "yao": 2,
-      "count": 1
-    },
-    {
-      "hexagram_id": 25,
-      "yao": 4,
-      "count": 1
-    },
-    {
-      "hexagram_id": 25,
-      "yao": 6,
-      "count": 1
-    },
-    {
-      "hexagram_id": 30,
-      "yao": 3,
-      "count": 1
-    },
-    {
-      "hexagram_id": 34,
-      "yao": 6,
-      "count": 1
-    },
-    {
-      "hexagram_id": 37,
-      "yao": 1,
-      "count": 1
-    },
-    {
-      "hexagram_id": 38,
-      "yao": 1,
-      "count": 1
-    },
-    {
-      "hexagram_id": 54,
-      "yao": 2,
-      "count": 1
-    },
-    {
-      "hexagram_id": 54,
-      "yao": 3,
-      "count": 1
-    },
-    {
-      "hexagram_id": 54,
-      "yao": 4,
-      "count": 1
-    },
-    {
-      "hexagram_id": 58,
-      "yao": 1,
-      "count": 1
-    },
-    {
-      "hexagram_id": 58,
-      "yao": 2,
-      "count": 1
-    },
-    {
-      "hexagram_id": 59,
-      "yao": 5,
-      "count": 1
-    },
-    {
-      "hexagram_id": 60,
-      "yao": 1,
-      "count": 1
-    },
-    {
-      "hexagram_id": 60,
-      "yao": 5,
-      "count": 1
-    },
-    {
-      "hexagram_id": 64,
-      "yao": 1,
-      "count": 1
-    },
     {
       "hexagram_id": 3,
       "yao": 5,
@@ -246,12 +151,42 @@
     },
     {
       "hexagram_id": 22,
+      "yao": 1,
+      "count": 2
+    },
+    {
+      "hexagram_id": 22,
+      "yao": 2,
+      "count": 2
+    },
+    {
+      "hexagram_id": 22,
       "yao": 6,
       "count": 2
     },
     {
       "hexagram_id": 25,
+      "yao": 1,
+      "count": 2
+    },
+    {
+      "hexagram_id": 25,
+      "yao": 2,
+      "count": 2
+    },
+    {
+      "hexagram_id": 25,
+      "yao": 4,
+      "count": 2
+    },
+    {
+      "hexagram_id": 25,
       "yao": 5,
+      "count": 2
+    },
+    {
+      "hexagram_id": 25,
+      "yao": 6,
       "count": 2
     },
     {
@@ -316,6 +251,11 @@
     },
     {
       "hexagram_id": 30,
+      "yao": 3,
+      "count": 2
+    },
+    {
+      "hexagram_id": 30,
       "yao": 6,
       "count": 2
     },
@@ -350,6 +290,11 @@
       "count": 2
     },
     {
+      "hexagram_id": 34,
+      "yao": 6,
+      "count": 2
+    },
+    {
       "hexagram_id": 35,
       "yao": 1,
       "count": 2
@@ -376,7 +321,17 @@
     },
     {
       "hexagram_id": 37,
+      "yao": 1,
+      "count": 2
+    },
+    {
+      "hexagram_id": 37,
       "yao": 2,
+      "count": 2
+    },
+    {
+      "hexagram_id": 38,
+      "yao": 1,
       "count": 2
     },
     {
@@ -511,6 +466,21 @@
     },
     {
       "hexagram_id": 54,
+      "yao": 2,
+      "count": 2
+    },
+    {
+      "hexagram_id": 54,
+      "yao": 3,
+      "count": 2
+    },
+    {
+      "hexagram_id": 54,
+      "yao": 4,
+      "count": 2
+    },
+    {
+      "hexagram_id": 54,
       "yao": 6,
       "count": 2
     },
@@ -571,6 +541,16 @@
     },
     {
       "hexagram_id": 58,
+      "yao": 1,
+      "count": 2
+    },
+    {
+      "hexagram_id": 58,
+      "yao": 2,
+      "count": 2
+    },
+    {
+      "hexagram_id": 58,
       "yao": 6,
       "count": 2
     },
@@ -586,12 +566,27 @@
     },
     {
       "hexagram_id": 59,
+      "yao": 5,
+      "count": 2
+    },
+    {
+      "hexagram_id": 59,
       "yao": 6,
       "count": 2
     },
     {
       "hexagram_id": 60,
+      "yao": 1,
+      "count": 2
+    },
+    {
+      "hexagram_id": 60,
       "yao": 2,
+      "count": 2
+    },
+    {
+      "hexagram_id": 60,
+      "yao": 5,
       "count": 2
     },
     {
@@ -612,6 +607,11 @@
     {
       "hexagram_id": 63,
       "yao": 6,
+      "count": 2
+    },
+    {
+      "hexagram_id": 64,
+      "yao": 1,
       "count": 2
     },
     {
@@ -995,5 +995,5 @@
       "count": 5
     }
   ],
-  "needed_for_6": 657
+  "needed_for_6": 638
 }
