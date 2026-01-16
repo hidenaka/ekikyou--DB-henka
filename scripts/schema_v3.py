@@ -100,6 +100,38 @@ class Credibility(str, Enum):
     B = "B"
     C = "C"
 
+# v4拡張: 主体種別（エンティティ型）- 意思決定の主体
+class EntityType(str, Enum):
+    COMPANY = "company"           # 企業
+    INDIVIDUAL = "individual"     # 個人
+    GOVERNMENT = "government"     # 政府・中央銀行・規制当局
+    ORGANIZATION = "organization" # その他組織（NPO、業界団体等）
+
+# v4拡張: 事象ドライバー型 - 変化のトリガー/背景
+class EventDriverType(str, Enum):
+    INTERNAL = "internal"         # 内部要因（経営判断、組織変更等）
+    MARKET = "market"             # 市場要因（景気、業界動向等）
+    POLICY = "policy"             # 政策要因（規制、法改正、金融政策等）
+    DISASTER = "disaster"         # 自然災害（地震、台風等）
+    PANDEMIC = "pandemic"         # パンデミック
+    TECHNOLOGY = "technology"     # 技術変化（破壊的イノベーション等）
+    COMPETITION = "competition"   # 競争要因（新規参入、M&A等）
+
+# 後方互換性のためSubjectTypeを維持（非推奨）
+class SubjectType(str, Enum):
+    COMPANY = "company"
+    POLICY = "policy"
+    INDIVIDUAL = "individual"
+    MARKET = "market"
+    EXOGENOUS = "exogenous"
+
+# v4拡張: 事象位相
+class EventPhase(str, Enum):
+    ANNOUNCEMENT = "announcement"  # 発表時点
+    EXECUTION = "execution"        # 実行時点
+    COMPLETION = "completion"      # 完了時点
+    OUTCOME = "outcome"            # 結果確定時点
+
 class Case(BaseModel):
     transition_id: Optional[str] = None
     target_name: str
@@ -138,6 +170,23 @@ class Case(BaseModel):
     hexagram_name: Optional[str] = None  # 卦名（例：火沢睽）
     yao_context: Optional[str] = None  # 卦との関連説明
     yao_analysis: Optional[dict] = None  # 爻分析（自動生成）
+
+    # v4拡張フィールド（旧: subject_type - 非推奨）
+    subject_type: Optional[SubjectType] = None  # 後方互換性のため維持
+
+    # v4.1拡張フィールド（新設計: 主体とドライバーを分離）
+    entity_type: Optional[EntityType] = None       # 主体の型（company/individual/government/organization）
+    event_driver_type: Optional[EventDriverType] = None  # 事象ドライバー（internal/market/policy/disaster等）
+
+    event_phase: Optional[EventPhase] = None    # 事象位相
+    primary_subject_id: Optional[str] = None    # 主体ID（例: CORP_JP_TOYOTA）
+    event_id: Optional[str] = None              # イベントID（例: EVT_2016_SBG_ARM）
+    event_date: Optional[str] = None            # イベント日付（例: 2016-07-18）
+
+    # 品質管理フィールド
+    annotation_status: Optional[str] = None     # single/double/verified
+    annotator_id: Optional[str] = None          # アノテーターID
+    review_notes: Optional[str] = None          # レビューコメント
 
     @field_validator("target_name", "period", "story_summary")
     def not_empty(cls, v: str):

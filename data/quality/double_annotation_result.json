@@ -1,0 +1,76 @@
+{
+  "n_samples": 100,
+  "v1_valid_rate": 0.56,
+  "v2_valid_rate": 0.64,
+  "agreement_rate": 0.92,
+  "cohens_kappa": 0.8344370860927153,
+  "interpretation": "ほぼ完全な一致",
+  "disagreement_count": 8,
+  "confusion_matrix": {
+    "tp": 56,
+    "tn": 36,
+    "fp": 8,
+    "fn": 0,
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1": 0.9333333333333333
+  },
+  "category_kappa": {
+    "entity_individual": {
+      "kappa": 0.8280254777070063,
+      "n": 36
+    },
+    "entity_company": {
+      "kappa": 0.8321917808219178,
+      "n": 49
+    },
+    "entity_government": {
+      "kappa": 0.851063829787234,
+      "n": 14
+    },
+    "pattern_Crisis_Pivot": {
+      "kappa": 1.0,
+      "n": 7
+    },
+    "pattern_Steady_Growth": {
+      "kappa": 0.6206896551724139,
+      "n": 11
+    },
+    "pattern_Hubris_Collapse": {
+      "kappa": 1.0,
+      "n": 9
+    },
+    "pattern_Exploration": {
+      "kappa": 1.0,
+      "n": 5
+    },
+    "pattern_Breakthrough": {
+      "kappa": 1.0,
+      "n": 9
+    },
+    "pattern_Pivot_Success": {
+      "kappa": 0.6206896551724139,
+      "n": 11
+    },
+    "pattern_Failed_Attempt": {
+      "kappa": 1.0,
+      "n": 10
+    },
+    "pattern_Shock_Recovery": {
+      "kappa": 0.56,
+      "n": 11
+    },
+    "pattern_Slow_Decline": {
+      "kappa": 0.8311688311688313,
+      "n": 13
+    },
+    "pattern_Stagnation": {
+      "kappa": 1.0,
+      "n": 5
+    },
+    "pattern_Endurance": {
+      "kappa": 0.7142857142857143,
+      "n": 8
+    }
+  }
+}
