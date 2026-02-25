@@ -1,0 +1,218 @@
+{
+  "tests": [
+    {
+      "name": "dimension_correspondence",
+      "null_hypothesis": "MCAの次元数はQ6の6次元と無関係（ランダムシャッフルで同等の次元数が得られる）",
+      "observed_scree_dim": 5,
+      "observed_benzecri_cum80_dim": 6,
+      "q6_geometric_dim": 6,
+      "permutation_distribution": {
+        "mean": 7.019,
+        "std": 6.905840933586584,
+        "median": 4.0
+      },
+      "test_statistic": 5.0,
+      "p_value": 0.499,
+      "p_value_bonferroni": 1.0,
+      "effect_size": -0.2923612083476447,
+      "effect_size_type": "standardized_difference (observed - random_mean) / random_sd",
+      "effect_size_label": "small",
+      "benzecri_q6_match": true,
+      "conclusion": "fail_to_reject",
+      "details": {
+        "note": "Scree elbow=5, Benzecri cum80%=6, Q6 dim=6. Benzecri cum80%次元はQ6の6次元と完全一致。ランダム置換分布の平均=7.02 (SD=6.91)"
+      }
+    },
+    {
+      "name": "transition_hamming_distance",
+      "null_hypothesis": "実データの遷移ペア間ハミング距離はランダム遷移と同等",
+      "n_pairs": 13060,
+      "observed_mean_hamming": 1.4710566615620215,
+      "observed_chain_mean_hamming": 1.4277692700357323,
+      "random_mean_hamming": 1.4573707503828484,
+      "random_std_hamming": 0.007428917638912917,
+      "test_statistic": 1.842248338773594,
+      "p_value": 0.971,
+      "p_value_bonferroni": 1.0,
+      "effect_size": 1.842248338773594,
+      "effect_size_type": "z-score (standardized difference)",
+      "effect_size_label": "large",
+      "conclusion": "fail_to_reject",
+      "details": {
+        "hamming_distribution": {
+          "0": 1658,
+          "1": 5109,
+          "2": 4776,
+          "3": 1517
+        },
+        "note": "八卦(3ビット)空間でのハミング距離分析。距離0=同一八卦, 距離3=錯卦(全ビット反転)。"
+      }
+    },
+    {
+      "name": "hex_cluster_cramers_v",
+      "null_hypothesis": "八卦タグとクラスタの間のCramer's Vはランダムに期待される値と同等",
+      "phase2_reported": {
+        "before_hex_v": 0.318,
+        "after_hex_v": 0.3825
+      },
+      "observed": {
+        "before_hex_v": 0.24631801042230458,
+        "after_hex_v": 0.3190682869845754
+      },
+      "random_baseline": {
+        "before_hex_v_mean": 0.022452527206816272,
+        "before_hex_v_std": 0.006200891123291697,
+        "after_hex_v_mean": 0.02229367414002217,
+        "after_hex_v_std": 0.005918565053358569
+      },
+      "test_statistic": 0.28269314870344,
+      "p_value": 0.0,
+      "p_value_bonferroni": 0.0,
+      "p_value_before": 0.0,
+      "p_value_after": 0.0,
+      "effect_size": 0.28269314870344,
+      "effect_size_type": "Cramer's V (average of before/after)",
+      "effect_size_label": "small",
+      "conclusion": "reject",
+      "details": {
+        "note": "クラスタ割り当てはPhase 2のプロファイルに基づく近似。Phase 2報告値: before_V=0.318, after_V=0.3825. 独自計算値: before_V=0.2463, after_V=0.3191"
+      }
+    },
+    {
+      "name": "spectral_structure_comparison",
+      "null_hypothesis": "MCA固有値分布とQ6スペクトルのWasserstein距離はランダム固有値と同等",
+      "q6_spectrum": {
+        "unique_eigenvalues": {
+          "-6.0": 1,
+          "-4.0": 6,
+          "-2.0": 15,
+          "-0.0": 20,
+          "2.0": 15,
+          "4.0": 6,
+          "6.0": 1
+        },
+        "n_eigenvalues": 64
+      },
+      "mca_spectrum": {
+        "n_eigenvalues": 30,
+        "range": [
+          0.1428836619819318,
+          0.5975594700419479
+        ],
+        "gap_cv": 1.3913010164069803
+      },
+      "observed_wasserstein": 0.29384164233271093,
+      "random_wasserstein_mean": 0.1203373946130892,
+      "random_wasserstein_std": 0.023417701652061904,
+      "test_statistic": 7.409106593701302,
+      "p_value": 1.0,
+      "p_value_bonferroni": 1.0,
+      "effect_size": 7.409106593701302,
+      "effect_size_type": "z-score (Wasserstein distance)",
+      "effect_size_label": "large",
+      "conclusion": "fail_to_reject",
+      "details": {
+        "q6_gap_cv": 0.0,
+        "mca_gap_cv": 1.3913010164069803,
+        "note": "Q6は7つのユニーク固有値（等間隔）を持つ完全に規則的なスペクトル。MCAの30固有値との直接比較は次元数が異なるため限定的。Wasserstein距離は正規化後の分布形状を比較。"
+      }
+    },
+    {
+      "name": "cuogua_symmetry",
+      "null_hypothesis": "錯卦ペアのbefore_state分布のコサイン類似度はランダムペアと同等",
+      "cuogua_trigram_pairs": [
+        [
+          "乾",
+          "坤"
+        ],
+        [
+          "兌",
+          "艮"
+        ],
+        [
+          "坎",
+          "離"
+        ],
+        [
+          "巽",
+          "震"
+        ]
+      ],
+      "n_cuogua_pairs": 4,
+      "observed_mean_similarity_before": 0.290996073050531,
+      "observed_similarities_before": [
+        0.12676148644124394,
+        0.38305255456368487,
+        0.09090799245105186,
+        0.5632622587461434
+      ],
+      "observed_mean_similarity_after": 0.6769897957848914,
+      "random_mean_similarity": 0.34003930469380966,
+      "random_std_similarity": 0.07562270183439809,
+      "test_statistic": -0.6485252504026594,
+      "p_value": 0.778,
+      "p_value_bonferroni": 1.0,
+      "effect_size": -0.6485252504026594,
+      "effect_size_type": "z-score (cosine similarity)",
+      "effect_size_label": "medium",
+      "conclusion": "fail_to_reject",
+      "details": {
+        "trigram_cuogua_mapping": {
+          "乾": "坤",
+          "坤": "乾",
+          "震": "巽",
+          "巽": "震",
+          "坎": "離",
+          "離": "坎",
+          "艮": "兌",
+          "兌": "艮"
+        },
+        "note": "八卦レベルでの錯卦ペア（乾↔坤, 震↔巽, 坎↔離, 艮↔兌）のbefore_state分布のコサイン類似度を、ランダムペアと比較。八卦は8個のため、錯卦ペアは4組のみ（64卦レベルの32組ではない）。"
+      }
+    },
+    {
+      "name": "partial_isomorphism",
+      "null_hypothesis": "Q6のコミュニティ構造と実データの変化パターンに部分的対応は存在しない",
+      "q6_communities": 5,
+      "dbscan_optimal_clusters": 5,
+      "community_count_match": true,
+      "observed_cramers_v_before_pattern": 0.299142171174886,
+      "observed_cramers_v_after_pattern": 0.43304653812865246,
+      "random_v_mean": 0.03141070064764134,
+      "random_v_std": 0.0022924805602064177,
+      "test_statistic": 116.78680080198272,
+      "p_value": 0.0,
+      "p_value_bonferroni": 0.0,
+      "effect_size": 0.299142171174886,
+      "effect_size_type": "Cramer's V (before_hex x pattern_type)",
+      "effect_size_label": "small",
+      "conclusion": "reject",
+      "details": {
+        "community_count_note": "Q6 Louvainコミュニティ数(5)とDBSCAN最適クラスタ数(5)が一致",
+        "note": "八卦×パターンタイプの分割表のCramer's Vを、八卦タグのランダムシャッフルと比較。Q6のコミュニティ構造を直接テストするのではなく、八卦タグがパターンを構造的に区別する力を検証。"
+      }
+    }
+  ],
+  "overall_conclusion": {
+    "isomorphism_level": "analogous",
+    "significant_tests": 2,
+    "total_tests": 6,
+    "large_effect_count": 2,
+    "medium_or_larger_effect_count": 3,
+    "effect_labels": [
+      "small",
+      "large",
+      "small",
+      "large",
+      "medium",
+      "small"
+    ],
+    "summary": "2/6検証でH0棄却（Bonferroni補正後）。類似構造が存在するが、同型性は限定的。"
+  },
+  "random_seed": 42,
+  "n_permutations": 1000,
+  "alpha": 0.05,
+  "alpha_bonferroni": 0.008333333333333333,
+  "n_cases": 13060,
+  "execution_timestamp": "2026-02-25T16:36:33.110032"
+}
