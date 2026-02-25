@@ -58,15 +58,15 @@
         "after_hex_v": 0.3825
       },
       "observed": {
-        "before_hex_v": 0.2835633315445468,
-        "after_hex_v": 0.6327606422577804
+        "before_hex_v": 0.317964463070155,
+        "after_hex_v": 0.3824941507058507
       },
       "cluster_reconstruction": {
         "method": "KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates",
         "mca_recomputed": true,
         "reconstructed_sizes": {
-          "0": 5800,
-          "1": 7260
+          "0": 11258,
+          "1": 1802
         },
         "phase2_sizes": {
           "0": 11258,
@@ -74,23 +74,23 @@
         }
       },
       "random_baseline": {
-        "before_hex_v_mean": 0.022396464969265416,
-        "before_hex_v_std": 0.0064730404383005645,
-        "after_hex_v_mean": 0.022443315866009245,
-        "after_hex_v_std": 0.006111903375617378
+        "before_hex_v_mean": 0.02214456548330122,
+        "before_hex_v_std": 0.00612991836122943,
+        "after_hex_v_mean": 0.02234331006704562,
+        "after_hex_v_std": 0.006243214978627798
       },
-      "test_statistic": 0.4581619869011636,
+      "test_statistic": 0.35022930688800286,
       "p_value": 0.0,
       "p_value_bonferroni": 0.0,
       "p_value_before": 0.0,
       "p_value_after": 0.0,
-      "effect_size": 0.4581619869011636,
+      "effect_size": 0.35022930688800286,
       "effect_size_type": "Cramer's V (average of before/after). positive=pro-isomorphism",
       "effect_size_label": "medium_pro",
       "effect_direction": "pro_isomorphism",
       "conclusion": "reject",
       "details": {
-        "note": "方法: KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates. 再実行クラスタサイズ: {'0': 5800, '1': 7260}. Phase 2報告クラスタサイズ: {'0': 11258, '1': 1802}. Phase 2報告値: before_V=0.318, after_V=0.3825. 再実行計算値: before_V=0.2836, after_V=0.6328"
+        "note": "方法: KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates. 再実行クラスタサイズ: {'0': 11258, '1': 1802}. Phase 2報告クラスタサイズ: {'0': 11258, '1': 1802}. Phase 2報告値: before_V=0.318, after_V=0.3825. 再実行計算値: before_V=0.3180, after_V=0.3825"
       }
     },
     {
@@ -249,5 +249,5 @@
   "alpha": 0.05,
   "alpha_bonferroni": 0.008333333333333333,
   "n_cases": 13060,
-  "execution_timestamp": "2026-02-25T17:23:31.584643"
+  "execution_timestamp": "2026-02-25T17:27:47.238629"
 }
