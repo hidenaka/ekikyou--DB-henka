@@ -14,9 +14,10 @@
       "test_statistic": 5.0,
       "p_value": 0.499,
       "p_value_bonferroni": 1.0,
-      "effect_size": -0.2923612083476447,
-      "effect_size_type": "standardized_difference (observed - random_mean) / random_sd",
-      "effect_size_label": "small",
+      "effect_size": 0.9005485871892204,
+      "effect_size_type": "standardized_gap_difference (random_mean_gap - observed_gap) / random_gap_sd. positive=pro-isomorphism",
+      "effect_size_label": "large_pro",
+      "effect_direction": "pro_isomorphism",
       "benzecri_q6_match": true,
       "conclusion": "fail_to_reject",
       "details": {
@@ -35,8 +36,9 @@
       "p_value": 0.971,
       "p_value_bonferroni": 1.0,
       "effect_size": 1.842248338773594,
-      "effect_size_type": "z-score (standardized difference)",
-      "effect_size_label": "large",
+      "effect_size_type": "z-score (standardized difference). positive=observed farther than random (anti-isomorphism)",
+      "effect_size_label": "large_anti",
+      "effect_direction": "anti_isomorphism",
       "conclusion": "fail_to_reject",
       "details": {
         "hamming_distribution": {
@@ -45,7 +47,7 @@
           "2": 4776,
           "3": 1517
         },
-        "note": "八卦(3ビット)空間でのハミング距離分析。距離0=同一八卦, 距離3=錯卦(全ビット反転)。"
+        "note": "八卦(3ビット)空間でのハミング距離分析。距離0=同一八卦, 距離3=錯卦(全ビット反転)。観測平均(1.4711)>ランダム平均(1.4574): 実データの遷移はランダムより遠い八卦間で発生（反同型性方向）。"
       }
     },
     {
@@ -56,26 +58,39 @@
         "after_hex_v": 0.3825
       },
       "observed": {
-        "before_hex_v": 0.24631801042230458,
-        "after_hex_v": 0.3190682869845754
+        "before_hex_v": 0.2835633315445468,
+        "after_hex_v": 0.6327606422577804
+      },
+      "cluster_reconstruction": {
+        "method": "KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates",
+        "mca_recomputed": true,
+        "reconstructed_sizes": {
+          "0": 5800,
+          "1": 7260
+        },
+        "phase2_sizes": {
+          "0": 11258,
+          "1": 1802
+        }
       },
       "random_baseline": {
-        "before_hex_v_mean": 0.022452527206816272,
-        "before_hex_v_std": 0.006200891123291697,
-        "after_hex_v_mean": 0.02229367414002217,
-        "after_hex_v_std": 0.005918565053358569
+        "before_hex_v_mean": 0.022396464969265416,
+        "before_hex_v_std": 0.0064730404383005645,
+        "after_hex_v_mean": 0.022443315866009245,
+        "after_hex_v_std": 0.006111903375617378
       },
-      "test_statistic": 0.28269314870344,
+      "test_statistic": 0.4581619869011636,
       "p_value": 0.0,
       "p_value_bonferroni": 0.0,
       "p_value_before": 0.0,
       "p_value_after": 0.0,
-      "effect_size": 0.28269314870344,
-      "effect_size_type": "Cramer's V (average of before/after)",
-      "effect_size_label": "small",
+      "effect_size": 0.4581619869011636,
+      "effect_size_type": "Cramer's V (average of before/after). positive=pro-isomorphism",
+      "effect_size_label": "medium_pro",
+      "effect_direction": "pro_isomorphism",
       "conclusion": "reject",
       "details": {
-        "note": "クラスタ割り当てはPhase 2のプロファイルに基づく近似。Phase 2報告値: before_V=0.318, after_V=0.3825. 独自計算値: before_V=0.2463, after_V=0.3191"
+        "note": "方法: KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates. 再実行クラスタサイズ: {'0': 5800, '1': 7260}. Phase 2報告クラスタサイズ: {'0': 11258, '1': 1802}. Phase 2報告値: before_V=0.318, after_V=0.3825. 再実行計算値: before_V=0.2836, after_V=0.6328"
       }
     },
     {
@@ -102,19 +117,22 @@
         "gap_cv": 1.3913010164069803
       },
       "observed_wasserstein": 0.29384164233271093,
-      "random_wasserstein_mean": 0.1203373946130892,
-      "random_wasserstein_std": 0.023417701652061904,
-      "test_statistic": 7.409106593701302,
+      "random_wasserstein_mean": 0.11100872714988969,
+      "random_wasserstein_std": 0.009911040104709123,
+      "baseline_method": "surrogate_mca",
+      "baseline_n_valid": 1000,
+      "test_statistic": 18.44739939009531,
       "p_value": 1.0,
       "p_value_bonferroni": 1.0,
-      "effect_size": 7.409106593701302,
-      "effect_size_type": "z-score (Wasserstein distance)",
-      "effect_size_label": "large",
+      "effect_size": 18.44739939009531,
+      "effect_size_type": "z-score (Wasserstein distance). positive=observed farther from Q6 (anti-isomorphism)",
+      "effect_size_label": "large_anti",
+      "effect_direction": "anti_isomorphism",
       "conclusion": "fail_to_reject",
       "details": {
         "q6_gap_cv": 0.0,
         "mca_gap_cv": 1.3913010164069803,
-        "note": "Q6は7つのユニーク固有値（等間隔）を持つ完全に規則的なスペクトル。MCAの30固有値との直接比較は次元数が異なるため限定的。Wasserstein距離は正規化後の分布形状を比較。"
+        "note": "Q6は7つのユニーク固有値（等間隔）を持つ完全に規則的なスペクトル。MCAの30固有値との直接比較は次元数が異なるため限定的。Wasserstein距離は正規化後の分布形状を比較。ベースライン: surrogate_mca. MCAスペクトルのWasserstein距離(0.2938)はランダム(0.1110)より大きく、MCAはQ6からランダムより遠い（反同型性方向）。"
       }
     },
     {
@@ -147,14 +165,15 @@
         0.5632622587461434
       ],
       "observed_mean_similarity_after": 0.6769897957848914,
-      "random_mean_similarity": 0.34003930469380966,
-      "random_std_similarity": 0.07562270183439809,
-      "test_statistic": -0.6485252504026594,
-      "p_value": 0.778,
+      "random_mean_similarity": 0.34119899380379365,
+      "random_std_similarity": 0.07570565422595706,
+      "test_statistic": -0.6631330416011342,
+      "p_value": 0.78,
       "p_value_bonferroni": 1.0,
-      "effect_size": -0.6485252504026594,
-      "effect_size_type": "z-score (cosine similarity)",
-      "effect_size_label": "medium",
+      "effect_size": -0.6631330416011342,
+      "effect_size_type": "z-score (cosine similarity). positive=cuogua more similar (pro-isomorphism)",
+      "effect_size_label": "medium_anti",
+      "effect_direction": "anti_isomorphism",
       "conclusion": "fail_to_reject",
       "details": {
         "trigram_cuogua_mapping": {
@@ -167,7 +186,8 @@
           "艮": "兌",
           "兌": "艮"
         },
-        "note": "八卦レベルでの錯卦ペア（乾↔坤, 震↔巽, 坎↔離, 艮↔兌）のbefore_state分布のコサイン類似度を、ランダムペアと比較。八卦は8個のため、錯卦ペアは4組のみ（64卦レベルの32組ではない）。"
+        "note": "八卦レベルでの錯卦ペア（乾↔坤, 震↔巽, 坎↔離, 艮↔兌）のbefore_state分布のコサイン類似度を、ランダムペアと比較。八卦は8個のため、錯卦ペアは4組のみ（64卦レベルの32組ではない）。錯卦ペア平均類似度(0.2910)<ランダム平均(0.3412): 錯卦ペアはランダムより類似度が低い（反同型性方向）。",
+        "power_analysis": "検出力の限界: C(8,2)=28ペア中4ペアのみが錯卦。ランダム完全ペアリングの空間は105通り。仕様では64卦レベルの32ペアを想定していたが、cases.jsonlにはbefore_hex/after_hex（八卦タグ）しかないため、八卦レベルの4ペアに制限される。サンプルサイズの不足により、中程度以下の効果を検出する力が限定的。"
       }
     },
     {
@@ -175,20 +195,23 @@
       "null_hypothesis": "Q6のコミュニティ構造と実データの変化パターンに部分的対応は存在しない",
       "q6_communities": 5,
       "dbscan_optimal_clusters": 5,
+      "dbscan_robustness": "2/30",
       "community_count_match": true,
       "observed_cramers_v_before_pattern": 0.299142171174886,
       "observed_cramers_v_after_pattern": 0.43304653812865246,
-      "random_v_mean": 0.03141070064764134,
-      "random_v_std": 0.0022924805602064177,
-      "test_statistic": 116.78680080198272,
+      "random_v_mean": 0.0314460502069541,
+      "random_v_std": 0.0023142220130830267,
+      "test_statistic": 115.67434734202739,
       "p_value": 0.0,
       "p_value_bonferroni": 0.0,
       "effect_size": 0.299142171174886,
-      "effect_size_type": "Cramer's V (before_hex x pattern_type)",
-      "effect_size_label": "small",
+      "effect_size_type": "Cramer's V (before_hex x pattern_type). positive=pro-isomorphism",
+      "effect_size_label": "small_pro",
+      "effect_direction": "pro_isomorphism",
       "conclusion": "reject",
       "details": {
         "community_count_note": "Q6 Louvainコミュニティ数(5)とDBSCAN最適クラスタ数(5)が一致",
+        "dbscan_robustness_note": "DBSCAN k=5は30通りのパラメータ組み合わせ中2通りで出現。Q6 Louvainコミュニティ数(5)との一致は偶然の可能性がある（ロバスト性: 2/30）。",
         "note": "八卦×パターンタイプの分割表のCramer's Vを、八卦タグのランダムシャッフルと比較。Q6のコミュニティ構造を直接テストするのではなく、八卦タグがパターンを構造的に区別する力を検証。"
       }
     }
@@ -197,22 +220,34 @@
     "isomorphism_level": "analogous",
     "significant_tests": 2,
     "total_tests": 6,
-    "large_effect_count": 2,
-    "medium_or_larger_effect_count": 3,
+    "large_effect_count_pro": 1,
+    "large_effect_count_anti": 2,
+    "medium_or_larger_effect_count_pro": 2,
+    "medium_or_larger_effect_count_anti": 3,
+    "rejected_pro_direction": 2,
+    "rejected_anti_direction": 0,
     "effect_labels": [
-      "small",
-      "large",
-      "small",
-      "large",
-      "medium",
-      "small"
+      "large_pro",
+      "large_anti",
+      "medium_pro",
+      "large_anti",
+      "medium_anti",
+      "small_pro"
     ],
-    "summary": "2/6検証でH0棄却（Bonferroni補正後）。類似構造が存在するが、同型性は限定的。"
+    "effect_directions": [
+      "pro_isomorphism",
+      "anti_isomorphism",
+      "pro_isomorphism",
+      "anti_isomorphism",
+      "anti_isomorphism",
+      "pro_isomorphism"
+    ],
+    "summary": "八卦タグとデータパターンの間に弱い統計的関連がある（Cramer's V ≈ 0.28-0.30, small effect）が、Q6超立方体との構造的同型性を積極的に支持する証拠は限定的である。一部の検証（3件）は反同型性方向の中〜大効果を示す。"
   },
   "random_seed": 42,
   "n_permutations": 1000,
   "alpha": 0.05,
   "alpha_bonferroni": 0.008333333333333333,
   "n_cases": 13060,
-  "execution_timestamp": "2026-02-25T16:47:45.825192"
+  "execution_timestamp": "2026-02-25T17:23:31.584643"
 }

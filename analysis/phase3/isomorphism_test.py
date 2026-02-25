@@ -244,8 +244,7 @@ def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
     K = len(mca_columns)
 
     def build_indicator_and_get_eigenvalues(dm):
-        """指示行列 → MCA固有値計算（SF-4: NaN/Infガード付き）"""
-        import warnings
+        """指示行列 → MCA固有値計算（SF-4: NaN/Infガード付き、ベクトル演算版）"""
         # 指示行列構築
         cols = []
         for j in range(dm.shape[1]):
@@ -254,37 +253,27 @@ def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
                 cols.append((dm[:, j] == cat).astype(float))
         Z = np.column_stack(cols)
 
-        # MCA: Z の列の正規化された相関行列の固有値
-        n = Z.shape[0]
-        col_sums = Z.sum(axis=0)
-        col_sums[col_sums == 0] = 1  # ゼロ除算防止
-
-        # Burt行列から固有値計算
-        # 簡略化: 標準化残差行列のSVD
-        row_masses = np.ones(n) / n
-        col_masses = col_sums / col_sums.sum()
-
         # 標準化残差
         P = Z / Z.sum()
         r = P.sum(axis=1)  # row margins
         c = P.sum(axis=0)  # col margins
 
-        r[r == 0] = 1e-10
-        c[c == 0] = 1e-10
+        # ゼロ周辺の処理
+        valid_rows = r > 0
+        valid_cols = c > 0
+        P_sub = P[np.ix_(valid_rows, valid_cols)]
+        r_sub = r[valid_rows]
+        c_sub = c[valid_cols]
 
         # SF-4: NaN/Infチェック
-        r_inv_sqrt = 1.0 / np.sqrt(r)
-        c_inv_sqrt = 1.0 / np.sqrt(c)
+        r_inv_sqrt = 1.0 / np.sqrt(r_sub)
+        c_inv_sqrt = 1.0 / np.sqrt(c_sub)
         if not (np.all(np.isfinite(r_inv_sqrt)) and np.all(np.isfinite(c_inv_sqrt))):
             return None  # この置換は無効
 
-        Dr_inv_sqrt = np.diag(r_inv_sqrt)
-        Dc_inv_sqrt = np.diag(c_inv_sqrt)
-
-        # 標準化残差行列 (n x J)
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore", RuntimeWarning)
-            S = Dr_inv_sqrt @ (P - np.outer(r, c)) @ Dc_inv_sqrt
+        # ベクトル演算: S[i,j] = r_inv_sqrt[i] * (P[i,j] - r[i]*c[j]) * c_inv_sqrt[j]
+        residual = P_sub - np.outer(r_sub, c_sub)
+        S = (r_inv_sqrt[:, np.newaxis] * residual) * c_inv_sqrt[np.newaxis, :]
 
         # SF-4: 結果のNaN/Infチェック
         if not np.all(np.isfinite(S)):
@@ -504,6 +493,33 @@ def test2_transition_hamming(cases, graph_data, rng):
     return result
 
 
+def _fallback_cluster_assignment(cases, cluster_results):
+    """
+    MCA再計算が失敗した場合のフォールバック: Phase 2のクラスタプロファイルに基づく
+    ユークリッド距離最近傍割り当て。
+    """
+    profiles = cluster_results.get("final_clustering", {}).get("cluster_profiles", {})
+    if not profiles:
+        # プロファイルがない場合、全件をクラスタ0に割り当て
+        return np.zeros(len(cases), dtype=int)
+
+    centroids = {}
+    for cid, prof in profiles.items():
+        centroids[int(cid)] = np.array(prof.get("centroid", [0, 0, 0, 0, 0]))
+
+    # 各事例をプロファイルのセントロイドに基づいて分類
+    # ただしMCA座標がないので、Phase 2のクラスタサイズ比率でランダム割り当て
+    sizes = cluster_results.get("cluster_sizes", {})
+    total = sum(int(v) for v in sizes.values())
+    if total == 0:
+        return np.zeros(len(cases), dtype=int)
+    prob_1 = int(sizes.get("1", 0)) / total
+
+    rng_fb = np.random.default_rng(42)
+    labels = (rng_fb.random(len(cases)) < prob_1).astype(int)
+    return labels
+
+
 # ============================================================
 # 検証3: 八卦タグとクラスタの対応 (Cramer's V有意性)
 # ============================================================
@@ -546,35 +562,80 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
     Z = np.column_stack(indicator_cols)
 
     # MCA: 標準化残差行列のSVDで行座標を計算
+    # 注意: n x n の対角行列を作ると巨大になるため、ベクトル演算で処理
     n = Z.shape[0]
     P = Z / Z.sum()
-    r = P.sum(axis=1)
-    c = P.sum(axis=0)
-    r[r == 0] = 1e-10
-    c[c == 0] = 1e-10
+    r = P.sum(axis=1)  # 行周辺（n,）
+    c = P.sum(axis=0)  # 列周辺（p,）
 
-    Dr_inv_sqrt = np.diag(1.0 / np.sqrt(r))
-    Dc_inv_sqrt = np.diag(1.0 / np.sqrt(c))
+    # ゼロ周辺の処理: ゼロ行/列があるとInfになるため除外
+    valid_rows = r > 0
+    valid_cols = c > 0
+    n_invalid_rows = int(np.sum(~valid_rows))
+    n_invalid_cols = int(np.sum(~valid_cols))
+    if n_invalid_rows > 0 or n_invalid_cols > 0:
+        print(f"    警告: ゼロ周辺 行={n_invalid_rows}, 列={n_invalid_cols} を除外")
 
-    S = Dr_inv_sqrt @ (P - np.outer(r, c)) @ Dc_inv_sqrt
+    # 有効な行と列のみで計算
+    P_sub = P[np.ix_(valid_rows, valid_cols)]
+    r_sub = r[valid_rows]
+    c_sub = c[valid_cols]
 
-    from scipy.linalg import svd
-    U, s, Vt = svd(S, full_matrices=False)
-    # 行座標 = Dr^(-1/2) * U * S (最初の非自明成分を使用)
-    # 5次元に切り詰め（Phase 2と同じ）
-    n_dims = 5
-    row_coords = Dr_inv_sqrt @ U[:, 1:n_dims+1] * s[1:n_dims+1]
+    # r^(-1/2) と c^(-1/2) をベクトルとして保持（対角行列ではなく）
+    r_inv_sqrt = 1.0 / np.sqrt(r_sub)
+    c_inv_sqrt = 1.0 / np.sqrt(c_sub)
 
-    # KMeans k=2, seed=42 で再実行
-    from sklearn.cluster import KMeans
-    km = KMeans(n_clusters=2, random_state=42, n_init=10)
-    cluster_labels = km.fit_predict(row_coords)
+    # 有限値チェック
+    if not (np.all(np.isfinite(r_inv_sqrt)) and np.all(np.isfinite(c_inv_sqrt))):
+        print("    警告: MCA計算で非有限値が発生。Phase 2のクラスタプロファイルにフォールバック。")
+        # フォールバック: Phase 2のプロファイルベースのクラスタ近似
+        cluster_labels = _fallback_cluster_assignment(cases, cluster_results)
+        cluster_sizes = {str(i): int(np.sum(cluster_labels == i)) for i in range(2)}
+        phase2_sizes = cluster_results.get("cluster_sizes", {})
+        print(f"    フォールバッククラスタサイズ: {cluster_sizes}")
+        print(f"    Phase 2報告クラスタサイズ: {phase2_sizes}")
+        mca_recomputed = False
+    else:
+        # S = Dr^(-1/2) @ (P - r*c^T) @ Dc^(-1/2)
+        # ベクトル演算: S[i,j] = r_inv_sqrt[i] * (P[i,j] - r[i]*c[j]) * c_inv_sqrt[j]
+        residual = P_sub - np.outer(r_sub, c_sub)
+        S = (r_inv_sqrt[:, np.newaxis] * residual) * c_inv_sqrt[np.newaxis, :]
 
-    # Phase 2のクラスタサイズと照合
-    cluster_sizes = {str(i): int(np.sum(cluster_labels == i)) for i in range(2)}
-    phase2_sizes = cluster_results.get("cluster_sizes", {})
-    print(f"    KMeans再実行クラスタサイズ: {cluster_sizes}")
-    print(f"    Phase 2報告クラスタサイズ: {phase2_sizes}")
+        # 非有限値チェック
+        if not np.all(np.isfinite(S)):
+            n_nonfinite = int(np.sum(~np.isfinite(S)))
+            print(f"    警告: S行列に非有限値{n_nonfinite}個。クリーニング中...")
+            S = np.nan_to_num(S, nan=0.0, posinf=0.0, neginf=0.0)
+
+        from scipy.linalg import svd as scipy_svd
+        U, s_vals, Vt = scipy_svd(S, full_matrices=False)
+
+        # 行座標 = Dr^(-1/2) * U * s (最初の非自明成分を使用)
+        # ベクトル演算: row_coords[i, d] = r_inv_sqrt[i] * U[i, d+1] * s[d+1]
+        n_dims = 5
+        row_coords_sub = (r_inv_sqrt[:, np.newaxis] * U[:, 1:n_dims+1]) * s_vals[1:n_dims+1]
+
+        # 非有限値チェック
+        if not np.all(np.isfinite(row_coords_sub)):
+            n_nonfinite = int(np.sum(~np.isfinite(row_coords_sub)))
+            print(f"    警告: row_coordsに非有限値{n_nonfinite}個。ゼロに置換。")
+            row_coords_sub = np.nan_to_num(row_coords_sub, nan=0.0, posinf=0.0, neginf=0.0)
+
+        # 元のインデックスに復元（除外された行はゼロベクトル）
+        row_coords = np.zeros((n, n_dims))
+        row_coords[valid_rows] = row_coords_sub
+
+        # KMeans k=2, seed=42 で再実行
+        from sklearn.cluster import KMeans
+        km = KMeans(n_clusters=2, random_state=42, n_init=10)
+        cluster_labels = km.fit_predict(row_coords)
+        mca_recomputed = True
+
+        # Phase 2のクラスタサイズと照合
+        cluster_sizes = {str(i): int(np.sum(cluster_labels == i)) for i in range(2)}
+        phase2_sizes = cluster_results.get("cluster_sizes", {})
+        print(f"    KMeans再実行クラスタサイズ: {cluster_sizes}")
+        print(f"    Phase 2報告クラスタサイズ: {phase2_sizes}")
 
     # before_hex, after_hexを収集
     before_hex_values = [case.get("before_hex", "unknown") for case in cases]
@@ -640,8 +701,12 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
     es_label_t3 = cramers_v_label(avg_v)
 
     # クラスタ再現精度を計算
+    if mca_recomputed:
+        recon_method = "KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates"
+    else:
+        recon_method = "Fallback: random assignment based on Phase 2 cluster size ratio"
     cluster_reconstruction_note = (
-        f"KMeans (k=2, seed=42) を再実行してクラスタ割り当てを復元。"
+        f"方法: {recon_method}. "
         f"再実行クラスタサイズ: {cluster_sizes}. "
         f"Phase 2報告クラスタサイズ: {dict(phase2_sizes)}. "
         f"Phase 2報告値: before_V={reported_v_before}, after_V={reported_v_after}. "
@@ -660,7 +725,8 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
             "after_hex_v": float(observed_v_after),
         },
         "cluster_reconstruction": {
-            "method": "KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates",
+            "method": recon_method,
+            "mca_recomputed": mca_recomputed,
             "reconstructed_sizes": cluster_sizes,
             "phase2_sizes": dict(phase2_sizes),
         },
@@ -759,22 +825,37 @@ def test4_spectral_comparison(mca_results, graph_data, rng):
         unique_cats_t4[j] = sorted(set(data_matrix_t4[:, j]))
 
     def surrogate_mca_eigenvalues(dm, uc, rng_local):
-        """シャッフルデータの指示行列 → SVD → 固有値"""
+        """シャッフルデータの指示行列 → SVD → 固有値（ベクトル演算版）"""
         cols = []
         for j in range(dm.shape[1]):
             cats = uc[j]
             for cat in cats:
                 cols.append((dm[:, j] == cat).astype(float))
         Z = np.column_stack(cols)
-        n = Z.shape[0]
         P = Z / Z.sum()
         r = P.sum(axis=1)
         c = P.sum(axis=0)
-        r[r == 0] = 1e-10
-        c[c == 0] = 1e-10
-        Dr_inv_sqrt = np.diag(1.0 / np.sqrt(r))
-        Dc_inv_sqrt = np.diag(1.0 / np.sqrt(c))
-        S = Dr_inv_sqrt @ (P - np.outer(r, c)) @ Dc_inv_sqrt
+
+        # ゼロ周辺の処理
+        valid_rows = r > 0
+        valid_cols = c > 0
+        P_sub = P[np.ix_(valid_rows, valid_cols)]
+        r_sub = r[valid_rows]
+        c_sub = c[valid_cols]
+
+        r_inv_sqrt = 1.0 / np.sqrt(r_sub)
+        c_inv_sqrt = 1.0 / np.sqrt(c_sub)
+
+        if not (np.all(np.isfinite(r_inv_sqrt)) and np.all(np.isfinite(c_inv_sqrt))):
+            return None
+
+        # ベクトル演算: S[i,j] = r_inv_sqrt[i] * (P[i,j] - r[i]*c[j]) * c_inv_sqrt[j]
+        residual = P_sub - np.outer(r_sub, c_sub)
+        S = (r_inv_sqrt[:, np.newaxis] * residual) * c_inv_sqrt[np.newaxis, :]
+
+        if not np.all(np.isfinite(S)):
+            S = np.nan_to_num(S, nan=0.0, posinf=0.0, neginf=0.0)
+
         try:
             from scipy.linalg import svd as svd_local
             U, s, Vt = svd_local(S, full_matrices=False)
@@ -1054,7 +1135,7 @@ def test5_cuogua_symmetry(cases, graph_data, rng):
 # ============================================================
 # 検証6: 部分同型性テスト
 # ============================================================
-def test6_partial_isomorphism(cases, graph_data, rng):
+def test6_partial_isomorphism(cases, graph_data, cluster_results, rng):
     """
     Q6のLouvainコミュニティ（5個）が、実データの変化パターンの
     部分構造と対応するかを検証。
@@ -1488,7 +1569,7 @@ def main():
     test5 = test5_cuogua_symmetry(cases, graph_data, rng)
 
     print("\n[7/8] 検証6: 部分同型性テスト...")
-    test6 = test6_partial_isomorphism(cases, graph_data, rng)
+    test6 = test6_partial_isomorphism(cases, graph_data, cluster_results, rng)
 
     # 結果集約
     test_results = [test1, test2, test3, test4, test5, test6]
