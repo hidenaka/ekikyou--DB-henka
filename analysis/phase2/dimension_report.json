@@ -1,74 +1,95 @@
 {
-  "recommended_dimensions": 16,
+  "recommended_dimensions": 10,
   "dimension_decision": {
     "scree_elbow": {
       "dimensions": 5,
-      "method": "スクリープロット（肘法）: 固有値の二次差分の最大変化点",
-      "elbow_eigenvalue": 0.3340699642402419
+      "method": "Scree plot (elbow method): maximum second derivative of eigenvalues",
+      "elbow_eigenvalue": 0.3340699675399033
     },
     "cumulative_70": {
-      "dimensions": 12,
-      "method": "累積寄与率 >= 70%",
-      "cumulative_at_threshold": 72.89997835667037
+      "dimensions": 17,
+      "method": "Cumulative explained inertia >= 70%",
+      "cumulative_at_threshold": 71.82506117577951
     },
     "kaiser": {
-      "dimensions": 20,
-      "method": "Kaiser基準（固有値 > 1/7 = 0.1429）",
+      "dimensions": 30,
+      "method": "Kaiser criterion for MCA: eigenvalue > 1/K = 1/7 = 0.1429",
       "threshold": 0.14285714285714285
     },
+    "greenacre": {
+      "dimensions": 10,
+      "method": "Greenacre criterion: eigenvalue > mean eigenvalue = 0.239303",
+      "threshold": 0.2393027300985421
+    },
     "parallel_analysis": {
-      "dimensions": 20,
-      "method": "並行分析（100回ランダム置換の95パーセンタイル比較）",
+      "dimensions": 30,
+      "method": "Parallel Analysis (95th percentile of 100 random permutations)",
       "random_95th_percentile": [
-        0.1643026384614658,
-        0.15734700711519026,
-        0.1561897007395574,
-        0.154856339900067,
-        0.15406245940869165,
-        0.15308826109678977,
-        0.15227898280422145,
-        0.15155067799795618,
-        0.15082853951960054,
-        0.14991093095973934,
-        0.1493208502864778,
-        0.14888403657322188,
-        0.14811358812874392,
-        0.1472717820174077,
-        0.14667371730390832
+        0.16501137539371036,
+        0.15902191625139905,
+        0.1575550465014835,
+        0.15669703356801748,
+        0.15558562720259275,
+        0.154863507378697,
+        0.15407217195327735,
+        0.15343196200313275,
+        0.15262267540061392,
+        0.15191712263465426,
+        0.1512307187320341,
+        0.15064976815875614,
+        0.14999039654305993,
+        0.14929495744960064,
+        0.1487485654068478,
+        0.14824875363890574,
+        0.14765047801955541,
+        0.14701653391220434,
+        0.1465193531868078,
+        0.14610857675804628
       ],
       "actual_eigenvalues": [
-        0.5975594700418941,
-        0.5099884173277018,
-        0.4431085541651986,
-        0.3933552745722957,
-        0.3340699642402419,
-        0.305290528493342,
-        0.2872823935861663,
-        0.28305461198263393,
-        0.26191160460918284,
-        0.25164150306663036,
-        0.2388204903629021,
-        0.22711066918214393,
-        0.22150372260977866,
-        0.2132225483764846,
-        0.21170755720339227
+        0.5975594700419479,
+        0.5099884173284752,
+        0.44310855418956846,
+        0.39335527455877056,
+        0.3340699675399033,
+        0.3052906199608535,
+        0.28728243671825443,
+        0.2830546534187018,
+        0.26191205765464953,
+        0.25164190649180684,
+        0.23882091430800936,
+        0.22711718943303308,
+        0.2215134946597213,
+        0.2132261410447927,
+        0.21175283489728744,
+        0.1912808206761133,
+        0.18540521573576318,
+        0.1778884817110018,
+        0.17022606672623247,
+        0.16790024283206204
       ]
     },
-    "recommended_dimensions": 16,
+    "recommended_dimensions": 10,
     "all_criteria_dimensions": [
       5,
-      12,
-      20,
-      20
+      17,
+      30,
+      10,
+      30
+    ],
+    "primary_criteria_dimensions": [
+      5,
+      10,
+      30
     ],
     "converged_to_six": false,
-    "note": "16次元に収束。データが示す次元数をそのまま報告。"
+    "note": "Converged to 10 dimensions. Report as-is."
   },
   "dimension_interpretations": [
     {
       "dimension": 1,
-      "eigenvalue": 0.5975594700418941,
-      "explained_inertia_pct": 10.539567679685417,
+      "eigenvalue": 0.5975594700419479,
+      "explained_inertia_pct": 8.323619623226193,
       "positive_pole": {
         "categories": [
           "action_type__分散・探索",
@@ -78,11 +99,11 @@
           "action_type__拡大・攻め"
         ],
         "coordinates": [
-          3.1546981184186595,
-          3.072830404713881,
-          3.054872025626852,
-          3.0415681759116873,
-          2.9852659840981812
+          3.1546981524673927,
+          3.0728300532255273,
+          3.0548709904746727,
+          3.0415680625838646,
+          2.9852660032749707
         ]
       },
       "negative_pole": {
@@ -94,144 +115,70 @@
           "trigger_type__内部崩壊"
         ],
         "coordinates": [
-          -0.8104627195403122,
-          -0.7228792765185531,
-          -0.7207034214297457,
-          -0.7139345464572319,
-          -0.7053961599501751
+          -0.8104626468431413,
+          -0.7228790956238128,
+          -0.7207034159581399,
+          -0.7139345359316108,
+          -0.7053962011735403
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 3.665152040190078,
-          "categories": {
-            "before_state__V字回復・大成功": -0.39598318888648515,
-            "before_state__どん底・危機": -0.24224016776924132,
-            "before_state__停滞・閉塞": -0.3417722364729513,
-            "before_state__安定・停止": 2.984124736047276,
-            "before_state__安定・平和": -0.32460305937809714,
-            "before_state__安定成長・成功": 0.6698625937118694,
-            "before_state__急成長・拡大": 1.0995143212909895,
-            "before_state__成長・拡大": 2.9032985041609822,
-            "before_state__成長痛": -0.4075964879366199,
-            "before_state__拡大・繁栄": 3.072830404713881,
-            "before_state__混乱・カオス": -0.4304314123504513,
-            "before_state__混乱・衰退": 1.9258867505863921,
-            "before_state__絶頂・慢心": -0.592321635476197,
-            "before_state__縮小安定・生存": -0.2062887365840181,
-            "before_state__調和・繁栄": 1.4433680604804553
-          }
+          "range": 3.665151649934229,
+          "max_category": "before_state__拡大・繁栄",
+          "max_coordinate": 3.0728300532255273,
+          "min_category": "before_state__絶頂・慢心",
+          "min_coordinate": -0.5923215967087018
         },
         "trigger_type": {
-          "range": 3.7469643358618625,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.15729383486834506,
-            "trigger_type__内部崩壊": -0.7053961599501751,
-            "trigger_type__内部矛盾・自壊": 1.6680770204260997,
-            "trigger_type__外部ショック": 0.1179071699111322,
-            "trigger_type__意図的決断": -0.33517064083928144,
-            "trigger_type__拡大・過剰": 0.662375604582507,
-            "trigger_type__自然推移": 3.0415681759116873,
-            "trigger_type__自然推移・成熟": 1.4448247500619473
-          }
+          "range": 3.746964263757405,
+          "max_category": "trigger_type__自然推移",
+          "max_coordinate": 3.0415680625838646,
+          "min_category": "trigger_type__内部崩壊",
+          "min_coordinate": -0.7053962011735403
         },
         "action_type": {
-          "range": 3.9651608379589716,
-          "categories": {
-            "action_type__交流・発表": 2.164963505242608,
-            "action_type__分散する・独立する": 0.6718584322629405,
-            "action_type__分散・スピンオフ": -0.277895417274697,
-            "action_type__分散・多角化": -0.22284048250933622,
-            "action_type__分散・探索": 3.1546981184186595,
-            "action_type__分散・独立": -0.047909434339843064,
-            "action_type__刷新・破壊": -0.3235014064425594,
-            "action_type__守る・維持": -0.45296747561978934,
-            "action_type__対話・融合": -0.3072576889780808,
-            "action_type__拡大・攻め": 2.9852659840981812,
-            "action_type__捨てる・撤退": -0.5494991360690618,
-            "action_type__捨てる・転換": 1.2640887254435245,
-            "action_type__撤退・収縮": 2.3181660385348053,
-            "action_type__撤退・縮小": 3.054872025626852,
-            "action_type__撤退・逃げる": 0.7164222434589348,
-            "action_type__攻める・挑戦": -0.3168342875911247,
-            "action_type__耐える・潜伏": 0.06854709427581254,
-            "action_type__輝く・表現": 2.117222771482033,
-            "action_type__逃げる・分散": 1.4779382196437596,
-            "action_type__逃げる・守る": 1.1182580355181602,
-            "action_type__逃げる・放置": -0.8104627195403122,
-            "action_type__集中・拡大": 2.8345807910132677
-          }
+          "range": 3.9651607993105342,
+          "max_category": "action_type__分散・探索",
+          "max_coordinate": 3.1546981524673927,
+          "min_category": "action_type__逃げる・放置",
+          "min_coordinate": -0.8104626468431413
         },
         "after_state": {
-          "range": 3.6927899145496874,
-          "categories": {
-            "after_state__V字回復・大成功": -0.19378192802854768,
-            "after_state__どん底・危機": -0.6606671009424757,
-            "after_state__停滞・閉塞": -0.5381000132789845,
-            "after_state__分岐・様子見": 2.351730319058129,
-            "after_state__喜び・交流": 2.1765806706554356,
-            "after_state__変質・新生": -0.18116955956321318,
-            "after_state__安定・停止": 1.4120315626152344,
-            "after_state__安定・平和": 0.033350545338828266,
-            "after_state__安定成長・成功": -0.17053000213173058,
-            "after_state__崩壊・消滅": -0.7207034214297457,
-            "after_state__成長・拡大": 2.9720864931199418,
-            "after_state__成長痛": -0.05802165730266023,
-            "after_state__拡大・繁栄": 2.7883572346538976,
-            "after_state__持続成長・大成功": -0.24003456839261333,
-            "after_state__消滅・破綻": -0.6009362864322998,
-            "after_state__混乱・カオス": -0.49858538369995375,
-            "after_state__混乱・衰退": 2.8037195312177614,
-            "after_state__現状維持・延命": -0.22583813358467647,
-            "after_state__縮小安定・生存": -0.39020599663413114,
-            "after_state__迷走・混乱": -0.29489583999979335
-          }
+          "range": 3.6927899824124393,
+          "max_category": "after_state__成長・拡大",
+          "max_coordinate": 2.9720865664542995,
+          "min_category": "after_state__崩壊・消滅",
+          "min_coordinate": -0.7207034159581399
         },
         "pattern_type": {
-          "range": 3.5269276869430453,
-          "categories": {
-            "pattern_type__Breakthrough": 1.161562820685338,
-            "pattern_type__Crisis_Pivot": 1.0799994398998567,
-            "pattern_type__Decline": 2.294901822848289,
-            "pattern_type__Endurance": -0.08097809540891929,
-            "pattern_type__Exploration": 2.804048410424492,
-            "pattern_type__Failed_Attempt": -0.6505409673617693,
-            "pattern_type__Hubris_Collapse": -0.7139345464572319,
-            "pattern_type__Managed_Decline": 0.6369741156859107,
-            "pattern_type__Pivot_Success": -0.28459655985104504,
-            "pattern_type__Quiet_Fade": -0.7228792765185531,
-            "pattern_type__Shock_Recovery": -0.04478207668909178,
-            "pattern_type__Slow_Decline": -0.602340518961466,
-            "pattern_type__Stagnation": -0.5216719889098912,
-            "pattern_type__Steady_Growth": -0.3101298940500323
-          }
+          "range": 3.526927462028864,
+          "max_category": "pattern_type__Exploration",
+          "max_coordinate": 2.8040483664050515,
+          "min_category": "pattern_type__Quiet_Fade",
+          "min_coordinate": -0.7228790956238128
         },
         "outcome": {
-          "range": 1.0812084285389627,
-          "categories": {
-            "outcome__Failure": -0.5183459328226113,
-            "outcome__Mixed": 0.5628624957163515,
-            "outcome__PartialSuccess": -0.38671782453279246,
-            "outcome__Success": 0.15396606645180988
-          }
+          "range": 1.081208433154659,
+          "max_category": "outcome__Mixed",
+          "max_coordinate": 0.5628625029966589,
+          "min_category": "outcome__Failure",
+          "min_coordinate": -0.5183459301580002
         },
         "scale": {
-          "range": 0.840709677272228,
-          "categories": {
-            "scale__company": -0.17881330100024098,
-            "scale__country": -0.08582292641743729,
-            "scale__family": -0.23647755877525964,
-            "scale__individual": -0.005679809728318365,
-            "scale__other": 0.6042321184969683
-          }
+          "range": 0.8407099605620612,
+          "max_category": "scale__other",
+          "max_coordinate": 0.6042322324945151,
+          "min_category": "scale__family",
+          "min_coordinate": -0.23647772806754613
         }
       },
-      "interpretation_label": "Axis 1: [action_type__逃げる・放置 / pattern_type__Quiet_Fade / after_state__崩壊・消滅] ⟷ [action_type__分散・探索 / before_state__拡大・繁栄 / action_type__撤退・縮小]"
+      "interpretation_label": "Dim 1: [_逃げる・放置 | _Quiet_Fade | _崩壊・消滅] <-> [_分散・探索 | _拡大・繁栄 | _撤退・縮小]"
     },
     {
       "dimension": 2,
-      "eigenvalue": 0.5099884173277018,
-      "explained_inertia_pct": 8.995016746875631,
+      "eigenvalue": 0.5099884173284752,
+      "explained_inertia_pct": 7.103811103178359,
       "positive_pole": {
         "categories": [
           "action_type__撤退・縮小",
@@ -241,11 +188,11 @@
           "after_state__混乱・衰退"
         ],
         "coordinates": [
-          1.993759262151352,
-          1.6322741442264157,
-          1.5622302308418938,
-          1.3299873970661849,
-          1.30912986352799
+          1.9937605185673213,
+          1.6322749329489368,
+          1.5622289454370075,
+          1.3299883046110432,
+          1.3091299426520355
         ]
       },
       "negative_pole": {
@@ -257,144 +204,70 @@
           "action_type__拡大・攻め"
         ],
         "coordinates": [
-          -1.2460583614343268,
-          -1.2264372001224284,
-          -1.1979166067016056,
-          -1.133439163870877,
-          -0.9925338213359697
+          -1.2460580915640451,
+          -1.2264370526074004,
+          -1.1979162060759196,
+          -1.133426455791148,
+          -0.9925338875649878
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 1.8780685810907085,
-          "categories": {
-            "before_state__V字回復・大成功": -0.504410636987308,
-            "before_state__どん底・危機": -0.3849934764184532,
-            "before_state__停滞・閉塞": -0.11482444011898574,
-            "before_state__安定・停止": 0.6211490026787045,
-            "before_state__安定・平和": -0.4922926439684518,
-            "before_state__安定成長・成功": -0.37119523751021005,
-            "before_state__急成長・拡大": -0.6257444058721903,
-            "before_state__成長・拡大": -0.9825327882628254,
-            "before_state__成長痛": 0.08728253463099202,
-            "before_state__拡大・繁栄": 0.3657902008516332,
-            "before_state__混乱・カオス": 0.5547971064488916,
-            "before_state__混乱・衰退": 0.48973314921834926,
-            "before_state__絶頂・慢心": 0.8955357928278831,
-            "before_state__縮小安定・生存": -0.5564412461527972,
-            "before_state__調和・繁栄": -0.28121090834935253
-          }
+          "range": 1.8780687260600146,
+          "max_category": "before_state__絶頂・慢心",
+          "max_coordinate": 0.895536078061078,
+          "min_category": "before_state__成長・拡大",
+          "min_coordinate": -0.9825326479989367
         },
         "trigger_type": {
-          "range": 2.3680573497738244,
-          "categories": {
-            "trigger_type__偶発・出会い": -1.1979166067016056,
-            "trigger_type__内部崩壊": 1.170140743072219,
-            "trigger_type__内部矛盾・自壊": 0.1091104959376834,
-            "trigger_type__外部ショック": 0.33326166043480754,
-            "trigger_type__意図的決断": -0.6450137809742895,
-            "trigger_type__拡大・過剰": -0.5263925583159014,
-            "trigger_type__自然推移": 0.5904200228294743,
-            "trigger_type__自然推移・成熟": -0.3222052758117366
-          }
+          "range": 2.368057198913136,
+          "max_category": "trigger_type__内部崩壊",
+          "max_coordinate": 1.1701409928372162,
+          "min_category": "trigger_type__偶発・出会い",
+          "min_coordinate": -1.1979162060759196
         },
         "action_type": {
-          "range": 3.127198426022229,
-          "categories": {
-            "action_type__交流・発表": -0.12036786030318224,
-            "action_type__分散する・独立する": -0.5516422416256945,
-            "action_type__分散・スピンオフ": -0.5789215770117817,
-            "action_type__分散・多角化": -1.133439163870877,
-            "action_type__分散・探索": 0.9247483356588139,
-            "action_type__分散・独立": -0.18919481592217097,
-            "action_type__刷新・破壊": -0.37684395088270106,
-            "action_type__守る・維持": 0.3735930344290849,
-            "action_type__対話・融合": -0.3976588887785619,
-            "action_type__拡大・攻め": -0.9925338213359697,
-            "action_type__捨てる・撤退": 0.7822127441643203,
-            "action_type__捨てる・転換": -0.13797707789510147,
-            "action_type__撤退・収縮": 0.6974933068783922,
-            "action_type__撤退・縮小": 1.993759262151352,
-            "action_type__撤退・逃げる": -0.11733483421474653,
-            "action_type__攻める・挑戦": -0.6957081885640164,
-            "action_type__耐える・潜伏": 0.6129132561892227,
-            "action_type__輝く・表現": -0.14178872729454428,
-            "action_type__逃げる・分散": -0.2316549942488415,
-            "action_type__逃げる・守る": -0.26759546972124126,
-            "action_type__逃げる・放置": 1.5622302308418938,
-            "action_type__集中・拡大": -0.1781766517043158
-          }
+          "range": 3.1271869743584695,
+          "max_category": "action_type__撤退・縮小",
+          "max_coordinate": 1.9937605185673213,
+          "min_category": "action_type__分散・多角化",
+          "min_coordinate": -1.133426455791148
         },
         "after_state": {
-          "range": 2.5551882249623166,
-          "categories": {
-            "after_state__V字回復・大成功": -0.8820740725655462,
-            "after_state__どん底・危機": 1.0750874405502369,
-            "after_state__停滞・閉塞": 0.792063929845893,
-            "after_state__分岐・様子見": -0.07130108593008161,
-            "after_state__喜び・交流": -0.09777271626729911,
-            "after_state__変質・新生": -0.4590047357271336,
-            "after_state__安定・停止": 0.04978265621940716,
-            "after_state__安定・平和": -0.5649601038783584,
-            "after_state__安定成長・成功": -0.8371125746215348,
-            "after_state__崩壊・消滅": 1.2281178183941694,
-            "after_state__成長・拡大": -0.9725977959346869,
-            "after_state__成長痛": -0.10867190576780317,
-            "after_state__拡大・繁栄": -0.034587164015966294,
-            "after_state__持続成長・大成功": -1.2460583614343268,
-            "after_state__消滅・破綻": 0.8891896349172805,
-            "after_state__混乱・カオス": 0.5630925312347798,
-            "after_state__混乱・衰退": 1.30912986352799,
-            "after_state__現状維持・延命": -0.1262295422462106,
-            "after_state__縮小安定・生存": 0.7179550643478444,
-            "after_state__迷走・混乱": 0.13493848340419837
-          }
+          "range": 2.555188034216081,
+          "max_category": "after_state__混乱・衰退",
+          "max_coordinate": 1.3091299426520355,
+          "min_category": "after_state__持続成長・大成功",
+          "min_coordinate": -1.2460580915640451
         },
         "pattern_type": {
-          "range": 2.858711344348844,
-          "categories": {
-            "pattern_type__Breakthrough": -0.8825399193723944,
-            "pattern_type__Crisis_Pivot": -0.09571107277293689,
-            "pattern_type__Decline": 1.6322741442264157,
-            "pattern_type__Endurance": -0.14588747415856393,
-            "pattern_type__Exploration": 0.9565569191237009,
-            "pattern_type__Failed_Attempt": 0.6971982273757203,
-            "pattern_type__Hubris_Collapse": 1.0573333168218948,
-            "pattern_type__Managed_Decline": 0.3834466627194219,
-            "pattern_type__Pivot_Success": -0.8789678366196728,
-            "pattern_type__Quiet_Fade": 1.3299873970661849,
-            "pattern_type__Shock_Recovery": -0.5144859011890758,
-            "pattern_type__Slow_Decline": 1.1799621464659014,
-            "pattern_type__Stagnation": 0.9292323380683769,
-            "pattern_type__Steady_Growth": -1.2264372001224284
-          }
+          "range": 2.8587119855563374,
+          "max_category": "pattern_type__Decline",
+          "max_coordinate": 1.6322749329489368,
+          "min_category": "pattern_type__Steady_Growth",
+          "min_coordinate": -1.2264370526074004
         },
         "outcome": {
-          "range": 1.938925055822079,
-          "categories": {
-            "outcome__Failure": 1.081447546500614,
-            "outcome__Mixed": 0.3752584167949635,
-            "outcome__PartialSuccess": -0.07135532786707174,
-            "outcome__Success": -0.857477509321465
-          }
+          "range": 1.9389251257976081,
+          "max_category": "outcome__Failure",
+          "max_coordinate": 1.0814475252196023,
+          "min_category": "outcome__Success",
+          "min_coordinate": -0.8574776005780058
         },
         "scale": {
-          "range": 0.725035988845054,
-          "categories": {
-            "scale__company": -0.020021284804784257,
-            "scale__country": 0.1669342667145342,
-            "scale__family": 0.5365857393870472,
-            "scale__individual": -0.18845024945800684,
-            "scale__other": 0.02943765937662914
-          }
+          "range": 0.7250361451235254,
+          "max_category": "scale__family",
+          "max_coordinate": 0.5365861914818466,
+          "min_category": "scale__individual",
+          "min_coordinate": -0.18844995364167888
         }
       },
-      "interpretation_label": "Axis 2: [after_state__持続成長・大成功 / pattern_type__Steady_Growth / trigger_type__偶発・出会い] ⟷ [action_type__撤退・縮小 / pattern_type__Decline / action_type__逃げる・放置]"
+      "interpretation_label": "Dim 2: [_持続成長・大成功 | _Steady_Growth | _偶発・出会い] <-> [_撤退・縮小 | _Decline | _逃げる・放置]"
     },
     {
       "dimension": 3,
-      "eigenvalue": 0.4431085541651986,
-      "explained_inertia_pct": 7.815410566155437,
+      "eigenvalue": 0.44310855418956846,
+      "explained_inertia_pct": 6.17221756457607,
       "positive_pole": {
         "categories": [
           "trigger_type__自然推移・成熟",
@@ -404,11 +277,11 @@
           "action_type__撤退・逃げる"
         ],
         "coordinates": [
-          7.143431189345391,
-          6.881669202604975,
-          4.723591087261771,
-          3.6460967078866098,
-          3.423469967842643
+          7.1434234407434785,
+          6.8816592303614605,
+          4.723698513439839,
+          3.646014556852893,
+          3.4234475202798853
         ]
       },
       "negative_pole": {
@@ -420,144 +293,70 @@
           "action_type__集中・拡大"
         ],
         "coordinates": [
-          -5.494275667016518,
-          -5.067552777166037,
-          -4.977235329529736,
-          -3.194878967274229,
-          -1.6612138857791598
+          -5.494276122001177,
+          -5.067551630895982,
+          -4.977234008544949,
+          -3.1948893236349782,
+          -1.6612144553782564
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 12.375944869621492,
-          "categories": {
-            "before_state__V字回復・大成功": 0.1539303208618033,
-            "before_state__どん底・危機": 0.13802684268510423,
-            "before_state__停滞・閉塞": -0.14597668207233114,
-            "before_state__安定・停止": -1.1624789782497136,
-            "before_state__安定・平和": -0.14555951501665268,
-            "before_state__安定成長・成功": 2.378982017746155,
-            "before_state__急成長・拡大": 3.6460967078866098,
-            "before_state__成長・拡大": -5.494275667016518,
-            "before_state__成長痛": -0.08208654564647704,
-            "before_state__拡大・繁栄": -1.086466283971504,
-            "before_state__混乱・カオス": -0.06750147089045327,
-            "before_state__混乱・衰退": 1.7157784020912048,
-            "before_state__絶頂・慢心": -0.22512029670047737,
-            "before_state__縮小安定・生存": 0.22915447263987435,
-            "before_state__調和・繁栄": 6.881669202604975
-          }
+          "range": 12.375935352362639,
+          "max_category": "before_state__調和・繁栄",
+          "max_coordinate": 6.8816592303614605,
+          "min_category": "before_state__成長・拡大",
+          "min_coordinate": -5.494276122001177
         },
         "trigger_type": {
-          "range": 8.644705629297222,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.18452375990972827,
-            "trigger_type__内部崩壊": -0.2839502787943502,
-            "trigger_type__内部矛盾・自壊": 2.6667199527661722,
-            "trigger_type__外部ショック": 0.3761859520795944,
-            "trigger_type__意図的決断": -0.18819505974187525,
-            "trigger_type__拡大・過剰": 3.2910485948227297,
-            "trigger_type__自然推移": -1.5012744399518312,
-            "trigger_type__自然推移・成熟": 7.143431189345391
-          }
+          "range": 8.644701535450329,
+          "max_category": "trigger_type__自然推移・成熟",
+          "max_coordinate": 7.1434234407434785,
+          "min_category": "trigger_type__自然推移",
+          "min_coordinate": -1.50127809470685
         },
         "action_type": {
-          "range": 9.79114386442781,
-          "categories": {
-            "action_type__交流・発表": 1.2572621826312214,
-            "action_type__分散する・独立する": 2.8723686852220673,
-            "action_type__分散・スピンオフ": -0.07280689992656343,
-            "action_type__分散・多角化": 0.3245757661009228,
-            "action_type__分散・探索": -0.7999211432065858,
-            "action_type__分散・独立": 0.5300680209643484,
-            "action_type__刷新・破壊": -0.1050614691749654,
-            "action_type__守る・維持": -0.0820576523359147,
-            "action_type__対話・融合": -0.04105057422906602,
-            "action_type__拡大・攻め": -5.067552777166037,
-            "action_type__捨てる・撤退": -0.05922713222847494,
-            "action_type__捨てる・転換": 3.3038296365589113,
-            "action_type__撤退・収縮": 1.167793888962358,
-            "action_type__撤退・縮小": -0.3102273142354527,
-            "action_type__撤退・逃げる": 3.423469967842643,
-            "action_type__攻める・挑戦": -0.2645652982886644,
-            "action_type__耐える・潜伏": 0.3741283795080862,
-            "action_type__輝く・表現": 1.0969326823442955,
-            "action_type__逃げる・分散": 4.723591087261771,
-            "action_type__逃げる・守る": 3.006306898222632,
-            "action_type__逃げる・放置": -0.4420302276141798,
-            "action_type__集中・拡大": -1.6612138857791598
-          }
+          "range": 9.79125014433582,
+          "max_category": "action_type__逃げる・分散",
+          "max_coordinate": 4.723698513439839,
+          "min_category": "action_type__拡大・攻め",
+          "min_coordinate": -5.067551630895982
         },
         "after_state": {
-          "range": 8.395943358718037,
-          "categories": {
-            "after_state__V字回復・大成功": -0.046177666349704966,
-            "after_state__どん底・危機": -0.312706749619284,
-            "after_state__停滞・閉塞": -0.18998489983475092,
-            "after_state__分岐・様子見": -3.194878967274229,
-            "after_state__喜び・交流": 1.226251325283966,
-            "after_state__変質・新生": 0.0504264215793648,
-            "after_state__安定・停止": 3.4187080291883007,
-            "after_state__安定・平和": 0.7367940462655077,
-            "after_state__安定成長・成功": 0.13583103371084648,
-            "after_state__崩壊・消滅": -0.32505158507591175,
-            "after_state__成長・拡大": -4.977235329529736,
-            "after_state__成長痛": 0.29706921926062363,
-            "after_state__拡大・繁栄": -1.3221606875896703,
-            "after_state__持続成長・大成功": -0.3024328748815044,
-            "after_state__消滅・破綻": -0.15365048203317622,
-            "after_state__混乱・カオス": -0.23085181611173322,
-            "after_state__混乱・衰退": -0.30722571579835006,
-            "after_state__現状維持・延命": 0.13047889204007482,
-            "after_state__縮小安定・生存": 0.20081208084969943,
-            "after_state__迷走・混乱": -0.08051730350782471
-          }
+          "range": 8.395944742458997,
+          "max_category": "after_state__安定・停止",
+          "max_coordinate": 3.418710733914049,
+          "min_category": "after_state__成長・拡大",
+          "min_coordinate": -4.977234008544949
         },
         "pattern_type": {
-          "range": 3.6129073678190697,
-          "categories": {
-            "pattern_type__Breakthrough": -1.3840919201765778,
-            "pattern_type__Crisis_Pivot": 1.279022382210114,
-            "pattern_type__Decline": -0.057903693059622,
-            "pattern_type__Endurance": 0.3618609408304332,
-            "pattern_type__Exploration": -0.6915612648475206,
-            "pattern_type__Failed_Attempt": -0.2592661719703048,
-            "pattern_type__Hubris_Collapse": -0.3936486300600232,
-            "pattern_type__Managed_Decline": 2.228815447642492,
-            "pattern_type__Pivot_Success": -0.07878756425515417,
-            "pattern_type__Quiet_Fade": -0.32913146040971003,
-            "pattern_type__Shock_Recovery": 0.5664681647159907,
-            "pattern_type__Slow_Decline": -0.18406056208981175,
-            "pattern_type__Stagnation": -0.06610931426473715,
-            "pattern_type__Steady_Growth": -0.23067943084141224
-          }
+          "range": 3.612906104480154,
+          "max_category": "pattern_type__Managed_Decline",
+          "max_coordinate": 2.228813859946516,
+          "min_category": "pattern_type__Breakthrough",
+          "min_coordinate": -1.3840922445336383
         },
         "outcome": {
-          "range": 0.5504268992560568,
-          "categories": {
-            "outcome__Failure": -0.24438122926664468,
-            "outcome__Mixed": 0.3060456699894121,
-            "outcome__PartialSuccess": 0.14270613597255535,
-            "outcome__Success": 0.04411095392680099
-          }
+          "range": 0.5504273729928758,
+          "max_category": "outcome__Mixed",
+          "max_coordinate": 0.30604611818940786,
+          "min_category": "outcome__Failure",
+          "min_coordinate": -0.24438125480346798
         },
         "scale": {
-          "range": 0.33976759352670605,
-          "categories": {
-            "scale__company": -0.08256944852970073,
-            "scale__country": -0.1423258812601753,
-            "scale__family": -0.105377853282696,
-            "scale__individual": 0.19744171226653073,
-            "scale__other": 0.04585315731685906
-          }
+          "range": 0.33976711379901403,
+          "max_category": "scale__individual",
+          "max_coordinate": 0.19743893747414634,
+          "min_category": "scale__country",
+          "min_coordinate": -0.14232817632486766
         }
       },
-      "interpretation_label": "Axis 3: [before_state__成長・拡大 / action_type__拡大・攻め / after_state__成長・拡大] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]"
+      "interpretation_label": "Dim 3: [_成長・拡大 | _拡大・攻め | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
     },
     {
       "dimension": 4,
-      "eigenvalue": 0.3933552745722957,
-      "explained_inertia_pct": 6.937877728262418,
+      "eigenvalue": 0.39335527455877056,
+      "explained_inertia_pct": 5.479186334352745,
       "positive_pole": {
         "categories": [
           "before_state__成長・拡大",
@@ -567,11 +366,11 @@
           "before_state__調和・繁栄"
         ],
         "coordinates": [
-          8.336393644316143,
-          7.764347286972771,
-          7.586744782086308,
-          4.721895863693366,
-          4.431965373448195
+          8.336399049323655,
+          7.764350951528298,
+          7.586745472789119,
+          4.721969316000151,
+          4.432032997570928
         ]
       },
       "negative_pole": {
@@ -583,144 +382,70 @@
           "before_state__拡大・繁栄"
         ],
         "coordinates": [
-          -2.4740813558825914,
-          -2.1727746705033875,
-          -1.71577272310091,
-          -1.355312432156612,
-          -1.2178745410681264
+          -2.4740779136663678,
+          -2.1727752166703374,
+          -1.715768166731652,
+          -1.3553192910757843,
+          -1.2178539141330065
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 9.691706076472755,
-          "categories": {
-            "before_state__V字回復・大成功": 0.08528074183204218,
-            "before_state__どん底・危機": -0.0623699249453844,
-            "before_state__停滞・閉塞": -0.10514438091433932,
-            "before_state__安定・停止": -1.355312432156612,
-            "before_state__安定・平和": -0.20172968513170061,
-            "before_state__安定成長・成功": 0.9839954980152119,
-            "before_state__急成長・拡大": 1.7815200188747176,
-            "before_state__成長・拡大": 8.336393644316143,
-            "before_state__成長痛": 0.0006621444443889506,
-            "before_state__拡大・繁栄": -1.2178745410681264,
-            "before_state__混乱・カオス": 0.05033119584227266,
-            "before_state__混乱・衰退": 0.645866394030335,
-            "before_state__絶頂・慢心": 0.1301853019618188,
-            "before_state__縮小安定・生存": -0.1287673231421094,
-            "before_state__調和・繁栄": 4.431965373448195
-          }
+          "range": 9.691718340399438,
+          "max_category": "before_state__成長・拡大",
+          "max_coordinate": 8.336399049323655,
+          "min_category": "before_state__安定・停止",
+          "min_coordinate": -1.3553192910757843
         },
         "trigger_type": {
-          "range": 4.977885059220864,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.23324518637279035,
-            "trigger_type__内部崩壊": 0.1998221720185658,
-            "trigger_type__内部矛盾・自壊": 0.5173685863762192,
-            "trigger_type__外部ショック": 0.16628261176853723,
-            "trigger_type__意図的決断": -0.2559891955274989,
-            "trigger_type__拡大・過剰": 1.528290080616164,
-            "trigger_type__自然推移": 0.07588350046137922,
-            "trigger_type__自然推移・成熟": 4.721895863693366
-          }
+          "range": 4.977960298914449,
+          "max_category": "trigger_type__自然推移・成熟",
+          "max_coordinate": 4.721969316000151,
+          "min_category": "trigger_type__意図的決断",
+          "min_coordinate": -0.2559909829142985
         },
         "action_type": {
-          "range": 9.937121957476158,
-          "categories": {
-            "action_type__交流・発表": 1.0834902199725767,
-            "action_type__分散する・独立する": 1.1702760364391025,
-            "action_type__分散・スピンオフ": -0.30785329229239133,
-            "action_type__分散・多角化": -0.11043630902448119,
-            "action_type__分散・探索": -2.1727746705033875,
-            "action_type__分散・独立": -0.17495618270957725,
-            "action_type__刷新・破壊": -0.18050911121811314,
-            "action_type__守る・維持": 0.018647076575119676,
-            "action_type__対話・融合": -0.15159979966404813,
-            "action_type__拡大・攻め": 7.764347286972771,
-            "action_type__捨てる・撤退": 0.18840643039624197,
-            "action_type__捨てる・転換": 1.5508520221511726,
-            "action_type__撤退・収縮": -0.5146967665222593,
-            "action_type__撤退・縮小": -0.9223334367610835,
-            "action_type__撤退・逃げる": 1.2964504842949733,
-            "action_type__攻める・挑戦": -0.22258222784580986,
-            "action_type__耐える・潜伏": 0.13019764738908288,
-            "action_type__輝く・表現": 0.8345723686159939,
-            "action_type__逃げる・分散": 2.6551001073766236,
-            "action_type__逃げる・守る": 1.5491287439311707,
-            "action_type__逃げる・放置": 0.3670607669770164,
-            "action_type__集中・拡大": -0.5700306100167214
-          }
+          "range": 9.937126168198635,
+          "max_category": "action_type__拡大・攻め",
+          "max_coordinate": 7.764350951528298,
+          "min_category": "action_type__分散・探索",
+          "min_coordinate": -2.1727752166703374
         },
         "after_state": {
-          "range": 9.302517505187218,
-          "categories": {
-            "after_state__V字回復・大成功": -0.1318196528017689,
-            "after_state__どん底・危機": 0.1365933295885565,
-            "after_state__停滞・閉塞": 0.05696258629288107,
-            "after_state__分岐・様子見": 3.141759563743982,
-            "after_state__喜び・交流": 0.999374027284237,
-            "after_state__変質・新生": -0.2615684392596677,
-            "after_state__安定・停止": 1.647364326230342,
-            "after_state__安定・平和": 0.15778853017702268,
-            "after_state__安定成長・成功": -0.21565069380417137,
-            "after_state__崩壊・消滅": 0.22826609775327916,
-            "after_state__成長・拡大": 7.586744782086308,
-            "after_state__成長痛": -0.43420304577004354,
-            "after_state__拡大・繁栄": -0.7527994773433696,
-            "after_state__持続成長・大成功": -0.2881836034473793,
-            "after_state__消滅・破綻": 0.18024072684856554,
-            "after_state__混乱・カオス": -0.09970981446939085,
-            "after_state__混乱・衰退": -1.71577272310091,
-            "after_state__現状維持・延命": -0.3460539754280868,
-            "after_state__縮小安定・生存": 0.15746303936224063,
-            "after_state__迷走・混乱": -0.3208487753434157
-          }
+          "range": 9.30251363952077,
+          "max_category": "after_state__成長・拡大",
+          "max_coordinate": 7.586745472789119,
+          "min_category": "after_state__混乱・衰退",
+          "min_coordinate": -1.715768166731652
         },
         "pattern_type": {
-          "range": 3.505697146382158,
-          "categories": {
-            "pattern_type__Breakthrough": 0.6119119982468799,
-            "pattern_type__Crisis_Pivot": 0.5543705042203484,
-            "pattern_type__Decline": -0.5132539242158242,
-            "pattern_type__Endurance": -0.068170723893032,
-            "pattern_type__Exploration": -2.4740813558825914,
-            "pattern_type__Failed_Attempt": 0.07460960132023423,
-            "pattern_type__Hubris_Collapse": 0.14881532321855406,
-            "pattern_type__Managed_Decline": 1.0316157904995666,
-            "pattern_type__Pivot_Success": -0.33269192699731887,
-            "pattern_type__Quiet_Fade": 0.2436603765656568,
-            "pattern_type__Shock_Recovery": 0.08217389966966267,
-            "pattern_type__Slow_Decline": 0.18424029186984076,
-            "pattern_type__Stagnation": 0.15917533660103828,
-            "pattern_type__Steady_Growth": -0.3562896462157496
-          }
+          "range": 3.505688698286784,
+          "max_category": "pattern_type__Managed_Decline",
+          "max_coordinate": 1.0316107846204166,
+          "min_category": "pattern_type__Exploration",
+          "min_coordinate": -2.4740779136663678
         },
         "outcome": {
-          "range": 0.6269838831406456,
-          "categories": {
-            "outcome__Failure": 0.14994059969502357,
-            "outcome__Mixed": -0.47704328344562197,
-            "outcome__PartialSuccess": -0.13214917281241503,
-            "outcome__Success": 0.08166811170767604
-          }
+          "range": 0.6269830221700832,
+          "max_category": "outcome__Failure",
+          "max_coordinate": 0.14994030661782975,
+          "min_category": "outcome__Mixed",
+          "min_coordinate": -0.47704271555225336
         },
         "scale": {
-          "range": 0.3032653138966655,
-          "categories": {
-            "scale__company": -0.0021494274051309698,
-            "scale__country": -0.20953892641746844,
-            "scale__family": -0.06037580160457465,
-            "scale__individual": 0.09372638747919707,
-            "scale__other": 0.021808115347350714
-          }
+          "range": 0.30325472251832974,
+          "max_category": "scale__individual",
+          "max_coordinate": 0.09372261340903303,
+          "min_category": "scale__country",
+          "min_coordinate": -0.2095321091092967
         }
       },
-      "interpretation_label": "Axis 4: [pattern_type__Exploration / action_type__分散・探索 / after_state__混乱・衰退] ⟷ [before_state__成長・拡大 / action_type__拡大・攻め / after_state__成長・拡大]"
+      "interpretation_label": "Dim 4: [_Exploration | _分散・探索 | _混乱・衰退] <-> [_成長・拡大 | _拡大・攻め | _成長・拡大]"
     },
     {
       "dimension": 5,
-      "eigenvalue": 0.3340699642402419,
-      "explained_inertia_pct": 5.8922219032245735,
+      "eigenvalue": 0.3340699675399033,
+      "explained_inertia_pct": 4.653380084747845,
       "positive_pole": {
         "categories": [
           "trigger_type__自然推移・成熟",
@@ -730,11 +455,11 @@
           "after_state__分岐・様子見"
         ],
         "coordinates": [
-          7.862258827623858,
-          7.3410102406581474,
-          3.13167825028899,
-          2.8406521330982923,
-          2.8038500615358144
+          7.861949951423404,
+          7.340685608406119,
+          3.134320133695126,
+          2.840660644316971,
+          2.8018187291413925
         ]
       },
       "negative_pole": {
@@ -746,144 +471,70 @@
           "action_type__集中・拡大"
         ],
         "coordinates": [
-          -6.246616280777847,
-          -6.01171728559693,
-          -5.362681668417647,
-          -1.3362674403479893,
-          -1.3089982343795568
+          -6.246720033744591,
+          -6.011774972855049,
+          -5.361827735996054,
+          -1.3362749907932414,
+          -1.3090249706768007
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 8.291781423887139,
-          "categories": {
-            "before_state__V字回復・大成功": 0.2857436197772249,
-            "before_state__どん底・危機": 0.2550895189543693,
-            "before_state__停滞・閉塞": -0.06850920052412629,
-            "before_state__安定・停止": 0.07281786943913934,
-            "before_state__安定・平和": -0.02032664387040905,
-            "before_state__安定成長・成功": 0.6226754361255166,
-            "before_state__急成長・拡大": 1.5366047403443217,
-            "before_state__成長・拡大": 2.273714617173665,
-            "before_state__成長痛": 0.026697903558069676,
-            "before_state__拡大・繁栄": 0.28154380313392907,
-            "before_state__混乱・カオス": -0.15913212224359682,
-            "before_state__混乱・衰退": -0.9507711832289915,
-            "before_state__絶頂・慢心": 0.10872266802712045,
-            "before_state__縮小安定・生存": 0.11417903484498995,
-            "before_state__調和・繁栄": 7.3410102406581474
-          }
+          "range": 8.29140833585428,
+          "max_category": "before_state__調和・繁栄",
+          "max_coordinate": 7.340685608406119,
+          "min_category": "before_state__混乱・衰退",
+          "min_coordinate": -0.9507227274481613
         },
         "trigger_type": {
-          "range": 7.980748169577577,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.022866888906686433,
-            "trigger_type__内部崩壊": -0.11848934195371932,
-            "trigger_type__内部矛盾・自壊": 1.2787027369446615,
-            "trigger_type__外部ショック": -0.11828439513222559,
-            "trigger_type__意図的決断": 0.0560390501153431,
-            "trigger_type__拡大・過剰": 1.7032656691123833,
-            "trigger_type__自然推移": 0.08641570571563197,
-            "trigger_type__自然推移・成熟": 7.862258827623858
-          }
+          "range": 7.980457513597889,
+          "max_category": "trigger_type__自然推移・成熟",
+          "max_coordinate": 7.861949951423404,
+          "min_category": "trigger_type__内部崩壊",
+          "min_coordinate": -0.11850756217448516
         },
         "action_type": {
-          "range": 9.378294531066837,
-          "categories": {
-            "action_type__交流・発表": -6.246616280777847,
-            "action_type__分散する・独立する": 1.2088897987608094,
-            "action_type__分散・スピンオフ": 0.15434356160827692,
-            "action_type__分散・多角化": 0.32023582508788406,
-            "action_type__分散・探索": 0.9355152942913263,
-            "action_type__分散・独立": 0.7434360964865602,
-            "action_type__刷新・破壊": 0.1336014765118723,
-            "action_type__守る・維持": -0.10044835914052745,
-            "action_type__対話・融合": -0.12979070634710324,
-            "action_type__拡大・攻め": 1.9024242060739933,
-            "action_type__捨てる・撤退": 0.027200487892548492,
-            "action_type__捨てる・転換": 0.9365033574306445,
-            "action_type__撤退・収縮": -0.31744438907851097,
-            "action_type__撤退・縮小": -0.41095878755930054,
-            "action_type__撤退・逃げる": 2.8406521330982923,
-            "action_type__攻める・挑戦": 0.04166041007846408,
-            "action_type__耐える・潜伏": 0.16470180685282568,
-            "action_type__輝く・表現": -5.362681668417647,
-            "action_type__逃げる・分散": 3.13167825028899,
-            "action_type__逃げる・守る": 0.5180621178057805,
-            "action_type__逃げる・放置": -0.04862529097154301,
-            "action_type__集中・拡大": -1.3089982343795568
-          }
+          "range": 9.381040167439718,
+          "max_category": "action_type__逃げる・分散",
+          "max_coordinate": 3.134320133695126,
+          "min_category": "action_type__交流・発表",
+          "min_coordinate": -6.246720033744591
         },
         "after_state": {
-          "range": 8.815567347132745,
-          "categories": {
-            "after_state__V字回復・大成功": 0.12666346339756313,
-            "after_state__どん底・危機": -0.003998725804342219,
-            "after_state__停滞・閉塞": -0.20767641039978624,
-            "after_state__分岐・様子見": 2.8038500615358144,
-            "after_state__喜び・交流": -6.01171728559693,
-            "after_state__変質・新生": 0.21011733284074768,
-            "after_state__安定・停止": 1.285182440205358,
-            "after_state__安定・平和": 0.1285421040480833,
-            "after_state__安定成長・成功": 0.1187578199399499,
-            "after_state__崩壊・消滅": -0.2042662330417622,
-            "after_state__成長・拡大": 1.8453510508801885,
-            "after_state__成長痛": 0.7624311740608266,
-            "after_state__拡大・繁栄": -0.9833121983699386,
-            "after_state__持続成長・大成功": -0.08416030562112209,
-            "after_state__消滅・破綻": -0.0989884621375825,
-            "after_state__混乱・カオス": 0.10458741536251227,
-            "after_state__混乱・衰退": 0.872472854643954,
-            "after_state__現状維持・延命": 0.43144115568261515,
-            "after_state__縮小安定・生存": 0.25790611610604924,
-            "after_state__迷走・混乱": 0.42529889043492386
-          }
+          "range": 8.813593701996442,
+          "max_category": "after_state__分岐・様子見",
+          "max_coordinate": 2.8018187291413925,
+          "min_category": "after_state__喜び・交流",
+          "min_coordinate": -6.011774972855049
         },
         "pattern_type": {
-          "range": 2.8957275868015957,
-          "categories": {
-            "pattern_type__Breakthrough": -0.4018847996611736,
-            "pattern_type__Crisis_Pivot": -1.3362674403479893,
-            "pattern_type__Decline": -0.25775446304524674,
-            "pattern_type__Endurance": 0.23946295577015303,
-            "pattern_type__Exploration": 1.5594601464536062,
-            "pattern_type__Failed_Attempt": -0.06852257788833241,
-            "pattern_type__Hubris_Collapse": 0.031368101355973343,
-            "pattern_type__Managed_Decline": 1.4644621123597092,
-            "pattern_type__Pivot_Success": 0.12329590666339553,
-            "pattern_type__Quiet_Fade": -0.4491624192851096,
-            "pattern_type__Shock_Recovery": 0.4313354807961295,
-            "pattern_type__Slow_Decline": -0.12277641245136262,
-            "pattern_type__Stagnation": -0.24148404289618713,
-            "pattern_type__Steady_Growth": -0.036820466160509185
-          }
+          "range": 2.8957497159465815,
+          "max_category": "pattern_type__Exploration",
+          "max_coordinate": 1.5594747251533403,
+          "min_category": "pattern_type__Crisis_Pivot",
+          "min_coordinate": -1.3362749907932414
         },
         "outcome": {
-          "range": 0.8590462050823582,
-          "categories": {
-            "outcome__Failure": -0.17019121386570207,
-            "outcome__Mixed": 0.688854991216656,
-            "outcome__PartialSuccess": 0.358728206991697,
-            "outcome__Success": -0.15579386894815214
-          }
+          "range": 0.8590451294056062,
+          "max_category": "outcome__Mixed",
+          "max_coordinate": 0.6888533073936645,
+          "min_category": "outcome__Failure",
+          "min_coordinate": -0.17019182201194175
         },
         "scale": {
-          "range": 0.8132333895921259,
-          "categories": {
-            "scale__company": 0.12469423439035443,
-            "scale__country": 0.15940584161000043,
-            "scale__family": -0.27906456883843433,
-            "scale__individual": 0.19938116042150777,
-            "scale__other": -0.6138522291706181
-          }
+          "range": 0.813126785132987,
+          "max_category": "scale__individual",
+          "max_coordinate": 0.19934166124053757,
+          "min_category": "scale__other",
+          "min_coordinate": -0.6137851238924494
         }
       },
-      "interpretation_label": "Axis 5: [action_type__交流・発表 / after_state__喜び・交流 / action_type__輝く・表現] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]"
+      "interpretation_label": "Dim 5: [_交流・発表 | _喜び・交流 | _輝く・表現] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
     },
     {
       "dimension": 6,
-      "eigenvalue": 0.305290528493342,
-      "explained_inertia_pct": 5.384619185763926,
+      "eigenvalue": 0.3052906199608535,
+      "explained_inertia_pct": 4.252502257080231,
       "positive_pole": {
         "categories": [
           "trigger_type__自然推移・成熟",
@@ -893,11 +544,11 @@
           "after_state__拡大・繁栄"
         ],
         "coordinates": [
-          12.598785075392938,
-          11.414045804145141,
-          5.059908911519003,
-          4.553742560317145,
-          3.194172021785714
+          12.598492825388051,
+          11.4138151679186,
+          5.062730031137376,
+          4.5540428892094695,
+          3.193998863979494
         ]
       },
       "negative_pole": {
@@ -909,144 +560,70 @@
           "action_type__拡大・攻め"
         ],
         "coordinates": [
-          -2.216315730709358,
-          -2.1678669861881654,
-          -2.098553211480453,
-          -1.9662691163124446,
-          -1.9609263361499374
+          -2.2233664784049956,
+          -2.1888741762177153,
+          -2.098626615001105,
+          -1.9658183127759241,
+          -1.961067492986237
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 13.512599015625595,
-          "categories": {
-            "before_state__V字回復・大成功": 0.9193182518643512,
-            "before_state__どん底・危機": -0.5494588574172692,
-            "before_state__停滞・閉塞": -0.14467647630897498,
-            "before_state__安定・停止": 0.3639275760154332,
-            "before_state__安定・平和": -0.04703630196972008,
-            "before_state__安定成長・成功": -0.7970185167308184,
-            "before_state__急成長・拡大": 1.3405632315395712,
-            "before_state__成長・拡大": -2.098553211480453,
-            "before_state__成長痛": 0.29025211521616745,
-            "before_state__拡大・繁栄": 3.116777957205742,
-            "before_state__混乱・カオス": -0.44436193643916233,
-            "before_state__混乱・衰退": -0.11737431394158276,
-            "before_state__絶頂・慢心": 0.5515806163037542,
-            "before_state__縮小安定・生存": -0.2845995147477829,
-            "before_state__調和・繁栄": 11.414045804145141
-          }
+          "range": 13.512441782919705,
+          "max_category": "before_state__調和・繁栄",
+          "max_coordinate": 11.4138151679186,
+          "min_category": "before_state__成長・拡大",
+          "min_coordinate": -2.098626615001105
         },
         "trigger_type": {
-          "range": 14.179961315679119,
-          "categories": {
-            "trigger_type__偶発・出会い": 0.30707181780663767,
-            "trigger_type__内部崩壊": 0.3294540660345595,
-            "trigger_type__内部矛盾・自壊": -0.15227412890845088,
-            "trigger_type__外部ショック": -0.2548790249272582,
-            "trigger_type__意図的決断": 0.006384605797182935,
-            "trigger_type__拡大・過剰": -1.5811762402861822,
-            "trigger_type__自然推移": 0.1847572054395879,
-            "trigger_type__自然推移・成熟": 12.598785075392938
-          }
+          "range": 14.181264548969601,
+          "max_category": "trigger_type__自然推移・成熟",
+          "max_coordinate": 12.598492825388051,
+          "min_category": "trigger_type__拡大・過剰",
+          "min_coordinate": -1.5827717235815497
         },
         "action_type": {
-          "range": 7.227775897707168,
-          "categories": {
-            "action_type__交流・発表": -0.4048779625856317,
-            "action_type__分散する・独立する": -2.1678669861881654,
-            "action_type__分散・スピンオフ": -0.15989762380537656,
-            "action_type__分散・多角化": -0.39335101946543866,
-            "action_type__分散・探索": -0.04281030667167016,
-            "action_type__分散・独立": -1.8364265986894834,
-            "action_type__刷新・破壊": -0.20966644637723392,
-            "action_type__守る・維持": -0.259935490469271,
-            "action_type__対話・融合": -0.17208722920400582,
-            "action_type__拡大・攻め": -1.9609263361499374,
-            "action_type__捨てる・撤退": 0.27878329364084026,
-            "action_type__捨てる・転換": 0.8264204685467276,
-            "action_type__撤退・収縮": 0.10691417778698054,
-            "action_type__撤退・縮小": -1.9662691163124446,
-            "action_type__撤退・逃げる": -1.424493167171183,
-            "action_type__攻める・挑戦": 0.35519024355223744,
-            "action_type__耐える・潜伏": -0.6396226140424154,
-            "action_type__輝く・表現": 0.5354487949573611,
-            "action_type__逃げる・分散": 5.059908911519003,
-            "action_type__逃げる・守る": 0.7396149777454317,
-            "action_type__逃げる・放置": 0.9783495357144024,
-            "action_type__集中・拡大": 4.553742560317145
-          }
+          "range": 7.251604207355092,
+          "max_category": "action_type__逃げる・分散",
+          "max_coordinate": 5.062730031137376,
+          "min_category": "action_type__分散する・独立する",
+          "min_coordinate": -2.1888741762177153
         },
         "after_state": {
-          "range": 5.410487752495072,
-          "categories": {
-            "after_state__V字回復・大成功": -0.18755795828066354,
-            "after_state__どん底・危機": 0.5573026392195097,
-            "after_state__停滞・閉塞": -0.22736604057014553,
-            "after_state__分岐・様子見": -2.216315730709358,
-            "after_state__喜び・交流": -0.3896435964043186,
-            "after_state__変質・新生": -0.4520168940019536,
-            "after_state__安定・停止": 1.5236203150327854,
-            "after_state__安定・平和": -0.6015944156605504,
-            "after_state__安定成長・成功": -0.4413955751578166,
-            "after_state__崩壊・消滅": 0.46996582620059624,
-            "after_state__成長・拡大": -1.9076357107000412,
-            "after_state__成長痛": -1.2457096291713439,
-            "after_state__拡大・繁栄": 3.194172021785714,
-            "after_state__持続成長・大成功": 0.39771486556647223,
-            "after_state__消滅・破綻": 0.18138348510561839,
-            "after_state__混乱・カオス": 0.3029170986064159,
-            "after_state__混乱・衰退": -0.9717847309068177,
-            "after_state__現状維持・延命": -1.1442730547169886,
-            "after_state__縮小安定・生存": -0.27113306586606906,
-            "after_state__迷走・混乱": -0.12792841537084523
-          }
+          "range": 5.417365342384489,
+          "max_category": "after_state__拡大・繁栄",
+          "max_coordinate": 3.193998863979494,
+          "min_category": "after_state__分岐・様子見",
+          "min_coordinate": -2.2233664784049956
         },
         "pattern_type": {
-          "range": 2.5327461554853086,
-          "categories": {
-            "pattern_type__Breakthrough": 1.1043575360945357,
-            "pattern_type__Crisis_Pivot": -0.2447691083806462,
-            "pattern_type__Decline": -1.4283886193907729,
-            "pattern_type__Endurance": -0.9135667517896181,
-            "pattern_type__Exploration": -0.7501829099954205,
-            "pattern_type__Failed_Attempt": 0.4277404919277192,
-            "pattern_type__Hubris_Collapse": 0.8311108705366972,
-            "pattern_type__Managed_Decline": 1.0467043080032818,
-            "pattern_type__Pivot_Success": -0.31155727698955377,
-            "pattern_type__Quiet_Fade": 0.14090009333464293,
-            "pattern_type__Shock_Recovery": -0.5525094993179758,
-            "pattern_type__Slow_Decline": 0.03818335845587515,
-            "pattern_type__Stagnation": -0.6552641592073805,
-            "pattern_type__Steady_Growth": 0.2686243930037678
-          }
+          "range": 2.5325298847906805,
+          "max_category": "pattern_type__Breakthrough",
+          "max_coordinate": 1.104480550308246,
+          "min_category": "pattern_type__Decline",
+          "min_coordinate": -1.4280493344824345
         },
         "outcome": {
-          "range": 0.9352434505294435,
-          "categories": {
-            "outcome__Failure": 0.15565454170932838,
-            "outcome__Mixed": -0.4449873432801999,
-            "outcome__PartialSuccess": -0.7795889088201151,
-            "outcome__Success": 0.09279735510199273
-          }
+          "range": 0.9348340493463603,
+          "max_category": "outcome__Failure",
+          "max_coordinate": 0.15568224262434832,
+          "min_category": "outcome__PartialSuccess",
+          "min_coordinate": -0.779151806722012
         },
         "scale": {
-          "range": 0.5184381305484697,
-          "categories": {
-            "scale__company": 0.14483957650589668,
-            "scale__country": -0.370967521520295,
-            "scale__family": -0.16088531115546217,
-            "scale__individual": 0.1474706090281747,
-            "scale__other": -0.2926356252620133
-          }
+          "range": 0.5185696454525528,
+          "max_category": "scale__individual",
+          "max_coordinate": 0.14760809045901435,
+          "min_category": "scale__country",
+          "min_coordinate": -0.3709615549935385
         }
       },
-      "interpretation_label": "Axis 6: [after_state__分岐・様子見 / action_type__分散する・独立する / before_state__成長・拡大] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]"
+      "interpretation_label": "Dim 6: [_分岐・様子見 | _分散する・独立する | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
     },
     {
       "dimension": 7,
-      "eigenvalue": 0.2872823935861663,
-      "explained_inertia_pct": 5.066997315214746,
+      "eigenvalue": 0.28728243671825443,
+      "explained_inertia_pct": 4.001659830624789,
       "positive_pole": {
         "categories": [
           "action_type__集中・拡大",
@@ -1056,11 +633,11 @@
           "after_state__拡大・繁栄"
         ],
         "coordinates": [
-          5.183893976678458,
-          3.9655557641586148,
-          3.889726159120064,
-          3.6078018023543192,
-          3.5533434532038832
+          5.183718302396971,
+          3.9741156761326297,
+          3.8907798112542467,
+          3.606962671757671,
+          3.553285852737904
         ]
       },
       "negative_pole": {
@@ -1072,144 +649,70 @@
           "pattern_type__Decline"
         ],
         "coordinates": [
-          -5.20389853529735,
-          -4.951923414458092,
-          -4.621204498140098,
-          -2.7137127316122625,
-          -2.4602735808825558
+          -5.205029850743247,
+          -4.953151732519433,
+          -4.622345153040567,
+          -2.7055161714724196,
+          -2.460716647145603
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 7.801243710022717,
-          "categories": {
-            "before_state__V字回復・大成功": -0.7515166660313765,
-            "before_state__どん底・危機": 0.5961327112822463,
-            "before_state__停滞・閉塞": 0.143345633262749,
-            "before_state__安定・停止": 0.20907975332054912,
-            "before_state__安定・平和": -0.1339795633285246,
-            "before_state__安定成長・成功": 1.519785908677564,
-            "before_state__急成長・拡大": -0.08951281743626001,
-            "before_state__成長・拡大": -0.8424393020803834,
-            "before_state__成長痛": -0.2653469914857884,
-            "before_state__拡大・繁栄": 3.1800392118826197,
-            "before_state__混乱・カオス": 0.5057625577490449,
-            "before_state__混乱・衰退": -1.0567058764604882,
-            "before_state__絶頂・慢心": -0.45676797279763426,
-            "before_state__縮小安定・生存": 0.011469419780748115,
-            "before_state__調和・繁栄": -4.621204498140098
-          }
+          "range": 7.802745606511998,
+          "max_category": "before_state__拡大・繁栄",
+          "max_coordinate": 3.1804004534714307,
+          "min_category": "before_state__調和・繁栄",
+          "min_coordinate": -4.622345153040567
         },
         "trigger_type": {
-          "range": 9.093624694417414,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.2916945222778638,
-            "trigger_type__内部崩壊": -0.040021109848767736,
-            "trigger_type__内部矛盾・自壊": 0.02371410610209532,
-            "trigger_type__外部ショック": 0.3524417976133212,
-            "trigger_type__意図的決断": -0.2422841557185804,
-            "trigger_type__拡大・過剰": 3.889726159120064,
-            "trigger_type__自然推移": -0.19130209307233265,
-            "trigger_type__自然推移・成熟": -5.20389853529735
-          }
+          "range": 9.095809661997494,
+          "max_category": "trigger_type__拡大・過剰",
+          "max_coordinate": 3.8907798112542467,
+          "min_category": "trigger_type__自然推移・成熟",
+          "min_coordinate": -5.205029850743247
         },
         "action_type": {
-          "range": 10.13581739113655,
-          "categories": {
-            "action_type__交流・発表": -1.5699621138974016,
-            "action_type__分散する・独立する": 3.9655557641586148,
-            "action_type__分散・スピンオフ": -0.2644409452461684,
-            "action_type__分散・多角化": 0.26265996936012326,
-            "action_type__分散・探索": -0.3524886307712465,
-            "action_type__分散・独立": 1.7823397255378985,
-            "action_type__刷新・破壊": 0.08526438014739032,
-            "action_type__守る・維持": 0.35062218060461875,
-            "action_type__対話・融合": -0.025456506680205136,
-            "action_type__拡大・攻め": -0.694845824455824,
-            "action_type__捨てる・撤退": 0.0532107997073461,
-            "action_type__捨てる・転換": 0.07259604525340038,
-            "action_type__撤退・収縮": 0.18718523000721973,
-            "action_type__撤退・縮小": -4.951923414458092,
-            "action_type__撤退・逃げる": 3.6078018023543192,
-            "action_type__攻める・挑戦": -0.45806990379814555,
-            "action_type__耐える・潜伏": 0.3961555005553312,
-            "action_type__輝く・表現": 0.12957725749257615,
-            "action_type__逃げる・分散": -2.7137127316122625,
-            "action_type__逃げる・守る": -0.6484057690558371,
-            "action_type__逃げる・放置": -0.6032529655675718,
-            "action_type__集中・拡大": 5.183893976678458
-          }
+          "range": 10.136870034916404,
+          "max_category": "action_type__集中・拡大",
+          "max_coordinate": 5.183718302396971,
+          "min_category": "action_type__撤退・縮小",
+          "min_coordinate": -4.953151732519433
         },
         "after_state": {
-          "range": 5.086165944249807,
-          "categories": {
-            "after_state__V字回復・大成功": 0.28751777215058827,
-            "after_state__どん底・危機": -0.5014503174624588,
-            "after_state__停滞・閉塞": 0.34605210862672825,
-            "after_state__分岐・様子見": -1.5328224910459232,
-            "after_state__喜び・交流": -1.4978793761040399,
-            "after_state__変質・新生": 0.19447520860991815,
-            "after_state__安定・停止": -0.6543847357125201,
-            "after_state__安定・平和": 0.6444616735304803,
-            "after_state__安定成長・成功": 0.16199633046978698,
-            "after_state__崩壊・消滅": -0.1945937788105539,
-            "after_state__成長・拡大": -0.6696390611423891,
-            "after_state__成長痛": 0.4907232341243776,
-            "after_state__拡大・繁栄": 3.5533434532038832,
-            "after_state__持続成長・大成功": -0.5446770803458357,
-            "after_state__消滅・破綻": 0.058621625273866114,
-            "after_state__混乱・カオス": -0.6533114502709483,
-            "after_state__混乱・衰退": -1.4011281549385133,
-            "after_state__現状維持・延命": 0.691131898023733,
-            "after_state__縮小安定・生存": 0.52246304411278,
-            "after_state__迷走・混乱": -0.3208246715744927
-          }
+          "range": 5.091709640529304,
+          "max_category": "after_state__拡大・繁栄",
+          "max_coordinate": 3.553285852737904,
+          "min_category": "after_state__分岐・様子見",
+          "min_coordinate": -1.5384237877914002
         },
         "pattern_type": {
-          "range": 3.395595394337748,
-          "categories": {
-            "pattern_type__Breakthrough": 0.7721733233079012,
-            "pattern_type__Crisis_Pivot": 0.11480728534986566,
-            "pattern_type__Decline": -2.4602735808825558,
-            "pattern_type__Endurance": 0.738064312935625,
-            "pattern_type__Exploration": -1.1218116921689514,
-            "pattern_type__Failed_Attempt": -0.29951795492075384,
-            "pattern_type__Hubris_Collapse": -0.7634492385884613,
-            "pattern_type__Managed_Decline": -0.17195951732314668,
-            "pattern_type__Pivot_Success": -0.030101347435279372,
-            "pattern_type__Quiet_Fade": 0.26802710343135155,
-            "pattern_type__Shock_Recovery": 0.5979270635703854,
-            "pattern_type__Slow_Decline": 0.1871162645049155,
-            "pattern_type__Stagnation": 0.9353218134551923,
-            "pattern_type__Steady_Growth": -0.6855298052044458
-          }
+          "range": 3.3961482671428347,
+          "max_category": "pattern_type__Stagnation",
+          "max_coordinate": 0.9354316199972317,
+          "min_category": "pattern_type__Decline",
+          "min_coordinate": -2.460716647145603
         },
         "outcome": {
-          "range": 0.7842005061876891,
-          "categories": {
-            "outcome__Failure": -0.1274731786384013,
-            "outcome__Mixed": 0.03847229881089168,
-            "outcome__PartialSuccess": 0.6567273275492878,
-            "outcome__Success": 0.04368884917373447
-          }
+          "range": 0.7833691253803414,
+          "max_category": "outcome__PartialSuccess",
+          "max_coordinate": 0.6559006850103035,
+          "min_category": "outcome__Failure",
+          "min_coordinate": -0.12746844037003785
         },
         "scale": {
-          "range": 0.4526387485407837,
-          "categories": {
-            "scale__company": -0.1492220984389936,
-            "scale__country": 0.3034166501017901,
-            "scale__family": 0.08029778180129729,
-            "scale__individual": 0.05619795672941224,
-            "scale__other": 0.07353911664302658
-          }
+          "range": 0.4523797509087062,
+          "max_category": "scale__country",
+          "max_coordinate": 0.30325979545690107,
+          "min_category": "scale__company",
+          "min_coordinate": -0.1491199554518051
         }
       },
-      "interpretation_label": "Axis 7: [trigger_type__自然推移・成熟 / action_type__撤退・縮小 / before_state__調和・繁栄] ⟷ [action_type__集中・拡大 / action_type__分散する・独立する / trigger_type__拡大・過剰]"
+      "interpretation_label": "Dim 7: [_自然推移・成熟 | _撤退・縮小 | _調和・繁栄] <-> [_集中・拡大 | _分散する・独立する | _拡大・過剰]"
     },
     {
       "dimension": 8,
-      "eigenvalue": 0.28305461198263393,
-      "explained_inertia_pct": 4.9924290210460756,
+      "eigenvalue": 0.2830546534187018,
+      "explained_inertia_pct": 3.9427695246399566,
       "positive_pole": {
         "categories": [
           "trigger_type__自然推移・成熟",
@@ -1219,11 +722,11 @@
           "pattern_type__Decline"
         ],
         "coordinates": [
-          9.769723016710035,
-          8.573890567145531,
-          3.8852128265597807,
-          3.8005414640134254,
-          2.2508604362407802
+          9.76888441705483,
+          8.573078718082416,
+          3.8910554323994457,
+          3.7964554756221283,
+          2.2507516265875736
         ]
       },
       "negative_pole": {
@@ -1235,144 +738,70 @@
           "after_state__分岐・様子見"
         ],
         "coordinates": [
-          -4.484822309133415,
-          -4.483851592827003,
-          -4.028009341953375,
-          -1.6659576781328584,
-          -1.5216122912033345
+          -4.483320500631548,
+          -4.47270767807528,
+          -4.027786089608504,
+          -1.6663414762209903,
+          -1.5293749974578672
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 10.23984824527839,
-          "categories": {
-            "before_state__V字回復・大成功": 0.04229496147972026,
-            "before_state__どん底・危機": -0.1438337426273504,
-            "before_state__停滞・閉塞": 0.3606640074495915,
-            "before_state__安定・停止": -0.29070515557654497,
-            "before_state__安定・平和": 0.41883532532357276,
-            "before_state__安定成長・成功": -1.6659576781328584,
-            "before_state__急成長・拡大": 0.05175040061818878,
-            "before_state__成長・拡大": -0.3613957353532972,
-            "before_state__成長痛": -0.22267904701802615,
-            "before_state__拡大・繁栄": -0.022423854436782804,
-            "before_state__混乱・カオス": 0.6290303139245491,
-            "before_state__混乱・衰退": 0.37055820659609817,
-            "before_state__絶頂・慢心": -1.4838120704000766,
-            "before_state__縮小安定・生存": -1.0225596420986138,
-            "before_state__調和・繁栄": 8.573890567145531
-          }
+          "range": 10.239420194303406,
+          "max_category": "before_state__調和・繁栄",
+          "max_coordinate": 8.573078718082416,
+          "min_category": "before_state__安定成長・成功",
+          "min_coordinate": -1.6663414762209903
         },
         "trigger_type": {
-          "range": 14.25454532584345,
-          "categories": {
-            "trigger_type__偶発・出会い": 0.509255269110654,
-            "trigger_type__内部崩壊": -0.09040533387379042,
-            "trigger_type__内部矛盾・自壊": -0.7876640292675449,
-            "trigger_type__外部ショック": -0.11932032160212629,
-            "trigger_type__意図的決断": 0.008366660945008769,
-            "trigger_type__拡大・過剰": -4.484822309133415,
-            "trigger_type__自然推移": 0.4844066024005727,
-            "trigger_type__自然推移・成熟": 9.769723016710035
-          }
+          "range": 14.252204917686377,
+          "max_category": "trigger_type__自然推移・成熟",
+          "max_coordinate": 9.76888441705483,
+          "min_category": "trigger_type__拡大・過剰",
+          "min_coordinate": -4.483320500631548
         },
         "action_type": {
-          "range": 8.369064419386785,
-          "categories": {
-            "action_type__交流・発表": -0.5245524011335715,
-            "action_type__分散する・独立する": -4.483851592827003,
-            "action_type__分散・スピンオフ": -0.11611401924895035,
-            "action_type__分散・多角化": -0.43162961134482486,
-            "action_type__分散・探索": -0.4013028193041912,
-            "action_type__分散・独立": -0.4307575009826553,
-            "action_type__刷新・破壊": -0.5022090974008877,
-            "action_type__守る・維持": 0.5647036278343471,
-            "action_type__対話・融合": 0.27559978146551234,
-            "action_type__拡大・攻め": -0.31234477511575204,
-            "action_type__捨てる・撤退": -0.13014322221004415,
-            "action_type__捨てる・転換": -0.5275668133457884,
-            "action_type__撤退・収縮": -0.902175712908901,
-            "action_type__撤退・縮小": 3.8005414640134254,
-            "action_type__撤退・逃げる": -4.028009341953375,
-            "action_type__攻める・挑戦": -0.12431165354052356,
-            "action_type__耐える・潜伏": 0.443860821419971,
-            "action_type__輝く・表現": -0.4688123969146809,
-            "action_type__逃げる・分散": 3.8852128265597807,
-            "action_type__逃げる・守る": 0.6402220461043966,
-            "action_type__逃げる・放置": -1.4708632297809003,
-            "action_type__集中・拡大": 0.010965985862681953
-          }
+          "range": 8.363763110474725,
+          "max_category": "action_type__逃げる・分散",
+          "max_coordinate": 3.8910554323994457,
+          "min_category": "action_type__分散する・独立する",
+          "min_coordinate": -4.47270767807528
         },
         "after_state": {
-          "range": 2.6818402995250903,
-          "categories": {
-            "after_state__V字回復・大成功": -0.39376687488439077,
-            "after_state__どん底・危機": -1.0525216092894218,
-            "after_state__停滞・閉塞": 1.1602280083217558,
-            "after_state__分岐・様子見": -1.5216122912033345,
-            "after_state__喜び・交流": -0.5189714604435345,
-            "after_state__変質・新生": -0.39904962367058666,
-            "after_state__安定・停止": 0.6476892628502479,
-            "after_state__安定・平和": -0.4572216380150078,
-            "after_state__安定成長・成功": -0.003205370923973,
-            "after_state__崩壊・消滅": -0.17589675611782704,
-            "after_state__成長・拡大": -0.3084820166194264,
-            "after_state__成長痛": -0.08682632263982298,
-            "after_state__拡大・繁栄": -0.07182011257878089,
-            "after_state__持続成長・大成功": 0.282101946280203,
-            "after_state__消滅・破綻": -0.8833530624955807,
-            "after_state__混乱・カオス": -1.2556622663806736,
-            "after_state__混乱・衰退": 0.3129736451667937,
-            "after_state__現状維持・延命": 0.29104967169263396,
-            "after_state__縮小安定・生存": 0.249521203698325,
-            "after_state__迷走・混乱": -1.0456035560329244
-          }
+          "range": 2.689517028250854,
+          "max_category": "after_state__停滞・閉塞",
+          "max_coordinate": 1.1601420307929868,
+          "min_category": "after_state__分岐・様子見",
+          "min_coordinate": -1.5293749974578672
         },
         "pattern_type": {
-          "range": 3.7152236662546048,
-          "categories": {
-            "pattern_type__Breakthrough": 0.014811911698596783,
-            "pattern_type__Crisis_Pivot": -0.8221681946276631,
-            "pattern_type__Decline": 2.2508604362407802,
-            "pattern_type__Endurance": 0.40835951527586734,
-            "pattern_type__Exploration": -0.41900582724052743,
-            "pattern_type__Failed_Attempt": 0.10034853868667411,
-            "pattern_type__Hubris_Collapse": -1.4643632300138245,
-            "pattern_type__Managed_Decline": 0.2970761013716578,
-            "pattern_type__Pivot_Success": -0.17721413013902357,
-            "pattern_type__Quiet_Fade": 1.2513494072048459,
-            "pattern_type__Shock_Recovery": -0.5628382669577536,
-            "pattern_type__Slow_Decline": 0.16850636412231376,
-            "pattern_type__Stagnation": 1.7842659465254789,
-            "pattern_type__Steady_Growth": 0.3409172411844171
-          }
+          "range": 3.7151261586270437,
+          "max_category": "pattern_type__Decline",
+          "max_coordinate": 2.2507516265875736,
+          "min_category": "pattern_type__Hubris_Collapse",
+          "min_coordinate": -1.4643745320394699
         },
         "outcome": {
-          "range": 0.6960781851612572,
-          "categories": {
-            "outcome__Failure": 0.25981927510920194,
-            "outcome__Mixed": -0.4362589100520552,
-            "outcome__PartialSuccess": -0.08874146858337342,
-            "outcome__Success": -0.008532156084573231
-          }
+          "range": 0.6961703403145073,
+          "max_category": "outcome__Failure",
+          "max_coordinate": 0.2598709742469435,
+          "min_category": "outcome__Mixed",
+          "min_coordinate": -0.4362993660675638
         },
         "scale": {
-          "range": 1.0943991448668764,
-          "categories": {
-            "scale__company": -0.4740966678206671,
-            "scale__country": 0.10953914454286363,
-            "scale__family": 0.6203024770462092,
-            "scale__individual": 0.29632808071737776,
-            "scale__other": 0.47091621061202865
-          }
+          "range": 1.0940766809449791,
+          "max_category": "scale__family",
+          "max_coordinate": 0.6200399762467153,
+          "min_category": "scale__company",
+          "min_coordinate": -0.4740367046982639
         }
       },
-      "interpretation_label": "Axis 8: [trigger_type__拡大・過剰 / action_type__分散する・独立する / action_type__撤退・逃げる] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]"
+      "interpretation_label": "Dim 8: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
     },
     {
       "dimension": 9,
-      "eigenvalue": 0.26191160460918284,
-      "explained_inertia_pct": 4.619515247043042,
+      "eigenvalue": 0.26191205765464953,
+      "explained_inertia_pct": 3.648266744899472,
       "positive_pole": {
         "categories": [
           "trigger_type__自然推移・成熟",
@@ -1382,11 +811,11 @@
           "action_type__交流・発表"
         ],
         "coordinates": [
-          11.141600622930483,
-          9.682429236785,
-          4.270251694252859,
-          1.9105181728625982,
-          1.8235966496119702
+          11.141388497342781,
+          9.682183080682506,
+          4.2716787303056325,
+          1.9264359188760558,
+          1.824392864052974
         ]
       },
       "negative_pole": {
@@ -1398,144 +827,70 @@
           "action_type__撤退・縮小"
         ],
         "coordinates": [
-          -6.720600611458079,
-          -6.390259359264308,
-          -5.887815318498121,
-          -2.4125550369232673,
-          -2.2186757691697263
+          -6.715608573386911,
+          -6.315912334700248,
+          -5.90201849780867,
+          -2.413147163264734,
+          -2.210907410496784
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 12.094984273708267,
-          "categories": {
-            "before_state__V字回復・大成功": -1.2658313200253555,
-            "before_state__どん底・危機": 0.8738259806637962,
-            "before_state__停滞・閉塞": 0.24675389121063857,
-            "before_state__安定・停止": 0.2906976456939394,
-            "before_state__安定・平和": -0.3062359528367899,
-            "before_state__安定成長・成功": -2.4125550369232673,
-            "before_state__急成長・拡大": -2.092326965535448,
-            "before_state__成長・拡大": 0.027050811423169247,
-            "before_state__成長痛": -0.3562822455043173,
-            "before_state__拡大・繁栄": -0.4294875962289657,
-            "before_state__混乱・カオス": 0.3481063095910165,
-            "before_state__混乱・衰退": -0.13089957360286947,
-            "before_state__絶頂・慢心": 0.3260178318941244,
-            "before_state__縮小安定・生存": 0.6046672575682163,
-            "before_state__調和・繁栄": 9.682429236785
-          }
+          "range": 12.09533024394724,
+          "max_category": "before_state__調和・繁栄",
+          "max_coordinate": 9.682183080682506,
+          "min_category": "before_state__安定成長・成功",
+          "min_coordinate": -2.413147163264734
         },
         "trigger_type": {
-          "range": 17.86220123438856,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.714536960286249,
-            "trigger_type__内部崩壊": -0.06022932662213093,
-            "trigger_type__内部矛盾・自壊": -1.6085107367730496,
-            "trigger_type__外部ショック": 0.13095517902144593,
-            "trigger_type__意図的決断": 0.12678676134690486,
-            "trigger_type__拡大・過剰": -6.720600611458079,
-            "trigger_type__自然推移": -0.1473643535474402,
-            "trigger_type__自然推移・成熟": 11.141600622930483
-          }
+          "range": 17.85699707072969,
+          "max_category": "trigger_type__自然推移・成熟",
+          "max_coordinate": 11.141388497342781,
+          "min_category": "trigger_type__拡大・過剰",
+          "min_coordinate": -6.715608573386911
         },
         "action_type": {
-          "range": 10.660511053517167,
-          "categories": {
-            "action_type__交流・発表": 1.8235966496119702,
-            "action_type__分散する・独立する": -6.390259359264308,
-            "action_type__分散・スピンオフ": 0.6029307876135414,
-            "action_type__分散・多角化": -0.33636544226390563,
-            "action_type__分散・探索": 0.041807917785610396,
-            "action_type__分散・独立": 1.9105181728625982,
-            "action_type__刷新・破壊": 1.1785727027430157,
-            "action_type__守る・維持": -0.292863840979087,
-            "action_type__対話・融合": -0.22873992826946213,
-            "action_type__拡大・攻め": 0.07896628160886422,
-            "action_type__捨てる・撤退": 0.22562841874389683,
-            "action_type__捨てる・転換": -1.167293456582666,
-            "action_type__撤退・収縮": -0.6762842078038606,
-            "action_type__撤退・縮小": -2.2186757691697263,
-            "action_type__撤退・逃げる": -5.887815318498121,
-            "action_type__攻める・挑戦": -0.23815962097365376,
-            "action_type__耐える・潜伏": -0.04409125836854844,
-            "action_type__輝く・表現": 1.2245582782331164,
-            "action_type__逃げる・分散": 4.270251694252859,
-            "action_type__逃げる・守る": 0.7299028761871004,
-            "action_type__逃げる・放置": -0.1420788880208604,
-            "action_type__集中・拡大": -0.23325396590952358
-          }
+          "range": 10.587591065005881,
+          "max_category": "action_type__逃げる・分散",
+          "max_coordinate": 4.2716787303056325,
+          "min_category": "action_type__分散する・独立する",
+          "min_coordinate": -6.315912334700248
         },
         "after_state": {
-          "range": 2.6126326508903457,
-          "categories": {
-            "after_state__V字回復・大成功": 0.9265924694720067,
-            "after_state__どん底・危機": 0.07107396745834647,
-            "after_state__停滞・閉塞": -0.12840505655124962,
-            "after_state__分岐・様子見": 0.8824269561486588,
-            "after_state__喜び・交流": 1.7351767516653767,
-            "after_state__変質・新生": 1.2682927124471808,
-            "after_state__安定・停止": 0.06734443817438093,
-            "after_state__安定・平和": -0.8774558992249689,
-            "after_state__安定成長・成功": 0.2347737987226119,
-            "after_state__崩壊・消滅": -0.2709855768420204,
-            "after_state__成長・拡大": 0.09279406156165679,
-            "after_state__成長痛": 0.23586811295445337,
-            "after_state__拡大・繁栄": -0.1572218099053017,
-            "after_state__持続成長・大成功": -0.5557217806792698,
-            "after_state__消滅・破綻": 0.7703674673004428,
-            "after_state__混乱・カオス": 0.4565655400139317,
-            "after_state__混乱・衰退": -0.3476853425020389,
-            "after_state__現状維持・延命": 0.5589821614086782,
-            "after_state__縮小安定・生存": 0.08619558887246782,
-            "after_state__迷走・混乱": 0.7061330492606026
-          }
+          "range": 2.613725200930276,
+          "max_category": "after_state__喜び・交流",
+          "max_coordinate": 1.7356834191876496,
+          "min_category": "after_state__安定・平和",
+          "min_coordinate": -0.8780417817426264
         },
         "pattern_type": {
-          "range": 1.9535100952876885,
-          "categories": {
-            "pattern_type__Breakthrough": 0.06531969456632208,
-            "pattern_type__Crisis_Pivot": -0.3103482932276887,
-            "pattern_type__Decline": -1.045557216204591,
-            "pattern_type__Endurance": 0.0060703136865364994,
-            "pattern_type__Exploration": 0.09784556124519302,
-            "pattern_type__Failed_Attempt": -0.21318009662923454,
-            "pattern_type__Hubris_Collapse": 0.008174461222577874,
-            "pattern_type__Managed_Decline": 0.5676165436141001,
-            "pattern_type__Pivot_Success": 0.9079528790830976,
-            "pattern_type__Quiet_Fade": -0.2947269447847723,
-            "pattern_type__Shock_Recovery": 0.7522835387214255,
-            "pattern_type__Slow_Decline": -0.0974416848919975,
-            "pattern_type__Stagnation": -0.11915800973678764,
-            "pattern_type__Steady_Growth": -0.8161739161218122
-          }
+          "range": 1.9544860786370044,
+          "max_category": "pattern_type__Pivot_Success",
+          "max_coordinate": 0.9078364215782544,
+          "min_category": "pattern_type__Decline",
+          "min_coordinate": -1.04664965705875
         },
         "outcome": {
-          "range": 0.9418952353169139,
-          "categories": {
-            "outcome__Failure": -0.21347397081742303,
-            "outcome__Mixed": 0.37118405672323707,
-            "outcome__PartialSuccess": 0.7284212644994909,
-            "outcome__Success": -0.024820031010970526
-          }
+          "range": 0.9431933488933373,
+          "max_category": "outcome__PartialSuccess",
+          "max_coordinate": 0.7297995747453491,
+          "min_category": "outcome__Failure",
+          "min_coordinate": -0.21339377414798816
         },
         "scale": {
-          "range": 0.7778313513550837,
-          "categories": {
-            "scale__company": -0.04512704921930722,
-            "scale__country": 0.6044652545206434,
-            "scale__family": -0.04684642195902389,
-            "scale__individual": -0.1733660968344404,
-            "scale__other": 0.003912421387310935
-          }
+          "range": 0.7794487588259276,
+          "max_category": "scale__country",
+          "max_coordinate": 0.6057602425912546,
+          "min_category": "scale__individual",
+          "min_coordinate": -0.17368851623467296
         }
       },
-      "interpretation_label": "Axis 9: [trigger_type__拡大・過剰 / action_type__分散する・独立する / action_type__撤退・逃げる] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]"
+      "interpretation_label": "Dim 9: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
     },
     {
       "dimension": 10,
-      "eigenvalue": 0.25164150306663036,
-      "explained_inertia_pct": 4.438374397116616,
+      "eigenvalue": 0.25164190649180684,
+      "explained_inertia_pct": 3.5052101354099836,
       "positive_pole": {
         "categories": [
           "action_type__撤退・縮小",
@@ -1545,11 +900,11 @@
           "action_type__集中・拡大"
         ],
         "coordinates": [
-          9.53256475264839,
-          4.940966519766372,
-          3.654394928438851,
-          2.030023770716551,
-          1.5977276163624323
+          9.530777392479626,
+          4.9418756797956265,
+          3.6621850630616524,
+          2.0908775079529316,
+          1.598546909571919
         ]
       },
       "negative_pole": {
@@ -1561,1135 +916,77 @@
           "trigger_type__拡大・過剰"
         ],
         "coordinates": [
-          -5.119562199463764,
-          -4.613232993285654,
-          -2.9267348000212294,
-          -2.6091293613390474,
-          -2.232167035141027
+          -5.117162827376493,
+          -4.6110138755562255,
+          -2.901587055774203,
+          -2.606168733020955,
+          -2.2325707805008093
         ]
       },
-      "top_contributions": {
+      "variable_contributions": {
         "before_state": {
-          "range": 6.643256764002205,
-          "categories": {
-            "before_state__V字回復・大成功": -0.5872027909017467,
-            "before_state__どん底・危機": 0.9660900394111338,
-            "before_state__停滞・閉塞": -0.12554291032822817,
-            "before_state__安定・停止": -1.0908108006055308,
-            "before_state__安定・平和": -0.27086409510627873,
-            "before_state__安定成長・成功": -0.3537108753983977,
-            "before_state__急成長・拡大": 2.030023770716551,
-            "before_state__成長・拡大": -0.7221589266360944,
-            "before_state__成長痛": -0.30827764897740945,
-            "before_state__拡大・繁栄": 1.0890209264256636,
-            "before_state__混乱・カオス": 0.04509710154831401,
-            "before_state__混乱・衰退": 1.1673187076698897,
-            "before_state__絶頂・慢心": 0.3538127932170448,
-            "before_state__縮小安定・生存": -0.21976169830584347,
-            "before_state__調和・繁栄": -4.613232993285654
-          }
+          "range": 6.701891383509157,
+          "max_category": "before_state__急成長・拡大",
+          "max_coordinate": 2.0908775079529316,
+          "min_category": "before_state__調和・繁栄",
+          "min_coordinate": -4.6110138755562255
         },
         "trigger_type": {
-          "range": 6.021810697019506,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.010660365222128241,
-            "trigger_type__内部崩壊": 0.018543573607788983,
-            "trigger_type__内部矛盾・自壊": 0.40605568999135994,
-            "trigger_type__外部ショック": -0.17852653544026797,
-            "trigger_type__意図的決断": 0.04283683201084324,
-            "trigger_type__拡大・過剰": -2.232167035141027,
-            "trigger_type__自然推移": 0.9022484975557423,
-            "trigger_type__自然推移・成熟": -5.119562199463764
-          }
+          "range": 6.020158227537422,
+          "max_category": "trigger_type__自然推移",
+          "max_coordinate": 0.9029954001609287,
+          "min_category": "trigger_type__自然推移・成熟",
+          "min_coordinate": -5.117162827376493
         },
         "action_type": {
-          "range": 12.141694113987437,
-          "categories": {
-            "action_type__交流・発表": -1.5316422833262198,
-            "action_type__分散する・独立する": -1.481002901125426,
-            "action_type__分散・スピンオフ": -0.20956567232988063,
-            "action_type__分散・多角化": 0.48263254954364443,
-            "action_type__分散・探索": -1.2929619652444635,
-            "action_type__分散・独立": 0.33194349737861273,
-            "action_type__刷新・破壊": 0.4607436142984504,
-            "action_type__守る・維持": -0.5520649439723583,
-            "action_type__対話・融合": -0.3562938651331163,
-            "action_type__拡大・攻め": -0.8283876317170222,
-            "action_type__捨てる・撤退": -0.3852668117920311,
-            "action_type__捨てる・転換": 0.0011552586660752296,
-            "action_type__撤退・収縮": 0.09368806897513139,
-            "action_type__撤退・縮小": 9.53256475264839,
-            "action_type__撤退・逃げる": -2.6091293613390474,
-            "action_type__攻める・挑戦": 0.09716741600844396,
-            "action_type__耐える・潜伏": 0.7271314502566988,
-            "action_type__輝く・表現": -0.7544959153455248,
-            "action_type__逃げる・分散": 0.31323541299405516,
-            "action_type__逃げる・守る": 3.654394928438851,
-            "action_type__逃げる・放置": 0.3608768125377382,
-            "action_type__集中・拡大": 1.5977276163624323
-          }
+          "range": 12.13694612550058,
+          "max_category": "action_type__撤退・縮小",
+          "max_coordinate": 9.530777392479626,
+          "min_category": "action_type__撤退・逃げる",
+          "min_coordinate": -2.606168733020955
         },
         "after_state": {
-          "range": 3.8924412761073732,
-          "categories": {
-            "after_state__V字回復・大成功": 0.965706476086144,
-            "after_state__どん底・危機": 0.5615679581355795,
-            "after_state__停滞・閉塞": -0.30056222798448984,
-            "after_state__分岐・様子見": -2.9267348000212294,
-            "after_state__喜び・交流": -1.4965294882585765,
-            "after_state__変質・新生": 0.031266639692759224,
-            "after_state__安定・停止": 0.6611164875319713,
-            "after_state__安定・平和": -0.3911088151687419,
-            "after_state__安定成長・成功": 0.1784468857225077,
-            "after_state__崩壊・消滅": 0.1424287627834176,
-            "after_state__成長・拡大": -0.8083860600284256,
-            "after_state__成長痛": -0.34309556995014073,
-            "after_state__拡大・繁栄": 0.6483857521663606,
-            "after_state__持続成長・大成功": 0.05497052684888885,
-            "after_state__消滅・破綻": 0.21799464454004916,
-            "after_state__混乱・カオス": 0.18812041787129372,
-            "after_state__混乱・衰退": 0.528619266397251,
-            "after_state__現状維持・延命": -1.0943175990087137,
-            "after_state__縮小安定・生存": -0.6151003929380893,
-            "after_state__迷走・混乱": -0.4042809438473286
-          }
+          "range": 3.86606957492122,
+          "max_category": "after_state__V字回復・大成功",
+          "max_coordinate": 0.9644825191470167,
+          "min_category": "after_state__分岐・様子見",
+          "min_coordinate": -2.901587055774203
         },
         "pattern_type": {
-          "range": 6.473395020587705,
-          "categories": {
-            "pattern_type__Breakthrough": 0.10621783495542596,
-            "pattern_type__Crisis_Pivot": -0.5093739819953992,
-            "pattern_type__Decline": 4.940966519766372,
-            "pattern_type__Endurance": -0.2843389720841102,
-            "pattern_type__Exploration": -1.5324285008213332,
-            "pattern_type__Failed_Attempt": -0.3570097117480072,
-            "pattern_type__Hubris_Collapse": 0.32148865135810334,
-            "pattern_type__Managed_Decline": -0.7015579588393771,
-            "pattern_type__Pivot_Success": 0.005726491734044726,
-            "pattern_type__Quiet_Fade": -0.3918688722351604,
-            "pattern_type__Shock_Recovery": 1.0311609397242678,
-            "pattern_type__Slow_Decline": -0.03382071364330229,
-            "pattern_type__Stagnation": -0.4235378730338655,
-            "pattern_type__Steady_Growth": -0.1532291086667337
-          }
+          "range": 6.473837375684745,
+          "max_category": "pattern_type__Decline",
+          "max_coordinate": 4.9418756797956265,
+          "min_category": "pattern_type__Exploration",
+          "min_coordinate": -1.531961695889119
         },
         "outcome": {
-          "range": 0.7951103008544049,
-          "categories": {
-            "outcome__Failure": 0.18714878517408043,
-            "outcome__Mixed": -0.6079615156803245,
-            "outcome__PartialSuccess": -0.424409144567197,
-            "outcome__Success": 0.11730283449667797
-          }
+          "range": 0.7954898554423147,
+          "max_category": "outcome__Failure",
+          "max_coordinate": 0.18718037620001501,
+          "min_category": "outcome__Mixed",
+          "min_coordinate": -0.6083094792422996
         },
         "scale": {
-          "range": 0.43012538271292644,
-          "categories": {
-            "scale__company": -0.026783969633555883,
-            "scale__country": 0.31948152850510814,
-            "scale__family": -0.02731882685016914,
-            "scale__individual": -0.010127590019783653,
-            "scale__other": -0.11064385420781828
-          }
+          "range": 0.43066141030670374,
+          "max_category": "scale__country",
+          "max_coordinate": 0.3195222994298834,
+          "min_category": "scale__other",
+          "min_coordinate": -0.11113911087682032
         }
       },
-      "interpretation_label": "Axis 10: [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / after_state__分岐・様子見] ⟷ [action_type__撤退・縮小 / pattern_type__Decline / action_type__逃げる・守る]"
-    },
-    {
-      "dimension": 11,
-      "eigenvalue": 0.2388204903629021,
-      "explained_inertia_pct": 4.2122413712211735,
-      "positive_pole": {
-        "categories": [
-          "action_type__分散する・独立する",
-          "trigger_type__拡大・過剰",
-          "pattern_type__Quiet_Fade",
-          "action_type__撤退・逃げる",
-          "before_state__急成長・拡大"
-        ],
-        "coordinates": [
-          2.8475103711031173,
-          2.8090511821955864,
-          2.430323276457724,
-          2.225505578632012,
-          1.8377645888516247
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "action_type__分散・独立",
-          "after_state__成長痛",
-          "after_state__現状維持・延命",
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄"
-        ],
-        "coordinates": [
-          -2.5706026995791214,
-          -2.3877765726090385,
-          -1.9048367654830631,
-          -1.4780773170541202,
-          -1.1431832681356164
-        ]
-      },
-      "top_contributions": {
-        "before_state": {
-          "range": 2.980947856987241,
-          "categories": {
-            "before_state__V字回復・大成功": 0.6795434592881523,
-            "before_state__どん底・危機": -0.23746911167733453,
-            "before_state__停滞・閉塞": 0.5525612172554973,
-            "before_state__安定・停止": 0.11308467521026729,
-            "before_state__安定・平和": -0.42653651468097525,
-            "before_state__安定成長・成功": 0.844532909778923,
-            "before_state__急成長・拡大": 1.8377645888516247,
-            "before_state__成長・拡大": 0.06626309173284152,
-            "before_state__成長痛": -0.10410123400140794,
-            "before_state__拡大・繁栄": -0.06188292158012103,
-            "before_state__混乱・カオス": 1.1167073989846958,
-            "before_state__混乱・衰退": -0.07848520880645317,
-            "before_state__絶頂・慢心": -0.7996080094128559,
-            "before_state__縮小安定・生存": 0.627262153783464,
-            "before_state__調和・繁栄": -1.1431832681356164
-          }
-        },
-        "trigger_type": {
-          "range": 4.2871284992497065,
-          "categories": {
-            "trigger_type__偶発・出会い": 0.16934277424926825,
-            "trigger_type__内部崩壊": 0.6142440414975828,
-            "trigger_type__内部矛盾・自壊": 1.086990376770191,
-            "trigger_type__外部ショック": -0.3954459944092285,
-            "trigger_type__意図的決断": 0.0577088984294943,
-            "trigger_type__拡大・過剰": 2.8090511821955864,
-            "trigger_type__自然推移": -0.048012279851166025,
-            "trigger_type__自然推移・成熟": -1.4780773170541202
-          }
-        },
-        "action_type": {
-          "range": 5.418113070682239,
-          "categories": {
-            "action_type__交流・発表": -0.5023660603978222,
-            "action_type__分散する・独立する": 2.8475103711031173,
-            "action_type__分散・スピンオフ": 0.7744044362592208,
-            "action_type__分散・多角化": 0.04861544593650558,
-            "action_type__分散・探索": 0.3991337239607134,
-            "action_type__分散・独立": -2.5706026995791214,
-            "action_type__刷新・破壊": 0.3919168573759535,
-            "action_type__守る・維持": -0.708296557069745,
-            "action_type__対話・融合": 0.2882216453548372,
-            "action_type__拡大・攻め": 0.16727552568372553,
-            "action_type__捨てる・撤退": 1.031807194024657,
-            "action_type__捨てる・転換": 0.6840949128069259,
-            "action_type__撤退・収縮": 0.37411067108182566,
-            "action_type__撤退・縮小": -0.771521036641987,
-            "action_type__撤退・逃げる": 2.225505578632012,
-            "action_type__攻める・挑戦": -0.19831992828264286,
-            "action_type__耐える・潜伏": -0.3219376567087822,
-            "action_type__輝く・表現": -0.6203683818626731,
-            "action_type__逃げる・分散": -0.1727152596430227,
-            "action_type__逃げる・守る": -0.3387508767989658,
-            "action_type__逃げる・放置": -0.3108102481072322,
-            "action_type__集中・拡大": -0.5145137675246511
-          }
-        },
-        "after_state": {
-          "range": 3.173396766188788,
-          "categories": {
-            "after_state__V字回復・大成功": 0.06310738503708453,
-            "after_state__どん底・危機": -0.9646039505291243,
-            "after_state__停滞・閉塞": 0.005069818020955343,
-            "after_state__分岐・様子見": 0.05700878426140423,
-            "after_state__喜び・交流": -0.47231786513258167,
-            "after_state__変質・新生": 0.7856201935797492,
-            "after_state__安定・停止": 0.1648172192547644,
-            "after_state__安定・平和": 0.05495668262606711,
-            "after_state__安定成長・成功": 0.47356086833489347,
-            "after_state__崩壊・消滅": 0.6841441468745024,
-            "after_state__成長・拡大": 0.18238423166097445,
-            "after_state__成長痛": -2.3877765726090385,
-            "after_state__拡大・繁栄": -0.17404163113732324,
-            "after_state__持続成長・大成功": -0.1759346502554131,
-            "after_state__消滅・破綻": 0.4422229642980892,
-            "after_state__混乱・カオス": -1.1160538197144412,
-            "after_state__混乱・衰退": 0.10978741486353104,
-            "after_state__現状維持・延命": -1.9048367654830631,
-            "after_state__縮小安定・生存": -0.8362491287610595,
-            "after_state__迷走・混乱": -0.2667257218097024
-          }
-        },
-        "pattern_type": {
-          "range": 3.5285423102769986,
-          "categories": {
-            "pattern_type__Breakthrough": -0.10933918456578612,
-            "pattern_type__Crisis_Pivot": 0.38318730203236867,
-            "pattern_type__Decline": -0.6166708798468427,
-            "pattern_type__Endurance": -1.098219033819275,
-            "pattern_type__Exploration": 0.5303538329487231,
-            "pattern_type__Failed_Attempt": 0.2226625815124693,
-            "pattern_type__Hubris_Collapse": -0.8171992779168343,
-            "pattern_type__Managed_Decline": -0.37937549498876,
-            "pattern_type__Pivot_Success": 1.0858103203022238,
-            "pattern_type__Quiet_Fade": 2.430323276457724,
-            "pattern_type__Shock_Recovery": 0.044978961317202824,
-            "pattern_type__Slow_Decline": 0.4571438695419224,
-            "pattern_type__Stagnation": -0.8866715588452593,
-            "pattern_type__Steady_Growth": -0.24679805994171308
-          }
-        },
-        "outcome": {
-          "range": 1.0793421578395255,
-          "categories": {
-            "outcome__Failure": 0.023349160336175897,
-            "outcome__Mixed": -0.2092977526241734,
-            "outcome__PartialSuccess": -0.9771581779829107,
-            "outcome__Success": 0.10218397985661487
-          }
-        },
-        "scale": {
-          "range": 1.8241140081708018,
-          "categories": {
-            "scale__company": -0.06171758293203465,
-            "scale__country": -0.4281070321415115,
-            "scale__family": 1.3960069760292904,
-            "scale__individual": -0.058477115863353704,
-            "scale__other": 0.009581101589047207
-          }
-        }
-      },
-      "interpretation_label": "Axis 11: [action_type__分散・独立 / after_state__成長痛 / after_state__現状維持・延命] ⟷ [action_type__分散する・独立する / trigger_type__拡大・過剰 / pattern_type__Quiet_Fade]"
-    },
-    {
-      "dimension": 12,
-      "eigenvalue": 0.22711066918214393,
-      "explained_inertia_pct": 4.005707195061331,
-      "positive_pole": {
-        "categories": [
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄",
-          "action_type__逃げる・分散",
-          "action_type__分散する・独立する",
-          "after_state__現状維持・延命"
-        ],
-        "coordinates": [
-          7.18566800398104,
-          6.108217935631527,
-          2.0397113223008683,
-          1.9051580141586517,
-          1.3861837932997456
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "pattern_type__Failed_Attempt",
-          "action_type__逃げる・守る",
-          "after_state__消滅・破綻",
-          "action_type__撤退・縮小",
-          "before_state__V字回復・大成功"
-        ],
-        "coordinates": [
-          -2.1937438667750864,
-          -1.7764725311261318,
-          -1.6554562777333912,
-          -1.5187157552385955,
-          -1.4591571429812347
-        ]
-      },
-      "top_contributions": {
-        "before_state": {
-          "range": 7.567375078612761,
-          "categories": {
-            "before_state__V字回復・大成功": -1.4591571429812347,
-            "before_state__どん底・危機": 0.21495663150200525,
-            "before_state__停滞・閉塞": 0.0662247414909151,
-            "before_state__安定・停止": 0.3127412541017261,
-            "before_state__安定・平和": 0.0836846410584576,
-            "before_state__安定成長・成功": 0.6186033720900759,
-            "before_state__急成長・拡大": -0.36828128201063437,
-            "before_state__成長・拡大": -0.05446903388464938,
-            "before_state__成長痛": -0.6965176727832719,
-            "before_state__拡大・繁栄": -0.5407141017300382,
-            "before_state__混乱・カオス": 0.5302238588062732,
-            "before_state__混乱・衰退": -0.420468897263659,
-            "before_state__絶頂・慢心": 0.6280475580825478,
-            "before_state__縮小安定・生存": -0.043050313175049267,
-            "before_state__調和・繁栄": 6.108217935631527
-          }
-        },
-        "trigger_type": {
-          "range": 7.424800331010329,
-          "categories": {
-            "trigger_type__偶発・出会い": 0.5034544022100651,
-            "trigger_type__内部崩壊": 0.41318562336446935,
-            "trigger_type__内部矛盾・自壊": 0.027446921673255284,
-            "trigger_type__外部ショック": -0.04585239094570943,
-            "trigger_type__意図的決断": -0.2391323270292884,
-            "trigger_type__拡大・過剰": 1.0049836770506186,
-            "trigger_type__自然推移": -0.042518678127572984,
-            "trigger_type__自然推移・成熟": 7.18566800398104
-          }
-        },
-        "action_type": {
-          "range": 3.816183853427,
-          "categories": {
-            "action_type__交流・発表": 0.3915229963130759,
-            "action_type__分散する・独立する": 1.9051580141586517,
-            "action_type__分散・スピンオフ": 0.3062863992072524,
-            "action_type__分散・多角化": 0.06501133573785385,
-            "action_type__分散・探索": 0.2543397669459464,
-            "action_type__分散・独立": 0.5532023546564886,
-            "action_type__刷新・破壊": -0.635887076343917,
-            "action_type__守る・維持": 0.5654999931306929,
-            "action_type__対話・融合": 0.040336209401313695,
-            "action_type__拡大・攻め": -0.09575854085108775,
-            "action_type__捨てる・撤退": -1.0963274598190975,
-            "action_type__捨てる・転換": -0.3760820725877827,
-            "action_type__撤退・収縮": -0.8354918349271983,
-            "action_type__撤退・縮小": -1.5187157552385955,
-            "action_type__撤退・逃げる": -0.34650482257536924,
-            "action_type__攻める・挑戦": -0.15508845272414157,
-            "action_type__耐える・潜伏": 0.45614018427079284,
-            "action_type__輝く・表現": -0.1725542463735364,
-            "action_type__逃げる・分散": 2.0397113223008683,
-            "action_type__逃げる・守る": -1.7764725311261318,
-            "action_type__逃げる・放置": 1.3658963550738281,
-            "action_type__集中・拡大": -0.4683187261380672
-          }
-        },
-        "after_state": {
-          "range": 3.041640071033137,
-          "categories": {
-            "after_state__V字回復・大成功": 0.051041916238189655,
-            "after_state__どん底・危機": 0.6717839834520756,
-            "after_state__停滞・閉塞": -0.6481491115533764,
-            "after_state__分岐・様子見": -0.1280644996569019,
-            "after_state__喜び・交流": 0.36038982966752514,
-            "after_state__変質・新生": -0.31820863296932367,
-            "after_state__安定・停止": -0.4805043205901329,
-            "after_state__安定・平和": 0.5195179699013885,
-            "after_state__安定成長・成功": 0.359267537722314,
-            "after_state__崩壊・消滅": 0.5156499839344175,
-            "after_state__成長・拡大": -0.09534649683714444,
-            "after_state__成長痛": 0.8843615469384672,
-            "after_state__拡大・繁栄": -0.16784735700832124,
-            "after_state__持続成長・大成功": 0.11917787035512677,
-            "after_state__消滅・破綻": -1.6554562777333912,
-            "after_state__混乱・カオス": -0.8253802683239294,
-            "after_state__混乱・衰退": 0.05166498637032202,
-            "after_state__現状維持・延命": 1.3861837932997456,
-            "after_state__縮小安定・生存": -0.8248463348495515,
-            "after_state__迷走・混乱": 0.10913831327373288
-          }
-        },
-        "pattern_type": {
-          "range": 3.028422819114025,
-          "categories": {
-            "pattern_type__Breakthrough": 5.3731478759852405e-05,
-            "pattern_type__Crisis_Pivot": -0.0999241746508317,
-            "pattern_type__Decline": -0.41909886113766437,
-            "pattern_type__Endurance": 0.8346789523389386,
-            "pattern_type__Exploration": 0.2785627159805823,
-            "pattern_type__Failed_Attempt": -2.1937438667750864,
-            "pattern_type__Hubris_Collapse": 0.3574699421662607,
-            "pattern_type__Managed_Decline": -1.0589753908810522,
-            "pattern_type__Pivot_Success": -0.3234847149141118,
-            "pattern_type__Quiet_Fade": 0.11578088745678966,
-            "pattern_type__Shock_Recovery": 0.1346429959792731,
-            "pattern_type__Slow_Decline": 0.7481190831943564,
-            "pattern_type__Stagnation": -0.6179044356432376,
-            "pattern_type__Steady_Growth": 0.25066645799538334
-          }
-        },
-        "outcome": {
-          "range": 0.5083355667731557,
-          "categories": {
-            "outcome__Failure": -0.19373788658742547,
-            "outcome__Mixed": -0.14061959207215075,
-            "outcome__PartialSuccess": 0.3145976801857302,
-            "outcome__Success": 0.16824633868410332
-          }
-        },
-        "scale": {
-          "range": 1.6576620530675117,
-          "categories": {
-            "scale__company": 0.08679300122227311,
-            "scale__country": -0.1845113221587813,
-            "scale__family": 1.3102806693732318,
-            "scale__individual": -0.3473813836942798,
-            "scale__other": -0.0633183724183332
-          }
-        }
-      },
-      "interpretation_label": "Axis 12: [pattern_type__Failed_Attempt / action_type__逃げる・守る / after_state__消滅・破綻] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]"
-    },
-    {
-      "dimension": 13,
-      "eigenvalue": 0.22150372260977866,
-      "explained_inertia_pct": 3.9068136190433975,
-      "positive_pole": {
-        "categories": [
-          "action_type__分散する・独立する",
-          "trigger_type__拡大・過剰",
-          "action_type__撤退・逃げる",
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄"
-        ],
-        "coordinates": [
-          5.7217492872384,
-          5.298752771487486,
-          5.20093677281803,
-          3.467267053082298,
-          2.945901053097937
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "action_type__撤退・縮小",
-          "after_state__現状維持・延命",
-          "action_type__撤退・収縮",
-          "before_state__拡大・繁栄",
-          "action_type__集中・拡大"
-        ],
-        "coordinates": [
-          -3.0087349014648197,
-          -2.2823702180258003,
-          -1.9989114084473416,
-          -1.7043574778529125,
-          -1.6564278418792073
-        ]
-      },
-      "top_contributions": {
-        "before_state": {
-          "range": 4.6502585309508495,
-          "categories": {
-            "before_state__V字回復・大成功": 0.727209666379882,
-            "before_state__どん底・危機": 1.3110761724808093,
-            "before_state__停滞・閉塞": -0.40791192898434986,
-            "before_state__安定・停止": 0.86087860774746,
-            "before_state__安定・平和": -0.20768280890535604,
-            "before_state__安定成長・成功": 0.694098421992052,
-            "before_state__急成長・拡大": 0.9158516718083026,
-            "before_state__成長・拡大": -0.28899366703076484,
-            "before_state__成長痛": 0.207745600599899,
-            "before_state__拡大・繁栄": -1.7043574778529125,
-            "before_state__混乱・カオス": -0.3376471505485817,
-            "before_state__混乱・衰退": -0.5940495831319305,
-            "before_state__絶頂・慢心": -0.44804917841079134,
-            "before_state__縮小安定・生存": -0.6145062053996733,
-            "before_state__調和・繁栄": 2.945901053097937
-          }
-        },
-        "trigger_type": {
-          "range": 5.528387689293583,
-          "categories": {
-            "trigger_type__偶発・出会い": 0.4721097992058854,
-            "trigger_type__内部崩壊": 0.12662738379129485,
-            "trigger_type__内部矛盾・自壊": 0.16783352813690136,
-            "trigger_type__外部ショック": 0.07117877841928742,
-            "trigger_type__意図的決断": -0.22963491780609688,
-            "trigger_type__拡大・過剰": 5.298752771487486,
-            "trigger_type__自然推移": -0.12715462639118882,
-            "trigger_type__自然推移・成熟": 3.467267053082298
-          }
-        },
-        "action_type": {
-          "range": 8.730484188703219,
-          "categories": {
-            "action_type__交流・発表": 1.2489470047128772,
-            "action_type__分散する・独立する": 5.7217492872384,
-            "action_type__分散・スピンオフ": -1.5102521682655559,
-            "action_type__分散・多角化": 1.4657602686378244,
-            "action_type__分散・探索": 0.8014370871053021,
-            "action_type__分散・独立": 1.470809660148388,
-            "action_type__刷新・破壊": -0.1718965366804029,
-            "action_type__守る・維持": -0.3972735721963931,
-            "action_type__対話・融合": -0.3474264292375413,
-            "action_type__拡大・攻め": -0.2651312358882636,
-            "action_type__捨てる・撤退": 0.28236833523152544,
-            "action_type__捨てる・転換": -0.6364364649531445,
-            "action_type__撤退・収縮": -1.9989114084473416,
-            "action_type__撤退・縮小": -3.0087349014648197,
-            "action_type__撤退・逃げる": 5.20093677281803,
-            "action_type__攻める・挑戦": 0.22721335955681127,
-            "action_type__耐える・潜伏": 0.33027632560967146,
-            "action_type__輝く・表現": -0.22919953939803628,
-            "action_type__逃げる・分散": 2.0247572980772977,
-            "action_type__逃げる・守る": 1.0251798399230967,
-            "action_type__逃げる・放置": -0.05359902086544984,
-            "action_type__集中・拡大": -1.6564278418792073
-          }
-        },
-        "after_state": {
-          "range": 3.4859033653085034,
-          "categories": {
-            "after_state__V字回復・大成功": 1.1490047260460252,
-            "after_state__どん底・危機": -0.2452997410032863,
-            "after_state__停滞・閉塞": 0.20306064504901192,
-            "after_state__分岐・様子見": -0.26923360400560703,
-            "after_state__喜び・交流": 1.1704670476505203,
-            "after_state__変質・新生": -0.7158318250291711,
-            "after_state__安定・停止": -0.7617018685134402,
-            "after_state__安定・平和": -0.11860995331404896,
-            "after_state__安定成長・成功": -0.30215082945023924,
-            "after_state__崩壊・消滅": 0.223816955132479,
-            "after_state__成長・拡大": -0.24635544863739356,
-            "after_state__成長痛": -0.33888086178132903,
-            "after_state__拡大・繁栄": -0.6924838055682907,
-            "after_state__持続成長・大成功": 0.19562485126379603,
-            "after_state__消滅・破綻": 1.203533147282703,
-            "after_state__混乱・カオス": -0.9489413465577236,
-            "after_state__混乱・衰退": 0.12338286172605273,
-            "after_state__現状維持・延命": -2.2823702180258003,
-            "after_state__縮小安定・生存": 0.21811838868962521,
-            "after_state__迷走・混乱": -1.0148220142337998
-          }
-        },
-        "pattern_type": {
-          "range": 2.412666461998087,
-          "categories": {
-            "pattern_type__Breakthrough": 0.374436729879183,
-            "pattern_type__Crisis_Pivot": -0.3266768201735236,
-            "pattern_type__Decline": -1.1820543562886565,
-            "pattern_type__Endurance": -0.5456079470854526,
-            "pattern_type__Exploration": 0.7984109212327101,
-            "pattern_type__Failed_Attempt": 0.619702234072216,
-            "pattern_type__Hubris_Collapse": -0.3699343756066957,
-            "pattern_type__Managed_Decline": -0.7030124468811885,
-            "pattern_type__Pivot_Success": -0.9602727690472429,
-            "pattern_type__Quiet_Fade": 0.023530859043382014,
-            "pattern_type__Shock_Recovery": 1.2306121057094306,
-            "pattern_type__Slow_Decline": 0.09298590047484209,
-            "pattern_type__Stagnation": 0.3533645748765214,
-            "pattern_type__Steady_Growth": -0.05301417218313181
-          }
-        },
-        "outcome": {
-          "range": 0.9489740547486183,
-          "categories": {
-            "outcome__Failure": 0.13733390813871982,
-            "outcome__Mixed": -0.3984172736816524,
-            "outcome__PartialSuccess": -0.8116401466098985,
-            "outcome__Success": 0.08914273342991465
-          }
-        },
-        "scale": {
-          "range": 1.0885358730267012,
-          "categories": {
-            "scale__company": -0.05745133861350702,
-            "scale__country": -0.1741830844297462,
-            "scale__family": -0.33875221626817087,
-            "scale__individual": 0.5909293709891771,
-            "scale__other": -0.49760650203752416
-          }
-        }
-      },
-      "interpretation_label": "Axis 13: [action_type__撤退・縮小 / after_state__現状維持・延命 / action_type__撤退・収縮] ⟷ [action_type__分散する・独立する / trigger_type__拡大・過剰 / action_type__撤退・逃げる]"
-    },
-    {
-      "dimension": 14,
-      "eigenvalue": 0.2132225483764846,
-      "explained_inertia_pct": 3.7607528490702427,
-      "positive_pole": {
-        "categories": [
-          "action_type__分散する・独立する",
-          "trigger_type__拡大・過剰",
-          "action_type__撤退・逃げる",
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄"
-        ],
-        "coordinates": [
-          11.082426557766036,
-          10.996990280985402,
-          9.457973865649723,
-          5.694996163942929,
-          4.927408339797998
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "action_type__逃げる・守る",
-          "action_type__分散・独立",
-          "after_state__成長痛",
-          "after_state__現状維持・延命",
-          "before_state__V字回復・大成功"
-        ],
-        "coordinates": [
-          -2.7368322469587216,
-          -2.6592809583233814,
-          -2.2324540367286785,
-          -1.586624410502435,
-          -1.5646802430998874
-        ]
-      },
-      "top_contributions": {
-        "before_state": {
-          "range": 6.492088582897885,
-          "categories": {
-            "before_state__V字回復・大成功": -1.5646802430998874,
-            "before_state__どん底・危機": -0.37270225162536375,
-            "before_state__停滞・閉塞": 0.17109970826505985,
-            "before_state__安定・停止": 0.07894401854427166,
-            "before_state__安定・平和": 0.1722451225846138,
-            "before_state__安定成長・成功": 1.6760428289245448,
-            "before_state__急成長・拡大": -1.2121682567093897,
-            "before_state__成長・拡大": -0.02462634396733525,
-            "before_state__成長痛": -0.565144307609938,
-            "before_state__拡大・繁栄": -0.25819647168756454,
-            "before_state__混乱・カオス": 0.08346217621407283,
-            "before_state__混乱・衰退": -0.3931196827320984,
-            "before_state__絶頂・慢心": 0.6739866390202178,
-            "before_state__縮小安定・生存": -0.4061933678041686,
-            "before_state__調和・繁栄": 4.927408339797998
-          }
-        },
-        "trigger_type": {
-          "range": 11.192072393529722,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.18462778204832445,
-            "trigger_type__内部崩壊": -0.05363928898573042,
-            "trigger_type__内部矛盾・自壊": 0.5361765259017278,
-            "trigger_type__外部ショック": -0.19508211254432,
-            "trigger_type__意図的決断": 0.16017701345060628,
-            "trigger_type__拡大・過剰": 10.996990280985402,
-            "trigger_type__自然推移": 0.10096830044295002,
-            "trigger_type__自然推移・成熟": 5.694996163942929
-          }
-        },
-        "action_type": {
-          "range": 13.819258804724758,
-          "categories": {
-            "action_type__交流・発表": -0.03887223763156374,
-            "action_type__分散する・独立する": 11.082426557766036,
-            "action_type__分散・スピンオフ": -0.09713154460746841,
-            "action_type__分散・多角化": -0.23337761526307618,
-            "action_type__分散・探索": 0.08738602009759322,
-            "action_type__分散・独立": -2.6592809583233814,
-            "action_type__刷新・破壊": 0.7215219243532964,
-            "action_type__守る・維持": 0.10725848571785747,
-            "action_type__対話・融合": 0.20540251595273334,
-            "action_type__拡大・攻め": -0.04640206269256631,
-            "action_type__捨てる・撤退": -0.9090902337791308,
-            "action_type__捨てる・転換": 0.1589616828496435,
-            "action_type__撤退・収縮": 0.13811474323265135,
-            "action_type__撤退・縮小": 1.47993260409815,
-            "action_type__撤退・逃げる": 9.457973865649723,
-            "action_type__攻める・挑戦": -0.10250168164430049,
-            "action_type__耐える・潜伏": -0.32366457013714084,
-            "action_type__輝く・表現": 0.11247017579565678,
-            "action_type__逃げる・分散": 1.3410284499598606,
-            "action_type__逃げる・守る": -2.7368322469587216,
-            "action_type__逃げる・放置": 0.27048988482389186,
-            "action_type__集中・拡大": -0.18165419498623214
-          }
-        },
-        "after_state": {
-          "range": 3.479980731986112,
-          "categories": {
-            "after_state__V字回復・大成功": -0.2871058547063821,
-            "after_state__どん底・危機": 0.7973518237235816,
-            "after_state__停滞・閉塞": 1.1748792019630496,
-            "after_state__分岐・様子見": -0.4678398187708054,
-            "after_state__喜び・交流": -0.021745434520623986,
-            "after_state__変質・新生": 0.1629974316336441,
-            "after_state__安定・停止": -0.819203426674118,
-            "after_state__安定・平和": 0.20386222261002224,
-            "after_state__安定成長・成功": 0.28936687144046447,
-            "after_state__崩壊・消滅": -0.45104307115641923,
-            "after_state__成長・拡大": -0.027222131799808005,
-            "after_state__成長痛": -2.2324540367286785,
-            "after_state__拡大・繁栄": -0.05619531746629999,
-            "after_state__持続成長・大成功": -0.1549691158768922,
-            "after_state__消滅・破綻": -1.0867502290874858,
-            "after_state__混乱・カオス": 1.2475266952574338,
-            "after_state__混乱・衰退": 0.18297256806232268,
-            "after_state__現状維持・延命": -1.586624410502435,
-            "after_state__縮小安定・生存": -0.4198119924670451,
-            "after_state__迷走・混乱": -0.5018072176657985
-          }
-        },
-        "pattern_type": {
-          "range": 2.850529845084362,
-          "categories": {
-            "pattern_type__Breakthrough": -0.07569540301024048,
-            "pattern_type__Crisis_Pivot": 0.4049479223636168,
-            "pattern_type__Decline": 0.4970811316450012,
-            "pattern_type__Endurance": -0.6600242380776273,
-            "pattern_type__Exploration": 0.12439807483751067,
-            "pattern_type__Failed_Attempt": -0.1703292451035034,
-            "pattern_type__Hubris_Collapse": 0.7506745417192203,
-            "pattern_type__Managed_Decline": -1.3048367092240079,
-            "pattern_type__Pivot_Success": 0.3680169839782704,
-            "pattern_type__Quiet_Fade": -0.23319742135046118,
-            "pattern_type__Shock_Recovery": -0.10434855930921368,
-            "pattern_type__Slow_Decline": -0.641914388110589,
-            "pattern_type__Stagnation": 1.545693135860354,
-            "pattern_type__Steady_Growth": -0.1592049640712138
-          }
-        },
-        "outcome": {
-          "range": 1.2000715906780124,
-          "categories": {
-            "outcome__Failure": 0.2470120625546111,
-            "outcome__Mixed": -0.3114502030204671,
-            "outcome__PartialSuccess": -0.9530595281234013,
-            "outcome__Success": -0.010341461112100506
-          }
-        },
-        "scale": {
-          "range": 1.2469889126213372,
-          "categories": {
-            "scale__company": -0.2570880566410611,
-            "scale__country": 0.6350262054504607,
-            "scale__family": -0.6119627071708765,
-            "scale__individual": 0.13265242808915972,
-            "scale__other": 0.2745754234391793
-          }
-        }
-      },
-      "interpretation_label": "Axis 14: [action_type__逃げる・守る / action_type__分散・独立 / after_state__成長痛] ⟷ [action_type__分散する・独立する / trigger_type__拡大・過剰 / action_type__撤退・逃げる]"
-    },
-    {
-      "dimension": 15,
-      "eigenvalue": 0.21170755720339227,
-      "explained_inertia_pct": 3.7340319069658303,
-      "positive_pole": {
-        "categories": [
-          "trigger_type__拡大・過剰",
-          "action_type__分散する・独立する",
-          "action_type__撤退・逃げる",
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄"
-        ],
-        "coordinates": [
-          11.364238046341915,
-          10.728689870762915,
-          9.544908336042315,
-          8.70674656707397,
-          7.2576359306899505
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "before_state__急成長・拡大",
-          "action_type__逃げる・守る",
-          "after_state__安定・停止",
-          "trigger_type__内部矛盾・自壊",
-          "pattern_type__Stagnation"
-        ],
-        "coordinates": [
-          -7.5107826836070695,
-          -5.770139962030778,
-          -1.8600195909996904,
-          -1.5165332218204006,
-          -1.2446040241685217
-        ]
-      },
-      "top_contributions": {
-        "before_state": {
-          "range": 14.768418614297019,
-          "categories": {
-            "before_state__V字回復・大成功": 1.2793538309659993,
-            "before_state__どん底・危機": -0.17180338077080778,
-            "before_state__停滞・閉塞": -0.1746048837453907,
-            "before_state__安定・停止": -0.17414331645794062,
-            "before_state__安定・平和": -0.23314590095888754,
-            "before_state__安定成長・成功": 0.9998688574439342,
-            "before_state__急成長・拡大": -7.5107826836070695,
-            "before_state__成長・拡大": -0.30575225346541857,
-            "before_state__成長痛": 0.6346567162187866,
-            "before_state__拡大・繁栄": 0.050813274679301364,
-            "before_state__混乱・カオス": 0.008362806319014338,
-            "before_state__混乱・衰退": -0.4761604735921056,
-            "before_state__絶頂・慢心": -0.3191176142058114,
-            "before_state__縮小安定・生存": 0.46573244008525105,
-            "before_state__調和・繁栄": 7.2576359306899505
-          }
-        },
-        "trigger_type": {
-          "range": 12.880771268162317,
-          "categories": {
-            "trigger_type__偶発・出会い": -0.48503745730314907,
-            "trigger_type__内部崩壊": -0.21132620562653745,
-            "trigger_type__内部矛盾・自壊": -1.5165332218204006,
-            "trigger_type__外部ショック": -0.01458043399464964,
-            "trigger_type__意図的決断": 0.12481476911653483,
-            "trigger_type__拡大・過剰": 11.364238046341915,
-            "trigger_type__自然推移": 0.6770733692948623,
-            "trigger_type__自然推移・成熟": 8.70674656707397
-          }
-        },
-        "action_type": {
-          "range": 16.498829832793692,
-          "categories": {
-            "action_type__交流・発表": 0.3614254712235167,
-            "action_type__分散する・独立する": 10.728689870762915,
-            "action_type__分散・スピンオフ": 0.08298135662286488,
-            "action_type__分散・多角化": 0.4660578544986998,
-            "action_type__分散・探索": -0.680961008253092,
-            "action_type__分散・独立": 1.3717090824115732,
-            "action_type__刷新・破壊": -0.17486861728178568,
-            "action_type__守る・維持": -0.36279862971524784,
-            "action_type__対話・融合": 0.08256146847140264,
-            "action_type__拡大・攻め": -0.31458350023298387,
-            "action_type__捨てる・撤退": 0.6573730094935876,
-            "action_type__捨てる・転換": -1.1429874008088654,
-            "action_type__撤退・収縮": -1.23350563459173,
-            "action_type__撤退・縮小": 6.971164065610942,
-            "action_type__撤退・逃げる": 9.544908336042315,
-            "action_type__攻める・挑戦": -0.005516022766638932,
-            "action_type__耐える・潜伏": 0.35833569682539645,
-            "action_type__輝く・表現": 0.29838839062962524,
-            "action_type__逃げる・分散": -0.5698418791686716,
-            "action_type__逃げる・守る": -5.770139962030778,
-            "action_type__逃げる・放置": -0.4865461403050204,
-            "action_type__集中・拡大": 0.7223323420882402
-          }
-        },
-        "after_state": {
-          "range": 3.6715248606370317,
-          "categories": {
-            "after_state__V字回復・大成功": -0.14528862001043152,
-            "after_state__どん底・危機": -0.3718553965937038,
-            "after_state__停滞・閉塞": -0.747557684934269,
-            "after_state__分岐・様子見": -0.9101039975926442,
-            "after_state__喜び・交流": 0.31190278421231177,
-            "after_state__変質・新生": 0.023925929968773362,
-            "after_state__安定・停止": -1.8600195909996904,
-            "after_state__安定・平和": 0.931941522944241,
-            "after_state__安定成長・成功": 0.0999241972031535,
-            "after_state__崩壊・消滅": 0.07403499301118965,
-            "after_state__成長・拡大": -0.3088705390333122,
-            "after_state__成長痛": 1.0689360607040082,
-            "after_state__拡大・繁栄": 0.1738172983066507,
-            "after_state__持続成長・大成功": -0.24764226606722928,
-            "after_state__消滅・破綻": 1.811505269637341,
-            "after_state__混乱・カオス": 0.22087196355401617,
-            "after_state__混乱・衰退": 0.2964277057713318,
-            "after_state__現状維持・延命": 1.0881312135879095,
-            "after_state__縮小安定・生存": 0.21632685141773783,
-            "after_state__迷走・混乱": 0.16574587712794864
-          }
-        },
-        "pattern_type": {
-          "range": 4.047302026449097,
-          "categories": {
-            "pattern_type__Breakthrough": -0.15331047917740157,
-            "pattern_type__Crisis_Pivot": 0.04874010292566606,
-            "pattern_type__Decline": 2.802698002280576,
-            "pattern_type__Endurance": 0.559229463964803,
-            "pattern_type__Exploration": -0.7582330932120719,
-            "pattern_type__Failed_Attempt": 0.7486852155450696,
-            "pattern_type__Hubris_Collapse": -0.2313155073275189,
-            "pattern_type__Managed_Decline": 0.1604516204653057,
-            "pattern_type__Pivot_Success": 0.3005359732931949,
-            "pattern_type__Quiet_Fade": -0.16030485831855013,
-            "pattern_type__Shock_Recovery": -0.32733160418289525,
-            "pattern_type__Slow_Decline": -0.016715329105651374,
-            "pattern_type__Stagnation": -1.2446040241685217,
-            "pattern_type__Steady_Growth": -0.08486284156162023
-          }
-        },
-        "outcome": {
-          "range": 1.0096036570932423,
-          "categories": {
-            "outcome__Failure": -0.020235326178031515,
-            "outcome__Mixed": -0.039799034756662736,
-            "outcome__PartialSuccess": 0.9698046223365796,
-            "outcome__Success": -0.011914208324612744
-          }
-        },
-        "scale": {
-          "range": 0.6152116771611345,
-          "categories": {
-            "scale__company": 0.14525180830502896,
-            "scale__country": -0.3920297619072873,
-            "scale__family": -0.12312627838545051,
-            "scale__individual": -0.20056973204909992,
-            "scale__other": 0.2231819152538472
-          }
-        }
-      },
-      "interpretation_label": "Axis 15: [before_state__急成長・拡大 / action_type__逃げる・守る / after_state__安定・停止] ⟷ [trigger_type__拡大・過剰 / action_type__分散する・独立する / action_type__撤退・逃げる]"
-    },
-    {
-      "dimension": 16,
-      "eigenvalue": 0.19117124961442514,
-      "explained_inertia_pct": 3.371818914659672,
-      "positive_pole": {
-        "categories": [
-          "action_type__撤退・逃げる",
-          "trigger_type__拡大・過剰",
-          "action_type__分散する・独立する",
-          "pattern_type__Managed_Decline",
-          "action_type__逃げる・守る"
-        ],
-        "coordinates": [
-          17.36384394275663,
-          15.270046771219757,
-          9.089689874963902,
-          1.9610357202124384,
-          1.773675893288676
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄",
-          "action_type__分散・多角化",
-          "action_type__逃げる・分散",
-          "action_type__撤退・収縮"
-        ],
-        "coordinates": [
-          -3.997635290999644,
-          -3.2997558578431656,
-          -2.82406122056212,
-          -2.055701921391696,
-          -1.538998494885826
-        ]
-      },
-      "top_contributions": {
-        "before_state": {
-          "range": 3.742187434087554,
-          "categories": {
-            "before_state__V字回復・大成功": -1.118534127175074,
-            "before_state__どん底・危機": -0.0246778166721492,
-            "before_state__停滞・閉塞": 0.4424315762443882,
-            "before_state__安定・停止": -0.15477266488132643,
-            "before_state__安定・平和": 0.10148892112906649,
-            "before_state__安定成長・成功": -0.8189632919431197,
-            "before_state__急成長・拡大": -1.3598320604991445,
-            "before_state__成長・拡大": -0.14220818687101094,
-            "before_state__成長痛": -0.3852650936868853,
-            "before_state__拡大・繁栄": 0.20088534521375137,
-            "before_state__混乱・カオス": -0.3151355877862184,
-            "before_state__混乱・衰退": 0.356010358219752,
-            "before_state__絶頂・慢心": 0.04901365207476814,
-            "before_state__縮小安定・生存": -0.6084059742997797,
-            "before_state__調和・繁栄": -3.2997558578431656
-          }
-        },
-        "trigger_type": {
-          "range": 19.2676820622194,
-          "categories": {
-            "trigger_type__偶発・出会い": 0.3915292781074316,
-            "trigger_type__内部崩壊": 0.11854874513801687,
-            "trigger_type__内部矛盾・自壊": -0.606775728972684,
-            "trigger_type__外部ショック": -0.035900307667554074,
-            "trigger_type__意図的決断": -0.10485818545021146,
-            "trigger_type__拡大・過剰": 15.270046771219757,
-            "trigger_type__自然推移": 0.16388374919960072,
-            "trigger_type__自然推移・成熟": -3.997635290999644
-          }
-        },
-        "action_type": {
-          "range": 20.187905163318753,
-          "categories": {
-            "action_type__交流・発表": 0.7385715453683551,
-            "action_type__分散する・独立する": 9.089689874963902,
-            "action_type__分散・スピンオフ": 1.3593078240921395,
-            "action_type__分散・多角化": -2.82406122056212,
-            "action_type__分散・探索": -0.28012033114612994,
-            "action_type__分散・独立": 0.77372793250298,
-            "action_type__刷新・破壊": 0.026255468499583413,
-            "action_type__守る・維持": 0.20983489424590854,
-            "action_type__対話・融合": -0.38264192943725606,
-            "action_type__拡大・攻め": -0.23186580128370635,
-            "action_type__捨てる・撤退": 0.019846503893875506,
-            "action_type__捨てる・転換": -0.23753882958554434,
-            "action_type__撤退・収縮": -1.538998494885826,
-            "action_type__撤退・縮小": 1.4144828707313222,
-            "action_type__撤退・逃げる": 17.36384394275663,
-            "action_type__攻める・挑戦": 0.007909890741786494,
-            "action_type__耐える・潜伏": -0.07282236852236867,
-            "action_type__輝く・表現": -0.0579808197676523,
-            "action_type__逃げる・分散": -2.055701921391696,
-            "action_type__逃げる・守る": 1.773675893288676,
-            "action_type__逃げる・放置": 0.42610083539792226,
-            "action_type__集中・拡大": -0.017539307965661357
-          }
-        },
-        "after_state": {
-          "range": 2.324637086016369,
-          "categories": {
-            "after_state__V字回復・大成功": -0.07556575900656504,
-            "after_state__どん底・危機": 0.10135841774938002,
-            "after_state__停滞・閉塞": -0.4229400672236107,
-            "after_state__分岐・様子見": 1.1151021446313891,
-            "after_state__喜び・交流": 0.6505390908580483,
-            "after_state__変質・新生": 0.3323730988066471,
-            "after_state__安定・停止": 0.5019232160552588,
-            "after_state__安定・平和": -1.2095349413849803,
-            "after_state__安定成長・成功": -0.1567436162744615,
-            "after_state__崩壊・消滅": -0.05177963424986847,
-            "after_state__成長・拡大": -0.24567775354592936,
-            "after_state__成長痛": 0.653400221571597,
-            "after_state__拡大・繁栄": -0.2515527140562534,
-            "after_state__持続成長・大成功": 0.3820916430100301,
-            "after_state__消滅・破綻": 1.0113188371413577,
-            "after_state__混乱・カオス": -0.9976312743706469,
-            "after_state__混乱・衰退": -0.13889867585560145,
-            "after_state__現状維持・延命": -0.2649922274369038,
-            "after_state__縮小安定・生存": 0.6934412443031664,
-            "after_state__迷走・混乱": 0.649731311744481
-          }
-        },
-        "pattern_type": {
-          "range": 2.805010803217332,
-          "categories": {
-            "pattern_type__Breakthrough": 0.3809598211926844,
-            "pattern_type__Crisis_Pivot": -0.7476378181639058,
-            "pattern_type__Decline": 0.4218317254178938,
-            "pattern_type__Endurance": -0.4968775882037598,
-            "pattern_type__Exploration": -0.19197865112004736,
-            "pattern_type__Failed_Attempt": -0.8439750830048934,
-            "pattern_type__Hubris_Collapse": -0.18361864920512208,
-            "pattern_type__Managed_Decline": 1.9610357202124384,
-            "pattern_type__Pivot_Success": 0.13637345529570058,
-            "pattern_type__Quiet_Fade": -0.17050451017174864,
-            "pattern_type__Shock_Recovery": -0.16161553481632368,
-            "pattern_type__Slow_Decline": 0.3644879154219345,
-            "pattern_type__Stagnation": 0.3076649148164158,
-            "pattern_type__Steady_Growth": 0.17142133350809485
-          }
-        },
-        "outcome": {
-          "range": 0.47001064385030356,
-          "categories": {
-            "outcome__Failure": -0.10740471824843761,
-            "outcome__Mixed": 0.36260592560186594,
-            "outcome__PartialSuccess": -0.1009874816681924,
-            "outcome__Success": -0.05812521096114874
-          }
-        },
-        "scale": {
-          "range": 0.41286214269314836,
-          "categories": {
-            "scale__company": 0.08128992170291413,
-            "scale__country": 0.16707415452200136,
-            "scale__family": 0.19964836748870637,
-            "scale__individual": -0.11630473045506341,
-            "scale__other": -0.21321377520444199
-          }
-        }
-      },
-      "interpretation_label": "Axis 16: [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__分散・多角化] ⟷ [action_type__撤退・逃げる / trigger_type__拡大・過剰 / action_type__分散する・独立する]"
+      "interpretation_label": "Dim 10: [_自然推移・成熟 | _調和・繁栄 | _分岐・様子見] <-> [_撤退・縮小 | _Decline | _逃げる・守る]"
     }
   ],
   "interpretation_labels": [
-    "Axis 1: [action_type__逃げる・放置 / pattern_type__Quiet_Fade / after_state__崩壊・消滅] ⟷ [action_type__分散・探索 / before_state__拡大・繁栄 / action_type__撤退・縮小]",
-    "Axis 2: [after_state__持続成長・大成功 / pattern_type__Steady_Growth / trigger_type__偶発・出会い] ⟷ [action_type__撤退・縮小 / pattern_type__Decline / action_type__逃げる・放置]",
-    "Axis 3: [before_state__成長・拡大 / action_type__拡大・攻め / after_state__成長・拡大] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]",
-    "Axis 4: [pattern_type__Exploration / action_type__分散・探索 / after_state__混乱・衰退] ⟷ [before_state__成長・拡大 / action_type__拡大・攻め / after_state__成長・拡大]",
-    "Axis 5: [action_type__交流・発表 / after_state__喜び・交流 / action_type__輝く・表現] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]",
-    "Axis 6: [after_state__分岐・様子見 / action_type__分散する・独立する / before_state__成長・拡大] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]",
-    "Axis 7: [trigger_type__自然推移・成熟 / action_type__撤退・縮小 / before_state__調和・繁栄] ⟷ [action_type__集中・拡大 / action_type__分散する・独立する / trigger_type__拡大・過剰]",
-    "Axis 8: [trigger_type__拡大・過剰 / action_type__分散する・独立する / action_type__撤退・逃げる] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]",
-    "Axis 9: [trigger_type__拡大・過剰 / action_type__分散する・独立する / action_type__撤退・逃げる] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]",
-    "Axis 10: [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / after_state__分岐・様子見] ⟷ [action_type__撤退・縮小 / pattern_type__Decline / action_type__逃げる・守る]",
-    "Axis 11: [action_type__分散・独立 / after_state__成長痛 / after_state__現状維持・延命] ⟷ [action_type__分散する・独立する / trigger_type__拡大・過剰 / pattern_type__Quiet_Fade]",
-    "Axis 12: [pattern_type__Failed_Attempt / action_type__逃げる・守る / after_state__消滅・破綻] ⟷ [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__逃げる・分散]",
-    "Axis 13: [action_type__撤退・縮小 / after_state__現状維持・延命 / action_type__撤退・収縮] ⟷ [action_type__分散する・独立する / trigger_type__拡大・過剰 / action_type__撤退・逃げる]",
-    "Axis 14: [action_type__逃げる・守る / action_type__分散・独立 / after_state__成長痛] ⟷ [action_type__分散する・独立する / trigger_type__拡大・過剰 / action_type__撤退・逃げる]",
-    "Axis 15: [before_state__急成長・拡大 / action_type__逃げる・守る / after_state__安定・停止] ⟷ [trigger_type__拡大・過剰 / action_type__分散する・独立する / action_type__撤退・逃げる]",
-    "Axis 16: [trigger_type__自然推移・成熟 / before_state__調和・繁栄 / action_type__分散・多角化] ⟷ [action_type__撤退・逃げる / trigger_type__拡大・過剰 / action_type__分散する・独立する]"
+    "Dim 1: [_逃げる・放置 | _Quiet_Fade | _崩壊・消滅] <-> [_分散・探索 | _拡大・繁栄 | _撤退・縮小]",
+    "Dim 2: [_持続成長・大成功 | _Steady_Growth | _偶発・出会い] <-> [_撤退・縮小 | _Decline | _逃げる・放置]",
+    "Dim 3: [_成長・拡大 | _拡大・攻め | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
+    "Dim 4: [_Exploration | _分散・探索 | _混乱・衰退] <-> [_成長・拡大 | _拡大・攻め | _成長・拡大]",
+    "Dim 5: [_交流・発表 | _喜び・交流 | _輝く・表現] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
+    "Dim 6: [_分岐・様子見 | _分散する・独立する | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
+    "Dim 7: [_自然推移・成熟 | _撤退・縮小 | _調和・繁栄] <-> [_集中・拡大 | _分散する・独立する | _拡大・過剰]",
+    "Dim 8: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
+    "Dim 9: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
+    "Dim 10: [_自然推移・成熟 | _調和・繁栄 | _分岐・様子見] <-> [_撤退・縮小 | _Decline | _逃げる・守る]"
   ]
 }
