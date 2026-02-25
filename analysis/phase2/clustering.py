@@ -40,6 +40,37 @@ import prince
 
 warnings.filterwarnings('ignore')
 
+
+class NumpyEncoder(json.JSONEncoder):
+    """NumPy型をJSON互換型に変換するエンコーダ。"""
+    def default(self, obj):
+        if isinstance(obj, (np.integer,)):
+            return int(obj)
+        if isinstance(obj, (np.floating,)):
+            return float(obj)
+        if isinstance(obj, (np.bool_,)):
+            return bool(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super().default(obj)
+
+
+def convert_numpy_types(obj):
+    """再帰的にNumPy型をPython native型に変換（dictキーを含む）。"""
+    if isinstance(obj, dict):
+        return {convert_numpy_types(k): convert_numpy_types(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [convert_numpy_types(item) for item in obj]
+    elif isinstance(obj, (np.integer,)):
+        return int(obj)
+    elif isinstance(obj, (np.floating,)):
+        return float(obj)
+    elif isinstance(obj, (np.bool_,)):
+        return bool(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    return obj
+
 # --- パス設定 ---
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
@@ -903,9 +934,12 @@ def main():
         'cluster_sizes': {int(k): int(v) for k, v in Counter(final_labels).items()},
     }
 
+    # NumPy型をPython native型に再帰的変換（キーを含む）
+    output = convert_numpy_types(output)
+
     out_path = os.path.join(OUTPUT_DIR, 'cluster_results.json')
     with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=False, indent=2, cls=NumpyEncoder)
     print(f"保存: {out_path}")
 
     print("\n" + "=" * 70)
