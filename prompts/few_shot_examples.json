@@ -1,250 +1,344 @@
 [
   {
-    "input": "15歳の学生です。気候変動について授業で学び、強い危機感を持ちました。安定した生活を送っていましたが、自分が行動しなければ何も変わらないと決意し、議会前で1人のストライキを始めました。周囲の大人は「子どもが何を」と冷ややかですが、SNSで共感の声が広がりつつあります。このまま続けるべきでしょうか。",
-    "output": {
+    "input": "航空会社を経営していますが、放漫経営と高コスト体質がたたり、会社更生法を申請する事態に追い込まれました。戦後最大の事業会社破綻です。新しく会長に就任した方が「全社員の意識改革」と「部門別の採算管理」を徹底する方針を打ち出しています。社員の意識を根本から変えることで再建は可能でしょうか。",
+    "expected_output": {
       "current_state": {
-        "primary": "安定・平和",
+        "primary": "どん底・危機",
+        "confidence": 0.95,
+        "reasoning": "会社更生法申請、戦後最大の破綻という存続レベルの危機"
+      },
+      "energy_direction": {
+        "primary": "内向・収束",
         "confidence": 0.85,
-        "reasoning": "安定した学生生活という基盤があり、そこから自らの意志で動き出した段階"
-      },
-      "intended_action": {
-        "primary": "攻める・挑戦",
-        "confidence": 0.90,
-        "reasoning": "1人でストライキを始めるという積極的な行動に出ている"
-      },
-      "trigger_nature": {
-        "primary": "意図的決断",
-        "confidence": 0.85,
-        "reasoning": "外部の強制ではなく、授業での学びを契機に自ら決断している"
-      },
-      "phase_stage": {
-        "primary": "出現・成長",
-        "confidence": 0.80,
-        "reasoning": "行動を開始し、共感が広がり始めている段階。まだ基盤を固めている時期"
-      },
-      "domain": "individual",
-      "energy_direction": "expanding",
-      "movement_tendency": "active"
-    },
-    "source_case_id": "CAN_074FE273",
-    "hexagram_actual": 13
-  },
-  {
-    "input": "AI半導体メーカーを経営しています。GPU技術に長年投資してきましたが、ここに来てAIブームで需要が爆発的に伸びています。売上は前年比2倍以上、利益は7倍近く。ただ、急成長に組織が追いつかず、人材確保や供給体制の整備に追われています。競合も急速に参入してきており、このリードをどう維持するか悩んでいます。",
-    "output": {
-      "current_state": {
-        "primary": "成長痛",
-        "confidence": 0.90,
-        "reasoning": "急成長に組織が追いつかず、供給体制や人材確保に追われている典型的な成長痛"
-      },
-      "intended_action": {
-        "primary": "攻める・挑戦",
-        "confidence": 0.85,
-        "reasoning": "リードを維持・拡大するための積極的な投資と拡大を志向"
-      },
-      "trigger_nature": {
-        "primary": "外部ショック",
-        "confidence": 0.75,
-        "reasoning": "AIブームという外部環境の急変が需要爆発のトリガー"
-      },
-      "phase_stage": {
-        "primary": "最盛・実行",
-        "confidence": 0.80,
-        "reasoning": "売上・利益とも過去最高水準で、最も力を発揮できる位置にいる"
-      },
-      "domain": "company",
-      "energy_direction": "expanding",
-      "movement_tendency": "active"
-    },
-    "source_case_id": "CAN_D9649C01",
-    "hexagram_actual": 13
-  },
-  {
-    "input": "大手ソフトウェア企業のCEOに就任しました。前任者の時代にモバイルとクラウドで完全に出遅れ、主力製品への依存から抜け出せず、社内文化も縦割りで硬直化しています。成長が止まって数年。「クラウドファースト」を掲げて組織文化から変えたいのですが、既存の巨大な収益基盤を壊すリスクもあり、どう進めるべきか。",
-    "output": {
-      "current_state": {
-        "primary": "停滞・閉塞",
-        "confidence": 0.90,
-        "reasoning": "成長が止まり、主力製品への依存と硬直化した組織文化で打開策が見えない状態"
+        "reasoning": "意識改革と内部の採算管理にエネルギーが向かっている"
       },
       "intended_action": {
         "primary": "刷新・破壊",
-        "confidence": 0.85,
-        "reasoning": "クラウドファーストへの戦略転換と組織文化の刷新を志向"
-      },
-      "trigger_nature": {
-        "primary": "意図的決断",
         "confidence": 0.90,
-        "reasoning": "CEO交代という組織内の意図的な決断がトリガー"
-      },
-      "phase_stage": {
-        "primary": "危機・転換",
-        "confidence": 0.80,
-        "reasoning": "停滞から脱するための転換点にいる。内から外へ出る境目"
-      },
-      "domain": "company",
-      "energy_direction": "expanding",
-      "movement_tendency": "active"
-    },
-    "source_case_id": "CAN_AB282852",
-    "hexagram_actual": 13
-  },
-  {
-    "input": "かつて携帯電話市場を世界で支配していた通信機器メーカーです。耐久性と使いやすさで圧倒的なシェアを誇っていましたが、タッチスクリーンやアプリ中心のスマートフォンの台頭を「一時的なトレンド」と軽視しました。自社OSに固執し、次々と市場シェアを奪われています。今さら別のOSに乗り換えるべきか、自社技術を信じて守るべきか。",
-    "output": {
-      "current_state": {
-        "primary": "絶頂・慢心",
-        "confidence": 0.85,
-        "reasoning": "かつての支配的地位からの慢心があり、新技術を軽視している状態"
-      },
-      "intended_action": {
-        "primary": "守る・維持",
-        "confidence": 0.80,
-        "reasoning": "自社OSへの固執、現状の技術基盤を維持しようとしている"
+        "reasoning": "全社員の意識改革と採算管理の徹底で、組織文化を根本から変えようとしている"
       },
       "trigger_nature": {
-        "primary": "外部ショック",
-        "confidence": 0.85,
-        "reasoning": "スマートフォンという外部からの技術革新が市場を根本から変えた"
-      },
-      "phase_stage": {
-        "primary": "過剰・衰退",
-        "confidence": 0.75,
-        "reasoning": "頂点を過ぎ、シェアを奪われ続けている。次のサイクルへの転換が迫られている"
-      },
-      "domain": "company",
-      "energy_direction": "contracting",
-      "movement_tendency": "still"
-    },
-    "source_case_id": "CAN_01BCEF97",
-    "hexagram_actual": 27
-  },
-  {
-    "input": "大統領として政権を運営していますが、野党との対立が激化し、支持率も低迷。政治的な混乱の中で打開策を見出せず、国内世論も分裂しています。憲法上の非常手段を行使して局面を一気に打開すべきか、それとも対話路線に戻るべきか。側近は強硬策を進言していますが、国際社会の反応も気になります。",
-    "output": {
-      "current_state": {
-        "primary": "混乱・カオス",
-        "confidence": 0.90,
-        "reasoning": "政治的対立の激化、支持率低迷、世論の分裂という多重の混乱状態"
-      },
-      "intended_action": {
-        "primary": "攻める・挑戦",
-        "confidence": 0.75,
-        "secondary": "刷新・破壊",
-        "secondary_confidence": 0.60,
-        "reasoning": "非常手段による局面打開を検討しており、強硬的なアプローチを志向"
-      },
-      "trigger_nature": {
-        "primary": "意図的決断",
+        "primary": "内発的衝動",
         "confidence": 0.70,
-        "secondary": "内部崩壊",
+        "secondary": "突発的外圧",
         "secondary_confidence": 0.55,
-        "reasoning": "政権側の意図的判断だが、背景には政治構造の内部的行き詰まりがある"
+        "reasoning": "会長就任による意図的な方針転換がトリガーだが、破綻という外圧も背景にある"
       },
       "phase_stage": {
-        "primary": "危機・転換",
-        "confidence": 0.80,
-        "reasoning": "打開策を模索する転換点にいる。判断を誤れば致命的な段階"
-      },
-      "domain": "country",
-      "energy_direction": "contracting",
-      "movement_tendency": "active"
-    },
-    "source_case_id": "CAN_2D5519AB",
-    "hexagram_actual": 13
-  },
-  {
-    "input": "幼少期に父が事業に失敗して一家が没落し、小学校も中退して丁稚奉公に出されました。電気の時代が来ると直感し、電力会社で働きながら技術を学び、22歳で独立して小さな工房を始めました。最初の製品は全く売れず、資金が底をつきかけています。それでもこの道が正しいと信じていますが、どうすれば生き延びられるでしょうか。",
-    "output": {
-      "current_state": {
-        "primary": "どん底・危機",
-        "confidence": 0.90,
-        "reasoning": "一家の没落、中退、資金枯渇という多重の危機的状況"
-      },
-      "intended_action": {
-        "primary": "攻める・挑戦",
+        "primary": "始まり",
         "confidence": 0.85,
-        "reasoning": "独立して事業を始め、逆境の中でも前に進もうとしている"
+        "reasoning": "方針を打ち出したばかりで、改革はまだ始まったばかりの段階"
       },
-      "trigger_nature": {
-        "primary": "意図的決断",
-        "confidence": 0.80,
-        "reasoning": "父の失敗は外部要因だが、独立の決断は本人の強い意志"
-      },
-      "phase_stage": {
-        "primary": "潜伏・発芽",
-        "confidence": 0.85,
-        "reasoning": "事業を始めたばかりで、まだ芽が出ていない。力を蓄えている段階"
-      },
-      "domain": "individual",
-      "energy_direction": "expanding",
-      "movement_tendency": "active"
+      "domain": "企業"
     },
-    "source_case_id": "CAN_31274DDE",
-    "hexagram_actual": 13
+    "source_case": {
+      "canonical_id": "CAN_02E294B0",
+      "target_name": "日本航空（JAL）",
+      "before_state": "どん底・危機",
+      "action_type": "刷新・破壊",
+      "trigger_type": "内部崩壊",
+      "before_hex": "坎",
+      "yao": 4,
+      "hexagram_number": 21
+    }
   },
   {
     "input": "京都の老舗カードゲームメーカーですが、時代の変化で既存事業が縮小し続けています。タクシーやホテルなど異業種に手を出しましたが全て失敗。しかし最近、電子技術を使った娯楽機器に可能性を感じています。ゲームの電子化という全く新しい分野に社運を賭けるべきか、それとも既存の堅実なカード事業を守るべきか。",
-    "output": {
+    "expected_output": {
       "current_state": {
         "primary": "停滞・閉塞",
         "confidence": 0.85,
         "reasoning": "既存事業の縮小、多角化の失敗で打開策が見つからない状態"
       },
+      "energy_direction": {
+        "primary": "外向・拡散",
+        "confidence": 0.75,
+        "reasoning": "新分野への進出を検討しており、外に向かうエネルギーが見られる"
+      },
       "intended_action": {
-        "primary": "攻める・挑戦",
-        "confidence": 0.80,
-        "secondary": "刷新・破壊",
+        "primary": "攻める・前進",
+        "confidence": 0.75,
+        "secondary": "挑戦・冒険",
         "secondary_confidence": 0.70,
-        "reasoning": "電子娯楽機器という新分野への挑戦を検討している"
+        "reasoning": "電子娯楽機器という新分野への進出を検討中。未知の領域への挑戦でもある"
       },
       "trigger_nature": {
-        "primary": "意図的決断",
+        "primary": "内発的衝動",
         "confidence": 0.80,
-        "reasoning": "外部環境の変化を受けつつも、新分野への進出は経営判断"
+        "reasoning": "外部環境の変化を受けつつも、新分野への進出は経営者の直感と意志"
       },
       "phase_stage": {
-        "primary": "危機・転換",
+        "primary": "展開中期",
         "confidence": 0.75,
-        "reasoning": "多角化の失敗を経て、次の転換点に立っている"
+        "reasoning": "多角化の失敗を経て、次の転換を決断する分岐点にいる"
       },
-      "domain": "company",
-      "energy_direction": "expanding",
-      "movement_tendency": "active"
+      "domain": "企業"
     },
-    "source_case_id": "CAN_D1785F5A",
-    "hexagram_actual": 34
+    "source_case": {
+      "canonical_id": "CAN_D1785F5A",
+      "target_name": "任天堂",
+      "before_state": "停滞・閉塞",
+      "action_type": "攻める・挑戦",
+      "trigger_type": "意図的決断",
+      "before_hex": "艮",
+      "yao": 5,
+      "hexagram_number": 34
+    }
   },
   {
-    "input": "エンターテインメント企業のCEOが交代して以来、判断ミスが続いています。人気俳優との契約トラブル、社会問題への対応の遅れ、そして直近の決算では主力部門もストリーミング部門もアナリスト予測を下回りました。株価は下落し、社内の士気も低下。前任のカリスマ経営者を呼び戻すべきだという声が強まっていますが、それは前進なのか後退なのか。",
-    "output": {
+    "input": "名門企業のプライドに支えられ、長年にわたり総合電機の頂点に立ってきました。しかし経営層が「チャレンジ」と称して過度な利益目標を押し付け、組織ぐるみで会計上の数字を操作していたことが発覚しました。さらに巨額投資していた原発事業でも損失が膨らんでいます。企業としてどう立て直すべきでしょうか。",
+    "expected_output": {
       "current_state": {
-        "primary": "混乱・カオス",
+        "primary": "頂点・過剰",
         "confidence": 0.85,
-        "reasoning": "経営判断のミス連続、業績悪化、社内の混乱が重なっている状態"
+        "reasoning": "名門としてのプライドと過度な利益至上主義が、過信と行き過ぎの典型"
+      },
+      "energy_direction": {
+        "primary": "内向・収束",
+        "confidence": 0.80,
+        "reasoning": "不正発覚後、内部の立て直しにエネルギーが向かわざるを得ない状況"
+      },
+      "intended_action": {
+        "primary": "守る・維持",
+        "confidence": 0.70,
+        "secondary": "整理・清算",
+        "secondary_confidence": 0.60,
+        "reasoning": "不正で追い詰められた状態で現体制を維持しようとしているが、清算も迫られている"
+      },
+      "trigger_nature": {
+        "primary": "突発的外圧",
+        "confidence": 0.70,
+        "secondary": "内発的衝動",
+        "secondary_confidence": 0.50,
+        "reasoning": "不正の発覚は外部からの監査・報道がトリガーだが、根因は内部の構造的問題"
+      },
+      "phase_stage": {
+        "primary": "終結",
+        "confidence": 0.80,
+        "reasoning": "過去の栄光のサイクルが終わり、解体的な出直しが必要な段階"
+      },
+      "domain": "企業"
+    },
+    "source_case": {
+      "canonical_id": "CAN_BF16EFAC",
+      "target_name": "東芝",
+      "before_state": "絶頂・慢心",
+      "action_type": "守る・維持",
+      "trigger_type": "内部崩壊",
+      "before_hex": "乾",
+      "yao": 6,
+      "hexagram_number": 22
+    }
+  },
+  {
+    "input": "世界最大の自動車メーカーですが、リーマンショックによる赤字転落と、世界規模での大規模リコール問題が同時に発生しました。創業家出身の新社長が就任し、「もっといいクルマづくり」を掲げて組織構造と生産方式を抜本的に改革すると宣言しています。二重の危機から脱出するにはどうすべきでしょうか。",
+    "expected_output": {
+      "current_state": {
+        "primary": "不安定・混乱",
+        "confidence": 0.85,
+        "reasoning": "赤字転落とリコール問題の同時発生で、複数の危機が重なっている状態"
+      },
+      "energy_direction": {
+        "primary": "内向・収束",
+        "confidence": 0.75,
+        "secondary": "外向・拡散",
+        "secondary_confidence": 0.55,
+        "reasoning": "組織構造と生産方式の内部改革が中心だが、ブランド回復の外向きの意志もある"
       },
       "intended_action": {
         "primary": "刷新・破壊",
-        "confidence": 0.75,
-        "secondary": "守る・維持",
-        "secondary_confidence": 0.50,
-        "reasoning": "経営トップの交代による刷新を検討しているが、前任者の復帰は維持的側面もある"
+        "confidence": 0.85,
+        "reasoning": "組織構造と生産方式の抜本改革を宣言しており、根本からの変革を志向"
       },
       "trigger_nature": {
-        "primary": "内部崩壊",
-        "confidence": 0.80,
-        "reasoning": "CEO交代後の経営判断ミスという内部要因が混乱の原因"
+        "primary": "突発的外圧",
+        "confidence": 0.90,
+        "reasoning": "リーマンショックとリコール問題という外部からの急激な衝撃が同時にトリガー"
       },
       "phase_stage": {
-        "primary": "選択・準備",
-        "confidence": 0.75,
-        "reasoning": "次の方向性を選択する局面。前任復帰か現体制継続かの分岐点"
+        "primary": "始まり",
+        "confidence": 0.80,
+        "reasoning": "新社長が就任し改革を宣言したばかり。実行はこれからの段階"
       },
-      "domain": "company",
-      "energy_direction": "contracting",
-      "movement_tendency": "active"
+      "domain": "企業"
     },
-    "source_case_id": "CAN_D44B1F9C",
-    "hexagram_actual": 30
+    "source_case": {
+      "canonical_id": "CAN_6082B3F3",
+      "target_name": "トヨタ自動車",
+      "before_state": "混乱・カオス",
+      "action_type": "刷新・破壊",
+      "trigger_type": "外部ショック",
+      "before_hex": "離",
+      "yao": 4,
+      "hexagram_number": 25
+    }
+  },
+  {
+    "input": "父が創業した家具メーカーを娘として引き継ぎましたが、経営方針を巡って父と激しく対立しています。父は従来の高級路線を主張し、私は時代に合わせたカジュアル路線を推進したい。株主総会で経営権を争うことになりました。家族の関係も企業の将来も危うくなっています。どう折り合いをつけるべきでしょうか。",
+    "expected_output": {
+      "current_state": {
+        "primary": "対立・分裂",
+        "confidence": 0.90,
+        "reasoning": "父娘の経営方針対立が株主総会での争いにまで発展している"
+      },
+      "energy_direction": {
+        "primary": "内向・収束",
+        "confidence": 0.80,
+        "reasoning": "内部の権力争いにエネルギーが集中しており、外向きの事業活動が停滞"
+      },
+      "intended_action": {
+        "primary": "協調・融和",
+        "confidence": 0.65,
+        "secondary": "決断・断行",
+        "secondary_confidence": 0.60,
+        "reasoning": "「折り合いをつけたい」という意向があるが、株主総会という決定的な対決も進行中"
+      },
+      "trigger_nature": {
+        "primary": "関係性変化",
+        "confidence": 0.90,
+        "reasoning": "父娘の関係の変化（世代交代と方針の対立）が直接的なトリガー"
+      },
+      "phase_stage": {
+        "primary": "展開中期",
+        "confidence": 0.85,
+        "reasoning": "対立が表面化し、株主総会という決定的な分岐点に向かっている"
+      },
+      "domain": "家族"
+    },
+    "source_case": {
+      "canonical_id": "CAN_C2A1E6A7",
+      "target_name": "大塚家具・大塚父娘",
+      "before_state": "絶頂・慢心",
+      "action_type": "対話・融合",
+      "trigger_type": "内部崩壊",
+      "before_hex": "乾",
+      "yao": 6,
+      "hexagram_number": 63
+    }
+  },
+  {
+    "input": "ソニーの創業者として世界的に成功しましたが、息子には社長を継がせないと決めています。「創業者の息子だからという理由で社長にしてはいけない」と考えています。実力のある大賀典雄に社長を譲り、家族よりも企業の長期的発展を優先する決断です。この方針は正しいでしょうか。",
+    "expected_output": {
+      "current_state": {
+        "primary": "成長・発展",
+        "confidence": 0.80,
+        "reasoning": "世界的に成功し、企業として成長・発展を続けている段階"
+      },
+      "energy_direction": {
+        "primary": "外向・拡散",
+        "confidence": 0.70,
+        "reasoning": "企業の長期的発展という外向きのビジョンに基づく意思決定"
+      },
+      "intended_action": {
+        "primary": "決断・断行",
+        "confidence": 0.85,
+        "reasoning": "息子に継がせないという明確な決断を下し、実行している"
+      },
+      "trigger_nature": {
+        "primary": "内発的衝動",
+        "confidence": 0.90,
+        "reasoning": "外圧ではなく、創業者自身の信念と意志に基づく決断"
+      },
+      "phase_stage": {
+        "primary": "頂点・転換",
+        "confidence": 0.80,
+        "reasoning": "成功の頂点にいる中で、次世代への引き継ぎという転換を実行"
+      },
+      "domain": "家族"
+    },
+    "source_case": {
+      "canonical_id": "CAN_008F5D48",
+      "target_name": "ソニー・盛田家（非世襲の決断）",
+      "before_state": "成長痛",
+      "action_type": "捨てる・撤退",
+      "trigger_type": "意図的決断",
+      "before_hex": "艮",
+      "yao": 5,
+      "hexagram_number": 14
+    }
+  },
+  {
+    "input": "敗戦により国土は荒廃し、産業基盤は壊滅状態です。占領下にあり、食料も不足しています。しかし、外国からの経済支援プランを受けながら、市場経済メカニズムの復活と通貨改革を断行し、驚異的なスピードで産業を復興させたいと考えています。この経済政策で本当に立ち直れるでしょうか。",
+    "expected_output": {
+      "current_state": {
+        "primary": "どん底・危機",
+        "confidence": 0.95,
+        "reasoning": "敗戦による国土荒廃、産業壊滅、占領下という複合的な存続危機"
+      },
+      "energy_direction": {
+        "primary": "上昇",
+        "confidence": 0.80,
+        "reasoning": "壊滅状態から復興へ向かう上昇のエネルギーが明確"
+      },
+      "intended_action": {
+        "primary": "刷新・破壊",
+        "confidence": 0.80,
+        "secondary": "攻める・前進",
+        "secondary_confidence": 0.70,
+        "reasoning": "通貨改革と市場メカニズム復活という根本的な経済体制の刷新"
+      },
+      "trigger_nature": {
+        "primary": "突発的外圧",
+        "confidence": 0.90,
+        "reasoning": "敗戦という外部からの壊滅的な衝撃がトリガー"
+      },
+      "phase_stage": {
+        "primary": "始まり",
+        "confidence": 0.85,
+        "reasoning": "復興を始めようとしている段階。まだ成果は見えていない"
+      },
+      "domain": "国家"
+    },
+    "source_case": {
+      "canonical_id": "CAN_D5A40D91",
+      "target_name": "ドイツ（西ドイツ）",
+      "before_state": "どん底・危機",
+      "action_type": "刷新・破壊",
+      "trigger_type": "外部ショック",
+      "before_hex": "坎",
+      "yao": 3,
+      "hexagram_number": 29
+    }
+  },
+  {
+    "input": "15歳の学生です。気候変動について授業で学び、強い危機感を持ちました。安定した生活を送っていましたが、自分が行動しなければ何も変わらないと決意し、議会前で1人のストライキを始めました。周囲の大人は「子どもが何を」と冷ややかですが、SNSで共感の声が広がりつつあります。このまま続けるべきでしょうか。",
+    "expected_output": {
+      "current_state": {
+        "primary": "安定・順調",
+        "confidence": 0.85,
+        "reasoning": "安定した学生生活という基盤があり、生活そのものは順調"
+      },
+      "energy_direction": {
+        "primary": "外向・拡散",
+        "confidence": 0.90,
+        "reasoning": "社会に向けた発信・行動であり、エネルギーが外に向かっている"
+      },
+      "intended_action": {
+        "primary": "挑戦・冒険",
+        "confidence": 0.85,
+        "reasoning": "前例のない1人のストライキで社会変革に挑んでいる"
+      },
+      "trigger_nature": {
+        "primary": "内発的衝動",
+        "confidence": 0.85,
+        "reasoning": "授業での学びを契機に、自らの危機感と使命感から決断した"
+      },
+      "phase_stage": {
+        "primary": "展開初期",
+        "confidence": 0.80,
+        "reasoning": "行動を開始し、共感が広がり始めている段階。まだ基盤を固めている時期"
+      },
+      "domain": "個人"
+    },
+    "source_case": {
+      "canonical_id": "CAN_074FE273",
+      "target_name": "グレタ・トゥーンベリ（推定）",
+      "before_state": "安定・平和",
+      "action_type": "攻める・挑戦",
+      "trigger_type": "意図的決断",
+      "before_hex": "坤",
+      "yao": 2,
+      "hexagram_number": 13
+    }
   }
 ]
