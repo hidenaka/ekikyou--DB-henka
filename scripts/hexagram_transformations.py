@@ -3,8 +3,9 @@
 易経 卦変換ロジック
 
 互卦 (Nuclear Hexagram):     元の卦の2,3,4爻を下卦、3,4,5爻を上卦として構成
-覆卦 (Inverted Hexagram):    卦を上下反転（6爻の順序を逆にする）
+綜卦 (Inverted Hexagram):    卦を上下反転（6爻の順序を逆にする）
 錯卦 (Complementary Hexagram): 全ての爻を陰陽反転（0→1, 1→0）
+之卦 (Resulting Hexagram):   動爻（変爻）を反転した卦
 
 使用法:
     python3 scripts/hexagram_transformations.py
@@ -34,7 +35,8 @@ LINES_TO_TRIGRAM: Dict[Tuple[int, int, int], str] = {
     tuple(v): k for k, v in TRIGRAM_LINES.items()
 }
 
-# 64卦テーブル (下卦, 上卦) -> (卦番号, 卦名)
+# 64卦テーブル (上卦, 下卦) -> (卦番号, 卦名)
+# キーの順序は卦名の漢字と一致: 例「天地否」→ 上卦=乾(天), 下卦=坤(地)
 HEXAGRAM_TABLE: Dict[Tuple[str, str], Tuple[int, str]] = {
     ("乾", "乾"): (1, "乾為天"),
     ("乾", "坤"): (12, "天地否"),
@@ -109,11 +111,15 @@ HEXAGRAM_TABLE: Dict[Tuple[str, str], Tuple[int, str]] = {
     ("兌", "兌"): (58, "兌為沢"),
 }
 
-# 卦番号 -> (下卦, 上卦, 卦名) の逆引きテーブル
+# 卦番号 -> (上卦, 下卦, 卦名) の逆引きテーブル
 HEXAGRAM_BY_ID: Dict[int, Tuple[str, str, str]] = {
     v[0]: (k[0], k[1], v[1]) for k, v in HEXAGRAM_TABLE.items()
 }
 
+
+# ============================================================
+# 基本変換関数
+# ============================================================
 
 def hexagram_to_lines(hexagram_id: int) -> List[int]:
     """
@@ -125,15 +131,18 @@ def hexagram_to_lines(hexagram_id: int) -> List[int]:
     Returns:
         [line1, line2, line3, line4, line5, line6]
         (下から上への順序、1=陽爻、0=陰爻)
+        line1-3 = 下卦、line4-6 = 上卦
 
     Example:
         >>> hexagram_to_lines(51)  # 震為雷
         [1, 0, 0, 1, 0, 0]
+        >>> hexagram_to_lines(12)  # 天地否 (上=乾, 下=坤)
+        [0, 0, 0, 1, 1, 1]
     """
     if hexagram_id not in HEXAGRAM_BY_ID:
         raise ValueError(f"無効な卦番号: {hexagram_id} (1-64の範囲で指定)")
 
-    lower, upper, _ = HEXAGRAM_BY_ID[hexagram_id]
+    upper, lower, _ = HEXAGRAM_BY_ID[hexagram_id]
     lower_lines = TRIGRAM_LINES[lower]  # 1,2,3爻
     upper_lines = TRIGRAM_LINES[upper]  # 4,5,6爻
 
@@ -173,12 +182,119 @@ def lines_to_hexagram(lines: List[int]) -> Tuple[int, str]:
     if upper is None:
         raise ValueError(f"無効な上卦: {upper_tuple}")
 
-    result = HEXAGRAM_TABLE.get((lower, upper))
+    # テーブルキーは (上卦, 下卦) の順序
+    result = HEXAGRAM_TABLE.get((upper, lower))
     if result is None:
-        raise ValueError(f"無効な卦の組み合わせ: 下卦={lower}, 上卦={upper}")
+        raise ValueError(f"無効な卦の組み合わせ: 上卦={upper}, 下卦={lower}")
 
     return result
 
+
+# ============================================================
+# フィードバックエンジン用 統一API
+# ============================================================
+
+def get_lines(hexagram_number: int) -> List[int]:
+    """卦番号から6爻のリストを返す [下爻, ..., 上爻]。各要素は0(陰)or1(陽)
+
+    hexagram_to_lines() のエイリアス。
+    """
+    return hexagram_to_lines(hexagram_number)
+
+
+def get_hexagram_number(lines: List[int]) -> int:
+    """6爻のリストから卦番号(1-64)を返す"""
+    hex_id, _ = lines_to_hexagram(lines)
+    return hex_id
+
+
+def get_trigrams(hexagram_number: int) -> Tuple[str, str]:
+    """卦番号から(下卦名, 上卦名)のタプルを返す
+
+    Returns:
+        (下卦名, 上卦名) - 例: ('坤', '乾') for 天地否(12)
+    """
+    if hexagram_number not in HEXAGRAM_BY_ID:
+        raise ValueError(f"無効な卦番号: {hexagram_number} (1-64の範囲で指定)")
+    upper, lower, _ = HEXAGRAM_BY_ID[hexagram_number]
+    return (lower, upper)
+
+
+def get_hexagram_name(hexagram_number: int) -> str:
+    """卦番号から卦名（漢字）を返す。例: '乾為天', '天地否'"""
+    if hexagram_number not in HEXAGRAM_BY_ID:
+        raise ValueError(f"無効な卦番号: {hexagram_number} (1-64の範囲で指定)")
+    _, _, name = HEXAGRAM_BY_ID[hexagram_number]
+    return name
+
+
+def get_hexagram_by_trigrams(lower_trigram: str, upper_trigram: str) -> int:
+    """上卦名+下卦名から卦番号を返す
+
+    Args:
+        lower_trigram: 下卦名（例: '坤'）
+        upper_trigram: 上卦名（例: '乾'）
+
+    Returns:
+        卦番号(1-64)
+    """
+    # テーブルキーは (上卦, 下卦)
+    result = HEXAGRAM_TABLE.get((upper_trigram, lower_trigram))
+    if result is None:
+        raise ValueError(f"無効な卦の組み合わせ: 上卦={upper_trigram}, 下卦={lower_trigram}")
+    return result[0]
+
+
+def get_zhi_gua(hexagram_number: int, yao_position: int) -> int:
+    """之卦: 動爻を反転した卦番号を返す
+
+    Args:
+        hexagram_number: 1-64の卦番号
+        yao_position: 1-6の爻位置（1=初爻, 6=上爻）
+
+    Returns:
+        之卦の卦番号(1-64)
+    """
+    if not 1 <= yao_position <= 6:
+        raise ValueError(f"無効な爻位置: {yao_position} (1-6の範囲で指定)")
+    lines = hexagram_to_lines(hexagram_number)
+    idx = yao_position - 1
+    lines[idx] = 1 - lines[idx]
+    result_id, _ = lines_to_hexagram(lines)
+    return result_id
+
+
+def get_hu_gua(hexagram_number: int) -> int:
+    """互卦: 2-5爻から構成される卦番号を返す
+
+    2,3,4爻で下卦、3,4,5爻で上卦を構成。
+    get_nuclear_hexagram() の簡略API。
+    """
+    result_id, _ = get_nuclear_hexagram(hexagram_number)
+    return result_id
+
+
+def get_cuo_gua(hexagram_number: int) -> int:
+    """錯卦: 全爻反転した卦番号を返す
+
+    get_complementary_hexagram() の簡略API。
+    """
+    result_id, _ = get_complementary_hexagram(hexagram_number)
+    return result_id
+
+
+def get_zong_gua(hexagram_number: int) -> int:
+    """綜卦: 上下反転した卦番号を返す
+
+    get_inverted_hexagram() の簡略API。
+    """
+    result_id, _ = get_inverted_hexagram(hexagram_number)
+    return result_id
+
+
+# ============================================================
+# 変換計算（詳細版 — 卦番号と卦名のタプルを返す）
+# ============================================================
 
 def get_nuclear_hexagram(hexagram_id: int) -> Tuple[int, str]:
     """
@@ -217,7 +333,7 @@ def get_nuclear_hexagram(hexagram_id: int) -> Tuple[int, str]:
 
 def get_inverted_hexagram(hexagram_id: int) -> Tuple[int, str]:
     """
-    覆卦 (Inverted Hexagram) を計算
+    綜卦 / 覆卦 (Inverted Hexagram) を計算
 
     卦を上下反転（180度回転）する。
     6爻の順序を逆にする。
@@ -226,21 +342,16 @@ def get_inverted_hexagram(hexagram_id: int) -> Tuple[int, str]:
         hexagram_id: 1-64の卦番号
 
     Returns:
-        (覆卦の番号, 覆卦の名前)
+        (綜卦の番号, 綜卦の名前)
 
     Example:
         >>> get_inverted_hexagram(51)  # 震為雷
-        (57, '巽為風')
+        (52, '艮為山')
 
         震為雷 [1,0,0,1,0,0] → 反転 → [0,0,1,0,0,1]
-        - 下卦 = [0,0,1] = 艮 → 反転後は上卦に
-        - 上卦 = [1,0,0] = 震 → 反転後は下卦に
-        → 巽為風 ([0,1,1,0,1,1])
-
-        注: 震為雷を反転すると巽為風になる
-            震 [1,0,0] を反転 → [0,0,1] = 艮
-            しかし覆卦は卦全体を反転するので
-            [1,0,0,1,0,0] → [0,0,1,0,0,1]
+        - 下卦 = [0,0,1] = 艮
+        - 上卦 = [0,0,1] = 艮
+        → 艮為山
     """
     lines = hexagram_to_lines(hexagram_id)
 
@@ -276,9 +387,13 @@ def get_complementary_hexagram(hexagram_id: int) -> Tuple[int, str]:
     return lines_to_hexagram(complementary_lines)
 
 
+# ============================================================
+# 統合・表示・テーブル生成
+# ============================================================
+
 def get_all_transformations(hexagram_id: int) -> Dict:
     """
-    指定した卦の互卦・覆卦・錯卦を全て取得
+    指定した卦の互卦・綜卦・錯卦を全て取得
 
     Args:
         hexagram_id: 1-64の卦番号
@@ -319,7 +434,7 @@ def get_all_transformations(hexagram_id: int) -> Dict:
             'id': inverted_id,
             'name': inverted_name,
             'lines': inverted_lines,
-            'description': '覆卦（上下反転）'
+            'description': '綜卦（上下反転）'
         },
         'complementary': {
             'id': comp_id,
@@ -349,8 +464,9 @@ def print_transformation_report(hexagram_id: int) -> None:
     print(f"【卦変換レポート】 {result['original']['name']} (第{hexagram_id}卦)")
     print("=" * 60)
 
-    # 元の卦
+    lower, upper = get_trigrams(hexagram_id)
     print(f"\n■ 元卦: {result['original']['name']} (第{result['original']['id']}卦)")
+    print(f"  上卦: {upper}  下卦: {lower}")
     print(f"  爻: {result['original']['lines']}")
     print(format_lines_visual(result['original']['lines']))
 
@@ -361,9 +477,9 @@ def print_transformation_report(hexagram_id: int) -> None:
     print(f"  爻: {nuclear['lines']}")
     print(format_lines_visual(nuclear['lines']))
 
-    # 覆卦
+    # 綜卦
     inverted = result['inverted']
-    print(f"\n■ 覆卦 (Inverted): {inverted['name']} (第{inverted['id']}卦)")
+    print(f"\n■ 綜卦 (Inverted): {inverted['name']} (第{inverted['id']}卦)")
     print(f"  説明: {inverted['description']}")
     print(f"  爻: {inverted['lines']}")
     print(format_lines_visual(inverted['lines']))
@@ -399,7 +515,7 @@ def generate_all_transformations_table() -> List[Dict]:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="易経 卦変換ロジック（互卦・覆卦・錯卦）"
+        description="易経 卦変換ロジック（互卦・綜卦・錯卦・之卦）"
     )
     parser.add_argument(
         "--hexagram", "-H",
@@ -440,7 +556,7 @@ def main():
 
 
 def run_tests():
-    """テストケースを実行"""
+    """テストケースを実行（レガシー。正式テストはtests/test_hexagram_transformations.py）"""
     print("=== テスト実行 ===\n")
 
     # テスト1: hexagram_to_lines
@@ -448,44 +564,46 @@ def run_tests():
     assert hexagram_to_lines(51) == [1, 0, 0, 1, 0, 0], "震為雷の爻が不正"
     assert hexagram_to_lines(1) == [1, 1, 1, 1, 1, 1], "乾為天の爻が不正"
     assert hexagram_to_lines(2) == [0, 0, 0, 0, 0, 0], "坤為地の爻が不正"
-    print("  ✓ hexagram_to_lines 正常\n")
+    # 天地否: 上=乾(天), 下=坤(地) → [坤, 乾] = [0,0,0, 1,1,1]
+    assert hexagram_to_lines(12) == [0, 0, 0, 1, 1, 1], "天地否の爻が不正"
+    print("  OK hexagram_to_lines\n")
 
     # テスト2: lines_to_hexagram
     print("テスト2: lines_to_hexagram")
     assert lines_to_hexagram([1, 0, 0, 1, 0, 0]) == (51, "震為雷")
     assert lines_to_hexagram([1, 1, 1, 1, 1, 1]) == (1, "乾為天")
     assert lines_to_hexagram([0, 0, 0, 0, 0, 0]) == (2, "坤為地")
-    print("  ✓ lines_to_hexagram 正常\n")
+    print("  OK lines_to_hexagram\n")
 
     # テスト3: 互卦 (nuclear)
     print("テスト3: get_nuclear_hexagram (互卦)")
     # 震為雷 [1,0,0,1,0,0]
     # 互卦: 下卦=2,3,4爻=[0,0,1]=艮, 上卦=3,4,5爻=[0,1,0]=坎
-    # (艮, 坎) → 山水蒙(4)
+    # → 水山蹇(39)
     nuclear_id, nuclear_name = get_nuclear_hexagram(51)
     print(f"  震為雷(51) → 互卦: {nuclear_name}({nuclear_id})")
-    assert nuclear_id == 4, f"震為雷の互卦は山水蒙(4)のはず、実際は{nuclear_id}"
+    assert nuclear_id == 39, f"震為雷の互卦は水山蹇(39)のはず、実際は{nuclear_id}"
 
     # 乾為天 [1,1,1,1,1,1]
     # 互卦: 下卦=2,3,4爻=[1,1,1]=乾, 上卦=3,4,5爻=[1,1,1]=乾 → 乾為天(1)
     nuclear_id, nuclear_name = get_nuclear_hexagram(1)
     print(f"  乾為天(1) → 互卦: {nuclear_name}({nuclear_id})")
     assert nuclear_id == 1, f"乾為天の互卦は乾為天(1)のはず、実際は{nuclear_id}"
-    print("  ✓ get_nuclear_hexagram 正常\n")
+    print("  OK get_nuclear_hexagram\n")
 
-    # テスト4: 覆卦 (inverted)
-    print("テスト4: get_inverted_hexagram (覆卦)")
+    # テスト4: 綜卦 (inverted)
+    print("テスト4: get_inverted_hexagram (綜卦)")
     # 震為雷 [1,0,0,1,0,0] → 反転 [0,0,1,0,0,1]
     # 下卦=[0,0,1]=艮, 上卦=[0,0,1]=艮 → 艮為山(52)
     inv_id, inv_name = get_inverted_hexagram(51)
-    print(f"  震為雷(51) → 覆卦: {inv_name}({inv_id})")
-    assert inv_id == 52, f"震為雷の覆卦は艮為山(52)のはず、実際は{inv_id}"
+    print(f"  震為雷(51) → 綜卦: {inv_name}({inv_id})")
+    assert inv_id == 52, f"震為雷の綜卦は艮為山(52)のはず、実際は{inv_id}"
 
     # 乾為天 [1,1,1,1,1,1] → 反転 [1,1,1,1,1,1] = 乾為天
     inv_id, inv_name = get_inverted_hexagram(1)
-    print(f"  乾為天(1) → 覆卦: {inv_name}({inv_id})")
-    assert inv_id == 1, f"乾為天の覆卦は乾為天(1)のはず、実際は{inv_id}"
-    print("  ✓ get_inverted_hexagram 正常\n")
+    print(f"  乾為天(1) → 綜卦: {inv_name}({inv_id})")
+    assert inv_id == 1, f"乾為天の綜卦は乾為天(1)のはず、実際は{inv_id}"
+    print("  OK get_inverted_hexagram\n")
 
     # テスト5: 錯卦 (complementary)
     print("テスト5: get_complementary_hexagram (錯卦)")
@@ -499,32 +617,47 @@ def run_tests():
     comp_id, comp_name = get_complementary_hexagram(1)
     print(f"  乾為天(1) → 錯卦: {comp_name}({comp_id})")
     assert comp_id == 2, f"乾為天の錯卦は坤為地(2)のはず、実際は{comp_id}"
-    print("  ✓ get_complementary_hexagram 正常\n")
+    print("  OK get_complementary_hexagram\n")
 
     # テスト6: 水火既済の変換
     print("テスト6: 水火既済(63)の変換")
-    # 水火既済: 下卦=坎[0,1,0], 上卦=離[1,0,1] → [0,1,0,1,0,1]
+    # 水火既済: 上卦=坎(水), 下卦=離(火) → [離, 坎] = [1,0,1, 0,1,0]
     lines = hexagram_to_lines(63)
     print(f"  爻: {lines}")
-    assert lines == [0, 1, 0, 1, 0, 1], f"水火既済の爻が不正: {lines}"
+    assert lines == [1, 0, 1, 0, 1, 0], f"水火既済の爻が不正: {lines}"
 
-    # 互卦: 下卦=2,3,4爻=[1,0,1]=離, 上卦=3,4,5爻=[0,1,0]=坎 → 火水未済(64)
+    # 互卦: 下卦=2,3,4爻=[0,1,0]=坎, 上卦=3,4,5爻=[1,0,1]=離 → 火水未済(64)
     nuclear_id, nuclear_name = get_nuclear_hexagram(63)
     print(f"  互卦: {nuclear_name}({nuclear_id})")
     assert nuclear_id == 64, f"水火既済の互卦は火水未済(64)のはず、実際は{nuclear_id}"
 
-    # 覆卦: [0,1,0,1,0,1] → 反転 → [1,0,1,0,1,0]
-    # 下卦=[1,0,1]=離, 上卦=[0,1,0]=坎 → 火水未済(64)
+    # 綜卦: [1,0,1,0,1,0] → 反転 → [0,1,0,1,0,1]
+    # 下卦=[0,1,0]=坎, 上卦=[1,0,1]=離 → 火水未済(64)
     inv_id, inv_name = get_inverted_hexagram(63)
-    print(f"  覆卦: {inv_name}({inv_id})")
-    assert inv_id == 64, f"水火既済の覆卦は火水未済(64)のはず、実際は{inv_id}"
+    print(f"  綜卦: {inv_name}({inv_id})")
+    assert inv_id == 64, f"水火既済の綜卦は火水未済(64)のはず、実際は{inv_id}"
 
-    # 錯卦: [0,1,0,1,0,1] → 陰陽反転 → [1,0,1,0,1,0]
-    # 下卦=[1,0,1]=離, 上卦=[0,1,0]=坎 → 火水未済(64)
+    # 錯卦: [1,0,1,0,1,0] → 陰陽反転 → [0,1,0,1,0,1]
+    # 下卦=[0,1,0]=坎, 上卦=[1,0,1]=離 → 火水未済(64)
     comp_id, comp_name = get_complementary_hexagram(63)
     print(f"  錯卦: {comp_name}({comp_id})")
     assert comp_id == 64, f"水火既済の錯卦は火水未済(64)のはず、実際は{comp_id}"
-    print("  ✓ 水火既済の変換 正常\n")
+    print("  OK 水火既済の変換\n")
+
+    # テスト7: 之卦
+    print("テスト7: get_zhi_gua (之卦)")
+    # 乾為天(1)の第1爻変 → 天風姤(44)
+    zhi = get_zhi_gua(1, 1)
+    print(f"  乾為天(1)第1爻変 → {get_hexagram_name(zhi)}({zhi})")
+    assert zhi == 44, f"乾為天の第1爻変は天風姤(44)のはず、実際は{zhi}"
+    print("  OK get_zhi_gua\n")
+
+    # テスト8: get_trigrams
+    print("テスト8: get_trigrams")
+    lower, upper = get_trigrams(12)
+    print(f"  天地否(12) → 下卦={lower}, 上卦={upper}")
+    assert lower == "坤" and upper == "乾", f"天地否は下卦=坤, 上卦=乾のはず"
+    print("  OK get_trigrams\n")
 
     print("=== 全テスト完了 ===")
 
