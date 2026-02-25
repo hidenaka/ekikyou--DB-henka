@@ -276,6 +276,12 @@ class TestQualityGates:
         critical = [w for w in warnings if "違反" in w]
         assert critical == [], f"品質ゲート違反: {critical}"
 
+    # 否定文脈で使用される禁止語を含む許容フレーズ
+    ALLOWED_PHRASES = [
+        "予測するものではありません",
+        "「必ずこうなる」という意味ではなく",
+    ]
+
     @pytest.mark.parametrize(
         "hex_num,yao,state,action,conf", SCENARIOS
     )
@@ -283,14 +289,16 @@ class TestQualityGates:
         self, feedback_engine, hex_num, yao, state, action, conf
     ):
         """テキスト出力に禁止語が含まれないことを検証
-        (「予測するものではありません」内の「予測」は許容)"""
+        (否定文脈での使用は許容: 「予測するものではありません」「必ずこうなる」という意味ではなく)"""
         text = feedback_engine.generate_text(
             hex_num, yao, state, action, conf, show_extended=True
         )
         for word in FORBIDDEN_WORDS:
             if word in text:
-                # 許容フレーズ「予測するものではありません」内かチェック
-                cleaned = text.replace("予測するものではありません", "")
+                # 許容フレーズを除去した上でチェック
+                cleaned = text
+                for phrase in self.ALLOWED_PHRASES:
+                    cleaned = cleaned.replace(phrase, "")
                 assert word not in cleaned, (
                     f"禁止語「{word}」がテキストに含まれています"
                 )

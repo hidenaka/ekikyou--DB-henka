@@ -439,7 +439,10 @@ class FeedbackEngine:
 
         # Q1: 禁止語チェック
         # caveat テキスト（「予測するものではありません」）は除外対象
-        allowed_phrases = ["予測するものではありません"]
+        allowed_phrases = [
+            "予測するものではありません",
+            "「必ずこうなる」という意味ではなく",
+        ]
         text_blob = json.dumps(result, ensure_ascii=False)
         for word in FORBIDDEN_WORDS:
             if word in text_blob:
