@@ -1260,8 +1260,11 @@
     }
   },
   "markov_chain": {
-    "n_states": 7,
-    "states": [
+    "valid": false,
+    "invalidation_reason": "before_state (7 states) and after_state (8 states) have different state spaces with only 3 overlapping states. A valid Markov chain requires identical state spaces for transitions. Reindexing to a 7x7 square matrix (using before_states for both axes) produces a sub-stochastic matrix with row sums 0.06-0.59, maximum eigenvalue ~0.36 (should be 1.0).",
+    "n_before_states": 7,
+    "n_after_states": 8,
+    "before_states": [
       "どん底・危機",
       "停滞・閉塞",
       "安定・平和",
@@ -1270,21 +1273,42 @@
       "混乱・カオス",
       "絶頂・慢心"
     ],
-    "absorbing_candidates": [],
-    "stationary_distribution": {
-      "どん底・危機": 0.0,
-      "停滞・閉塞": 0.161193,
-      "安定・平和": 0.527403,
-      "安定成長・成功": 0.311404,
-      "成長痛": 0.0,
-      "混乱・カオス": 0.0,
-      "絶頂・慢心": 0.0
+    "after_states": [
+      "停滞・閉塞",
+      "変質・新生",
+      "安定・平和",
+      "安定成長・成功",
+      "崩壊・消滅",
+      "持続成長・大成功",
+      "混乱・衰退",
+      "縮小安定・生存"
+    ],
+    "overlapping_states": [
+      "停滞・閉塞",
+      "安定・平和",
+      "安定成長・成功"
+    ],
+    "before_only_states": [
+      "どん底・危機",
+      "成長痛",
+      "混乱・カオス",
+      "絶頂・慢心"
+    ],
+    "after_only_states": [
+      "変質・新生",
+      "崩壊・消滅",
+      "持続成長・大成功",
+      "混乱・衰退",
+      "縮小安定・生存"
+    ],
+    "withdrawn_results": {
+      "stationary_distribution": "WITHDRAWN — artifact of sub-stochastic matrix",
+      "second_eigenvalue": "WITHDRAWN — artifact of sub-stochastic matrix",
+      "mixing_rate": "WITHDRAWN — artifact of sub-stochastic matrix",
+      "mixing_interpretation": "WITHDRAWN — artifact of sub-stochastic matrix",
+      "absorbing_candidates": "WITHDRAWN — artifact of sub-stochastic matrix"
     },
-    "stationary_valid": true,
-    "second_eigenvalue": 0.082065,
-    "mixing_rate": 0.917935,
-    "mixing_interpretation": "fast",
-    "first_order_markov_note": "Full test requires sequential data (before->after->next). Each record is an independent transition; true Markov order cannot be tested without time-series structure."
+    "note": "Each record is an independent transition (before->after), not a time-series chain. Markov chain analysis would require sequential data AND identical state spaces. Consider unified state space construction in Phase 3 if Markov analysis is desired."
   },
   "top30_triplets": [
     {

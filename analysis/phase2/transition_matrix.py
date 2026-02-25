@@ -239,14 +239,61 @@ def find_significant_transitions(adj_res_df, threshold=2.576):
 
 
 def markov_analysis(prob_matrix):
-    """マルコフ連鎖分析: 定常分布、吸収状態、混合率。"""
-    states = list(prob_matrix.index)
-    P = prob_matrix.reindex(index=states, columns=states, fill_value=0).values
+    """マルコフ連鎖分析: 状態空間の整合性チェック + 定常分布、吸収状態、混合率。
+
+    before_state と after_state が異なる状態空間の場合、マルコフ連鎖分析は
+    数学的に不適用であるため、valid=False を返す。
+    """
+    before_states = sorted(prob_matrix.index.tolist())
+    after_states = sorted(prob_matrix.columns.tolist())
+
+    # --- 状態空間の整合性チェック ---
+    overlap = sorted(set(before_states) & set(after_states))
+    before_only = sorted(set(before_states) - set(after_states))
+    after_only = sorted(set(after_states) - set(before_states))
 
     result = {
-        'n_states': len(states),
-        'states': states,
+        'n_before_states': len(before_states),
+        'n_after_states': len(after_states),
+        'before_states': before_states,
+        'after_states': after_states,
+        'overlapping_states': overlap,
+        'before_only_states': before_only,
+        'after_only_states': after_only,
     }
+
+    if set(before_states) != set(after_states):
+        # 状態空間が不一致 — マルコフ連鎖分析は不適用
+        warnings.warn(
+            f"Markov chain analysis is inapplicable: before_state ({len(before_states)} states) "
+            f"and after_state ({len(after_states)} states) have different state spaces "
+            f"with only {len(overlap)} overlapping states. "
+            f"A valid Markov chain requires identical state spaces for transitions."
+        )
+        result['valid'] = False
+        result['invalidation_reason'] = (
+            f"before_state ({len(before_states)} states) and after_state ({len(after_states)} states) "
+            f"have different state spaces with only {len(overlap)} overlapping states. "
+            f"A valid Markov chain requires identical state spaces for transitions. "
+            f"Reindexing to a 7x7 square matrix (using before_states for both axes) produces a "
+            f"sub-stochastic matrix with row sums 0.06-0.59, maximum eigenvalue ~0.36 (should be 1.0). "
+            f"All previously reported stationary_distribution, mixing_rate, and absorption_states "
+            f"are artifacts of this sub-stochastic matrix and have been withdrawn."
+        )
+        result['note'] = (
+            "Each record is an independent transition (before->after), not a time-series chain. "
+            "Markov chain analysis would require sequential data AND identical state spaces. "
+            "Consider unified state space construction in Phase 3 if Markov analysis is desired."
+        )
+        return result
+
+    # --- 以下は状態空間が一致する場合のみ実行 ---
+    states = before_states
+    P = prob_matrix.reindex(index=states, columns=states, fill_value=0).values
+
+    result['valid'] = True
+    result['n_states'] = len(states)
+    result['states'] = states
 
     # 吸収状態の検出（自己遷移確率 > 0.5 かつ他への遷移が弱い状態）
     absorbing_candidates = []
@@ -298,7 +345,6 @@ def markov_analysis(prob_matrix):
         pass
 
     # 一次マルコフ仮定の簡易テスト
-    # （遷移行列の行の独立性テスト — 各before_stateから同じ分布で遷移するか？）
     result['first_order_markov_note'] = (
         'Full test requires sequential data (before->after->next). '
         'Each record is an independent transition; true Markov order cannot be tested '
