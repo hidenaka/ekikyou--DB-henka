@@ -121,7 +121,11 @@
         99.63,
         99.75,
         99.84
-      ]
+      ],
+      "minimum_eigenvalue_note": "The minimum eigenvalue (0.14288) exceeds the Kaiser/Benzecri threshold (1/K = 0.14286) by only 0.00002. This margin is smaller than floating-point precision concerns. Consequently, the Benzecri upper-bound criterion (dims with corrected eigenvalue > 0) has no discriminating power: it classifies all 30 computed dimensions as significant. Only the Benzecri cumulative 80% criterion (6 dims) retains utility.",
+      "min_eigenvalue": 0.14288,
+      "kaiser_threshold": 0.14286,
+      "margin": 2e-05
     },
     "criterion_reliability": {
       "scree_elbow": "RELIABLE — primary criterion",
