@@ -1,29 +1,33 @@
 {
-  "recommended_dimensions": 10,
+  "recommended_dimensions": 5,
   "dimension_decision": {
     "scree_elbow": {
       "dimensions": 5,
-      "method": "Scree plot (elbow method): maximum second derivative of eigenvalues",
+      "method": "Scree plot (elbow): maximum absolute second derivative",
       "elbow_eigenvalue": 0.3340699675399033
     },
     "cumulative_70": {
-      "dimensions": 17,
-      "method": "Cumulative explained inertia >= 70%",
-      "cumulative_at_threshold": 71.82506117577951
+      "dimensions": 30,
+      "method": "Cumulative inertia >= 70% (not reached within computed dims)",
+      "max_cumulative": 62.04144854406621,
+      "note": "MCA with J=88, K=7: cumulative inertia rises slowly. Max at 30 dims = 62.0%"
     },
     "kaiser": {
       "dimensions": 30,
-      "method": "Kaiser criterion for MCA: eigenvalue > 1/K = 1/7 = 0.1429",
-      "threshold": 0.14285714285714285
+      "method": "Kaiser criterion: eigenvalue > 1/K = 1/7 = 0.1429",
+      "threshold": 0.14285714285714285,
+      "note_large_sample": "N=13,060 is very large relative to J=88. All 30 of 30 computed eigenvalues exceed the threshold. Kaiser criterion loses discriminating power for large N + moderate J."
     },
     "greenacre": {
-      "dimensions": 10,
-      "method": "Greenacre criterion: eigenvalue > mean eigenvalue = 0.239303",
-      "threshold": 0.2393027300985421
+      "dimensions": 30,
+      "method": "Greenacre criterion: eigenvalue > total_inertia/(J-K) = 11.5714/81 = 0.1429",
+      "threshold": 0.14285714285714346,
+      "kaiser_equivalence": "Greenacre threshold (0.1429) = Kaiser threshold (1/K = 0.1429). In MCA, these two criteria are mathematically identical.",
+      "note_large_sample": "N=13,060 is very large relative to J=88. All 30 of 30 computed eigenvalues exceed the threshold. Kaiser criterion loses discriminating power for large N + moderate J."
     },
     "parallel_analysis": {
       "dimensions": 30,
-      "method": "Parallel Analysis (95th percentile of 100 random permutations)",
+      "method": "Parallel Analysis (95th percentile of 100 permutations)",
       "random_95th_percentile": [
         0.16501137539371036,
         0.15902191625139905,
@@ -67,29 +71,85 @@
         0.1778884817110018,
         0.17022606672623247,
         0.16790024283206204
+      ],
+      "note_large_sample": "PA yields 30 dims (all 30 computed components). With N=13,060, PA loses discriminating power because even the MCA of permuted data produces small eigenvalues, and the real data always exceeds them. PA is not a useful criterion here."
+    },
+    "benzecri": {
+      "dimensions_above_threshold": 30,
+      "dimensions_cum80": 6,
+      "method": "Benzecri corrected inertia: 30 dims with corrected eigenvalue > 0; 6 dims for 80% cumulative corrected inertia",
+      "benzecri_percentages": [
+        31.14,
+        20.3,
+        13.58,
+        9.45,
+        5.51,
+        3.97,
+        3.14,
+        2.96,
+        2.13,
+        1.78,
+        1.39,
+        1.07,
+        0.93,
+        0.75,
+        0.71,
+        0.35,
+        0.27,
+        0.18,
+        0.11,
+        0.09
+      ],
+      "benzecri_cumulative": [
+        31.14,
+        51.44,
+        65.02,
+        74.47,
+        79.98,
+        83.95,
+        87.1,
+        90.06,
+        92.19,
+        93.97,
+        95.36,
+        96.43,
+        97.36,
+        98.11,
+        98.82,
+        99.18,
+        99.45,
+        99.63,
+        99.75,
+        99.84
       ]
     },
-    "recommended_dimensions": 10,
-    "all_criteria_dimensions": [
-      5,
-      17,
-      30,
-      10,
-      30
-    ],
-    "primary_criteria_dimensions": [
-      5,
-      10,
-      30
-    ],
-    "converged_to_six": false,
-    "note": "Converged to 10 dimensions. Report as-is."
+    "criterion_reliability": {
+      "scree_elbow": "RELIABLE — primary criterion",
+      "cumulative_70": "LOW — MCA naturally has low cumulative inertia; 70% is too strict",
+      "kaiser": "LOST — all 30 dims exceed 1/K with N=13,060",
+      "greenacre": "LOST — mathematically identical to Kaiser in MCA",
+      "parallel_analysis": "LOST — all 30 dims exceed PA threshold with N=13,060",
+      "benzecri": "RELIABLE — corrects for low-frequency category inflation"
+    },
+    "recommended_dimensions": 5,
+    "upper_bound_dimensions": 6,
+    "decision_rationale": "Scree elbow = 5, Benzecri cum80% = 6. Recommended = 5 (agreement of two reliable criteria). Kaiser (30), Greenacre (30), PA (30) all lost discriminating power with N=13,060.",
+    "all_criteria_dimensions": {
+      "scree_elbow": 5,
+      "cumulative_70": 30,
+      "kaiser": 30,
+      "greenacre": 30,
+      "parallel_analysis": 30,
+      "benzecri_above_0": 30,
+      "benzecri_cum80": 6
+    },
+    "converged_to_six": false
   },
   "dimension_interpretations": [
     {
       "dimension": 1,
       "eigenvalue": 0.5975594700419479,
-      "explained_inertia_pct": 8.323619623226193,
+      "explained_inertia_pct": 5.164094185547675,
       "positive_pole": {
         "categories": [
           "action_type__分散・探索",
@@ -173,12 +233,19 @@
           "min_coordinate": -0.23647772806754613
         }
       },
-      "interpretation_label": "Dim 1: [_逃げる・放置 | _Quiet_Fade | _崩壊・消滅] <-> [_分散・探索 | _拡大・繁栄 | _撤退・縮小]"
+      "top_contributions": {
+        "trigger_type__自然推移": 0.11261451571893301,
+        "before_state__安定・停止": 0.09193708153146624,
+        "action_type__分散・探索": 0.0909062657412703,
+        "after_state__混乱・衰退": 0.09079797139567201,
+        "pattern_type__Exploration": 0.05857914919108315
+      },
+      "interpretation_label": "Dim 1: [逃げる・放置 | Quiet_Fade | 崩壊・消滅] <-> [分散・探索 | 拡大・繁栄 | 撤退・縮小]"
     },
     {
       "dimension": 2,
       "eigenvalue": 0.5099884173284752,
-      "explained_inertia_pct": 7.103811103178359,
+      "explained_inertia_pct": 4.407307310246064,
       "positive_pole": {
         "categories": [
           "action_type__撤退・縮小",
@@ -262,12 +329,19 @@
           "min_coordinate": -0.18844995364167888
         }
       },
-      "interpretation_label": "Dim 2: [_持続成長・大成功 | _Steady_Growth | _偶発・出会い] <-> [_撤退・縮小 | _Decline | _逃げる・放置]"
+      "top_contributions": {
+        "outcome__Failure": 0.10520534351976814,
+        "outcome__Success": 0.09910149698240968,
+        "after_state__持続成長・大成功": 0.07343171032204555,
+        "pattern_type__Steady_Growth": 0.06339449558676247,
+        "after_state__崩壊・消滅": 0.060495119535688556
+      },
+      "interpretation_label": "Dim 2: [持続成長・大成功 | Steady_Growth | 偶発・出会い] <-> [撤退・縮小 | Decline | 逃げる・放置]"
     },
     {
       "dimension": 3,
       "eigenvalue": 0.44310855418956846,
-      "explained_inertia_pct": 6.17221756457607,
+      "explained_inertia_pct": 3.829333184354279,
       "positive_pole": {
         "categories": [
           "trigger_type__自然推移・成熟",
@@ -351,12 +425,19 @@
           "min_coordinate": -0.14232817632486766
         }
       },
-      "interpretation_label": "Dim 3: [_成長・拡大 | _拡大・攻め | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
+      "top_contributions": {
+        "action_type__捨てる・転換": 0.11667295664586523,
+        "after_state__安定・停止": 0.10473214179640254,
+        "action_type__拡大・攻め": 0.07353650794901934,
+        "after_state__成長・拡大": 0.07277324321377554,
+        "before_state__成長・拡大": 0.06259633387249393
+      },
+      "interpretation_label": "Dim 3: [成長・拡大 | 拡大・攻め | 成長・拡大] <-> [自然推移・成熟 | 調和・繁栄 | 逃げる・分散]"
     },
     {
       "dimension": 4,
       "eigenvalue": 0.39335527455877056,
-      "explained_inertia_pct": 5.479186334352745,
+      "explained_inertia_pct": 3.3993665702609657,
       "positive_pole": {
         "categories": [
           "before_state__成長・拡大",
@@ -440,12 +521,19 @@
           "min_coordinate": -0.2095321091092967
         }
       },
-      "interpretation_label": "Dim 4: [_Exploration | _分散・探索 | _混乱・衰退] <-> [_成長・拡大 | _拡大・攻め | _成長・拡大]"
+      "top_contributions": {
+        "action_type__拡大・攻め": 0.19446529603187698,
+        "after_state__成長・拡大": 0.19047228628225357,
+        "before_state__成長・拡大": 0.16233422120592003,
+        "pattern_type__Exploration": 0.06927793896387954,
+        "action_type__分散・探索": 0.06550944928366033
+      },
+      "interpretation_label": "Dim 4: [Exploration | 分散・探索 | 混乱・衰退] <-> [成長・拡大 | 拡大・攻め | 成長・拡大]"
     },
     {
       "dimension": 5,
       "eigenvalue": 0.3340699675399033,
-      "explained_inertia_pct": 4.653380084747845,
+      "explained_inertia_pct": 2.8870244108386585,
       "positive_pole": {
         "categories": [
           "trigger_type__自然推移・成熟",
@@ -529,464 +617,243 @@
           "min_coordinate": -0.6137851238924494
         }
       },
-      "interpretation_label": "Dim 5: [_交流・発表 | _喜び・交流 | _輝く・表現] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
-    },
-    {
-      "dimension": 6,
-      "eigenvalue": 0.3052906199608535,
-      "explained_inertia_pct": 4.252502257080231,
-      "positive_pole": {
-        "categories": [
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄",
-          "action_type__逃げる・分散",
-          "action_type__集中・拡大",
-          "after_state__拡大・繁栄"
-        ],
-        "coordinates": [
-          12.598492825388051,
-          11.4138151679186,
-          5.062730031137376,
-          4.5540428892094695,
-          3.193998863979494
-        ]
+      "top_contributions": {
+        "after_state__喜び・交流": 0.26034513180832464,
+        "action_type__交流・発表": 0.24914951366303764,
+        "pattern_type__Crisis_Pivot": 0.054199185880953286,
+        "outcome__Mixed": 0.03607755184212169,
+        "before_state__調和・繁栄": 0.03352341069100343
       },
-      "negative_pole": {
-        "categories": [
-          "after_state__分岐・様子見",
-          "action_type__分散する・独立する",
-          "before_state__成長・拡大",
-          "action_type__撤退・縮小",
-          "action_type__拡大・攻め"
-        ],
-        "coordinates": [
-          -2.2233664784049956,
-          -2.1888741762177153,
-          -2.098626615001105,
-          -1.9658183127759241,
-          -1.961067492986237
-        ]
-      },
-      "variable_contributions": {
-        "before_state": {
-          "range": 13.512441782919705,
-          "max_category": "before_state__調和・繁栄",
-          "max_coordinate": 11.4138151679186,
-          "min_category": "before_state__成長・拡大",
-          "min_coordinate": -2.098626615001105
-        },
-        "trigger_type": {
-          "range": 14.181264548969601,
-          "max_category": "trigger_type__自然推移・成熟",
-          "max_coordinate": 12.598492825388051,
-          "min_category": "trigger_type__拡大・過剰",
-          "min_coordinate": -1.5827717235815497
-        },
-        "action_type": {
-          "range": 7.251604207355092,
-          "max_category": "action_type__逃げる・分散",
-          "max_coordinate": 5.062730031137376,
-          "min_category": "action_type__分散する・独立する",
-          "min_coordinate": -2.1888741762177153
-        },
-        "after_state": {
-          "range": 5.417365342384489,
-          "max_category": "after_state__拡大・繁栄",
-          "max_coordinate": 3.193998863979494,
-          "min_category": "after_state__分岐・様子見",
-          "min_coordinate": -2.2233664784049956
-        },
-        "pattern_type": {
-          "range": 2.5325298847906805,
-          "max_category": "pattern_type__Breakthrough",
-          "max_coordinate": 1.104480550308246,
-          "min_category": "pattern_type__Decline",
-          "min_coordinate": -1.4280493344824345
-        },
-        "outcome": {
-          "range": 0.9348340493463603,
-          "max_category": "outcome__Failure",
-          "max_coordinate": 0.15568224262434832,
-          "min_category": "outcome__PartialSuccess",
-          "min_coordinate": -0.779151806722012
-        },
-        "scale": {
-          "range": 0.5185696454525528,
-          "max_category": "scale__individual",
-          "max_coordinate": 0.14760809045901435,
-          "min_category": "scale__country",
-          "min_coordinate": -0.3709615549935385
-        }
-      },
-      "interpretation_label": "Dim 6: [_分岐・様子見 | _分散する・独立する | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
-    },
-    {
-      "dimension": 7,
-      "eigenvalue": 0.28728243671825443,
-      "explained_inertia_pct": 4.001659830624789,
-      "positive_pole": {
-        "categories": [
-          "action_type__集中・拡大",
-          "action_type__分散する・独立する",
-          "trigger_type__拡大・過剰",
-          "action_type__撤退・逃げる",
-          "after_state__拡大・繁栄"
-        ],
-        "coordinates": [
-          5.183718302396971,
-          3.9741156761326297,
-          3.8907798112542467,
-          3.606962671757671,
-          3.553285852737904
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "trigger_type__自然推移・成熟",
-          "action_type__撤退・縮小",
-          "before_state__調和・繁栄",
-          "action_type__逃げる・分散",
-          "pattern_type__Decline"
-        ],
-        "coordinates": [
-          -5.205029850743247,
-          -4.953151732519433,
-          -4.622345153040567,
-          -2.7055161714724196,
-          -2.460716647145603
-        ]
-      },
-      "variable_contributions": {
-        "before_state": {
-          "range": 7.802745606511998,
-          "max_category": "before_state__拡大・繁栄",
-          "max_coordinate": 3.1804004534714307,
-          "min_category": "before_state__調和・繁栄",
-          "min_coordinate": -4.622345153040567
-        },
-        "trigger_type": {
-          "range": 9.095809661997494,
-          "max_category": "trigger_type__拡大・過剰",
-          "max_coordinate": 3.8907798112542467,
-          "min_category": "trigger_type__自然推移・成熟",
-          "min_coordinate": -5.205029850743247
-        },
-        "action_type": {
-          "range": 10.136870034916404,
-          "max_category": "action_type__集中・拡大",
-          "max_coordinate": 5.183718302396971,
-          "min_category": "action_type__撤退・縮小",
-          "min_coordinate": -4.953151732519433
-        },
-        "after_state": {
-          "range": 5.091709640529304,
-          "max_category": "after_state__拡大・繁栄",
-          "max_coordinate": 3.553285852737904,
-          "min_category": "after_state__分岐・様子見",
-          "min_coordinate": -1.5384237877914002
-        },
-        "pattern_type": {
-          "range": 3.3961482671428347,
-          "max_category": "pattern_type__Stagnation",
-          "max_coordinate": 0.9354316199972317,
-          "min_category": "pattern_type__Decline",
-          "min_coordinate": -2.460716647145603
-        },
-        "outcome": {
-          "range": 0.7833691253803414,
-          "max_category": "outcome__PartialSuccess",
-          "max_coordinate": 0.6559006850103035,
-          "min_category": "outcome__Failure",
-          "min_coordinate": -0.12746844037003785
-        },
-        "scale": {
-          "range": 0.4523797509087062,
-          "max_category": "scale__country",
-          "max_coordinate": 0.30325979545690107,
-          "min_category": "scale__company",
-          "min_coordinate": -0.1491199554518051
-        }
-      },
-      "interpretation_label": "Dim 7: [_自然推移・成熟 | _撤退・縮小 | _調和・繁栄] <-> [_集中・拡大 | _分散する・独立する | _拡大・過剰]"
-    },
-    {
-      "dimension": 8,
-      "eigenvalue": 0.2830546534187018,
-      "explained_inertia_pct": 3.9427695246399566,
-      "positive_pole": {
-        "categories": [
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄",
-          "action_type__逃げる・分散",
-          "action_type__撤退・縮小",
-          "pattern_type__Decline"
-        ],
-        "coordinates": [
-          9.76888441705483,
-          8.573078718082416,
-          3.8910554323994457,
-          3.7964554756221283,
-          2.2507516265875736
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "trigger_type__拡大・過剰",
-          "action_type__分散する・独立する",
-          "action_type__撤退・逃げる",
-          "before_state__安定成長・成功",
-          "after_state__分岐・様子見"
-        ],
-        "coordinates": [
-          -4.483320500631548,
-          -4.47270767807528,
-          -4.027786089608504,
-          -1.6663414762209903,
-          -1.5293749974578672
-        ]
-      },
-      "variable_contributions": {
-        "before_state": {
-          "range": 10.239420194303406,
-          "max_category": "before_state__調和・繁栄",
-          "max_coordinate": 8.573078718082416,
-          "min_category": "before_state__安定成長・成功",
-          "min_coordinate": -1.6663414762209903
-        },
-        "trigger_type": {
-          "range": 14.252204917686377,
-          "max_category": "trigger_type__自然推移・成熟",
-          "max_coordinate": 9.76888441705483,
-          "min_category": "trigger_type__拡大・過剰",
-          "min_coordinate": -4.483320500631548
-        },
-        "action_type": {
-          "range": 8.363763110474725,
-          "max_category": "action_type__逃げる・分散",
-          "max_coordinate": 3.8910554323994457,
-          "min_category": "action_type__分散する・独立する",
-          "min_coordinate": -4.47270767807528
-        },
-        "after_state": {
-          "range": 2.689517028250854,
-          "max_category": "after_state__停滞・閉塞",
-          "max_coordinate": 1.1601420307929868,
-          "min_category": "after_state__分岐・様子見",
-          "min_coordinate": -1.5293749974578672
-        },
-        "pattern_type": {
-          "range": 3.7151261586270437,
-          "max_category": "pattern_type__Decline",
-          "max_coordinate": 2.2507516265875736,
-          "min_category": "pattern_type__Hubris_Collapse",
-          "min_coordinate": -1.4643745320394699
-        },
-        "outcome": {
-          "range": 0.6961703403145073,
-          "max_category": "outcome__Failure",
-          "max_coordinate": 0.2598709742469435,
-          "min_category": "outcome__Mixed",
-          "min_coordinate": -0.4362993660675638
-        },
-        "scale": {
-          "range": 1.0940766809449791,
-          "max_category": "scale__family",
-          "max_coordinate": 0.6200399762467153,
-          "min_category": "scale__company",
-          "min_coordinate": -0.4740367046982639
-        }
-      },
-      "interpretation_label": "Dim 8: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
-    },
-    {
-      "dimension": 9,
-      "eigenvalue": 0.26191205765464953,
-      "explained_inertia_pct": 3.648266744899472,
-      "positive_pole": {
-        "categories": [
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄",
-          "action_type__逃げる・分散",
-          "action_type__分散・独立",
-          "action_type__交流・発表"
-        ],
-        "coordinates": [
-          11.141388497342781,
-          9.682183080682506,
-          4.2716787303056325,
-          1.9264359188760558,
-          1.824392864052974
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "trigger_type__拡大・過剰",
-          "action_type__分散する・独立する",
-          "action_type__撤退・逃げる",
-          "before_state__安定成長・成功",
-          "action_type__撤退・縮小"
-        ],
-        "coordinates": [
-          -6.715608573386911,
-          -6.315912334700248,
-          -5.90201849780867,
-          -2.413147163264734,
-          -2.210907410496784
-        ]
-      },
-      "variable_contributions": {
-        "before_state": {
-          "range": 12.09533024394724,
-          "max_category": "before_state__調和・繁栄",
-          "max_coordinate": 9.682183080682506,
-          "min_category": "before_state__安定成長・成功",
-          "min_coordinate": -2.413147163264734
-        },
-        "trigger_type": {
-          "range": 17.85699707072969,
-          "max_category": "trigger_type__自然推移・成熟",
-          "max_coordinate": 11.141388497342781,
-          "min_category": "trigger_type__拡大・過剰",
-          "min_coordinate": -6.715608573386911
-        },
-        "action_type": {
-          "range": 10.587591065005881,
-          "max_category": "action_type__逃げる・分散",
-          "max_coordinate": 4.2716787303056325,
-          "min_category": "action_type__分散する・独立する",
-          "min_coordinate": -6.315912334700248
-        },
-        "after_state": {
-          "range": 2.613725200930276,
-          "max_category": "after_state__喜び・交流",
-          "max_coordinate": 1.7356834191876496,
-          "min_category": "after_state__安定・平和",
-          "min_coordinate": -0.8780417817426264
-        },
-        "pattern_type": {
-          "range": 1.9544860786370044,
-          "max_category": "pattern_type__Pivot_Success",
-          "max_coordinate": 0.9078364215782544,
-          "min_category": "pattern_type__Decline",
-          "min_coordinate": -1.04664965705875
-        },
-        "outcome": {
-          "range": 0.9431933488933373,
-          "max_category": "outcome__PartialSuccess",
-          "max_coordinate": 0.7297995747453491,
-          "min_category": "outcome__Failure",
-          "min_coordinate": -0.21339377414798816
-        },
-        "scale": {
-          "range": 0.7794487588259276,
-          "max_category": "scale__country",
-          "max_coordinate": 0.6057602425912546,
-          "min_category": "scale__individual",
-          "min_coordinate": -0.17368851623467296
-        }
-      },
-      "interpretation_label": "Dim 9: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]"
-    },
-    {
-      "dimension": 10,
-      "eigenvalue": 0.25164190649180684,
-      "explained_inertia_pct": 3.5052101354099836,
-      "positive_pole": {
-        "categories": [
-          "action_type__撤退・縮小",
-          "pattern_type__Decline",
-          "action_type__逃げる・守る",
-          "before_state__急成長・拡大",
-          "action_type__集中・拡大"
-        ],
-        "coordinates": [
-          9.530777392479626,
-          4.9418756797956265,
-          3.6621850630616524,
-          2.0908775079529316,
-          1.598546909571919
-        ]
-      },
-      "negative_pole": {
-        "categories": [
-          "trigger_type__自然推移・成熟",
-          "before_state__調和・繁栄",
-          "after_state__分岐・様子見",
-          "action_type__撤退・逃げる",
-          "trigger_type__拡大・過剰"
-        ],
-        "coordinates": [
-          -5.117162827376493,
-          -4.6110138755562255,
-          -2.901587055774203,
-          -2.606168733020955,
-          -2.2325707805008093
-        ]
-      },
-      "variable_contributions": {
-        "before_state": {
-          "range": 6.701891383509157,
-          "max_category": "before_state__急成長・拡大",
-          "max_coordinate": 2.0908775079529316,
-          "min_category": "before_state__調和・繁栄",
-          "min_coordinate": -4.6110138755562255
-        },
-        "trigger_type": {
-          "range": 6.020158227537422,
-          "max_category": "trigger_type__自然推移",
-          "max_coordinate": 0.9029954001609287,
-          "min_category": "trigger_type__自然推移・成熟",
-          "min_coordinate": -5.117162827376493
-        },
-        "action_type": {
-          "range": 12.13694612550058,
-          "max_category": "action_type__撤退・縮小",
-          "max_coordinate": 9.530777392479626,
-          "min_category": "action_type__撤退・逃げる",
-          "min_coordinate": -2.606168733020955
-        },
-        "after_state": {
-          "range": 3.86606957492122,
-          "max_category": "after_state__V字回復・大成功",
-          "max_coordinate": 0.9644825191470167,
-          "min_category": "after_state__分岐・様子見",
-          "min_coordinate": -2.901587055774203
-        },
-        "pattern_type": {
-          "range": 6.473837375684745,
-          "max_category": "pattern_type__Decline",
-          "max_coordinate": 4.9418756797956265,
-          "min_category": "pattern_type__Exploration",
-          "min_coordinate": -1.531961695889119
-        },
-        "outcome": {
-          "range": 0.7954898554423147,
-          "max_category": "outcome__Failure",
-          "max_coordinate": 0.18718037620001501,
-          "min_category": "outcome__Mixed",
-          "min_coordinate": -0.6083094792422996
-        },
-        "scale": {
-          "range": 0.43066141030670374,
-          "max_category": "scale__country",
-          "max_coordinate": 0.3195222994298834,
-          "min_category": "scale__other",
-          "min_coordinate": -0.11113911087682032
-        }
-      },
-      "interpretation_label": "Dim 10: [_自然推移・成熟 | _調和・繁栄 | _分岐・様子見] <-> [_撤退・縮小 | _Decline | _逃げる・守る]"
+      "interpretation_label": "Dim 5: [交流・発表 | 喜び・交流 | 輝く・表現] <-> [自然推移・成熟 | 調和・繁栄 | 逃げる・分散]"
     }
   ],
   "interpretation_labels": [
-    "Dim 1: [_逃げる・放置 | _Quiet_Fade | _崩壊・消滅] <-> [_分散・探索 | _拡大・繁栄 | _撤退・縮小]",
-    "Dim 2: [_持続成長・大成功 | _Steady_Growth | _偶発・出会い] <-> [_撤退・縮小 | _Decline | _逃げる・放置]",
-    "Dim 3: [_成長・拡大 | _拡大・攻め | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
-    "Dim 4: [_Exploration | _分散・探索 | _混乱・衰退] <-> [_成長・拡大 | _拡大・攻め | _成長・拡大]",
-    "Dim 5: [_交流・発表 | _喜び・交流 | _輝く・表現] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
-    "Dim 6: [_分岐・様子見 | _分散する・独立する | _成長・拡大] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
-    "Dim 7: [_自然推移・成熟 | _撤退・縮小 | _調和・繁栄] <-> [_集中・拡大 | _分散する・独立する | _拡大・過剰]",
-    "Dim 8: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
-    "Dim 9: [_拡大・過剰 | _分散する・独立する | _撤退・逃げる] <-> [_自然推移・成熟 | _調和・繁栄 | _逃げる・分散]",
-    "Dim 10: [_自然推移・成熟 | _調和・繁栄 | _分岐・様子見] <-> [_撤退・縮小 | _Decline | _逃げる・守る]"
-  ]
+    "Dim 1: [逃げる・放置 | Quiet_Fade | 崩壊・消滅] <-> [分散・探索 | 拡大・繁栄 | 撤退・縮小]",
+    "Dim 2: [持続成長・大成功 | Steady_Growth | 偶発・出会い] <-> [撤退・縮小 | Decline | 逃げる・放置]",
+    "Dim 3: [成長・拡大 | 拡大・攻め | 成長・拡大] <-> [自然推移・成熟 | 調和・繁栄 | 逃げる・分散]",
+    "Dim 4: [Exploration | 分散・探索 | 混乱・衰退] <-> [成長・拡大 | 拡大・攻め | 成長・拡大]",
+    "Dim 5: [交流・発表 | 喜び・交流 | 輝く・表現] <-> [自然推移・成熟 | 調和・繁栄 | 逃げる・分散]"
+  ],
+  "benzecri_correction": {
+    "corrected_eigenvalues": [
+      0.28141544752823877,
+      0.18345786839034153,
+      0.12270540528745999,
+      0.08540878848095264,
+      0.04976541310652346,
+      0.03591241915878009,
+      0.02839096138434871,
+      0.026753104344868422,
+      0.01929248789262881,
+      0.016107558754262116,
+      0.012534534058962031,
+      0.009663556027766343,
+      0.008420951729601623,
+      0.006739944427520556,
+      0.006460672297300882,
+      0.0031916048917293633,
+      0.002464071854959305,
+      0.0016703483442444583,
+      0.001019551158162477,
+      0.0008536301655926688
+    ],
+    "percentages": [
+      31.141613751942536,
+      20.30156527421414,
+      13.578658777621659,
+      9.451391262479614,
+      5.507072503593462,
+      3.9740913164632414,
+      3.141761979462708,
+      2.9605156699498765,
+      2.134919072649652,
+      1.7824727733242742,
+      1.387079570980533,
+      1.0693753023517223,
+      0.9318679144672447,
+      0.7458465692447137,
+      0.7149421363595552,
+      0.35318504247025284,
+      0.2726757704247036,
+      0.18484181811816838,
+      0.11282418448139925,
+      0.09446326112295636
+    ],
+    "cumulative": [
+      31.141613751942536,
+      51.44317902615668,
+      65.02183780377834,
+      74.47322906625796,
+      79.98030156985142,
+      83.95439288631466,
+      87.09615486577738,
+      90.05667053572725,
+      92.1915896083769,
+      93.97406238170117,
+      95.3611419526817,
+      96.43051725503342,
+      97.36238516950067,
+      98.10823173874539,
+      98.82317387510494,
+      99.1763589175752,
+      99.4490346879999,
+      99.63387650611807,
+      99.74670069059947,
+      99.84116395172242
+    ],
+    "n_above_threshold": 30
+  },
+  "sensitivity_analysis": {
+    "clean_recommended_dimensions": 2,
+    "clean_dim_decision": {
+      "scree_elbow": {
+        "dimensions": 2,
+        "method": "Scree plot (elbow): maximum absolute second derivative",
+        "elbow_eigenvalue": 0.3821906764850992
+      },
+      "cumulative_70": {
+        "dimensions": 21,
+        "method": "Cumulative explained inertia >= 70% (correct total inertia)",
+        "cumulative_at_threshold": 71.79468205153515
+      },
+      "kaiser": {
+        "dimensions": 16,
+        "method": "Kaiser criterion: eigenvalue > 1/K = 1/7 = 0.1429",
+        "threshold": 0.14285714285714285,
+        "note_large_sample": "N=13,060 is very large relative to J=51. All 16 of 30 computed eigenvalues exceed the threshold. Kaiser criterion loses discriminating power for large N + moderate J."
+      },
+      "greenacre": {
+        "dimensions": 16,
+        "method": "Greenacre criterion: eigenvalue > total_inertia/(J-K) = 6.2857/44 = 0.1429",
+        "threshold": 0.14285714285714182,
+        "kaiser_equivalence": "Greenacre threshold (0.1429) = Kaiser threshold (1/K = 0.1429). In MCA, these two criteria are mathematically identical.",
+        "note_large_sample": "N=13,060 is very large relative to J=51. All 16 of 30 computed eigenvalues exceed the threshold. Kaiser criterion loses discriminating power for large N + moderate J."
+      },
+      "parallel_analysis": {
+        "dimensions": 16,
+        "method": "Parallel Analysis (95th percentile of 100 permutations)",
+        "random_95th_percentile": [
+          0.15820487500110633,
+          0.15647614106359964,
+          0.15513976356577713,
+          0.15422335654512398,
+          0.1532826463945325,
+          0.15252956489839226,
+          0.1517860397877802,
+          0.15110595239974944,
+          0.1504399627106098,
+          0.14975923372994357,
+          0.14908530776410647,
+          0.14853536267781298,
+          0.1478733312883845,
+          0.1472331197075333,
+          0.14672148526504233,
+          0.14614434397004378,
+          0.14549640716308948,
+          0.14486784171949346,
+          0.1443329243309072,
+          0.14383659162951734
+        ],
+        "actual_eigenvalues": [
+          0.5009496291793841,
+          0.3821906764850992,
+          0.320996260497377,
+          0.2738290159847456,
+          0.26299227144637755,
+          0.24053750717709063,
+          0.2356300967932773,
+          0.21713163976650796,
+          0.20756358504894007,
+          0.1967585559469914,
+          0.18436115365817407,
+          0.1789900081035589,
+          0.16990829553551848,
+          0.16252596596090435,
+          0.15361628346304984,
+          0.14869912256166487,
+          0.14262944176871578,
+          0.13983720743920894,
+          0.13514688174318623,
+          0.13236038382105023
+        ],
+        "note_large_sample": "PA yields 16 dims (all 30 computed components). With N=13,060, PA loses discriminating power because even the MCA of permuted data produces small eigenvalues, and the real data always exceeds them. PA is not a useful criterion here."
+      },
+      "benzecri": {
+        "dimensions_above_threshold": 16,
+        "dimensions_cum80": 4,
+        "method": "Benzecri corrected inertia: 16 dims with corrected eigenvalue > 0; 4 dims for 80% cumulative corrected inertia",
+        "benzecri_percentages": [
+          45.17,
+          20.18,
+          11.18,
+          6.04,
+          5.08,
+          3.36,
+          3.03,
+          1.94,
+          1.47,
+          1.02,
+          0.61,
+          0.46,
+          0.26,
+          0.14,
+          0.04,
+          0.01,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "benzecri_cumulative": [
+          45.17,
+          65.35,
+          76.53,
+          82.57,
+          87.65,
+          91.01,
+          94.04,
+          95.99,
+          97.46,
+          98.49,
+          99.09,
+          99.55,
+          99.81,
+          99.95,
+          99.99,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "criterion_reliability": {
+        "scree_elbow": "RELIABLE — primary criterion",
+        "cumulative_70": "LOW — MCA naturally has low cumulative inertia; 70% is too strict",
+        "kaiser": "LOST — all 16 dims exceed 1/K with N=13,060",
+        "greenacre": "LOST — mathematically identical to Kaiser in MCA",
+        "parallel_analysis": "LOST — all 16 dims exceed PA threshold with N=13,060",
+        "benzecri": "RELIABLE — corrects for low-frequency category inflation"
+      },
+      "recommended_dimensions": 2,
+      "upper_bound_dimensions": 4,
+      "decision_rationale": "Scree elbow = 2, Benzecri cum80% = 4. Recommended = 2 (agreement of two reliable criteria). Kaiser (16), Greenacre (16), PA (16) all lost discriminating power with N=13,060.",
+      "all_criteria_dimensions": {
+        "scree_elbow": 2,
+        "cumulative_70": 21,
+        "kaiser": 16,
+        "greenacre": 16,
+        "parallel_analysis": 16,
+        "benzecri_above_0": 16,
+        "benzecri_cum80": 4
+      },
+      "converged_to_six": false
+    },
+    "clean_labels": [
+      "Dim 1: [Breakthrough | 偶発・出会い | Steady_Growth] <-> [逃げる・放置 | Quiet_Fade | 崩壊・消滅]",
+      "Dim 2: [崩壊・消滅 | 逃げる・放置 | Failed_Attempt] <-> [Exploration | Decline | 分散・探索]"
+    ],
+    "clean_J": 51,
+    "clean_total_inertia": 6.28571428571424
+  }
 }
