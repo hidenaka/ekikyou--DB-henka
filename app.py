@@ -85,6 +85,64 @@ def _get_session_or_404(session_id):
 
 
 # ---------------------------------------------------------------------------
+# デモモード（ANTHROPIC_API_KEY 未設定時のサンプルデータ）
+# ---------------------------------------------------------------------------
+
+DEMO_SCENARIOS = {
+    "default": {
+        "extraction": {
+            "current_state": {"primary": "停滞・閉塞", "confidence": 0.85, "reasoning": "業績低迷と組織の硬直化が示唆される"},
+            "energy_direction": {"primary": "内向・収束", "confidence": 0.70, "reasoning": "エネルギーが内側に閉じこもっている"},
+            "intended_action": {"primary": "刷新・破壊", "confidence": 0.80, "reasoning": "現状を打破したいという意志が読み取れる"},
+            "trigger_nature": {"primary": "漸進的変化", "confidence": 0.75, "reasoning": "徐々に積もった不満が転換点に"},
+            "phase_stage": {"primary": "展開中期", "confidence": 0.65, "reasoning": "変化の途中にいる"},
+            "domain": "企業",
+        },
+        "followup": "この停滞は、いつ頃から感じ始めましたか？ また、打破したい気持ちの中で、最も強い衝動は何に向いていますか？",
+    },
+    "personal": {
+        "extraction": {
+            "current_state": {"primary": "転換期", "confidence": 0.90, "reasoning": "人生の大きな転機にいる"},
+            "energy_direction": {"primary": "上昇", "confidence": 0.80, "reasoning": "前に進むエネルギーがある"},
+            "intended_action": {"primary": "挑戦・冒険", "confidence": 0.85, "reasoning": "新しいことに踏み出したい"},
+            "trigger_nature": {"primary": "内発的衝動", "confidence": 0.75, "reasoning": "内側からの強い動機"},
+            "phase_stage": {"primary": "始まり", "confidence": 0.70, "reasoning": "まだ始まったばかり"},
+            "domain": "個人",
+        },
+        "followup": None,
+    },
+    "crisis": {
+        "extraction": {
+            "current_state": {"primary": "どん底・危機", "confidence": 0.90, "reasoning": "深刻な状況に直面している"},
+            "energy_direction": {"primary": "下降", "confidence": 0.85, "reasoning": "エネルギーが底に向かっている"},
+            "intended_action": {"primary": "待つ・忍耐", "confidence": 0.70, "reasoning": "耐え忍ぶしかない状況"},
+            "trigger_nature": {"primary": "突発的外圧", "confidence": 0.80, "reasoning": "予期しない外部からの衝撃"},
+            "phase_stage": {"primary": "展開初期", "confidence": 0.75, "reasoning": "危機はまだ始まったばかり"},
+            "domain": "個人",
+        },
+        "followup": "その危機的状況の中で、唯一まだ手元に残っているもの、頼れるものは何ですか？",
+    },
+}
+
+DEMO_KEYWORDS = {
+    "会社": "default", "企業": "default", "業績": "default", "組織": "default",
+    "仕事": "default", "経営": "default", "売上": "default", "停滞": "default",
+    "危機": "crisis", "どん底": "crisis", "つらい": "crisis", "苦しい": "crisis",
+    "失敗": "crisis", "崩壊": "crisis", "破綻": "crisis",
+    "転職": "personal", "挑戦": "personal", "新しい": "personal",
+    "始め": "personal", "やりたい": "personal", "夢": "personal",
+}
+
+
+def _select_demo_scenario(text: str) -> dict:
+    """ユーザー入力テキストからキーワードマッチでデモシナリオを選択する。"""
+    for keyword, scenario_key in DEMO_KEYWORDS.items():
+        if keyword in text:
+            return DEMO_SCENARIOS[scenario_key]
+    return DEMO_SCENARIOS["default"]
+
+
+# ---------------------------------------------------------------------------
 # 静的ファイル配信
 # ---------------------------------------------------------------------------
 
@@ -131,13 +189,18 @@ def extract():
     if err:
         return err
 
-    if not dialogue_engine.is_available():
-        return jsonify({"error": "LLMサービスが利用できません"}), 503
+    # デモモード: LLM未設定時はサンプルデータを返す
+    demo_mode = not dialogue_engine.is_available()
 
-    # 抽出
-    extraction = dialogue_engine.extract_axes(text)
-    if extraction is None:
-        return jsonify({"error": "分析に失敗しました"}), 400
+    if demo_mode:
+        scenario = _select_demo_scenario(text)
+        extraction = scenario["extraction"]
+        followup_question = scenario["followup"]
+    else:
+        extraction = dialogue_engine.extract_axes(text)
+        if extraction is None:
+            return jsonify({"error": "分析に失敗しました"}), 400
+        followup_question = None
 
     # 確信度評価
     assessment = dialogue_engine.assess_confidence(extraction)
@@ -145,10 +208,8 @@ def extract():
     # low_axes をシリアライズ可能に変換
     assessment["low_axes"] = _serialize_low_axes(assessment["low_axes"])
 
-    # フォローアップ質問
-    followup_question = None
-    if assessment["action"] != "proceed":
-        # generate_followup_question には元のタプルリストが必要
+    # フォローアップ質問（LLMモードのみ動的生成）
+    if not demo_mode and assessment["action"] != "proceed":
         low_axes_tuples = [tuple(item) for item in assessment["low_axes"]]
         followup_question = dialogue_engine.generate_followup_question(
             extraction, low_axes_tuples, text
@@ -168,6 +229,7 @@ def extract():
         "summary": summary,
         "followup_question": followup_question,
         "phase": "reviewing",
+        "demo_mode": demo_mode,
     })
 
 
@@ -185,24 +247,31 @@ def followup():
     if s["phase"] != "reviewing":
         return jsonify({"error": "この操作は現在のフェーズでは実行できません"}), 400
 
-    if not dialogue_engine.is_available():
-        return jsonify({"error": "LLMサービスが利用できません"}), 503
-
     if s["followup_count"] >= 2:
         return jsonify({"error": "フォローアップの上限に達しました"}), 400
+
+    demo_mode = not dialogue_engine.is_available()
 
     # テキスト連結
     s["accumulated_text"] += "\n\n追加情報:\n" + answer
 
-    # 再抽出
-    new_extraction = dialogue_engine.extract_axes(s["accumulated_text"])
-    if new_extraction is None:
-        return jsonify({"error": "分析に失敗しました"}), 400
-
-    # マージ
-    merged = dialogue_engine.merge_extractions(
-        s["current_extraction"], new_extraction
-    )
+    if demo_mode:
+        # デモモード: 確信度を上げた結果を返す
+        merged = s["current_extraction"]
+        for key in merged:
+            if isinstance(merged[key], dict) and "confidence" in merged[key]:
+                merged[key]["confidence"] = min(
+                    1.0, merged[key]["confidence"] + 0.10
+                )
+        followup_question = None
+    else:
+        new_extraction = dialogue_engine.extract_axes(s["accumulated_text"])
+        if new_extraction is None:
+            return jsonify({"error": "分析に失敗しました"}), 400
+        merged = dialogue_engine.merge_extractions(
+            s["current_extraction"], new_extraction
+        )
+        followup_question = None
 
     # 確信度評価
     assessment = dialogue_engine.assess_confidence(merged)
@@ -211,17 +280,16 @@ def followup():
     # フォローアップ回数インクリメント
     s["followup_count"] += 1
 
-    # まだフォローアップが必要か
-    need_more = (
-        assessment["action"] != "proceed" and s["followup_count"] < 2
-    )
-
-    followup_question = None
-    if need_more:
-        low_axes_tuples = [tuple(item) for item in assessment["low_axes"]]
-        followup_question = dialogue_engine.generate_followup_question(
-            merged, low_axes_tuples, s["accumulated_text"]
+    # まだフォローアップが必要か（LLMモードのみ動的生成）
+    if not demo_mode:
+        need_more = (
+            assessment["action"] != "proceed" and s["followup_count"] < 2
         )
+        if need_more:
+            low_axes_tuples = [tuple(item) for item in assessment["low_axes"]]
+            followup_question = dialogue_engine.generate_followup_question(
+                merged, low_axes_tuples, s["accumulated_text"]
+            )
 
     # セッション更新
     s["current_extraction"] = merged
@@ -235,6 +303,7 @@ def followup():
         "summary": summary,
         "followup_question": followup_question,
         "phase": "reviewing",
+        "demo_mode": demo_mode,
     })
 
 
