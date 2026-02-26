@@ -2,18 +2,20 @@
 """
 易経変化理解支援システム CLI インターフェース
 
-2つの入力モード:
-  A) 構造化入力（対話式）: 引数なしで実行
-  B) ダイレクト入力（引数指定）: --hexagram, --yao 等を指定
+3つの入力モード:
+  A) LLM対話式（デフォルト）: LLMが状況をヒアリングして自動分類
+  B) 選択メニュー式: --mode menu で実行
+  C) ダイレクト入力: --hexagram, --yao 等を指定
 
 Usage:
-    # モードA: 対話式
+    # デフォルト（LLM対話式）
     python3 scripts/iching_cli.py
 
-    # モードB: ダイレクト入力
+    # 選択メニュー式
+    python3 scripts/iching_cli.py --mode menu
+
+    # ダイレクト入力
     python3 scripts/iching_cli.py --hexagram 12 --yao 3 --state "停滞・閉塞" --action "刷新・破壊"
-    python3 scripts/iching_cli.py -H 12 -y 3 -s "停滞・閉塞" -a "刷新・破壊" --extended
-    python3 scripts/iching_cli.py -H 12 -y 3 -s "停滞・閉塞" -a "刷新・破壊" --json
 """
 
 import argparse
@@ -360,6 +362,114 @@ def run_interactive():
 
 
 # ============================================================
+# モードC: LLM対話式
+# ============================================================
+
+def run_dialogue_mode(args):
+    """LLM対話式モードを実行"""
+    # llm_dialogue モジュールのインポート（遅延）
+    from llm_dialogue import LLMDialogueEngine
+
+    engine = LLMDialogueEngine()
+
+    # APIキー未設定チェック → Mode Aにフォールバック
+    if not engine.is_available():
+        print()
+        print("  ANTHROPIC_API_KEY が設定されていないため、")
+        print("  選択メニュー方式で実行します。")
+        print()
+        run_interactive()
+        return
+
+    print_header()
+
+    # LLM対話で5軸を抽出
+    result = engine.run_dialogue()
+    if result is None:
+        return
+
+    # --- マッピング実行 ---
+    print()
+    print("  マッピング中...")
+    print()
+
+    mapper = ProbabilityMapper()
+    mapping_result = mapper.get_top_candidates(
+        current_state=result["db_state"],
+        intended_action=result["db_action"],
+        trigger_nature=result["db_trigger"],
+        phase_stage=result["db_phase"],
+        energy_direction=result["db_energy"],
+        n=3,
+    )
+
+    candidates = mapping_result["candidates"]
+
+    if not candidates:
+        print("  候補が見つかりませんでした。")
+        return
+
+    # --- 候補表示 ---
+    print("  本卦候補:")
+    for c in candidates:
+        pct = c["probability"] * 100
+        hex_name = c["hexagram_name"]
+        hex_num = c["hexagram_number"]
+        print(f"  {c['rank']}. {hex_name}（{hex_num}）[確率: {pct:.1f}%]")
+
+    print()
+    yao = candidates[0].get("yao")
+    if yao:
+        phase_names = ["潜伏", "出現", "転換", "選択", "最盛", "極限"]
+        phase_label = phase_names[yao - 1] if 1 <= yao <= 6 else ""
+        print(f"  動爻候補: 第{yao}爻（{phase_label}）")
+    print()
+
+    # --- 候補選択 ---
+    selected_idx = prompt_candidate_selection(candidates)
+    selected = candidates[selected_idx]
+
+    hex_num = selected["hexagram_number"]
+    yao_pos = selected.get("yao", 3)
+    confidence = result["overall_confidence"]
+
+    # --- フィードバック生成 ---
+    print()
+    print("  読み解きを生成中...")
+    print()
+
+    fb_engine = FeedbackEngine()
+    text = fb_engine.generate_text(
+        hex_num, yao_pos, result["ui_state"], result["ui_action"],
+        mapping_confidence=confidence,
+        show_extended=False,
+    )
+    print(text)
+    print()
+
+    # --- 詳細表示の確認 ---
+    if prompt_yes_no("  詳細を表示しますか？", default_yes=False):
+        print()
+        extended_text = fb_engine.generate_text(
+            hex_num, yao_pos, result["ui_state"], result["ui_action"],
+            mapping_confidence=confidence,
+            show_extended=True,
+        )
+        print(extended_text)
+        print()
+
+    # --- JSON出力の確認 ---
+    if prompt_yes_no("  JSON出力しますか？", default_yes=False):
+        print()
+        data = fb_engine.generate(
+            hex_num, yao_pos, result["ui_state"], result["ui_action"],
+            mapping_confidence=confidence,
+        )
+        print(json.dumps(data, ensure_ascii=False, indent=2))
+        print()
+
+
+# ============================================================
 # モードB: ダイレクト入力（引数指定）
 # ============================================================
 
@@ -416,8 +526,11 @@ def build_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 例:
-  # 対話式モード
+  # LLM対話式モード（デフォルト）
   python3 scripts/iching_cli.py
+
+  # 選択メニュー式モード
+  python3 scripts/iching_cli.py --mode menu
 
   # ダイレクトモード（基本）
   python3 scripts/iching_cli.py --hexagram 12 --yao 3 --state "停滞・閉塞" --action "刷新・破壊"
@@ -428,6 +541,13 @@ def build_parser() -> argparse.ArgumentParser:
   # ダイレクトモード（JSON出力）
   python3 scripts/iching_cli.py -H 12 -y 3 -s "停滞・閉塞" -a "刷新・破壊" --json
 """,
+    )
+
+    parser.add_argument(
+        "--mode", "-m",
+        choices=["dialogue", "menu", "direct"],
+        default="dialogue",
+        help="入力モード: dialogue(LLM対話/デフォルト), menu(選択メニュー), direct(引数指定)",
     )
 
     parser.add_argument(
@@ -479,10 +599,17 @@ def main():
               file=sys.stderr)
         parser.print_usage(sys.stderr)
         sys.exit(1)
-    else:
-        # 引数なし → 対話式モード
+    elif args.mode == "menu":
+        # 明示的にメニューモード指定
         try:
             run_interactive()
+        except KeyboardInterrupt:
+            print("\n\n  中断しました。")
+            sys.exit(0)
+    else:
+        # デフォルト: LLM対話モード
+        try:
+            run_dialogue_mode(args)
         except KeyboardInterrupt:
             print("\n\n  中断しました。")
             sys.exit(0)
