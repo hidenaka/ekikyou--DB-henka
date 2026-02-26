@@ -405,5 +405,5 @@ if __name__ == "__main__":
     )
     print(f"事例数: {case_count}")
     print(f"LLM: {'利用可能' if dialogue_engine.is_available() else '利用不可'}")
-    print(f"http://localhost:5000")
-    app.run(debug=True, port=5000)
+    print(f"http://localhost:5001")
+    app.run(debug=True, port=5001)

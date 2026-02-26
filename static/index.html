@@ -647,6 +647,20 @@
             to { opacity: 0; transform: translateY(-16px); }
         }
 
+        .demo-banner {
+            background: linear-gradient(90deg, var(--warning), #e67e22);
+            color: var(--primary);
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .demo-banner.active {
+            display: block;
+        }
+
         /* ===== Pulse ===== */
         @keyframes pulse {
             0%, 100% { opacity: 1; }
@@ -698,6 +712,10 @@
     </style>
 </head>
 <body>
+    <div class="demo-banner" id="demo-banner">
+        デモモード — ANTHROPIC_API_KEY 未設定のため、サンプルデータで動作しています
+    </div>
+
     <!-- Toast Container -->
     <div class="toast-container" id="toast-container"></div>
 
@@ -818,11 +836,13 @@
                 if (!res.ok) throw new Error("Health check failed");
                 const data = await res.json();
                 dot.className = "dot ok";
-                const casesCount = data.cases_count != null ? data.cases_count.toLocaleString() : "---";
-                const llmStatus = data.llm_status || "unknown";
+                const llmOk = data.llm_available === true;
                 status.innerHTML =
-                    '<span><span class="dot ok"></span>事例数: ' + casesCount + "</span>" +
-                    '<span><span class="dot ' + (llmStatus === "ok" ? "ok" : "err") + '"></span>LLM: ' + llmStatus + "</span>";
+                    '<span><span class="dot ok"></span>事例数: ' + (data.case_count || 0).toLocaleString() + "</span>" +
+                    '<span><span class="dot ' + (llmOk ? "ok" : "err") + '"></span>LLM: ' + (llmOk ? "利用可能" : "デモモード") + "</span>";
+                if (!llmOk) {
+                    showDemoBanner();
+                }
             } catch (e) {
                 dot.className = "dot err";
                 status.innerHTML = '<span><span class="dot err"></span>サーバー未接続</span>';
@@ -908,7 +928,7 @@
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
                             session_id: sessionId,
-                            user_input: userText
+                            text: userText
                         })
                     });
                     if (!res.ok) throw new Error("Extract failed");
@@ -929,7 +949,7 @@
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
                             session_id: sessionId,
-                            user_input: userText
+                            answer: userText
                         })
                     });
                     if (!res.ok) throw new Error("Followup failed");
@@ -959,48 +979,47 @@
             /* Summary text */
             if (data.summary) {
                 summary.textContent = data.summary;
-            } else if (data.axes) {
-                const parts = [];
-                if (data.axes.domain) parts.push(data.axes.domain);
-                if (data.axes.situation) parts.push(data.axes.situation);
-                if (data.axes.emotion) parts.push(data.axes.emotion);
-                if (data.axes.desire) parts.push(data.axes.desire);
-                if (data.axes.phase) parts.push(data.axes.phase);
-                summary.textContent = parts.join(" / ");
             } else {
                 summary.textContent = "状況を分析しました。";
+            }
+
+            /* Demo mode notice */
+            if (data.demo_mode) {
+                showDemoBanner();
             }
 
             /* Axes confidence */
             axes.innerHTML = "";
             const axisNames = {
-                domain: "領域",
-                situation: "状況",
-                emotion: "感情",
-                desire: "意図",
-                phase: "フェーズ"
+                current_state: "現在の状態",
+                energy_direction: "エネルギー方向",
+                intended_action: "意図する行動",
+                trigger_nature: "変化の契機",
+                phase_stage: "フェーズ段階"
             };
 
-            if (data.axes_confidence) {
-                Object.keys(axisNames).forEach(key => {
-                    const conf = data.axes_confidence[key];
-                    if (conf == null) return;
-                    const pct = Math.round(conf * 100);
-                    const item = document.createElement("div");
-                    item.className = "axis-item";
-                    item.innerHTML =
-                        '<span class="axis-label">' + axisNames[key] + "</span>" +
-                        '<span class="axis-value">' + (data.axes && data.axes[key] ? data.axes[key] : "---") + "</span>" +
-                        '<div class="confidence-mini">' +
-                            '<div class="bar-wrap"><div class="confidence-bar small"><div class="confidence-fill" style="width:' + pct + "%; background:" + confidenceColor(pct) + ';"></div></div></div>' +
-                            '<span class="pct">' + pct + "%</span>" +
-                        "</div>";
-                    axes.appendChild(item);
-                });
-            }
+            const extraction = data.extraction || {};
+            Object.keys(axisNames).forEach(key => {
+                const axisData = extraction[key];
+                if (!axisData || typeof axisData !== "object") return;
+                const conf = axisData.confidence || 0;
+                const pct = Math.round(conf * 100);
+                const primary = axisData.primary || "---";
+                const item = document.createElement("div");
+                item.className = "axis-item";
+                item.innerHTML =
+                    '<span class="axis-label">' + axisNames[key] + "</span>" +
+                    '<span class="axis-value">' + escapeHtml(primary) + "</span>" +
+                    '<div class="confidence-mini">' +
+                        '<div class="bar-wrap"><div class="confidence-bar small"><div class="confidence-fill" style="width:' + pct + "%; background:" + confidenceColor(pct) + ';"></div></div></div>' +
+                        '<span class="pct">' + pct + "%</span>" +
+                    "</div>";
+                axes.appendChild(item);
+            });
 
             /* Overall confidence */
-            const overall = data.overall_confidence != null ? Math.round(data.overall_confidence * 100) : 0;
+            const assessment = data.assessment || {};
+            const overall = assessment.overall_confidence != null ? Math.round(assessment.overall_confidence * 100) : 0;
             document.getElementById("overall-pct").textContent = overall + "%";
             const fill = document.getElementById("overall-fill");
             fill.style.width = overall + "%";
@@ -1064,12 +1083,12 @@
                 let detailHtml = "";
                 if (c.upper_trigram) detailHtml += "<span>上卦: " + escapeHtml(c.upper_trigram) + "</span>";
                 if (c.lower_trigram) detailHtml += "<span>下卦: " + escapeHtml(c.lower_trigram) + "</span>";
-                if (c.zhi_gua) detailHtml += "<span>之卦: " + escapeHtml(c.zhi_gua) + "</span>";
-                if (c.yao_position) detailHtml += "<span>爻位: " + escapeHtml(String(c.yao_position)) + "</span>";
+                if (c.zhi_gua_name) detailHtml += "<span>之卦: " + escapeHtml(c.zhi_gua_name) + "</span>";
+                if (c.yao_name) detailHtml += "<span>爻位: " + escapeHtml(c.yao_name) + "</span>";
 
                 card.innerHTML =
-                    '<div class="kua-name">' + escapeHtml(c.name || "---") + "</div>" +
-                    '<div class="kua-number">第' + (c.number || "?") + "卦</div>" +
+                    '<div class="kua-name">' + escapeHtml(c.hexagram_name || "---") + "</div>" +
+                    '<div class="kua-number">第' + (c.hexagram_number || "?") + "卦</div>" +
                     '<div class="probability">' +
                         '<span class="pct">' + prob + "%</span>" +
                         '<div class="confidence-bar" style="margin-top:6px;"><div class="confidence-fill" style="width:' + prob + "%; background:" + confidenceColor(prob) + ';"></div></div>' +
@@ -1099,7 +1118,7 @@
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         session_id: sessionId,
-                        selected_index: index
+                        candidate_index: index
                     })
                 });
                 if (!res.ok) throw new Error("Feedback failed");
@@ -1119,28 +1138,27 @@
         function showResultPhase(data) {
             /* Header */
             const header = document.getElementById("result-header");
-            const kua = data.kua || {};
+            const fb = data.feedback || {};
+            const l1 = fb.layer1_current || {};
+            const hex = l1.hexagram || {};
             header.innerHTML =
-                '<div class="kua-title">' + escapeHtml(kua.name || "---") + "</div>" +
-                '<div class="kua-sub">第' + (kua.number || "?") + "卦</div>";
+                '<div class="kua-title">' + escapeHtml(hex.name || "---") + "</div>" +
+                '<div class="kua-sub">第' + (hex.id || "?") + "卦</div>";
 
             /* Layers */
             const layersContainer = document.getElementById("result-layers");
             layersContainer.innerHTML = "";
 
-            const layers = data.layers || {};
-
             /* Layer 1: 現在地の読み解き */
-            const l1 = layers.layer1 || {};
             layersContainer.appendChild(buildAccordion(
                 1,
                 "現在地の読み解き",
-                buildLayer1Content(l1, kua),
-                true /* open by default */
+                buildLayer1Content(l1),
+                true
             ));
 
             /* Layer 2: 変化が向かう構造 */
-            const l2 = layers.layer2 || {};
+            const l2 = fb.layer2_direction || {};
             layersContainer.appendChild(buildAccordion(
                 2,
                 "変化が向かう構造",
@@ -1149,7 +1167,7 @@
             ));
 
             /* Layer 3: 見えていない力学 */
-            const l3 = layers.layer3 || {};
+            const l3 = fb.layer3_hidden || {};
             layersContainer.appendChild(buildAccordion(
                 3,
                 "見えていない力学",
@@ -1158,7 +1176,7 @@
             ));
 
             /* Layer 4: 過去事例 */
-            const l4 = layers.layer4 || {};
+            const l4 = fb.layer4_reference || {};
             layersContainer.appendChild(buildAccordion(
                 4,
                 "過去事例",
@@ -1167,7 +1185,7 @@
             ));
 
             /* Layer 5: 問いかけ */
-            const l5 = layers.layer5 || {};
+            const l5 = fb.layer5_question || {};
             layersContainer.appendChild(buildAccordion(
                 5,
                 "問いかけ",
@@ -1210,66 +1228,103 @@
         }
 
         /* Layer Content Builders */
-        function buildLayer1Content(l1, kua) {
+        function buildLayer1Content(l1) {
             let html = "";
-            if (kua.name) {
-                html += field("卦名", kua.name + (kua.number ? "（第" + kua.number + "卦）" : ""));
+            const hex = l1.hexagram || {};
+            if (hex.name) {
+                html += field("卦名", hex.name + (hex.id ? "（第" + hex.id + "卦）" : ""));
             }
-            if (l1.upper_trigram || l1.lower_trigram) {
-                html += field("上卦 / 下卦", (l1.upper_trigram || "---") + " / " + (l1.lower_trigram || "---"));
+            if (hex.upper_trigram || hex.lower_trigram) {
+                html += field("上卦 / 下卦", (hex.upper_trigram || "---") + " / " + (hex.lower_trigram || "---"));
             }
-            if (l1.gua_ci) {
-                html += field("卦辞", l1.gua_ci);
+            if (hex.visual) {
+                html += '<div class="field"><div class="field-label">卦象</div><pre style="color:var(--gold);font-size:0.85rem;line-height:1.3;margin-top:4px;">' + escapeHtml(hex.visual) + '</pre></div>';
             }
-            if (l1.phase_position != null) {
+            if (l1.judgment_modern_ja) {
+                html += field("卦辞", l1.judgment_modern_ja);
+            }
+            const cl = l1.changing_line || {};
+            if (cl.position) {
                 html += '<div class="field"><div class="field-label">フェーズ位置</div>';
-                html += buildPhaseBar(l1.phase_position, l1.phase_total || 6);
+                html += buildPhaseBar(cl.position, 6);
+                html += '<div style="font-size:0.82rem;color:rgba(245,245,245,0.6);margin-top:4px;">' + escapeHtml(cl.phase || "") + ": " + escapeHtml(cl.phase_description || "") + '</div>';
                 html += "</div>";
             }
-            if (l1.yao_ci) {
-                html += field("爻辞", l1.yao_ci);
+            if (cl.yao_text_modern_ja) {
+                html += field("爻辞", cl.yao_text_modern_ja);
             }
-            if (l1.reading) {
-                html += field("読み解き", l1.reading);
+            if (cl.xiang_modern_ja) {
+                html += field("象伝", cl.xiang_modern_ja);
             }
             return html || "<p>データがありません。</p>";
         }
 
         function buildLayer2Content(l2) {
             let html = "";
-            if (l2.zhi_gua) {
-                html += field("之卦", l2.zhi_gua);
+            const rh = l2.resulting_hexagram || {};
+            if (rh.name) {
+                html += field("之卦", rh.name + (rh.id ? "（第" + rh.id + "卦）" : ""));
+            }
+            const tr = l2.transformation || {};
+            if (tr.changed_line) {
+                html += field("変爻", "第" + tr.changed_line + "爻 " + (tr.from || "") + "→" + (tr.to || ""));
+            }
+            if (tr.meaning) {
+                html += field("変化の意味", tr.meaning);
             }
             if (l2.structural_reading) {
                 html += field("構造的読み解き", l2.structural_reading);
             }
-            if (l2.transition) {
-                html += field("変化の方向", l2.transition);
+            if (l2.resulting_judgment_modern_ja) {
+                html += field("之卦の卦辞", l2.resulting_judgment_modern_ja);
             }
             return html || "<p>データがありません。</p>";
         }
 
         function buildLayer3Content(l3) {
             let html = "";
-            if (l3.hu_gua) html += field("互卦", l3.hu_gua);
-            if (l3.cuo_gua) html += field("錯卦", l3.cuo_gua);
-            if (l3.zong_gua) html += field("綜卦", l3.zong_gua);
-            if (l3.analysis) html += field("分析", l3.analysis);
+            const nuc = l3.nuclear || {};
+            if (nuc.hexagram_name) {
+                html += field("互卦", nuc.hexagram_name);
+                if (nuc.reading) html += '<div class="field"><div class="field-value" style="font-size:0.85rem;line-height:1.7;">' + escapeHtml(nuc.reading) + '</div></div>';
+            }
+            const comp = l3.complementary || {};
+            if (comp.hexagram_name) {
+                html += field("錯卦", comp.hexagram_name);
+                if (comp.reading) html += '<div class="field"><div class="field-value" style="font-size:0.85rem;line-height:1.7;">' + escapeHtml(comp.reading) + '</div></div>';
+            }
+            const inv = l3.inverted || {};
+            if (inv.hexagram_name) {
+                html += field("綜卦", inv.hexagram_name);
+                if (inv.reading) html += '<div class="field"><div class="field-value" style="font-size:0.85rem;line-height:1.7;">' + escapeHtml(inv.reading) + '</div></div>';
+            }
             return html || "<p>データがありません。</p>";
         }
 
         function buildLayer4Content(l4) {
             let html = "";
-            if (l4.probability_distribution) {
-                html += field("条件付き確率分布", l4.probability_distribution);
+            const dist = l4.conditional_distribution;
+            if (dist && typeof dist === "object") {
+                const entries = Object.entries(dist).sort((a, b) => b[1] - a[1]).slice(0, 5);
+                if (entries.length > 0) {
+                    html += '<div class="field"><div class="field-label">条件付き確率分布（上位5件）</div>';
+                    entries.forEach(([state, prob]) => {
+                        const pct = Math.round(prob * 100);
+                        html += '<div style="display:flex;align-items:center;gap:8px;margin-top:4px;">' +
+                            '<span style="min-width:80px;font-size:0.82rem;">' + escapeHtml(state) + '</span>' +
+                            '<div style="flex:1;max-width:200px;"><div class="confidence-bar small"><div class="confidence-fill" style="width:' + pct + '%;background:var(--gold);"></div></div></div>' +
+                            '<span style="font-size:0.75rem;color:rgba(245,245,245,0.5);">' + pct + '%</span></div>';
+                    });
+                    html += '</div>';
+                }
             }
             if (l4.similar_cases && l4.similar_cases.length > 0) {
                 html += '<div class="field"><div class="field-label">類似事例</div>';
                 l4.similar_cases.forEach(c => {
                     html +=
                         '<div class="case-item">' +
-                            '<div class="case-title">' + escapeHtml(c.title || "事例") + "</div>" +
-                            '<div class="case-desc">' + escapeHtml(c.description || "") + "</div>" +
+                            '<div class="case-title">' + escapeHtml(c.title || c.subject || "事例") + "</div>" +
+                            '<div class="case-desc">' + escapeHtml(c.description || c.summary_ja || "") + "</div>" +
                         "</div>";
                 });
                 html += "</div>";
@@ -1279,12 +1334,11 @@
 
         function buildLayer5Content(l5) {
             let html = "";
-            if (l5.questions && l5.questions.length > 0) {
-                l5.questions.forEach(q => {
-                    html += '<div class="question-text">' + escapeHtml(q) + "</div>";
-                });
-            } else if (l5.question) {
+            if (l5.question) {
                 html += '<div class="question-text">' + escapeHtml(l5.question) + "</div>";
+            }
+            if (l5.generation_basis) {
+                html += '<div style="font-size:0.75rem;color:rgba(245,245,245,0.4);margin-top:8px;">(' + escapeHtml(l5.generation_basis) + ')</div>';
             }
             return html || '<div class="question-text">今、あなたが最も恐れていることの中に、次の一歩のヒントがあるかもしれません。</div>';
         }
@@ -1329,6 +1383,11 @@
             setTimeout(() => {
                 if (toast.parentNode) toast.parentNode.removeChild(toast);
             }, 3500);
+        }
+
+        function showDemoBanner() {
+            const banner = document.getElementById("demo-banner");
+            if (banner) banner.classList.add("active");
         }
 
         /* ===== Escape ===== */
