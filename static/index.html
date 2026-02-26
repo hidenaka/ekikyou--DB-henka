@@ -379,8 +379,8 @@
 
         /* ===== Phase 3: Candidates ===== */
         .candidates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 16px;
             margin-bottom: 20px;
         }
@@ -389,15 +389,15 @@
             background: var(--primary-light);
             border: 2px solid rgba(245, 245, 245, 0.1);
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             cursor: pointer;
             transition: all 0.3s;
-            text-align: center;
+            text-align: left;
         }
 
         .candidate-card:hover {
             border-color: var(--gold);
-            transform: translateY(-4px);
+            transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(212, 168, 83, 0.15);
         }
 
@@ -406,36 +406,87 @@
             background: rgba(212, 168, 83, 0.08);
         }
 
-        .candidate-card .kua-name {
-            font-size: 1.4rem;
+        .candidate-card .card-rank {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .candidate-card .kua-meaning {
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--gold);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
+            line-height: 1.4;
         }
 
-        .candidate-card .kua-number {
+        .candidate-card .kua-situation {
+            font-size: 0.95rem;
+            color: rgba(245, 245, 245, 0.8);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .candidate-card .keyword-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .keyword-tag {
+            background: rgba(212, 168, 83, 0.15);
+            color: var(--gold);
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 168, 83, 0.3);
+        }
+
+        .candidate-card .fit-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .candidate-card .fit-bar .confidence-bar {
+            flex: 1;
+        }
+
+        .candidate-card .fit-bar .fit-label {
             font-size: 0.8rem;
             color: rgba(245, 245, 245, 0.5);
-            margin-bottom: 12px;
+            white-space: nowrap;
         }
 
-        .candidate-card .probability {
-            margin-bottom: 12px;
-        }
-
-        .candidate-card .probability .pct {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--light);
-        }
-
-        .candidate-card .kua-detail {
+        .card-detail-toggle {
             font-size: 0.82rem;
-            color: rgba(245, 245, 245, 0.6);
-            line-height: 1.5;
+            color: rgba(245, 245, 245, 0.45);
+            cursor: pointer;
+            user-select: none;
+            padding-top: 4px;
         }
 
-        .candidate-card .kua-detail span {
+        .card-detail-toggle:hover {
+            color: rgba(245, 245, 245, 0.7);
+        }
+
+        .card-detail-content {
+            display: none;
+            font-size: 0.82rem;
+            color: rgba(245, 245, 245, 0.5);
+            line-height: 1.6;
+            padding-top: 8px;
+        }
+
+        .card-detail-content.open {
+            display: block;
+        }
+
+        .card-detail-content span {
             display: block;
             margin-bottom: 2px;
         }
@@ -781,9 +832,9 @@
         <!-- Phase 3: Candidates -->
         <div id="phase-confirmed" class="phase hidden">
             <div class="candidates-section">
-                <h2>卦の候補</h2>
+                <h2>あなたの状況に近いパターン</h2>
                 <p style="text-align:center; font-size:0.85rem; color:rgba(245,245,245,0.5); margin-bottom:20px;">
-                    最も当てはまると感じるものを選んでください
+                    直感で一番しっくり来るものを選んでください
                 </p>
                 <div class="candidates-grid" id="candidates-grid"></div>
             </div>
@@ -1072,6 +1123,8 @@
             const grid = document.getElementById("candidates-grid");
             grid.innerHTML = "";
 
+            const rankLabels = ["❶ 最も可能性が高い", "❷ 次に可能性が高い", "❸ 3番目の候補"];
+
             const candidates = data.candidates || [];
             candidates.forEach((c, i) => {
                 const card = document.createElement("div");
@@ -1079,21 +1132,39 @@
                 card.setAttribute("data-index", i);
 
                 const prob = c.probability != null ? Math.round(c.probability * 100) : 0;
+                const meaning = c.meaning || c.hexagram_name || "---";
+                const situation = c.situation || "";
+                const keywords = c.keywords || [];
 
-                let detailHtml = "";
-                if (c.upper_trigram) detailHtml += "<span>上卦: " + escapeHtml(c.upper_trigram) + "</span>";
-                if (c.lower_trigram) detailHtml += "<span>下卦: " + escapeHtml(c.lower_trigram) + "</span>";
-                if (c.zhi_gua_name) detailHtml += "<span>之卦: " + escapeHtml(c.zhi_gua_name) + "</span>";
-                if (c.yao_name) detailHtml += "<span>爻位: " + escapeHtml(c.yao_name) + "</span>";
+                /* Keywords HTML */
+                let keywordsHtml = "";
+                if (keywords.length > 0) {
+                    keywordsHtml = '<div class="keyword-tags">' +
+                        keywords.map(k => '<span class="keyword-tag">' + escapeHtml(k) + '</span>').join("") +
+                        '</div>';
+                }
+
+                /* Detail (collapsible) */
+                let detailItems = "";
+                detailItems += "<span>" + escapeHtml(c.hexagram_name || "---") + "（第" + (c.hexagram_number || "?") + "卦）</span>";
+                if (c.zhi_gua_name) detailItems += "<span>→ " + escapeHtml(c.zhi_gua_name) + " へ変化</span>";
+                if (c.upper_trigram) detailItems += "<span>上卦: " + escapeHtml(c.upper_trigram) + "</span>";
+                if (c.lower_trigram) detailItems += "<span>下卦: " + escapeHtml(c.lower_trigram) + "</span>";
+                if (c.yao_name) detailItems += "<span>爻位: " + escapeHtml(c.yao_name) + "</span>";
+
+                const detailId = "detail-" + i;
 
                 card.innerHTML =
-                    '<div class="kua-name">' + escapeHtml(c.hexagram_name || "---") + "</div>" +
-                    '<div class="kua-number">第' + (c.hexagram_number || "?") + "卦</div>" +
-                    '<div class="probability">' +
-                        '<span class="pct">' + prob + "%</span>" +
-                        '<div class="confidence-bar" style="margin-top:6px;"><div class="confidence-fill" style="width:' + prob + "%; background:" + confidenceColor(prob) + ';"></div></div>' +
-                    "</div>" +
-                    '<div class="kua-detail">' + detailHtml + "</div>";
+                    '<div class="card-rank">' + (rankLabels[i] || "候補 " + (i + 1)) + '</div>' +
+                    '<div class="kua-meaning">' + escapeHtml(meaning) + '</div>' +
+                    (situation ? '<div class="kua-situation">' + escapeHtml(situation) + '</div>' : '') +
+                    keywordsHtml +
+                    '<div class="fit-bar">' +
+                        '<div class="confidence-bar"><div class="confidence-fill" style="width:' + prob + '%; background:' + confidenceColor(prob) + ';"></div></div>' +
+                        '<span class="fit-label">適合度 ' + prob + '%</span>' +
+                    '</div>' +
+                    '<div class="card-detail-toggle" onclick="event.stopPropagation(); document.getElementById(\'' + detailId + '\').classList.toggle(\'open\'); this.textContent = document.getElementById(\'' + detailId + '\').classList.contains(\'open\') ? \'▾ 詳細を閉じる\' : \'▸ 詳細を見る\';">▸ 詳細を見る</div>' +
+                    '<div class="card-detail-content" id="' + detailId + '">' + detailItems + '</div>';
 
                 card.addEventListener("click", () => selectCandidate(i, card));
                 grid.appendChild(card);
