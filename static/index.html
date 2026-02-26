@@ -429,6 +429,22 @@
             margin-bottom: 12px;
         }
 
+        .kua-archetype {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 8px;
+            padding-left: 2px;
+        }
+
+        .kua-modern-interp {
+            font-size: 0.82rem;
+            color: rgba(245, 245, 245, 0.7);
+            line-height: 1.6;
+            margin-bottom: 10px;
+            padding-left: 2px;
+        }
+
         .candidate-card .keyword-tags {
             display: flex;
             flex-wrap: wrap;
@@ -1134,6 +1150,8 @@
                 const prob = c.probability != null ? Math.round(c.probability * 100) : 0;
                 const meaning = c.meaning || c.hexagram_name || "---";
                 const situation = c.situation || "";
+                const archetype = c.archetype || "";
+                const modernInterp = c.modern_interpretation || "";
                 const keywords = c.keywords || [];
 
                 /* Keywords HTML */
@@ -1158,6 +1176,8 @@
                     '<div class="card-rank">' + (rankLabels[i] || "候補 " + (i + 1)) + '</div>' +
                     '<div class="kua-meaning">' + escapeHtml(meaning) + '</div>' +
                     (situation ? '<div class="kua-situation">' + escapeHtml(situation) + '</div>' : '') +
+                    (archetype ? '<div class="kua-archetype">' + escapeHtml(archetype) + '</div>' : '') +
+                    (modernInterp ? '<div class="kua-modern-interp">' + escapeHtml(modernInterp) + '</div>' : '') +
                     keywordsHtml +
                     '<div class="fit-bar">' +
                         '<div class="confidence-bar"><div class="confidence-fill" style="width:' + prob + '%; background:' + confidenceColor(prob) + ';"></div></div>' +

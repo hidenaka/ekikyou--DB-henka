@@ -326,6 +326,8 @@ class TestConfirm:
             assert "situation" in c, "候補にsituation（状況説明）が含まれていること"
             assert "keywords" in c, "候補にkeywords（キーワード）が含まれていること"
             assert isinstance(c["keywords"], list), "keywordsがリストであること"
+            assert "archetype" in c, "候補にarchetype（元型）が含まれていること"
+            assert "modern_interpretation" in c, "候補にmodern_interpretation（現代的解釈）が含まれていること"
 
         # db_labels の構造検証
         db = data["db_labels"]

@@ -359,6 +359,8 @@ def confirm():
         c["meaning"] = hex_info.get("meaning", "")
         c["situation"] = hex_info.get("situation", "")
         c["keywords"] = hex_info.get("keywords", [])
+        c["archetype"] = hex_info.get("archetype", "")
+        c["modern_interpretation"] = hex_info.get("modern_interpretation", "")
     s["phase"] = "confirmed"
 
     return jsonify({
