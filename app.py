@@ -189,18 +189,20 @@ def extract():
     if err:
         return err
 
-    # デモモード: LLM未設定時はサンプルデータを返す
+    # デモモード: LLM未設定またはAPI呼び出し失敗時はサンプルデータを返す
     demo_mode = not dialogue_engine.is_available()
+    extraction = None
+    followup_question = None
+
+    if not demo_mode:
+        extraction = dialogue_engine.extract_axes(text)
+        if extraction is None:
+            demo_mode = True  # LLM呼び出し失敗 → デモモードにフォールバック
 
     if demo_mode:
         scenario = _select_demo_scenario(text)
         extraction = scenario["extraction"]
         followup_question = scenario["followup"]
-    else:
-        extraction = dialogue_engine.extract_axes(text)
-        if extraction is None:
-            return jsonify({"error": "分析に失敗しました"}), 400
-        followup_question = None
 
     # 確信度評価
     assessment = dialogue_engine.assess_confidence(extraction)
@@ -255,6 +257,18 @@ def followup():
     # テキスト連結
     s["accumulated_text"] += "\n\n追加情報:\n" + answer
 
+    merged = None
+    followup_question = None
+
+    if not demo_mode:
+        new_extraction = dialogue_engine.extract_axes(s["accumulated_text"])
+        if new_extraction is None:
+            demo_mode = True  # LLM呼び出し失敗 → デモモードにフォールバック
+        else:
+            merged = dialogue_engine.merge_extractions(
+                s["current_extraction"], new_extraction
+            )
+
     if demo_mode:
         # デモモード: 確信度を上げた結果を返す
         merged = s["current_extraction"]
@@ -263,15 +277,6 @@ def followup():
                 merged[key]["confidence"] = min(
                     1.0, merged[key]["confidence"] + 0.10
                 )
-        followup_question = None
-    else:
-        new_extraction = dialogue_engine.extract_axes(s["accumulated_text"])
-        if new_extraction is None:
-            return jsonify({"error": "分析に失敗しました"}), 400
-        merged = dialogue_engine.merge_extractions(
-            s["current_extraction"], new_extraction
-        )
-        followup_question = None
 
     # 確信度評価
     assessment = dialogue_engine.assess_confidence(merged)

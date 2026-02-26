@@ -187,16 +187,17 @@ class TestExtract:
         assert "error" in data
 
     @patch("app.dialogue_engine.extract_axes", return_value=None)
-    def test_extract_llm_failure(self, mock_extract, client):
-        """LLM抽出が失敗した場合に400が返ること。"""
+    def test_extract_llm_failure_falls_back_to_demo(self, mock_extract, client):
+        """LLM抽出が失敗した場合にデモモードにフォールバックすること。"""
         sid = _create_session(client)
         resp = client.post("/api/extract", json={
             "session_id": sid,
             "text": "テスト",
         })
-        assert resp.status_code == 400
+        assert resp.status_code == 200
         data = resp.get_json()
-        assert "error" in data
+        assert data["demo_mode"] is True
+        assert "extraction" in data
 
 
 # ===========================================================================
