@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易経変化理解支援</title>
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary: #1a1a2e;
+            --primary-light: #16213e;
+            --accent: #e94560;
+            --gold: #d4a853;
+            --light: #f5f5f5;
+            --text: #333;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+        }
+
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--primary);
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ===== Header ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            text-align: center;
+            padding: 24px 16px 16px;
+            border-bottom: 2px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            color: rgba(245, 245, 245, 0.6);
+        }
+
+        .health-status {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: rgba(245, 245, 245, 0.5);
+        }
+
+        .health-status .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+
+        .health-status .dot.ok { background: var(--success); }
+        .health-status .dot.err { background: var(--danger); }
+        .health-status .dot.loading {
+            background: var(--warning);
+            animation: pulse 1s infinite;
+        }
+
+        /* ===== Main Container ===== */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* ===== Phase Visibility ===== */
+        .phase {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .phase.hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Phase 1: Chat UI ===== */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 8px 4px;
+            scroll-behavior: smooth;
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+            animation: msgIn 0.3s ease;
+        }
+
+        @keyframes msgIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .chat-message.user {
+            align-self: flex-end;
+            background: var(--gold);
+            color: var(--text);
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-message.ai {
+            align-self: flex-start;
+            background: var(--primary-light);
+            color: var(--light);
+            border-bottom-left-radius: 4px;
+            border: 1px solid rgba(212, 168, 83, 0.15);
+        }
+
+        .chat-message.ai .followup-label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--gold);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .chat-input-area textarea {
+            flex: 1;
+            background: var(--primary-light);
+            border: 1px solid rgba(212, 168, 83, 0.3);
+            color: var(--light);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            resize: none;
+            min-height: 48px;
+            max-height: 160px;
+            line-height: 1.5;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input-area textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .chat-input-area textarea::placeholder {
+            color: rgba(245, 245, 245, 0.35);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #ff5a78;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid rgba(245, 245, 245, 0.3);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--primary);
+        }
+
+        .btn-gold:hover:not(:disabled) {
+            background: #e0b86a;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(212, 168, 83, 0.4);
+        }
+
+        .btn-send {
+            padding: 12px 20px;
+            border-radius: 12px;
+            min-height: 48px;
+        }
+
+        /* ===== Spinner ===== */
+        .spinner {
+            display: none;
+            width: 32px;
+            height: 32px;
+            border: 3px solid rgba(212, 168, 83, 0.2);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 24px auto;
+        }
+
+        .spinner.active { display: block; }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            display: none;
+            text-align: center;
+            color: rgba(245, 245, 245, 0.5);
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
+        .loading-text.active { display: block; }
+
+        /* ===== Phase 2: Reviewing ===== */
+        .review-card {
+            background: var(--primary-light);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(212, 168, 83, 0.15);
+        }
+
+        .review-card h3 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .review-summary {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(245, 245, 245, 0.85);
+        }
+
+        .axis-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .axis-label {
+            min-width: 100px;
+            font-size: 0.85rem;
+            color: rgba(245, 245, 245, 0.6);
+        }
+
+        .axis-value {
+            flex: 1;
+            font-size: 0.9rem;
+            color: var(--light);
+        }
+
+        .overall-confidence {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(245, 245, 245, 0.1);
+        }
+
+        .overall-confidence .label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .review-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .review-actions .btn { flex: 1; }
+
+        /* ===== Confidence Bar ===== */
+        .confidence-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(245, 245, 245, 0.1);
+            overflow: hidden;
+        }
+
+        .confidence-bar.small {
+            height: 5px;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+
+        .confidence-mini {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .confidence-mini .bar-wrap {
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .confidence-mini .pct {
+            font-size: 0.75rem;
+            color: rgba(245, 245, 245, 0.5);
+            min-width: 36px;
+            text-align: right;
+        }
+
+        /* ===== Phase 3: Candidates ===== */
+        .candidates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .candidate-card {
+            background: var(--primary-light);
+            border: 2px solid rgba(245, 245, 245, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .candidate-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(212, 168, 83, 0.15);
+        }
+
+        .candidate-card.selected {
+            border-color: var(--gold);
+            background: rgba(212, 168, 83, 0.08);
+        }
+
+        .candidate-card .kua-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .candidate-card .kua-number {
+            font-size: 0.8rem;
+            color: rgba(245, 245, 245, 0.5);
+            margin-bottom: 12px;
+        }
+
+        .candidate-card .probability {
+            margin-bottom: 12px;
+        }
+
+        .candidate-card .probability .pct {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .candidate-card .kua-detail {
+            font-size: 0.82rem;
+            color: rgba(245, 245, 245, 0.6);
+            line-height: 1.5;
+        }
+
+        .candidate-card .kua-detail span {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .candidates-section h2 {
+            color: var(--gold);
+            font-size: 1.15rem;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        /* ===== Phase 4: Result ===== */
+        .result-header {
+            text-align: center;
+            padding: 24px 0 16px;
+        }
+
+        .result-header .kua-title {
+            font-size: 1.6rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .result-header .kua-sub {
+            font-size: 0.9rem;
+            color: rgba(245, 245, 245, 0.5);
+            margin-top: 4px;
+        }
+
+        /* ===== Accordion ===== */
+        .accordion {
+            margin-bottom: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--primary-light);
+            border: 1px solid rgba(245, 245, 245, 0.08);
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            padding: 14px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--light);
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .accordion-header:hover {
+            background: rgba(245, 245, 245, 0.03);
+        }
+
+        .accordion-header .layer-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--gold);
+            color: var(--primary);
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .accordion-header .title-wrap {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .accordion-header::after {
+            content: "\25B6";
+            font-size: 0.7rem;
+            color: rgba(245, 245, 245, 0.4);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(90deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+        }
+
+        .accordion-body {
+            padding: 0 18px 18px;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(245, 245, 245, 0.8);
+        }
+
+        .accordion-body .field {
+            margin-bottom: 10px;
+        }
+
+        .accordion-body .field-label {
+            font-size: 0.8rem;
+            color: var(--gold);
+            margin-bottom: 2px;
+        }
+
+        .accordion-body .field-value {
+            color: var(--light);
+        }
+
+        /* Phase bar */
+        .phase-bar {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin: 12px 0;
+        }
+
+        .phase-bar .segment {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(245, 245, 245, 0.1);
+        }
+
+        .phase-bar .segment.filled {
+            background: var(--gold);
+        }
+
+        .phase-bar .segment.current {
+            background: var(--accent);
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Similar cases */
+        .case-item {
+            padding: 10px 12px;
+            background: rgba(245, 245, 245, 0.03);
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .case-item .case-title {
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 2px;
+        }
+
+        .case-item .case-desc {
+            font-size: 0.82rem;
+            color: rgba(245, 245, 245, 0.6);
+        }
+
+        /* Question layer */
+        .question-text {
+            font-size: 1.05rem;
+            color: var(--gold);
+            font-style: italic;
+            padding: 16px 0;
+            line-height: 1.7;
+        }
+
+        .restart-area {
+            text-align: center;
+            padding: 32px 0;
+        }
+
+        /* ===== Toast ===== */
+        .toast-container {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            animation: toastIn 0.3s ease, toastOut 0.3s ease 3s forwards;
+            pointer-events: auto;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes toastOut {
+            from { opacity: 1; }
+            to { opacity: 0; transform: translateY(-16px); }
+        }
+
+        /* ===== Pulse ===== */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* ===== Scrollbar ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(212, 168, 83, 0.3);
+            border-radius: 3px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.2rem; }
+            main { padding: 12px; }
+
+            .chat-message { max-width: 90%; }
+
+            .candidates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-actions {
+                flex-direction: column;
+            }
+
+            .axis-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .confidence-mini {
+                width: 100%;
+            }
+
+            .confidence-mini .bar-wrap {
+                max-width: none;
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>易経変化理解支援</h1>
+        <p>あなたの状況を教えてください</p>
+        <div class="health-status" id="health-status">
+            <span><span class="dot loading" id="health-dot"></span>接続確認中...</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Phase 1: Chat Input -->
+        <div id="phase-input" class="phase">
+            <div class="chat-container" id="chat-container">
+                <div class="chat-message ai">
+                    あなたが今直面している状況や、気になっていることを自由に教えてください。仕事、人間関係、転機、決断など、どんなことでも構いません。
+                </div>
+            </div>
+            <div class="spinner" id="chat-spinner"></div>
+            <div class="loading-text" id="chat-loading-text">分析しています...</div>
+            <div class="chat-input-area">
+                <textarea
+                    id="user-input"
+                    placeholder="状況を入力してください..."
+                    rows="2"
+                ></textarea>
+                <button class="btn btn-primary btn-send" id="btn-send" onclick="handleSend()">
+                    分析する
+                </button>
+            </div>
+        </div>
+
+        <!-- Phase 2: Reviewing -->
+        <div id="phase-reviewing" class="phase hidden">
+            <div class="review-card">
+                <h3>理解した内容の確認</h3>
+                <div id="review-summary" class="review-summary"></div>
+
+                <div id="review-axes" style="margin-top: 16px;"></div>
+
+                <div class="overall-confidence" id="overall-confidence">
+                    <div class="label">
+                        <span>全体確信度</span>
+                        <span id="overall-pct">0%</span>
+                    </div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="overall-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="review-actions">
+                    <button class="btn btn-secondary" onclick="handleRetry()">やり直す</button>
+                    <button class="btn btn-gold" id="btn-confirm" onclick="handleConfirm()">この理解で進める</button>
+                </div>
+            </div>
+            <div class="spinner" id="review-spinner"></div>
+            <div class="loading-text" id="review-loading-text">確認処理中...</div>
+        </div>
+
+        <!-- Phase 3: Candidates -->
+        <div id="phase-confirmed" class="phase hidden">
+            <div class="candidates-section">
+                <h2>卦の候補</h2>
+                <p style="text-align:center; font-size:0.85rem; color:rgba(245,245,245,0.5); margin-bottom:20px;">
+                    最も当てはまると感じるものを選んでください
+                </p>
+                <div class="candidates-grid" id="candidates-grid"></div>
+            </div>
+            <div class="spinner" id="confirm-spinner"></div>
+            <div class="loading-text" id="confirm-loading-text">結果を生成しています...</div>
+        </div>
+
+        <!-- Phase 4: Result -->
+        <div id="phase-result" class="phase hidden">
+            <div class="result-header" id="result-header"></div>
+            <div id="result-layers"></div>
+            <div class="restart-area">
+                <button class="btn btn-gold" onclick="handleRestart()">新しい相談を始める</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        /* ===== State ===== */
+        let sessionId = null;
+        let currentPhase = "input";
+        let followupCount = 0;
+        const MAX_FOLLOWUPS = 2;
+        let extractionResult = null;
+        let candidatesData = null;
+
+        /* ===== Init ===== */
+        document.addEventListener("DOMContentLoaded", () => {
+            initSession();
+            checkHealth();
+            setupTextareaAutoResize();
+        });
+
+        async function initSession() {
+            try {
+                const res = await fetch("/api/session", { method: "POST" });
+                if (!res.ok) throw new Error("Session init failed");
+                const data = await res.json();
+                sessionId = data.session_id;
+            } catch (e) {
+                showToast("セッション開始に失敗しました。ページを再読み込みしてください。");
+            }
+        }
+
+        async function checkHealth() {
+            const dot = document.getElementById("health-dot");
+            const status = document.getElementById("health-status");
+            try {
+                const res = await fetch("/api/health");
+                if (!res.ok) throw new Error("Health check failed");
+                const data = await res.json();
+                dot.className = "dot ok";
+                const casesCount = data.cases_count != null ? data.cases_count.toLocaleString() : "---";
+                const llmStatus = data.llm_status || "unknown";
+                status.innerHTML =
+                    '<span><span class="dot ok"></span>事例数: ' + casesCount + "</span>" +
+                    '<span><span class="dot ' + (llmStatus === "ok" ? "ok" : "err") + '"></span>LLM: ' + llmStatus + "</span>";
+            } catch (e) {
+                dot.className = "dot err";
+                status.innerHTML = '<span><span class="dot err"></span>サーバー未接続</span>';
+            }
+        }
+
+        /* ===== Textarea Auto Resize ===== */
+        function setupTextareaAutoResize() {
+            const textarea = document.getElementById("user-input");
+            textarea.addEventListener("input", () => {
+                textarea.style.height = "auto";
+                textarea.style.height = Math.min(textarea.scrollHeight, 160) + "px";
+            });
+            textarea.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSend();
+                }
+            });
+        }
+
+        /* ===== Phase Management ===== */
+        function showPhase(phase) {
+            document.querySelectorAll(".phase").forEach(el => el.classList.add("hidden"));
+            document.getElementById("phase-" + phase).classList.remove("hidden");
+            currentPhase = phase;
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        /* ===== Chat Functions ===== */
+        function addChatMessage(text, type) {
+            const container = document.getElementById("chat-container");
+            const msg = document.createElement("div");
+            msg.className = "chat-message " + type;
+            msg.textContent = text;
+            container.appendChild(msg);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function addAIFollowup(text) {
+            const container = document.getElementById("chat-container");
+            const msg = document.createElement("div");
+            msg.className = "chat-message ai";
+            const label = document.createElement("span");
+            label.className = "followup-label";
+            label.textContent = "追加の質問";
+            msg.appendChild(label);
+            msg.appendChild(document.createTextNode(text));
+            container.appendChild(msg);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function setLoading(show, spinnerId, textId) {
+            const spinner = document.getElementById(spinnerId || "chat-spinner");
+            const text = document.getElementById(textId || "chat-loading-text");
+            if (show) {
+                spinner.classList.add("active");
+                text.classList.add("active");
+            } else {
+                spinner.classList.remove("active");
+                text.classList.remove("active");
+            }
+        }
+
+        /* ===== Phase 1: Send / Extract ===== */
+        async function handleSend() {
+            const textarea = document.getElementById("user-input");
+            const btn = document.getElementById("btn-send");
+            const userText = textarea.value.trim();
+            if (!userText) return;
+
+            addChatMessage(userText, "user");
+            textarea.value = "";
+            textarea.style.height = "auto";
+            btn.disabled = true;
+            setLoading(true);
+
+            try {
+                if (followupCount === 0 && !extractionResult) {
+                    /* First message: extract */
+                    const res = await fetch("/api/extract", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            session_id: sessionId,
+                            user_input: userText
+                        })
+                    });
+                    if (!res.ok) throw new Error("Extract failed");
+                    const data = await res.json();
+                    extractionResult = data;
+
+                    if (data.followup_question) {
+                        followupCount++;
+                        addAIFollowup(data.followup_question);
+                        btn.textContent = "回答する";
+                    } else {
+                        showReviewPhase(data);
+                    }
+                } else {
+                    /* Followup answer */
+                    const res = await fetch("/api/followup", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            session_id: sessionId,
+                            user_input: userText
+                        })
+                    });
+                    if (!res.ok) throw new Error("Followup failed");
+                    const data = await res.json();
+                    extractionResult = data;
+                    followupCount++;
+
+                    if (data.followup_question && followupCount < MAX_FOLLOWUPS) {
+                        addAIFollowup(data.followup_question);
+                    } else {
+                        showReviewPhase(data);
+                    }
+                }
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+            } finally {
+                setLoading(false);
+                btn.disabled = false;
+            }
+        }
+
+        /* ===== Phase 2: Review ===== */
+        function showReviewPhase(data) {
+            const summary = document.getElementById("review-summary");
+            const axes = document.getElementById("review-axes");
+
+            /* Summary text */
+            if (data.summary) {
+                summary.textContent = data.summary;
+            } else if (data.axes) {
+                const parts = [];
+                if (data.axes.domain) parts.push(data.axes.domain);
+                if (data.axes.situation) parts.push(data.axes.situation);
+                if (data.axes.emotion) parts.push(data.axes.emotion);
+                if (data.axes.desire) parts.push(data.axes.desire);
+                if (data.axes.phase) parts.push(data.axes.phase);
+                summary.textContent = parts.join(" / ");
+            } else {
+                summary.textContent = "状況を分析しました。";
+            }
+
+            /* Axes confidence */
+            axes.innerHTML = "";
+            const axisNames = {
+                domain: "領域",
+                situation: "状況",
+                emotion: "感情",
+                desire: "意図",
+                phase: "フェーズ"
+            };
+
+            if (data.axes_confidence) {
+                Object.keys(axisNames).forEach(key => {
+                    const conf = data.axes_confidence[key];
+                    if (conf == null) return;
+                    const pct = Math.round(conf * 100);
+                    const item = document.createElement("div");
+                    item.className = "axis-item";
+                    item.innerHTML =
+                        '<span class="axis-label">' + axisNames[key] + "</span>" +
+                        '<span class="axis-value">' + (data.axes && data.axes[key] ? data.axes[key] : "---") + "</span>" +
+                        '<div class="confidence-mini">' +
+                            '<div class="bar-wrap"><div class="confidence-bar small"><div class="confidence-fill" style="width:' + pct + "%; background:" + confidenceColor(pct) + ';"></div></div></div>' +
+                            '<span class="pct">' + pct + "%</span>" +
+                        "</div>";
+                    axes.appendChild(item);
+                });
+            }
+
+            /* Overall confidence */
+            const overall = data.overall_confidence != null ? Math.round(data.overall_confidence * 100) : 0;
+            document.getElementById("overall-pct").textContent = overall + "%";
+            const fill = document.getElementById("overall-fill");
+            fill.style.width = overall + "%";
+            fill.style.background = confidenceColor(overall);
+
+            showPhase("reviewing");
+        }
+
+        function confidenceColor(pct) {
+            if (pct < 40) return "var(--danger)";
+            if (pct < 70) return "var(--warning)";
+            return "var(--success)";
+        }
+
+        /* ===== Phase 2 Actions ===== */
+        function handleRetry() {
+            followupCount = 0;
+            extractionResult = null;
+            document.getElementById("chat-container").innerHTML =
+                '<div class="chat-message ai">あなたが今直面している状況や、気になっていることを自由に教えてください。仕事、人間関係、転機、決断など、どんなことでも構いません。</div>';
+            document.getElementById("btn-send").textContent = "分析する";
+            showPhase("input");
+        }
+
+        async function handleConfirm() {
+            const btn = document.getElementById("btn-confirm");
+            btn.disabled = true;
+            setLoading(true, "review-spinner", "review-loading-text");
+
+            try {
+                const res = await fetch("/api/confirm", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ session_id: sessionId })
+                });
+                if (!res.ok) throw new Error("Confirm failed");
+                const data = await res.json();
+                candidatesData = data;
+                showCandidatesPhase(data);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+            } finally {
+                setLoading(false, "review-spinner", "review-loading-text");
+                btn.disabled = false;
+            }
+        }
+
+        /* ===== Phase 3: Candidates ===== */
+        function showCandidatesPhase(data) {
+            const grid = document.getElementById("candidates-grid");
+            grid.innerHTML = "";
+
+            const candidates = data.candidates || [];
+            candidates.forEach((c, i) => {
+                const card = document.createElement("div");
+                card.className = "candidate-card";
+                card.setAttribute("data-index", i);
+
+                const prob = c.probability != null ? Math.round(c.probability * 100) : 0;
+
+                let detailHtml = "";
+                if (c.upper_trigram) detailHtml += "<span>上卦: " + escapeHtml(c.upper_trigram) + "</span>";
+                if (c.lower_trigram) detailHtml += "<span>下卦: " + escapeHtml(c.lower_trigram) + "</span>";
+                if (c.zhi_gua) detailHtml += "<span>之卦: " + escapeHtml(c.zhi_gua) + "</span>";
+                if (c.yao_position) detailHtml += "<span>爻位: " + escapeHtml(String(c.yao_position)) + "</span>";
+
+                card.innerHTML =
+                    '<div class="kua-name">' + escapeHtml(c.name || "---") + "</div>" +
+                    '<div class="kua-number">第' + (c.number || "?") + "卦</div>" +
+                    '<div class="probability">' +
+                        '<span class="pct">' + prob + "%</span>" +
+                        '<div class="confidence-bar" style="margin-top:6px;"><div class="confidence-fill" style="width:' + prob + "%; background:" + confidenceColor(prob) + ';"></div></div>' +
+                    "</div>" +
+                    '<div class="kua-detail">' + detailHtml + "</div>";
+
+                card.addEventListener("click", () => selectCandidate(i, card));
+                grid.appendChild(card);
+            });
+
+            showPhase("confirmed");
+        }
+
+        async function selectCandidate(index, cardEl) {
+            /* Visual selection */
+            document.querySelectorAll(".candidate-card").forEach(c => c.classList.remove("selected"));
+            cardEl.classList.add("selected");
+
+            setLoading(true, "confirm-spinner", "confirm-loading-text");
+            document.querySelectorAll(".candidate-card").forEach(c => {
+                c.style.pointerEvents = "none";
+            });
+
+            try {
+                const res = await fetch("/api/feedback", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: sessionId,
+                        selected_index: index
+                    })
+                });
+                if (!res.ok) throw new Error("Feedback failed");
+                const data = await res.json();
+                showResultPhase(data);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+                document.querySelectorAll(".candidate-card").forEach(c => {
+                    c.style.pointerEvents = "auto";
+                });
+            } finally {
+                setLoading(false, "confirm-spinner", "confirm-loading-text");
+            }
+        }
+
+        /* ===== Phase 4: Result ===== */
+        function showResultPhase(data) {
+            /* Header */
+            const header = document.getElementById("result-header");
+            const kua = data.kua || {};
+            header.innerHTML =
+                '<div class="kua-title">' + escapeHtml(kua.name || "---") + "</div>" +
+                '<div class="kua-sub">第' + (kua.number || "?") + "卦</div>";
+
+            /* Layers */
+            const layersContainer = document.getElementById("result-layers");
+            layersContainer.innerHTML = "";
+
+            const layers = data.layers || {};
+
+            /* Layer 1: 現在地の読み解き */
+            const l1 = layers.layer1 || {};
+            layersContainer.appendChild(buildAccordion(
+                1,
+                "現在地の読み解き",
+                buildLayer1Content(l1, kua),
+                true /* open by default */
+            ));
+
+            /* Layer 2: 変化が向かう構造 */
+            const l2 = layers.layer2 || {};
+            layersContainer.appendChild(buildAccordion(
+                2,
+                "変化が向かう構造",
+                buildLayer2Content(l2),
+                true
+            ));
+
+            /* Layer 3: 見えていない力学 */
+            const l3 = layers.layer3 || {};
+            layersContainer.appendChild(buildAccordion(
+                3,
+                "見えていない力学",
+                buildLayer3Content(l3),
+                false
+            ));
+
+            /* Layer 4: 過去事例 */
+            const l4 = layers.layer4 || {};
+            layersContainer.appendChild(buildAccordion(
+                4,
+                "過去事例",
+                buildLayer4Content(l4),
+                false
+            ));
+
+            /* Layer 5: 問いかけ */
+            const l5 = layers.layer5 || {};
+            layersContainer.appendChild(buildAccordion(
+                5,
+                "問いかけ",
+                buildLayer5Content(l5),
+                true
+            ));
+
+            showPhase("result");
+        }
+
+        function buildAccordion(num, title, contentHtml, openDefault) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "accordion";
+
+            const hdr = document.createElement("div");
+            hdr.className = "accordion-header" + (openDefault ? " active" : "");
+            hdr.innerHTML =
+                '<div class="title-wrap">' +
+                    '<span class="layer-badge">' + num + "</span>" +
+                    "<span>" + escapeHtml(title) + "</span>" +
+                "</div>";
+
+            const content = document.createElement("div");
+            content.className = "accordion-content" + (openDefault ? " active" : "");
+
+            const body = document.createElement("div");
+            body.className = "accordion-body";
+            body.innerHTML = contentHtml;
+
+            content.appendChild(body);
+            wrapper.appendChild(hdr);
+            wrapper.appendChild(content);
+
+            hdr.addEventListener("click", () => {
+                hdr.classList.toggle("active");
+                content.classList.toggle("active");
+            });
+
+            return wrapper;
+        }
+
+        /* Layer Content Builders */
+        function buildLayer1Content(l1, kua) {
+            let html = "";
+            if (kua.name) {
+                html += field("卦名", kua.name + (kua.number ? "（第" + kua.number + "卦）" : ""));
+            }
+            if (l1.upper_trigram || l1.lower_trigram) {
+                html += field("上卦 / 下卦", (l1.upper_trigram || "---") + " / " + (l1.lower_trigram || "---"));
+            }
+            if (l1.gua_ci) {
+                html += field("卦辞", l1.gua_ci);
+            }
+            if (l1.phase_position != null) {
+                html += '<div class="field"><div class="field-label">フェーズ位置</div>';
+                html += buildPhaseBar(l1.phase_position, l1.phase_total || 6);
+                html += "</div>";
+            }
+            if (l1.yao_ci) {
+                html += field("爻辞", l1.yao_ci);
+            }
+            if (l1.reading) {
+                html += field("読み解き", l1.reading);
+            }
+            return html || "<p>データがありません。</p>";
+        }
+
+        function buildLayer2Content(l2) {
+            let html = "";
+            if (l2.zhi_gua) {
+                html += field("之卦", l2.zhi_gua);
+            }
+            if (l2.structural_reading) {
+                html += field("構造的読み解き", l2.structural_reading);
+            }
+            if (l2.transition) {
+                html += field("変化の方向", l2.transition);
+            }
+            return html || "<p>データがありません。</p>";
+        }
+
+        function buildLayer3Content(l3) {
+            let html = "";
+            if (l3.hu_gua) html += field("互卦", l3.hu_gua);
+            if (l3.cuo_gua) html += field("錯卦", l3.cuo_gua);
+            if (l3.zong_gua) html += field("綜卦", l3.zong_gua);
+            if (l3.analysis) html += field("分析", l3.analysis);
+            return html || "<p>データがありません。</p>";
+        }
+
+        function buildLayer4Content(l4) {
+            let html = "";
+            if (l4.probability_distribution) {
+                html += field("条件付き確率分布", l4.probability_distribution);
+            }
+            if (l4.similar_cases && l4.similar_cases.length > 0) {
+                html += '<div class="field"><div class="field-label">類似事例</div>';
+                l4.similar_cases.forEach(c => {
+                    html +=
+                        '<div class="case-item">' +
+                            '<div class="case-title">' + escapeHtml(c.title || "事例") + "</div>" +
+                            '<div class="case-desc">' + escapeHtml(c.description || "") + "</div>" +
+                        "</div>";
+                });
+                html += "</div>";
+            }
+            return html || "<p>データがありません。</p>";
+        }
+
+        function buildLayer5Content(l5) {
+            let html = "";
+            if (l5.questions && l5.questions.length > 0) {
+                l5.questions.forEach(q => {
+                    html += '<div class="question-text">' + escapeHtml(q) + "</div>";
+                });
+            } else if (l5.question) {
+                html += '<div class="question-text">' + escapeHtml(l5.question) + "</div>";
+            }
+            return html || '<div class="question-text">今、あなたが最も恐れていることの中に、次の一歩のヒントがあるかもしれません。</div>';
+        }
+
+        /* Helper: field block */
+        function field(label, value) {
+            return '<div class="field"><div class="field-label">' + escapeHtml(label) + '</div><div class="field-value">' + escapeHtml(value) + "</div></div>";
+        }
+
+        /* Helper: phase bar */
+        function buildPhaseBar(pos, total) {
+            let html = '<div class="phase-bar">';
+            for (let i = 1; i <= total; i++) {
+                let cls = "segment";
+                if (i < pos) cls += " filled";
+                else if (i === pos) cls += " current";
+                html += '<div class="' + cls + '"></div>';
+            }
+            html += "</div>";
+            return html;
+        }
+
+        /* ===== Restart ===== */
+        function handleRestart() {
+            followupCount = 0;
+            extractionResult = null;
+            candidatesData = null;
+            document.getElementById("chat-container").innerHTML =
+                '<div class="chat-message ai">あなたが今直面している状況や、気になっていることを自由に教えてください。仕事、人間関係、転機、決断など、どんなことでも構いません。</div>';
+            document.getElementById("btn-send").textContent = "分析する";
+            showPhase("input");
+            initSession();
+        }
+
+        /* ===== Toast ===== */
+        function showToast(message) {
+            const container = document.getElementById("toast-container");
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.textContent = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 3500);
+        }
+
+        /* ===== Escape ===== */
+        function escapeHtml(str) {
+            if (!str) return "";
+            const div = document.createElement("div");
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
