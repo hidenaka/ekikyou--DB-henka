@@ -127,6 +127,15 @@ class FeedbackEngine:
         else:
             self._yao384 = None
 
+        # hexagram_64 (archetype / modern_interpretation)
+        hex64_path = os.path.join(_PROJECT_ROOT, "data", "diagnostic",
+                                  "hexagram_64.json")
+        with open(hex64_path, "r", encoding="utf-8") as f:
+            _hex64_raw = json.load(f)
+        self._hex64 = {}
+        for _name, _info in _hex64_raw["hexagrams"].items():
+            self._hex64[_info["number"]] = _info
+
         # テンプレート
         tpl_path = os.path.join(_PROJECT_ROOT, "templates",
                                 "feedback_template.txt")
@@ -211,6 +220,8 @@ class FeedbackEngine:
         phase_name = PHASE_NAMES[yao - 1]
         phase_desc = PHASE_DESCRIPTIONS[yao]
 
+        hex64_info = self._hex64.get(hex_id, {})
+
         return {
             "hexagram": {
                 "id": hex_id,
@@ -221,6 +232,8 @@ class FeedbackEngine:
                 "visual": self._format_visual(lines, highlight_yao=yao),
             },
             "judgment_modern_ja": judgment_ja,
+            "archetype": hex64_info.get("archetype", ""),
+            "modern_interpretation": hex64_info.get("modern_interpretation", ""),
             "changing_line": {
                 "position": yao,
                 "phase": phase_name,
@@ -267,6 +280,8 @@ class FeedbackEngine:
 
         change_meaning = CHANGE_NATURE.get(yao, "")
 
+        zhi_hex64_info = self._hex64.get(zhi_id, {})
+
         return {
             "resulting_hexagram": {
                 "id": zhi_id,
@@ -274,6 +289,7 @@ class FeedbackEngine:
                 "upper_trigram": zhi_upper,
                 "lower_trigram": zhi_lower,
                 "lines": zhi_lines,
+                "archetype": zhi_hex64_info.get("archetype", ""),
             },
             "transformation": {
                 "changed_line": yao,
