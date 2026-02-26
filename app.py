@@ -48,6 +48,15 @@ prob_mapper = ProbabilityMapper()
 feedback_engine = FeedbackEngine()
 
 # ---------------------------------------------------------------------------
+# 卦データ読み込み（候補表示用）
+# ---------------------------------------------------------------------------
+with open(os.path.join(PROJECT_ROOT, "data", "diagnostic", "hexagram_64.json"), encoding="utf-8") as f:
+    _hex64_raw = json.load(f)
+hex64_lookup = {}
+for _name, _info in _hex64_raw["hexagrams"].items():
+    hex64_lookup[_info["number"]] = _info
+
+# ---------------------------------------------------------------------------
 # セッション管理（インメモリ）
 # ---------------------------------------------------------------------------
 sessions = {}  # session_id -> dict
@@ -344,6 +353,12 @@ def confirm():
     # セッション更新
     s["db_labels"] = db_labels
     s["candidates"] = result
+    # 候補に説明データを付与
+    for c in result["candidates"]:
+        hex_info = hex64_lookup.get(c["hexagram_number"], {})
+        c["meaning"] = hex_info.get("meaning", "")
+        c["situation"] = hex_info.get("situation", "")
+        c["keywords"] = hex_info.get("keywords", [])
     s["phase"] = "confirmed"
 
     return jsonify({
