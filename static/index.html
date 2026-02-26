@@ -776,6 +776,32 @@
                 flex: 1;
             }
         }
+
+        /* ===== 互換性情報 ===== */
+        .compat-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .compat-type {
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 2px 10px;
+            border-radius: 4px;
+        }
+
+        .compat-harmony { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+        .compat-synergy { background: rgba(212, 168, 83, 0.2); color: var(--gold); }
+        .compat-tension { background: rgba(243, 156, 18, 0.2); color: #f39c12; }
+        .compat-conflict { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        .compat-chaos { background: rgba(155, 89, 182, 0.2); color: #9b59b6; }
+
+        .compat-score {
+            font-size: 0.8rem;
+            color: rgba(245, 245, 245, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -1253,7 +1279,7 @@
             layersContainer.appendChild(buildAccordion(
                 2,
                 "変化が向かう構造",
-                buildLayer2Content(l2),
+                buildLayer2Content(l2, fb.compatibility),
                 true
             ));
 
@@ -1334,6 +1360,12 @@
             if (l1.judgment_modern_ja) {
                 html += field("卦辞", l1.judgment_modern_ja);
             }
+            if (l1.archetype) {
+                html += field("元型", l1.archetype);
+            }
+            if (l1.modern_interpretation) {
+                html += field("現代的解釈", l1.modern_interpretation);
+            }
             const cl = l1.changing_line || {};
             if (cl.position) {
                 html += '<div class="field"><div class="field-label">フェーズ位置</div>';
@@ -1350,11 +1382,14 @@
             return html || "<p>データがありません。</p>";
         }
 
-        function buildLayer2Content(l2) {
+        function buildLayer2Content(l2, compat) {
             let html = "";
             const rh = l2.resulting_hexagram || {};
             if (rh.name) {
                 html += field("之卦", rh.name + (rh.id ? "（第" + rh.id + "卦）" : ""));
+            }
+            if (rh.archetype) {
+                html += field("之卦の元型", rh.archetype);
             }
             const tr = l2.transformation || {};
             if (tr.changed_line) {
@@ -1368,6 +1403,27 @@
             }
             if (l2.resulting_judgment_modern_ja) {
                 html += field("之卦の卦辞", l2.resulting_judgment_modern_ja);
+            }
+            /* 互換性データ */
+            if (compat && compat.type) {
+                const typeLabels = {
+                    "HARMONY": "調和",
+                    "SYNERGY": "相乗効果",
+                    "TENSION": "緊張",
+                    "CONFLICT": "対立",
+                    "CHAOS": "混沌"
+                };
+                const typeLabel = typeLabels[compat.type] || compat.type;
+                const score = compat.score != null ? Math.round(compat.score * 100) : "---";
+                html += '<div class="field"><div class="field-label">本卦と之卦の関係性</div>';
+                html += '<div class="compat-info">';
+                html += '<span class="compat-type compat-' + compat.type.toLowerCase() + '">' + escapeHtml(typeLabel) + '</span>';
+                html += '<span class="compat-score">適合度 ' + score + '%</span>';
+                html += '</div>';
+                if (compat.summary) {
+                    html += '<div class="field-value" style="font-size:0.85rem;line-height:1.7;margin-top:6px;">' + escapeHtml(compat.summary) + '</div>';
+                }
+                html += '</div>';
             }
             return html || "<p>データがありません。</p>";
         }

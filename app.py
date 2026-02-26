@@ -57,6 +57,17 @@ for _name, _info in _hex64_raw["hexagrams"].items():
     hex64_lookup[_info["number"]] = _info
 
 # ---------------------------------------------------------------------------
+# 互換性データ読み込み（フィードバック用）
+# ---------------------------------------------------------------------------
+_compat_path = os.path.join(PROJECT_ROOT, "data", "reference",
+                            "hexagram_compatibility_lookup.json")
+if os.path.exists(_compat_path):
+    with open(_compat_path, encoding="utf-8") as f:
+        compat_lookup = json.load(f)
+else:
+    compat_lookup = {}
+
+# ---------------------------------------------------------------------------
 # セッション管理（インメモリ）
 # ---------------------------------------------------------------------------
 sessions = {}  # session_id -> dict
@@ -404,6 +415,21 @@ def feedback():
         s["db_labels"]["db_action"],
         s["db_labels"]["overall_confidence"],
     )
+
+    # 互換性データを追加（本卦と之卦の関係）
+    zhi_id = fb.get("layer2_direction", {}).get("resulting_hexagram", {}).get("id")
+    if zhi_id and compat_lookup:
+        hex_id = candidate["hexagram_number"]
+        compat_key = f"{hex_id}-{zhi_id}"
+        compat_data = compat_lookup.get(compat_key)
+        if compat_data:
+            fb["compatibility"] = {
+                "from_hexagram": hex_id,
+                "to_hexagram": zhi_id,
+                "type": compat_data.get("type", ""),
+                "score": compat_data.get("score", 0),
+                "summary": compat_data.get("summary", ""),
+            }
 
     # セッション更新
     s["phase"] = "result"
