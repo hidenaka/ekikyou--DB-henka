@@ -321,6 +321,11 @@ class TestConfirm:
             assert "rank" in c
             assert "lower_trigram" in c
             assert "upper_trigram" in c
+            # UX改善: 説明データの存在検証
+            assert "meaning" in c, "候補にmeaning（意味）が含まれていること"
+            assert "situation" in c, "候補にsituation（状況説明）が含まれていること"
+            assert "keywords" in c, "候補にkeywords（キーワード）が含まれていること"
+            assert isinstance(c["keywords"], list), "keywordsがリストであること"
 
         # db_labels の構造検証
         db = data["db_labels"]
