@@ -802,6 +802,361 @@
             font-size: 0.8rem;
             color: rgba(245, 245, 245, 0.5);
         }
+
+        /* ===== Diary Mode Styles ===== */
+        .mode-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: 2px solid rgba(245, 245, 245, 0.15);
+            border-radius: 8px;
+            background: transparent;
+            color: rgba(245, 245, 245, 0.6);
+            font-size: 0.9rem;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-align: center;
+        }
+
+        .mode-btn:hover {
+            border-color: rgba(245, 245, 245, 0.3);
+            color: var(--light);
+        }
+
+        .mode-btn.active {
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.12);
+            color: #a5b4fc;
+        }
+
+        .diary-summary-section {
+            background: var(--primary-light);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(212, 168, 83, 0.12);
+        }
+
+        .diary-summary-section h4 {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.03em;
+        }
+
+        .diary-summary-section p {
+            font-size: 0.92rem;
+            color: rgba(245, 245, 245, 0.82);
+            line-height: 1.7;
+        }
+
+        .diary-confidence-row {
+            display: flex;
+            gap: 16px;
+            margin: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .diary-confidence-item {
+            flex: 1;
+            min-width: 120px;
+            background: rgba(245, 245, 245, 0.03);
+            border-radius: 8px;
+            padding: 10px 14px;
+            text-align: center;
+        }
+
+        .diary-confidence-item .label {
+            font-size: 0.75rem;
+            color: rgba(245, 245, 245, 0.5);
+            margin-bottom: 4px;
+        }
+
+        .diary-confidence-item .value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .diary-followup-area {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 10px;
+            padding: 18px;
+            margin: 16px 0;
+        }
+
+        .diary-followup-area .followup-question {
+            font-size: 0.95rem;
+            color: #a5b4fc;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .diary-followup-area .followup-input-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .diary-followup-area textarea {
+            flex: 1;
+            background: var(--primary-light);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: var(--light);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            resize: none;
+            min-height: 44px;
+            max-height: 120px;
+            line-height: 1.5;
+        }
+
+        .diary-followup-area textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        .goal-hexagram-card {
+            background: var(--primary-light);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: left;
+            position: relative;
+        }
+
+        .goal-hexagram-card::before {
+            content: "目標";
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            background: #f59e0b;
+            color: var(--primary);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .goal-hexagram-card .kua-meaning {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 6px;
+        }
+
+        .goal-hexagram-card .kua-situation {
+            font-size: 0.9rem;
+            color: rgba(245, 245, 245, 0.75);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .goal-hexagram-card .keyword-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .goal-hexagram-card .keyword-tag {
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .gap-analysis-card {
+            background: var(--primary-light);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .gap-analysis-card h3 {
+            color: #a5b4fc;
+            font-size: 1rem;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gap-analysis-card .gap-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 8px;
+            font-size: 0.88rem;
+        }
+
+        .gap-analysis-card .gap-label {
+            min-width: 130px;
+            color: rgba(245, 245, 245, 0.5);
+            font-size: 0.82rem;
+        }
+
+        .gap-analysis-card .gap-value {
+            color: var(--light);
+            flex: 1;
+        }
+
+        .gap-analysis-card .gap-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .gap-badge-easy { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+        .gap-badge-moderate { background: rgba(243, 156, 18, 0.2); color: #f39c12; }
+        .gap-badge-hard { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        .gap-badge-extreme { background: rgba(155, 89, 182, 0.2); color: #9b59b6; }
+
+        .gap-changing-lines {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .gap-line-chip {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            font-size: 0.78rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .gap-path-step {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: rgba(245, 245, 245, 0.7);
+        }
+
+        .gap-path-arrow {
+            color: rgba(245, 245, 245, 0.3);
+        }
+
+        .layer6-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(245, 245, 245, 0.06);
+        }
+
+        .layer6-item:last-child {
+            border-bottom: none;
+        }
+
+        .layer6-item .l6-label {
+            font-size: 0.8rem;
+            color: #a5b4fc;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .layer6-item .l6-value {
+            font-size: 0.9rem;
+            color: rgba(245, 245, 245, 0.85);
+            line-height: 1.7;
+        }
+
+        .layer6-practice {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-top: 6px;
+        }
+
+        .layer6-practice .l6-label {
+            color: #c4b5fd;
+        }
+
+        .layer6-highlight {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-top: 6px;
+        }
+
+        .layer6-highlight .l6-label {
+            color: #f59e0b;
+        }
+
+        .diary-section-title {
+            color: var(--gold);
+            font-size: 1.05rem;
+            margin: 24px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+        }
+
+        .diary-section-title:first-child {
+            margin-top: 0;
+        }
+
+        .diary-section-title.goal-title {
+            color: #f59e0b;
+            border-bottom-color: rgba(245, 158, 11, 0.2);
+        }
+
+        .diary-section-title.gap-title {
+            color: #a5b4fc;
+            border-bottom-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .diary-candidate-selected {
+            border-color: #6366f1 !important;
+            background: rgba(99, 102, 241, 0.08) !important;
+        }
+
+        .btn-indigo {
+            background: #6366f1;
+            color: #fff;
+        }
+
+        .btn-indigo:hover:not(:disabled) {
+            background: #818cf8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .mode-toggle {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .diary-confidence-row {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .gap-analysis-card .gap-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .gap-analysis-card .gap-label {
+                min-width: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -825,6 +1180,10 @@
     <main>
         <!-- Phase 1: Chat Input -->
         <div id="phase-input" class="phase">
+            <div class="mode-toggle">
+                <button class="mode-btn active" id="mode-btn-standard" onclick="setMode('standard')">状況を分析する</button>
+                <button class="mode-btn" id="mode-btn-diary" onclick="setMode('diary')">日記から読み解く</button>
+            </div>
             <div class="chat-container" id="chat-container">
                 <div class="chat-message ai">
                     あなたが今直面している状況や、気になっていることを自由に教えてください。仕事、人間関係、転機、決断など、どんなことでも構いません。
@@ -892,6 +1251,57 @@
                 <button class="btn btn-gold" onclick="handleRestart()">新しい相談を始める</button>
             </div>
         </div>
+
+        <!-- Diary Phase: Reviewing -->
+        <div id="phase-diary-reviewing" class="phase hidden">
+            <div class="review-card">
+                <h3>日記の読み解き</h3>
+                <div id="diary-review-summaries"></div>
+                <div id="diary-review-confidence"></div>
+                <div id="diary-followup-area"></div>
+                <div class="review-actions">
+                    <button class="btn btn-secondary" onclick="handleRestart()">やり直す</button>
+                    <button class="btn btn-indigo" id="btn-diary-confirm" onclick="handleDiaryConfirm()">この読み解きで進む</button>
+                </div>
+            </div>
+            <div class="spinner" id="diary-review-spinner"></div>
+            <div class="loading-text" id="diary-review-loading-text">読み解いています...</div>
+        </div>
+
+        <!-- Diary Phase: Confirmed (Candidates + Goal + Gap) -->
+        <div id="phase-diary-confirmed" class="phase hidden">
+            <div class="candidates-section">
+                <h2 class="diary-section-title">本卦候補（現在の状態から）</h2>
+                <p style="text-align:center; font-size:0.85rem; color:rgba(245,245,245,0.5); margin-bottom:20px;">
+                    直感で一番しっくり来るものを選んでください
+                </p>
+                <div class="candidates-grid" id="diary-candidates-grid"></div>
+
+                <h2 class="diary-section-title goal-title">目標卦（理想の状態から）</h2>
+                <div id="diary-goal-card-area"></div>
+
+                <h2 class="diary-section-title gap-title">ギャップ分析</h2>
+                <div id="diary-gap-analysis-area"></div>
+
+                <div style="text-align:center; margin-top:24px;">
+                    <button class="btn btn-indigo" id="btn-diary-advice" onclick="handleDiaryAdvice()" disabled>この卦でアドバイスを受ける</button>
+                </div>
+            </div>
+            <div class="spinner" id="diary-confirm-spinner"></div>
+            <div class="loading-text" id="diary-confirm-loading-text">アドバイスを生成しています...</div>
+        </div>
+
+        <!-- Diary Phase: Result -->
+        <div id="phase-diary-result" class="phase hidden">
+            <div class="result-header" id="diary-result-header"></div>
+            <div id="diary-result-layers"></div>
+            <div id="diary-result-gap-card"></div>
+            <div id="diary-result-goal-card"></div>
+            <div id="diary-result-layer6"></div>
+            <div class="restart-area">
+                <button class="btn btn-gold" onclick="handleRestart()">もう一度最初から</button>
+            </div>
+        </div>
     </main>
 
     <script>
@@ -902,6 +1312,13 @@
         const MAX_FOLLOWUPS = 2;
         let extractionResult = null;
         let candidatesData = null;
+
+        /* Diary mode state */
+        let currentMode = 'standard';
+        let diarySessionId = null;
+        let diaryReviewData = null;
+        let diaryConfirmedData = null;
+        let selectedDiaryCandidateIndex = null;
 
         /* ===== Init ===== */
         document.addEventListener("DOMContentLoaded", () => {
@@ -965,6 +1382,27 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
+        /* ===== Mode Toggle ===== */
+        function setMode(mode) {
+            currentMode = mode;
+            const btnStd = document.getElementById("mode-btn-standard");
+            const btnDiary = document.getElementById("mode-btn-diary");
+            const textarea = document.getElementById("user-input");
+            const btnSend = document.getElementById("btn-send");
+
+            if (mode === 'diary') {
+                btnStd.classList.remove("active");
+                btnDiary.classList.add("active");
+                textarea.placeholder = "今日あったこと、感じたことを自由に書いてください...";
+                btnSend.textContent = "日記を読み解く";
+            } else {
+                btnStd.classList.add("active");
+                btnDiary.classList.remove("active");
+                textarea.placeholder = "状況を入力してください...";
+                btnSend.textContent = "分析する";
+            }
+        }
+
         /* ===== Chat Functions ===== */
         function addChatMessage(text, type) {
             const container = document.getElementById("chat-container");
@@ -1002,6 +1440,10 @@
 
         /* ===== Phase 1: Send / Extract ===== */
         async function handleSend() {
+            if (currentMode === 'diary') {
+                return handleDiarySend();
+            }
+
             const textarea = document.getElementById("user-input");
             const btn = document.getElementById("btn-send");
             const userText = textarea.value.trim();
@@ -1513,11 +1955,454 @@
             followupCount = 0;
             extractionResult = null;
             candidatesData = null;
+            /* Reset diary state */
+            diarySessionId = null;
+            diaryReviewData = null;
+            diaryConfirmedData = null;
+            selectedDiaryCandidateIndex = null;
+            setMode('standard');
+
             document.getElementById("chat-container").innerHTML =
                 '<div class="chat-message ai">あなたが今直面している状況や、気になっていることを自由に教えてください。仕事、人間関係、転機、決断など、どんなことでも構いません。</div>';
             document.getElementById("btn-send").textContent = "分析する";
             showPhase("input");
             initSession();
+        }
+
+        /* ===== Diary Mode Functions ===== */
+
+        async function handleDiarySend() {
+            const textarea = document.getElementById("user-input");
+            const btn = document.getElementById("btn-send");
+            const userText = textarea.value.trim();
+            if (!userText) return;
+
+            addChatMessage(userText, "user");
+            textarea.value = "";
+            textarea.style.height = "auto";
+            btn.disabled = true;
+            setLoading(true);
+
+            try {
+                /* Create diary session */
+                const sessionRes = await fetch("/api/session", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ mode: "diary" })
+                });
+                if (!sessionRes.ok) throw new Error("Session creation failed");
+                const sessionData = await sessionRes.json();
+                diarySessionId = sessionData.session_id;
+
+                /* Extract from diary text */
+                const extractRes = await fetch("/api/diary/extract", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: diarySessionId,
+                        text: userText
+                    })
+                });
+                if (!extractRes.ok) throw new Error("Diary extraction failed");
+                const data = await extractRes.json();
+                diaryReviewData = data;
+                showDiaryReviewPhase(data);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+            } finally {
+                setLoading(false);
+                btn.disabled = false;
+            }
+        }
+
+        function showDiaryReviewPhase(data) {
+            const summariesEl = document.getElementById("diary-review-summaries");
+            const confidenceEl = document.getElementById("diary-review-confidence");
+            const followupEl = document.getElementById("diary-followup-area");
+
+            const current = data.current_summary || data.current || {};
+            const ideal = data.ideal_summary || data.ideal || {};
+            const gap = data.gap_summary || data.gap || {};
+            const assessment = data.assessment || {};
+
+            /* Summary sections */
+            let summaryHtml = '';
+
+            summaryHtml += '<div class="diary-summary-section">';
+            summaryHtml += '<h4>現在の状態</h4>';
+            summaryHtml += '<p>' + escapeHtml(typeof current === 'string' ? current : (current.summary || current.description || JSON.stringify(current))) + '</p>';
+            summaryHtml += '</div>';
+
+            summaryHtml += '<div class="diary-summary-section">';
+            summaryHtml += '<h4>理想の状態</h4>';
+            summaryHtml += '<p>' + escapeHtml(typeof ideal === 'string' ? ideal : (ideal.summary || ideal.description || JSON.stringify(ideal))) + '</p>';
+            summaryHtml += '</div>';
+
+            summaryHtml += '<div class="diary-summary-section">';
+            summaryHtml += '<h4>ギャップ</h4>';
+            summaryHtml += '<p>' + escapeHtml(typeof gap === 'string' ? gap : (gap.summary || gap.description || JSON.stringify(gap))) + '</p>';
+            summaryHtml += '</div>';
+
+            summariesEl.innerHTML = summaryHtml;
+
+            /* Confidence display */
+            const currentConf = Math.round((assessment.current_confidence || data.current_confidence || 0) * 100);
+            const idealConf = Math.round((assessment.ideal_confidence || data.ideal_confidence || 0) * 100);
+            const gapClarity = Math.round((assessment.gap_clarity || data.gap_clarity || 0) * 100);
+
+            confidenceEl.innerHTML =
+                '<div class="diary-confidence-row">' +
+                    '<div class="diary-confidence-item"><div class="label">現在の状態</div><div class="value">' + currentConf + '%</div></div>' +
+                    '<div class="diary-confidence-item"><div class="label">理想の状態</div><div class="value">' + idealConf + '%</div></div>' +
+                    '<div class="diary-confidence-item"><div class="label">ギャップ明確度</div><div class="value">' + gapClarity + '%</div></div>' +
+                '</div>';
+
+            /* Followup question */
+            followupEl.innerHTML = '';
+            const needsFollowup = assessment.needs_ideal_followup || data.needs_ideal_followup;
+            const followupQuestion = assessment.ideal_followup_question || data.ideal_followup_question;
+
+            if (needsFollowup && followupQuestion) {
+                followupEl.innerHTML =
+                    '<div class="diary-followup-area">' +
+                        '<div class="followup-question">' + escapeHtml(followupQuestion) + '</div>' +
+                        '<div class="followup-input-row">' +
+                            '<textarea id="diary-followup-input" placeholder="あなたの答えを入力..." rows="2"></textarea>' +
+                            '<button class="btn btn-indigo btn-send" onclick="handleDiaryFollowup()">回答する</button>' +
+                        '</div>' +
+                    '</div>';
+            }
+
+            showPhase("diary-reviewing");
+        }
+
+        async function handleDiaryFollowup() {
+            const input = document.getElementById("diary-followup-input");
+            if (!input) return;
+            const answer = input.value.trim();
+            if (!answer) return;
+
+            const btn = input.nextElementSibling;
+            btn.disabled = true;
+            input.disabled = true;
+            setLoading(true, "diary-review-spinner", "diary-review-loading-text");
+
+            try {
+                const res = await fetch("/api/diary/ideal-followup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: diarySessionId,
+                        answer: answer
+                    })
+                });
+                if (!res.ok) throw new Error("Followup failed");
+                const data = await res.json();
+                diaryReviewData = data;
+                showDiaryReviewPhase(data);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+                btn.disabled = false;
+                input.disabled = false;
+            } finally {
+                setLoading(false, "diary-review-spinner", "diary-review-loading-text");
+            }
+        }
+
+        async function handleDiaryConfirm() {
+            const btn = document.getElementById("btn-diary-confirm");
+            btn.disabled = true;
+            setLoading(true, "diary-review-spinner", "diary-review-loading-text");
+
+            try {
+                const res = await fetch("/api/diary/confirm", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ session_id: diarySessionId })
+                });
+                if (!res.ok) throw new Error("Diary confirm failed");
+                const data = await res.json();
+                diaryConfirmedData = data;
+                showDiaryConfirmedPhase(data);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+            } finally {
+                setLoading(false, "diary-review-spinner", "diary-review-loading-text");
+                btn.disabled = false;
+            }
+        }
+
+        function showDiaryConfirmedPhase(data) {
+            const grid = document.getElementById("diary-candidates-grid");
+            const goalArea = document.getElementById("diary-goal-card-area");
+            const gapArea = document.getElementById("diary-gap-analysis-area");
+
+            grid.innerHTML = "";
+            selectedDiaryCandidateIndex = null;
+            document.getElementById("btn-diary-advice").disabled = true;
+
+            /* Current hexagram candidates */
+            const candidates = data.current_candidates || data.candidates || [];
+            const rankLabels = ["❶ 最も可能性が高い", "❷ 次に可能性が高い", "❸ 3番目の候補"];
+
+            candidates.forEach((c, i) => {
+                const card = document.createElement("div");
+                card.className = "candidate-card";
+                card.setAttribute("data-diary-index", i);
+
+                const prob = c.probability != null ? Math.round(c.probability * 100) : 0;
+                const meaning = c.meaning || c.hexagram_name || "---";
+                const situation = c.situation || "";
+                const keywords = c.keywords || [];
+
+                let keywordsHtml = "";
+                if (keywords.length > 0) {
+                    keywordsHtml = '<div class="keyword-tags">' +
+                        keywords.map(k => '<span class="keyword-tag">' + escapeHtml(k) + '</span>').join("") +
+                        '</div>';
+                }
+
+                let detailItems = "";
+                detailItems += "<span>" + escapeHtml(c.hexagram_name || "---") + "（第" + (c.hexagram_number || "?") + "卦）</span>";
+                if (c.upper_trigram) detailItems += "<span>上卦: " + escapeHtml(c.upper_trigram) + "</span>";
+                if (c.lower_trigram) detailItems += "<span>下卦: " + escapeHtml(c.lower_trigram) + "</span>";
+
+                const detailId = "diary-detail-" + i;
+
+                card.innerHTML =
+                    '<div class="card-rank">' + (rankLabels[i] || "候補 " + (i + 1)) + '</div>' +
+                    '<div class="kua-meaning">' + escapeHtml(meaning) + '</div>' +
+                    (situation ? '<div class="kua-situation">' + escapeHtml(situation) + '</div>' : '') +
+                    keywordsHtml +
+                    '<div class="fit-bar">' +
+                        '<div class="confidence-bar"><div class="confidence-fill" style="width:' + prob + '%; background:' + confidenceColor(prob) + ';"></div></div>' +
+                        '<span class="fit-label">適合度 ' + prob + '%</span>' +
+                    '</div>' +
+                    '<div class="card-detail-toggle" onclick="event.stopPropagation(); document.getElementById(\'' + detailId + '\').classList.toggle(\'open\'); this.textContent = document.getElementById(\'' + detailId + '\').classList.contains(\'open\') ? \'▾ 詳細を閉じる\' : \'▸ 詳細を見る\';">▸ 詳細を見る</div>' +
+                    '<div class="card-detail-content" id="' + detailId + '">' + detailItems + '</div>';
+
+                card.addEventListener("click", () => selectDiaryCandidate(i, card));
+                grid.appendChild(card);
+            });
+
+            /* Goal hexagram card */
+            const goal = data.goal_hexagram || data.goal || {};
+            goalArea.innerHTML = buildGoalHexagramCard(goal);
+
+            /* Gap analysis */
+            const gapAnalysis = data.gap_analysis || data.gap || {};
+            gapArea.innerHTML = buildGapAnalysisCard(gapAnalysis);
+
+            showPhase("diary-confirmed");
+        }
+
+        function selectDiaryCandidate(index, cardEl) {
+            document.querySelectorAll("#diary-candidates-grid .candidate-card").forEach(c => c.classList.remove("selected"));
+            cardEl.classList.add("selected");
+            selectedDiaryCandidateIndex = index;
+            document.getElementById("btn-diary-advice").disabled = false;
+        }
+
+        async function handleDiaryAdvice() {
+            if (selectedDiaryCandidateIndex === null) {
+                showToast("卦を選択してください");
+                return;
+            }
+
+            const btn = document.getElementById("btn-diary-advice");
+            btn.disabled = true;
+            setLoading(true, "diary-confirm-spinner", "diary-confirm-loading-text");
+            document.querySelectorAll("#diary-candidates-grid .candidate-card").forEach(c => {
+                c.style.pointerEvents = "none";
+            });
+
+            try {
+                const res = await fetch("/api/diary/advice", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: diarySessionId,
+                        candidate_index: selectedDiaryCandidateIndex
+                    })
+                });
+                if (!res.ok) throw new Error("Advice generation failed");
+                const data = await res.json();
+                showDiaryResultPhase(data);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+                document.querySelectorAll("#diary-candidates-grid .candidate-card").forEach(c => {
+                    c.style.pointerEvents = "auto";
+                });
+                btn.disabled = false;
+            } finally {
+                setLoading(false, "diary-confirm-spinner", "diary-confirm-loading-text");
+            }
+        }
+
+        function showDiaryResultPhase(data) {
+            const result = data.result || data;
+            const fb = result.feedback || {};
+            const changeAdvice = result.change_advice || data.change_advice || {};
+            const gapAnalysis = result.gap_analysis || data.gap_analysis || {};
+            const goalHex = result.goal_hexagram || data.goal_hexagram || {};
+
+            /* Header */
+            const header = document.getElementById("diary-result-header");
+            const l1 = fb.layer1_current || {};
+            const hex = l1.hexagram || {};
+            header.innerHTML =
+                '<div class="kua-title">' + escapeHtml(hex.name || "---") + "</div>" +
+                '<div class="kua-sub">第' + (hex.id || "?") + "卦</div>";
+
+            /* 5-layer accordion (reuse existing builders) */
+            const layersContainer = document.getElementById("diary-result-layers");
+            layersContainer.innerHTML = "";
+
+            if (fb.layer1_current) {
+                layersContainer.appendChild(buildAccordion(1, "現在地の読み解き", buildLayer1Content(fb.layer1_current), true));
+            }
+            if (fb.layer2_direction) {
+                layersContainer.appendChild(buildAccordion(2, "変化が向かう構造", buildLayer2Content(fb.layer2_direction, fb.compatibility), true));
+            }
+            if (fb.layer3_hidden) {
+                layersContainer.appendChild(buildAccordion(3, "見えていない力学", buildLayer3Content(fb.layer3_hidden), false));
+            }
+            if (fb.layer4_reference) {
+                layersContainer.appendChild(buildAccordion(4, "過去事例", buildLayer4Content(fb.layer4_reference), false));
+            }
+            if (fb.layer5_question) {
+                layersContainer.appendChild(buildAccordion(5, "問いかけ", buildLayer5Content(fb.layer5_question), true));
+            }
+
+            /* Gap analysis card (between L5 and L6) */
+            const gapCardEl = document.getElementById("diary-result-gap-card");
+            gapCardEl.innerHTML = buildGapAnalysisCard(gapAnalysis);
+
+            /* Goal hexagram card */
+            const goalCardEl = document.getElementById("diary-result-goal-card");
+            if (goalHex && (goalHex.name || goalHex.hexagram_name)) {
+                goalCardEl.innerHTML =
+                    '<h2 class="diary-section-title goal-title" style="margin-top:20px;">目標卦</h2>' +
+                    buildGoalHexagramCard(goalHex);
+            } else {
+                goalCardEl.innerHTML = '';
+            }
+
+            /* Layer 6: Change Advice */
+            const layer6El = document.getElementById("diary-result-layer6");
+            if (changeAdvice && Object.keys(changeAdvice).length > 0) {
+                const l6Wrapper = document.createElement("div");
+                l6Wrapper.style.marginTop = "8px";
+                l6Wrapper.appendChild(buildAccordion(6, "変化のアドバイス", buildLayer6Content(changeAdvice), true));
+                layer6El.innerHTML = '';
+                layer6El.appendChild(l6Wrapper);
+            } else {
+                layer6El.innerHTML = '';
+            }
+
+            showPhase("diary-result");
+        }
+
+        function buildLayer6Content(ca) {
+            let html = '';
+
+            if (ca.core_tension) {
+                html += '<div class="layer6-item"><div class="l6-label">核心の緊張</div><div class="l6-value">' + escapeHtml(ca.core_tension) + '</div></div>';
+            }
+            if (ca.change_approach) {
+                html += '<div class="layer6-item"><div class="l6-label">変化のアプローチ</div><div class="l6-value">' + escapeHtml(ca.change_approach) + '</div></div>';
+            }
+            if (ca.immediate_focus) {
+                html += '<div class="layer6-item layer6-highlight"><div class="l6-label">今日のフォーカス</div><div class="l6-value">' + escapeHtml(ca.immediate_focus) + '</div></div>';
+            }
+            if (ca.what_to_release) {
+                html += '<div class="layer6-item"><div class="l6-label">手放すもの</div><div class="l6-value">' + escapeHtml(ca.what_to_release) + '</div></div>';
+            }
+            if (ca.what_to_embrace) {
+                html += '<div class="layer6-item"><div class="l6-label">受け入れるもの</div><div class="l6-value">' + escapeHtml(ca.what_to_embrace) + '</div></div>';
+            }
+            if (ca.timing_quality) {
+                html += '<div class="layer6-item"><div class="l6-label">タイミングの質</div><div class="l6-value">' + escapeHtml(ca.timing_quality) + '</div></div>';
+            }
+            if (ca.practice) {
+                html += '<div class="layer6-item layer6-practice"><div class="l6-label">今夜のプラクティス</div><div class="l6-value">' + escapeHtml(ca.practice) + '</div></div>';
+            }
+
+            return html || '<p>アドバイスデータがありません。</p>';
+        }
+
+        function buildGoalHexagramCard(goal) {
+            if (!goal || (!goal.name && !goal.hexagram_name)) return '';
+
+            const name = goal.name || goal.hexagram_name || "---";
+            const number = goal.id || goal.hexagram_number || "?";
+            const meaning = goal.meaning || goal.situation || "";
+            const keywords = goal.keywords || [];
+
+            let keywordsHtml = "";
+            if (keywords.length > 0) {
+                keywordsHtml = '<div class="keyword-tags">' +
+                    keywords.map(k => '<span class="keyword-tag">' + escapeHtml(k) + '</span>').join("") +
+                    '</div>';
+            }
+
+            return '<div class="goal-hexagram-card">' +
+                '<div class="kua-meaning">' + escapeHtml(name) + '（第' + escapeHtml(String(number)) + '卦）</div>' +
+                (meaning ? '<div class="kua-situation">' + escapeHtml(meaning) + '</div>' : '') +
+                keywordsHtml +
+                '</div>';
+        }
+
+        function buildGapAnalysisCard(gap) {
+            if (!gap || Object.keys(gap).length === 0) return '';
+
+            let html = '<div class="gap-analysis-card">';
+            html += '<h3>ギャップ分析</h3>';
+
+            if (gap.structural_relationship) {
+                html += '<div class="gap-row"><span class="gap-label">構造的関係</span><span class="gap-value">' + escapeHtml(gap.structural_relationship) + '</span></div>';
+            }
+
+            if (gap.hamming_distance != null) {
+                html += '<div class="gap-row"><span class="gap-label">ハミング距離</span><span class="gap-value">' + gap.hamming_distance + ' / 6</span></div>';
+            }
+
+            if (gap.difficulty_label || gap.difficulty_score != null) {
+                const label = gap.difficulty_label || '';
+                const score = gap.difficulty_score != null ? gap.difficulty_score : '';
+                let badgeCls = 'gap-badge-moderate';
+                if (score <= 2) badgeCls = 'gap-badge-easy';
+                else if (score <= 4) badgeCls = 'gap-badge-moderate';
+                else if (score <= 6) badgeCls = 'gap-badge-hard';
+                else badgeCls = 'gap-badge-extreme';
+
+                html += '<div class="gap-row"><span class="gap-label">変化の難易度</span><span class="gap-value">' +
+                    '<span class="gap-badge ' + badgeCls + '">' + escapeHtml(label) + (score ? ' (' + score + ')' : '') + '</span>' +
+                    '</span></div>';
+            }
+
+            if (gap.changing_lines && gap.changing_lines.length > 0) {
+                html += '<div class="gap-row"><span class="gap-label">変化する爻</span><span class="gap-value"><div class="gap-changing-lines">' +
+                    gap.changing_lines.map(l => '<span class="gap-line-chip">第' + l + '爻</span>').join("") +
+                    '</div></span></div>';
+            }
+
+            if (gap.intermediate_paths && gap.intermediate_paths.length > 0) {
+                html += '<div class="gap-row"><span class="gap-label">中間経路</span><span class="gap-value">';
+                gap.intermediate_paths.forEach(path => {
+                    if (Array.isArray(path)) {
+                        html += '<div style="margin-bottom:4px;">' +
+                            path.map(step => '<span class="gap-path-step">' + escapeHtml(typeof step === 'string' ? step : (step.name || JSON.stringify(step))) + '</span>').join('<span class="gap-path-arrow"> → </span>') +
+                            '</div>';
+                    } else {
+                        html += '<div style="margin-bottom:4px;">' + escapeHtml(typeof path === 'string' ? path : JSON.stringify(path)) + '</div>';
+                    }
+                });
+                html += '</span></div>';
+            }
+
+            html += '</div>';
+            return html;
         }
 
         /* ===== Toast ===== */

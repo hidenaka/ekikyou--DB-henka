@@ -12,6 +12,12 @@ Webブラウザから呼び出せるREST APIを提供する。
     POST /api/followup  — フォローアップ回答で再抽出
     POST /api/confirm   — 抽出結果を確定し卦候補を取得
     POST /api/feedback  — 候補を選択しフィードバック生成
+
+日記モード:
+    POST /api/diary/extract        — 日記デュアル抽出
+    POST /api/diary/ideal-followup — 理想フォローアップ
+    POST /api/diary/confirm        — デュアル確定→2卦候補取得
+    POST /api/diary/advice         — 変化アドバイス生成
 """
 
 import json
@@ -33,6 +39,7 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, "scripts"))
 from llm_dialogue import LLMDialogueEngine
 from probability_tables import ProbabilityMapper
 from feedback_engine import FeedbackEngine
+from diary_session_orchestrator import DiarySessionOrchestrator
 
 # ---------------------------------------------------------------------------
 # Flask アプリ
@@ -46,6 +53,7 @@ app.json.ensure_ascii = False
 dialogue_engine = LLMDialogueEngine()
 prob_mapper = ProbabilityMapper()
 feedback_engine = FeedbackEngine()
+diary_orchestrator = DiarySessionOrchestrator()
 
 # ---------------------------------------------------------------------------
 # 卦データ読み込み（候補表示用）
@@ -194,6 +202,16 @@ def health():
 # 2. POST /api/session
 @app.route("/api/session", methods=["POST"])
 def new_session():
+    data = request.get_json(force=True) if request.is_json else {}
+    mode = data.get("mode", "standard")
+
+    if mode == "diary":
+        sid = str(uuid.uuid4())
+        diary_session = diary_orchestrator.create_session()
+        diary_session["session_id"] = sid
+        sessions[sid] = diary_session
+        return jsonify({"session_id": sid, "mode": "diary"})
+
     s = create_session()
     return jsonify({"session_id": s["session_id"]})
 
@@ -442,6 +460,106 @@ def feedback():
 
 
 # ---------------------------------------------------------------------------
+# 日記モード API エンドポイント
+# ---------------------------------------------------------------------------
+
+# 7. POST /api/diary/extract
+@app.route("/api/diary/extract", methods=["POST"])
+def diary_extract():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+    text = data.get("text", "")
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "diary":
+        return jsonify({"error": "日記モードのセッションではありません"}), 400
+
+    result = diary_orchestrator.extract_diary(s, text)
+    if "error" in result:
+        return jsonify(result), 500
+
+    return jsonify(result)
+
+
+# 8. POST /api/diary/ideal-followup
+@app.route("/api/diary/ideal-followup", methods=["POST"])
+def diary_ideal_followup():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+    answer = data.get("answer", "")
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "diary":
+        return jsonify({"error": "日記モードのセッションではありません"}), 400
+
+    if s.get("phase") != "diary-reviewing":
+        return jsonify({"error": "この操作は現在のフェーズでは実行できません"}), 400
+
+    result = diary_orchestrator.add_ideal_followup(s, answer)
+    if "error" in result:
+        return jsonify(result), 400
+
+    return jsonify(result)
+
+
+# 9. POST /api/diary/confirm
+@app.route("/api/diary/confirm", methods=["POST"])
+def diary_confirm():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+    candidate_index = data.get("candidate_index", 0)
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "diary":
+        return jsonify({"error": "日記モードのセッションではありません"}), 400
+
+    if s.get("phase") != "diary-reviewing":
+        return jsonify({"error": "この操作は現在のフェーズでは実行できません"}), 400
+
+    result = diary_orchestrator.confirm_dual(s, candidate_index)
+    if "error" in result:
+        return jsonify(result), 500
+
+    return jsonify(result)
+
+
+# 10. POST /api/diary/advice
+@app.route("/api/diary/advice", methods=["POST"])
+def diary_advice():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+    candidate_index = data.get("candidate_index", 0)
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "diary":
+        return jsonify({"error": "日記モードのセッションではありません"}), 400
+
+    if s.get("phase") != "diary-confirmed":
+        return jsonify({"error": "この操作は現在のフェーズでは実行できません"}), 400
+
+    # candidate_index をセッションに反映（UIで選択変更可能にするため）
+    s["selected_candidate_index"] = candidate_index
+
+    result = diary_orchestrator.generate_change_advice(s)
+    if "error" in result:
+        return jsonify(result), 500
+
+    return jsonify(result)
+
+
+# ---------------------------------------------------------------------------
 # サーバー起動
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
@@ -452,6 +570,7 @@ if __name__ == "__main__":
         )
     )
     print(f"事例数: {case_count}")
-    print(f"LLM: {'利用可能' if dialogue_engine.is_available() else '利用不可'}")
+    print(f"LLM: {'利用可能' if dialogue_engine.is_available() else '利用不可（デモモード）'}")
+    print(f"日記モード: 有効")
     print(f"http://localhost:5001")
     app.run(debug=True, port=5001)
