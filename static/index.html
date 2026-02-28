@@ -1157,6 +1157,304 @@
                 min-width: auto;
             }
         }
+
+        /* ===== Backtrace Mode Styles ===== */
+        .btn-amber {
+            background: #f59e0b;
+            color: var(--primary);
+        }
+
+        .btn-amber:hover:not(:disabled) {
+            background: #fbbf24;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        }
+
+        .bt-goal-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .bt-method-card {
+            background: var(--primary-light);
+            border: 2px solid rgba(245, 158, 11, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .bt-method-card:hover {
+            border-color: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+        }
+
+        .bt-method-card.selected {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        .bt-method-card h4 {
+            color: #f59e0b;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .bt-method-card p {
+            font-size: 0.85rem;
+            color: rgba(245, 245, 245, 0.6);
+        }
+
+        .bt-goal-input-area {
+            margin-top: 16px;
+        }
+
+        .bt-goal-input-area input,
+        .bt-goal-input-area textarea {
+            width: 100%;
+            background: var(--primary-light);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--light);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            margin-bottom: 12px;
+        }
+
+        .bt-goal-input-area input:focus,
+        .bt-goal-input-area textarea:focus {
+            outline: none;
+            border-color: #f59e0b;
+        }
+
+        .bt-hex-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 6px;
+            margin: 16px 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .bt-hex-cell {
+            background: var(--primary-light);
+            border: 1px solid rgba(245, 245, 245, 0.1);
+            border-radius: 6px;
+            padding: 8px 4px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.75rem;
+            color: rgba(245, 245, 245, 0.7);
+            transition: all 0.2s;
+        }
+
+        .bt-hex-cell:hover {
+            border-color: #f59e0b;
+            color: #f59e0b;
+        }
+
+        .bt-hex-cell.selected {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .bt-hex-cell .hex-num {
+            font-size: 0.65rem;
+            color: rgba(245, 245, 245, 0.4);
+            display: block;
+        }
+
+        .bt-candidates-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .bt-candidate-item {
+            background: var(--primary-light);
+            border: 2px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .bt-candidate-item:hover {
+            border-color: #f59e0b;
+        }
+
+        .bt-candidate-item.selected {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        .bt-candidate-item h4 {
+            color: #f59e0b;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .bt-candidate-item p {
+            font-size: 0.85rem;
+            color: rgba(245, 245, 245, 0.65);
+        }
+
+        .bt-current-form {
+            background: var(--primary-light);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(245, 245, 245, 0.1);
+        }
+
+        .bt-current-form h3 {
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .bt-form-group {
+            margin-bottom: 16px;
+        }
+
+        .bt-form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: rgba(245, 245, 245, 0.6);
+            margin-bottom: 6px;
+        }
+
+        .bt-form-group select,
+        .bt-form-group input {
+            width: 100%;
+            background: var(--primary);
+            border: 1px solid rgba(245, 245, 245, 0.2);
+            color: var(--light);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .bt-form-group select:focus,
+        .bt-form-group input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .bt-route-card {
+            background: var(--primary-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 12px;
+        }
+
+        .bt-route-card h4 {
+            color: #10b981;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bt-route-card .route-score {
+            font-size: 0.8rem;
+            color: rgba(245, 245, 245, 0.5);
+        }
+
+        .bt-route-card .route-detail {
+            font-size: 0.88rem;
+            color: rgba(245, 245, 245, 0.75);
+            line-height: 1.7;
+        }
+
+        .bt-quality-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .bt-quality-high { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+        .bt-quality-medium { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .bt-quality-low { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        .bt-quality-ref { background: rgba(155, 89, 182, 0.2); color: #9b59b6; }
+
+        .bt-roadmap-card {
+            background: var(--primary-light);
+            border: 2px solid rgba(245, 158, 11, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .bt-roadmap-card h3 {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .bt-phase-item {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        .bt-phase-item::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 24px;
+            bottom: -12px;
+            width: 2px;
+            background: rgba(245, 158, 11, 0.2);
+        }
+
+        .bt-phase-item:last-child::before {
+            display: none;
+        }
+
+        .bt-phase-item .phase-dot {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #f59e0b;
+        }
+
+        .bt-phase-item h4 {
+            color: #f59e0b;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .bt-phase-item p {
+            font-size: 0.88rem;
+            color: rgba(245, 245, 245, 0.75);
+            line-height: 1.7;
+        }
+
+        .bt-phase-item .phase-hint {
+            font-size: 0.78rem;
+            color: rgba(245, 245, 245, 0.45);
+            margin-top: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .bt-hex-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1183,6 +1481,7 @@
             <div class="mode-toggle">
                 <button class="mode-btn active" id="mode-btn-standard" onclick="setMode('standard')">状況を分析する</button>
                 <button class="mode-btn" id="mode-btn-diary" onclick="setMode('diary')">日記から読み解く</button>
+                <button class="mode-btn" id="mode-btn-backtrace" onclick="setMode('backtrace')">なりたい姿から逆算</button>
             </div>
             <div class="chat-container" id="chat-container">
                 <div class="chat-message ai">
@@ -1302,6 +1601,115 @@
                 <button class="btn btn-gold" onclick="handleRestart()">もう一度最初から</button>
             </div>
         </div>
+
+        <!-- Backtrace Phase: Goal Select -->
+        <div id="phase-bt-goal-select" class="phase hidden">
+            <h2 style="color:#f59e0b; text-align:center; margin-bottom:20px;">なりたい姿を設定する</h2>
+            <div class="bt-goal-methods">
+                <div class="bt-method-card" onclick="selectBtGoalMethod('theme')">
+                    <h4>テーマから選ぶ</h4>
+                    <p>成長、安定、変革など、キーワードで目標を探す</p>
+                </div>
+                <div class="bt-method-card" onclick="selectBtGoalMethod('hexagram')">
+                    <h4>卦を直接選ぶ</h4>
+                    <p>64卦から目標とする卦を直接選択する</p>
+                </div>
+                <div class="bt-method-card" onclick="selectBtGoalMethod('text')">
+                    <h4>テキストで描写する</h4>
+                    <p>なりたい姿を自由に文章で書く</p>
+                </div>
+            </div>
+
+            <!-- Theme input -->
+            <div id="bt-theme-input" class="bt-goal-input-area" style="display:none;">
+                <input type="text" id="bt-theme-value" placeholder="例: 成長、リーダーシップ、調和..." />
+                <button class="btn btn-amber" onclick="handleBtSetGoal('theme')">テーマで検索</button>
+            </div>
+
+            <!-- Hexagram grid -->
+            <div id="bt-hex-input" class="bt-goal-input-area" style="display:none;">
+                <p style="font-size:0.85rem; color:rgba(245,245,245,0.5); margin-bottom:8px;">目標とする卦を選んでください</p>
+                <div class="bt-hex-grid" id="bt-hex-grid"></div>
+                <button class="btn btn-amber" id="btn-bt-hex-confirm" onclick="handleBtSetGoal('hexagram')" disabled>この卦を目標にする</button>
+            </div>
+
+            <!-- Text input -->
+            <div id="bt-text-input" class="bt-goal-input-area" style="display:none;">
+                <textarea id="bt-text-value" rows="4" placeholder="なりたい姿を自由に書いてください...&#10;例: チームをまとめるリーダーとして信頼される存在になりたい"></textarea>
+                <button class="btn btn-amber" onclick="handleBtSetGoal('text')">この描写で検索</button>
+            </div>
+
+            <div class="spinner" id="bt-goal-spinner"></div>
+            <div class="loading-text" id="bt-goal-loading-text">目標を検索しています...</div>
+        </div>
+
+        <!-- Backtrace Phase: Goal Confirm (candidates) -->
+        <div id="phase-bt-goal-confirm" class="phase hidden">
+            <h2 style="color:#f59e0b; text-align:center; margin-bottom:8px;">目標卦の候補</h2>
+            <p style="text-align:center; font-size:0.85rem; color:rgba(245,245,245,0.5); margin-bottom:20px;">
+                最も目指したい状態を選んでください
+            </p>
+            <div class="bt-candidates-list" id="bt-goal-candidates"></div>
+            <div style="display:flex; gap:12px; margin-top:16px;">
+                <button class="btn btn-secondary" onclick="showPhase('bt-goal-select')">戻る</button>
+                <button class="btn btn-amber" id="btn-bt-confirm-goal" onclick="handleBtConfirmGoal()" disabled style="flex:1;">この目標で進む</button>
+            </div>
+            <div class="spinner" id="bt-goal-confirm-spinner"></div>
+            <div class="loading-text" id="bt-goal-confirm-loading-text">目標を確定しています...</div>
+        </div>
+
+        <!-- Backtrace Phase: Describe Current -->
+        <div id="phase-bt-current" class="phase hidden">
+            <div id="bt-confirmed-goal-card" style="margin-bottom:20px;"></div>
+            <div class="bt-current-form">
+                <h3>現在地を記述する</h3>
+                <div class="bt-form-group">
+                    <label>現在の卦番号（1-64、わからなければ空欄可）</label>
+                    <input type="number" id="bt-current-hex" min="1" max="64" placeholder="例: 12" />
+                </div>
+                <div class="bt-form-group">
+                    <label>現在の状態</label>
+                    <select id="bt-current-state">
+                        <option value="">選択してください</option>
+                        <option value="停滞・閉塞">停滞・閉塞</option>
+                        <option value="転換期">転換期</option>
+                        <option value="上昇・発展">上昇・発展</option>
+                        <option value="安定・成熟">安定・成熟</option>
+                        <option value="どん底・危機">どん底・危機</option>
+                        <option value="始まり・萌芽">始まり・萌芽</option>
+                        <option value="衰退・下降">衰退・下降</option>
+                        <option value="混乱・不安定">混乱・不安定</option>
+                    </select>
+                </div>
+                <div class="bt-form-group">
+                    <label>意図する行動タイプ</label>
+                    <select id="bt-current-action">
+                        <option value="">選択してください</option>
+                        <option value="慎重・観察">慎重・観察（様子を見る）</option>
+                        <option value="挑戦・冒険">挑戦・冒険（積極的に動く）</option>
+                        <option value="待つ・忍耐">待つ・忍耐（じっと耐える）</option>
+                        <option value="刷新・破壊">刷新・破壊（現状を壊す）</option>
+                        <option value="協調・調和">協調・調和（周囲と合わせる）</option>
+                        <option value="撤退・手放し">撤退・手放し（引く）</option>
+                    </select>
+                </div>
+                <button class="btn btn-amber" onclick="handleBtDescribeCurrent()" style="width:100%; margin-top:8px;">現在地を設定して逆算開始</button>
+            </div>
+            <div class="spinner" id="bt-current-spinner"></div>
+            <div class="loading-text" id="bt-current-loading-text">逆算分析しています...</div>
+        </div>
+
+        <!-- Backtrace Phase: Result -->
+        <div id="phase-bt-result" class="phase hidden">
+            <div id="bt-result-header" style="text-align:center; padding:24px 0 16px;">
+            </div>
+            <div id="bt-result-layers"></div>
+            <div id="bt-result-roadmap"></div>
+            <div class="restart-area">
+                <button class="btn btn-secondary" onclick="handleBtGenerateRoadmap()" id="btn-bt-roadmap" style="margin-right:12px;">ロードマップ生成</button>
+                <button class="btn btn-gold" onclick="handleRestart()">最初からやり直す</button>
+            </div>
+        </div>
     </main>
 
     <script>
@@ -1387,17 +1795,24 @@
             currentMode = mode;
             const btnStd = document.getElementById("mode-btn-standard");
             const btnDiary = document.getElementById("mode-btn-diary");
+            const btnBt = document.getElementById("mode-btn-backtrace");
             const textarea = document.getElementById("user-input");
             const btnSend = document.getElementById("btn-send");
 
+            btnStd.classList.remove("active");
+            btnDiary.classList.remove("active");
+            btnBt.classList.remove("active");
+
             if (mode === 'diary') {
-                btnStd.classList.remove("active");
                 btnDiary.classList.add("active");
                 textarea.placeholder = "今日あったこと、感じたことを自由に書いてください...";
                 btnSend.textContent = "日記を読み解く";
+            } else if (mode === 'backtrace') {
+                btnBt.classList.add("active");
+                textarea.placeholder = "なりたい姿を自由に書いてください...";
+                btnSend.textContent = "なりたい姿から逆算";
             } else {
                 btnStd.classList.add("active");
-                btnDiary.classList.remove("active");
                 textarea.placeholder = "状況を入力してください...";
                 btnSend.textContent = "分析する";
             }
@@ -1442,6 +1857,9 @@
         async function handleSend() {
             if (currentMode === 'diary') {
                 return handleDiarySend();
+            }
+            if (currentMode === 'backtrace') {
+                return handleBtSend();
             }
 
             const textarea = document.getElementById("user-input");
@@ -1960,6 +2378,13 @@
             diaryReviewData = null;
             diaryConfirmedData = null;
             selectedDiaryCandidateIndex = null;
+            /* Reset backtrace state */
+            btSessionId = null;
+            btGoalMethod = null;
+            btSelectedHexNum = null;
+            btSelectedCandidateIdx = null;
+            btGoalCandidates = [];
+            btAnalysisResult = null;
             setMode('standard');
 
             document.getElementById("chat-container").innerHTML =
@@ -2428,6 +2853,530 @@
             const div = document.createElement("div");
             div.appendChild(document.createTextNode(str));
             return div.innerHTML;
+        }
+
+        /* ===== Backtrace Mode ===== */
+        let btSessionId = null;
+        let btGoalMethod = null;
+        let btSelectedHexNum = null;
+        let btSelectedCandidateIdx = null;
+        let btGoalCandidates = [];
+        let btAnalysisResult = null;
+
+        function selectBtGoalMethod(method) {
+            btGoalMethod = method;
+            document.querySelectorAll('.bt-method-card').forEach(c => c.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+
+            document.getElementById('bt-theme-input').style.display = 'none';
+            document.getElementById('bt-hex-input').style.display = 'none';
+            document.getElementById('bt-text-input').style.display = 'none';
+
+            if (method === 'theme') {
+                document.getElementById('bt-theme-input').style.display = 'block';
+            } else if (method === 'hexagram') {
+                document.getElementById('bt-hex-input').style.display = 'block';
+                buildBtHexGrid();
+            } else if (method === 'text') {
+                document.getElementById('bt-text-input').style.display = 'block';
+            }
+        }
+
+        function buildBtHexGrid() {
+            const grid = document.getElementById('bt-hex-grid');
+            if (grid.children.length > 0) return; // already built
+            for (let i = 1; i <= 64; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'bt-hex-cell';
+                cell.innerHTML = '<span class="hex-num">' + i + '</span>';
+                cell.addEventListener('click', () => {
+                    document.querySelectorAll('.bt-hex-cell').forEach(c => c.classList.remove('selected'));
+                    cell.classList.add('selected');
+                    btSelectedHexNum = i;
+                    document.getElementById('btn-bt-hex-confirm').disabled = false;
+                });
+                grid.appendChild(cell);
+            }
+        }
+
+        async function handleBtSend() {
+            const textarea = document.getElementById("user-input");
+            const btn = document.getElementById("btn-send");
+            const userText = textarea.value.trim();
+            if (!userText) return;
+
+            addChatMessage(userText, "user");
+            textarea.value = "";
+            textarea.style.height = "auto";
+            btn.disabled = true;
+            setLoading(true);
+
+            try {
+                /* Create backtrace session */
+                const sessionRes = await fetch("/api/session", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ mode: "backtrace" })
+                });
+                if (!sessionRes.ok) throw new Error("Session creation failed");
+                const sessionData = await sessionRes.json();
+                btSessionId = sessionData.session_id;
+
+                /* Set goal from text */
+                const goalRes = await fetch("/api/backtrace/set-goal", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: btSessionId,
+                        method: "text",
+                        value: userText
+                    })
+                });
+                if (!goalRes.ok) throw new Error("Goal setting failed");
+                const goalData = await goalRes.json();
+
+                if (goalData.candidates && goalData.candidates.length > 0) {
+                    btGoalCandidates = goalData.candidates;
+                    showBtGoalConfirmPhase(goalData);
+                } else {
+                    showToast("目標候補が見つかりませんでした。別の表現で試してください。");
+                }
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+            } finally {
+                setLoading(false);
+                btn.disabled = false;
+            }
+        }
+
+        async function handleBtSetGoal(method) {
+            let value = '';
+            if (method === 'theme') {
+                value = document.getElementById('bt-theme-value').value.trim();
+                if (!value) { showToast("テーマを入力してください"); return; }
+            } else if (method === 'hexagram') {
+                if (!btSelectedHexNum) { showToast("卦を選択してください"); return; }
+                value = btSelectedHexNum;
+            } else if (method === 'text') {
+                value = document.getElementById('bt-text-value').value.trim();
+                if (!value) { showToast("テキストを入力してください"); return; }
+            }
+
+            setLoading(true, 'bt-goal-spinner', 'bt-goal-loading-text');
+
+            try {
+                /* Create backtrace session if not exists */
+                if (!btSessionId) {
+                    const sessionRes = await fetch("/api/session", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ mode: "backtrace" })
+                    });
+                    if (!sessionRes.ok) throw new Error("Session creation failed");
+                    const sessionData = await sessionRes.json();
+                    btSessionId = sessionData.session_id;
+                }
+
+                const res = await fetch("/api/backtrace/set-goal", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: btSessionId,
+                        method: method,
+                        value: value
+                    })
+                });
+                if (!res.ok) throw new Error("Goal setting failed");
+                const data = await res.json();
+
+                if (method === 'hexagram' && data.goal_hex) {
+                    /* Direct hexagram selection - skip candidates, confirm directly */
+                    const confirmRes = await fetch("/api/backtrace/confirm-goal", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            session_id: btSessionId,
+                            hex_num: btSelectedHexNum
+                        })
+                    });
+                    if (!confirmRes.ok) throw new Error("Goal confirm failed");
+                    const confirmData = await confirmRes.json();
+                    showBtCurrentPhase(confirmData);
+                } else if (data.candidates && data.candidates.length > 0) {
+                    btGoalCandidates = data.candidates;
+                    showBtGoalConfirmPhase(data);
+                } else {
+                    showToast("目標候補が見つかりませんでした。別のキーワードで試してください。");
+                }
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+            } finally {
+                setLoading(false, 'bt-goal-spinner', 'bt-goal-loading-text');
+            }
+        }
+
+        function showBtGoalConfirmPhase(data) {
+            const list = document.getElementById('bt-goal-candidates');
+            list.innerHTML = '';
+            btSelectedCandidateIdx = null;
+            document.getElementById('btn-bt-confirm-goal').disabled = true;
+
+            const candidates = data.candidates || [];
+            candidates.forEach((c, i) => {
+                const item = document.createElement('div');
+                item.className = 'bt-candidate-item';
+                const name = c.name || c.hexagram_name || "---";
+                const number = c.hex_num || c.hexagram_number || c.number || "?";
+                const meaning = c.meaning || c.situation || c.description || "";
+
+                item.innerHTML =
+                    '<h4>' + escapeHtml(name) + '（第' + escapeHtml(String(number)) + '卦）</h4>' +
+                    (meaning ? '<p>' + escapeHtml(meaning) + '</p>' : '');
+
+                item.addEventListener('click', () => {
+                    document.querySelectorAll('.bt-candidate-item').forEach(el => el.classList.remove('selected'));
+                    item.classList.add('selected');
+                    btSelectedCandidateIdx = i;
+                    document.getElementById('btn-bt-confirm-goal').disabled = false;
+                });
+                list.appendChild(item);
+            });
+
+            showPhase('bt-goal-confirm');
+        }
+
+        async function handleBtConfirmGoal() {
+            if (btSelectedCandidateIdx === null) {
+                showToast("目標を選択してください");
+                return;
+            }
+
+            const btn = document.getElementById('btn-bt-confirm-goal');
+            btn.disabled = true;
+            setLoading(true, 'bt-goal-confirm-spinner', 'bt-goal-confirm-loading-text');
+
+            try {
+                const candidate = btGoalCandidates[btSelectedCandidateIdx];
+                const hexNum = candidate.hex_num || candidate.hexagram_number || candidate.number;
+
+                const res = await fetch("/api/backtrace/confirm-goal", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: btSessionId,
+                        hex_num: hexNum
+                    })
+                });
+                if (!res.ok) throw new Error("Goal confirm failed");
+                const data = await res.json();
+                showBtCurrentPhase(data);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+                btn.disabled = false;
+            } finally {
+                setLoading(false, 'bt-goal-confirm-spinner', 'bt-goal-confirm-loading-text');
+            }
+        }
+
+        function showBtCurrentPhase(data) {
+            /* Show confirmed goal card */
+            const goalCardArea = document.getElementById('bt-confirmed-goal-card');
+            const goal = data.goal || data.goal_hexagram || {};
+            goalCardArea.innerHTML = buildGoalHexagramCard({
+                name: goal.name || goal.goal_name || "---",
+                id: goal.hex_num || goal.goal_hex || "?",
+                meaning: goal.meaning || goal.situation || "",
+                keywords: goal.keywords || []
+            });
+
+            showPhase('bt-current');
+        }
+
+        async function handleBtDescribeCurrent() {
+            const currentHex = document.getElementById('bt-current-hex').value;
+            const currentState = document.getElementById('bt-current-state').value;
+            const actionType = document.getElementById('bt-current-action').value;
+
+            if (!currentState) {
+                showToast("現在の状態を選択してください");
+                return;
+            }
+
+            setLoading(true, 'bt-current-spinner', 'bt-current-loading-text');
+
+            try {
+                /* Describe current */
+                const descRes = await fetch("/api/backtrace/describe-current", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: btSessionId,
+                        current_hex: currentHex || null,
+                        current_state: currentState,
+                        action_type: actionType || ""
+                    })
+                });
+                if (!descRes.ok) throw new Error("Describe current failed");
+
+                /* Analyze */
+                const analyzeRes = await fetch("/api/backtrace/analyze", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ session_id: btSessionId })
+                });
+                if (!analyzeRes.ok) throw new Error("Analysis failed");
+                const analyzeData = await analyzeRes.json();
+                btAnalysisResult = analyzeData;
+                showBtResultPhase(analyzeData);
+            } catch (e) {
+                showToast("エラーが発生しました: " + e.message);
+            } finally {
+                setLoading(false, 'bt-current-spinner', 'bt-current-loading-text');
+            }
+        }
+
+        function showBtResultPhase(data) {
+            /* Header */
+            const header = document.getElementById('bt-result-header');
+            const goalName = data.goal_name || data.goal_hex_name || "目標";
+            const currentName = data.current_name || data.current_hex_name || "現在地";
+            header.innerHTML =
+                '<div class="kua-title" style="color:#f59e0b;">' + escapeHtml(currentName) + ' → ' + escapeHtml(goalName) + '</div>' +
+                '<div class="kua-sub">逆算分析結果</div>';
+
+            /* Layers / R1-R5 feedback */
+            const layersContainer = document.getElementById('bt-result-layers');
+            layersContainer.innerHTML = '';
+
+            const feedback = data.feedback || {};
+
+            /* R1: 目標地点 */
+            if (feedback.R1) {
+                layersContainer.appendChild(buildAccordion('R1', '目標地点', buildBtR1Content(feedback.R1), true));
+            }
+
+            /* R2: ギャップ構造 */
+            if (feedback.R2) {
+                layersContainer.appendChild(buildAccordion('R2', 'ギャップ構造', buildBtR2Content(feedback.R2), true));
+            }
+
+            /* R3: 推奨ルート */
+            if (feedback.R3) {
+                layersContainer.appendChild(buildAccordion('R3', '推奨ルート', buildBtR3Content(feedback.R3), true));
+            }
+
+            /* R4: 行動パターン */
+            if (feedback.R4) {
+                layersContainer.appendChild(buildAccordion('R4', '行動パターン', buildBtR4Content(feedback.R4), false));
+            }
+
+            /* R5: 注意点・問い */
+            if (feedback.R5) {
+                layersContainer.appendChild(buildAccordion('R5', '注意点・問い', buildBtR5Content(feedback.R5), true));
+            }
+
+            /* Quality gates info */
+            if (data.quality_gates) {
+                const qg = data.quality_gates;
+                let qgHtml = '';
+                if (qg.warnings && qg.warnings.length > 0) {
+                    qgHtml += '<div style="margin-top:12px;">';
+                    qg.warnings.forEach(w => {
+                        qgHtml += '<div style="font-size:0.82rem; color:#f39c12; margin-bottom:4px;">⚠ ' + escapeHtml(w) + '</div>';
+                    });
+                    qgHtml += '</div>';
+                }
+                if (qgHtml) {
+                    layersContainer.appendChild(buildAccordion('QG', '品質情報', qgHtml, false));
+                }
+            }
+
+            /* Roadmap placeholder */
+            document.getElementById('bt-result-roadmap').innerHTML = '';
+
+            showPhase('bt-result');
+        }
+
+        function buildBtR1Content(r1) {
+            let html = '';
+            if (r1.goal_hex_name) html += field('目標卦', r1.goal_hex_name + (r1.goal_hex ? '（第' + r1.goal_hex + '卦）' : ''));
+            if (r1.meaning) html += field('意味', r1.meaning);
+            if (r1.situation) html += field('状況', r1.situation);
+            if (r1.arrival_cases != null) html += field('到達事例数', r1.arrival_cases + '件');
+            if (r1.keywords && r1.keywords.length > 0) {
+                html += '<div class="field"><div class="field-label">キーワード</div><div class="keyword-tags" style="margin-top:4px;">' +
+                    r1.keywords.map(k => '<span class="keyword-tag">' + escapeHtml(k) + '</span>').join('') +
+                    '</div></div>';
+            }
+            return html || '<p>データがありません。</p>';
+        }
+
+        function buildBtR2Content(r2) {
+            let html = '';
+            if (r2.hamming_distance != null) {
+                html += '<div class="gap-row"><span class="gap-label">ハミング距離</span><span class="gap-value">' + r2.hamming_distance + ' / 6</span></div>';
+            }
+            if (r2.changing_lines && r2.changing_lines.length > 0) {
+                html += '<div class="gap-row"><span class="gap-label">変化する爻</span><span class="gap-value"><div class="gap-changing-lines">' +
+                    r2.changing_lines.map(l => '<span class="gap-line-chip">第' + l + '爻</span>').join('') +
+                    '</div></span></div>';
+            }
+            if (r2.difficulty) {
+                html += '<div class="gap-row"><span class="gap-label">難易度</span><span class="gap-value">' + escapeHtml(r2.difficulty) + '</span></div>';
+            }
+            if (r2.compatibility) {
+                html += '<div class="gap-row"><span class="gap-label">相性</span><span class="gap-value">' + escapeHtml(typeof r2.compatibility === 'object' ? JSON.stringify(r2.compatibility) : r2.compatibility) + '</span></div>';
+            }
+            return html || '<p>データがありません。</p>';
+        }
+
+        function buildBtR3Content(r3) {
+            let html = '';
+            const routes = r3.routes || r3.recommended_routes || [];
+            if (routes.length === 0 && r3.primary_route) {
+                routes.push(r3.primary_route);
+            }
+
+            routes.forEach((route, i) => {
+                const score = route.score != null ? Math.round(route.score * 100) : null;
+                let qualityCls = 'bt-quality-medium';
+                if (score >= 70) qualityCls = 'bt-quality-high';
+                else if (score >= 40) qualityCls = 'bt-quality-medium';
+                else qualityCls = 'bt-quality-low';
+
+                html += '<div class="bt-route-card">';
+                html += '<h4>ルート ' + (i + 1) + (score != null ? ' <span class="bt-quality-badge ' + qualityCls + '">スコア ' + score + '%</span>' : '') + '</h4>';
+                if (route.description) html += '<div class="route-detail">' + escapeHtml(route.description) + '</div>';
+                if (route.success_rate != null) html += '<div class="route-score">成功率: ' + Math.round(route.success_rate * 100) + '%</div>';
+                if (route.case_count != null) html += '<div class="route-score">事例数: ' + route.case_count + '件</div>';
+                if (route.path && route.path.length > 0) {
+                    html += '<div style="margin-top:8px;">' +
+                        route.path.map(step => '<span class="gap-path-step">' + escapeHtml(typeof step === 'string' ? step : (step.name || JSON.stringify(step))) + '</span>').join('<span class="gap-path-arrow"> → </span>') +
+                        '</div>';
+                }
+                html += '</div>';
+            });
+
+            return html || '<p>推奨ルートが見つかりませんでした。</p>';
+        }
+
+        function buildBtR4Content(r4) {
+            let html = '';
+            const actions = r4.recommended_actions || r4.actions || [];
+            if (actions.length > 0) {
+                html += '<div class="field"><div class="field-label">成功事例の共通行動</div>';
+                actions.forEach(action => {
+                    const label = typeof action === 'string' ? action : (action.type || action.name || JSON.stringify(action));
+                    const count = action.count || '';
+                    html += '<div style="display:flex;align-items:center;gap:8px;margin-top:6px;">';
+                    html += '<span style="color:var(--light);font-size:0.88rem;">' + escapeHtml(label) + '</span>';
+                    if (count) html += '<span style="font-size:0.75rem;color:rgba(245,245,245,0.4);">(' + count + '件)</span>';
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+
+            if (r4.state_distribution) {
+                html += '<div class="field"><div class="field-label">出発状態の分布</div>';
+                const dist = r4.state_distribution;
+                Object.entries(dist).sort((a, b) => b[1] - a[1]).slice(0, 5).forEach(([state, count]) => {
+                    html += '<div style="display:flex;align-items:center;gap:8px;margin-top:4px;">';
+                    html += '<span style="min-width:100px;font-size:0.82rem;">' + escapeHtml(state) + '</span>';
+                    html += '<span style="font-size:0.75rem;color:rgba(245,245,245,0.4);">' + count + '件</span>';
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+
+            return html || '<p>データがありません。</p>';
+        }
+
+        function buildBtR5Content(r5) {
+            let html = '';
+            if (r5.cautions && r5.cautions.length > 0) {
+                r5.cautions.forEach(c => {
+                    html += '<div style="font-size:0.9rem;color:#f39c12;margin-bottom:8px;line-height:1.6;">⚠ ' + escapeHtml(typeof c === 'string' ? c : (c.message || JSON.stringify(c))) + '</div>';
+                });
+            }
+            if (r5.terror_barrier) {
+                html += '<div style="background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.25);border-radius:8px;padding:14px 16px;margin:12px 0;">';
+                html += '<div style="color:#e74c3c;font-weight:600;font-size:0.85rem;margin-bottom:4px;">Terror Barrier 警告</div>';
+                html += '<div style="font-size:0.88rem;color:rgba(245,245,245,0.8);line-height:1.7;">' + escapeHtml(r5.terror_barrier) + '</div>';
+                html += '</div>';
+            }
+            if (r5.question) {
+                html += '<div class="question-text">' + escapeHtml(r5.question) + '</div>';
+            }
+            if (r5.reflection_prompts && r5.reflection_prompts.length > 0) {
+                r5.reflection_prompts.forEach(q => {
+                    html += '<div class="question-text" style="font-size:0.95rem;">' + escapeHtml(q) + '</div>';
+                });
+            }
+            return html || '<div class="question-text">目標へ向かう過程で、最も恐れていることの中に鍵があるかもしれません。</div>';
+        }
+
+        async function handleBtGenerateRoadmap() {
+            const btn = document.getElementById('btn-bt-roadmap');
+            btn.disabled = true;
+            btn.textContent = 'ロードマップ生成中...';
+
+            try {
+                const res = await fetch("/api/backtrace/roadmap", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ session_id: btSessionId })
+                });
+                if (!res.ok) throw new Error("Roadmap generation failed");
+                const data = await res.json();
+                showBtRoadmap(data);
+            } catch (e) {
+                showToast("ロードマップ生成に失敗しました: " + e.message);
+                btn.disabled = false;
+                btn.textContent = 'ロードマップ生成';
+            }
+        }
+
+        function showBtRoadmap(data) {
+            const container = document.getElementById('bt-result-roadmap');
+            const roadmap = data.roadmap || data;
+
+            let html = '<div class="bt-roadmap-card">';
+            html += '<h3>行動ロードマップ</h3>';
+
+            if (roadmap.overview) {
+                html += '<p style="font-size:0.9rem;color:rgba(245,245,245,0.8);line-height:1.7;margin-bottom:20px;">' + escapeHtml(roadmap.overview) + '</p>';
+            }
+
+            /* Phases */
+            const phases = ['phase_1', 'phase_2', 'phase_3'];
+            phases.forEach((key, i) => {
+                const phase = roadmap[key];
+                if (!phase) return;
+                html += '<div class="bt-phase-item">';
+                html += '<div class="phase-dot"></div>';
+                html += '<h4>' + escapeHtml(phase.title || 'フェーズ ' + (i + 1)) + '</h4>';
+                if (phase.description) html += '<p>' + escapeHtml(phase.description) + '</p>';
+                if (phase.duration_hint) html += '<div class="phase-hint">目安: ' + escapeHtml(phase.duration_hint) + '</div>';
+                if (phase.key_action) html += '<div class="phase-hint" style="color:#10b981;">行動: ' + escapeHtml(phase.key_action) + '</div>';
+                html += '</div>';
+            });
+
+            if (roadmap.immediate_action) {
+                html += '<div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);border-radius:8px;padding:14px 16px;margin-top:16px;">';
+                html += '<div style="color:#10b981;font-weight:600;font-size:0.85rem;margin-bottom:4px;">今すぐできること</div>';
+                html += '<div style="font-size:0.9rem;color:rgba(245,245,245,0.85);line-height:1.7;">' + escapeHtml(roadmap.immediate_action) + '</div>';
+                html += '</div>';
+            }
+
+            if (roadmap.caution) {
+                html += '<div style="font-size:0.82rem;color:#f39c12;margin-top:12px;">⚠ ' + escapeHtml(roadmap.caution) + '</div>';
+            }
+
+            html += '</div>';
+            container.innerHTML = html;
+
+            /* Hide roadmap button */
+            document.getElementById('btn-bt-roadmap').style.display = 'none';
         }
     </script>
 </body>
