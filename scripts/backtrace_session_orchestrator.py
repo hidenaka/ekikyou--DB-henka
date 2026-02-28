@@ -51,7 +51,11 @@ if os.path.isfile(_hex64_path):
     with open(_hex64_path, encoding="utf-8") as _f:
         _hex64_raw = json.load(_f)
     for _name, _info in _hex64_raw["hexagrams"].items():
-        hex64_lookup[_info["number"]] = _info
+        # キー名（例: "乾為天"）を name フィールドとして保持
+        _info_copy = dict(_info)
+        if not _info_copy.get("name"):
+            _info_copy["name"] = _name
+        hex64_lookup[_info_copy["number"]] = _info_copy
 
 # ---------------------------------------------------------------------------
 # compat_lookup (相性データ): diary_session_orchestrator.py と同一パターン
@@ -328,15 +332,32 @@ class BacktraceSessionOrchestrator:
     # ------------------------------------------------------------------
 
     def _parse_hex_num_from_string(self, hex_str: str) -> Optional[int]:
-        """'乾為天 (1)' または '1' のような文字列から卦番号を取り出す。"""
+        """卦番号を含む文字列から卦番号を取り出す。
+
+        対応形式:
+            - '乾為天 (1)'  → 1  (括弧内の数字)
+            - '29_坎為水'   → 29 (アンダースコア前の数字)
+            - '1'           → 1  (数字のみ)
+        """
         import re
         # 括弧内の数字を優先
         m = re.search(r"\((\d+)\)", hex_str)
         if m:
             try:
-                return int(m.group(1))
+                n = int(m.group(1))
+                if 1 <= n <= 64:
+                    return n
             except ValueError:
-                return None
+                pass
+        # アンダースコア区切り形式: "29_坎為水"
+        m = re.match(r"^(\d+)_", hex_str.strip())
+        if m:
+            try:
+                n = int(m.group(1))
+                if 1 <= n <= 64:
+                    return n
+            except ValueError:
+                pass
         # 文字列全体が数字なら直接変換
         try:
             n = int(hex_str.strip())

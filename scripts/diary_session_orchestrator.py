@@ -46,7 +46,10 @@ if os.path.isfile(_hex64_path):
     with open(_hex64_path, encoding="utf-8") as _f:
         _hex64_raw = json.load(_f)
     for _name, _info in _hex64_raw["hexagrams"].items():
-        hex64_lookup[_info["number"]] = _info
+        _info_copy = dict(_info)
+        if not _info_copy.get("name"):
+            _info_copy["name"] = _name
+        hex64_lookup[_info_copy["number"]] = _info_copy
 
 # ---------------------------------------------------------------------------
 # compat_lookup (相性データ): app.py と同一パターン

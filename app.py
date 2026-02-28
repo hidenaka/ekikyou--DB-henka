@@ -71,7 +71,10 @@ with open(os.path.join(PROJECT_ROOT, "data", "diagnostic", "hexagram_64.json"), 
     _hex64_raw = json.load(f)
 hex64_lookup = {}
 for _name, _info in _hex64_raw["hexagrams"].items():
-    hex64_lookup[_info["number"]] = _info
+    _info_copy = dict(_info)
+    if not _info_copy.get("name"):
+        _info_copy["name"] = _name
+    hex64_lookup[_info_copy["number"]] = _info_copy
 
 # ---------------------------------------------------------------------------
 # 互換性データ読み込み（フィードバック用）
