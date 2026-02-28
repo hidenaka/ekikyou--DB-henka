@@ -18,6 +18,13 @@ Webブラウザから呼び出せるREST APIを提供する。
     POST /api/diary/ideal-followup — 理想フォローアップ
     POST /api/diary/confirm        — デュアル確定→2卦候補取得
     POST /api/diary/advice         — 変化アドバイス生成
+
+バックトレースモード:
+    POST /api/backtrace/set-goal          — 目標設定（テーマ/卦/テキスト）
+    POST /api/backtrace/confirm-goal      — 目標確定（候補から選択）
+    POST /api/backtrace/describe-current  — 現在地記述
+    POST /api/backtrace/analyze           — 逆算分析実行
+    POST /api/backtrace/roadmap           — LLMロードマップ生成
 """
 
 import json
@@ -40,6 +47,7 @@ from llm_dialogue import LLMDialogueEngine
 from probability_tables import ProbabilityMapper
 from feedback_engine import FeedbackEngine
 from diary_session_orchestrator import DiarySessionOrchestrator
+from backtrace_session_orchestrator import BacktraceSessionOrchestrator
 
 # ---------------------------------------------------------------------------
 # Flask アプリ
@@ -54,6 +62,7 @@ dialogue_engine = LLMDialogueEngine()
 prob_mapper = ProbabilityMapper()
 feedback_engine = FeedbackEngine()
 diary_orchestrator = DiarySessionOrchestrator()
+backtrace_orchestrator = BacktraceSessionOrchestrator()
 
 # ---------------------------------------------------------------------------
 # 卦データ読み込み（候補表示用）
@@ -211,6 +220,13 @@ def new_session():
         diary_session["session_id"] = sid
         sessions[sid] = diary_session
         return jsonify({"session_id": sid, "mode": "diary"})
+
+    if mode == "backtrace":
+        sid = str(uuid.uuid4())
+        bt_session = backtrace_orchestrator.create_session()
+        bt_session["session_id"] = sid
+        sessions[sid] = bt_session
+        return jsonify({"session_id": sid, "mode": "backtrace"})
 
     s = create_session()
     return jsonify({"session_id": s["session_id"]})
@@ -560,6 +576,131 @@ def diary_advice():
 
 
 # ---------------------------------------------------------------------------
+# バックトレースモード API エンドポイント
+# ---------------------------------------------------------------------------
+
+# 11. POST /api/backtrace/set-goal
+@app.route("/api/backtrace/set-goal", methods=["POST"])
+def backtrace_set_goal():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+    method = data.get("method", "theme")  # "theme", "hexagram", "text"
+    value = data.get("value", "")
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "backtrace":
+        return jsonify({"error": "バックトレースモードのセッションではありません"}), 400
+
+    result = backtrace_orchestrator.set_goal(s, method=method, value=value)
+    if "error" in result:
+        return jsonify(result), 400
+
+    return jsonify(result)
+
+
+# 11b. POST /api/backtrace/confirm-goal
+@app.route("/api/backtrace/confirm-goal", methods=["POST"])
+def backtrace_confirm_goal():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+    hex_num = data.get("hex_num")
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "backtrace":
+        return jsonify({"error": "バックトレースモードのセッションではありません"}), 400
+
+    if hex_num is not None:
+        try:
+            hex_num = int(hex_num)
+        except (ValueError, TypeError):
+            return jsonify({"error": "hex_num は整数である必要があります"}), 400
+
+    result = backtrace_orchestrator.confirm_goal(s, hex_num=hex_num)
+    if "error" in result:
+        return jsonify(result), 400
+
+    return jsonify(result)
+
+
+# 12. POST /api/backtrace/describe-current
+@app.route("/api/backtrace/describe-current", methods=["POST"])
+def backtrace_describe_current():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+    current_hex = data.get("current_hex")
+    current_state = data.get("current_state", "")
+    action_type = data.get("action_type", "")
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "backtrace":
+        return jsonify({"error": "バックトレースモードのセッションではありません"}), 400
+
+    # current_hex を整数に変換（フロントエンドから文字列で来る場合がある）
+    if current_hex is not None:
+        try:
+            current_hex = int(current_hex)
+        except (ValueError, TypeError):
+            return jsonify({"error": "current_hex は整数である必要があります"}), 400
+
+    result = backtrace_orchestrator.describe_current(
+        s, current_hex=current_hex, current_state=current_state, action_type=action_type
+    )
+    if "error" in result:
+        return jsonify(result), 400
+
+    return jsonify(result)
+
+
+# 13. POST /api/backtrace/analyze
+@app.route("/api/backtrace/analyze", methods=["POST"])
+def backtrace_analyze():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "backtrace":
+        return jsonify({"error": "バックトレースモードのセッションではありません"}), 400
+
+    result = backtrace_orchestrator.analyze(s)
+    if "error" in result:
+        return jsonify(result), 500
+
+    return jsonify(result)
+
+
+# 14. POST /api/backtrace/roadmap
+@app.route("/api/backtrace/roadmap", methods=["POST"])
+def backtrace_roadmap():
+    data = request.get_json(force=True)
+    session_id = data.get("session_id", "")
+
+    s, err = _get_session_or_404(session_id)
+    if err:
+        return err
+
+    if s.get("mode") != "backtrace":
+        return jsonify({"error": "バックトレースモードのセッションではありません"}), 400
+
+    result = backtrace_orchestrator.generate_roadmap(s)
+    if "error" in result:
+        return jsonify(result), 500
+
+    return jsonify(result)
+
+
+# ---------------------------------------------------------------------------
 # サーバー起動
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
@@ -572,5 +713,6 @@ if __name__ == "__main__":
     print(f"事例数: {case_count}")
     print(f"LLM: {'利用可能' if dialogue_engine.is_available() else '利用不可（デモモード）'}")
     print(f"日記モード: 有効")
+    print(f"バックトレースモード: 有効")
     print(f"http://localhost:5001")
     app.run(debug=True, port=5001)
