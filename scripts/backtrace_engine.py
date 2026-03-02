@@ -38,6 +38,106 @@ from case_search import CaseSearchEngine
 from hexagram_transformations import get_hexagram_name, get_trigrams
 
 # ---------------------------------------------------------------------------
+# 状態ラベルのファジーマッチング
+# ---------------------------------------------------------------------------
+
+# エイリアス辞書: よくあるユーザー入力 → DBの正式ラベル
+# rev_after_state.json のキー (20件):
+#   V字回復・大成功, どん底・危機, 停滞・閉塞, 分岐・様子見, 喜び・交流,
+#   変質・新生, 安定・停止, 安定・平和, 安定成長・成功, 崩壊・消滅,
+#   成長・拡大, 成長痛, 拡大・繁栄, 持続成長・大成功, 消滅・破綻,
+#   混乱・カオス, 混乱・衰退, 現状維持・延命, 縮小安定・生存, 迷走・混乱
+_STATE_ALIASES: Dict[str, str] = {
+    # 順調系 → 成功
+    "安定成長・順調": "安定成長・成功",
+    "安定成長": "安定成長・成功",
+    "順調": "安定成長・成功",
+    # 衰退系
+    "衰退・下降": "混乱・衰退",
+    "衰退": "混乱・衰退",
+    "下降": "混乱・衰退",
+    # どん底系
+    "どん底": "どん底・危機",
+    "危機": "どん底・危機",
+    # 停滞系
+    "停滞": "停滞・閉塞",
+    "閉塞": "停滞・閉塞",
+    # 安定系
+    "安定": "安定・平和",
+    "平和": "安定・平和",
+    # 混乱系
+    "混乱": "混乱・カオス",
+    "カオス": "混乱・カオス",
+    "迷走": "迷走・混乱",
+    # 成長系
+    "成長": "成長・拡大",
+    "拡大": "拡大・繁栄",
+    "繁栄": "拡大・繁栄",
+    # 成功系
+    "V字回復": "V字回復・大成功",
+    "大成功": "V字回復・大成功",
+    "持続成長": "持続成長・大成功",
+    # 崩壊系
+    "崩壊": "崩壊・消滅",
+    "消滅": "崩壊・消滅",
+    "破綻": "消滅・破綻",
+    # 新生系
+    "変質": "変質・新生",
+    "新生": "変質・新生",
+    # 縮小系
+    "縮小": "縮小安定・生存",
+    "生存": "縮小安定・生存",
+    "縮小安定": "縮小安定・生存",
+    # 現状維持系
+    "現状維持": "現状維持・延命",
+    "延命": "現状維持・延命",
+    # その他
+    "喜び": "喜び・交流",
+    "交流": "喜び・交流",
+    "分岐": "分岐・様子見",
+    "様子見": "分岐・様子見",
+    "安定・停止": "安定・停止",
+}
+
+
+def _fuzzy_match_state(query: str, valid_keys: List[str]) -> Optional[str]:
+    """
+    状態ラベルのファジーマッチング。
+
+    1. 完全一致 → そのまま返す
+    2. エイリアス辞書 → 辞書のvalueを返す
+    3. 「・」区切りの前半 or 後半で部分一致 → 最初にマッチしたキーを返す
+    4. どれにもマッチしない → None
+
+    Args:
+        query: ユーザー入力の状態ラベル
+        valid_keys: rev_after_state.json のキー一覧
+
+    Returns:
+        マッチしたDBラベル or None
+    """
+    # 1. 完全一致
+    if query in valid_keys:
+        return query
+
+    # 2. エイリアス辞書
+    alias_match = _STATE_ALIASES.get(query)
+    if alias_match and alias_match in valid_keys:
+        return alias_match
+
+    # 3. 「・」区切りの前半 or 後半で部分一致
+    parts = query.split("・")
+    for part in parts:
+        if not part:
+            continue
+        for key in valid_keys:
+            if part in key:
+                return key
+
+    # 4. マッチなし
+    return None
+
+# ---------------------------------------------------------------------------
 # データパス定数
 # ---------------------------------------------------------------------------
 
@@ -155,6 +255,22 @@ class BacktraceEngine:
     Layer 3 (L3): 行動レベル逆算 — 具体的な行動・ルートの推奨
     """
 
+    # 八卦→日本語行動タイプのマッピング
+    # prob_tables.json の action_type_to_hex テーブルから導出:
+    #   各八卦に対して最も高い weighted (prob * n) のaction_typeを割り当て。
+    #   震のみ例外: 最高weightedは攻める・挑戦(992)だが乾と重複するため、
+    #   震の象意(雷=変革・破壊)に適合する「刷新・破壊」(weighted=500)を採用。
+    _TRIGRAM_TO_ACTION: Dict[str, str] = {
+        "乾": "攻める・挑戦",    # weighted=1749.9 (prob=0.5614, n=3117)
+        "坤": "守る・維持",      # weighted=261.0  (prob=0.1615, n=1616)
+        "震": "刷新・破壊",      # weighted=500.0  (prob=0.3516, n=1422)
+        "巽": "捨てる・撤退",    # weighted=736.0  (prob=0.7635, n=964)
+        "坎": "耐える・潜伏",    # weighted=1549.9 (prob=0.7280, n=2129)
+        "離": "刷新・破壊",      # weighted=620.0  (prob=0.4360, n=1422)
+        "艮": "守る・維持",      # weighted=1237.0 (prob=0.7655, n=1616)
+        "兌": "対話・融合",      # weighted=1014.0 (prob=0.5643, n=1797)
+    }
+
     def __init__(self) -> None:
         """
         初期化: 全6逆引きインデックスと依存エンジンをロードする。
@@ -194,6 +310,17 @@ class BacktraceEngine:
             except (FileNotFoundError, ImportError) as e:
                 raise RuntimeError(f"RouteNavigator の初期化に失敗しました: {e}")
         return self._route_navigator
+
+    # -----------------------------------------------------------------------
+    # 八卦名→日本語行動タイプ変換
+    # -----------------------------------------------------------------------
+
+    def _translate_trigram_to_action(self, name: str) -> str:
+        """
+        八卦名（乾/坤/震/巽/坎/離/艮/兌）を日本語行動タイプに変換する。
+        八卦名でない場合はそのまま返す。
+        """
+        return self._TRIGRAM_TO_ACTION.get(name, name)
 
     # -----------------------------------------------------------------------
     # compat lookup helper
@@ -302,6 +429,7 @@ class BacktraceEngine:
         Returns:
             {
                 current_state, goal_state,
+                matched_goal_state,         # 実際にマッチしたDBラベル
                 goal_reachability,          # 0.0-1.0 (current_state の出現率)
                 before_state_distribution,  # goal_state に至った前状態分布
                 recommended_actions,        # 成功率順の推奨行動リスト
@@ -309,17 +437,27 @@ class BacktraceEngine:
                 confidence_note,
             }
         """
-        # rev_after_state から goal_state のデータを取得
-        goal_entry = self._rev_after_state.get(goal_state, {})
+        # ファジーマッチング: goal_state
+        valid_keys = list(self._rev_after_state.keys())
+        matched_goal = _fuzzy_match_state(goal_state, valid_keys)
+
+        # マッチしたラベルでデータ取得（マッチなしの場合は空辞書）
+        actual_goal_state = matched_goal if matched_goal else goal_state
+        goal_entry = self._rev_after_state.get(actual_goal_state, {})
         total_count = goal_entry.get("total_count", 0)
         before_dist = goal_entry.get("before_state_distribution", [])
         top_actions = goal_entry.get("top_actions", [])
+
+        # ファジーマッチング: current_state（before_state_distribution 内のラベルと照合）
+        before_state_labels = [e.get("state", "") for e in before_dist]
+        matched_current = _fuzzy_match_state(current_state, before_state_labels)
+        lookup_current = matched_current if matched_current else current_state
 
         # goal_reachability: current_state が before_state_distribution に現れる割合
         goal_reachability = 0.0
         if total_count > 0:
             for entry in before_dist:
-                if entry.get("state") == current_state:
+                if entry.get("state") == lookup_current:
                     goal_reachability = round(entry.get("pct", 0.0) / 100.0, 4)
                     break
 
@@ -375,6 +513,7 @@ class BacktraceEngine:
         return {
             "current_state": current_state,
             "goal_state": goal_state,
+            "matched_goal_state": actual_goal_state,
             "goal_reachability": goal_reachability,
             "before_state_distribution": before_dist,
             "recommended_actions": recommended_actions[:5],  # 上位5件
@@ -463,13 +602,15 @@ class BacktraceEngine:
         # --- 統合行動推奨リスト ---
         action_scores: Dict[str, float] = {}
 
-        # ルートから行動を収集
+        # ルートから行動を収集（八卦名→日本語行動タイプに変換）
         for route_info in routes:
             route_data = route_info.get("route", {})
             steps = route_data.get("steps", [])
             sr = route_data.get("total_success_rate", 0.0)
             for step in steps[:1]:  # 最初のステップのみ（即時行動）
-                action = step.get("action", "")
+                action = self._translate_trigram_to_action(
+                    step.get("action", "")
+                )
                 if action:
                     current_score = action_scores.get(action, 0.0)
                     action_scores[action] = max(current_score, sr * 0.8)
@@ -644,9 +785,19 @@ class BacktraceEngine:
                 labels.append("reference_only")  # RQ1
 
             # Wilson スコア区間 (RQ5)
-            success_count = int(success_rate * max(route_data.get("step_count", 1), 1))
+            # ルートの各ステップの最小count（最も弱いリンク）をnとして使う
+            steps = route_data.get("steps", [])
+            step_counts = [
+                s.get("count") for s in steps
+                if isinstance(s.get("count"), (int, float)) and s.get("count") > 0
+            ]
+            if step_counts:
+                ci_n = min(step_counts)
+            else:
+                ci_n = case_count  # フォールバック: L2のcase_count
+
             ci_lower, ci_upper = _wilson_score_interval(
-                int(case_count * success_rate), case_count
+                int(ci_n * success_rate), ci_n
             )
 
             scored.append({
@@ -657,7 +808,7 @@ class BacktraceEngine:
                 "confidence_interval": {
                     "lower": ci_lower,
                     "upper": ci_upper,
-                    "note": f"95%信頼区間 (n={case_count})",
+                    "note": f"95%信頼区間 (n={ci_n})",
                 },
                 "action_recommendations": l3.get("action_recommendations", []),
             })

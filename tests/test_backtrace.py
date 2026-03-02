@@ -1162,3 +1162,286 @@ class TestBacktraceAPI:
         roadmap = d5["roadmap"]
         for key in _ROADMAP_REQUIRED_KEYS:
             assert key in roadmap
+
+
+# ============================================================
+# 17. Fix1: 状態ラベルのファジーマッチングテスト
+# ============================================================
+
+class TestFuzzyStateMatching:
+    """Fix1: 状態ラベルのファジーマッチングテスト。
+
+    rev_after_state.json の完全一致検索で 0 件になるケースに対し、
+    エイリアス辞書 + 部分一致フォールバックで結果を返すことを検証する。
+    """
+
+    @pytest.fixture(scope="class")
+    def engine(self):
+        return BacktraceEngine()
+
+    def test_exact_match_still_works(self, engine):
+        """完全一致は引き続き動作する。"""
+        # "安定成長・成功" は rev_after_state.json に実在するキー (1091件)
+        result = engine.reverse_state("停滞・閉塞", "安定成長・成功")
+        assert result.get("case_count", 0) > 0, (
+            "Exact match for '安定成長・成功' should return cases"
+        )
+
+    def test_partial_match_juncho_to_seikou(self, engine):
+        """'安定成長・順調' → '安定成長・成功' にマッチ。"""
+        result = engine.reverse_state("停滞・閉塞", "安定成長・順調")
+        assert result.get("total_cases", result.get("case_count", 0)) > 0, (
+            "'安定成長・順調' should fuzzy-match to '安定成長・成功'"
+        )
+
+    def test_partial_match_suitai(self, engine):
+        """'衰退・下降' → 類似ラベルにマッチ。"""
+        result = engine.reverse_state("安定成長・成功", "衰退・下降")
+        assert result.get("total_cases", result.get("case_count", 0)) > 0, (
+            "'衰退・下降' should fuzzy-match to a similar label"
+        )
+
+    def test_fuzzy_match_returns_matched_label(self, engine):
+        """ファジーマッチ時、実際にマッチしたラベルを返す。"""
+        result = engine.reverse_state("停滞・閉塞", "安定成長・順調")
+        assert "matched_goal_state" in result, (
+            "Fuzzy match result should contain 'matched_goal_state'"
+        )
+        assert result["matched_goal_state"] == "安定成長・成功", (
+            "matched_goal_state should be '安定成長・成功'"
+        )
+
+    def test_exact_match_matched_label_is_same(self, engine):
+        """完全一致時、matched_goal_state は入力と同じ。"""
+        result = engine.reverse_state("停滞・閉塞", "安定成長・成功")
+        assert result.get("matched_goal_state") == "安定成長・成功"
+
+    def test_no_match_returns_empty(self, engine):
+        """完全に無関係な入力は空結果。"""
+        result = engine.reverse_state("停滞・閉塞", "XYZXYZ完全無関係")
+        assert result.get("case_count", 0) == 0, (
+            "Completely unrelated input should return 0 cases"
+        )
+
+    def test_donzoko_alias(self, engine):
+        """'どん底' → 'どん底・危機' にマッチ。"""
+        result = engine.reverse_state("停滞・閉塞", "どん底")
+        assert result.get("case_count", 0) > 0
+        assert result.get("matched_goal_state") == "どん底・危機"
+
+    def test_fuzzy_current_state_also_works(self, engine):
+        """current_state のファジーマッチもテスト。
+        goal_reachability の計算に current_state の一致が必要なので、
+        current_state もファジーマッチされること。
+        """
+        # "停滞" → "停滞・閉塞" にマッチすべき
+        result = engine.reverse_state("停滞", "V字回復・大成功")
+        assert result.get("case_count", 0) > 0
+        assert result.get("goal_reachability", 0.0) > 0.0, (
+            "current_state '停滞' should fuzzy-match to '停滞・閉塞' "
+            "and contribute to goal_reachability"
+        )
+
+
+# ============================================================
+# 18. Fix2: CI計算バグ修正テスト
+# ============================================================
+
+import unittest
+import re
+
+
+class TestCICalculationFix(unittest.TestCase):
+    """Fix2: CI計算バグ修正テスト — ルートのCIはステップの最小nを使うべき"""
+
+    def test_wilson_score_basic(self):
+        """Wilson Scoreが正しく計算される"""
+        lower, upper = _wilson_score_interval(8, 10)
+        # n=10, success=8 → 80% success rate
+        self.assertGreater(lower, 0.4)
+        self.assertLess(upper, 1.0)
+
+    def test_wilson_score_small_n(self):
+        """n=1の場合、CIは広くなるべき"""
+        lower, upper = _wilson_score_interval(1, 1)
+        # n=1で成功率100%でも、CIは広い（不確実性が高い）
+        self.assertLess(lower, 0.5, "n=1でCI下限が0.5以上は詐欺的")
+
+    def test_wilson_score_large_n(self):
+        """n=100の場合、CIは狭い"""
+        lower, upper = _wilson_score_interval(80, 100)
+        ci_width = upper - lower
+        self.assertLess(ci_width, 0.2)
+
+    def test_full_backtrace_ci_uses_min_step_count(self):
+        """full_backtraceのCI計算で、noteのnがルートステップの最小countを反映する"""
+        engine = BacktraceEngine()
+        # 47->1: step_counts=[1] で L2 case_count=2205。
+        # 修正前: n=2205 (L2 case_count)。修正後: n=1 (min step count)
+        result = engine.full_backtrace(47, "停滞・閉塞", 1, "持続成長・大成功")
+
+        routes = result.get("recommended_routes", [])
+        found_route_with_steps = False
+        for route in routes:
+            route_data = route.get("route", {})
+            steps = route_data.get("steps", [])
+            # countフィールドを持つstepのみ対象
+            step_counts = [s.get("count") for s in steps
+                           if isinstance(s.get("count"), (int, float))]
+            if not step_counts:
+                continue
+            found_route_with_steps = True
+            min_step_count = min(step_counts)
+            ci = route.get("confidence_interval", {})
+            note = ci.get("note", "")
+
+            # noteからnを抽出
+            m = re.search(r"n=(\d+)", note)
+            if m:
+                n_in_ci = int(m.group(1))
+                # CIのnはルートステップの最小countを使うべき
+                self.assertLessEqual(
+                    n_in_ci, min_step_count,
+                    f"CI n={n_in_ci} がステップ最小count={min_step_count}より大きい。"
+                    f"L2のcase_countをそのまま使っている可能性あり"
+                )
+
+            # min_step_count が小さいルートではCI幅は広くなるべき
+            ci_lower = ci.get("lower", 0)
+            ci_upper = ci.get("upper", 1)
+            if min_step_count <= 5:
+                ci_width = ci_upper - ci_lower
+                self.assertGreater(
+                    ci_width, 0.15,
+                    f"min_step_count={min_step_count}でCI幅{ci_width:.3f}は"
+                    f"狭すぎる（不確実性を過小評価）"
+                )
+
+        if not found_route_with_steps:
+            self.skipTest("countフィールドを持つルートが見つからなかった")
+
+    def test_full_backtrace_ci_n1_route_wide_ci(self):
+        """n=1のステップを含むルートでCIが十分に広い"""
+        engine = BacktraceEngine()
+        # 29->11: step_counts=[247, 1] で min=1
+        result = engine.full_backtrace(29, "どん底・危機", 11, "安定・平和")
+
+        routes = result.get("recommended_routes", [])
+        for route in routes:
+            route_data = route.get("route", {})
+            steps = route_data.get("steps", [])
+            step_counts = [s.get("count") for s in steps
+                           if isinstance(s.get("count"), (int, float))]
+            if not step_counts:
+                continue
+            min_step_count = min(step_counts)
+            if min_step_count <= 1:
+                ci = route.get("confidence_interval", {})
+                ci_lower = ci.get("lower", 0)
+                ci_upper = ci.get("upper", 1)
+                ci_width = ci_upper - ci_lower
+                self.assertGreater(
+                    ci_width, 0.15,
+                    f"min_step_count={min_step_count}でCI幅{ci_width:.3f}は"
+                    f"狭すぎる。n=1なら不確実性は高いはず"
+                )
+
+
+# ============================================================
+# 19. Fix3: 行動ラベル二重語彙統一テスト
+# ============================================================
+
+
+class TestActionVocabularyUnification(unittest.TestCase):
+    """Fix3: 行動ラベル二重語彙統一テスト"""
+
+    def setUp(self):
+        self.engine = BacktraceEngine()
+
+    def test_trigram_to_action_mapping_exists(self):
+        """八卦→日本語行動タイプのマッピングが存在する"""
+        self.assertTrue(
+            hasattr(self.engine, '_trigram_to_action') or
+            hasattr(BacktraceEngine, '_TRIGRAM_TO_ACTION'),
+            "八卦→行動マッピングが存在しない"
+        )
+
+    def test_action_recommendations_no_raw_trigrams(self):
+        """action_recommendationsに生の八卦名が含まれない"""
+        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功")
+        actions = result.get("L3_action", result.get("l3_action", {})).get(
+            "action_recommendations", []
+        )
+        raw_trigrams = {"乾", "坤", "震", "巽", "坎", "離", "艮", "兌"}
+        for action in actions:
+            action_name = action.get("action_type", "") if isinstance(action, dict) else str(action)
+            self.assertNotIn(
+                action_name, raw_trigrams,
+                f"生の八卦名 '{action_name}' がaction_recommendationsに含まれている"
+            )
+
+    def test_action_recommendations_use_japanese(self):
+        """action_recommendationsが日本語行動タイプを使用"""
+        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功")
+        actions = result.get("L3_action", result.get("l3_action", {})).get(
+            "action_recommendations", []
+        )
+        if actions:
+            for action in actions:
+                action_name = action.get("action_type", "") if isinstance(action, dict) else str(action)
+                # 日本語の行動タイプは「・」を含むか、漢字2文字以上
+                self.assertTrue(
+                    "・" in action_name or len(action_name) >= 4,
+                    f"'{action_name}' は日本語行動タイプではない"
+                )
+
+    def test_mapping_covers_all_eight_trigrams(self):
+        """8つの八卦全てにマッピングがある"""
+        mapping = getattr(self.engine, '_trigram_to_action', None) or \
+                  getattr(BacktraceEngine, '_TRIGRAM_TO_ACTION', {})
+        trigrams = {"乾", "坤", "震", "巽", "坎", "離", "艮", "兌"}
+        for t in trigrams:
+            self.assertIn(t, mapping, f"八卦 '{t}' のマッピングがない")
+
+    def test_recommended_routes_action_recommendations_no_raw_trigrams(self):
+        """recommended_routes内のaction_recommendationsにも生の八卦名が含まれない"""
+        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功")
+        raw_trigrams = {"乾", "坤", "震", "巽", "坎", "離", "艮", "兌"}
+        for route in result.get("recommended_routes", []):
+            for action in route.get("action_recommendations", []):
+                action_name = action.get("action_type", "") if isinstance(action, dict) else str(action)
+                self.assertNotIn(
+                    action_name, raw_trigrams,
+                    f"recommended_routes内に生の八卦名 '{action_name}' が含まれている"
+                )
+
+    def test_translate_trigram_method_exists(self):
+        """_translate_trigram_to_action メソッドが存在する"""
+        self.assertTrue(
+            hasattr(self.engine, '_translate_trigram_to_action'),
+            "_translate_trigram_to_action メソッドが存在しない"
+        )
+
+    def test_translate_trigram_returns_japanese(self):
+        """_translate_trigram_to_action が八卦名を日本語行動タイプに変換する"""
+        method = getattr(self.engine, '_translate_trigram_to_action', None)
+        if method is None:
+            self.fail("_translate_trigram_to_action メソッドが存在しない")
+        raw_trigrams = {"乾", "坤", "震", "巽", "坎", "離", "艮", "兌"}
+        for tg in raw_trigrams:
+            result = method(tg)
+            self.assertNotIn(result, raw_trigrams,
+                f"'{tg}' が変換後もそのまま '{result}' として返された")
+            self.assertTrue(
+                "・" in result or len(result) >= 4,
+                f"'{tg}' の変換結果 '{result}' は日本語行動タイプではない"
+            )
+
+    def test_translate_non_trigram_passes_through(self):
+        """_translate_trigram_to_action は八卦名以外をそのまま返す"""
+        method = getattr(self.engine, '_translate_trigram_to_action', None)
+        if method is None:
+            self.fail("_translate_trigram_to_action メソッドが存在しない")
+        # 日本語行動タイプはそのまま通過すべき
+        self.assertEqual(method("攻める・挑戦"), "攻める・挑戦")
+        self.assertEqual(method("守る・維持"), "守る・維持")
