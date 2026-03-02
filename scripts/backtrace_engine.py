@@ -322,6 +322,18 @@ class BacktraceEngine:
         """
         return self._TRIGRAM_TO_ACTION.get(name, name)
 
+    def _translate_route_actions(self, routes: List[Dict]) -> List[Dict]:
+        """
+        ルートリスト内の全steps[].actionフィールドの八卦名を日本語行動タイプに変換する。
+        recommended_routes / l3_action.routes の両方に適用する。
+        """
+        for route_info in routes:
+            route_data = route_info.get("route", {})
+            for step in route_data.get("steps", []):
+                if "action" in step:
+                    step["action"] = self._translate_trigram_to_action(step["action"])
+        return routes
+
     # -----------------------------------------------------------------------
     # compat lookup helper
     # -----------------------------------------------------------------------
@@ -724,6 +736,10 @@ class BacktraceEngine:
             "current_state": current_state,
             "goal_state": goal_state,
         }
+
+        # --- Fix3: 全ルートのsteps[].actionから八卦名を日本語行動タイプに変換 ---
+        self._translate_route_actions(scored_routes)
+        self._translate_route_actions(l3.get("routes", []))
 
         return {
             "l1_yao": l1,
