@@ -290,6 +290,13 @@ class BacktraceSessionOrchestrator:
                         "confidence": lookup_result.confidence,
                     })
 
+            # ---------------------------------------------------------
+            # フォールバック: theme_to_hexagram.json にマッチしなかった場合、
+            # hex64_lookup を全件スキャンして複数フィールドで部分一致検索する
+            # ---------------------------------------------------------
+            if not candidates:
+                candidates = self._search_hex64_by_keyword(value, limit=5)
+
             if not candidates:
                 return {
                     "candidates": [],
@@ -385,6 +392,83 @@ class BacktraceSessionOrchestrator:
                 })
             if len(results) >= limit:
                 break
+        return results
+
+    def _search_hex64_by_keyword(self, query: str, limit: int = 5) -> List[dict]:
+        """hex64_lookup を全件スキャンし、複数フィールドで部分一致検索する。
+
+        検索対象フィールド: keywords, meaning, name, modern_interpretation,
+        situation, image, archetype, chinese_name
+
+        スコアリング:
+            - keywords 完全一致: +10
+            - keywords 部分一致: +5
+            - meaning 部分一致: +4
+            - name 部分一致: +3
+            - situation 部分一致: +2
+            - modern_interpretation 部分一致: +2
+            - image 部分一致: +1
+            - archetype 部分一致: +1
+        """
+        scored: List[Tuple[int, int, dict]] = []  # (score, hex_num, info)
+
+        for hex_num, info in hex64_lookup.items():
+            score = 0
+
+            # keywords フィールド（リスト）
+            for kw in info.get("keywords", []):
+                if query == kw:
+                    score += 10  # 完全一致
+                elif query in kw or kw in query:
+                    score += 5   # 部分一致
+
+            # meaning フィールド
+            meaning = info.get("meaning", "")
+            if query in meaning:
+                score += 4
+
+            # name フィールド
+            name = info.get("name", info.get("japanese_name", ""))
+            if query in name:
+                score += 3
+
+            # situation フィールド
+            situation = info.get("situation", "")
+            if query in situation:
+                score += 2
+
+            # modern_interpretation フィールド
+            modern = info.get("modern_interpretation", "")
+            if query in modern:
+                score += 2
+
+            # image フィールド
+            image = info.get("image", "")
+            if query in image:
+                score += 1
+
+            # archetype フィールド
+            archetype = info.get("archetype", "")
+            if query in archetype:
+                score += 1
+
+            if score > 0:
+                scored.append((score, hex_num, info))
+
+        # スコア降順でソート
+        scored.sort(key=lambda x: x[0], reverse=True)
+
+        results: List[dict] = []
+        for score, hex_num, info in scored[:limit]:
+            name = info.get("name", info.get("japanese_name", str(hex_num)))
+            confidence = min(score / 10.0, 1.0)
+            results.append({
+                "hex_num": hex_num,
+                "name": name,
+                "metadata": info,
+                "confidence": round(confidence, 2),
+            })
+
         return results
 
     # ------------------------------------------------------------------
