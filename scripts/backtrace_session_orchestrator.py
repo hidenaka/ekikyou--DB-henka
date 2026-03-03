@@ -763,12 +763,21 @@ class BacktraceSessionOrchestrator:
             session["feedback"] = feedback
             session["phase"] = "result"
 
+            # goal/current の名前をフロントエンド用に取得
+            goal_info = hex64_lookup.get(goal_hex, {})
+            current_info = hex64_lookup.get(current_hex, {})
+            goal_name = goal_info.get("name", goal_info.get("japanese_name", str(goal_hex)))
+            current_name = current_info.get("name", current_info.get("japanese_name", str(current_hex)))
+
             return {
                 "backtrace_result": backtrace_result,
                 "gap_analysis": gap_analysis,
                 "feedback_layers": feedback_layers,
+                "feedback": feedback_layers,  # フロントエンド互換
                 "quality_gates": backtrace_result.get("quality_gates", {}),
                 "summary": backtrace_result.get("summary", {}),
+                "goal_name": goal_name,
+                "current_name": current_name,
                 "phase": "result",
             }
 
@@ -843,14 +852,32 @@ class BacktraceSessionOrchestrator:
         for i, route in enumerate(recommended_routes[:3]):
             route_data = route.get("route", {})
             ci = route.get("confidence_interval", {})
+            raw_steps = route_data.get("steps", [])
+            success_rate = route_data.get("total_success_rate", 0.0)
+            title = route.get("title", f"ルート{i + 1}")
+            # フロントエンド互換: step に name フィールドを追加
+            path_steps = []
+            for step in raw_steps:
+                if isinstance(step, dict):
+                    from_h = step.get("from_hex", "")
+                    to_h = step.get("to_hex", "")
+                    act = step.get("action", "")
+                    name = f"{from_h}→{to_h}" if from_h and to_h else act
+                    path_steps.append({**step, "name": name})
+                else:
+                    path_steps.append({"name": str(step)})
             top_routes.append({
                 "rank": i + 1,
-                "title": route.get("title", f"ルート{i + 1}"),
+                "title": title,
+                "description": title,  # フロントエンド互換
                 "score": route.get("score", 0.0),
                 "labels": route.get("labels", []),
-                "steps": route_data.get("steps", []),
+                "steps": path_steps,
+                "path": path_steps,  # フロントエンド互換
                 "step_count": route_data.get("step_count", 0),
-                "total_success_rate": route_data.get("total_success_rate", 0.0),
+                "total_success_rate": success_rate,
+                "success_rate": success_rate,  # フロントエンド互換
+                "case_count": route_data.get("case_count", 0),
                 "confidence_interval": ci,
             })
 
@@ -862,13 +889,27 @@ class BacktraceSessionOrchestrator:
         }
 
         # ----- R4: 行動パターン -----
-        recommended_actions = l3.get("action_recommendations", [])
+        recommended_actions_raw = l3.get("action_recommendations", [])
         state_actions = l2.get("recommended_actions", [])
         case_examples = l3.get("pattern_suggestions", [])
 
+        # フロントエンド互換: action_type → type にマッピング
+        normalized_actions = []
+        for act in recommended_actions_raw[:5]:
+            if isinstance(act, dict):
+                normalized_actions.append({
+                    "type": act.get("action_type", act.get("type", "")),
+                    "name": act.get("action_type", act.get("name", "")),
+                    "score": act.get("score", 0),
+                    "count": act.get("case_count", act.get("count", 0)),
+                })
+            else:
+                normalized_actions.append({"type": str(act), "name": str(act)})
+
         r4 = {
             "label": "行動パターン",
-            "recommended_actions_l3": recommended_actions[:5],
+            "recommended_actions": normalized_actions,  # フロントエンド互換
+            "recommended_actions_l3": recommended_actions_raw[:5],
             "recommended_actions_l2": state_actions[:3],
             "case_examples": case_examples[:3],
             "direct_pair_stats": l3.get("direct_pair_stats", {}),
@@ -916,7 +957,7 @@ class BacktraceSessionOrchestrator:
             "reflective_question": reflective_question,
         }
 
-        return {"r1": r1, "r2": r2, "r3": r3, "r4": r4, "r5": r5}
+        return {"R1": r1, "R2": r2, "R3": r3, "R4": r4, "R5": r5}
 
     # ------------------------------------------------------------------
     # Phase 4: ロードマップ生成（LLM）
