@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "analysis_date": "2026-03-04",
+    "total_labels": 20,
+    "high_polysemy_count": 17,
+    "medium_polysemy_count": 3,
+    "low_polysemy_count": 0,
+    "thresholds": {
+      "high": "JSD > 0.1",
+      "medium": "0.05 < JSD <= 0.1",
+      "low": "JSD <= 0.05"
+    }
+  },
+  "labels": {
+    "刷新・破壊": {
+      "jsd_combined": 0.2105,
+      "jsd_before": 0.1149,
+      "jsd_after": 0.3062,
+      "polysemy_level": "high",
+      "total_cases": 1422,
+      "scale_distribution": {
+        "company": 649,
+        "individual": 267,
+        "country": 288,
+        "family": 67,
+        "other": 151
+      },
+      "scale_success_rates": {
+        "company": 0.6872,
+        "individual": 0.4494,
+        "country": 0.4722,
+        "family": 0.3284,
+        "other": 0.4901
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大35.9%の乖離: company=68.7% vs family=32.8%）"
+    },
+    "耐える・潜伏": {
+      "jsd_combined": 0.1851,
+      "jsd_before": 0.1327,
+      "jsd_after": 0.2374,
+      "polysemy_level": "high",
+      "total_cases": 2129,
+      "scale_distribution": {
+        "individual": 600,
+        "company": 670,
+        "country": 286,
+        "family": 182,
+        "other": 391
+      },
+      "scale_success_rates": {
+        "individual": 0.4217,
+        "company": 0.297,
+        "country": 0.0839,
+        "family": 0.2033,
+        "other": 0.2072
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大33.8%の乖離: individual=42.2% vs country=8.4%）"
+    },
+    "対話・融合": {
+      "jsd_combined": 0.1727,
+      "jsd_before": 0.141,
+      "jsd_after": 0.2044,
+      "polysemy_level": "high",
+      "total_cases": 1797,
+      "scale_distribution": {
+        "company": 810,
+        "individual": 331,
+        "country": 113,
+        "family": 168,
+        "other": 375
+      },
+      "scale_success_rates": {
+        "company": 0.5617,
+        "individual": 0.6012,
+        "country": 0.7257,
+        "family": 0.5357,
+        "other": 0.7093
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大19.0%の乖離: country=72.6% vs family=53.6%）"
+    },
+    "捨てる・撤退": {
+      "jsd_combined": 0.3664,
+      "jsd_before": 0.2965,
+      "jsd_after": 0.4363,
+      "polysemy_level": "high",
+      "total_cases": 964,
+      "scale_distribution": {
+        "company": 556,
+        "individual": 243,
+        "family": 25,
+        "country": 36,
+        "other": 104
+      },
+      "scale_success_rates": {
+        "company": 0.2014,
+        "individual": 0.2922,
+        "family": 0.76,
+        "country": 0.0833,
+        "other": 0.0192
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大74.1%の乖離: family=76.0% vs other=1.9%）"
+    },
+    "攻める・挑戦": {
+      "jsd_combined": 0.0967,
+      "jsd_before": 0.0833,
+      "jsd_after": 0.1101,
+      "polysemy_level": "medium",
+      "total_cases": 3117,
+      "scale_distribution": {
+        "company": 1398,
+        "individual": 1021,
+        "country": 310,
+        "family": 76,
+        "other": 312
+      },
+      "scale_success_rates": {
+        "company": 0.6953,
+        "individual": 0.6357,
+        "country": 0.4548,
+        "family": 0.4211,
+        "other": 0.5769
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大27.4%の乖離: company=69.5% vs family=42.1%）"
+    },
+    "逃げる・放置": {
+      "jsd_combined": 0.2012,
+      "jsd_before": 0.1722,
+      "jsd_after": 0.2303,
+      "polysemy_level": "high",
+      "total_cases": 369,
+      "scale_distribution": {
+        "company": 241,
+        "individual": 76,
+        "country": 32,
+        "family": 9,
+        "other": 11
+      },
+      "scale_success_rates": {
+        "company": 0.0041,
+        "individual": 0.1053,
+        "country": 0.0,
+        "family": 0.2222,
+        "other": 0.0
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大22.2%の乖離: family=22.2% vs country=0.0%）"
+    },
+    "守る・維持": {
+      "jsd_combined": 0.1406,
+      "jsd_before": 0.0964,
+      "jsd_after": 0.1847,
+      "polysemy_level": "high",
+      "total_cases": 1616,
+      "scale_distribution": {
+        "company": 662,
+        "individual": 255,
+        "country": 218,
+        "family": 185,
+        "other": 296
+      },
+      "scale_success_rates": {
+        "company": 0.3671,
+        "individual": 0.3255,
+        "country": 0.2156,
+        "family": 0.2486,
+        "other": 0.5507
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大33.5%の乖離: other=55.1% vs country=21.6%）"
+    },
+    "分散・スピンオフ": {
+      "jsd_combined": 0.189,
+      "jsd_before": 0.1829,
+      "jsd_after": 0.1952,
+      "polysemy_level": "high",
+      "total_cases": 169,
+      "scale_distribution": {
+        "company": 93,
+        "individual": 14,
+        "country": 14,
+        "family": 15,
+        "other": 33
+      },
+      "scale_success_rates": {
+        "company": 0.6237,
+        "individual": 0.9286,
+        "country": 0.3571,
+        "family": 0.7333,
+        "other": 0.4848
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大57.1%の乖離: individual=92.9% vs country=35.7%）"
+    },
+    "分散・多角化": {
+      "jsd_combined": 0.3113,
+      "jsd_before": 0.3113,
+      "jsd_after": 0.3113,
+      "polysemy_level": "high",
+      "total_cases": 3,
+      "scale_distribution": {
+        "individual": 2,
+        "company": 1
+      },
+      "scale_success_rates": {
+        "individual": 1.0,
+        "company": 1.0
+      },
+      "warning_message": null
+    },
+    "分散・独立": {
+      "jsd_combined": 0.1556,
+      "jsd_before": 0.0,
+      "jsd_after": 0.3113,
+      "polysemy_level": "high",
+      "total_cases": 3,
+      "scale_distribution": {
+        "company": 2,
+        "other": 1
+      },
+      "scale_success_rates": {
+        "company": 0.5,
+        "other": 0.0
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大50.0%の乖離: company=50.0% vs other=0.0%）"
+    },
+    "撤退・逃げる": {
+      "jsd_combined": 0.2094,
+      "jsd_before": 0.0,
+      "jsd_after": 0.4188,
+      "polysemy_level": "high",
+      "total_cases": 11,
+      "scale_distribution": {
+        "individual": 8,
+        "company": 3
+      },
+      "scale_success_rates": {
+        "individual": 0.25,
+        "company": 0.0
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大25.0%の乖離: individual=25.0% vs company=0.0%）"
+    },
+    "分散する・独立する": {
+      "jsd_combined": 0.3333,
+      "jsd_before": 0.0,
+      "jsd_after": 0.6667,
+      "polysemy_level": "high",
+      "total_cases": 3,
+      "scale_distribution": {
+        "other": 1,
+        "individual": 1,
+        "company": 1
+      },
+      "scale_success_rates": {
+        "other": 0.0,
+        "individual": 1.0,
+        "company": 1.0
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大100.0%の乖離: individual=100.0% vs other=0.0%）"
+    },
+    "捨てる・転換": {
+      "jsd_combined": 0.1941,
+      "jsd_before": 0.2208,
+      "jsd_after": 0.1675,
+      "polysemy_level": "high",
+      "total_cases": 433,
+      "scale_distribution": {
+        "individual": 203,
+        "other": 65,
+        "company": 153,
+        "country": 3,
+        "family": 9
+      },
+      "scale_success_rates": {
+        "individual": 0.9113,
+        "other": 0.4308,
+        "company": 0.5621,
+        "country": 0.3333,
+        "family": 0.7778
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大57.8%の乖離: individual=91.1% vs country=33.3%）"
+    },
+    "分散・探索": {
+      "jsd_combined": 0.0805,
+      "jsd_before": 0.0692,
+      "jsd_after": 0.0917,
+      "polysemy_level": "medium",
+      "total_cases": 499,
+      "scale_distribution": {
+        "company": 145,
+        "individual": 105,
+        "family": 30,
+        "country": 50,
+        "other": 169
+      },
+      "scale_success_rates": {
+        "company": 0.0483,
+        "individual": 0.2762,
+        "family": 0.3,
+        "country": 0.08,
+        "other": 0.5444
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大49.6%の乖離: other=54.4% vs company=4.8%）"
+    },
+    "集中・拡大": {
+      "jsd_combined": 0.1145,
+      "jsd_before": 0.2104,
+      "jsd_after": 0.0186,
+      "polysemy_level": "high",
+      "total_cases": 140,
+      "scale_distribution": {
+        "company": 44,
+        "individual": 21,
+        "country": 18,
+        "other": 56,
+        "family": 1
+      },
+      "scale_success_rates": {
+        "company": 0.8864,
+        "individual": 0.9524,
+        "country": 0.8889,
+        "other": 0.875,
+        "family": 1.0
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大12.5%の乖離: family=100.0% vs other=87.5%）"
+    },
+    "撤退・収縮": {
+      "jsd_combined": 0.2366,
+      "jsd_before": 0.2999,
+      "jsd_after": 0.1733,
+      "polysemy_level": "high",
+      "total_cases": 34,
+      "scale_distribution": {
+        "company": 13,
+        "country": 6,
+        "individual": 2,
+        "other": 12,
+        "family": 1
+      },
+      "scale_success_rates": {
+        "company": 0.4615,
+        "country": 0.0,
+        "individual": 0.0,
+        "other": 0.0833,
+        "family": 0.0
+      },
+      "warning_message": "このラベルはスケールにより成功率が大きく異なります（最大46.2%の乖離: company=46.2% vs country=0.0%）"
+    },
+    "輝く・表現": {
+      "jsd_combined": 0.6841,
+      "jsd_before": 0.7583,
+      "jsd_after": 0.61,
+      "polysemy_level": "high",
+      "total_cases": 11,
+      "scale_distribution": {
+        "other": 10,
+        "company": 1
+      },
+      "scale_success_rates": {
+        "other": 1.0,
+        "company": 1.0
+      },
+      "warning_message": null
+    },
+    "交流・発表": {
+      "jsd_combined": 0.143,
+      "jsd_before": 0.286,
+      "jsd_after": 0.0,
+      "polysemy_level": "high",
+      "total_cases": 195,
+      "scale_distribution": {
+        "other": 130,
+        "individual": 31,
+        "family": 18,
+        "company": 16
+      },
+      "scale_success_rates": {
+        "other": 1.0,
+        "individual": 1.0,
+        "family": 1.0,
+        "company": 1.0
+      },
+      "warning_message": null
+    },
+    "撤退・縮小": {
+      "jsd_combined": 0.2445,
+      "jsd_before": 0.489,
+      "jsd_after": 0.0,
+      "polysemy_level": "high",
+      "total_cases": 14,
+      "scale_distribution": {
+        "other": 7,
+        "company": 4,
+        "individual": 2,
+        "family": 1
+      },
+      "scale_success_rates": {
+        "other": 0.0,
+        "company": 0.0,
+        "individual": 0.0,
+        "family": 0.0
+      },
+      "warning_message": null
+    },
+    "拡大・攻め": {
+      "jsd_combined": 0.0791,
+      "jsd_before": 0.1529,
+      "jsd_after": 0.0052,
+      "polysemy_level": "medium",
+      "total_cases": 116,
+      "scale_distribution": {
+        "individual": 20,
+        "company": 48,
+        "country": 7,
+        "other": 41
+      },
+      "scale_success_rates": {
+        "individual": 1.0,
+        "company": 0.9792,
+        "country": 1.0,
+        "other": 1.0
+      },
+      "warning_message": null
+    }
+  }
+}

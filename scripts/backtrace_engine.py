@@ -154,6 +154,7 @@ _REV_OUTCOME_ACTION_PATH = os.path.join(_REV_DIR, "rev_outcome_action.json")
 _REV_PATTERN_AFTER_PATH = os.path.join(_REV_DIR, "rev_pattern_after.json")
 _REV_HEX_PAIR_STATS_PATH = os.path.join(_REV_DIR, "rev_hex_pair_stats.json")
 _QUALITY_STATS_PATH = os.path.join(_REV_DIR, "quality_stats.json")
+_POLYSEMY_METADATA_PATH = os.path.join(_REV_DIR, "polysemy_metadata.json")
 
 # scale別フォールバック閾値: scale別事例数がこの値未満の場合に _all を使用
 _SCALE_FALLBACK_THRESHOLD = 5
@@ -400,6 +401,9 @@ class BacktraceEngine:
 
         # 品質統計（scale別品質重み）
         self._quality_stats: Dict[str, Dict] = _load_json(_QUALITY_STATS_PATH)
+
+        # 多義性メタデータ（action_type ラベルのスケール間多義性警告用）
+        self._polysemy_metadata: Dict[str, Any] = _load_json(_POLYSEMY_METADATA_PATH)
 
         # 相性データ
         self._compat: Dict[str, Dict] = _load_json(_COMPAT_PATH)
@@ -707,6 +711,154 @@ class BacktraceEngine:
         }
 
     # -----------------------------------------------------------------------
+    # 多義性警告 (Polysemy Warning)
+    # -----------------------------------------------------------------------
+
+    def _get_polysemy_warning(
+        self, action_type: str, scale: Optional[str] = None,
+    ) -> Optional[Dict]:
+        """
+        指定された action_type の多義性情報を返す。
+
+        polysemy_metadata.json から該当ラベルの多義性レベルを確認し、
+        polysemy_level が "high" かつ scale 固有の成功率と全体成功率の
+        乖離が 20% 以上の場合に警告辞書を返す。
+
+        Args:
+            action_type: 行動タイプラベル（例: "捨てる・撤退"）
+            scale: "company", "individual", "family", "country", "other"
+                   のいずれか。Noneの場合はグローバル比較のみ。
+
+        Returns:
+            {
+                "polysemy_level": "high",
+                "scale_success_rate": 0.XX,
+                "global_success_rate": 0.XX,
+                "divergence": 0.XX,
+                "warning": "..."
+            }
+            polysemy_level が "low" / action_type が存在しない場合は None。
+        """
+        if not self._polysemy_metadata:
+            return None
+
+        labels = self._polysemy_metadata.get("labels", {})
+        label_info = labels.get(action_type)
+        if label_info is None:
+            return None
+
+        polysemy_level = label_info.get("polysemy_level", "low")
+        if polysemy_level == "low":
+            return None
+
+        # scale 別成功率
+        scale_rates = label_info.get("scale_success_rates", {})
+
+        # グローバル成功率（全scale合算）
+        total_success = 0
+        total_count = 0
+        for s, rate in scale_rates.items():
+            dist = label_info.get("scale_distribution", {})
+            n = dist.get(s, 0)
+            total_success += rate * n
+            total_count += n
+
+        global_success_rate = (
+            round(total_success / total_count, 4) if total_count > 0 else 0.0
+        )
+
+        # scale 固有の成功率
+        scale_success_rate = scale_rates.get(scale) if scale else None
+        if scale_success_rate is None:
+            # scale が無い場合でも polysemy_level が high/medium なら基本情報を返す
+            warning_msg = label_info.get("warning_message")
+            if polysemy_level == "high" and warning_msg:
+                return {
+                    "polysemy_level": polysemy_level,
+                    "scale_success_rate": None,
+                    "global_success_rate": global_success_rate,
+                    "divergence": None,
+                    "warning": warning_msg,
+                }
+            return None
+
+        # 乖離計算
+        divergence = round(abs(scale_success_rate - global_success_rate), 4)
+
+        # 乖離が 20% 以上の場合のみ警告
+        if divergence < 0.20:
+            # 乖離が 20% 未満でも polysemy_level が high なら
+            # warning_message があれば返す
+            warning_msg = label_info.get("warning_message")
+            if polysemy_level == "high" and warning_msg:
+                return {
+                    "polysemy_level": polysemy_level,
+                    "scale_success_rate": scale_success_rate,
+                    "global_success_rate": global_success_rate,
+                    "divergence": divergence,
+                    "warning": warning_msg,
+                }
+            return None
+
+        return {
+            "polysemy_level": polysemy_level,
+            "scale_success_rate": scale_success_rate,
+            "global_success_rate": global_success_rate,
+            "divergence": divergence,
+            "warning": (
+                f"「{action_type}」は {scale} カテゴリでの成功率"
+                f"({round(scale_success_rate * 100, 1)}%)が"
+                f"全体平均({round(global_success_rate * 100, 1)}%)と"
+                f"{round(divergence * 100, 1)}%乖離しています"
+            ),
+        }
+
+    def _collect_polysemy_warnings(
+        self,
+        l2: Dict,
+        l3: Dict,
+        scale: Optional[str] = None,
+    ) -> List[Dict]:
+        """
+        L2 (recommended_actions) と L3 (action_recommendations) から
+        全 action_type を抽出し、各ラベルの多義性警告を収集する。
+
+        Args:
+            l2: reverse_state() の結果
+            l3: reverse_action() の結果
+            scale: スケール名
+
+        Returns:
+            [{"action_type": "...", "polysemy_level": "high", "warning": "...", ...}, ...]
+            重複排除済み。
+        """
+        seen_action_types: set = set()
+        warnings: List[Dict] = []
+
+        # L2: recommended_actions から action_type を抽出
+        for action_entry in l2.get("recommended_actions", []):
+            at = action_entry.get("action_type", "")
+            if at and at not in seen_action_types:
+                seen_action_types.add(at)
+
+        # L3: action_recommendations から action_type を抽出
+        for action_entry in l3.get("action_recommendations", []):
+            at = action_entry.get("action_type", "")
+            if at and at not in seen_action_types:
+                seen_action_types.add(at)
+
+        # 各 action_type に対して警告を取得
+        for at in seen_action_types:
+            warning_info = self._get_polysemy_warning(at, scale)
+            if warning_info:
+                warnings.append({
+                    "action_type": at,
+                    **warning_info,
+                })
+
+        return warnings
+
+    # -----------------------------------------------------------------------
     # L2: 状態レベル逆算
     # -----------------------------------------------------------------------
 
@@ -786,7 +938,7 @@ class BacktraceEngine:
             count = action_entry.get("count", 0)
             success_count = action_success_map.get(action_type, 0)
 
-            recommended_actions.append({
+            entry = {
                 "action_type": action_type,
                 "frequency_pct": pct,
                 "frequency_count": count,
@@ -795,7 +947,14 @@ class BacktraceEngine:
                     0.6 * (pct / 100.0) + 0.4 * min(success_count, 1000) / 1000.0,
                     4,
                 ),
-            })
+            }
+
+            # 多義性警告を付与
+            polysemy_info = self._get_polysemy_warning(action_type, scale)
+            if polysemy_info:
+                entry["polysemy_info"] = polysemy_info
+
+            recommended_actions.append(entry)
 
         # composite_score 降順でソート
         recommended_actions.sort(key=lambda x: -x["composite_score"])
@@ -1163,6 +1322,9 @@ class BacktraceEngine:
             "expertise_level": expertise_level,
             "scale": scale,
         }
+
+        # --- polysemy_warnings: 多義性警告を集約 ---
+        result["polysemy_warnings"] = self._collect_polysemy_warnings(l2, l3, scale)
 
         # --- cross_scale_patterns: 他scaleの構造的類似パターン ---
         if include_cross_scale:
