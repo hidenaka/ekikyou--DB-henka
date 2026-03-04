@@ -23,51 +23,6 @@ from typing import Optional
 class CaseSearchEngine:
     """DB事例を使った条件付き分布計算 + 類似事例検索エンジン"""
 
-    # main_domain → scale マッピング用キーワード辞書
-    # 判定順序: family → country → individual → company → other
-    _FAMILY_KEYWORDS = ("家族",)
-
-    _COUNTRY_KEYWORDS = (
-        "国家", "政治", "politics", "政策", "外交", "国際",
-        "軍事", "マクロ経済", "社会保障", "行政", "国防",
-        "都市計画", "地域振興", "災害", "公衆衛生", "社会福祉",
-        "社会インフラ", "社会・コミュニティ", "社会問題", "社会・労働",
-        "社会・文化", "都市・地域", "経済・マクロ", "人事・組織",
-        "経済政策", "国際関係", "国際開発",
-    )
-
-    _INDIVIDUAL_KEYWORDS = (
-        "生活", "Lifestyle", "キャリア", "健康", "メンタルヘルス",
-        "予防医療", "ウェルネス", "将棋", "スポーツ", "暮らし",
-        "長寿", "睡眠", "リハビリ", "介護", "認知症", "母子", "歯科",
-    )
-
-    _COMPANY_KEYWORDS = (
-        "ビジネス", "Business", "business", "金融", "finance", "Finance",
-        "製造", "Manufacturing", "小売", "retail", "Retail",
-        "テクノロジー", "technology", "Technology", "Telecom",
-        "エンタメ", "entertainment", "Entertainment", "エンターテインメント",
-        "エネルギー", "医療", "Healthcare", "製薬", "ヘルスケア",
-        "教育", "education", "IT", "不動産", "real_estate",
-        "自動車", "Automotive", "automotive",
-        "航空", "Aviation", "食品", "food", "飲料", "電機", "Electronics",
-        "半導体", "通信", "化学", "ゲーム", "NPO", "建設",
-        "商社", "物流", "運輸", "Logistics", "観光", "旅行",
-        "アパレル", "ファッション", "ラグジュアリー",
-        "サービス", "Service", "外食", "飲食",
-        "メディア", "Consumer", "consumer", "Sports",
-        "Management", "経営", "宇宙", "投資", "バイオ",
-        "スタートアップ", "インフラ", "重工業", "繊維",
-        "ホテル", "住宅", "精密機器", "芸術", "文化", "伝統",
-        "Science", "人材", "複合企業", "コングロマリット",
-        "保険", "証券", "銀行", "農林水産", "農業", "農",
-        "fintech", "家電", "化粧品", "消費財", "産業",
-        "写真", "映像", "音楽", "文学", "出版", "学術",
-        "商業", "複合", "法務", "会計", "監査", "経済団体",
-        "環境", "慈善", "フィランソロピー", "文具", "ロボット",
-        "業界団体", "電力", "宗教",
-    )
-
     # 有効なscale値
     VALID_SCALES = ("company", "individual", "family", "country", "other")
 
@@ -84,34 +39,6 @@ class CaseSearchEngine:
 
         self.cases = self._load_cases(cases_path)
         self._build_indices()
-
-    @staticmethod
-    def classify_scale(main_domain: Optional[str]) -> str:
-        """
-        main_domain値をscale（company/individual/family/country/other）に分類する。
-
-        Args:
-            main_domain: cases.jsonlのmain_domainフィールド値
-
-        Returns:
-            "company", "individual", "family", "country", "other" のいずれか
-        """
-        if not main_domain or main_domain == "Other":
-            return "other"
-        d = str(main_domain)
-        for kw in CaseSearchEngine._FAMILY_KEYWORDS:
-            if kw in d:
-                return "family"
-        for kw in CaseSearchEngine._COUNTRY_KEYWORDS:
-            if kw in d:
-                return "country"
-        for kw in CaseSearchEngine._INDIVIDUAL_KEYWORDS:
-            if kw in d:
-                return "individual"
-        for kw in CaseSearchEngine._COMPANY_KEYWORDS:
-            if kw in d:
-                return "company"
-        return "other"
 
     def _load_cases(self, path: str) -> list:
         """cases.jsonlを1行ずつ読み込んでリストとして返す。"""
@@ -158,8 +85,10 @@ class CaseSearchEngine:
             if bh and ah:
                 self._by_hex_pair.setdefault((bh, ah), []).append(case)
 
-            # scale インデックス（main_domain → scale分類）
-            scale = self.classify_scale(case.get("main_domain"))
+            # scale インデックス（scaleフィールド直接使用）
+            scale = case.get("scale", "other")
+            if scale not in self.VALID_SCALES:
+                scale = "other"
             self._by_scale.setdefault(scale, set()).add(id(case))
 
     # --- scaleフィルタ ---
@@ -557,18 +486,21 @@ if __name__ == "__main__":
     assert "other" in scale_dist, "FAIL: 'other' scale not found"
     print("  PASS")
 
-    # --- テスト10: classify_scale の単体テスト ---
-    print("\n--- テスト10: classify_scale ---")
-    assert CaseSearchEngine.classify_scale("ビジネス") == "company"
-    assert CaseSearchEngine.classify_scale("金融") == "company"
-    assert CaseSearchEngine.classify_scale("生活・暮らし") == "individual"
-    assert CaseSearchEngine.classify_scale("Lifestyle") == "individual"
-    assert CaseSearchEngine.classify_scale("国家・政治") == "country"
-    assert CaseSearchEngine.classify_scale("社会・コミュニティ") == "country"
-    assert CaseSearchEngine.classify_scale("家族") == "family"
-    assert CaseSearchEngine.classify_scale(None) == "other"
-    assert CaseSearchEngine.classify_scale("") == "other"
-    assert CaseSearchEngine.classify_scale("Other") == "other"
+    # --- テスト10: scaleフィールド直接参照の検証 ---
+    print("\n--- テスト10: scaleフィールド直接参照 ---")
+    scale_dist = engine.get_scale_distribution()
+    # scaleフィールドの正確な件数を検証（main_domainキーワードマッチではなくscaleフィールド直接使用）
+    expected_scales = {"company": 5510, "individual": 3217, "other": 2165, "country": 1381, "family": 787}
+    for s, expected_n in expected_scales.items():
+        actual_n = scale_dist.get(s, 0)
+        assert actual_n == expected_n, \
+            f"FAIL: scale '{s}' = {actual_n} (expected {expected_n})"
+        print(f"  {s}: {actual_n} == {expected_n} OK")
+    # 全scaleの合計が全件数と一致
+    total = sum(scale_dist.values())
+    assert total == len(engine.cases), \
+        f"FAIL: scale合計({total}) != 全件数({len(engine.cases)})"
+    print(f"  合計: {total} == {len(engine.cases)} OK")
     print("  PASS")
 
     # --- テスト11: get_conditional_distribution with scale ---
