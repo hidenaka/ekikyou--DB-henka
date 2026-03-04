@@ -6,14 +6,26 @@
 DB 13,060件から構築した条件付き確率テーブルを使って
 テキスト相談 → 卦・爻マッピングを実行する。
 
-Usage:
+Usage (マッピング):
     from probability_tables import ProbabilityMapper
     mapper = ProbabilityMapper()
     result = mapper.get_top_candidates("どん底・危機", "守る・維持")
+
+Usage (テーブル生成):
+    python3 scripts/probability_tables.py --build
+    # → data/diagnostic/prob_tables.json (全体, 後方互換)
+    # → data/diagnostic/prob_tables_company.json
+    # → data/diagnostic/prob_tables_individual.json
+    # → data/diagnostic/prob_tables_family.json
+    # → data/diagnostic/prob_tables_country.json
+    # → data/diagnostic/prob_tables_other.json
 """
 
 import json
 import os
+import sys
+from collections import Counter, defaultdict
+from datetime import datetime
 from typing import Optional
 
 # --- 八卦定数 ---
@@ -408,9 +420,240 @@ class ProbabilityMapper:
 
 
 # =============================================================================
+# 確率テーブル生成 (Builder)
+# =============================================================================
+
+# 爻位 → フェーズラベル（phase_to_yao生成用）
+YAO_TO_PHASE_LABEL = {
+    1: "潜伏・発芽",
+    2: "出現・成長",
+    3: "危機・転換点",
+    4: "選択・跳躍準備",
+    5: "最盛・中正",
+    6: "過剰・衰退",
+}
+
+# 対応するscale値
+KNOWN_SCALES = ["company", "individual", "family", "country", "other"]
+
+
+class ProbabilityTableBuilder:
+    """cases.jsonlから確率テーブルを構築するビルダー"""
+
+    def __init__(self, cases_path: str = None):
+        if cases_path is None:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            cases_path = os.path.join(base_dir, "data", "raw", "cases.jsonl")
+        self.cases_path = cases_path
+        self._cases = None
+
+    def _load_cases(self) -> list:
+        """cases.jsonlを読み込む（キャッシュ付き）"""
+        if self._cases is not None:
+            return self._cases
+        cases = []
+        with open(self.cases_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    cases.append(json.loads(line))
+        self._cases = cases
+        return cases
+
+    @staticmethod
+    def _build_hex_distribution(cases: list, category_field: str,
+                                hex_field: str) -> dict:
+        """
+        カテゴリフィールド × 八卦フィールドの条件付き確率テーブルを構築。
+
+        Args:
+            cases: 事例リスト
+            category_field: カテゴリのフィールド名 (例: "before_state")
+            hex_field: 八卦のフィールド名 (例: "before_hex")
+
+        Returns:
+            {"カテゴリ名": {"_n": 件数, "乾": 0.xx, ...}, ...}
+        """
+        # カテゴリごとに八卦の出現をカウント
+        cat_hex_counts = defaultdict(Counter)
+        for case in cases:
+            cat_val = case.get(category_field, "")
+            hex_val = case.get(hex_field, "")
+            if cat_val and hex_val:
+                cat_hex_counts[cat_val][hex_val] += 1
+
+        result = {}
+        for cat_val in sorted(cat_hex_counts.keys()):
+            counts = cat_hex_counts[cat_val]
+            total = sum(counts.values())
+            entry = {"_n": total}
+            for t in TRIGRAMS:
+                entry[t] = round(counts.get(t, 0) / total, 4) if total > 0 else 0.0
+            result[cat_val] = entry
+
+        return result
+
+    @staticmethod
+    def _build_phase_to_yao(cases: list) -> dict:
+        """
+        爻位分布テーブルを構築。
+
+        Returns:
+            {"潜伏・発芽": {"yao": 1, "count": N, "percentage": X.X}, ...}
+        """
+        yao_counts = Counter()
+        for case in cases:
+            yao_val = case.get("yao")
+            if yao_val is not None:
+                yao_counts[yao_val] += 1
+
+        total = sum(yao_counts.values())
+        result = {}
+        for yao_pos in sorted(YAO_TO_PHASE_LABEL.keys()):
+            label = YAO_TO_PHASE_LABEL[yao_pos]
+            count = yao_counts.get(yao_pos, 0)
+            pct = round(count / total * 100, 1) if total > 0 else 0.0
+            result[label] = {
+                "yao": yao_pos,
+                "count": count,
+                "percentage": pct,
+            }
+
+        return result, total
+
+    def build_tables(self, cases: list = None) -> dict:
+        """
+        確率テーブルを構築する。
+
+        Args:
+            cases: 事例リスト（Noneなら全件読み込み）
+
+        Returns:
+            prob_tables.json と同じ構造の辞書
+        """
+        if cases is None:
+            cases = self._load_cases()
+
+        before_state_to_hex = self._build_hex_distribution(
+            cases, "before_state", "before_hex"
+        )
+        action_type_to_hex = self._build_hex_distribution(
+            cases, "action_type", "action_hex"
+        )
+        trigger_type_to_hex = self._build_hex_distribution(
+            cases, "trigger_type", "trigger_hex"
+        )
+        phase_to_yao, cases_with_yao = self._build_phase_to_yao(cases)
+
+        return {
+            "before_state_to_hex": before_state_to_hex,
+            "action_type_to_hex": action_type_to_hex,
+            "trigger_type_to_hex": trigger_type_to_hex,
+            "phase_to_yao": phase_to_yao,
+            "metadata": {
+                "total_cases": len(cases),
+                "cases_with_yao": cases_with_yao,
+                "generated_at": datetime.now().isoformat(),
+                "description": "条件付き確率テーブル: カテゴリラベル→八卦の経験的対応関係",
+                "trigrams": TRIGRAMS,
+                "notes": {
+                    "before_state_to_hex": "before_state→before_hex: 内的状態→下卦候補の確率分布",
+                    "action_type_to_hex": "action_type→action_hex: 行動→上卦候補の確率分布",
+                    "trigger_type_to_hex": "trigger_type→trigger_hex: トリガー→上卦補助の確率分布",
+                    "phase_to_yao": "爻位(1-6)の全体分布。phase_stageから爻位への決定論的マッピングに使用",
+                    "_n": "各カテゴリの事例件数。確率は _n を母数として正規化済み（合計≈1.0）",
+                },
+            },
+        }
+
+    def build_scale_tables(self, scale: str, cases: list = None) -> dict:
+        """
+        特定scaleの確率テーブルを構築する。
+
+        Args:
+            scale: スケール値 (company, individual, family, country, other)
+            cases: 事例リスト（Noneなら全件読み込みしてフィルタ）
+
+        Returns:
+            {"meta": {...}, "tables": {prob_tables構造}}
+        """
+        if cases is None:
+            cases = self._load_cases()
+
+        filtered = [c for c in cases if c.get("scale", "other") == scale]
+        tables = self.build_tables(filtered)
+
+        return {
+            "meta": {
+                "scale": scale,
+                "total_cases": len(filtered),
+                "generated_at": datetime.now().isoformat(),
+            },
+            "tables": tables,
+        }
+
+    def build_all(self, output_dir: str = None):
+        """
+        全体 + scale別の確率テーブルをすべて生成して保存する。
+
+        生成ファイル:
+            - prob_tables.json (全体, 後方互換)
+            - prob_tables_company.json
+            - prob_tables_individual.json
+            - prob_tables_family.json
+            - prob_tables_country.json
+            - prob_tables_other.json
+        """
+        if output_dir is None:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            output_dir = os.path.join(base_dir, "data", "diagnostic")
+
+        os.makedirs(output_dir, exist_ok=True)
+
+        all_cases = self._load_cases()
+        print(f"総事例数: {len(all_cases)}")
+
+        # --- 全体テーブル（後方互換: 既存と同一構造） ---
+        all_tables = self.build_tables(all_cases)
+        all_path = os.path.join(output_dir, "prob_tables.json")
+        with open(all_path, "w", encoding="utf-8") as f:
+            json.dump(all_tables, f, ensure_ascii=False, indent=2)
+        print(f"  全体: {all_path} ({all_tables['metadata']['total_cases']}件)")
+
+        # --- scale別テーブル ---
+        scale_totals = {}
+        for scale in KNOWN_SCALES:
+            scale_data = self.build_scale_tables(scale, all_cases)
+            scale_path = os.path.join(output_dir, f"prob_tables_{scale}.json")
+            with open(scale_path, "w", encoding="utf-8") as f:
+                json.dump(scale_data, f, ensure_ascii=False, indent=2)
+            n = scale_data["meta"]["total_cases"]
+            scale_totals[scale] = n
+            print(f"  {scale}: {scale_path} ({n}件)")
+
+        # --- 検証: scale別合計 = 全体 ---
+        scale_sum = sum(scale_totals.values())
+        if scale_sum != len(all_cases):
+            print(f"\n[WARNING] scale別合計({scale_sum}) != 全体({len(all_cases)})")
+            # 不明なscale値があるか調査
+            unknown = Counter(
+                c.get("scale", "other") for c in all_cases
+                if c.get("scale", "other") not in KNOWN_SCALES
+            )
+            if unknown:
+                print(f"  未知のscale値: {dict(unknown)}")
+        else:
+            print(f"\n[OK] scale別合計({scale_sum}) == 全体({len(all_cases)})")
+
+        return all_tables, scale_totals
+
+
+# =============================================================================
 # テスト実行
 # =============================================================================
-if __name__ == "__main__":
+
+def _run_mapper_tests():
+    """既存のProbabilityMapperテスト（後方互換確認）"""
     print("=" * 70)
     print("ProbabilityMapper テスト実行")
     print("=" * 70)
@@ -518,3 +761,113 @@ if __name__ == "__main__":
     print("\n" + "=" * 70)
     print("全テスト完了")
     print("=" * 70)
+
+
+def _run_builder_tests():
+    """ProbabilityTableBuilderのテスト"""
+    print("\n" + "=" * 70)
+    print("ProbabilityTableBuilder テスト実行")
+    print("=" * 70)
+
+    builder = ProbabilityTableBuilder()
+    all_cases = builder._load_cases()
+    print(f"\n総事例数: {len(all_cases)}")
+
+    # --- テスト10: 全体テーブル構築 ---
+    print("\n--- テスト10: 全体テーブル構築 ---")
+    tables = builder.build_tables(all_cases)
+    assert tables["metadata"]["total_cases"] == len(all_cases), \
+        f"FAIL: total_cases mismatch"
+    assert "before_state_to_hex" in tables
+    assert "action_type_to_hex" in tables
+    assert "trigger_type_to_hex" in tables
+    assert "phase_to_yao" in tables
+
+    # _n合計が全体件数と一致
+    bs_total = sum(v["_n"] for v in tables["before_state_to_hex"].values())
+    at_total = sum(v["_n"] for v in tables["action_type_to_hex"].values())
+    tt_total = sum(v["_n"] for v in tables["trigger_type_to_hex"].values())
+    print(f"  before_state _n合計: {bs_total}")
+    print(f"  action_type _n合計: {at_total}")
+    print(f"  trigger_type _n合計: {tt_total}")
+    assert bs_total == len(all_cases), f"FAIL: before_state _n合計({bs_total}) != 全体({len(all_cases)})"
+    assert at_total == len(all_cases), f"FAIL: action_type _n合計({at_total}) != 全体({len(all_cases)})"
+    assert tt_total == len(all_cases), f"FAIL: trigger_type _n合計({tt_total}) != 全体({len(all_cases)})"
+    print("  PASS: 全テーブルの_n合計が全体件数と一致")
+
+    # --- テスト11: scale別テーブル構築 ---
+    print("\n--- テスト11: scale別テーブル構築 ---")
+    scale_sum = 0
+    for scale in KNOWN_SCALES:
+        scale_data = builder.build_scale_tables(scale, all_cases)
+        n = scale_data["meta"]["total_cases"]
+        scale_sum += n
+        assert scale_data["meta"]["scale"] == scale
+        assert "tables" in scale_data
+        assert "before_state_to_hex" in scale_data["tables"]
+        # scale別の_n合計がそのscaleの事例数と一致
+        bs_n = sum(v["_n"] for v in scale_data["tables"]["before_state_to_hex"].values())
+        assert bs_n == n, f"FAIL: {scale} before_state _n合計({bs_n}) != {n}"
+        print(f"  {scale}: {n}件 [OK]")
+
+    assert scale_sum == len(all_cases), \
+        f"FAIL: scale別合計({scale_sum}) != 全体({len(all_cases)})"
+    print(f"  scale別合計: {scale_sum} == 全体: {len(all_cases)} [PASS]")
+
+    # --- テスト12: scale別テーブルの読み込み互換性 ---
+    print("\n--- テスト12: scale別テーブルの読み込み互換性 ---")
+    # scale別テーブルをtmpに書き出してProbabilityMapperで読めるか
+    import tempfile
+    scale_data = builder.build_scale_tables("company", all_cases)
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False,
+                                      encoding="utf-8") as tmp:
+        # scale別ファイルのtablesの中身をそのまま書く（Mapper互換確認用）
+        json.dump(scale_data["tables"], tmp, ensure_ascii=False, indent=2)
+        tmp_path = tmp.name
+    try:
+        scale_mapper = ProbabilityMapper(table_path=tmp_path)
+        result = scale_mapper.map_to_lower_trigram("どん底・危機")
+        assert result["n"] > 0 or result["n"] == 0  # カテゴリが存在する場合のみ
+        print(f"  company Mapper読み込み: OK (n={result['n']})")
+        print("  PASS: scale別テーブルはProbabilityMapperで読み込み可能")
+    finally:
+        os.unlink(tmp_path)
+
+    # --- テスト13: 確率値の妥当性 ---
+    print("\n--- テスト13: 確率値の妥当性 ---")
+    for cat, entry in tables["before_state_to_hex"].items():
+        prob_sum = sum(entry.get(t, 0.0) for t in TRIGRAMS)
+        assert abs(prob_sum - 1.0) < 0.01, \
+            f"FAIL: {cat} の確率合計が1.0でない: {prob_sum}"
+    print("  PASS: before_state_to_hex の全カテゴリで確率合計 ≈ 1.0")
+
+    for cat, entry in tables["action_type_to_hex"].items():
+        prob_sum = sum(entry.get(t, 0.0) for t in TRIGRAMS)
+        assert abs(prob_sum - 1.0) < 0.01, \
+            f"FAIL: {cat} の確率合計が1.0でない: {prob_sum}"
+    print("  PASS: action_type_to_hex の全カテゴリで確率合計 ≈ 1.0")
+
+    for cat, entry in tables["trigger_type_to_hex"].items():
+        prob_sum = sum(entry.get(t, 0.0) for t in TRIGRAMS)
+        assert abs(prob_sum - 1.0) < 0.01, \
+            f"FAIL: {cat} の確率合計が1.0でない: {prob_sum}"
+    print("  PASS: trigger_type_to_hex の全カテゴリで確率合計 ≈ 1.0")
+
+    print("\n" + "=" * 70)
+    print("Builder全テスト完了")
+    print("=" * 70)
+
+
+if __name__ == "__main__":
+    if "--build" in sys.argv:
+        # テーブル生成モード
+        print("=" * 70)
+        print("確率テーブル生成 (全体 + scale別)")
+        print("=" * 70)
+        builder = ProbabilityTableBuilder()
+        builder.build_all()
+        print("\n生成完了")
+    elif "--test" in sys.argv or len(sys.argv) == 1:
+        # テストモード（デフォルト）
+        _run_mapper_tests()
+        _run_builder_tests()

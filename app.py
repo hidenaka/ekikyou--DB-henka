@@ -680,6 +680,7 @@ def backtrace_describe_current():
 def backtrace_analyze():
     data = request.get_json(force=True)
     session_id = data.get("session_id", "")
+    include_cross_scale = data.get("include_cross_scale", False)
 
     s, err = _get_session_or_404(session_id)
     if err:
@@ -688,7 +689,9 @@ def backtrace_analyze():
     if s.get("mode") != "backtrace":
         return jsonify({"error": "バックトレースモードのセッションではありません"}), 400
 
-    result = backtrace_orchestrator.analyze(s)
+    result = backtrace_orchestrator.analyze(
+        s, include_cross_scale=bool(include_cross_scale)
+    )
     if "error" in result:
         return jsonify(result), 500
 

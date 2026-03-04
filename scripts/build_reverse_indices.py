@@ -349,6 +349,84 @@ def build_rev_hex_pair_stats(cases: list) -> dict:
     return index
 
 
+def build_quality_stats(cases_by_scale: dict) -> dict:
+    """
+    品質統計を構築する。
+
+    scale別に以下を計算:
+      - total: 事例数
+      - sa_rate: credibility_rank が S or A の割合
+      - verified_rate: outcome_status が verified_correct の割合
+      - high_confidence_rate: verification_confidence が high の割合
+      - trust_verified_rate: trust_level が verified の割合
+      - quality_weight: 上記4指標の加重平均 (0.5〜1.0 にクリップ)
+
+    quality_weight の計算式:
+      raw = 0.35 * sa_rate + 0.30 * verified_rate + 0.20 * high_confidence_rate + 0.15 * trust_verified_rate
+      quality_weight = max(0.5, min(1.0, 0.5 + raw * 0.5))
+      → rawが1.0の時 quality_weight=1.0, rawが0.0の時 quality_weight=0.5
+
+    Returns:
+        {"company": {"total": N, "sa_rate": 0.XX, ...}, ...}
+    """
+    stats = {}
+    for scale in ["all"] + ALL_SCALES:
+        cases = cases_by_scale[scale]
+        total = len(cases)
+        if total == 0:
+            stats[scale] = {
+                "total": 0,
+                "sa_rate": 0.0,
+                "verified_rate": 0.0,
+                "high_confidence_rate": 0.0,
+                "trust_verified_rate": 0.0,
+                "quality_weight": 0.7,  # デフォルト
+            }
+            continue
+
+        sa_count = sum(
+            1 for c in cases
+            if c.get("credibility_rank", "") in ("S", "A")
+        )
+        verified_count = sum(
+            1 for c in cases
+            if c.get("outcome_status", "") == "verified_correct"
+        )
+        high_conf_count = sum(
+            1 for c in cases
+            if c.get("verification_confidence", "") == "high"
+        )
+        trust_ver_count = sum(
+            1 for c in cases
+            if c.get("trust_level", "") == "verified"
+        )
+
+        sa_rate = round(sa_count / total, 4)
+        verified_rate = round(verified_count / total, 4)
+        high_confidence_rate = round(high_conf_count / total, 4)
+        trust_verified_rate = round(trust_ver_count / total, 4)
+
+        # 加重平均 → 0.5〜1.0にマップ
+        raw = (
+            0.35 * sa_rate
+            + 0.30 * verified_rate
+            + 0.20 * high_confidence_rate
+            + 0.15 * trust_verified_rate
+        )
+        quality_weight = round(max(0.5, min(1.0, 0.5 + raw * 0.5)), 4)
+
+        stats[scale] = {
+            "total": total,
+            "sa_rate": sa_rate,
+            "verified_rate": verified_rate,
+            "high_confidence_rate": high_confidence_rate,
+            "trust_verified_rate": trust_verified_rate,
+            "quality_weight": quality_weight,
+        }
+
+    return stats
+
+
 def _estimate_duration(period: str) -> float | None:
     """
     period 文字列から継続年数（float）を推定する。
@@ -693,6 +771,20 @@ def build_all():
         "[6/6]",
         summary_func=lambda idx: f"{len(idx)} pairs, total_count={sum(v.get('total_count', 0) for v in idx.values()):,}",
     )
+
+    # -- [7/7] quality_stats --
+    print("\n  [7/7] quality_stats (品質統計)")
+    quality_stats = build_quality_stats(cases_by_scale)
+    path_qs = save_index(quality_stats, "quality_stats.json")
+    for scale in ["all"] + ALL_SCALES:
+        qs = quality_stats[scale]
+        print(
+            f"    {scale:>12}: total={qs['total']:>6,}, "
+            f"sa_rate={qs['sa_rate']:.3f}, "
+            f"verified_rate={qs['verified_rate']:.3f}, "
+            f"quality_weight={qs['quality_weight']:.4f}"
+        )
+    print(f"    -> {os.path.basename(path_qs)}")
 
     print("\n=== 構築完了 ===")
 

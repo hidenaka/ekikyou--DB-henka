@@ -708,7 +708,7 @@ class BacktraceSessionOrchestrator:
     # Phase 3: 分析実行
     # ------------------------------------------------------------------
 
-    def analyze(self, session: dict) -> dict:
+    def analyze(self, session: dict, include_cross_scale: bool = False) -> dict:
         """フルバックトレース分析を実行する。
 
         BacktraceEngine.full_backtrace, GapAnalysisEngine.analyze,
@@ -716,6 +716,7 @@ class BacktraceSessionOrchestrator:
 
         Args:
             session: セッション辞書
+            include_cross_scale: Trueの場合、他scaleの構造的類似パターンを追加
 
         Returns:
             {
@@ -757,6 +758,7 @@ class BacktraceSessionOrchestrator:
                 goal_state=goal_state,
                 expertise_level=expertise_level,
                 scale=scale,
+                include_cross_scale=include_cross_scale,
             )
 
             # full_backtrace がエラーを返した場合（例: scale未指定）

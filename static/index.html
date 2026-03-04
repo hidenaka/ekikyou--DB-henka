@@ -1715,6 +1715,12 @@
             <div id="bt-result-header" style="text-align:center; padding:24px 0 16px;">
             </div>
             <div id="bt-result-layers"></div>
+            <div id="bt-cross-scale-section" style="margin:16px 0;">
+                <button class="btn btn-secondary" id="btn-cross-scale-toggle" onclick="handleCrossScaleToggle()" style="font-size:0.82rem; padding:8px 16px; opacity:0.7;">
+                    他カテゴリの類似パターンを表示
+                </button>
+                <div id="bt-cross-scale-container" class="hidden" style="margin-top:12px;"></div>
+            </div>
             <div id="bt-result-roadmap"></div>
             <div class="restart-area">
                 <button class="btn btn-secondary" onclick="handleBtGenerateRoadmap()" id="btn-bt-roadmap" style="margin-right:12px;">ロードマップ生成</button>
@@ -2396,6 +2402,7 @@
             btSelectedCandidateIdx = null;
             btGoalCandidates = [];
             btAnalysisResult = null;
+            crossScaleLoaded = false;
             setMode('standard');
 
             document.getElementById("chat-container").innerHTML =
@@ -2873,6 +2880,7 @@
         let btSelectedCandidateIdx = null;
         let btGoalCandidates = [];
         let btAnalysisResult = null;
+        let crossScaleLoaded = false;
 
         function selectBtGoalMethod(method) {
             btGoalMethod = method;
@@ -3153,6 +3161,19 @@
         }
 
         function showBtResultPhase(data) {
+            /* Reset cross-scale state for new result */
+            crossScaleLoaded = false;
+            const crossScaleContainer = document.getElementById('bt-cross-scale-container');
+            if (crossScaleContainer) {
+                crossScaleContainer.innerHTML = '';
+                crossScaleContainer.classList.add('hidden');
+            }
+            const crossScaleBtn = document.getElementById('btn-cross-scale-toggle');
+            if (crossScaleBtn) {
+                crossScaleBtn.textContent = '他カテゴリの類似パターンを表示';
+                crossScaleBtn.disabled = false;
+            }
+
             /* Header */
             const header = document.getElementById('bt-result-header');
             const goalName = data.goal_name || data.goal_hex_name || "目標";
@@ -3330,6 +3351,84 @@
                 });
             }
             return html || '<div class="question-text">目標へ向かう過程で、最も恐れていることの中に鍵があるかもしれません。</div>';
+        }
+
+        async function handleCrossScaleToggle() {
+            const container = document.getElementById('bt-cross-scale-container');
+            const btn = document.getElementById('btn-cross-scale-toggle');
+
+            /* If already loaded, toggle visibility */
+            if (crossScaleLoaded) {
+                const isHidden = container.classList.contains('hidden');
+                container.classList.toggle('hidden');
+                btn.textContent = isHidden
+                    ? '他カテゴリの類似パターンを非表示'
+                    : '他カテゴリの類似パターンを表示';
+                return;
+            }
+
+            /* Fetch with include_cross_scale=true */
+            if (!btSessionId) {
+                showToast('セッションが見つかりません');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = '読み込み中...';
+
+            try {
+                const res = await fetch("/api/backtrace/analyze", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        session_id: btSessionId,
+                        include_cross_scale: true
+                    })
+                });
+                if (!res.ok) throw new Error("Cross-scale fetch failed");
+                const data = await res.json();
+
+                const patterns = (data.backtrace_result || {}).cross_scale_patterns || [];
+                container.innerHTML = buildCrossScaleContent(patterns);
+                container.classList.remove('hidden');
+                crossScaleLoaded = true;
+                btn.textContent = '他カテゴリの類似パターンを非表示';
+            } catch (e) {
+                showToast('他カテゴリパターンの取得に失敗しました: ' + e.message);
+                btn.textContent = '他カテゴリの類似パターンを表示';
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        function buildCrossScaleContent(patterns) {
+            if (!patterns || patterns.length === 0) {
+                return '<div style="font-size:0.85rem;color:rgba(245,245,245,0.5);padding:12px;">他カテゴリに類似パターンが見つかりませんでした。</div>';
+            }
+
+            let html = '<div style="border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:16px;background:rgba(245,158,11,0.04);">';
+            html += '<div style="font-size:0.82rem;color:#f59e0b;font-weight:600;margin-bottom:12px;">参考：他カテゴリの構造的類似パターン</div>';
+            html += '<div style="font-size:0.75rem;color:rgba(245,245,245,0.4);margin-bottom:12px;">以下は他のカテゴリ（企業・個人・国家等）で同じ目標状態に到達した際に観察された行動パターンの統計です。直接の参考ではなく、構造的な類似性としてご覧ください。</div>';
+
+            patterns.forEach(p => {
+                const scaleLabels = {
+                    'company': '企業', 'individual': '個人',
+                    'family': '家族', 'country': '国家', 'other': 'その他'
+                };
+                const scaleNames = (p.scales || []).map(s => scaleLabels[s] || s).join('・');
+                const rate = Math.round((p.success_rate || 0) * 100);
+                const cases = p.total_cases || 0;
+
+                html += '<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(245,245,245,0.06);">';
+                html += '<span style="color:var(--light);font-size:0.88rem;min-width:120px;">' + escapeHtml(p.pattern) + '</span>';
+                html += '<span style="font-size:0.75rem;color:rgba(245,158,11,0.7);min-width:60px;">成功率 ' + rate + '%</span>';
+                html += '<span style="font-size:0.75rem;color:rgba(245,245,245,0.4);min-width:50px;">' + cases + '件</span>';
+                html += '<span style="font-size:0.72rem;color:rgba(245,245,245,0.3);">' + escapeHtml(scaleNames) + '</span>';
+                html += '</div>';
+            });
+
+            html += '</div>';
+            return html;
         }
 
         async function handleBtGenerateRoadmap() {

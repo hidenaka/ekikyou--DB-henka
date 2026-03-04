@@ -153,6 +153,7 @@ _REV_AFTER_STATE_PATH = os.path.join(_REV_DIR, "rev_after_state.json")
 _REV_OUTCOME_ACTION_PATH = os.path.join(_REV_DIR, "rev_outcome_action.json")
 _REV_PATTERN_AFTER_PATH = os.path.join(_REV_DIR, "rev_pattern_after.json")
 _REV_HEX_PAIR_STATS_PATH = os.path.join(_REV_DIR, "rev_hex_pair_stats.json")
+_QUALITY_STATS_PATH = os.path.join(_REV_DIR, "quality_stats.json")
 
 # scale別フォールバック閾値: scale別事例数がこの値未満の場合に _all を使用
 _SCALE_FALLBACK_THRESHOLD = 5
@@ -397,6 +398,9 @@ class BacktraceEngine:
                 ),
             }
 
+        # 品質統計（scale別品質重み）
+        self._quality_stats: Dict[str, Dict] = _load_json(_QUALITY_STATS_PATH)
+
         # 相性データ
         self._compat: Dict[str, Dict] = _load_json(_COMPAT_PATH)
 
@@ -495,6 +499,115 @@ class BacktraceEngine:
                 if "action" in step:
                     step["action"] = self._translate_trigram_to_action(step["action"])
         return routes
+
+    # -----------------------------------------------------------------------
+    # cross-scale pattern collection (認知汚染防止: 事例ではなく抽象パターンのみ)
+    # -----------------------------------------------------------------------
+
+    def _collect_cross_scale_patterns(
+        self,
+        goal_state: str,
+        current_scale: Optional[str],
+    ) -> List[Dict]:
+        """
+        他scaleで goal_state に到達した事例の抽象パターンを収集する。
+
+        事例そのものは含めない（認知汚染防止）。
+        各scaleの rev_after_state から goal_state の統計サマリーを抽出し、
+        推奨行動パターンの成功率を計算して返す。
+
+        Args:
+            goal_state: 目標状態ラベル
+            current_scale: 現在のscale（このscaleは除外する）
+
+        Returns:
+            [
+                {
+                    "pattern": "対話・融合",
+                    "scales": ["company", "country"],
+                    "success_rate": 0.XX,
+                    "total_cases": N,
+                    "note": "構造的類似パターン（他カテゴリ）"
+                },
+                ...
+            ]
+        """
+        # 他scaleのaction→scaleマッピングを集約
+        action_aggregation: Dict[str, Dict] = {}
+        # action_aggregation[action_type] = {
+        #     "scales": set(), "total_success": int, "total_count": int
+        # }
+
+        for other_scale in VALID_SCALES:
+            if other_scale == current_scale:
+                continue
+
+            scale_data = self._scale_indices.get(other_scale, {})
+            rev_after_state = scale_data.get("rev_after_state", {})
+
+            # ファジーマッチングで goal_state を解決
+            valid_keys = list(rev_after_state.keys())
+            matched_goal = _fuzzy_match_state(goal_state, valid_keys)
+            actual_goal = matched_goal if matched_goal else goal_state
+            goal_entry = rev_after_state.get(actual_goal, {})
+
+            total_count = goal_entry.get("total_count", 0)
+            if total_count == 0:
+                continue
+
+            top_actions = goal_entry.get("top_actions", [])
+
+            # 成功件数を rev_outcome_action から取得
+            rev_outcome_action = scale_data.get("rev_outcome_action", {})
+            action_success_map: Dict[str, int] = {}
+            for key, val in rev_outcome_action.items():
+                if key.startswith("Success|"):
+                    action_type = key[len("Success|"):]
+                    action_success_map[action_type] = val.get("total_count", 0)
+
+            for action_entry in top_actions:
+                action_type = action_entry.get("action_type", "")
+                if not action_type:
+                    continue
+                count = action_entry.get("count", 0)
+                success_count = action_success_map.get(action_type, 0)
+
+                if action_type not in action_aggregation:
+                    action_aggregation[action_type] = {
+                        "scales": set(),
+                        "total_success": 0,
+                        "total_count": 0,
+                    }
+
+                agg = action_aggregation[action_type]
+                agg["scales"].add(other_scale)
+                agg["total_success"] += success_count
+                agg["total_count"] += count
+
+        # 集約結果をパターンリストに変換
+        patterns: List[Dict] = []
+        for action_type, agg in action_aggregation.items():
+            if agg["total_count"] == 0:
+                continue
+            success_rate = round(
+                agg["total_success"] / agg["total_count"], 4
+            ) if agg["total_count"] > 0 else 0.0
+            # success_rate が 1.0 を超える場合はクリップ（success件数 > action件数の場合）
+            success_rate = min(1.0, success_rate)
+
+            patterns.append({
+                "pattern": action_type,
+                "scales": sorted(agg["scales"]),
+                "success_rate": success_rate,
+                "total_cases": agg["total_count"],
+                "note": "構造的類似パターン（他カテゴリ）",
+            })
+
+        # success_rate 降順、total_cases 降順でソート
+        patterns.sort(key=lambda x: (-x["success_rate"], -x["total_cases"]))
+
+        # 上位5パターンに絞る
+        return patterns[:5]
 
     # -----------------------------------------------------------------------
     # compat lookup helper
@@ -915,6 +1028,7 @@ class BacktraceEngine:
         goal_state: str,
         expertise_level: str = "intermediate",
         scale: Optional[str] = None,
+        include_cross_scale: bool = False,
     ) -> Dict:
         """
         フルバックトレース: L1+L2+L3 を統合し、スコアリング・品質ゲートを適用する。
@@ -930,6 +1044,9 @@ class BacktraceEngine:
                 ("novice", "intermediate", "advanced", "expert")
             scale: "company", "individual", "family", "country", "other"
                    のいずれか。**必須** — Noneの場合はエラーを返す。
+            include_cross_scale: Trueの場合、他scaleの類似パターンを
+                cross_scale_patterns として追加する。事例そのものは含めない
+                （認知汚染防止）。デフォルトFalse。
 
         Returns:
             {
@@ -939,6 +1056,7 @@ class BacktraceEngine:
                 summary,
                 expertise_level,      # 適用された専門性レベル
                 scale,                # 適用されたscale
+                cross_scale_patterns, # (include_cross_scale=True時のみ)
             }
             scale未指定時は {"error": str} を返す。
         """
@@ -971,10 +1089,11 @@ class BacktraceEngine:
         # --- 相性スコア ---
         compat_score = self._lookup_compat_score(current_hex, goal_hex)
 
-        # --- ルートスコアリング（専門性レベル別ウェイト適用） ---
+        # --- ルートスコアリング（専門性レベル別ウェイト + 品質重み適用） ---
         scored_routes = self._score_routes(
             l1, l2, l3, compat_score, goal_state,
             expertise_level=expertise_level,
+            scale=scale,
         )
 
         # --- RQ6: ゼロヒット時のフォールバック ---
@@ -982,6 +1101,7 @@ class BacktraceEngine:
             scored_routes = self._fallback_similar_hex_routes(
                 current_hex, goal_hex, l2, compat_score,
                 expertise_level=expertise_level,
+                scale=scale,
             )
 
         # --- RQ7: 矛盾ルートの排除 ---
@@ -990,7 +1110,8 @@ class BacktraceEngine:
         # --- RQ4: 代替ルートが1つ以上あることを保証（品質ゲート評価前に実行）---
         if len(scored_routes) < 2:
             scored_routes = self._ensure_alternative_route(
-                scored_routes, l3, compat_score, goal_state
+                scored_routes, l3, compat_score, goal_state,
+                scale=scale,
             )
 
         # --- 品質ゲート評価（RQ4 確保後に実行、専門性レベル適用）---
@@ -1011,6 +1132,7 @@ class BacktraceEngine:
 
         # --- summary ---
         primary_score = scored_routes[0]["score"] if scored_routes else 0.0
+        qw = self._get_quality_weight(scale)
         summary = {
             "primary_route_score": round(primary_score, 4),
             "alternative_count": max(0, len(scored_routes) - 1),
@@ -1022,6 +1144,7 @@ class BacktraceEngine:
             "current_state": current_state,
             "goal_state": goal_state,
             "scale": scale,
+            "quality_weight": round(qw, 4),
             "scale_fallback_notes": scale_fallback_notes,
         }
 
@@ -1029,15 +1152,82 @@ class BacktraceEngine:
         self._translate_route_actions(scored_routes)
         self._translate_route_actions(l3.get("routes", []))
 
-        return {
+        result = {
             "l1_yao": l1,
             "l2_state": l2,
             "l3_action": l3,
             "recommended_routes": scored_routes,
             "quality_gates": quality_gates,
+            "quality_info": self._get_quality_info(scale),
             "summary": summary,
             "expertise_level": expertise_level,
             "scale": scale,
+        }
+
+        # --- cross_scale_patterns: 他scaleの構造的類似パターン ---
+        if include_cross_scale:
+            result["cross_scale_patterns"] = self._collect_cross_scale_patterns(
+                goal_state=goal_state,
+                current_scale=scale,
+            )
+
+        return result
+
+    # -----------------------------------------------------------------------
+    # 品質重み取得
+    # -----------------------------------------------------------------------
+
+    def _get_quality_weight(self, scale: Optional[str] = None) -> float:
+        """
+        指定されたscaleの品質重み（0.5〜1.0）を返す。
+
+        quality_stats.json に該当scaleのデータがあればその quality_weight を返す。
+        なければデフォルト 0.7 を返す。
+
+        Args:
+            scale: "company", "individual", "family", "country", "other", or None
+
+        Returns:
+            品質重み（0.5〜1.0）
+        """
+        if not self._quality_stats:
+            return 0.7  # quality_stats.json が存在しない場合のデフォルト
+        if scale and scale in self._quality_stats:
+            return self._quality_stats[scale].get("quality_weight", 0.7)
+        return self._quality_stats.get("all", {}).get("quality_weight", 0.7)
+
+    def _get_quality_info(self, scale: Optional[str] = None) -> Dict:
+        """
+        指定されたscaleの品質メタデータを返す。
+
+        Args:
+            scale: "company", "individual", "family", "country", "other", or None
+
+        Returns:
+            {"scale": str, "sa_rate": float, "verified_rate": float,
+             "high_confidence_rate": float, "trust_verified_rate": float,
+             "quality_weight": float, "total": int}
+        """
+        if not self._quality_stats:
+            return {
+                "scale": scale or "unknown",
+                "sa_rate": 0.0,
+                "verified_rate": 0.0,
+                "high_confidence_rate": 0.0,
+                "trust_verified_rate": 0.0,
+                "quality_weight": 0.7,
+                "total": 0,
+            }
+        key = scale if (scale and scale in self._quality_stats) else "all"
+        stats = self._quality_stats.get(key, {})
+        return {
+            "scale": scale or "all",
+            "sa_rate": stats.get("sa_rate", 0.0),
+            "verified_rate": stats.get("verified_rate", 0.0),
+            "high_confidence_rate": stats.get("high_confidence_rate", 0.0),
+            "trust_verified_rate": stats.get("trust_verified_rate", 0.0),
+            "quality_weight": stats.get("quality_weight", 0.7),
+            "total": stats.get("total", 0),
         }
 
     # -----------------------------------------------------------------------
@@ -1052,19 +1242,22 @@ class BacktraceEngine:
         compat_score: float,
         goal_state: str,
         expertise_level: str = "intermediate",
+        scale: Optional[str] = None,
     ) -> List[Dict]:
         """
         各ルートに対して route_score を計算する。
         専門性レベルに応じてウェイトが変化する。
+        品質重み（quality_weight）を乗算型で適用する。
 
         intermediate (デフォルト — 後方互換):
-            route_score = (
+            base_score = (
                 0.30 * success_rate +
                 0.25 * case_count_norm +   # min(case_count, 100) / 100
                 0.20 * compatibility +     # compat lookup score
                 0.15 * path_efficiency +   # 1.0 - (step_count - 1) / 5
                 0.10 * pattern_match       # 1.0 if any pattern matches, 0.5 otherwise
             )
+            route_score = base_score * quality_weight
         """
         # 専門性レベル別ウェイトを取得
         weights = self.EXPERTISE_WEIGHTS.get(
@@ -1076,6 +1269,9 @@ class BacktraceEngine:
         ci_z = qg_config["rq5_ci_z"]
         ci_label = qg_config["rq5_ci_label"]
         rq1_min = qg_config["rq1_min_cases"]
+
+        # 品質重みを取得（scale別）
+        quality_weight = self._get_quality_weight(scale)
 
         scored: List[Dict] = []
         case_count = l2.get("case_count", 0)
@@ -1092,7 +1288,7 @@ class BacktraceEngine:
             path_efficiency = max(0.0, 1.0 - (step_count - 1) / 5.0)
             pattern_match = 1.0 if has_pattern else 0.5
 
-            score = (
+            base_score = (
                 weights["success_rate"] * success_rate
                 + weights["case_count"] * case_count_norm
                 + weights["compatibility"] * compat_score
@@ -1100,9 +1296,15 @@ class BacktraceEngine:
                 + weights["pattern_match"] * pattern_match
             )
 
+            # 品質重みを乗算型で適用 (0.5〜1.0)
+            score = base_score * quality_weight
+
             labels: List[str] = []
             if case_count < rq1_min:
                 labels.append("reference_only")  # RQ1
+            # 品質が低い場合のラベル追加
+            if quality_weight < 0.65:
+                labels.append("low_quality_evidence")
 
             # Wilson スコア区間 (RQ5) — 専門性レベル別z値を適用
             # ルートの各ステップの最小count（最も弱いリンク）をnとして使う
@@ -1124,6 +1326,8 @@ class BacktraceEngine:
                 "title": route_info.get("title", "ルート"),
                 "route": route_data,
                 "score": round(score, 4),
+                "base_score": round(base_score, 4),
+                "quality_weight": round(quality_weight, 4),
                 "labels": labels,
                 "confidence_interval": {
                     "lower": ci_lower,
@@ -1147,16 +1351,24 @@ class BacktraceEngine:
         l3: Dict,
         compat_score: float,
         goal_state: str,
+        scale: Optional[str] = None,
     ) -> List[Dict]:
         """RQ4: 代替ルートが不足している場合、action_recommendations から補完する。"""
         if len(scored_routes) >= 2:
             return scored_routes
+
+        quality_weight = self._get_quality_weight(scale)
 
         # action_recommendations からダミールートを生成
         for rec in l3.get("action_recommendations", []):
             action = rec.get("action_type", "")
             if not action:
                 continue
+            base_score = rec.get("score", 0.3) * 0.5
+            score = base_score * quality_weight
+            alt_labels = ["alternative_derived"]
+            if quality_weight < 0.65:
+                alt_labels.append("low_quality_evidence")
             alt_route = {
                 "title": f"代替ルート（{action}）",
                 "route": {
@@ -1164,8 +1376,10 @@ class BacktraceEngine:
                     "step_count": 1,
                     "total_success_rate": rec.get("score", 0.3),
                 },
-                "score": round(rec.get("score", 0.3) * 0.5, 4),
-                "labels": ["alternative_derived"],
+                "score": round(score, 4),
+                "base_score": round(base_score, 4),
+                "quality_weight": round(quality_weight, 4),
+                "labels": alt_labels,
                 "confidence_interval": {"lower": 0.0, "upper": 1.0, "note": "推定値"},
                 "action_recommendations": [],
             }
@@ -1186,6 +1400,7 @@ class BacktraceEngine:
         l2: Dict,
         compat_score: float,
         expertise_level: str = "intermediate",
+        scale: Optional[str] = None,
     ) -> List[Dict]:
         """
         RQ6: RouteNavigator でルートが見つからなかった場合に、
@@ -1194,6 +1409,7 @@ class BacktraceEngine:
         weights = self.EXPERTISE_WEIGHTS.get(
             expertise_level, self.EXPERTISE_WEIGHTS["intermediate"]
         )
+        quality_weight = self._get_quality_weight(scale)
         fallback_routes: List[Dict] = []
         case_count = l2.get("case_count", 0)
         case_count_norm = min(case_count, 100) / 100.0
@@ -1222,18 +1438,24 @@ class BacktraceEngine:
                         sr = route_data.get("total_success_rate", 0.0)
                         step_count = route_data.get("step_count", 1)
                         path_efficiency = max(0.0, 1.0 - (step_count - 1) / 5.0)
-                        score = (
+                        base_score = (
                             weights["success_rate"] * sr
                             + weights["case_count"] * case_count_norm
                             + weights["compatibility"] * compat_score
                             + weights["path_efficiency"] * path_efficiency
                             + weights["pattern_match"] * 0.5  # パターンマッチなし
                         )
+                        score = base_score * quality_weight
+                        fb_labels = ["fallback", "neighbor_hex"]
+                        if quality_weight < 0.65:
+                            fb_labels.append("low_quality_evidence")
                         fallback_routes.append({
                             "title": f"近傍ルート（{get_hexagram_name(neighbor)} 経由）",
                             "route": route_data,
                             "score": round(score, 4),
-                            "labels": ["fallback", "neighbor_hex"],
+                            "base_score": round(base_score, 4),
+                            "quality_weight": round(quality_weight, 4),
+                            "labels": fb_labels,
                             "confidence_interval": {
                                 "lower": 0.0,
                                 "upper": 1.0,
