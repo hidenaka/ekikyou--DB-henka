@@ -181,6 +181,7 @@ class BacktraceSessionOrchestrator:
             "current_state": None,      # str
             "current_action": None,     # str
             "current_text": None,       # user's situation text
+            "scale": None,              # "company"|"individual"|"family"|"country"|"other"
             "backtrace_result": None,   # full_backtrace output
             "feedback": None,           # 5-layer feedback
             "roadmap": None,            # LLM-generated roadmap
@@ -534,6 +535,7 @@ class BacktraceSessionOrchestrator:
         current_state: Optional[str] = None,
         action_type: Optional[str] = None,
         expertise_level: str = "intermediate",
+        scale: Optional[str] = None,
     ) -> dict:
         """現在地（本卦・状態・行動）を設定する。
 
@@ -550,9 +552,12 @@ class BacktraceSessionOrchestrator:
             expertise_level: ユーザーの専門性レベル
                 ("novice", "intermediate", "advanced", "expert")
                 デフォルト "intermediate" で後方互換を維持
+            scale: "company", "individual", "family", "country", "other"
+                のいずれか。逆算分析のscaleフィルタに使用。
 
         Returns:
-            {current_hex, current_state, current_action, expertise_level, phase: "analyzing"}
+            {current_hex, current_state, current_action, expertise_level,
+             scale, phase: "analyzing"}
             エラー時は {"error": str}
         """
         # -------------------------------------------------------
@@ -561,6 +566,16 @@ class BacktraceSessionOrchestrator:
         _valid_levels = ("novice", "intermediate", "advanced", "expert")
         if expertise_level not in _valid_levels:
             expertise_level = "intermediate"
+
+        # -------------------------------------------------------
+        # scaleのバリデーション
+        # -------------------------------------------------------
+        from backtrace_engine import VALID_SCALES
+        if scale is not None and scale not in VALID_SCALES:
+            return {
+                "error": f"不正なscale値です: {scale}。"
+                f"有効な値: {', '.join(VALID_SCALES)}"
+            }
 
         # -------------------------------------------------------
         # Direct モード
@@ -585,6 +600,7 @@ class BacktraceSessionOrchestrator:
             session["current_state"] = current_state
             session["current_action"] = action
             session["expertise_level"] = expertise_level
+            session["scale"] = scale
             session["phase"] = "analyzing"
 
             return {
@@ -592,6 +608,7 @@ class BacktraceSessionOrchestrator:
                 "current_state": current_state,
                 "current_action": action,
                 "expertise_level": expertise_level,
+                "scale": scale,
                 "phase": "analyzing",
             }
 
@@ -626,6 +643,7 @@ class BacktraceSessionOrchestrator:
             session["current_state"] = ex_state
             session["current_action"] = ex_action
             session["expertise_level"] = expertise_level
+            session["scale"] = scale
             session["phase"] = "analyzing"
 
             return {
@@ -633,6 +651,7 @@ class BacktraceSessionOrchestrator:
                 "current_state": ex_state,
                 "current_action": ex_action,
                 "expertise_level": expertise_level,
+                "scale": scale,
                 "phase": "analyzing",
             }
 
@@ -726,16 +745,23 @@ class BacktraceSessionOrchestrator:
 
         # 専門性レベル（describe_current で設定済み、未設定時はデフォルト）
         expertise_level = session.get("expertise_level", "intermediate")
+        # scale（describe_current で設定済み）
+        scale = session.get("scale")
 
         try:
-            # ----- 1. フルバックトレース（専門性レベルを適用） -----
+            # ----- 1. フルバックトレース（専門性レベル + scaleを適用） -----
             backtrace_result = self._backtrace_engine.full_backtrace(
                 current_hex=current_hex,
                 current_state=current_state,
                 goal_hex=goal_hex,
                 goal_state=goal_state,
                 expertise_level=expertise_level,
+                scale=scale,
             )
+
+            # full_backtrace がエラーを返した場合（例: scale未指定）
+            if "error" in backtrace_result:
+                return backtrace_result
 
             # ----- 2. ギャップ分析 -----
             gap_analysis = self._gap_engine.analyze(current_hex, goal_hex)

@@ -640,6 +640,7 @@ def backtrace_describe_current():
     current_state = data.get("current_state", "")
     action_type = data.get("action_type", "")
     expertise_level = data.get("expertise_level", "intermediate")
+    scale = data.get("scale")
 
     s, err = _get_session_or_404(session_id)
     if err:
@@ -647,6 +648,14 @@ def backtrace_describe_current():
 
     if s.get("mode") != "backtrace":
         return jsonify({"error": "バックトレースモードのセッションではありません"}), 400
+
+    # scale 必須チェック
+    if not scale:
+        return jsonify({
+            "error": "scaleが未指定です。"
+            "company, individual, family, country, other の"
+            "いずれかを指定してください。"
+        }), 400
 
     # current_hex を整数に変換（フロントエンドから文字列で来る場合がある）
     if current_hex is not None:
@@ -658,6 +667,7 @@ def backtrace_describe_current():
     result = backtrace_orchestrator.describe_current(
         s, current_hex=current_hex, current_state=current_state,
         action_type=action_type, expertise_level=expertise_level,
+        scale=scale,
     )
     if "error" in result:
         return jsonify(result), 400

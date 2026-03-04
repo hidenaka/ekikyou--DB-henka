@@ -38,6 +38,11 @@ from case_search import CaseSearchEngine
 from hexagram_transformations import get_hexagram_name, get_trigrams
 
 # ---------------------------------------------------------------------------
+# VALID_SCALES 定数
+# ---------------------------------------------------------------------------
+VALID_SCALES = ("company", "individual", "family", "country", "other")
+
+# ---------------------------------------------------------------------------
 # 状態ラベルのファジーマッチング
 # ---------------------------------------------------------------------------
 
@@ -148,6 +153,9 @@ _REV_AFTER_STATE_PATH = os.path.join(_REV_DIR, "rev_after_state.json")
 _REV_OUTCOME_ACTION_PATH = os.path.join(_REV_DIR, "rev_outcome_action.json")
 _REV_PATTERN_AFTER_PATH = os.path.join(_REV_DIR, "rev_pattern_after.json")
 _REV_HEX_PAIR_STATS_PATH = os.path.join(_REV_DIR, "rev_hex_pair_stats.json")
+
+# scale別フォールバック閾値: scale別事例数がこの値未満の場合に _all を使用
+_SCALE_FALLBACK_THRESHOLD = 5
 _COMPAT_PATH = os.path.join(
     _PROJECT_ROOT, "data", "reference", "hexagram_compatibility_lookup.json"
 )
@@ -359,14 +367,35 @@ class BacktraceEngine:
         """
         初期化: 全6逆引きインデックスと依存エンジンをロードする。
         RouteNavigator は重いため遅延初期化する。
+        scale別インデックスも全て読み込む（ファイルサイズが小さいので問題ない）。
         """
-        # 逆引きインデックス
+        # 逆引きインデックス（デフォルト = scale無指定時のレガシーデータ）
         self._rev_yao: Dict[str, List[Dict]] = _load_json(_REV_YAO_PATH)
         self._rev_after_hex: Dict[str, List[Dict]] = _load_json(_REV_AFTER_HEX_PATH)
         self._rev_after_state: Dict[str, Dict] = _load_json(_REV_AFTER_STATE_PATH)
         self._rev_outcome_action: Dict[str, Dict] = _load_json(_REV_OUTCOME_ACTION_PATH)
         self._rev_pattern_after: Dict[str, Dict] = _load_json(_REV_PATTERN_AFTER_PATH)
         self._rev_hex_pair_stats: Dict[str, Dict] = _load_json(_REV_HEX_PAIR_STATS_PATH)
+
+        # scale別逆引きインデックス
+        # キー: scale名 ("company", "individual", ..., "all")
+        # 値: 各インデックスの辞書
+        self._scale_indices: Dict[str, Dict[str, Any]] = {}
+        for scale in list(VALID_SCALES) + ["all"]:
+            self._scale_indices[scale] = {
+                "rev_after_state": _load_json(
+                    os.path.join(_REV_DIR, f"rev_after_state_{scale}.json")
+                ),
+                "rev_outcome_action": _load_json(
+                    os.path.join(_REV_DIR, f"rev_outcome_action_{scale}.json")
+                ),
+                "rev_pattern_after": _load_json(
+                    os.path.join(_REV_DIR, f"rev_pattern_after_{scale}.json")
+                ),
+                "rev_hex_pair_stats": _load_json(
+                    os.path.join(_REV_DIR, f"rev_hex_pair_stats_{scale}.json")
+                ),
+            }
 
         # 相性データ
         self._compat: Dict[str, Dict] = _load_json(_COMPAT_PATH)
@@ -394,6 +423,55 @@ class BacktraceEngine:
             except (FileNotFoundError, ImportError) as e:
                 raise RuntimeError(f"RouteNavigator の初期化に失敗しました: {e}")
         return self._route_navigator
+
+    # -----------------------------------------------------------------------
+    # scale別インデックス取得ヘルパー
+    # -----------------------------------------------------------------------
+
+    def _get_scale_index(
+        self, index_name: str, scale: Optional[str]
+    ) -> Tuple[Dict, bool]:
+        """scale別インデックスを取得する。
+
+        フォールバックロジック:
+        1. scale指定あり → scale別インデックスを参照
+        2. scale別インデックスの事例数が閾値未満 → "all"にフォールバック
+        3. scale=None → デフォルト（レガシー）インデックスを返す
+
+        Args:
+            index_name: "rev_after_state", "rev_outcome_action",
+                       "rev_pattern_after", "rev_hex_pair_stats"
+            scale: VALID_SCALES のいずれか、または None
+
+        Returns:
+            (index_dict, used_fallback): インデックス辞書とフォールバック使用フラグ
+        """
+        if scale is None:
+            # scale未指定 → デフォルトのレガシーインデックス
+            default_map = {
+                "rev_after_state": self._rev_after_state,
+                "rev_outcome_action": self._rev_outcome_action,
+                "rev_pattern_after": self._rev_pattern_after,
+                "rev_hex_pair_stats": self._rev_hex_pair_stats,
+            }
+            return default_map.get(index_name, {}), False
+
+        # scale指定あり → scale別インデックスを参照
+        scale_data = self._scale_indices.get(scale, {})
+        index = scale_data.get(index_name, {})
+
+        # フォールバック判定: インデックス全体のtotal_countの合計で判定
+        total_cases = 0
+        for _key, entry in index.items():
+            if isinstance(entry, dict):
+                total_cases += entry.get("total_count", 0)
+
+        if total_cases < _SCALE_FALLBACK_THRESHOLD:
+            # 閾値未満 → "all"にフォールバック
+            all_data = self._scale_indices.get("all", {})
+            return all_data.get(index_name, {}), True
+
+        return index, False
 
     # -----------------------------------------------------------------------
     # 八卦名→日本語行動タイプ変換
@@ -445,13 +523,19 @@ class BacktraceEngine:
     # L1: 爻レベル逆算
     # -----------------------------------------------------------------------
 
-    def reverse_yao(self, current_hex: int, goal_hex: int) -> Dict:
+    def reverse_yao(
+        self, current_hex: int, goal_hex: int, scale: Optional[str] = None
+    ) -> Dict:
         """
         L1 逆算: 現在の卦から目標卦に到達するために変えるべき爻を特定する。
+
+        scaleは参考情報のみ。爻レベルの変化は卦の構造的性質であり、
+        全scale共通のため、scaleによるフィルタは行わない。
 
         Args:
             current_hex: 現在の卦番号 (1-64)
             goal_hex: 目標の卦番号 (1-64)
+            scale: 参考情報のみ（フィルタには使用しない）
 
         Returns:
             {
@@ -513,14 +597,21 @@ class BacktraceEngine:
     # L2: 状態レベル逆算
     # -----------------------------------------------------------------------
 
-    def reverse_state(self, current_state: str, goal_state: str) -> Dict:
+    def reverse_state(
+        self, current_state: str, goal_state: str, scale: Optional[str] = None
+    ) -> Dict:
         """
         L2 逆算: 目標状態に歴史的に到達した事例から、
         推奨行動・前状態分布・到達可能性を算出する。
 
+        scale指定時はscale別インデックスを参照し、事例が少なければ
+        allにフォールバックする。
+
         Args:
             current_state: 現在の状態（例: "停滞・閉塞"）
             goal_state: 目標の状態（例: "V字回復・大成功"）
+            scale: "company", "individual", "family", "country", "other"
+                   のいずれか。Noneの場合はデフォルトインデックスを使用。
 
         Returns:
             {
@@ -531,15 +622,24 @@ class BacktraceEngine:
                 recommended_actions,        # 成功率順の推奨行動リスト
                 case_count,
                 confidence_note,
+                scale_fallback_note,        # フォールバック使用時の注記
             }
         """
+        # scale別インデックス取得
+        rev_after_state, used_fallback = self._get_scale_index(
+            "rev_after_state", scale
+        )
+        rev_outcome_action, _ = self._get_scale_index(
+            "rev_outcome_action", scale
+        )
+
         # ファジーマッチング: goal_state
-        valid_keys = list(self._rev_after_state.keys())
+        valid_keys = list(rev_after_state.keys())
         matched_goal = _fuzzy_match_state(goal_state, valid_keys)
 
         # マッチしたラベルでデータ取得（マッチなしの場合は空辞書）
         actual_goal_state = matched_goal if matched_goal else goal_state
-        goal_entry = self._rev_after_state.get(actual_goal_state, {})
+        goal_entry = rev_after_state.get(actual_goal_state, {})
         total_count = goal_entry.get("total_count", 0)
         before_dist = goal_entry.get("before_state_distribution", [])
         top_actions = goal_entry.get("top_actions", [])
@@ -559,7 +659,7 @@ class BacktraceEngine:
 
         # Success|* の action ごとに success 実績を収集して推奨行動を強化
         action_success_map: Dict[str, int] = {}
-        for key, val in self._rev_outcome_action.items():
+        for key, val in rev_outcome_action.items():
             if not key.startswith("Success|"):
                 continue
             action_type = key[len("Success|"):]
@@ -606,6 +706,14 @@ class BacktraceEngine:
                 "統計的傾向の読み取りには限界があります。"
             )
 
+        # scale フォールバック注記
+        scale_fallback_note = ""
+        if used_fallback and scale:
+            scale_fallback_note = (
+                f"注: {scale}カテゴリの事例が少ないため"
+                "全カテゴリのデータを併用しています"
+            )
+
         return {
             "current_state": current_state,
             "goal_state": goal_state,
@@ -615,6 +723,7 @@ class BacktraceEngine:
             "recommended_actions": recommended_actions[:5],  # 上位5件
             "case_count": total_count,
             "confidence_note": confidence_note,
+            "scale_fallback_note": scale_fallback_note,
         }
 
     # -----------------------------------------------------------------------
@@ -628,9 +737,12 @@ class BacktraceEngine:
         goal_hex: int,
         goal_state: str,
         expertise_level: str = "intermediate",
+        scale: Optional[str] = None,
     ) -> Dict:
         """
         L3 逆算: 具体的な行動パターン・ルートを逆算する。
+
+        scale指定時はscale別インデックスを参照する。
 
         Args:
             current_hex: 現在の卦番号 (1-64)
@@ -639,6 +751,8 @@ class BacktraceEngine:
             goal_state: 目標の状態
             expertise_level: ユーザーの専門性レベル
                 ("novice", "intermediate", "advanced", "expert")
+            scale: "company", "individual", "family", "country", "other"
+                   のいずれか。Noneの場合はデフォルトインデックスを使用。
 
         Returns:
             {
@@ -646,6 +760,7 @@ class BacktraceEngine:
                 direct_pair_stats,   # rev_hex_pair_stats の直接ペア統計
                 pattern_suggestions, # rev_pattern_after からのパターン提案
                 action_recommendations, # 統合行動推奨リスト
+                scale_fallback_note, # フォールバック使用時の注記
             }
         """
         current_name = get_hexagram_name(current_hex)
@@ -668,16 +783,25 @@ class BacktraceEngine:
             # RouteNavigator が使用不可でも処理継続
             routes = []
 
+        # --- scale別インデックス取得 ---
+        rev_hex_pair_stats, pair_fallback = self._get_scale_index(
+            "rev_hex_pair_stats", scale
+        )
+        rev_pattern_after, pattern_fallback = self._get_scale_index(
+            "rev_pattern_after", scale
+        )
+        scale_used_fallback = pair_fallback or pattern_fallback
+
         # --- rev_hex_pair_stats: 上卦ベースのペア統計（近似） ---
         current_upper = _hex_num_to_upper_trigram(current_hex)
         goal_upper = _hex_num_to_upper_trigram(goal_hex)
         pair_key = f"{current_upper}|{goal_upper}"
-        direct_pair_stats = self._rev_hex_pair_stats.get(pair_key, {})
+        direct_pair_stats = rev_hex_pair_stats.get(pair_key, {})
 
         # --- rev_pattern_after: パターンベースの提案 ---
         # goal_state に関連するパターンを検索
         pattern_suggestions: List[Dict] = []
-        for pattern_key, pattern_val in self._rev_pattern_after.items():
+        for pattern_key, pattern_val in rev_pattern_after.items():
             # キーは "pattern_type|after_state"
             if "|" not in pattern_key:
                 continue
@@ -757,6 +881,14 @@ class BacktraceEngine:
                         "待つ積極的戦略です"
                     )
 
+        # scale フォールバック注記
+        scale_fallback_note = ""
+        if scale_used_fallback and scale:
+            scale_fallback_note = (
+                f"注: {scale}カテゴリの事例が少ないため"
+                "全カテゴリのデータを併用しています"
+            )
+
         return {
             "routes": routes,
             "direct_pair_stats": {
@@ -768,6 +900,7 @@ class BacktraceEngine:
             },
             "pattern_suggestions": pattern_suggestions[:3],
             "action_recommendations": action_recommendations,
+            "scale_fallback_note": scale_fallback_note,
         }
 
     # -----------------------------------------------------------------------
@@ -781,9 +914,12 @@ class BacktraceEngine:
         goal_hex: int,
         goal_state: str,
         expertise_level: str = "intermediate",
+        scale: Optional[str] = None,
     ) -> Dict:
         """
         フルバックトレース: L1+L2+L3 を統合し、スコアリング・品質ゲートを適用する。
+
+        scale未指定の場合はエラーを返す（RQ8: scale必須）。
 
         Args:
             current_hex: 現在の卦番号 (1-64)
@@ -792,26 +928,44 @@ class BacktraceEngine:
             goal_state: 目標の状態（例: "安定・平和"）
             expertise_level: ユーザーの専門性レベル
                 ("novice", "intermediate", "advanced", "expert")
+            scale: "company", "individual", "family", "country", "other"
+                   のいずれか。**必須** — Noneの場合はエラーを返す。
 
         Returns:
             {
                 l1_yao, l2_state, l3_action,
                 recommended_routes,   # スコアリング済みルートリスト
-                quality_gates,        # RQ1-RQ7 の評価結果
+                quality_gates,        # RQ1-RQ8 の評価結果
                 summary,
                 expertise_level,      # 適用された専門性レベル
+                scale,                # 適用されたscale
             }
+            scale未指定時は {"error": str} を返す。
         """
+        # --- RQ8: scale必須チェック ---
+        if scale is None:
+            return {
+                "error": "scaleが未指定です。"
+                "company, individual, family, country, other の"
+                "いずれかを指定してください。"
+                "scaleは逆算結果の精度に直結するため、必須です。"
+            }
+        if scale not in VALID_SCALES:
+            return {
+                "error": f"不正なscale値です: {scale}。"
+                f"有効な値: {', '.join(VALID_SCALES)}"
+            }
+
         # --- 専門性レベルのバリデーション ---
         if expertise_level not in self.VALID_EXPERTISE_LEVELS:
             expertise_level = "intermediate"
 
-        # --- 3層の逆算を実行 ---
-        l1 = self.reverse_yao(current_hex, goal_hex)
-        l2 = self.reverse_state(current_state, goal_state)
+        # --- 3層の逆算を実行（scaleを各層に渡す） ---
+        l1 = self.reverse_yao(current_hex, goal_hex, scale=scale)
+        l2 = self.reverse_state(current_state, goal_state, scale=scale)
         l3 = self.reverse_action(
             current_hex, current_state, goal_hex, goal_state,
-            expertise_level=expertise_level,
+            expertise_level=expertise_level, scale=scale,
         )
 
         # --- 相性スコア ---
@@ -843,7 +997,17 @@ class BacktraceEngine:
         quality_gates = self._evaluate_quality_gates(
             l2, l3, scored_routes,
             expertise_level=expertise_level,
+            scale=scale,
         )
+
+        # --- scale フォールバック注記を集約 ---
+        scale_fallback_notes = []
+        l2_note = l2.get("scale_fallback_note", "")
+        l3_note = l3.get("scale_fallback_note", "")
+        if l2_note:
+            scale_fallback_notes.append(l2_note)
+        if l3_note and l3_note not in scale_fallback_notes:
+            scale_fallback_notes.append(l3_note)
 
         # --- summary ---
         primary_score = scored_routes[0]["score"] if scored_routes else 0.0
@@ -857,6 +1021,8 @@ class BacktraceEngine:
             "goal_hex_name": get_hexagram_name(goal_hex),
             "current_state": current_state,
             "goal_state": goal_state,
+            "scale": scale,
+            "scale_fallback_notes": scale_fallback_notes,
         }
 
         # --- Fix3: 全ルートのsteps[].actionから八卦名を日本語行動タイプに変換 ---
@@ -871,6 +1037,7 @@ class BacktraceEngine:
             "quality_gates": quality_gates,
             "summary": summary,
             "expertise_level": expertise_level,
+            "scale": scale,
         }
 
     # -----------------------------------------------------------------------
@@ -1122,9 +1289,10 @@ class BacktraceEngine:
     def _evaluate_quality_gates(
         self, l2: Dict, l3: Dict, scored_routes: List[Dict],
         expertise_level: str = "intermediate",
+        scale: Optional[str] = None,
     ) -> Dict:
         """
-        RQ1-RQ7 の品質ゲートを評価する。
+        RQ1-RQ8 の品質ゲートを評価する。
         専門性レベルに応じて閾値が変化する。
 
         Returns:
@@ -1136,6 +1304,7 @@ class BacktraceEngine:
                 rq5_confidence_interval_computed: bool,
                 rq6_fallback_used: bool,
                 rq7_no_contradictory: bool,  # True = 矛盾排除済み
+                rq8_scale_specified: bool,   # True = scale指定済み
             }
         """
         qg_config = self.EXPERTISE_QUALITY_GATES.get(
@@ -1170,6 +1339,9 @@ class BacktraceEngine:
         # RQ7: 矛盾ルートが除去されているかは _exclude_contradictory_routes が保証
         rq7 = True
 
+        # RQ8: scale指定チェック
+        rq8 = scale is not None and scale in VALID_SCALES
+
         return {
             "rq1_reference_only": rq1,
             "rq2_low_success_rate": rq2,
@@ -1178,6 +1350,7 @@ class BacktraceEngine:
             "rq5_confidence_interval_computed": rq5,
             "rq6_fallback_used": rq6,
             "rq7_contradictory_routes_excluded": rq7,
+            "rq8_scale_specified": rq8,
         }
 
     # -----------------------------------------------------------------------
@@ -1281,9 +1454,9 @@ if __name__ == "__main__":
     # -----------------------------------------------------------------------
     # フルテスト: full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
     # -----------------------------------------------------------------------
-    print("\n\n[FULL] full_backtrace(12, '停滞・閉塞', 11, '安定・平和')")
+    print("\n\n[FULL] full_backtrace(12, '停滞・閉塞', 11, '安定・平和', scale='company')")
     print("  天地否（第12卦）→ 地天泰（第11卦）")
-    full_result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+    full_result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
 
     summary = full_result["summary"]
     print(f"\n  === サマリー ===")

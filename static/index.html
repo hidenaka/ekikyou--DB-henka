@@ -1682,6 +1682,17 @@
                     </select>
                 </div>
                 <div class="bt-form-group">
+                    <label>規模（scale）<span style="color:#f59e0b; font-size:0.82rem;">※必須</span></label>
+                    <select id="bt-current-scale">
+                        <option value="">選択してください</option>
+                        <option value="company">企業・組織</option>
+                        <option value="individual">個人</option>
+                        <option value="family">家族</option>
+                        <option value="country">国家</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+                <div class="bt-form-group">
                     <label>意図する行動タイプ</label>
                     <select id="bt-current-action">
                         <option value="">選択してください</option>
@@ -3095,10 +3106,15 @@
         async function handleBtDescribeCurrent() {
             const currentHex = document.getElementById('bt-current-hex').value;
             const currentState = document.getElementById('bt-current-state').value;
+            const currentScale = document.getElementById('bt-current-scale').value;
             const actionType = document.getElementById('bt-current-action').value;
 
             if (!currentState) {
                 showToast("現在の状態を選択してください");
+                return;
+            }
+            if (!currentScale) {
+                showToast("規模（scale）を選択してください");
                 return;
             }
 
@@ -3113,7 +3129,8 @@
                         session_id: btSessionId,
                         current_hex: currentHex || null,
                         current_state: currentState,
-                        action_type: actionType || ""
+                        action_type: actionType || "",
+                        scale: currentScale
                     })
                 });
                 if (!descRes.ok) throw new Error("Describe current failed");
