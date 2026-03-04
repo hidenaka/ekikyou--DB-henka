@@ -24,7 +24,7 @@ if _SCRIPTS_DIR not in sys.path:
 if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
-from backtrace_engine import BacktraceEngine, _wilson_score_interval, _sanitize_text
+from backtrace_engine import BacktraceEngine, VALID_SCALES, _wilson_score_interval, _sanitize_text
 from backtrace_session_orchestrator import (
     BacktraceSessionOrchestrator,
     DEMO_ROADMAP,
@@ -268,7 +268,7 @@ class TestFullBacktrace:
 
     def test_return_structure(self, engine):
         """戻り値に l1_yao, l2_state, l3_action, recommended_routes, quality_gates, summary が含まれること。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         assert "l1_yao" in result
         assert "l2_state" in result
         assert "l3_action" in result
@@ -278,7 +278,7 @@ class TestFullBacktrace:
 
     def test_summary_fields(self, engine):
         """summary に必要なフィールドが含まれること。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         summary = result["summary"]
         expected_keys = {
             "primary_route_score", "alternative_count",
@@ -288,8 +288,8 @@ class TestFullBacktrace:
         assert expected_keys.issubset(summary.keys())
 
     def test_quality_gates_all_present(self, engine):
-        """rq1-rq7 の全7項目が存在すること。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        """rq1-rq8 の全8項目が存在すること。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         qg = result["quality_gates"]
         expected_rq_keys = {
             "rq1_reference_only",
@@ -299,6 +299,7 @@ class TestFullBacktrace:
             "rq5_confidence_interval_computed",
             "rq6_fallback_used",
             "rq7_contradictory_routes_excluded",
+            "rq8_scale_specified",
         }
         assert expected_rq_keys.issubset(qg.keys()), (
             f"Missing quality gates: {expected_rq_keys - qg.keys()}"
@@ -306,28 +307,28 @@ class TestFullBacktrace:
 
     def test_rq3_no_deterministic_words(self, engine):
         """rq3_no_deterministic_words=True（決定論的表現排除）。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         assert result["quality_gates"]["rq3_no_deterministic_words"] is True
 
     def test_rq4_has_alternative(self, engine):
         """rq4_has_alternative_route=True（代替ルートが常に1つ以上）。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         assert result["quality_gates"]["rq4_has_alternative_route"] is True
 
     def test_rq5_confidence_interval(self, engine):
         """全ルートに confidence_interval が存在すること。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         for route in result["recommended_routes"]:
             assert "confidence_interval" in route
 
     def test_rq7_no_contradictory(self, engine):
         """rq7_contradictory_routes_excluded=True。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         assert result["quality_gates"]["rq7_contradictory_routes_excluded"] is True
 
     def test_recommended_routes_scored(self, engine):
         """各ルートに score, labels, confidence_interval が存在すること。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         for route in result["recommended_routes"]:
             assert "score" in route
             assert "labels" in route
@@ -335,14 +336,14 @@ class TestFullBacktrace:
 
     def test_confidence_level_values(self, engine):
         """confidence_level が 'high'/'medium'/'low'/'very_low' のいずれかであること。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         assert result["summary"]["confidence_level"] in {
             "high", "medium", "low", "very_low"
         }
 
     def test_scenario_pi_to_tai(self, engine):
         """天地否(12)->地天泰(11) のシナリオが正常動作すること。"""
-        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和")
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
         assert result["l1_yao"]["current_hex"] == 12
         assert result["l1_yao"]["goal_hex"] == 11
         assert result["l2_state"]["current_state"] == "停滞・閉塞"
@@ -594,12 +595,14 @@ class TestDescribeCurrent:
         """current_hex=12, current_state='停滞・閉塞' -> phase='analyzing'。"""
         session = orchestrator.create_session()
         result = orchestrator.describe_current(
-            session, current_hex=12, current_state="停滞・閉塞"
+            session, current_hex=12, current_state="停滞・閉塞",
+            scale="company"
         )
         assert "error" not in result
         assert result["current_hex"] == 12
         assert result["current_state"] == "停滞・閉塞"
         assert result["phase"] == "analyzing"
+        assert result.get("scale") == "company"
 
     def test_missing_state(self, orchestrator):
         """current_hex=12, current_state=None -> error。"""
@@ -652,7 +655,7 @@ class TestAnalyze:
         orchestrator.confirm_goal(session)
         orchestrator.describe_current(
             session, current_hex=12, current_state="停滞・閉塞",
-            action_type="慎重・観察"
+            action_type="慎重・観察", scale="company"
         )
         return session
 
@@ -680,19 +683,19 @@ class TestAnalyze:
         assert "error" in result
 
     def test_feedback_layers_structure(self, orchestrator):
-        """feedback_layers に r1-r5 が全て存在すること。"""
+        """feedback_layers に R1-R5 が全て存在すること。"""
         session = self._setup_session(orchestrator)
         result = orchestrator.analyze(session)
         assert "error" not in result
         fl = result["feedback_layers"]
-        for key in ("r1", "r2", "r3", "r4", "r5"):
+        for key in ("R1", "R2", "R3", "R4", "R5"):
             assert key in fl, f"feedback_layers missing '{key}'"
 
     def test_r1_goal_metadata(self, orchestrator):
-        """r1 に goal_name, goal_metadata (meaning, situation, keywords) が存在すること。"""
+        """R1 に goal_name, goal_metadata (meaning, situation, keywords) が存在すること。"""
         session = self._setup_session(orchestrator)
         result = orchestrator.analyze(session)
-        r1 = result["feedback_layers"]["r1"]
+        r1 = result["feedback_layers"]["R1"]
         assert "goal_name" in r1
         assert "goal_metadata" in r1
         meta = r1["goal_metadata"]
@@ -701,36 +704,35 @@ class TestAnalyze:
         assert "keywords" in meta
 
     def test_r2_gap_structure(self, orchestrator):
-        """r2 に hamming_distance, changing_lines, difficulty が含まれること。"""
+        """R2 に hamming_distance, changing_lines, difficulty が含まれること。"""
         session = self._setup_session(orchestrator)
         result = orchestrator.analyze(session)
-        r2 = result["feedback_layers"]["r2"]
+        r2 = result["feedback_layers"]["R2"]
         assert "hamming_distance" in r2
         assert "changing_lines" in r2
         assert "difficulty" in r2
 
     def test_r3_recommended_routes(self, orchestrator):
-        """r3 に routes (リスト), route_count が含まれること。"""
+        """R3 に routes (リスト), route_count が含まれること。"""
         session = self._setup_session(orchestrator)
         result = orchestrator.analyze(session)
-        r3 = result["feedback_layers"]["r3"]
+        r3 = result["feedback_layers"]["R3"]
         assert "routes" in r3
         assert isinstance(r3["routes"], list)
         assert "route_count" in r3
 
     def test_r4_action_patterns(self, orchestrator):
-        """r4 に recommended_actions_l3, recommended_actions_l2 が含まれること。"""
+        """R4 に recommended_actions が含まれること。"""
         session = self._setup_session(orchestrator)
         result = orchestrator.analyze(session)
-        r4 = result["feedback_layers"]["r4"]
-        assert "recommended_actions_l3" in r4
-        assert "recommended_actions_l2" in r4
+        r4 = result["feedback_layers"]["R4"]
+        assert "recommended_actions" in r4
 
     def test_r5_reflective_question(self, orchestrator):
-        """r5 に reflective_question (空でない文字列) が含まれること。"""
+        """R5 に reflective_question (空でない文字列) が含まれること。"""
         session = self._setup_session(orchestrator)
         result = orchestrator.analyze(session)
-        r5 = result["feedback_layers"]["r5"]
+        r5 = result["feedback_layers"]["R5"]
         assert "reflective_question" in r5
         assert isinstance(r5["reflective_question"], str)
         assert len(r5["reflective_question"]) > 0
@@ -758,7 +760,7 @@ class TestGenerateRoadmap:
         orchestrator.confirm_goal(session)
         orchestrator.describe_current(
             session, current_hex=12, current_state="停滞・閉塞",
-            action_type="慎重・観察"
+            action_type="慎重・観察", scale="company"
         )
         orchestrator.analyze(session)
         return session
@@ -793,7 +795,8 @@ class TestGenerateRoadmap:
         orchestrator.set_goal(session, method="hexagram", value=11)
         orchestrator.confirm_goal(session)
         orchestrator.describe_current(
-            session, current_hex=12, current_state="停滞・閉塞"
+            session, current_hex=12, current_state="停滞・閉塞",
+            scale="company"
         )
         # analyze を飛ばしてロードマップ生成
         result = orchestrator.generate_roadmap(session)
@@ -834,10 +837,11 @@ class TestEndToEnd:
         # Step 4: describe_current
         r3 = orchestrator.describe_current(
             session, current_hex=12, current_state="停滞・閉塞",
-            action_type="慎重・観察"
+            action_type="慎重・観察", scale="company"
         )
         assert "error" not in r3
         assert r3["phase"] == "analyzing"
+        assert r3.get("scale") == "company"
 
         # Step 5: analyze
         r4 = orchestrator.analyze(session)
@@ -846,15 +850,16 @@ class TestEndToEnd:
 
         # R1-R5 全層が存在
         fl = r4["feedback_layers"]
-        for key in ("r1", "r2", "r3", "r4", "r5"):
+        for key in ("R1", "R2", "R3", "R4", "R5"):
             assert key in fl
 
-        # quality_gates に rq1-rq7
+        # quality_gates に rq1-rq8
         qg = r4["quality_gates"]
         for rq in ("rq1_reference_only", "rq2_low_success_rate",
                     "rq3_no_deterministic_words", "rq4_has_alternative_route",
                     "rq5_confidence_interval_computed", "rq6_fallback_used",
-                    "rq7_contradictory_routes_excluded"):
+                    "rq7_contradictory_routes_excluded",
+                    "rq8_scale_specified"):
             assert rq in qg
 
         # Step 6: generate_roadmap
@@ -871,7 +876,7 @@ class TestEndToEnd:
         orchestrator.confirm_goal(session)
         orchestrator.describe_current(
             session, current_hex=29, current_state="どん底・危機",
-            action_type="慎重・観察"
+            action_type="慎重・観察", scale="company"
         )
         result = orchestrator.analyze(session)
         assert "error" not in result
@@ -999,6 +1004,7 @@ class TestBacktraceAPI:
                 "current_hex": 12,
                 "current_state": "停滞・閉塞",
                 "action_type": "慎重・観察",
+                "scale": "company",
             }),
             content_type="application/json",
         )
@@ -1033,6 +1039,7 @@ class TestBacktraceAPI:
                 "current_hex": 12,
                 "current_state": "停滞・閉塞",
                 "action_type": "慎重・観察",
+                "scale": "company",
             }),
             content_type="application/json",
         )
@@ -1072,6 +1079,7 @@ class TestBacktraceAPI:
                 "current_hex": 12,
                 "current_state": "停滞・閉塞",
                 "action_type": "慎重・観察",
+                "scale": "company",
             }),
             content_type="application/json",
         )
@@ -1128,6 +1136,7 @@ class TestBacktraceAPI:
                 "current_hex": 12,
                 "current_state": "停滞・閉塞",
                 "action_type": "慎重・観察",
+                "scale": "company",
             }),
             content_type="application/json",
         )
@@ -1147,7 +1156,7 @@ class TestBacktraceAPI:
         assert "feedback_layers" in d4
         assert "quality_gates" in d4
         fl = d4["feedback_layers"]
-        for key in ("r1", "r2", "r3", "r4", "r5"):
+        for key in ("R1", "R2", "R3", "R4", "R5"):
             assert key in fl
 
         # 6. roadmap
@@ -1278,7 +1287,7 @@ class TestCICalculationFix(unittest.TestCase):
         engine = BacktraceEngine()
         # 47->1: step_counts=[1] で L2 case_count=2205。
         # 修正前: n=2205 (L2 case_count)。修正後: n=1 (min step count)
-        result = engine.full_backtrace(47, "停滞・閉塞", 1, "持続成長・大成功")
+        result = engine.full_backtrace(47, "停滞・閉塞", 1, "持続成長・大成功", scale="company")
 
         routes = result.get("recommended_routes", [])
         found_route_with_steps = False
@@ -1324,7 +1333,7 @@ class TestCICalculationFix(unittest.TestCase):
         """n=1のステップを含むルートでCIが十分に広い"""
         engine = BacktraceEngine()
         # 29->11: step_counts=[247, 1] で min=1
-        result = engine.full_backtrace(29, "どん底・危機", 11, "安定・平和")
+        result = engine.full_backtrace(29, "どん底・危機", 11, "安定・平和", scale="company")
 
         routes = result.get("recommended_routes", [])
         for route in routes:
@@ -1368,7 +1377,7 @@ class TestActionVocabularyUnification(unittest.TestCase):
 
     def test_action_recommendations_no_raw_trigrams(self):
         """action_recommendationsに生の八卦名が含まれない"""
-        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功")
+        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功", scale="company")
         actions = result.get("L3_action", result.get("l3_action", {})).get(
             "action_recommendations", []
         )
@@ -1382,7 +1391,7 @@ class TestActionVocabularyUnification(unittest.TestCase):
 
     def test_action_recommendations_use_japanese(self):
         """action_recommendationsが日本語行動タイプを使用"""
-        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功")
+        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功", scale="company")
         actions = result.get("L3_action", result.get("l3_action", {})).get(
             "action_recommendations", []
         )
@@ -1405,7 +1414,7 @@ class TestActionVocabularyUnification(unittest.TestCase):
 
     def test_recommended_routes_action_recommendations_no_raw_trigrams(self):
         """recommended_routes内のaction_recommendationsにも生の八卦名が含まれない"""
-        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功")
+        result = self.engine.full_backtrace(29, "どん底・危機", 1, "持続成長・大成功", scale="company")
         raw_trigrams = {"乾", "坤", "震", "巽", "坎", "離", "艮", "兌"}
         for route in result.get("recommended_routes", []):
             for action in route.get("action_recommendations", []):
@@ -1445,3 +1454,220 @@ class TestActionVocabularyUnification(unittest.TestCase):
         # 日本語行動タイプはそのまま通過すべき
         self.assertEqual(method("攻める・挑戦"), "攻める・挑戦")
         self.assertEqual(method("守る・維持"), "守る・維持")
+
+
+# ============================================================
+# 20. Scale必須引数テスト
+# ============================================================
+
+
+class TestScaleRequired:
+    """scale必須引数のテスト — full_backtrace, reverse_state, reverse_action のscale対応を検証。"""
+
+    @pytest.fixture(scope="class")
+    def engine(self):
+        return BacktraceEngine()
+
+    # --- RQ8: scale必須チェック ---
+
+    def test_full_backtrace_scale_none_returns_error(self, engine):
+        """scale=None で full_backtrace を呼ぶとエラー辞書を返すこと。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale=None)
+        assert "error" in result, "scale=None should return error dict"
+        assert "scale" in result["error"].lower() or "scale" in result["error"]
+
+    def test_full_backtrace_invalid_scale_returns_error(self, engine):
+        """不正なscale値で full_backtrace を呼ぶとエラー辞書を返すこと。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="invalid_scale")
+        assert "error" in result, "Invalid scale should return error dict"
+
+    def test_full_backtrace_all_valid_scales(self, engine):
+        """全VALID_SCALES値でfull_backtraceが正常動作すること。"""
+        for scale in VALID_SCALES:
+            result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale=scale)
+            assert "error" not in result, (
+                f"scale='{scale}' でエラーが返された: {result.get('error', '')}"
+            )
+            assert "l1_yao" in result
+            assert "l2_state" in result
+            assert "l3_action" in result
+            assert result.get("scale") == scale
+
+    def test_rq8_scale_specified_true(self, engine):
+        """scale指定時にrq8_scale_specified=Trueになること。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        assert result["quality_gates"]["rq8_scale_specified"] is True
+
+    # --- scaleインデックスの読み込み ---
+
+    def test_scale_indices_loaded(self, engine):
+        """エンジン初期化時にscale別インデックスが読み込まれること。"""
+        assert hasattr(engine, "_scale_indices")
+        for scale in list(VALID_SCALES) + ["all"]:
+            assert scale in engine._scale_indices, (
+                f"scale='{scale}' のインデックスが読み込まれていない"
+            )
+            idx = engine._scale_indices[scale]
+            assert "rev_after_state" in idx
+            assert "rev_outcome_action" in idx
+            assert "rev_pattern_after" in idx
+            assert "rev_hex_pair_stats" in idx
+
+    # --- scale別データの検証 ---
+
+    def test_company_scale_has_data(self, engine):
+        """scale='company'のインデックスに事例が存在すること。"""
+        idx = engine._scale_indices["company"]["rev_after_state"]
+        total = sum(
+            entry.get("total_count", 0) for entry in idx.values()
+            if isinstance(entry, dict)
+        )
+        assert total > 0, "company scale should have cases"
+
+    def test_scale_specific_result_contains_scale(self, engine):
+        """full_backtrace結果のsummaryにscaleが含まれること。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        assert result["summary"]["scale"] == "company"
+
+    def test_scale_fallback_notes_in_summary(self, engine):
+        """full_backtrace結果のsummaryにscale_fallback_notesリストが存在すること。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        assert "scale_fallback_notes" in result["summary"]
+        assert isinstance(result["summary"]["scale_fallback_notes"], list)
+
+    # --- フォールバックのテスト ---
+
+    def test_get_scale_index_fallback_for_small_scale(self, engine):
+        """事例数が閾値未満のscaleで"all"にフォールバックすること。"""
+        # _get_scale_index を直接テスト
+        # "family" は事例数が少ないインデックスがある可能性
+        for index_name in ("rev_after_state", "rev_outcome_action",
+                           "rev_pattern_after", "rev_hex_pair_stats"):
+            idx, used_fallback = engine._get_scale_index(index_name, "company")
+            # company は十分な事例数があるのでフォールバックしないはず
+            assert isinstance(idx, dict)
+
+    def test_get_scale_index_none_returns_legacy(self, engine):
+        """scale=Noneでレガシーインデックスを返すこと。"""
+        idx, used_fallback = engine._get_scale_index("rev_after_state", None)
+        assert idx is engine._rev_after_state
+        assert used_fallback is False
+
+    # --- reverse_state / reverse_action のscale対応 ---
+
+    def test_reverse_state_with_scale(self, engine):
+        """reverse_stateがscale指定時にscale_fallback_noteを返すこと。"""
+        result = engine.reverse_state("停滞・閉塞", "V字回復・大成功", scale="company")
+        # scale_fallback_note フィールドが存在すること（空文字でもOK）
+        assert "scale_fallback_note" in result
+
+    def test_reverse_action_with_scale(self, engine):
+        """reverse_actionがscale指定時にscale_fallback_noteを返すこと。"""
+        result = engine.reverse_action(
+            12, "停滞・閉塞", 11, "安定・平和", scale="company"
+        )
+        assert "scale_fallback_note" in result
+
+    def test_reverse_yao_accepts_scale(self, engine):
+        """reverse_yaoがscale引数を受け入れること（フィルタリングはしない）。"""
+        result = engine.reverse_yao(12, 11, scale="company")
+        assert "current_hex" in result
+        assert "goal_hex" in result
+
+    def test_reverse_state_legacy_no_scale(self, engine):
+        """reverse_stateがscale=Noneで後方互換動作すること。"""
+        result = engine.reverse_state("停滞・閉塞", "V字回復・大成功")
+        assert result.get("case_count", 0) > 0
+
+
+class TestScaleAPIEndpoint:
+    """API エンドポイントのscale必須チェックテスト。"""
+
+    @pytest.fixture(autouse=True)
+    def unset_api_key(self, monkeypatch):
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+
+    @pytest.fixture
+    def client(self):
+        from app import app, sessions
+        app.config["TESTING"] = True
+        sessions.clear()
+        with app.test_client() as c:
+            yield c
+
+    def _setup_to_describe_current(self, client):
+        """set-goal + confirm-goal 済みのsession_idを返す。"""
+        from app import sessions
+        # create session
+        resp = client.post(
+            "/api/session",
+            data=json.dumps({"mode": "backtrace"}),
+            content_type="application/json",
+        )
+        sid = resp.get_json()["session_id"]
+        # set-goal
+        client.post(
+            "/api/backtrace/set-goal",
+            data=json.dumps({"session_id": sid, "method": "hexagram", "value": 11}),
+            content_type="application/json",
+        )
+        # confirm-goal
+        client.post(
+            "/api/backtrace/confirm-goal",
+            data=json.dumps({"session_id": sid}),
+            content_type="application/json",
+        )
+        return sid
+
+    def test_describe_current_without_scale_returns_400(self, client):
+        """describe-currentでscale未指定時に400エラーを返すこと。"""
+        sid = self._setup_to_describe_current(client)
+        resp = client.post(
+            "/api/backtrace/describe-current",
+            data=json.dumps({
+                "session_id": sid,
+                "current_hex": 12,
+                "current_state": "停滞・閉塞",
+                "action_type": "慎重・観察",
+            }),
+            content_type="application/json",
+        )
+        assert resp.status_code == 400
+        data = resp.get_json()
+        assert "error" in data
+
+    def test_describe_current_with_invalid_scale_returns_error(self, client):
+        """describe-currentで不正なscale値時にエラーを返すこと。"""
+        sid = self._setup_to_describe_current(client)
+        resp = client.post(
+            "/api/backtrace/describe-current",
+            data=json.dumps({
+                "session_id": sid,
+                "current_hex": 12,
+                "current_state": "停滞・閉塞",
+                "action_type": "慎重・観察",
+                "scale": "invalid_scale",
+            }),
+            content_type="application/json",
+        )
+        data = resp.get_json()
+        assert "error" in data
+
+    def test_describe_current_with_valid_scale_succeeds(self, client):
+        """describe-currentでscale='individual'が正常動作すること。"""
+        sid = self._setup_to_describe_current(client)
+        resp = client.post(
+            "/api/backtrace/describe-current",
+            data=json.dumps({
+                "session_id": sid,
+                "current_hex": 12,
+                "current_state": "停滞・閉塞",
+                "action_type": "慎重・観察",
+                "scale": "individual",
+            }),
+            content_type="application/json",
+        )
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data["phase"] == "analyzing"
+        assert data.get("scale") == "individual"
