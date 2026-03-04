@@ -1788,3 +1788,244 @@ class TestPolysemyWarnings:
         # 両方とも polysemy_warnings を含む
         assert "polysemy_warnings" in r1
         assert "polysemy_warnings" in r2
+
+
+# ============================================================
+# Analogy Scoring テスト
+# ============================================================
+
+class TestAnalogyScoring:
+    """AnalogyScorer の単体テスト。"""
+
+    @pytest.fixture(scope="class")
+    def scorer(self):
+        from analogy_scoring import AnalogyScorer
+        return AnalogyScorer()
+
+    def test_same_scale_weight(self, scorer):
+        """同一スケールの重みが1.0であること。"""
+        assert scorer.compute_scale_weight("company", "company") == 1.0
+
+    def test_adjacent_scale_weight(self, scorer):
+        """隣接スケールの重みが0.7であること。"""
+        assert scorer.compute_scale_weight("company", "family") == 0.7
+
+    def test_distant_scale_weight(self, scorer):
+        """遠いスケールの重みが0.3であること。"""
+        assert scorer.compute_scale_weight("company", "individual") == 0.3
+
+    def test_scale_weight_symmetry(self, scorer):
+        """スケール距離は対称であること。"""
+        assert scorer.compute_scale_weight("individual", "family") == \
+               scorer.compute_scale_weight("family", "individual")
+
+    def test_base_similarity_identical(self, scorer):
+        """同一事例の類似度が1.0に近いこと。"""
+        case = {
+            "before_hex_num": 12, "after_hex_num": 11,
+            "action_type": "対話・融合",
+            "before_state": "停滞・閉塞", "after_state": "安定・平和",
+            "outcome": "Success", "scale": "company",
+        }
+        score = scorer.compute_base_similarity(case, case)
+        assert score > 0.9, f"同一事例のbase_similarity={score}は0.9超のはず"
+
+    def test_base_similarity_different(self, scorer):
+        """完全に異なる事例の類似度が低いこと。"""
+        case_a = {
+            "before_hex_num": 1, "after_hex_num": 2,
+            "action_type": "攻める・挑戦",
+            "before_state": "安定成長・成功", "after_state": "拡大・繁栄",
+            "outcome": "Success", "scale": "company",
+        }
+        case_b = {
+            "before_hex_num": 63, "after_hex_num": 64,
+            "action_type": "守る・維持",
+            "before_state": "どん底・危機", "after_state": "崩壊・消滅",
+            "outcome": "Failure", "scale": "individual",
+        }
+        score = scorer.compute_base_similarity(case_a, case_b)
+        assert score < 0.5, f"異なる事例のbase_similarity={score}は0.5未満のはず"
+
+    def test_total_score_penalizes_distant_scale(self, scorer):
+        """遠いスケールではtotal_scoreがbase_similarityより低くなること。"""
+        case = {
+            "before_hex_num": 12, "after_hex_num": 11,
+            "action_type": "対話・融合",
+            "before_state": "停滞・閉塞", "after_state": "安定・平和",
+            "outcome": "Success",
+        }
+        case_same = {**case, "scale": "company"}
+        case_distant = {**case, "scale": "individual"}
+        target = {**case, "scale": "company"}
+
+        score_same = scorer.compute_total_score(target, case_same)
+        score_distant = scorer.compute_total_score(target, case_distant)
+        assert score_same > score_distant, \
+            f"same_scale={score_same} should be > distant_scale={score_distant}"
+
+    def test_rank_analogies_ordering(self, scorer):
+        """rank_analogiesが類似度降順でソートされること。"""
+        target = {
+            "before_hex_num": 12, "after_hex_num": 11,
+            "action_type": "対話・融合",
+            "before_state": "停滞・閉塞", "after_state": "安定・平和",
+            "outcome": "Success", "scale": "company",
+        }
+        candidates = [
+            {
+                "before_hex_num": 1, "after_hex_num": 2,
+                "action_type": "攻める・挑戦",
+                "before_state": "安定成長・成功", "after_state": "拡大・繁栄",
+                "outcome": "Failure", "scale": "individual",
+            },
+            {
+                "before_hex_num": 12, "after_hex_num": 11,
+                "action_type": "対話・融合",
+                "before_state": "停滞・閉塞", "after_state": "安定・平和",
+                "outcome": "Success", "scale": "family",
+            },
+        ]
+        ranked = scorer.rank_analogies(target, candidates, top_n=10)
+        assert len(ranked) == 2
+        # family (隣接) の事例はindividual (遠い) よりスコアが高いはず
+        assert ranked[0][0] >= ranked[1][0], \
+            f"ranked[0]={ranked[0][0]} should be >= ranked[1]={ranked[1][0]}"
+
+    def test_state_similarity_partial_match(self, scorer):
+        """「・」区切りの片方一致で0.5が返ること。"""
+        case_a = {
+            "before_hex_num": 12, "after_hex_num": 11,
+            "action_type": "対話・融合",
+            "before_state": "停滞・閉塞", "after_state": "安定・平和",
+            "outcome": "Success", "scale": "company",
+        }
+        case_b = {
+            "before_hex_num": 12, "after_hex_num": 11,
+            "action_type": "対話・融合",
+            "before_state": "停滞・混乱", "after_state": "安定・停止",
+            "outcome": "Success", "scale": "company",
+        }
+        # before_state: 「停滞」が共通 → 0.5
+        # after_state: 「安定」が共通 → 0.5
+        # state_similarity = (0.5 + 0.5) / 2 = 0.5
+        sim = scorer._state_similarity(case_a, case_b)
+        assert sim == 0.5, f"state_similarity={sim}, expected 0.5"
+
+    def test_rank_analogies_top_n(self, scorer):
+        """rank_analogiesのtop_nが正しく機能すること。"""
+        target = {
+            "before_hex_num": 12, "after_hex_num": 11,
+            "action_type": "対話・融合",
+            "before_state": "停滞・閉塞", "after_state": "安定・平和",
+            "outcome": "Success", "scale": "company",
+        }
+        candidates = [
+            {
+                "before_hex_num": i, "after_hex_num": i + 1,
+                "action_type": "守る・維持",
+                "before_state": "安定成長・成功", "after_state": "安定・平和",
+                "outcome": "Success", "scale": "company",
+            }
+            for i in range(1, 20)
+        ]
+        ranked = scorer.rank_analogies(target, candidates, top_n=3)
+        assert len(ranked) == 3
+
+
+class TestAnalogyInBacktrace:
+    """BacktraceEngine に統合された AnalogyScoring のテスト。"""
+
+    @pytest.fixture(scope="class")
+    def engine(self):
+        return BacktraceEngine()
+
+    def test_analogy_scorer_exists(self, engine):
+        """BacktraceEngineにAnalogyScorer属性があること。"""
+        assert hasattr(engine, "_analogy_scorer")
+        from analogy_scoring import AnalogyScorer
+        assert isinstance(engine._analogy_scorer, AnalogyScorer)
+
+    def test_full_backtrace_cross_scale_has_analogy_score(self, engine):
+        """cross_scale_patternsにanalogy_scoreが含まれること。"""
+        result = engine.full_backtrace(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company", include_cross_scale=True,
+        )
+        patterns = result.get("cross_scale_patterns", [])
+        if patterns:
+            for p in patterns:
+                assert "analogy_score" in p, \
+                    f"pattern {p['pattern']} にanalogy_scoreがない"
+                assert 0.0 <= p["analogy_score"] <= 1.0, \
+                    f"analogy_score={p['analogy_score']}は0-1の範囲外"
+
+    def test_cross_scale_analogy_score_range(self, engine):
+        """cross_scale_patternsのanalogy_scoreが0.3〜0.7の範囲であること。
+        (自分自身のscaleは除外されるため、1.0にはならない)"""
+        result = engine.full_backtrace(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company", include_cross_scale=True,
+        )
+        patterns = result.get("cross_scale_patterns", [])
+        for p in patterns:
+            # 自scale (company) は除外されるため、analogy_scoreは最大でも0.7(隣接)
+            assert p["analogy_score"] <= 0.7 + 0.01, \
+                f"analogy_score={p['analogy_score']}が0.7を超過"
+
+    def test_find_analogous_cases_returns_list(self, engine):
+        """find_analogous_casesがリストを返すこと。"""
+        results = engine.find_analogous_cases(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company", top_n=5,
+        )
+        assert isinstance(results, list)
+
+    def test_find_analogous_cases_fields(self, engine):
+        """find_analogous_casesの結果に必要なフィールドがあること。"""
+        results = engine.find_analogous_cases(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company", top_n=5,
+        )
+        if results:
+            required_fields = {"score", "target_name", "scale",
+                               "before_state", "action_type",
+                               "after_state", "outcome"}
+            for r in results:
+                for field in required_fields:
+                    assert field in r, f"結果に{field}フィールドがない"
+
+    def test_find_analogous_cases_score_ordering(self, engine):
+        """find_analogous_casesの結果がスコア降順であること。"""
+        results = engine.find_analogous_cases(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company", top_n=10,
+        )
+        if len(results) >= 2:
+            for i in range(len(results) - 1):
+                assert results[i]["score"] >= results[i + 1]["score"], \
+                    f"results[{i}].score={results[i]['score']} < " \
+                    f"results[{i+1}].score={results[i+1]['score']}"
+
+    def test_find_analogous_cases_top_n(self, engine):
+        """find_analogous_casesのtop_n制限が機能すること。"""
+        results = engine.find_analogous_cases(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company", top_n=3,
+        )
+        assert len(results) <= 3
+
+    def test_full_backtrace_without_cross_scale_no_analogy(self, engine):
+        """include_cross_scale=Falseのときcross_scale_patternsが含まれないこと。"""
+        result = engine.full_backtrace(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company", include_cross_scale=False,
+        )
+        assert "cross_scale_patterns" not in result
