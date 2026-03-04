@@ -2,7 +2,11 @@
   "meta": {
     "scale": "company",
     "total_cases": 5510,
-    "generated_at": "2026-03-04T15:28:50.656093"
+    "generated_at": "2026-03-04T15:32:22.722242",
+    "bayesian_smoothing": {
+      "applied": false,
+      "threshold": 1000
+    }
   },
   "tables": {
     "before_state_to_hex": {
@@ -486,7 +490,7 @@
     "metadata": {
       "total_cases": 5510,
       "cases_with_yao": 5391,
-      "generated_at": "2026-03-04T15:28:50.656086",
+      "generated_at": "2026-03-04T15:32:22.722236",
       "description": "条件付き確率テーブル: カテゴリラベル→八卦の経験的対応関係",
       "trigrams": [
         "乾",

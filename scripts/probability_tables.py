@@ -566,6 +566,88 @@ class ProbabilityTableBuilder:
             },
         }
 
+    @staticmethod
+    def apply_bayesian_smoothing(scale_tables: dict, global_tables: dict,
+                                  scale_count: int, threshold: int = 1000) -> dict:
+        """
+        少数カテゴリの確率テーブルにベイズ平滑化を適用する。
+
+        smoothing_weight = min(scale_count / threshold, 1.0)
+        smoothed_prob = weight * scale_prob + (1 - weight) * global_prob
+
+        例: 家族787件, threshold=1000
+            weight = 0.787
+            smoothed = 0.787 * family_prob + 0.213 * global_prob
+
+        Args:
+            scale_tables: scale別テーブル (build_tables()の出力構造)
+            global_tables: 全体テーブル (build_tables()の出力構造)
+            scale_count: そのscaleの事例件数
+            threshold: 平滑化閾値 (デフォルト1000)
+
+        Returns:
+            平滑化済みのテーブル (scale_tablesと同一構造)
+        """
+        weight = min(scale_count / threshold, 1.0)
+
+        if weight >= 1.0:
+            # 閾値以上なら平滑化不要
+            return scale_tables
+
+        hex_table_keys = [
+            "before_state_to_hex",
+            "action_type_to_hex",
+            "trigger_type_to_hex",
+        ]
+
+        smoothed = {}
+        for table_key in hex_table_keys:
+            scale_table = scale_tables.get(table_key, {})
+            global_table = global_tables.get(table_key, {})
+
+            smoothed_table = {}
+            # scale側に存在する全カテゴリを処理
+            all_categories = set(scale_table.keys()) | set(global_table.keys())
+            for cat in sorted(all_categories):
+                scale_entry = scale_table.get(cat, {})
+                global_entry = global_table.get(cat, {})
+
+                # _n はscale側のオリジナル値を保持
+                n_val = scale_entry.get("_n", 0)
+                smoothed_entry = {"_n": n_val}
+
+                # 八卦確率の平滑化
+                prob_sum = 0.0
+                for t in TRIGRAMS:
+                    s_prob = scale_entry.get(t, 0.0)
+                    g_prob = global_entry.get(t, 0.0)
+                    smoothed_prob = weight * s_prob + (1 - weight) * g_prob
+                    smoothed_entry[t] = smoothed_prob
+                    prob_sum += smoothed_prob
+
+                # 正規化 (合計≈1.0に)
+                if prob_sum > 0:
+                    for t in TRIGRAMS:
+                        smoothed_entry[t] = round(smoothed_entry[t] / prob_sum, 4)
+                else:
+                    # 両方とも0の場合は均等分布
+                    for t in TRIGRAMS:
+                        smoothed_entry[t] = round(1.0 / 8.0, 4)
+
+                # _n=0のカテゴリ（scale側に存在しないがglobal側にのみ存在）は含めない
+                if n_val > 0:
+                    smoothed_table[cat] = smoothed_entry
+
+            smoothed[table_key] = smoothed_table
+
+        # phase_to_yao はそのまま保持（爻位は決定論的マッピングなので平滑化不要）
+        smoothed["phase_to_yao"] = scale_tables.get("phase_to_yao", {})
+
+        # metadata もそのまま保持
+        smoothed["metadata"] = scale_tables.get("metadata", {})
+
+        return smoothed
+
     def build_scale_tables(self, scale: str, cases: list = None) -> dict:
         """
         特定scaleの確率テーブルを構築する。
@@ -592,17 +674,22 @@ class ProbabilityTableBuilder:
             "tables": tables,
         }
 
-    def build_all(self, output_dir: str = None):
+    def build_all(self, output_dir: str = None, smoothing_threshold: int = 1000):
         """
         全体 + scale別の確率テーブルをすべて生成して保存する。
+        閾値未満のscaleにはベイズ平滑化を適用。
 
         生成ファイル:
             - prob_tables.json (全体, 後方互換)
             - prob_tables_company.json
             - prob_tables_individual.json
-            - prob_tables_family.json
+            - prob_tables_family.json  (平滑化あり)
             - prob_tables_country.json
             - prob_tables_other.json
+
+        Args:
+            output_dir: 出力ディレクトリ（Noneならdata/diagnostic/）
+            smoothing_threshold: ベイズ平滑化の閾値（デフォルト1000）
         """
         if output_dir is None:
             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -620,16 +707,38 @@ class ProbabilityTableBuilder:
             json.dump(all_tables, f, ensure_ascii=False, indent=2)
         print(f"  全体: {all_path} ({all_tables['metadata']['total_cases']}件)")
 
-        # --- scale別テーブル ---
+        # --- scale別テーブル（ベイズ平滑化付き） ---
         scale_totals = {}
         for scale in KNOWN_SCALES:
             scale_data = self.build_scale_tables(scale, all_cases)
+            n = scale_data["meta"]["total_cases"]
+            scale_totals[scale] = n
+
+            # ベイズ平滑化の適用判定
+            if n < smoothing_threshold:
+                weight = round(n / smoothing_threshold, 4)
+                # tables内部に平滑化を適用
+                scale_data["tables"] = self.apply_bayesian_smoothing(
+                    scale_data["tables"], all_tables, n, smoothing_threshold
+                )
+                scale_data["meta"]["bayesian_smoothing"] = {
+                    "applied": True,
+                    "weight": weight,
+                    "threshold": smoothing_threshold,
+                    "global_cases": len(all_cases),
+                    "formula": f"smoothed = {weight} * scale_prob + {round(1 - weight, 4)} * global_prob",
+                }
+                print(f"  {scale}: ({n}件) [平滑化適用: weight={weight}]")
+            else:
+                scale_data["meta"]["bayesian_smoothing"] = {
+                    "applied": False,
+                    "threshold": smoothing_threshold,
+                }
+                print(f"  {scale}: ({n}件) [平滑化なし]")
+
             scale_path = os.path.join(output_dir, f"prob_tables_{scale}.json")
             with open(scale_path, "w", encoding="utf-8") as f:
                 json.dump(scale_data, f, ensure_ascii=False, indent=2)
-            n = scale_data["meta"]["total_cases"]
-            scale_totals[scale] = n
-            print(f"  {scale}: {scale_path} ({n}件)")
 
         # --- 検証: scale別合計 = 全体 ---
         scale_sum = sum(scale_totals.values())
@@ -852,6 +961,64 @@ def _run_builder_tests():
         assert abs(prob_sum - 1.0) < 0.01, \
             f"FAIL: {cat} の確率合計が1.0でない: {prob_sum}"
     print("  PASS: trigger_type_to_hex の全カテゴリで確率合計 ≈ 1.0")
+
+    # --- テスト14: ベイズ平滑化ロジック ---
+    print("\n--- テスト14: ベイズ平滑化ロジック ---")
+    # 家族テーブルに平滑化を適用
+    family_data = builder.build_scale_tables("family", all_cases)
+    family_count = family_data["meta"]["total_cases"]
+    assert family_count == 787 or family_count < 1000, \
+        f"FAIL: family件数({family_count})が想定外"
+
+    smoothed = ProbabilityTableBuilder.apply_bayesian_smoothing(
+        family_data["tables"], tables, family_count, threshold=1000
+    )
+    weight = family_count / 1000
+
+    # 確率合計が≈1.0であること
+    for table_key in ["before_state_to_hex", "action_type_to_hex", "trigger_type_to_hex"]:
+        for cat, entry in smoothed[table_key].items():
+            prob_sum = sum(entry.get(t, 0.0) for t in TRIGRAMS)
+            assert abs(prob_sum - 1.0) < 0.02, \
+                f"FAIL: {table_key}/{cat} の確率合計が1.0でない: {prob_sum}"
+    print(f"  家族({family_count}件, weight={weight:.3f}): 全テーブルの確率合計 ≈ 1.0 [PASS]")
+
+    # 平滑化後の値が元の値と全体の中間にあること
+    for cat in family_data["tables"]["before_state_to_hex"]:
+        if cat not in tables["before_state_to_hex"]:
+            continue
+        for t in TRIGRAMS:
+            s = family_data["tables"]["before_state_to_hex"][cat].get(t, 0.0)
+            g = tables["before_state_to_hex"][cat].get(t, 0.0)
+            sm = smoothed["before_state_to_hex"][cat].get(t, 0.0)
+            # 平滑化値は scale と global の間にあるべき (正規化誤差を許容)
+            lo = min(s, g) - 0.02
+            hi = max(s, g) + 0.02
+            assert lo <= sm <= hi, \
+                f"FAIL: {cat}/{t}: smoothed={sm} not in [{lo}, {hi}] (scale={s}, global={g})"
+    print("  平滑化値が元の値と全体の中間にある [PASS]")
+
+    # --- テスト15: 閾値以上のscaleには平滑化が適用されないこと ---
+    print("\n--- テスト15: 閾値以上のscaleには平滑化不適用 ---")
+    company_data = builder.build_scale_tables("company", all_cases)
+    company_count = company_data["meta"]["total_cases"]
+    smoothed_company = ProbabilityTableBuilder.apply_bayesian_smoothing(
+        company_data["tables"], tables, company_count, threshold=1000
+    )
+    # weight >= 1.0 なので元のテーブルがそのまま返る
+    for cat in company_data["tables"]["before_state_to_hex"]:
+        orig = company_data["tables"]["before_state_to_hex"][cat]
+        sm = smoothed_company["before_state_to_hex"][cat]
+        for t in TRIGRAMS:
+            assert orig.get(t, 0.0) == sm.get(t, 0.0), \
+                f"FAIL: company {cat}/{t}: 値が変更されている"
+    print(f"  company({company_count}件): 平滑化なし [PASS]")
+
+    # --- テスト16: phase_to_yaoは平滑化されないこと ---
+    print("\n--- テスト16: phase_to_yaoは平滑化対象外 ---")
+    assert smoothed["phase_to_yao"] == family_data["tables"]["phase_to_yao"], \
+        "FAIL: phase_to_yaoが変更されている"
+    print("  phase_to_yao: 変更なし [PASS]")
 
     print("\n" + "=" * 70)
     print("Builder全テスト完了")
