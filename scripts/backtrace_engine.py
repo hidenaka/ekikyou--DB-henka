@@ -36,6 +36,7 @@ if _SCRIPT_DIR not in sys.path:
 from gap_analysis_engine import GapAnalysisEngine
 from case_search import CaseSearchEngine
 from hexagram_transformations import get_hexagram_name, get_trigrams
+from analogy_scoring import AnalogyScorer
 
 # ---------------------------------------------------------------------------
 # VALID_SCALES 定数
@@ -411,6 +412,7 @@ class BacktraceEngine:
         # 依存エンジン
         self._gap_engine = GapAnalysisEngine(compat_path=_COMPAT_PATH)
         self._case_engine = CaseSearchEngine()
+        self._analogy_scorer = AnalogyScorer()
 
         # RouteNavigator は遅延初期化
         self._route_navigator: Optional[Any] = None
@@ -599,11 +601,25 @@ class BacktraceEngine:
             # success_rate が 1.0 を超える場合はクリップ（success件数 > action件数の場合）
             success_rate = min(1.0, success_rate)
 
+            # analogy_score: 各scaleとcurrent_scaleの距離重みの平均
+            scale_weights = [
+                self._analogy_scorer.compute_scale_weight(
+                    current_scale or "other", s
+                )
+                for s in agg["scales"]
+            ]
+            avg_scale_weight = (
+                round(sum(scale_weights) / len(scale_weights), 4)
+                if scale_weights
+                else 0.3
+            )
+
             patterns.append({
                 "pattern": action_type,
                 "scales": sorted(agg["scales"]),
                 "success_rate": success_rate,
                 "total_cases": agg["total_count"],
+                "analogy_score": avg_scale_weight,
                 "note": "構造的類似パターン（他カテゴリ）",
             })
 
@@ -612,6 +628,86 @@ class BacktraceEngine:
 
         # 上位5パターンに絞る
         return patterns[:5]
+
+    # -----------------------------------------------------------------------
+    # find_analogous_cases: 類似事例検索（独立API）
+    # -----------------------------------------------------------------------
+
+    def find_analogous_cases(
+        self,
+        current_hex: int,
+        current_state: str,
+        goal_hex: int,
+        goal_state: str,
+        scale: str,
+        top_n: int = 5,
+    ) -> List[Dict]:
+        """
+        goal_state に到達した全scale事例を AnalogyScorer で類似度ランキングする。
+
+        BacktraceEngine.full_backtrace() には統合しない。独立したAPIとして提供。
+
+        Args:
+            current_hex: 現在の卦番号 (1-64)
+            current_state: 現在の状態
+            goal_hex: 目標の卦番号 (1-64)
+            goal_state: 目標の状態
+            scale: 現在のscale
+            top_n: 返却する上位件数
+
+        Returns:
+            [
+                {
+                    "score": float,
+                    "target_name": str,
+                    "scale": str,
+                    "before_state": str,
+                    "action_type": str,
+                    "after_state": str,
+                    "outcome": str,
+                },
+                ...
+            ]
+        """
+        # ターゲット事例（比較基準となる仮想事例）
+        target_case = {
+            "before_hex_num": current_hex,
+            "after_hex_num": goal_hex,
+            "before_state": current_state,
+            "after_state": goal_state,
+            "action_type": "",
+            "outcome": "Success",
+            "scale": scale,
+        }
+
+        # CaseSearchEngine で goal_state に到達した事例を全scaleから検索
+        candidates = []
+        for case in self._case_engine.cases:
+            if case.get("after_state") == goal_state:
+                candidates.append(case)
+
+        if not candidates:
+            return []
+
+        # AnalogyScorer でランキング
+        ranked = self._analogy_scorer.rank_analogies(
+            target_case, candidates, top_n=top_n
+        )
+
+        # 結果をフォーマット
+        results = []
+        for score, case in ranked:
+            results.append({
+                "score": score,
+                "target_name": case.get("target_name", "不明"),
+                "scale": case.get("scale", "other"),
+                "before_state": case.get("before_state", "不明"),
+                "action_type": case.get("action_type", "不明"),
+                "after_state": case.get("after_state", "不明"),
+                "outcome": case.get("outcome", "不明"),
+            })
+
+        return results
 
     # -----------------------------------------------------------------------
     # compat lookup helper

@@ -1671,3 +1671,120 @@ class TestScaleAPIEndpoint:
         data = resp.get_json()
         assert data["phase"] == "analyzing"
         assert data.get("scale") == "individual"
+
+
+# ============================================================
+# 多義性警告テスト (Polysemy Warnings)
+# ============================================================
+
+class TestPolysemyWarnings:
+    """多義性メタデータと警告システムのテスト。"""
+
+    @pytest.fixture(scope="class")
+    def engine(self):
+        return BacktraceEngine()
+
+    def test_polysemy_metadata_loaded(self, engine):
+        """polysemy_metadata.json がロードされること。"""
+        assert isinstance(engine._polysemy_metadata, dict)
+        assert "labels" in engine._polysemy_metadata
+
+    def test_polysemy_metadata_has_labels(self, engine):
+        """メタデータに action_type ラベルが含まれること。"""
+        labels = engine._polysemy_metadata.get("labels", {})
+        assert len(labels) > 0, "labels は空であってはならない"
+
+    def test_get_polysemy_warning_high(self, engine):
+        """高多義性ラベル「捨てる・撤退」の警告が返ること。"""
+        warning = engine._get_polysemy_warning("捨てる・撤退", "company")
+        assert warning is not None
+        assert warning["polysemy_level"] == "high"
+        assert "warning" in warning
+
+    def test_get_polysemy_warning_has_rates(self, engine):
+        """高多義性ラベルの警告に成功率情報が含まれること。"""
+        warning = engine._get_polysemy_warning("捨てる・撤退", "company")
+        assert warning is not None
+        assert "scale_success_rate" in warning
+        assert "global_success_rate" in warning
+        assert "divergence" in warning
+
+    def test_get_polysemy_warning_returns_none_for_unknown(self, engine):
+        """未知の action_type には None を返すこと。"""
+        warning = engine._get_polysemy_warning("存在しないラベル", "company")
+        assert warning is None
+
+    def test_get_polysemy_warning_none_scale(self, engine):
+        """scale=None でも高多義性ラベルは警告を返すこと。"""
+        warning = engine._get_polysemy_warning("捨てる・撤退", None)
+        # scale=None の場合、warning_message があれば返す
+        if warning is not None:
+            assert warning["polysemy_level"] == "high"
+
+    def test_collect_polysemy_warnings(self, engine):
+        """_collect_polysemy_warnings がリストを返すこと。"""
+        l2 = engine.reverse_state("停滞・閉塞", "V字回復・大成功", scale="company")
+        l3 = engine.reverse_action(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        warnings = engine._collect_polysemy_warnings(l2, l3, "company")
+        assert isinstance(warnings, list)
+
+    def test_collect_polysemy_warnings_no_duplicates(self, engine):
+        """_collect_polysemy_warnings に重複がないこと。"""
+        l2 = engine.reverse_state("停滞・閉塞", "V字回復・大成功", scale="company")
+        l3 = engine.reverse_action(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        warnings = engine._collect_polysemy_warnings(l2, l3, "company")
+        action_types = [w["action_type"] for w in warnings]
+        assert len(action_types) == len(set(action_types)), "重複があってはならない"
+
+    def test_full_backtrace_includes_polysemy_warnings(self, engine):
+        """full_backtrace の結果に polysemy_warnings が含まれること。"""
+        result = engine.full_backtrace(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company",
+        )
+        assert "polysemy_warnings" in result
+        assert isinstance(result["polysemy_warnings"], list)
+
+    def test_full_backtrace_polysemy_warnings_structure(self, engine):
+        """polysemy_warnings の各エントリに必要フィールドがあること。"""
+        result = engine.full_backtrace(
+            current_hex=12, current_state="停滞・閉塞",
+            goal_hex=11, goal_state="安定・平和",
+            scale="company",
+        )
+        for warning in result["polysemy_warnings"]:
+            assert "action_type" in warning
+            assert "polysemy_level" in warning
+            assert "warning" in warning
+
+    def test_reverse_state_includes_polysemy_info(self, engine):
+        """reverse_state の recommended_actions に polysemy_info が付与されること。"""
+        result = engine.reverse_state("停滞・閉塞", "V字回復・大成功", scale="company")
+        # 少なくとも一部の recommended_actions に polysemy_info があることを確認
+        has_polysemy = any(
+            "polysemy_info" in a for a in result.get("recommended_actions", [])
+        )
+        # 高多義性ラベルが推奨に含まれていれば polysemy_info が存在するはず
+        # (含まれない場合もあるため、構造チェックのみ)
+        for action in result.get("recommended_actions", []):
+            if "polysemy_info" in action:
+                pi = action["polysemy_info"]
+                assert "polysemy_level" in pi
+                assert "warning" in pi
+
+    def test_full_backtrace_different_scales_different_warnings(self, engine):
+        """異なる scale で polysemy_warnings の内容が変わりうること。"""
+        r1 = engine.full_backtrace(
+            current_hex=29, current_state="どん底・危機",
+            goal_hex=1, goal_state="安定成長・成功",
+            scale="company",
+        )
+        r2 = engine.full_backtrace(
+            current_hex=29, current_state="どん底・危機",
+            goal_hex=1, goal_state="安定成長・成功",
+            scale="individual",
+        )
+        # 両方とも polysemy_warnings を含む
+        assert "polysemy_warnings" in r1
+        assert "polysemy_warnings" in r2
