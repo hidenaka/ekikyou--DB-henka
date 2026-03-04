@@ -1,0 +1,3618 @@
+{
+  "坤": [
+    {
+      "transition_id": "PERS_JP_001",
+      "target_name": "サンプル個人",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "令和前期"
+    },
+    {
+      "transition_id": "PERS_JP_002",
+      "target_name": "Aさん_20代後半_不動産営業",
+      "before_hex": "乾",
+      "action_type": "逃げる・放置",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "20代後半・トップセールス期"
+    },
+    {
+      "transition_id": "PERS_JP_008",
+      "target_name": "Eさん_30代後半_中堅商社",
+      "before_hex": "坎",
+      "action_type": "逃げる・放置",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "30代後半・中間管理職"
+    },
+    {
+      "transition_id": "PERS_JP_011",
+      "target_name": "Hさん_30代前半_総合職",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "30代前半・メンタル不調"
+    },
+    {
+      "transition_id": "PERS_JP_012",
+      "target_name": "Iさん_40代_製造業エンジニア",
+      "before_hex": "震",
+      "action_type": "刷新・破壊",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "period": "40代・リストラ"
+    },
+    {
+      "transition_id": "PERS_JP_018",
+      "target_name": "Oさん_30代_営業職",
+      "before_hex": "坎",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定成長・成功",
+      "period": "30代・職種転換"
+    },
+    {
+      "transition_id": "PERS_JP_021",
+      "target_name": "Rさん_40代_ルート営業",
+      "before_hex": "巽",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "40代・信頼構築"
+    },
+    {
+      "transition_id": "PERS_JP_030",
+      "target_name": "前田智徳",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "period": "1995-2013"
+    },
+    {
+      "transition_id": "PERS_JP_032",
+      "target_name": "建山義紀",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "period": "2000-2015"
+    },
+    {
+      "transition_id": "PERS_JP_045",
+      "target_name": "堂本剛",
+      "before_hex": "坎",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "1990-現在"
+    },
+    {
+      "transition_id": "PERS_JP_051",
+      "target_name": "小室哲哉",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2008-2021"
+    },
+    {
+      "transition_id": "PERS_JP_052",
+      "target_name": "酒井法子",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2009-2012"
+    },
+    {
+      "transition_id": "PERS_JP_065",
+      "target_name": "清原和博",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1985-2016"
+    },
+    {
+      "transition_id": "PERS_JP_068",
+      "target_name": "辻仁成",
+      "before_hex": "乾",
+      "action_type": "対話・融合",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1986-現在"
+    },
+    {
+      "transition_id": "PERS_JP_069",
+      "target_name": "村上世彰",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1999-2011"
+    },
+    {
+      "transition_id": "PERS_JP_071",
+      "target_name": "ベッキー",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1999-2016"
+    },
+    {
+      "transition_id": "PERS_JP_092",
+      "target_name": "南場智子",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1999-現在"
+    },
+    {
+      "transition_id": "PERS_JP_096",
+      "target_name": "吉田沙保里",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2002-2016"
+    },
+    {
+      "transition_id": "PERS_JP_098",
+      "target_name": "高橋尚子",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1995-2008"
+    },
+    {
+      "transition_id": "PERS_JP_099",
+      "target_name": "浅田真央",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2005-2017"
+    },
+    {
+      "transition_id": "PERS_JP_100",
+      "target_name": "紀平梨花",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "安定・平和",
+      "period": "2018-現在"
+    },
+    {
+      "transition_id": "PERS_JP_105",
+      "target_name": "マイケル・ジャクソンの栄光と苦悩",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1982-2009"
+    },
+    {
+      "transition_id": "PERS_JP_106",
+      "target_name": "安室奈美恵の引退",
+      "before_hex": "兌",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1992-2018"
+    },
+    {
+      "transition_id": "PERS_JP_108",
+      "target_name": "羽生善治の将棋界引退表明",
+      "before_hex": "兌",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1985-2023"
+    },
+    {
+      "transition_id": "PERS_JP_109",
+      "target_name": "松坂大輔のメジャー挑戦失敗と帰国",
+      "before_hex": "兌",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "2007-2015"
+    },
+    {
+      "transition_id": "PERS_JP_116",
+      "target_name": "青木拡憲",
+      "before_hex": "乾",
+      "action_type": "逃げる・放置",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1958-2023"
+    },
+    {
+      "transition_id": "PERS_JP_117",
+      "target_name": "秋山咲恵",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1994-2018"
+    },
+    {
+      "transition_id": "PERS_JP_123",
+      "target_name": "相川哲郎",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "停滞・閉塞",
+      "period": "1978-2016"
+    },
+    {
+      "transition_id": "PERS_JP_127",
+      "target_name": "相川宗次郎",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "安定成長・成功",
+      "period": "1914-1978"
+    },
+    {
+      "transition_id": "PERS_JP_378",
+      "target_name": "藤浪晋太郎",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2013-現在"
+    },
+    {
+      "transition_id": "PERS_JP_435",
+      "target_name": "松本人志",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "1982-現在"
+    },
+    {
+      "transition_id": "PERS_JP_447",
+      "target_name": "Kさん_40代_元IT企業管理職",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "停滞・閉塞",
+      "period": "2019-2022"
+    },
+    {
+      "transition_id": "PERS_JP_448",
+      "target_name": "Lさん_20代後半_元アスリート",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2015-2020"
+    },
+    {
+      "transition_id": "PERS_JP_449",
+      "target_name": "Mさん_50代_元中間管理職",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2023"
+    },
+    {
+      "transition_id": "PERS_JP_451",
+      "target_name": "Oさん_40代_元専業主婦",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2015-2020"
+    },
+    {
+      "transition_id": "PERS_JP_453",
+      "target_name": "Qさん_30代_介護離職者",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2017-2022"
+    },
+    {
+      "transition_id": "PERS_JP_454",
+      "target_name": "Rさん_20代_就職氷河期世代の子",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "停滞・閉塞",
+      "period": "2019-2023"
+    },
+    {
+      "transition_id": "PERS_JP_455",
+      "target_name": "Sさん_40代_元正社員",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2010-2020"
+    },
+    {
+      "transition_id": "PERS_JP_456",
+      "target_name": "Tさん_30代_元バンドマン",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2010-2022"
+    },
+    {
+      "transition_id": "PERS_JP_459",
+      "target_name": "Wさん_40代_元看護師",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2012-2020"
+    },
+    {
+      "transition_id": "PERS_JP_460",
+      "target_name": "Xさん_20代_奨学金返済者",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2023"
+    },
+    {
+      "transition_id": "PERS_JP_461",
+      "target_name": "Yさん_30代_元派遣社員",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2008-2020"
+    },
+    {
+      "transition_id": "PERS_JP_462",
+      "target_name": "Zさん_40代_元教師",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2010-2020"
+    },
+    {
+      "transition_id": "PERS_JP_463",
+      "target_name": "AAさん_50代_元銀行員",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "停滞・閉塞",
+      "period": "2015-2022"
+    },
+    {
+      "transition_id": "PERS_JP_464",
+      "target_name": "BBさん_30代_元美容師",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2012-2022"
+    },
+    {
+      "transition_id": "PERS_JP_465",
+      "target_name": "CCさん_20代_フリーランス志望",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_468",
+      "target_name": "FFさん_40代_DV被害者",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "停滞・閉塞",
+      "period": "2005-2020"
+    },
+    {
+      "transition_id": "PERS_JP_470",
+      "target_name": "HHさん_40代_多重債務者",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "PERS_JP_471",
+      "target_name": "IIさん_30代_ブラック企業被害者",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2016-2021"
+    },
+    {
+      "transition_id": "PERS_JP_473",
+      "target_name": "KKさん_20代_引きこもり",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2015-2024"
+    }
+  ],
+  "坎": [
+    {
+      "transition_id": "PERS_JP_003",
+      "target_name": "Bさん_30代半ば_ITマネージャー",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
+      "period": "30代半ば・PM昇格後"
+    },
+    {
+      "transition_id": "PERS_JP_006",
+      "target_name": "Cさん_40代前半_広告クリエイティブ",
+      "before_hex": "兌",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "40代前半・独立直前"
+    },
+    {
+      "transition_id": "PERS_JP_009",
+      "target_name": "Fさん_20代後半_システムエンジニア",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "20代後半・常駐先"
+    },
+    {
+      "transition_id": "PERS_JP_053",
+      "target_name": "松本人志",
+      "before_hex": "坎",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
+      "period": "2024-現在"
+    },
+    {
+      "transition_id": "PERS_JP_064",
+      "target_name": "島田紳助",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1974-2011"
+    },
+    {
+      "transition_id": "PERS_JP_067",
+      "target_name": "田代まさし",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
+      "period": "1980-現在"
+    },
+    {
+      "transition_id": "PERS_JP_072",
+      "target_name": "高橋祐也（三田佳子の息子）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
+      "period": "2000-現在"
+    },
+    {
+      "transition_id": "PERS_JP_110",
+      "target_name": "織田信長の天下統一への道",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "1560-1582"
+    },
+    {
+      "transition_id": "PERS_JP_122",
+      "target_name": "愛田武",
+      "before_hex": "乾",
+      "action_type": "逃げる・放置",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1960-2018"
+    },
+    {
+      "transition_id": "PERS_JP_134",
+      "target_name": "愛野時一郎",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "1931-1952"
+    },
+    {
+      "transition_id": "PERS_JP_156",
+      "target_name": "豊田喜一郎",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "どん底・危機",
+      "period": "1933-1952"
+    },
+    {
+      "transition_id": "PERS_JP_181",
+      "target_name": "坂本龍馬",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1853-1867"
+    },
+    {
+      "transition_id": "PERS_JP_187",
+      "target_name": "中内功",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1957-2005"
+    },
+    {
+      "transition_id": "PERS_JP_193",
+      "target_name": "伊藤博文",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1841-1909"
+    },
+    {
+      "transition_id": "PERS_JP_194",
+      "target_name": "大久保利通",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1830-1878"
+    },
+    {
+      "transition_id": "PERS_JP_195",
+      "target_name": "西郷隆盛",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1827-1877"
+    },
+    {
+      "transition_id": "PERS_JP_198",
+      "target_name": "織田信長",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1534-1582"
+    },
+    {
+      "transition_id": "PERS_JP_213",
+      "target_name": "川端康成",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1899-1972"
+    },
+    {
+      "transition_id": "PERS_JP_214",
+      "target_name": "三島由紀夫",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1925-1970"
+    },
+    {
+      "transition_id": "PERS_JP_216",
+      "target_name": "太宰治",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1909-1948"
+    },
+    {
+      "transition_id": "PERS_JP_221",
+      "target_name": "吉田松陰",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1830-1859"
+    },
+    {
+      "transition_id": "PERS_JP_222",
+      "target_name": "野口英世",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1876-1928"
+    },
+    {
+      "transition_id": "PERS_JP_223",
+      "target_name": "樋口一葉",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1872-1896"
+    },
+    {
+      "transition_id": "PERS_JP_226",
+      "target_name": "小野小町",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "825-900頃"
+    },
+    {
+      "transition_id": "PERS_JP_243",
+      "target_name": "平賀源内",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1754-1779"
+    },
+    {
+      "transition_id": "PERS_JP_263",
+      "target_name": "安倍晋三",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "2006-2022"
+    },
+    {
+      "transition_id": "PERS_JP_266",
+      "target_name": "菅義偉",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2020-2021"
+    },
+    {
+      "transition_id": "PERS_JP_267",
+      "target_name": "出井伸之",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "1995-2005"
+    },
+    {
+      "transition_id": "PERS_JP_268",
+      "target_name": "鳩山由紀夫",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "2009-2010"
+    },
+    {
+      "transition_id": "PERS_JP_271",
+      "target_name": "橋本龍太郎",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "1996-1998"
+    },
+    {
+      "transition_id": "PERS_JP_274",
+      "target_name": "芥川龍之介",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1915-1927"
+    },
+    {
+      "transition_id": "PERS_JP_294",
+      "target_name": "中村勘三郎（十八代目）",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1959-2012"
+    },
+    {
+      "transition_id": "PERS_JP_309",
+      "target_name": "志村けん",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1973-2020"
+    },
+    {
+      "transition_id": "PERS_JP_335",
+      "target_name": "曙太郎",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1988-2003"
+    },
+    {
+      "transition_id": "PERS_JP_400",
+      "target_name": "岸田文雄",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_409",
+      "target_name": "西郷隆盛",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1854-1877"
+    },
+    {
+      "transition_id": "PERS_JP_410",
+      "target_name": "織田信長",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1551-1582"
+    },
+    {
+      "transition_id": "PERS_JP_413",
+      "target_name": "上杉謙信",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1548-1578"
+    },
+    {
+      "transition_id": "PERS_JP_414",
+      "target_name": "武田信玄",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1541-1573"
+    },
+    {
+      "transition_id": "PERS_JP_417",
+      "target_name": "源義経",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1180-1189"
+    },
+    {
+      "transition_id": "PERS_JP_421",
+      "target_name": "明智光秀",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1556-1582"
+    },
+    {
+      "transition_id": "PERS_JP_422",
+      "target_name": "石田三成",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1577-1600"
+    },
+    {
+      "transition_id": "PERS_JP_423",
+      "target_name": "真田幸村",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1600-1615"
+    },
+    {
+      "transition_id": "PERS_JP_428",
+      "target_name": "太宰治",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1935-1948"
+    },
+    {
+      "transition_id": "PERS_JP_429",
+      "target_name": "三島由紀夫",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1949-1970"
+    },
+    {
+      "transition_id": "PERS_JP_430",
+      "target_name": "川端康成",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "period": "1924-1972"
+    },
+    {
+      "transition_id": "PERS_JP_444",
+      "target_name": "坂本九",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1958-1985"
+    },
+    {
+      "transition_id": "PERS_JP_445",
+      "target_name": "坂井泉水",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "1991-2007"
+    },
+    {
+      "transition_id": "PERS_JP_446",
+      "target_name": "Jさん_30代_飲食店経営者",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2018-2021"
+    },
+    {
+      "transition_id": "PERS_JP_450",
+      "target_name": "Nさん_30代_元起業家",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "2016-2019"
+    }
+  ],
+  "艮": [
+    {
+      "transition_id": "PERS_JP_007",
+      "target_name": "Dさん_40代_事務職",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "40代・DX推進期"
+    },
+    {
+      "transition_id": "PERS_JP_762",
+      "target_name": "飲食開業_コロナ打撃_テイクアウト存続",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_789",
+      "target_name": "趣味没頭_家庭優先_活動縮小",
+      "before_hex": "兌",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_790",
+      "target_name": "パーティー好き_健康問題_生活見直し",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_791",
+      "target_name": "楽天的投資_損失確定_様子見",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_792",
+      "target_name": "SNSインフルエンサー_炎上_活動自粛",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_793",
+      "target_name": "お笑い芸人_人気低迷_地道活動",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_794",
+      "target_name": "明晰な分析_過信_判断ミス",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_795",
+      "target_name": "情報発信_炎上_沈黙",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_796",
+      "target_name": "研究者_成果発表後_沈黙期間",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_797",
+      "target_name": "コンサルタント_理論倒れ_現場回帰",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_798",
+      "target_name": "教育者_燃え尽き_休職",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_799",
+      "target_name": "ジャーナリスト_取材制限_活動縮小",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_800",
+      "target_name": "適応型キャリア_疲弊_休息期間",
+      "before_hex": "巽",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_801",
+      "target_name": "トレンドフォロワー_流行終焉_様子見",
+      "before_hex": "巽",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_802",
+      "target_name": "ノマドワーカー_拠点固定_落ち着き",
+      "before_hex": "巽",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_803",
+      "target_name": "マルチタスク型_集中力低下_シングルタスク化",
+      "before_hex": "巽",
+      "action_type": "守る・維持",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_804",
+      "target_name": "風見鶏政治家_支持率低下_沈黙",
+      "before_hex": "巽",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_807",
+      "target_name": "フリーエージェント_案件減少_正社員検討",
+      "before_hex": "巽",
+      "action_type": "守る・維持",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "PERS_JP_809",
+      "target_name": "仮想通貨トレーダー_規制強化_撤退",
+      "before_hex": "巽",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_822",
+      "target_name": "ジャック・マー（消えた億万長者）",
+      "before_hex": "乾",
+      "action_type": "逃げる・放置",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2025"
+    },
+    {
+      "transition_id": "PERS_JP_824",
+      "target_name": "カルロス・ゴーン（日本脱出劇）",
+      "before_hex": "乾",
+      "action_type": "逃げる・放置",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "2018-2020"
+    },
+    {
+      "transition_id": "PERS_JP_829",
+      "target_name": "羽生結弦（105日離婚の悲劇）",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "停滞・閉塞",
+      "period": "2022-2023"
+    },
+    {
+      "transition_id": "PERS_JP_837",
+      "target_name": "エドワード・スノーデン（NSA内部告発）",
+      "before_hex": "坤",
+      "action_type": "刷新・破壊",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2013-2024"
+    },
+    {
+      "transition_id": "PERS_JP_848",
+      "target_name": "内部告発者・大阪トヨペット社員",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2006"
+    },
+    {
+      "transition_id": "PERS_JP_849",
+      "target_name": "熊坂トンネル工事内部告発者（現場監督）",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2007"
+    },
+    {
+      "transition_id": "PERS_JP_862",
+      "target_name": "投資詐欺被害者Cさん_70代_老後資金2000万円被害",
+      "before_hex": "坤",
+      "action_type": "逃げる・放置",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "PERS_JP_877",
+      "target_name": "フランチャイズ失敗者Cさん_50代夫婦_老後資金を失う",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2018-2021"
+    },
+    {
+      "transition_id": "PERS_JP_881",
+      "target_name": "熊本地震被災者Bさん_益城町_二重ローンを抱えて再出発",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2016-2021"
+    },
+    {
+      "transition_id": "PERS_JP_883",
+      "target_name": "福島原発避難者Dさん_双葉町_10年後の帰還",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2011-2022"
+    },
+    {
+      "transition_id": "PERS_JP_933",
+      "target_name": "親の介護と相続問題Dさん_兄弟間の対立を乗り越え",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2018-2023"
+    },
+    {
+      "transition_id": "PERS_JP_940",
+      "target_name": "投資失敗者Aさん_仮想通貨で資産半減",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2020-2022"
+    },
+    {
+      "transition_id": "PERS_JP_951",
+      "target_name": "医療事故被害者Bさん_手術ミスで後遺症",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2016-2022"
+    },
+    {
+      "transition_id": "PERS_JP_1215",
+      "target_name": "藤井聡太八冠からタイトル減（2024年）",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1249",
+      "target_name": "Dさん・50歳早期退職から個人事業主経て再就職（2020-2023）",
+      "before_hex": "離",
+      "action_type": "捨てる・撤退",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2020-2023"
+    },
+    {
+      "transition_id": "PERS_JP_1250",
+      "target_name": "56歳課長代理・早期退職から待遇ダウン（2023-2024）",
+      "before_hex": "離",
+      "action_type": "捨てる・撤退",
+      "before_state": "安定・平和",
+      "after_state": "どん底・危機",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1251",
+      "target_name": "元サッカー選手A氏・引退後ビジネススキル不足（2022-2024）",
+      "before_hex": "離",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1252",
+      "target_name": "元プロボクサーB氏・安易な起業で2年閉店（2021-2023）",
+      "before_hex": "離",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2021-2023"
+    },
+    {
+      "transition_id": "PERS_JP_1253",
+      "target_name": "元テニスプレーヤーE氏・資産使い果たし（2019-2024）",
+      "before_hex": "離",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "どん底・危機",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "大手商社マン・早期退職で第二の人生（2018-2022）",
+      "before_hex": "乾",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2018-2022"
+    },
+    {
+      "transition_id": "",
+      "target_name": "IT企業創業者・会社売却後の隠居（2015-2020）",
+      "before_hex": "離",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2015-2020"
+    },
+    {
+      "transition_id": "",
+      "target_name": "人気俳優・芸能界引退と静かな生活（2019-2023）",
+      "before_hex": "兌",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2019-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ベンチャー経営者・燃え尽き後の休養（2020-2024）",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "急成長・拡大",
+      "after_state": "安定・停止",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "有名シェフ・ミシュラン返上と小さな店（2018-2022）",
+      "before_hex": "離",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2018-2022"
+    },
+    {
+      "transition_id": "",
+      "target_name": "外資系金融マン・FIRE達成後の生活（2015-2022）",
+      "before_hex": "乾",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2015-2022"
+    },
+    {
+      "transition_id": "",
+      "target_name": "大企業役員・定年後の田舎暮らし（2018-2023）",
+      "before_hex": "乾",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2018-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "元プロスポーツ選手・引退後の指導者業（2016-2021）",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2016-2021"
+    },
+    {
+      "transition_id": "",
+      "target_name": "人気歌手・活動休止と子育て専念（2019-2024）",
+      "before_hex": "兌",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "連続起業家・事業譲渡後の投資家生活（2017-2022）",
+      "before_hex": "震",
+      "action_type": "捨てる・転換",
+      "before_state": "急成長・拡大",
+      "after_state": "安定・停止",
+      "period": "2017-2022"
+    },
+    {
+      "transition_id": "",
+      "target_name": "引退サラリーマン・趣味の農業生活（2018-2023）",
+      "before_hex": "乾",
+      "action_type": "捨てる・転換",
+      "before_state": "安定成長・成功",
+      "after_state": "安定・停止",
+      "period": "2018-2023"
+    }
+  ],
+  "離": [
+    {
+      "transition_id": "PERS_JP_010",
+      "target_name": "Gさん_20代_大手営業",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "20代・新人期"
+    },
+    {
+      "transition_id": "PERS_JP_014",
+      "target_name": "Kさん_30代_企画職",
+      "before_hex": "坎",
+      "action_type": "分散・スピンオフ",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "30代・プロジェクト頓挫"
+    },
+    {
+      "transition_id": "PERS_JP_029",
+      "target_name": "窪塚洋介",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2004-2010"
+    },
+    {
+      "transition_id": "PERS_JP_037",
+      "target_name": "松本若菜",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2000-2018"
+    },
+    {
+      "transition_id": "PERS_JP_039",
+      "target_name": "斎藤工",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2001-2014"
+    },
+    {
+      "transition_id": "PERS_JP_042",
+      "target_name": "ヴェラ・ワン",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "1989-2000"
+    },
+    {
+      "transition_id": "PERS_JP_046",
+      "target_name": "深田恭子",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "period": "2020-2021"
+    },
+    {
+      "transition_id": "PERS_JP_048",
+      "target_name": "岩橋玄樹",
+      "before_hex": "坎",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "2018-2021"
+    },
+    {
+      "transition_id": "PERS_JP_060",
+      "target_name": "錦織圭",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2008-2018"
+    },
+    {
+      "transition_id": "PERS_JP_066",
+      "target_name": "堀江貴文",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2000-2011"
+    },
+    {
+      "transition_id": "PERS_JP_070",
+      "target_name": "のん（能年玲奈）",
+      "before_hex": "兌",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2010-2016"
+    },
+    {
+      "transition_id": "PERS_JP_076",
+      "target_name": "カズレーザー",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2012-現在"
+    },
+    {
+      "transition_id": "PERS_JP_077",
+      "target_name": "中田敦彦",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2003-2019"
+    },
+    {
+      "transition_id": "PERS_JP_079",
+      "target_name": "ロンブー・田村淳",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1993-現在"
+    },
+    {
+      "transition_id": "PERS_JP_083",
+      "target_name": "鈴木奈々",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "2009-2024"
+    },
+    {
+      "transition_id": "PERS_JP_086",
+      "target_name": "西野亮廣",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2000-現在"
+    },
+    {
+      "transition_id": "PERS_JP_087",
+      "target_name": "落合陽一",
+      "before_hex": "坤",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2015-現在"
+    },
+    {
+      "transition_id": "PERS_JP_088",
+      "target_name": "田端信太郎",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1999-現在"
+    },
+    {
+      "transition_id": "PERS_JP_094",
+      "target_name": "渡辺直美",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2008-2021"
+    },
+    {
+      "transition_id": "PERS_JP_118",
+      "target_name": "青葉哲郎",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1995-2009"
+    },
+    {
+      "transition_id": "PERS_JP_119",
+      "target_name": "明田川進",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1968-現在"
+    },
+    {
+      "transition_id": "PERS_JP_121",
+      "target_name": "藍川清成",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1895-1948"
+    },
+    {
+      "transition_id": "PERS_JP_126",
+      "target_name": "相生由太郎",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "period": "1904-1930"
+    },
+    {
+      "transition_id": "PERS_JP_128",
+      "target_name": "朝妻一郎",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1966-2020"
+    },
+    {
+      "transition_id": "PERS_JP_132",
+      "target_name": "明田川進",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1966-現在"
+    },
+    {
+      "transition_id": "PERS_JP_136",
+      "target_name": "京マチ子",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1936-2019"
+    },
+    {
+      "transition_id": "PERS_JP_137",
+      "target_name": "張本智和",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "2010-現在"
+    },
+    {
+      "transition_id": "PERS_JP_138",
+      "target_name": "安藤百福",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1932-2007"
+    },
+    {
+      "transition_id": "PERS_JP_143",
+      "target_name": "稲盛和夫",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1955-2022"
+    },
+    {
+      "transition_id": "PERS_JP_144",
+      "target_name": "本田宗一郎",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1906-1991"
+    },
+    {
+      "transition_id": "PERS_JP_145",
+      "target_name": "松下幸之助",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1894-1989"
+    },
+    {
+      "transition_id": "PERS_JP_148",
+      "target_name": "三木谷浩史",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1997-現在"
+    },
+    {
+      "transition_id": "PERS_JP_150",
+      "target_name": "盛田昭夫",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1946-1999"
+    },
+    {
+      "transition_id": "PERS_JP_151",
+      "target_name": "井深大",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1946-1997"
+    },
+    {
+      "transition_id": "PERS_JP_157",
+      "target_name": "出光佐三",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1911-1981"
+    },
+    {
+      "transition_id": "PERS_JP_158",
+      "target_name": "渋沢栄一",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "持続成長・大成功",
+      "period": "1840-1931"
+    },
+    {
+      "transition_id": "PERS_JP_159",
+      "target_name": "イチロー",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1991-2019"
+    },
+    {
+      "transition_id": "PERS_JP_160",
+      "target_name": "黒澤明",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1943-1998"
+    },
+    {
+      "transition_id": "PERS_JP_161",
+      "target_name": "手塚治虫",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1946-1989"
+    },
+    {
+      "transition_id": "PERS_JP_165",
+      "target_name": "宮崎駿",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1963-現在"
+    },
+    {
+      "transition_id": "PERS_JP_166",
+      "target_name": "王貞治",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1959-2008"
+    },
+    {
+      "transition_id": "PERS_JP_167",
+      "target_name": "小倉昌男",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1971-2005"
+    },
+    {
+      "transition_id": "PERS_JP_168",
+      "target_name": "野茂英雄",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1990-2008"
+    },
+    {
+      "transition_id": "PERS_JP_169",
+      "target_name": "坂本龍一",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1975-2023"
+    },
+    {
+      "transition_id": "PERS_JP_170",
+      "target_name": "長嶋茂雄",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1958-2025"
+    },
+    {
+      "transition_id": "PERS_JP_171",
+      "target_name": "小澤征爾",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1959-2024"
+    },
+    {
+      "transition_id": "PERS_JP_172",
+      "target_name": "吉田茂",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1946-1967"
+    },
+    {
+      "transition_id": "PERS_JP_174",
+      "target_name": "野村徳七",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1904-1945"
+    },
+    {
+      "transition_id": "PERS_JP_175",
+      "target_name": "松井秀喜",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1993-2012"
+    },
+    {
+      "transition_id": "PERS_JP_176",
+      "target_name": "北野武",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1973-現在"
+    }
+  ],
+  "乾": [
+    {
+      "transition_id": "PERS_JP_013",
+      "target_name": "Jさん_20代後半_女性社員",
+      "before_hex": "艮",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "20代後半・ライフイベント"
+    },
+    {
+      "transition_id": "PERS_JP_015",
+      "target_name": "Lさん_30代_銀行員",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "30代前半・異業種転職"
+    },
+    {
+      "transition_id": "PERS_JP_019",
+      "target_name": "Pさん_40代_技術職",
+      "before_hex": "巽",
+      "action_type": "分散・スピンオフ",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "40代・独立"
+    },
+    {
+      "transition_id": "PERS_JP_020",
+      "target_name": "Qさん_30代_経理職",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "30代・資格取得"
+    },
+    {
+      "transition_id": "PERS_JP_022",
+      "target_name": "Sさん_20代後半_Webマーケター",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "20代後半・メンターとの出会い"
+    },
+    {
+      "transition_id": "PERS_JP_023",
+      "target_name": "Tさん_40代後半_研究職",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "40代後半・日の目を見る"
+    },
+    {
+      "transition_id": "PERS_JP_024",
+      "target_name": "杉本宏之",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "2008-2015"
+    },
+    {
+      "transition_id": "PERS_JP_026",
+      "target_name": "阿部寛",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1990-2010"
+    },
+    {
+      "transition_id": "PERS_JP_031",
+      "target_name": "村田兆治",
+      "before_hex": "坎",
+      "action_type": "刷新・破壊",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1976-1990"
+    },
+    {
+      "transition_id": "PERS_JP_056",
+      "target_name": "大谷翔平",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "2013-2024"
+    },
+    {
+      "transition_id": "PERS_JP_057",
+      "target_name": "佐藤浩市",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "1980-2000"
+    },
+    {
+      "transition_id": "PERS_JP_059",
+      "target_name": "羽生結弦",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2010-2022"
+    },
+    {
+      "transition_id": "PERS_JP_061",
+      "target_name": "藤井聡太",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "PERS_JP_075",
+      "target_name": "山中伸弥",
+      "before_hex": "坎",
+      "action_type": "刷新・破壊",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1987-2012"
+    },
+    {
+      "transition_id": "PERS_JP_084",
+      "target_name": "孫正義",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1981-現在"
+    },
+    {
+      "transition_id": "PERS_JP_093",
+      "target_name": "藤田晋",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1998-現在"
+    },
+    {
+      "transition_id": "PERS_JP_111",
+      "target_name": "スティーブ・ジョブズ",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "period": "1985-1997"
+    },
+    {
+      "transition_id": "PERS_JP_112",
+      "target_name": "イーロン・マスク",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "2008-2010"
+    },
+    {
+      "transition_id": "PERS_JP_113",
+      "target_name": "本田宗一郎",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "持続成長・大成功",
+      "period": "1946-1963"
+    },
+    {
+      "transition_id": "PERS_JP_115",
+      "target_name": "孫正義",
+      "before_hex": "兌",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "2000-2006"
+    },
+    {
+      "transition_id": "PERS_JP_120",
+      "target_name": "相羽有",
+      "before_hex": "坎",
+      "action_type": "刷新・破壊",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "1916-1979"
+    },
+    {
+      "transition_id": "PERS_JP_141",
+      "target_name": "孫正義",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1957-現在"
+    },
+    {
+      "transition_id": "PERS_JP_142",
+      "target_name": "柳井正",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1971-現在"
+    },
+    {
+      "transition_id": "PERS_JP_149",
+      "target_name": "永守重信",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1973-現在"
+    },
+    {
+      "transition_id": "PERS_JP_163",
+      "target_name": "岩崎弥太郎",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1870-1885"
+    },
+    {
+      "transition_id": "PERS_JP_173",
+      "target_name": "安田善次郎",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1864-1921"
+    },
+    {
+      "transition_id": "PERS_JP_737",
+      "target_name": "フルコミット_成果獲得_燃え尽き",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_811",
+      "target_name": "イーロン・マスク（連続起業家）",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1995-2024"
+    },
+    {
+      "transition_id": "PERS_JP_812",
+      "target_name": "孫正義（ソフトバンク創業者）",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1981-2025"
+    },
+    {
+      "transition_id": "PERS_JP_813",
+      "target_name": "J.K.ローリング（ハリー・ポッター作者）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1990-2004"
+    },
+    {
+      "transition_id": "PERS_JP_814",
+      "target_name": "松下幸之助（パナソニック創業者）",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1904-1989"
+    },
+    {
+      "transition_id": "PERS_JP_817",
+      "target_name": "大谷翔平（二刀流で史上初の偉業）",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "2018-2025"
+    },
+    {
+      "transition_id": "PERS_JP_819",
+      "target_name": "イーロン・マスク（Tesla危機とSEC和解）",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "2008-2024"
+    },
+    {
+      "transition_id": "PERS_JP_826",
+      "target_name": "シモーン・バイルス（ツイスティーズからの復活）",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "持続成長・大成功",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_828",
+      "target_name": "シャカリ・リチャードソン（大麻処分からの復活）",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_967",
+      "target_name": "個人_SNSの噂で人生が変わった",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_970",
+      "target_name": "個人_副業から独立への道",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_984",
+      "target_name": "個人_SNS発信で人生が開ける",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1003",
+      "target_name": "個人_主婦から起業家へ",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1004",
+      "target_name": "個人_留学断念から通訳者へ",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "2012-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1007",
+      "target_name": "個人_社内ベンチャー成功",
+      "before_hex": "坤",
+      "action_type": "分散・スピンオフ",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1013",
+      "target_name": "個人_いじめ被害から弁護士へ",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1018",
+      "target_name": "個人_遅咲き作家の大成",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1019",
+      "target_name": "個人_会社員からYouTuberへ",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1028",
+      "target_name": "個人_副業から本業へのシフト",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1030",
+      "target_name": "個人_オンラインサロン運営",
+      "before_hex": "艮",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1035",
+      "target_name": "個人_大病からの復帰アスリート",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1036",
+      "target_name": "個人_失明からパラリンピアンへ",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1038",
+      "target_name": "個人_80代からのプログラミング",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1042",
+      "target_name": "個人_シニアYouTuberの挑戦",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2020-2024"
+    }
+  ],
+  "巽": [
+    {
+      "transition_id": "PERS_JP_016",
+      "target_name": "Mさん_40代_アパレル店長",
+      "before_hex": "坤",
+      "action_type": "刷新・破壊",
+      "before_state": "成長痛",
+      "after_state": "安定成長・成功",
+      "period": "40代・リスキリング"
+    },
+    {
+      "transition_id": "PERS_JP_025",
+      "target_name": "喜多洲山",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1990-2010"
+    },
+    {
+      "transition_id": "PERS_JP_178",
+      "target_name": "中田英寿",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1995-2006"
+    },
+    {
+      "transition_id": "PERS_JP_196",
+      "target_name": "勝海舟",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "1823-1899"
+    },
+    {
+      "transition_id": "PERS_JP_197",
+      "target_name": "徳川慶喜",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1837-1913"
+    },
+    {
+      "transition_id": "PERS_JP_201",
+      "target_name": "羽生善治",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1970-現在"
+    },
+    {
+      "transition_id": "PERS_JP_204",
+      "target_name": "錦織圭",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2007-現在"
+    },
+    {
+      "transition_id": "PERS_JP_260",
+      "target_name": "池江璃花子",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2016-現在"
+    },
+    {
+      "transition_id": "PERS_JP_262",
+      "target_name": "小泉純一郎",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2001-2006"
+    },
+    {
+      "transition_id": "PERS_JP_269",
+      "target_name": "細川護熙",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "1993-1994"
+    },
+    {
+      "transition_id": "PERS_JP_270",
+      "target_name": "村山富市",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "1994-1996"
+    },
+    {
+      "transition_id": "PERS_JP_292",
+      "target_name": "福原愛",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1992-2018"
+    },
+    {
+      "transition_id": "PERS_JP_293",
+      "target_name": "石川佳純",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2007-2023"
+    },
+    {
+      "transition_id": "PERS_JP_298",
+      "target_name": "吾峠呼世晴",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2016-2020"
+    },
+    {
+      "transition_id": "PERS_JP_300",
+      "target_name": "大野将平",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2013-2024"
+    },
+    {
+      "transition_id": "PERS_JP_322",
+      "target_name": "伊達公子",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1989-2017"
+    },
+    {
+      "transition_id": "PERS_JP_324",
+      "target_name": "松岡修造",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1986-1998"
+    },
+    {
+      "transition_id": "PERS_JP_325",
+      "target_name": "杉山愛",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1992-2009"
+    },
+    {
+      "transition_id": "PERS_JP_328",
+      "target_name": "白鵬翔",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2001-2021"
+    },
+    {
+      "transition_id": "PERS_JP_329",
+      "target_name": "貴乃花光司",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1988-2003"
+    },
+    {
+      "transition_id": "PERS_JP_333",
+      "target_name": "朝青龍明徳",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1999-2010"
+    },
+    {
+      "transition_id": "PERS_JP_334",
+      "target_name": "若乃花勝",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1988-2000"
+    },
+    {
+      "transition_id": "PERS_JP_343",
+      "target_name": "又吉直樹",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2003-現在"
+    },
+    {
+      "transition_id": "PERS_JP_361",
+      "target_name": "大坂なおみ",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2013-現在"
+    },
+    {
+      "transition_id": "PERS_JP_364",
+      "target_name": "宮里藍",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2003-2017"
+    },
+    {
+      "transition_id": "PERS_JP_367",
+      "target_name": "羽生結弦",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2010-現在"
+    },
+    {
+      "transition_id": "PERS_JP_368",
+      "target_name": "高橋尚子",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1997-2008"
+    },
+    {
+      "transition_id": "PERS_JP_370",
+      "target_name": "室伏広治",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1995-2016"
+    },
+    {
+      "transition_id": "PERS_JP_372",
+      "target_name": "池江璃花子",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2015-現在"
+    },
+    {
+      "transition_id": "PERS_JP_373",
+      "target_name": "瀬戸大也",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2012-現在"
+    },
+    {
+      "transition_id": "PERS_JP_375",
+      "target_name": "吉田沙保里",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2002-2019"
+    },
+    {
+      "transition_id": "PERS_JP_376",
+      "target_name": "伊調馨",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2002-2020"
+    },
+    {
+      "transition_id": "PERS_JP_377",
+      "target_name": "高見盛精彦",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1999-2013"
+    },
+    {
+      "transition_id": "PERS_JP_381",
+      "target_name": "大野将平",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2009-2024"
+    },
+    {
+      "transition_id": "PERS_JP_382",
+      "target_name": "井上康生",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1996-2008"
+    },
+    {
+      "transition_id": "PERS_JP_406",
+      "target_name": "中曽根康弘",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1982-1987"
+    },
+    {
+      "transition_id": "PERS_JP_425",
+      "target_name": "清少納言",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "993-1000"
+    },
+    {
+      "transition_id": "PERS_JP_669",
+      "target_name": "独立_自由獲得_収入不安定",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_783",
+      "target_name": "フリーランス_案件転々_安定せず",
+      "before_hex": "巽",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "混乱・カオス",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_786",
+      "target_name": "明確なビジョン_実行段階_試行錯誤",
+      "before_hex": "離",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "混乱・カオス",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_805",
+      "target_name": "知識労働者_自動化_役割変化",
+      "before_hex": "離",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "混乱・カオス",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_806",
+      "target_name": "専門家_権威低下_発信方法模索",
+      "before_hex": "離",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "混乱・カオス",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1192",
+      "target_name": "個人_激しい競争から穏やかなキャリアへ",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1193",
+      "target_name": "個人_燃え尽きから緩やかな再起へ",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1204",
+      "target_name": "個人_緩やかに蓄積した疲労の限界",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1205",
+      "target_name": "鈴木啓太（元サッカー日本代表・AuB起業）",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1206",
+      "target_name": "松本薫（柔道金メダリスト・アイスクリーム転身）",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1207",
+      "target_name": "奥村武博（元阪神・公認会計士転身）",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2007-2019"
+    },
+    {
+      "transition_id": "PERS_JP_1209",
+      "target_name": "小杉陽太（元DeNA・起業家転身）",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_1210",
+      "target_name": "岩佐真悠子（元ミスマガジン・介護職転身）",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2020-2024"
+    }
+  ],
+  "震": [
+    {
+      "transition_id": "PERS_JP_017",
+      "target_name": "Nさん_20代後半_公務員",
+      "before_hex": "離",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "20代後半・地方移住"
+    },
+    {
+      "transition_id": "PERS_JP_164",
+      "target_name": "田中角栄",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "迷走・混乱",
+      "period": "1947-1993"
+    },
+    {
+      "transition_id": "PERS_JP_666",
+      "target_name": "転職_年収アップ_人間関係悪化",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_667",
+      "target_name": "起業_売上達成_プライベート崩壊",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_668",
+      "target_name": "海外移住_キャリア成功_孤独",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_674",
+      "target_name": "投資_資産増加_精神的負担",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_675",
+      "target_name": "昇進_管理職就任_ストレス増大",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_677",
+      "target_name": "離婚_解放感_経済的困窮",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "縮小安定・生存",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_682",
+      "target_name": "副業成功_収入増_本業疎か",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_686",
+      "target_name": "SNS発信_フォロワー獲得_プライバシー喪失",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定成長・成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_690",
+      "target_name": "留学_語学力向上_就職遅れ",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_691",
+      "target_name": "起業_やりがい獲得_健康悪化",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定成長・成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_698",
+      "target_name": "有名になる_知名度獲得_批判増加",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "安定成長・成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_699",
+      "target_name": "出版成功_著者デビュー_次作プレッシャー",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_701",
+      "target_name": "資格取得_スキル獲得_時間犠牲",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定成長・成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_702",
+      "target_name": "MBA取得_学位獲得_借金増加",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_703",
+      "target_name": "英語習得_スキル獲得_日本語力低下",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_704",
+      "target_name": "プログラミング習得_スキル獲得_視力低下",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定成長・成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_715",
+      "target_name": "転職活動_選択肢拡大_現職悪化",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_722",
+      "target_name": "朝活開始_時間確保_睡眠不足",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_727",
+      "target_name": "投資優先_資産増加_流動性低下",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_729",
+      "target_name": "ブログ執筆_発信力獲得_プライベート時間減少",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定成長・成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_735",
+      "target_name": "起業_経営権獲得_孤独",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_736",
+      "target_name": "大学院進学_専門性獲得_機会費用",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "安定成長・成功",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_740",
+      "target_name": "不動産投資_資産形成_流動性低下",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_741",
+      "target_name": "インデックス投資_長期成長_短期変動",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_742",
+      "target_name": "起業_目標の半分達成_継続困難",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2018-2023"
+    },
+    {
+      "transition_id": "PERS_JP_743",
+      "target_name": "ダイエット_10kg中5kg減_リバウンド懸念",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_745",
+      "target_name": "資格取得_3科目中2科目合格_再挑戦中",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_752",
+      "target_name": "留学_語学力向上_学位取得断念",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2019-2023"
+    },
+    {
+      "transition_id": "PERS_JP_753",
+      "target_name": "独立開業_集客苦戦_技術は向上",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_755",
+      "target_name": "フリーランス_収入不安定_自由獲得",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_758",
+      "target_name": "芸能活動_下積み長期化_認知度向上",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "PERS_JP_763",
+      "target_name": "アプリ開発_ダウンロード数未達_学び獲得",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_765",
+      "target_name": "社内起業_プロジェクト縮小_実績認定",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_766",
+      "target_name": "健康改善_数値改善_習慣未定着",
+      "before_hex": "巽",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_767",
+      "target_name": "副業開始_月5万円_時間犠牲",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_769",
+      "target_name": "起業_最初の顧客獲得_スケール困難",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_774",
+      "target_name": "語学留学_資格未取得_異文化体験",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_776",
+      "target_name": "海外赴任_キャリアアップ_家族負担",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "安定成長・成功",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_778",
+      "target_name": "社会人大学院_修了_論文執筆断念",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_779",
+      "target_name": "ダブルワーク_収入増_体調悪化",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "PERS_JP_781",
+      "target_name": "起業支援_3社中1社成功_経験値獲得",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_782",
+      "target_name": "結婚相談所_成婚退会_交際期間短い",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "PERS_JP_788",
+      "target_name": "引きこもり脱出_社会復帰_自立達成",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "縮小安定・生存",
+      "after_state": "安定・平和",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_836",
+      "target_name": "袴田巖（58年の冤罪からの無罪）",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1966-2024"
+    },
+    {
+      "transition_id": "PERS_JP_844",
+      "target_name": "前澤友作（ZOZO売却から宇宙へ）",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "PERS_JP_850",
+      "target_name": "免田栄さん（日本初の死刑再審無罪）",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1948-1983"
+    },
+    {
+      "transition_id": "PERS_JP_851",
+      "target_name": "財田川事件・谷口繁義さん",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1950-1984"
+    },
+    {
+      "transition_id": "PERS_JP_1212",
+      "target_name": "松本人志活動休止と訴訟（2024年）",
+      "before_hex": "兌",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
+      "period": "2024"
+    }
+  ],
+  "兌": [
+    {
+      "transition_id": "PERS_JP_027",
+      "target_name": "陣内智則",
+      "before_hex": "乾",
+      "action_type": "対話・融合",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "2009-2015"
+    },
+    {
+      "transition_id": "PERS_JP_028",
+      "target_name": "狩野英孝",
+      "before_hex": "兌",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2017-2020"
+    },
+    {
+      "transition_id": "PERS_JP_033",
+      "target_name": "宮下雅光",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1978-1990"
+    },
+    {
+      "transition_id": "PERS_JP_034",
+      "target_name": "錦鯉",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2000-2021"
+    },
+    {
+      "transition_id": "PERS_JP_035",
+      "target_name": "じゅんいちダビッドソン",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2000-2020"
+    },
+    {
+      "transition_id": "PERS_JP_036",
+      "target_name": "ムロツヨシ",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "1995-2011"
+    },
+    {
+      "transition_id": "PERS_JP_038",
+      "target_name": "中村倫也",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2005-2018"
+    },
+    {
+      "transition_id": "PERS_JP_040",
+      "target_name": "山田悠介",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "2000-2005"
+    },
+    {
+      "transition_id": "PERS_JP_041",
+      "target_name": "レイ・クロック",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "1954-1970"
+    },
+    {
+      "transition_id": "PERS_JP_043",
+      "target_name": "カーネル・サンダース",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1952-1970"
+    },
+    {
+      "transition_id": "PERS_JP_044",
+      "target_name": "星野源",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "period": "2012-2014"
+    },
+    {
+      "transition_id": "PERS_JP_047",
+      "target_name": "中川家・剛",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "period": "1997-1998"
+    },
+    {
+      "transition_id": "PERS_JP_049",
+      "target_name": "名倉潤",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "period": "2019"
+    },
+    {
+      "transition_id": "PERS_JP_050",
+      "target_name": "前田敦子",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "2021-2023"
+    },
+    {
+      "transition_id": "PERS_JP_054",
+      "target_name": "宇多田ヒカル",
+      "before_hex": "離",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "1998-2010"
+    },
+    {
+      "transition_id": "PERS_JP_055",
+      "target_name": "ONE OK ROCK・Taka",
+      "before_hex": "坎",
+      "action_type": "捨てる・撤退",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2005-2015"
+    },
+    {
+      "transition_id": "PERS_JP_058",
+      "target_name": "杏",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2005-2020"
+    },
+    {
+      "transition_id": "PERS_JP_062",
+      "target_name": "小川嶺",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "PERS_JP_063",
+      "target_name": "本田圭佑",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2005-2018"
+    },
+    {
+      "transition_id": "PERS_JP_073",
+      "target_name": "狩野英孝",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "2006-2017"
+    },
+    {
+      "transition_id": "PERS_JP_074",
+      "target_name": "池上彰",
+      "before_hex": "艮",
+      "action_type": "捨てる・撤退",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "1973-2005"
+    },
+    {
+      "transition_id": "PERS_JP_078",
+      "target_name": "厚切りジェイソン",
+      "before_hex": "坤",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2014-現在"
+    },
+    {
+      "transition_id": "PERS_JP_080",
+      "target_name": "ヒロシ",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2004-2018"
+    },
+    {
+      "transition_id": "PERS_JP_081",
+      "target_name": "石田ゆり子",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "1987-2015"
+    },
+    {
+      "transition_id": "PERS_JP_082",
+      "target_name": "本田翼",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2006-2019"
+    },
+    {
+      "transition_id": "PERS_JP_085",
+      "target_name": "前澤友作",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1998-現在"
+    },
+    {
+      "transition_id": "PERS_JP_089",
+      "target_name": "箕輪厚介",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2015-現在"
+    },
+    {
+      "transition_id": "PERS_JP_090",
+      "target_name": "けんすう（古川健介）",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2004-現在"
+    },
+    {
+      "transition_id": "PERS_JP_091",
+      "target_name": "家入一真",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "2001-現在"
+    },
+    {
+      "transition_id": "PERS_JP_095",
+      "target_name": "イモトアヤコ",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "2007-現在"
+    },
+    {
+      "transition_id": "PERS_JP_097",
+      "target_name": "澤穂希",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "1993-2015"
+    },
+    {
+      "transition_id": "PERS_JP_101",
+      "target_name": "土屋太鳳",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2005-現在"
+    },
+    {
+      "transition_id": "PERS_JP_102",
+      "target_name": "有村架純",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2010-現在"
+    },
+    {
+      "transition_id": "PERS_JP_103",
+      "target_name": "広瀬すず",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2012-現在"
+    },
+    {
+      "transition_id": "PERS_JP_104",
+      "target_name": "ビートたけし（北野武）の成功の連鎖",
+      "before_hex": "兌",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1980-2000"
+    },
+    {
+      "transition_id": "PERS_JP_107",
+      "target_name": "イチローの大リーグ挑戦",
+      "before_hex": "兌",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "持続成長・大成功",
+      "period": "2001-2019"
+    },
+    {
+      "transition_id": "PERS_JP_114",
+      "target_name": "松下幸之助",
+      "before_hex": "乾",
+      "action_type": "対話・融合",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "1929-1935"
+    },
+    {
+      "transition_id": "PERS_JP_124",
+      "target_name": "愛甲猛",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "1980-2000"
+    },
+    {
+      "transition_id": "PERS_JP_125",
+      "target_name": "アイスマン福留",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "2010-現在"
+    },
+    {
+      "transition_id": "PERS_JP_135",
+      "target_name": "須﨑優衣",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "安定成長・成功",
+      "period": "2010-2024"
+    },
+    {
+      "transition_id": "PERS_JP_140",
+      "target_name": "粟田貴也",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1985-現在"
+    },
+    {
+      "transition_id": "PERS_JP_146",
+      "target_name": "堀江貴文",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "安定成長・成功",
+      "period": "1996-現在"
+    },
+    {
+      "transition_id": "PERS_JP_152",
+      "target_name": "鳥井信治郎",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1899-1962"
+    },
+    {
+      "transition_id": "PERS_JP_162",
+      "target_name": "小林一三",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1907-1957"
+    },
+    {
+      "transition_id": "PERS_JP_785",
+      "target_name": "適応力_人間関係改善_幸福感",
+      "before_hex": "巽",
+      "action_type": "守る・維持",
+      "before_state": "混乱・カオス",
+      "after_state": "安定・平和",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "PERS_JP_810",
+      "target_name": "タイガー・ウッズ（スキャンダルからの復活）",
+      "before_hex": "乾",
+      "action_type": "耐える・潜伏",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "period": "2009-2019"
+    },
+    {
+      "transition_id": "PERS_JP_815",
+      "target_name": "タイガー・ウッズ（復活と挫折の繰り返し）",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "period": "2008-2024"
+    },
+    {
+      "transition_id": "PERS_JP_816",
+      "target_name": "マイケル・ジョーダン（3度の引退と復帰）",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1993-2003"
+    },
+    {
+      "transition_id": "PERS_JP_821",
+      "target_name": "トラビス・カラニック（Uber追放からの再起）",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "PERS_JP_823",
+      "target_name": "アダム・ニューマン（WeWork追放からFlow）",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "2019-2025"
+    }
+  ]
+}

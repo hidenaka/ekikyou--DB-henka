@@ -23,6 +23,54 @@ from typing import Optional
 class CaseSearchEngine:
     """DB事例を使った条件付き分布計算 + 類似事例検索エンジン"""
 
+    # main_domain → scale マッピング用キーワード辞書
+    # 判定順序: family → country → individual → company → other
+    _FAMILY_KEYWORDS = ("家族",)
+
+    _COUNTRY_KEYWORDS = (
+        "国家", "政治", "politics", "政策", "外交", "国際",
+        "軍事", "マクロ経済", "社会保障", "行政", "国防",
+        "都市計画", "地域振興", "災害", "公衆衛生", "社会福祉",
+        "社会インフラ", "社会・コミュニティ", "社会問題", "社会・労働",
+        "社会・文化", "都市・地域", "経済・マクロ", "人事・組織",
+        "経済政策", "国際関係", "国際開発",
+    )
+
+    _INDIVIDUAL_KEYWORDS = (
+        "生活", "Lifestyle", "キャリア", "健康", "メンタルヘルス",
+        "予防医療", "ウェルネス", "将棋", "スポーツ", "暮らし",
+        "長寿", "睡眠", "リハビリ", "介護", "認知症", "母子", "歯科",
+    )
+
+    _COMPANY_KEYWORDS = (
+        "ビジネス", "Business", "business", "金融", "finance", "Finance",
+        "製造", "Manufacturing", "小売", "retail", "Retail",
+        "テクノロジー", "technology", "Technology", "Telecom",
+        "エンタメ", "entertainment", "Entertainment", "エンターテインメント",
+        "エネルギー", "医療", "Healthcare", "製薬", "ヘルスケア",
+        "教育", "education", "IT", "不動産", "real_estate",
+        "自動車", "Automotive", "automotive",
+        "航空", "Aviation", "食品", "food", "飲料", "電機", "Electronics",
+        "半導体", "通信", "化学", "ゲーム", "NPO", "建設",
+        "商社", "物流", "運輸", "Logistics", "観光", "旅行",
+        "アパレル", "ファッション", "ラグジュアリー",
+        "サービス", "Service", "外食", "飲食",
+        "メディア", "Consumer", "consumer", "Sports",
+        "Management", "経営", "宇宙", "投資", "バイオ",
+        "スタートアップ", "インフラ", "重工業", "繊維",
+        "ホテル", "住宅", "精密機器", "芸術", "文化", "伝統",
+        "Science", "人材", "複合企業", "コングロマリット",
+        "保険", "証券", "銀行", "農林水産", "農業", "農",
+        "fintech", "家電", "化粧品", "消費財", "産業",
+        "写真", "映像", "音楽", "文学", "出版", "学術",
+        "商業", "複合", "法務", "会計", "監査", "経済団体",
+        "環境", "慈善", "フィランソロピー", "文具", "ロボット",
+        "業界団体", "電力", "宗教",
+    )
+
+    # 有効なscale値
+    VALID_SCALES = ("company", "individual", "family", "country", "other")
+
     def __init__(self, cases_path: str = None):
         """
         全事例をロードしてインデックスを構築。
@@ -36,6 +84,34 @@ class CaseSearchEngine:
 
         self.cases = self._load_cases(cases_path)
         self._build_indices()
+
+    @staticmethod
+    def classify_scale(main_domain: Optional[str]) -> str:
+        """
+        main_domain値をscale（company/individual/family/country/other）に分類する。
+
+        Args:
+            main_domain: cases.jsonlのmain_domainフィールド値
+
+        Returns:
+            "company", "individual", "family", "country", "other" のいずれか
+        """
+        if not main_domain or main_domain == "Other":
+            return "other"
+        d = str(main_domain)
+        for kw in CaseSearchEngine._FAMILY_KEYWORDS:
+            if kw in d:
+                return "family"
+        for kw in CaseSearchEngine._COUNTRY_KEYWORDS:
+            if kw in d:
+                return "country"
+        for kw in CaseSearchEngine._INDIVIDUAL_KEYWORDS:
+            if kw in d:
+                return "individual"
+        for kw in CaseSearchEngine._COMPANY_KEYWORDS:
+            if kw in d:
+                return "company"
+        return "other"
 
     def _load_cases(self, path: str) -> list:
         """cases.jsonlを1行ずつ読み込んでリストとして返す。"""
@@ -57,8 +133,9 @@ class CaseSearchEngine:
         self._by_hex_yao = {}           # (hexagram_number, yao) → [事例リスト]
         self._by_state_action = {}      # (before_state, action_type) → [事例リスト]
         self._by_hex_pair = {}          # (before_hex, action_hex) → [事例リスト]
+        self._by_scale = {}             # scale → set(case index in self.cases)
 
-        for case in self.cases:
+        for idx, case in enumerate(self.cases):
             # hexagram_number インデックス
             hex_num = case.get("hexagram_number")
             if hex_num is not None:
@@ -81,6 +158,29 @@ class CaseSearchEngine:
             if bh and ah:
                 self._by_hex_pair.setdefault((bh, ah), []).append(case)
 
+            # scale インデックス（main_domain → scale分類）
+            scale = self.classify_scale(case.get("main_domain"))
+            self._by_scale.setdefault(scale, set()).add(id(case))
+
+    # --- scaleフィルタ ---
+
+    def _filter_by_scale(self, cases: list, scale: Optional[str]) -> list:
+        """
+        事例リストをscaleでフィルタリングする。
+
+        Args:
+            cases: フィルタ対象の事例リスト
+            scale: "company", "individual", "family", "country", "other" のいずれか。
+                   Noneの場合はフィルタなし（全件返却）。
+
+        Returns:
+            フィルタ後の事例リスト
+        """
+        if scale is None:
+            return cases
+        scale_ids = self._by_scale.get(scale, set())
+        return [c for c in cases if id(c) in scale_ids]
+
     # --- 条件付き分布 ---
 
     @staticmethod
@@ -95,17 +195,21 @@ class CaseSearchEngine:
         else:
             return f"該当事例は{n}件のみです。統計的な傾向を読み取ることは困難です。"
 
-    def get_conditional_distribution(self, before_state: str, action_type: str) -> dict:
+    def get_conditional_distribution(
+        self, before_state: str, action_type: str, scale: Optional[str] = None
+    ) -> dict:
         """
         条件付き分布を算出する。
 
         Args:
             before_state: "停滞・閉塞" 等
             action_type: "刷新・破壊" 等
+            scale: "company", "individual", "family", "country", "other" のいずれか。
+                   Noneの場合は全件で集計（後方互換）。
 
         Returns:
             {
-                "condition": {"before_state": ..., "action_type": ...},
+                "condition": {"before_state": ..., "action_type": ..., "scale": ...},
                 "total_n": int,
                 "confidence_note": str,
                 "distribution": [{"state": str, "count": int, "percentage": float}, ...],
@@ -113,6 +217,7 @@ class CaseSearchEngine:
             }
         """
         matched = self._by_state_action.get((before_state, action_type), [])
+        matched = self._filter_by_scale(matched, scale)
         total_n = len(matched)
 
         # after_state の分布をカウント
@@ -130,11 +235,15 @@ class CaseSearchEngine:
                 "percentage": pct,
             })
 
+        condition = {
+            "before_state": before_state,
+            "action_type": action_type,
+        }
+        if scale is not None:
+            condition["scale"] = scale
+
         return {
-            "condition": {
-                "before_state": before_state,
-                "action_type": action_type,
-            },
+            "condition": condition,
             "total_n": total_n,
             "confidence_note": self._make_confidence_note(total_n, action_type),
             "distribution": distribution,
@@ -176,6 +285,7 @@ class CaseSearchEngine:
         before_hex: str = None,
         action_hex: str = None,
         limit: int = 3,
+        scale: Optional[str] = None,
     ) -> list:
         """
         類似事例を検索する。
@@ -188,14 +298,19 @@ class CaseSearchEngine:
 
         各優先順位内ではランダムに選出。
         最大 limit 件返す。
+
+        Args:
+            scale: "company", "individual", "family", "country", "other" のいずれか。
+                   Noneの場合は全件から検索（後方互換）。
         """
         results = []
         used_ids = set()  # transition_id で重複排除
 
         def _add_cases(candidate_list: list, basis: str):
             """候補リストからまだ選ばれていないものをランダムに追加。"""
+            filtered = self._filter_by_scale(candidate_list, scale)
             available = [
-                c for c in candidate_list
+                c for c in filtered
                 if c.get("transition_id", id(c)) not in used_ids
             ]
             random.shuffle(available)
@@ -230,22 +345,28 @@ class CaseSearchEngine:
 
     # --- パターン分布（オプション） ---
 
-    def get_pattern_distribution(self, hexagram_number: int) -> dict:
+    def get_pattern_distribution(
+        self, hexagram_number: int, scale: Optional[str] = None
+    ) -> dict:
         """
         指定卦のパターン分布。
         同じ本卦を持つ事例の after_state の分布を返す。
 
         Args:
             hexagram_number: 卦番号 (1-64)
+            scale: "company", "individual", "family", "country", "other" のいずれか。
+                   Noneの場合は全件で集計（後方互換）。
 
         Returns:
             {
                 "hexagram_number": int,
                 "total_n": int,
+                "scale": str or None,
                 "distribution": [{"state": str, "count": int, "percentage": float}, ...]
             }
         """
         matched = self._by_hexagram.get(hexagram_number, [])
+        matched = self._filter_by_scale(matched, scale)
         total_n = len(matched)
 
         counter = Counter(
@@ -261,11 +382,23 @@ class CaseSearchEngine:
                 "percentage": pct,
             })
 
-        return {
+        result = {
             "hexagram_number": hexagram_number,
             "total_n": total_n,
             "distribution": distribution,
         }
+        if scale is not None:
+            result["scale"] = scale
+        return result
+
+    def get_scale_distribution(self) -> dict:
+        """
+        全事例のscale別件数分布を返す。
+
+        Returns:
+            {"company": int, "individual": int, "family": int, "country": int, "other": int}
+        """
+        return {scale: len(ids) for scale, ids in self._by_scale.items()}
 
 
 # =============================================================================
@@ -411,12 +544,92 @@ if __name__ == "__main__":
         assert b1 <= b2, f"FAIL: order violation at index {i}: {cases[i]['similarity_basis']} > {cases[i+1]['similarity_basis']}"
     print("  PASS: 優先順位が正しい")
 
+    # --- テスト9: scaleインデックスの基本確認 ---
+    print("\n--- テスト9: scaleインデックス ---")
+    scale_dist = engine.get_scale_distribution()
+    print(f"  scale分布: {scale_dist}")
+    total_scale = sum(scale_dist.values())
+    assert total_scale == len(engine.cases), \
+        f"FAIL: scale合計({total_scale}) != 全件数({len(engine.cases)})"
+    assert "company" in scale_dist, "FAIL: 'company' scale not found"
+    assert "individual" in scale_dist, "FAIL: 'individual' scale not found"
+    assert "country" in scale_dist, "FAIL: 'country' scale not found"
+    assert "other" in scale_dist, "FAIL: 'other' scale not found"
+    print("  PASS")
+
+    # --- テスト10: classify_scale の単体テスト ---
+    print("\n--- テスト10: classify_scale ---")
+    assert CaseSearchEngine.classify_scale("ビジネス") == "company"
+    assert CaseSearchEngine.classify_scale("金融") == "company"
+    assert CaseSearchEngine.classify_scale("生活・暮らし") == "individual"
+    assert CaseSearchEngine.classify_scale("Lifestyle") == "individual"
+    assert CaseSearchEngine.classify_scale("国家・政治") == "country"
+    assert CaseSearchEngine.classify_scale("社会・コミュニティ") == "country"
+    assert CaseSearchEngine.classify_scale("家族") == "family"
+    assert CaseSearchEngine.classify_scale(None) == "other"
+    assert CaseSearchEngine.classify_scale("") == "other"
+    assert CaseSearchEngine.classify_scale("Other") == "other"
+    print("  PASS")
+
+    # --- テスト11: get_conditional_distribution with scale ---
+    print("\n--- テスト11: get_conditional_distribution(scale='company') ---")
+    dist_company = engine.get_conditional_distribution("停滞・閉塞", "刷新・破壊", scale="company")
+    dist_all = engine.get_conditional_distribution("停滞・閉塞", "刷新・破壊")
+    print(f"  全件: {dist_all['total_n']}件, company: {dist_company['total_n']}件")
+    assert dist_company["total_n"] <= dist_all["total_n"], \
+        f"FAIL: company({dist_company['total_n']}) > all({dist_all['total_n']})"
+    assert dist_company["total_n"] > 0, "FAIL: company distribution is empty"
+    assert "scale" in dist_company["condition"], "FAIL: scale not in condition"
+    assert dist_company["condition"]["scale"] == "company"
+    # scale=None の場合はconditionにscaleが含まれないことを確認
+    assert "scale" not in dist_all["condition"], "FAIL: scale should not be in condition when None"
+    print("  PASS")
+
+    # --- テスト12: search_similar_cases with scale ---
+    print("\n--- テスト12: search_similar_cases(scale='individual') ---")
+    cases_individual = engine.search_similar_cases(
+        before_state="どん底・危機",
+        action_type="耐える・潜伏",
+        limit=3,
+        scale="individual",
+    )
+    cases_all = engine.search_similar_cases(
+        before_state="どん底・危機",
+        action_type="耐える・潜伏",
+        limit=100,
+    )
+    print(f"  全件: {len(cases_all)}件, individual: {len(cases_individual)}件")
+    assert len(cases_individual) <= len(cases_all), "FAIL: individual > all"
+    for c in cases_individual:
+        print(f"  ■ {c['target_name']}（{c['period']}）")
+    print("  PASS")
+
+    # --- テスト13: get_pattern_distribution with scale ---
+    print("\n--- テスト13: get_pattern_distribution(hexagram_number=21, scale='company') ---")
+    pat_company = engine.get_pattern_distribution(21, scale="company")
+    pat_all = engine.get_pattern_distribution(21)
+    print(f"  全件: {pat_all['total_n']}件, company: {pat_company['total_n']}件")
+    assert pat_company["total_n"] <= pat_all["total_n"], "FAIL: company > all"
+    assert pat_company["total_n"] > 0, "FAIL: company pattern is empty"
+    assert pat_company.get("scale") == "company"
+    assert "scale" not in pat_all, "FAIL: scale should not be in result when None"
+    print("  PASS")
+
+    # --- テスト14: scale=None の後方互換性 ---
+    print("\n--- テスト14: 後方互換性 (scale=None) ---")
+    dist_compat = engine.get_conditional_distribution("停滞・閉塞", "刷新・破壊", scale=None)
+    assert dist_compat["total_n"] == dist_all["total_n"], \
+        f"FAIL: scale=None({dist_compat['total_n']}) != 引数なし({dist_all['total_n']})"
+    print(f"  scale=None: {dist_compat['total_n']}件 == 引数なし: {dist_all['total_n']}件")
+    print("  PASS")
+
     # --- インデックスサイズの確認 ---
     print("\n--- インデックスサイズ ---")
     print(f"  _by_hexagram: {len(engine._by_hexagram)} 卦")
     print(f"  _by_hex_yao: {len(engine._by_hex_yao)} 組")
     print(f"  _by_state_action: {len(engine._by_state_action)} 組")
     print(f"  _by_hex_pair: {len(engine._by_hex_pair)} 組")
+    print(f"  _by_scale: {len(engine._by_scale)} スケール")
 
     print("\n" + "=" * 70)
     print("全テスト完了")

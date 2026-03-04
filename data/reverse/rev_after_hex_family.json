@@ -1,0 +1,2988 @@
+{
+  "坎": [
+    {
+      "transition_id": "FAM_JP_001",
+      "target_name": "大塚家具・大塚父娘",
+      "before_hex": "乾",
+      "action_type": "対話・融合",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "2009-2021"
+    },
+    {
+      "transition_id": "FAM_JP_021",
+      "target_name": "A家_相続争い_3兄弟",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2018-2023"
+    },
+    {
+      "transition_id": "FAM_JP_022",
+      "target_name": "B家_老老介護の末路",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_027",
+      "target_name": "E家_嫁姑問題で離婚",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "2016-2022"
+    },
+    {
+      "transition_id": "FAM_JP_037",
+      "target_name": "O家_親の介護で離散",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_042",
+      "target_name": "T家_実家依存の崩壊",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "FAM_JP_053",
+      "target_name": "相続_争族_01",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_054",
+      "target_name": "相続_争族_02",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_055",
+      "target_name": "家族崩壊_DV_01",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "崩壊・消滅",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_056",
+      "target_name": "家族崩壊_借金_01",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "どん底・危機",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_057",
+      "target_name": "教育失敗_01_過干渉",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_058",
+      "target_name": "教育失敗_02_放任",
+      "before_hex": "坤",
+      "action_type": "逃げる・放置",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "FAM_JP_059",
+      "target_name": "事業承継失敗_01",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "停滞・閉塞",
+      "after_state": "崩壊・消滅",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_062",
+      "target_name": "介護崩壊_02",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "どん底・危機",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_069",
+      "target_name": "事故被害_02",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_071",
+      "target_name": "親子関係断絶_02",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_099",
+      "target_name": "ハプスブルク家_600年の栄華から崩壊",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1273-1918"
+    },
+    {
+      "transition_id": "FAM_JP_100",
+      "target_name": "ブルボン家_フランス革命での断絶",
+      "before_hex": "乾",
+      "action_type": "逃げる・放置",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1589-1793"
+    },
+    {
+      "transition_id": "FAM_JP_101",
+      "target_name": "ロマノフ家_ロシア革命での滅亡",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1613-1918"
+    },
+    {
+      "transition_id": "FAM_JP_102",
+      "target_name": "清朝愛新覚羅家_中国最後の王朝",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1616-1912"
+    },
+    {
+      "transition_id": "FAM_JP_103",
+      "target_name": "オスマン家_600年帝国の終焉",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1299-1922"
+    },
+    {
+      "transition_id": "FAM_JP_110",
+      "target_name": "鳩山家_政治家一族の盛衰",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1954-2024"
+    },
+    {
+      "transition_id": "FAM_JP_113",
+      "target_name": "堤家_西武グループの分裂",
+      "before_hex": "乾",
+      "action_type": "逃げる・放置",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "period": "1920-2006"
+    },
+    {
+      "transition_id": "FAM_JP_117",
+      "target_name": "相続争い家族D_兄弟で骨肉の争い",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_142",
+      "target_name": "三木谷家_楽天帝国と通信参入",
+      "before_hex": "乾",
+      "action_type": "攻める・挑戦",
+      "before_state": "絶頂・慢心",
+      "after_state": "どん底・危機",
+      "period": "1997-2024"
+    },
+    {
+      "transition_id": "FAM_JP_180",
+      "target_name": "日系ブラジル人家族_デカセギと帰還",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "混乱・カオス",
+      "period": "1990-2024"
+    },
+    {
+      "transition_id": "FAM_JP_275",
+      "target_name": "家族_相続で家族が分裂",
+      "before_hex": "坤",
+      "action_type": "分散・スピンオフ",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_294",
+      "target_name": "令和6年能登半島地震・家族避難記録",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "どん底・危機",
+      "period": "2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "子育て世帯の経済的負担（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ひとり親世帯の困窮（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "児童虐待の増加傾向（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "DV被害の継続（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "住宅ローン負担の継続（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "住宅ローン破綻リスク（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ダブルケアの負担（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "老老介護の深刻化（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "認認介護の問題（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "遺産相続トラブルの増加（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "空き家相続問題（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "墓じまいの増加（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "撤退・縮小",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "FAM_JP_330",
+      "target_name": "震行動失敗事例001-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_331",
+      "target_name": "震行動失敗事例002-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_332",
+      "target_name": "震行動失敗事例003-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_333",
+      "target_name": "震行動失敗事例004-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_334",
+      "target_name": "震行動失敗事例005-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_335",
+      "target_name": "震行動失敗事例006-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_336",
+      "target_name": "震行動失敗事例007-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_337",
+      "target_name": "震行動失敗事例008-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_338",
+      "target_name": "震行動失敗事例009-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_339",
+      "target_name": "震行動失敗事例010-4",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "どん底・危機",
+      "period": "2000-2024"
+    }
+  ],
+  "兌": [
+    {
+      "transition_id": "FAM_JP_002",
+      "target_name": "星野リゾート・星野親子",
+      "before_hex": "坎",
+      "action_type": "刷新・破壊",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "period": "1989-1992"
+    },
+    {
+      "transition_id": "FAM_JP_003",
+      "target_name": "旭酒造（獺祭）・桜井親子三代",
+      "before_hex": "坎",
+      "action_type": "刷新・破壊",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1976-2016"
+    },
+    {
+      "transition_id": "FAM_JP_004",
+      "target_name": "サントリー・鳥井佐治両家",
+      "before_hex": "坤",
+      "action_type": "分散・スピンオフ",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1932-2024"
+    },
+    {
+      "transition_id": "FAM_JP_009",
+      "target_name": "ヤンマー・山岡家四代",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1912-現在"
+    },
+    {
+      "transition_id": "FAM_JP_010",
+      "target_name": "久光製薬・中冨家",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1847-現在"
+    },
+    {
+      "transition_id": "FAM_JP_011",
+      "target_name": "日清食品・安藤家（失敗と成功）",
+      "before_hex": "艮",
+      "action_type": "捨てる・撤退",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1981-1985"
+    },
+    {
+      "transition_id": "FAM_JP_012",
+      "target_name": "美空ひばりと母・加藤喜美枝",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1945-1989"
+    },
+    {
+      "transition_id": "FAM_JP_013",
+      "target_name": "黒柳徹子と母・黒柳朝",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "period": "1944-2006"
+    },
+    {
+      "transition_id": "FAM_JP_014",
+      "target_name": "森進一・森昌子の家族（離婚後）",
+      "before_hex": "坎",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "1986-2005"
+    },
+    {
+      "transition_id": "FAM_JP_018",
+      "target_name": "イトーヨーカ堂・伊藤家（非世襲）",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1992-2009"
+    },
+    {
+      "transition_id": "FAM_JP_020",
+      "target_name": "ニトリ・似鳥家",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1967-現在"
+    },
+    {
+      "transition_id": "FAM_JP_098",
+      "target_name": "受容的子育て_親子関係改善_家庭円満",
+      "before_hex": "巽",
+      "action_type": "守る・維持",
+      "before_state": "混乱・カオス",
+      "after_state": "安定・平和",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_106",
+      "target_name": "三井家_財閥解体と再興",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1673-1970"
+    },
+    {
+      "transition_id": "FAM_JP_122",
+      "target_name": "ゴッホ家_悲劇の画家と弟の献身",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "1853-1891"
+    },
+    {
+      "transition_id": "FAM_JP_124",
+      "target_name": "細川家_戦国大名から政治家へ",
+      "before_hex": "坤",
+      "action_type": "刷新・破壊",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1336-2024"
+    },
+    {
+      "transition_id": "FAM_JP_126",
+      "target_name": "出光家_創業者理念vs合併",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "1911-2024"
+    },
+    {
+      "transition_id": "FAM_JP_132",
+      "target_name": "橋下徹家_テレビから政界、そして評論へ",
+      "before_hex": "震",
+      "action_type": "捨てる・撤退",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2008-2024"
+    },
+    {
+      "transition_id": "FAM_JP_135",
+      "target_name": "京アニ放火遺族_創作の灯を守る",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_136",
+      "target_name": "旭川いじめ遺族_真相究明の闘い",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "FAM_JP_137",
+      "target_name": "被害者遺族_犯罪被害者の権利確立",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "1999-2024"
+    },
+    {
+      "transition_id": "FAM_JP_138",
+      "target_name": "東日本大震災遺族_語り継ぐ使命",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2011-2024"
+    },
+    {
+      "transition_id": "FAM_JP_141",
+      "target_name": "前澤家_ZOZO創業から宇宙へ",
+      "before_hex": "震",
+      "action_type": "捨てる・撤退",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1998-2024"
+    },
+    {
+      "transition_id": "FAM_JP_147",
+      "target_name": "浅田家_真央とスケート一家",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1990-2024"
+    },
+    {
+      "transition_id": "FAM_JP_149",
+      "target_name": "市川海老蔵家_團十郎襲名と家族の悲劇",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2004-2024"
+    },
+    {
+      "transition_id": "FAM_JP_152",
+      "target_name": "宇多田ヒカル家_天才の苦悩と再生",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1998-2024"
+    },
+    {
+      "transition_id": "FAM_JP_154",
+      "target_name": "太宰治家_破滅と遺産",
+      "before_hex": "坎",
+      "action_type": "守る・維持",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "1909-2024"
+    },
+    {
+      "transition_id": "FAM_JP_158",
+      "target_name": "夏目漱石家_神経衰弱と家族",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1867-2024"
+    },
+    {
+      "transition_id": "FAM_JP_160",
+      "target_name": "障害児家族_ダウン症の子と共に",
+      "before_hex": "坤",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_161",
+      "target_name": "がん患者家族_闘病と看取り",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_164",
+      "target_name": "英国王室_ダイアナの死とハリー離脱",
+      "before_hex": "坤",
+      "action_type": "分散・スピンオフ",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1981-2024"
+    },
+    {
+      "transition_id": "FAM_JP_165",
+      "target_name": "日本皇室_平成から令和へ",
+      "before_hex": "坤",
+      "action_type": "刷新・破壊",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1989-2024"
+    },
+    {
+      "transition_id": "FAM_JP_167",
+      "target_name": "スペイン王室_民主化と汚職スキャンダル",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1975-2024"
+    },
+    {
+      "transition_id": "FAM_JP_170",
+      "target_name": "パナソニック松下家_創業者精神の継承",
+      "before_hex": "乾",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1918-2024"
+    },
+    {
+      "transition_id": "FAM_JP_178",
+      "target_name": "ダーウィン家_進化論と近親婚の影",
+      "before_hex": "坤",
+      "action_type": "刷新・破壊",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1809-2024"
+    },
+    {
+      "transition_id": "FAM_JP_183",
+      "target_name": "国際結婚家族_フィリピン妻と日本",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "1980-2024"
+    },
+    {
+      "transition_id": "FAM_JP_184",
+      "target_name": "夫婦_熟年離婚への長い道",
+      "before_hex": "坤",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_190",
+      "target_name": "家族_国際結婚の文化摩擦",
+      "before_hex": "震",
+      "action_type": "対話・融合",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2012-2024"
+    },
+    {
+      "transition_id": "FAM_JP_196",
+      "target_name": "家族_ステップファミリーの模索",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_200",
+      "target_name": "家族_老舗和菓子店の廃業と再生",
+      "before_hex": "坎",
+      "action_type": "対話・融合",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_203",
+      "target_name": "家族_毒親からの絶縁",
+      "before_hex": "坎",
+      "action_type": "捨てる・撤退",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_205",
+      "target_name": "家族_離婚危機からの再構築",
+      "before_hex": "坎",
+      "action_type": "対話・融合",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_210",
+      "target_name": "家族_医師一家の伝統と革新",
+      "before_hex": "坤",
+      "action_type": "刷新・破壊",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "1970-2024"
+    },
+    {
+      "transition_id": "FAM_JP_214",
+      "target_name": "家族_子供のいじめ問題に向き合う",
+      "before_hex": "坤",
+      "action_type": "刷新・破壊",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_219",
+      "target_name": "家族_里親として子供を迎える",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_223",
+      "target_name": "家族_実家の空き家問題",
+      "before_hex": "坤",
+      "action_type": "捨てる・撤退",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_230",
+      "target_name": "家族_看取りの準備と実践",
+      "before_hex": "坎",
+      "action_type": "守る・維持",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_239",
+      "target_name": "家族_DV被害からの脱出",
+      "before_hex": "坎",
+      "action_type": "捨てる・撤退",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_244",
+      "target_name": "家族_リモートワークと家族",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_246",
+      "target_name": "家族_地方移住という選択",
+      "before_hex": "坤",
+      "action_type": "捨てる・撤退",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_250",
+      "target_name": "家族_兄弟間の確執解消",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2016-2024"
+    }
+  ],
+  "乾": [
+    {
+      "transition_id": "FAM_JP_005",
+      "target_name": "トヨタ自動車・豊田家",
+      "before_hex": "坤",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1937-現在"
+    },
+    {
+      "transition_id": "FAM_JP_015",
+      "target_name": "本田技研工業・本田宗一郎と息子",
+      "before_hex": "艮",
+      "action_type": "捨てる・撤退",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "1973-1991"
+    },
+    {
+      "transition_id": "FAM_JP_016",
+      "target_name": "松下幸之助と娘婿・平田正治",
+      "before_hex": "坎",
+      "action_type": "刷新・破壊",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "1947-1961"
+    },
+    {
+      "transition_id": "FAM_JP_017",
+      "target_name": "ソニー・盛田家（非世襲の決断）",
+      "before_hex": "艮",
+      "action_type": "捨てる・撤退",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1976-1995"
+    },
+    {
+      "transition_id": "FAM_JP_105",
+      "target_name": "島津家_薩摩藩から公爵家へ",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1600-1947"
+    },
+    {
+      "transition_id": "FAM_JP_109",
+      "target_name": "豊田家_トヨタ創業家の継承",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1937-2024"
+    },
+    {
+      "transition_id": "FAM_JP_111",
+      "target_name": "麻生家_セメントから政界へ",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1900-2024"
+    },
+    {
+      "transition_id": "FAM_JP_120",
+      "target_name": "千利休家_茶道宗家の存続",
+      "before_hex": "坎",
+      "action_type": "分散・スピンオフ",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1522-2024"
+    },
+    {
+      "transition_id": "FAM_JP_127",
+      "target_name": "星野家_旅館から世界へ",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1914-2024"
+    },
+    {
+      "transition_id": "FAM_JP_128",
+      "target_name": "森家_森ビルと開発帝国",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1959-2024"
+    },
+    {
+      "transition_id": "FAM_JP_139",
+      "target_name": "孫家_ソフトバンク創業者一族",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1981-2024"
+    },
+    {
+      "transition_id": "FAM_JP_140",
+      "target_name": "柳井家_ユニクロ帝国の継承",
+      "before_hex": "震",
+      "action_type": "分散・スピンオフ",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1984-2024"
+    },
+    {
+      "transition_id": "FAM_JP_146",
+      "target_name": "室伏家_ハンマー投げ二代",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1972-2024"
+    },
+    {
+      "transition_id": "FAM_JP_157",
+      "target_name": "谷崎潤一郎家_妻たちの物語",
+      "before_hex": "震",
+      "action_type": "刷新・破壊",
+      "before_state": "成長痛",
+      "after_state": "持続成長・大成功",
+      "period": "1886-2024"
+    },
+    {
+      "transition_id": "FAM_JP_169",
+      "target_name": "サントリー佐治家_非上場の挑戦",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1899-2024"
+    },
+    {
+      "transition_id": "FAM_JP_171",
+      "target_name": "キッコーマン茂木家_醤油から世界へ",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1917-2024"
+    },
+    {
+      "transition_id": "FAM_JP_172",
+      "target_name": "任天堂山内家_ファミリー企業から世界企業へ",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1889-2024"
+    },
+    {
+      "transition_id": "FAM_JP_173",
+      "target_name": "ヤマト運輸小倉家_宅急便革命と離脱",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1919-2024"
+    },
+    {
+      "transition_id": "FAM_JP_174",
+      "target_name": "キュリー家_放射能研究の三代",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "持続成長・大成功",
+      "period": "1867-2024"
+    },
+    {
+      "transition_id": "FAM_JP_177",
+      "target_name": "湯川秀樹家_日本初ノーベル賞",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1907-1981"
+    },
+    {
+      "transition_id": "FAM_JP_189",
+      "target_name": "家族_親の事業失敗と再起",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "period": "2008-2024"
+    },
+    {
+      "transition_id": "FAM_JP_201",
+      "target_name": "家族_町の本屋から全国チェーンへ",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1980-2024"
+    },
+    {
+      "transition_id": "FAM_JP_207",
+      "target_name": "家族_三代続く老舗旅館",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1950-2024"
+    },
+    {
+      "transition_id": "FAM_JP_208",
+      "target_name": "家族_農家から農業法人へ",
+      "before_hex": "艮",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_209",
+      "target_name": "家族_ベンチャー創業の父子",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_212",
+      "target_name": "家族_不妊治療を経ての出産",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_289",
+      "target_name": "甲子軒（祖父から孫への家族承継成功）",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "period": "1924-2024"
+    },
+    {
+      "transition_id": "FAM_JP_299",
+      "target_name": "阿部一二三・詩兄妹五輪連覇と詩引退（2024年）",
+      "before_hex": "兌",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2024"
+    },
+    {
+      "transition_id": "FAM_JP_496",
+      "target_name": "ロスチャイルド家の興隆（1760-1900）",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1760-1900"
+    },
+    {
+      "transition_id": "FAM_JP_497",
+      "target_name": "三井家の発展（1673-1900）",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1673-1900"
+    },
+    {
+      "transition_id": "FAM_JP_498",
+      "target_name": "住友家の銅山経営（1590-1900）",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "1590-1900"
+    },
+    {
+      "transition_id": "FAM_JP_521",
+      "target_name": "家族 事業承継の成功例",
+      "before_hex": "艮",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "持続成長・大成功",
+      "period": "2010-2020"
+    },
+    {
+      "transition_id": "FAM_JP_525",
+      "target_name": "住友家（住友グループ）",
+      "before_hex": "坤",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "period": "1590-2024"
+    },
+    {
+      "transition_id": "FAM_JP_528",
+      "target_name": "フェルディナント・ポルシェとフェリー・ポルシェ",
+      "before_hex": "艮",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1931-1998"
+    },
+    {
+      "transition_id": "FAM_JP_696",
+      "target_name": "エルメス（ファミリーガバナンス）",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1837-2024"
+    }
+  ],
+  "坤": [
+    {
+      "transition_id": "FAM_JP_006",
+      "target_name": "竹中工務店・竹中家",
+      "before_hex": "艮",
+      "action_type": "捨てる・撤退",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "1610-2013"
+    },
+    {
+      "transition_id": "FAM_JP_008",
+      "target_name": "飯髙兄弟（ステップファミリー）",
+      "before_hex": "坎",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "2000-2020"
+    },
+    {
+      "transition_id": "FAM_JP_019",
+      "target_name": "ユニクロ・柳井家（息子への承継準備）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "安定・平和",
+      "period": "2000-現在"
+    },
+    {
+      "transition_id": "FAM_JP_026",
+      "target_name": "D家_事業承継成功",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "FAM_JP_028",
+      "target_name": "F家_不妊治療10年",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2012-2022"
+    },
+    {
+      "transition_id": "FAM_JP_029",
+      "target_name": "G家_ヤングケアラー",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_030",
+      "target_name": "H家_親の借金発覚",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2023"
+    },
+    {
+      "transition_id": "FAM_JP_032",
+      "target_name": "J家_三世代同居の知恵",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "FAM_JP_034",
+      "target_name": "L家_不登校からの回復",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "安定・平和",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_035",
+      "target_name": "M家_発達障害児の子育て",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "安定・平和",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_038",
+      "target_name": "P家_国際結婚の苦難",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "FAM_JP_039",
+      "target_name": "Q家_農家の後継問題",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2010-2024"
+    },
+    {
+      "transition_id": "FAM_JP_041",
+      "target_name": "S家_シングルファザーの奮闘",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "安定・平和",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_043",
+      "target_name": "U家_認知症介護の10年",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2014-2024"
+    },
+    {
+      "transition_id": "FAM_JP_044",
+      "target_name": "V家_ステップファミリー成功",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・カオス",
+      "after_state": "安定・平和",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_046",
+      "target_name": "X家_二世帯住宅の成功",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "FAM_JP_047",
+      "target_name": "Y家_里親からの養子縁組",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "FAM_JP_049",
+      "target_name": "AA家_双子育児の危機",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "安定・平和",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_050",
+      "target_name": "BB家_親の毒親化",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_051",
+      "target_name": "CC家_孫育てで再生",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_052",
+      "target_name": "DD家_跡取り娘の挑戦",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_060",
+      "target_name": "事業承継失敗_02",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_061",
+      "target_name": "介護崩壊_01",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_063",
+      "target_name": "住宅購入失敗_01",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_064",
+      "target_name": "住宅購入失敗_02",
+      "before_hex": "震",
+      "action_type": "耐える・潜伏",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_065",
+      "target_name": "人間関係_近隣トラブル_01",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_066",
+      "target_name": "子育て失敗_不登校_01",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_067",
+      "target_name": "子育て失敗_進学_01",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_068",
+      "target_name": "移住失敗_海外_01",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_070",
+      "target_name": "親子関係断絶_01",
+      "before_hex": "坤",
+      "action_type": "逃げる・放置",
+      "before_state": "停滞・閉塞",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_072",
+      "target_name": "相続対策失敗_01",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_073",
+      "target_name": "マイホーム_持ち家獲得_ローン地獄",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_074",
+      "target_name": "地方移住_QOL向上_キャリア停滞",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定・平和",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_075",
+      "target_name": "家族_二世帯住宅_経済的メリット_プライバシー問題",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_077",
+      "target_name": "田舎移住_自然環境_収入減",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_078",
+      "target_name": "子供の受験成功_進学_燃え尽き",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_079",
+      "target_name": "遺産相続_資産獲得_家族関係悪化",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_083",
+      "target_name": "親との同居_介護解決_プライバシー喪失",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "停滞・閉塞",
+      "after_state": "停滞・閉塞",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_084",
+      "target_name": "転居_環境改善_コミュニティ喪失",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_086",
+      "target_name": "子なし選択_夫婦時間_社会的圧力",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "安定・平和",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "FAM_JP_088",
+      "target_name": "単身赴任解消_家族一緒_キャリア制限",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_089",
+      "target_name": "不妊治療_1人目成功_2人目断念",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_090",
+      "target_name": "教育移住_子供不適応_親の成長",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定・平和",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_091",
+      "target_name": "リフォーム_予算超過_住み心地改善",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定・平和",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "FAM_JP_092",
+      "target_name": "田舎暮らし_理想と現実_妥協点発見",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定・平和",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_094",
+      "target_name": "ペット飼育_癒し獲得_旅行制限",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "安定・平和",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_095",
+      "target_name": "子供の受験_第二志望合格_本人満足",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "安定・平和",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "FAM_JP_104",
+      "target_name": "徳川宗家_江戸幕府から華族へ",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1603-1947"
+    },
+    {
+      "transition_id": "FAM_JP_107",
+      "target_name": "ケネディ家_アメリカの王朝",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1960-2024"
+    },
+    {
+      "transition_id": "FAM_JP_108",
+      "target_name": "ロスチャイルド家_金融王朝の変容",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "period": "1800-2024"
+    }
+  ],
+  "離": [
+    {
+      "transition_id": "FAM_JP_007",
+      "target_name": "石坂産業・石坂親子",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "2000-2010"
+    },
+    {
+      "transition_id": "FAM_JP_314",
+      "target_name": "老舗和菓子店の事業承継成功（2023-2024）",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "安定成長・成功",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "FAM_JP_485",
+      "target_name": "巽事例1-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_487",
+      "target_name": "巽事例2-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_488",
+      "target_name": "巽事例3-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_489",
+      "target_name": "巽事例4-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_490",
+      "target_name": "巽事例5-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_491",
+      "target_name": "巽事例6-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_492",
+      "target_name": "巽事例7-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_493",
+      "target_name": "巽事例8-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_494",
+      "target_name": "巽事例9-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_495",
+      "target_name": "巽事例10-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_526",
+      "target_name": "歌舞伎の世代交代（市川團十郎家）",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "安定成長・成功",
+      "period": "1660-2024"
+    },
+    {
+      "transition_id": "FAM_JP_530",
+      "target_name": "文化大革命期の知識人",
+      "before_hex": "離",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "period": "1966-1976"
+    },
+    {
+      "transition_id": "FAM_JP_531",
+      "target_name": "サムスン家（創業者一族の結束）",
+      "before_hex": "離",
+      "action_type": "刷新・破壊",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "1987-1993"
+    },
+    {
+      "transition_id": "FAM_JP_532",
+      "target_name": "ウォルトン家（ウォルマート継承）",
+      "before_hex": "離",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "1992-1998"
+    },
+    {
+      "transition_id": "FAM_JP_686",
+      "target_name": "巽事例1-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_687",
+      "target_name": "巽事例2-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_688",
+      "target_name": "巽事例3-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_689",
+      "target_name": "巽事例4-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_690",
+      "target_name": "巽事例5-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_691",
+      "target_name": "巽事例6-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_692",
+      "target_name": "巽事例7-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_693",
+      "target_name": "巽事例8-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_694",
+      "target_name": "巽事例9-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_695",
+      "target_name": "巽事例10-5 穏やかな成長",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "持続成長・大成功",
+      "period": "2000-2024"
+    }
+  ],
+  "巽": [
+    {
+      "transition_id": "FAM_JP_025",
+      "target_name": "C家_毒親からの脱出",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2010-2020"
+    },
+    {
+      "transition_id": "FAM_JP_031",
+      "target_name": "I家_DV夫から逃げる",
+      "before_hex": "坎",
+      "action_type": "攻める・挑戦",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2014-2020"
+    },
+    {
+      "transition_id": "FAM_JP_033",
+      "target_name": "K家_兄弟で親を看取る",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2019-2023"
+    },
+    {
+      "transition_id": "FAM_JP_036",
+      "target_name": "N家_夫の浮気からの再構築",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "period": "2019-2023"
+    },
+    {
+      "transition_id": "FAM_JP_040",
+      "target_name": "R家_兄の引きこもり問題",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2008-2024"
+    },
+    {
+      "transition_id": "FAM_JP_045",
+      "target_name": "W家_教育虐待の連鎖",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2010-2024"
+    },
+    {
+      "transition_id": "FAM_JP_048",
+      "target_name": "Z家_老舗旅館の廃業",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2010-2022"
+    },
+    {
+      "transition_id": "FAM_JP_283",
+      "target_name": "家族_嵐の思春期を抜けた子供との関係",
+      "before_hex": "震",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "安定成長・成功",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_296",
+      "target_name": "高齢者の運転免許返納と家族支援（2024年）",
+      "before_hex": "兌",
+      "action_type": "対話・融合",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2024"
+    },
+    {
+      "transition_id": "FAM_JP_297",
+      "target_name": "子供の不登校増加と家族対応（2024年）",
+      "before_hex": "震",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "FAM_JP_298",
+      "target_name": "東京一極集中と地方移住家族（2024年）",
+      "before_hex": "巽",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "FAM_JP_301",
+      "target_name": "ひきこもり支援強化（2024年）",
+      "before_hex": "艮",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "period": "2024"
+    },
+    {
+      "transition_id": "FAM_JP_304",
+      "target_name": "住宅ローン金利上昇と家計影響（2024年）",
+      "before_hex": "兌",
+      "action_type": "対話・融合",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2024"
+    },
+    {
+      "transition_id": "FAM_JP_306",
+      "target_name": "こども誰でも通園制度（2024年）",
+      "before_hex": "巽",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2024"
+    },
+    {
+      "transition_id": "FAM_JP_308",
+      "target_name": "共同親権導入（2024年）",
+      "before_hex": "兌",
+      "action_type": "刷新・破壊",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2024"
+    },
+    {
+      "transition_id": "FAM_JP_309",
+      "target_name": "不妊治療保険適用拡大効果（2022-2024）",
+      "before_hex": "巽",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "不妊治療継続中のカップル（2021-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "交際発展中のカップル（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "夫婦関係修復中のカップル（2022-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "親子関係改善中の家庭（2022-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "住宅ローン返済中の家庭（2015-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2015-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "子どもの習い事選び中の親（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "中学受験を検討中の家庭（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "不登校の子を支える家庭（2022-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "発達障害児の療育中の家庭（2021-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "遠距離介護中の家族（2021-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "認知症の親を介護中の家族（2020-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2020-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "シングルマザーの子育て奮闘中（2021-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2021-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "多胎児育児中の家庭（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ステップファミリー形成中（2022-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "物価高対応中の家計（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "老人ホーム入居検討中の家族（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "相続対策検討中の家族（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "実家の片付け中の子世代（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ペットの介護中の家族（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "新居探し中の新婚カップル（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "リフォーム計画中の家庭（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "子どもの進路相談中の親（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "太陽光発電導入中の家庭（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "EV購入検討中の家庭（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "エコ住宅建設中の家庭（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "FAM_JP_329",
+      "target_name": "ロッテグループ経営権紛争（2015-2020）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "period": "2015-2020"
+    }
+  ],
+  "震": [
+    {
+      "transition_id": "FAM_JP_076",
+      "target_name": "家族_介護離職回避_仕事継続_介護負担",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_080",
+      "target_name": "国際結婚_愛獲得_文化衝突",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2018-2024"
+    },
+    {
+      "transition_id": "FAM_JP_081",
+      "target_name": "養子縁組_子供獲得_適応困難",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_082",
+      "target_name": "第二子出産_家族増加_負担増加",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_085",
+      "target_name": "転勤受諾_キャリア維持_家族別居",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_087",
+      "target_name": "海外赴任_経験獲得_家族犠牲",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "安定成長・成功",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "FAM_JP_093",
+      "target_name": "二世帯住宅_同居ストレス_経済メリット",
+      "before_hex": "坤",
+      "action_type": "攻める・挑戦",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_112",
+      "target_name": "サウジアラビア王家_石油王国の変革",
+      "before_hex": "乾",
+      "action_type": "刷新・破壊",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "period": "1932-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "宝くじ当選で人生激変した家族（2023）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "遺産相続で家族関係激変（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "双子誕生で生活一変した家庭（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "住宅ローン完済で家計激変（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "子供の不登校で家族の絆再構築（2022-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "拡大・繁栄",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "離婚後の共同親権で家族形態変化（2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "国際結婚で文化的激変を経験（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "突然の転勤で家族の生活激変（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "三世代同居開始で生活一変（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "家族形態の多様化が進む（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "共働き世帯が標準化（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "男性育休取得率が急上昇（2022-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "少子化加速で家族計画に変化（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "老老介護問題が深刻化（2022-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "混乱・衰退",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "相続法改正で家族間トラブル減少（2023-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "デジタル終活が普及（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "分散・探索",
+      "before_state": "安定・停止",
+      "after_state": "拡大・繁栄",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ヤングケアラー支援が社会課題に（2022-2024）",
+      "before_hex": "坎",
+      "action_type": "分散・探索",
+      "before_state": "混乱・衰退",
+      "after_state": "拡大・繁栄",
+      "period": "2022-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "空き家問題で家族対応迫られる（2023-2024）",
+      "before_hex": "艮",
+      "action_type": "撤退・収縮",
+      "before_state": "安定・停止",
+      "after_state": "混乱・衰退",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ペットと家族の関係が変化（2022-2024）",
+      "before_hex": "乾",
+      "action_type": "集中・拡大",
+      "before_state": "拡大・繁栄",
+      "after_state": "拡大・繁栄",
+      "period": "2022-2024"
+    }
+  ],
+  "艮": [
+    {
+      "transition_id": "FAM_JP_097",
+      "target_name": "実家の農業継承_規模縮小_有機転換",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "停滞・閉塞",
+      "after_state": "縮小安定・生存",
+      "period": "2019-2024"
+    },
+    {
+      "transition_id": "FAM_JP_114",
+      "target_name": "三世代同居家族A_介護と世代間葛藤",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2010-2020"
+    },
+    {
+      "transition_id": "FAM_JP_143",
+      "target_name": "永守家_日本電産の世襲断念",
+      "before_hex": "震",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "停滞・閉塞",
+      "period": "1973-2024"
+    },
+    {
+      "transition_id": "FAM_JP_159",
+      "target_name": "難病患者家族_ALS当事者と介護の日々",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "period": "2010-2024"
+    },
+    {
+      "transition_id": "FAM_JP_163",
+      "target_name": "認知症家族_老老介護の現実",
+      "before_hex": "坤",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2010-2024"
+    },
+    {
+      "transition_id": "FAM_JP_168",
+      "target_name": "タイ王室_ラーマ9世の遺産とラーマ10世",
+      "before_hex": "乾",
+      "action_type": "守る・維持",
+      "before_state": "絶頂・慢心",
+      "after_state": "停滞・閉塞",
+      "period": "1946-2024"
+    },
+    {
+      "transition_id": "FAM_JP_181",
+      "target_name": "技能実習生家族_ベトナムからの夢と現実",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "停滞・閉塞",
+      "period": "2010-2024"
+    },
+    {
+      "transition_id": "FAM_JP_182",
+      "target_name": "難民家族_シリアから日本へ",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "どん底・危機",
+      "after_state": "停滞・閉塞",
+      "period": "2011-2024"
+    },
+    {
+      "transition_id": "FAM_JP_300",
+      "target_name": "高齢者の孤独死増加と対策（2024年）",
+      "before_hex": "離",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "停滞・閉塞",
+      "period": "2024"
+    },
+    {
+      "transition_id": "FAM_JP_302",
+      "target_name": "電気料金値上げと家計負担（2023-2024）",
+      "before_hex": "坤",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "停滞・閉塞",
+      "period": "2023-2024"
+    },
+    {
+      "transition_id": "FAM_JP_303",
+      "target_name": "食品値上げと家計防衛（2024年）",
+      "before_hex": "巽",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "家族経営農家・規模縮小と直売（2012-2020）",
+      "before_hex": "坎",
+      "action_type": "捨てる・転換",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2012-2020"
+    },
+    {
+      "transition_id": "",
+      "target_name": "老舗旅館・経営縮小と維持（2015-2022）",
+      "before_hex": "坎",
+      "action_type": "捨てる・転換",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2015-2022"
+    },
+    {
+      "transition_id": "",
+      "target_name": "家族経営商店・大型店対策と維持（2010-2020）",
+      "before_hex": "坎",
+      "action_type": "捨てる・転換",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2010-2020"
+    },
+    {
+      "transition_id": "",
+      "target_name": "老夫婦の定食屋・縮小営業での継続（2016-2023）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2016-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "家族経営酒蔵・生産量縮小と維持（2010-2020）",
+      "before_hex": "坎",
+      "action_type": "捨てる・転換",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2010-2020"
+    },
+    {
+      "transition_id": "",
+      "target_name": "退職後の夫婦二人暮らし（2014-2022）",
+      "before_hex": "乾",
+      "action_type": "捨てる・転換",
+      "before_state": "拡大・繁栄",
+      "after_state": "安定・停止",
+      "period": "2014-2022"
+    },
+    {
+      "transition_id": "",
+      "target_name": "転勤族から定住へ（2015-2023）",
+      "before_hex": "巽",
+      "action_type": "捨てる・転換",
+      "before_state": "拡大・繁栄",
+      "after_state": "安定・停止",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "結婚後の安定した家庭（2016-2024）",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "拡大・繁栄",
+      "after_state": "安定・停止",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "再婚後の安定した生活（2015-2023）",
+      "before_hex": "坎",
+      "action_type": "捨てる・転換",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "ステップファミリーの安定（2016-2024）",
+      "before_hex": "坎",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "養子縁組後の安定した家庭（2014-2023）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "安定・停止",
+      "period": "2014-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "里親家庭の安定（2015-2023）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "安定・停止",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "国際結婚後の安定（2015-2023）",
+      "before_hex": "巽",
+      "action_type": "耐える・潜伏",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "遠距離恋愛から同居へ（2017-2024）",
+      "before_hex": "巽",
+      "action_type": "捨てる・転換",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2017-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "晩婚後の穏やかな生活（2016-2024）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "安定・停止",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "事実婚カップルの安定（2015-2023）",
+      "before_hex": "兌",
+      "action_type": "耐える・潜伏",
+      "before_state": "拡大・繁栄",
+      "after_state": "安定・停止",
+      "period": "2015-2023"
+    },
+    {
+      "transition_id": "",
+      "target_name": "同性パートナーシップの安定（2016-2024）",
+      "before_hex": "坎",
+      "action_type": "捨てる・転換",
+      "before_state": "混乱・衰退",
+      "after_state": "安定・停止",
+      "period": "2016-2024"
+    },
+    {
+      "transition_id": "",
+      "target_name": "高齢夫婦の穏やかな生活（2014-2023）",
+      "before_hex": "艮",
+      "action_type": "耐える・潜伏",
+      "before_state": "安定・停止",
+      "after_state": "安定・停止",
+      "period": "2014-2023"
+    },
+    {
+      "transition_id": "FAM_JP_478",
+      "target_name": "兌前失敗事例031-5",
+      "before_hex": "兌",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "1990-2024"
+    },
+    {
+      "transition_id": "FAM_JP_479",
+      "target_name": "離前失敗事例001-5",
+      "before_hex": "離",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "1990-2024"
+    },
+    {
+      "transition_id": "FAM_JP_480",
+      "target_name": "離前失敗事例002-5",
+      "before_hex": "離",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "1990-2024"
+    },
+    {
+      "transition_id": "FAM_JP_481",
+      "target_name": "離前失敗事例003-5",
+      "before_hex": "離",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "1990-2024"
+    },
+    {
+      "transition_id": "FAM_JP_482",
+      "target_name": "離前失敗事例004-5",
+      "before_hex": "離",
+      "action_type": "守る・維持",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "period": "1990-2024"
+    },
+    {
+      "transition_id": "FAM_JP_484",
+      "target_name": "最終失敗事例E",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "2000-2024"
+    },
+    {
+      "transition_id": "FAM_JP_499",
+      "target_name": "古代家系1-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_500",
+      "target_name": "古代家系2-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_501",
+      "target_name": "古代家系3-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_502",
+      "target_name": "古代家系4-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_503",
+      "target_name": "古代家系5-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_504",
+      "target_name": "古代家系6-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_505",
+      "target_name": "古代家系7-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_506",
+      "target_name": "古代家系8-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_507",
+      "target_name": "古代家系9-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_508",
+      "target_name": "古代家系10-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_509",
+      "target_name": "古代家系11-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_510",
+      "target_name": "古代家系12-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_511",
+      "target_name": "古代家系13-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_512",
+      "target_name": "古代家系14-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    },
+    {
+      "transition_id": "FAM_JP_513",
+      "target_name": "古代家系15-1",
+      "before_hex": "艮",
+      "action_type": "守る・維持",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "period": "BC500-1800"
+    }
+  ]
+}
