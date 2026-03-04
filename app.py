@@ -639,6 +639,7 @@ def backtrace_describe_current():
     current_hex = data.get("current_hex")
     current_state = data.get("current_state", "")
     action_type = data.get("action_type", "")
+    expertise_level = data.get("expertise_level", "intermediate")
 
     s, err = _get_session_or_404(session_id)
     if err:
@@ -655,7 +656,8 @@ def backtrace_describe_current():
             return jsonify({"error": "current_hex は整数である必要があります"}), 400
 
     result = backtrace_orchestrator.describe_current(
-        s, current_hex=current_hex, current_state=current_state, action_type=action_type
+        s, current_hex=current_hex, current_state=current_state,
+        action_type=action_type, expertise_level=expertise_level,
     )
     if "error" in result:
         return jsonify(result), 400

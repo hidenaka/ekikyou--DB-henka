@@ -533,6 +533,7 @@ class BacktraceSessionOrchestrator:
         current_hex: Optional[int] = None,
         current_state: Optional[str] = None,
         action_type: Optional[str] = None,
+        expertise_level: str = "intermediate",
     ) -> dict:
         """現在地（本卦・状態・行動）を設定する。
 
@@ -546,11 +547,21 @@ class BacktraceSessionOrchestrator:
             current_hex: 現在の卦番号 1-64（Direct モード用）
             current_state: 現在の状態文字列（Direct モード用）
             action_type: 現在の行動タイプ文字列（Direct モード用）
+            expertise_level: ユーザーの専門性レベル
+                ("novice", "intermediate", "advanced", "expert")
+                デフォルト "intermediate" で後方互換を維持
 
         Returns:
-            {current_hex, current_state, current_action, phase: "analyzing"}
+            {current_hex, current_state, current_action, expertise_level, phase: "analyzing"}
             エラー時は {"error": str}
         """
+        # -------------------------------------------------------
+        # 専門性レベルのバリデーション
+        # -------------------------------------------------------
+        _valid_levels = ("novice", "intermediate", "advanced", "expert")
+        if expertise_level not in _valid_levels:
+            expertise_level = "intermediate"
+
         # -------------------------------------------------------
         # Direct モード
         # -------------------------------------------------------
@@ -573,12 +584,14 @@ class BacktraceSessionOrchestrator:
             session["current_hex"] = current_hex
             session["current_state"] = current_state
             session["current_action"] = action
+            session["expertise_level"] = expertise_level
             session["phase"] = "analyzing"
 
             return {
                 "current_hex": current_hex,
                 "current_state": current_state,
                 "current_action": action,
+                "expertise_level": expertise_level,
                 "phase": "analyzing",
             }
 
@@ -612,12 +625,14 @@ class BacktraceSessionOrchestrator:
             session["current_hex"] = ex_hex
             session["current_state"] = ex_state
             session["current_action"] = ex_action
+            session["expertise_level"] = expertise_level
             session["phase"] = "analyzing"
 
             return {
                 "current_hex": ex_hex,
                 "current_state": ex_state,
                 "current_action": ex_action,
+                "expertise_level": expertise_level,
                 "phase": "analyzing",
             }
 
@@ -709,13 +724,17 @@ class BacktraceSessionOrchestrator:
         if not goal_state:
             return {"error": "目標の状態が設定されていません"}
 
+        # 専門性レベル（describe_current で設定済み、未設定時はデフォルト）
+        expertise_level = session.get("expertise_level", "intermediate")
+
         try:
-            # ----- 1. フルバックトレース -----
+            # ----- 1. フルバックトレース（専門性レベルを適用） -----
             backtrace_result = self._backtrace_engine.full_backtrace(
                 current_hex=current_hex,
                 current_state=current_state,
                 goal_hex=goal_hex,
                 goal_state=goal_state,
+                expertise_level=expertise_level,
             )
 
             # ----- 2. ギャップ分析 -----

@@ -255,6 +255,90 @@ class BacktraceEngine:
     Layer 3 (L3): 行動レベル逆算 — 具体的な行動・ルートの推奨
     """
 
+    # ------------------------------------------------------------------
+    # 専門性レベル別スコアリングウェイト
+    # ------------------------------------------------------------------
+    VALID_EXPERTISE_LEVELS = ("novice", "intermediate", "advanced", "expert")
+
+    EXPERTISE_WEIGHTS: Dict[str, Dict[str, float]] = {
+        "novice": {
+            "success_rate": 0.20,       # Less weight on success rate (may not apply to novice context)
+            "case_count": 0.35,         # MORE weight on evidence base (safety first)
+            "compatibility": 0.20,
+            "path_efficiency": 0.15,
+            "pattern_match": 0.10,
+        },
+        "intermediate": {               # Current default (backward compatible)
+            "success_rate": 0.30,
+            "case_count": 0.25,
+            "compatibility": 0.20,
+            "path_efficiency": 0.15,
+            "pattern_match": 0.10,
+        },
+        "advanced": {
+            "success_rate": 0.40,       # More weight on what actually works
+            "case_count": 0.10,         # Less need for evidence safety net
+            "compatibility": 0.20,
+            "path_efficiency": 0.20,    # Efficiency matters more
+            "pattern_match": 0.10,
+        },
+        "expert": {
+            "success_rate": 0.45,       # Maximum weight on outcomes
+            "case_count": 0.05,         # Accept rare paths
+            "compatibility": 0.15,
+            "path_efficiency": 0.25,    # Experts value efficiency highly
+            "pattern_match": 0.10,
+        },
+    }
+
+    # 専門性レベル別 品質ゲート閾値
+    EXPERTISE_QUALITY_GATES: Dict[str, Dict[str, Any]] = {
+        "novice": {
+            "rq1_min_cases": 20,        # 安全のため多くの事例を要求
+            "rq2_min_success_rate": 0.50,
+            "rq5_ci_z": 2.576,          # 99%信頼区間
+            "rq5_ci_label": "99%",
+        },
+        "intermediate": {
+            "rq1_min_cases": 5,
+            "rq2_min_success_rate": 0.30,
+            "rq5_ci_z": 1.960,          # 95%信頼区間
+            "rq5_ci_label": "95%",
+        },
+        "advanced": {
+            "rq1_min_cases": 5,
+            "rq2_min_success_rate": 0.25,
+            "rq5_ci_z": 1.645,          # 90%信頼区間
+            "rq5_ci_label": "90%",
+        },
+        "expert": {
+            "rq1_min_cases": 3,
+            "rq2_min_success_rate": 0.20,
+            "rq5_ci_z": 1.282,          # 80%信頼区間
+            "rq5_ci_label": "80%",
+        },
+    }
+
+    # 専門性レベル別 「耐える・潜伏」ブースト係数
+    # expert/advanced は経験に基づく「戦略的忍耐」を高く評価する
+    EXPERTISE_ENDURE_BOOST: Dict[str, float] = {
+        "novice": 1.0,
+        "intermediate": 1.0,
+        "advanced": 1.15,
+        "expert": 1.30,
+    }
+
+    # スケール（規模）マッチング用の重み
+    # 同規模: 1.0, 隣接規模: 0.7, 遠い規模: 0.3
+    _SCALE_CATEGORIES: Dict[str, int] = {
+        "PERS": 0,   # 個人
+        "FAM": 1,    # 家族
+        "ORG": 2,    # 組織・企業
+        "CORP": 2,   # 企業
+        "GOV": 3,    # 政府・国家
+        "NATL": 3,   # 国家
+    }
+
     # 八卦→日本語行動タイプのマッピング
     # prob_tables.json の action_type_to_hex テーブルから導出:
     #   各八卦に対して最も高い weighted (prob * n) のaction_typeを割り当て。
@@ -543,6 +627,7 @@ class BacktraceEngine:
         current_state: str,
         goal_hex: int,
         goal_state: str,
+        expertise_level: str = "intermediate",
     ) -> Dict:
         """
         L3 逆算: 具体的な行動パターン・ルートを逆算する。
@@ -552,6 +637,8 @@ class BacktraceEngine:
             current_state: 現在の状態
             goal_hex: 目標の卦番号 (1-64)
             goal_state: 目標の状態
+            expertise_level: ユーザーの専門性レベル
+                ("novice", "intermediate", "advanced", "expert")
 
         Returns:
             {
@@ -648,10 +735,27 @@ class BacktraceEngine:
                     current_score = action_scores.get(action, 0.0)
                     action_scores[action] = max(current_score, score)
 
+        # --- 専門性レベル別「耐える・潜伏」ブースト ---
+        endure_boost = self.EXPERTISE_ENDURE_BOOST.get(expertise_level, 1.0)
+        endure_key = "耐える・潜伏"
+        if endure_boost > 1.0 and endure_key in action_scores:
+            action_scores[endure_key] = min(
+                1.0, action_scores[endure_key] * endure_boost
+            )
+
         action_recommendations = sorted(
             [{"action_type": a, "score": round(s, 4)} for a, s in action_scores.items()],
             key=lambda x: -x["score"],
         )[:5]
+
+        # --- 専門者向け注釈: 「耐える・潜伏」に戦略的意味を付与 ---
+        if expertise_level in ("advanced", "expert"):
+            for rec in action_recommendations:
+                if rec["action_type"] == endure_key:
+                    rec["annotation"] = (
+                        "経験者の「耐える」は、確信のあるタイミングを"
+                        "待つ積極的戦略です"
+                    )
 
         return {
             "routes": routes,
@@ -676,6 +780,7 @@ class BacktraceEngine:
         current_state: str,
         goal_hex: int,
         goal_state: str,
+        expertise_level: str = "intermediate",
     ) -> Dict:
         """
         フルバックトレース: L1+L2+L3 を統合し、スコアリング・品質ゲートを適用する。
@@ -685,6 +790,8 @@ class BacktraceEngine:
             current_state: 現在の状態（例: "停滞・閉塞"）
             goal_hex: 目標の卦番号 (1-64)
             goal_state: 目標の状態（例: "安定・平和"）
+            expertise_level: ユーザーの専門性レベル
+                ("novice", "intermediate", "advanced", "expert")
 
         Returns:
             {
@@ -692,23 +799,35 @@ class BacktraceEngine:
                 recommended_routes,   # スコアリング済みルートリスト
                 quality_gates,        # RQ1-RQ7 の評価結果
                 summary,
+                expertise_level,      # 適用された専門性レベル
             }
         """
+        # --- 専門性レベルのバリデーション ---
+        if expertise_level not in self.VALID_EXPERTISE_LEVELS:
+            expertise_level = "intermediate"
+
         # --- 3層の逆算を実行 ---
         l1 = self.reverse_yao(current_hex, goal_hex)
         l2 = self.reverse_state(current_state, goal_state)
-        l3 = self.reverse_action(current_hex, current_state, goal_hex, goal_state)
+        l3 = self.reverse_action(
+            current_hex, current_state, goal_hex, goal_state,
+            expertise_level=expertise_level,
+        )
 
         # --- 相性スコア ---
         compat_score = self._lookup_compat_score(current_hex, goal_hex)
 
-        # --- ルートスコアリング ---
-        scored_routes = self._score_routes(l1, l2, l3, compat_score, goal_state)
+        # --- ルートスコアリング（専門性レベル別ウェイト適用） ---
+        scored_routes = self._score_routes(
+            l1, l2, l3, compat_score, goal_state,
+            expertise_level=expertise_level,
+        )
 
         # --- RQ6: ゼロヒット時のフォールバック ---
         if not scored_routes:
             scored_routes = self._fallback_similar_hex_routes(
-                current_hex, goal_hex, l2, compat_score
+                current_hex, goal_hex, l2, compat_score,
+                expertise_level=expertise_level,
             )
 
         # --- RQ7: 矛盾ルートの排除 ---
@@ -720,8 +839,11 @@ class BacktraceEngine:
                 scored_routes, l3, compat_score, goal_state
             )
 
-        # --- 品質ゲート評価（RQ4 確保後に実行）---
-        quality_gates = self._evaluate_quality_gates(l2, l3, scored_routes)
+        # --- 品質ゲート評価（RQ4 確保後に実行、専門性レベル適用）---
+        quality_gates = self._evaluate_quality_gates(
+            l2, l3, scored_routes,
+            expertise_level=expertise_level,
+        )
 
         # --- summary ---
         primary_score = scored_routes[0]["score"] if scored_routes else 0.0
@@ -748,6 +870,7 @@ class BacktraceEngine:
             "recommended_routes": scored_routes,
             "quality_gates": quality_gates,
             "summary": summary,
+            "expertise_level": expertise_level,
         }
 
     # -----------------------------------------------------------------------
@@ -761,18 +884,32 @@ class BacktraceEngine:
         l3: Dict,
         compat_score: float,
         goal_state: str,
+        expertise_level: str = "intermediate",
     ) -> List[Dict]:
         """
         各ルートに対して route_score を計算する。
+        専門性レベルに応じてウェイトが変化する。
 
-        route_score = (
-            0.30 * success_rate +
-            0.25 * case_count_norm +   # min(case_count, 100) / 100
-            0.20 * compatibility +     # compat lookup score
-            0.15 * path_efficiency +   # 1.0 - (step_count - 1) / 5
-            0.10 * pattern_match       # 1.0 if any pattern matches, 0.5 otherwise
-        )
+        intermediate (デフォルト — 後方互換):
+            route_score = (
+                0.30 * success_rate +
+                0.25 * case_count_norm +   # min(case_count, 100) / 100
+                0.20 * compatibility +     # compat lookup score
+                0.15 * path_efficiency +   # 1.0 - (step_count - 1) / 5
+                0.10 * pattern_match       # 1.0 if any pattern matches, 0.5 otherwise
+            )
         """
+        # 専門性レベル別ウェイトを取得
+        weights = self.EXPERTISE_WEIGHTS.get(
+            expertise_level, self.EXPERTISE_WEIGHTS["intermediate"]
+        )
+        qg_config = self.EXPERTISE_QUALITY_GATES.get(
+            expertise_level, self.EXPERTISE_QUALITY_GATES["intermediate"]
+        )
+        ci_z = qg_config["rq5_ci_z"]
+        ci_label = qg_config["rq5_ci_label"]
+        rq1_min = qg_config["rq1_min_cases"]
+
         scored: List[Dict] = []
         case_count = l2.get("case_count", 0)
         case_count_norm = min(case_count, 100) / 100.0
@@ -789,18 +926,18 @@ class BacktraceEngine:
             pattern_match = 1.0 if has_pattern else 0.5
 
             score = (
-                0.30 * success_rate
-                + 0.25 * case_count_norm
-                + 0.20 * compat_score
-                + 0.15 * path_efficiency
-                + 0.10 * pattern_match
+                weights["success_rate"] * success_rate
+                + weights["case_count"] * case_count_norm
+                + weights["compatibility"] * compat_score
+                + weights["path_efficiency"] * path_efficiency
+                + weights["pattern_match"] * pattern_match
             )
 
             labels: List[str] = []
-            if case_count < 5:
+            if case_count < rq1_min:
                 labels.append("reference_only")  # RQ1
 
-            # Wilson スコア区間 (RQ5)
+            # Wilson スコア区間 (RQ5) — 専門性レベル別z値を適用
             # ルートの各ステップの最小count（最も弱いリンク）をnとして使う
             steps = route_data.get("steps", [])
             step_counts = [
@@ -813,7 +950,7 @@ class BacktraceEngine:
                 ci_n = case_count  # フォールバック: L2のcase_count
 
             ci_lower, ci_upper = _wilson_score_interval(
-                int(ci_n * success_rate), ci_n
+                int(ci_n * success_rate), ci_n, z=ci_z
             )
 
             scored.append({
@@ -824,7 +961,7 @@ class BacktraceEngine:
                 "confidence_interval": {
                     "lower": ci_lower,
                     "upper": ci_upper,
-                    "note": f"95%信頼区間 (n={ci_n})",
+                    "note": f"{ci_label}信頼区間 (n={ci_n})",
                 },
                 "action_recommendations": l3.get("action_recommendations", []),
             })
@@ -881,11 +1018,15 @@ class BacktraceEngine:
         goal_hex: int,
         l2: Dict,
         compat_score: float,
+        expertise_level: str = "intermediate",
     ) -> List[Dict]:
         """
         RQ6: RouteNavigator でルートが見つからなかった場合に、
         ハミング距離 ±1 の近隣卦でフォールバック検索を行う。
         """
+        weights = self.EXPERTISE_WEIGHTS.get(
+            expertise_level, self.EXPERTISE_WEIGHTS["intermediate"]
+        )
         fallback_routes: List[Dict] = []
         case_count = l2.get("case_count", 0)
         case_count_norm = min(case_count, 100) / 100.0
@@ -915,11 +1056,11 @@ class BacktraceEngine:
                         step_count = route_data.get("step_count", 1)
                         path_efficiency = max(0.0, 1.0 - (step_count - 1) / 5.0)
                         score = (
-                            0.30 * sr
-                            + 0.25 * case_count_norm
-                            + 0.20 * compat_score
-                            + 0.15 * path_efficiency
-                            + 0.10 * 0.5  # パターンマッチなし
+                            weights["success_rate"] * sr
+                            + weights["case_count"] * case_count_norm
+                            + weights["compatibility"] * compat_score
+                            + weights["path_efficiency"] * path_efficiency
+                            + weights["pattern_match"] * 0.5  # パターンマッチなし
                         )
                         fallback_routes.append({
                             "title": f"近傍ルート（{get_hexagram_name(neighbor)} 経由）",
@@ -979,15 +1120,17 @@ class BacktraceEngine:
     # -----------------------------------------------------------------------
 
     def _evaluate_quality_gates(
-        self, l2: Dict, l3: Dict, scored_routes: List[Dict]
+        self, l2: Dict, l3: Dict, scored_routes: List[Dict],
+        expertise_level: str = "intermediate",
     ) -> Dict:
         """
         RQ1-RQ7 の品質ゲートを評価する。
+        専門性レベルに応じて閾値が変化する。
 
         Returns:
             {
-                rq1_reference_only: bool,  # case_count < 5
-                rq2_low_success_rate: bool,  # primary success_rate < 0.3
+                rq1_reference_only: bool,  # case_count < threshold
+                rq2_low_success_rate: bool,  # primary success_rate < threshold
                 rq3_no_deterministic: bool,  # True = 違反なし
                 rq4_has_alternative: bool,   # 代替ルートが1つ以上ある
                 rq5_confidence_interval_computed: bool,
@@ -995,13 +1138,17 @@ class BacktraceEngine:
                 rq7_no_contradictory: bool,  # True = 矛盾排除済み
             }
         """
+        qg_config = self.EXPERTISE_QUALITY_GATES.get(
+            expertise_level, self.EXPERTISE_QUALITY_GATES["intermediate"]
+        )
+
         case_count = l2.get("case_count", 0)
-        rq1 = case_count < 5
+        rq1 = case_count < qg_config["rq1_min_cases"]
 
         primary_sr = 0.0
         if scored_routes:
             primary_sr = scored_routes[0].get("route", {}).get("total_success_rate", 0.0)
-        rq2 = primary_sr < 0.3  # True = 代替ルートが必要な状態
+        rq2 = primary_sr < qg_config["rq2_min_success_rate"]
 
         # RQ3: deterministic words チェック（confidence_note / 推奨アクション名）
         rq3_violation = False
