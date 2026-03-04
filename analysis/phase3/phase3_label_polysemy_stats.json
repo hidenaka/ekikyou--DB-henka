@@ -1,0 +1,4240 @@
+{
+  "metadata": {
+    "total_cases": 13060,
+    "scale_distribution": {
+      "company": 5510,
+      "individual": 3217,
+      "country": 1381,
+      "family": 787,
+      "other": 2165
+    },
+    "analysis_date": "2026-03-04",
+    "description": "ラベル多義性問題の定量分析: action_type, before_state, after_state, outcomeの各ラベルについて、scale間のJensen-Shannon divergenceを算出"
+  },
+  "action_type_polysemy": {
+    "交流・発表": {
+      "jsd_vs_global": 0.269074,
+      "distribution": {
+        "company": 0.0821,
+        "individual": 0.159,
+        "family": 0.0923,
+        "country": 0.0,
+        "other": 0.6667
+      },
+      "scale_share": {
+        "company": 0.0029,
+        "individual": 0.0096,
+        "family": 0.0229,
+        "country": 0.0,
+        "other": 0.06
+      },
+      "total_count": 195,
+      "scale_counts": {
+        "company": 16,
+        "individual": 31,
+        "family": 18,
+        "country": 0,
+        "other": 130
+      },
+      "max_pair_divergence": 0.0571,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "分散・スピンオフ": {
+      "jsd_vs_global": 0.040614,
+      "distribution": {
+        "company": 0.5503,
+        "individual": 0.0828,
+        "family": 0.0888,
+        "country": 0.0828,
+        "other": 0.1953
+      },
+      "scale_share": {
+        "company": 0.0169,
+        "individual": 0.0044,
+        "family": 0.0191,
+        "country": 0.0101,
+        "other": 0.0152
+      },
+      "total_count": 169,
+      "scale_counts": {
+        "company": 93,
+        "individual": 14,
+        "family": 15,
+        "country": 14,
+        "other": 33
+      },
+      "max_pair_divergence": 0.0147,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    "分散・探索": {
+      "jsd_vs_global": 0.031667,
+      "distribution": {
+        "company": 0.2906,
+        "individual": 0.2104,
+        "family": 0.0601,
+        "country": 0.1002,
+        "other": 0.3387
+      },
+      "scale_share": {
+        "company": 0.0263,
+        "individual": 0.0326,
+        "family": 0.0381,
+        "country": 0.0362,
+        "other": 0.0781
+      },
+      "total_count": 499,
+      "scale_counts": {
+        "company": 145,
+        "individual": 105,
+        "family": 30,
+        "country": 50,
+        "other": 169
+      },
+      "max_pair_divergence": 0.0517,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "刷新・破壊": {
+      "jsd_vs_global": 0.019824,
+      "distribution": {
+        "company": 0.4564,
+        "individual": 0.1878,
+        "family": 0.0471,
+        "country": 0.2025,
+        "other": 0.1062
+      },
+      "scale_share": {
+        "company": 0.1178,
+        "individual": 0.083,
+        "family": 0.0851,
+        "country": 0.2085,
+        "other": 0.0697
+      },
+      "total_count": 1422,
+      "scale_counts": {
+        "company": 649,
+        "individual": 267,
+        "family": 67,
+        "country": 288,
+        "other": 151
+      },
+      "max_pair_divergence": 0.1388,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    "守る・維持": {
+      "jsd_vs_global": 0.014876,
+      "distribution": {
+        "company": 0.4097,
+        "individual": 0.1578,
+        "family": 0.1145,
+        "country": 0.1349,
+        "other": 0.1832
+      },
+      "scale_share": {
+        "company": 0.1201,
+        "individual": 0.0793,
+        "family": 0.2351,
+        "country": 0.1579,
+        "other": 0.1367
+      },
+      "total_count": 1616,
+      "scale_counts": {
+        "company": 662,
+        "individual": 255,
+        "family": 185,
+        "country": 218,
+        "other": 296
+      },
+      "max_pair_divergence": 0.1558,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    "対話・融合": {
+      "jsd_vs_global": 0.01195,
+      "distribution": {
+        "company": 0.4508,
+        "individual": 0.1842,
+        "family": 0.0935,
+        "country": 0.0629,
+        "other": 0.2087
+      },
+      "scale_share": {
+        "company": 0.147,
+        "individual": 0.1029,
+        "family": 0.2135,
+        "country": 0.0818,
+        "other": 0.1732
+      },
+      "total_count": 1797,
+      "scale_counts": {
+        "company": 810,
+        "individual": 331,
+        "family": 168,
+        "country": 113,
+        "other": 375
+      },
+      "max_pair_divergence": 0.1316,
+      "max_divergent_pair": [
+        "family",
+        "country"
+      ]
+    },
+    "拡大・攻め": {
+      "jsd_vs_global": 0.064451,
+      "distribution": {
+        "company": 0.4138,
+        "individual": 0.1724,
+        "family": 0.0,
+        "country": 0.0603,
+        "other": 0.3534
+      },
+      "scale_share": {
+        "company": 0.0087,
+        "individual": 0.0062,
+        "family": 0.0,
+        "country": 0.0051,
+        "other": 0.0189
+      },
+      "total_count": 116,
+      "scale_counts": {
+        "company": 48,
+        "individual": 20,
+        "family": 0,
+        "country": 7,
+        "other": 41
+      },
+      "max_pair_divergence": 0.0139,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    "捨てる・撤退": {
+      "jsd_vs_global": 0.030529,
+      "distribution": {
+        "company": 0.5768,
+        "individual": 0.2521,
+        "family": 0.0259,
+        "country": 0.0373,
+        "other": 0.1079
+      },
+      "scale_share": {
+        "company": 0.1009,
+        "individual": 0.0755,
+        "family": 0.0318,
+        "country": 0.0261,
+        "other": 0.048
+      },
+      "total_count": 964,
+      "scale_counts": {
+        "company": 556,
+        "individual": 243,
+        "family": 25,
+        "country": 36,
+        "other": 104
+      },
+      "max_pair_divergence": 0.0748,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    },
+    "捨てる・転換": {
+      "jsd_vs_global": 0.072651,
+      "distribution": {
+        "company": 0.3533,
+        "individual": 0.4688,
+        "family": 0.0208,
+        "country": 0.0069,
+        "other": 0.1501
+      },
+      "scale_share": {
+        "company": 0.0278,
+        "individual": 0.0631,
+        "family": 0.0114,
+        "country": 0.0022,
+        "other": 0.03
+      },
+      "total_count": 433,
+      "scale_counts": {
+        "company": 153,
+        "individual": 203,
+        "family": 9,
+        "country": 3,
+        "other": 65
+      },
+      "max_pair_divergence": 0.0609,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    "撤退・収縮": {
+      "jsd_vs_global": 0.080656,
+      "distribution": {
+        "company": 0.3824,
+        "individual": 0.0588,
+        "family": 0.0294,
+        "country": 0.1765,
+        "other": 0.3529
+      },
+      "scale_share": {
+        "company": 0.0024,
+        "individual": 0.0006,
+        "family": 0.0013,
+        "country": 0.0043,
+        "other": 0.0055
+      },
+      "total_count": 34,
+      "scale_counts": {
+        "company": 13,
+        "individual": 2,
+        "family": 1,
+        "country": 6,
+        "other": 12
+      },
+      "max_pair_divergence": 0.0032,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "撤退・縮小": {
+      "jsd_vs_global": 0.136123,
+      "distribution": {
+        "company": 0.2857,
+        "individual": 0.1429,
+        "family": 0.0714,
+        "country": 0.0,
+        "other": 0.5
+      },
+      "scale_share": {
+        "company": 0.0007,
+        "individual": 0.0006,
+        "family": 0.0013,
+        "country": 0.0,
+        "other": 0.0032
+      },
+      "total_count": 14,
+      "scale_counts": {
+        "company": 4,
+        "individual": 2,
+        "family": 1,
+        "country": 0,
+        "other": 7
+      },
+      "max_pair_divergence": 0.0025,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "撤退・逃げる": {
+      "jsd_vs_global": 0.267101,
+      "distribution": {
+        "company": 0.2727,
+        "individual": 0.7273,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0005,
+        "individual": 0.0025,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 3,
+        "individual": 8,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0019,
+      "max_divergent_pair": [
+        "company",
+        "individual"
+      ]
+    },
+    "攻める・挑戦": {
+      "jsd_vs_global": 0.016099,
+      "distribution": {
+        "company": 0.4485,
+        "individual": 0.3276,
+        "family": 0.0244,
+        "country": 0.0995,
+        "other": 0.1001
+      },
+      "scale_share": {
+        "company": 0.2537,
+        "individual": 0.3174,
+        "family": 0.0966,
+        "country": 0.2245,
+        "other": 0.1441
+      },
+      "total_count": 3117,
+      "scale_counts": {
+        "company": 1398,
+        "individual": 1021,
+        "family": 76,
+        "country": 310,
+        "other": 312
+      },
+      "max_pair_divergence": 0.2208,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    "耐える・潜伏": {
+      "jsd_vs_global": 0.009652,
+      "distribution": {
+        "company": 0.3147,
+        "individual": 0.2818,
+        "family": 0.0855,
+        "country": 0.1343,
+        "other": 0.1837
+      },
+      "scale_share": {
+        "company": 0.1216,
+        "individual": 0.1865,
+        "family": 0.2313,
+        "country": 0.2071,
+        "other": 0.1806
+      },
+      "total_count": 2129,
+      "scale_counts": {
+        "company": 670,
+        "individual": 600,
+        "family": 182,
+        "country": 286,
+        "other": 391
+      },
+      "max_pair_divergence": 0.1097,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    "輝く・表現": {
+      "jsd_vs_global": 0.493783,
+      "distribution": {
+        "company": 0.0909,
+        "individual": 0.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.9091
+      },
+      "scale_share": {
+        "company": 0.0002,
+        "individual": 0.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0046
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 1,
+        "individual": 0,
+        "family": 0,
+        "country": 0,
+        "other": 10
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    },
+    "逃げる・分散": {
+      "jsd_vs_global": 0.553078,
+      "distribution": {
+        "company": 0.0,
+        "individual": 1.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0,
+        "individual": 0.0034,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 0,
+        "individual": 11,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    },
+    "逃げる・放置": {
+      "jsd_vs_global": 0.063283,
+      "distribution": {
+        "company": 0.6531,
+        "individual": 0.206,
+        "family": 0.0244,
+        "country": 0.0867,
+        "other": 0.0298
+      },
+      "scale_share": {
+        "company": 0.0437,
+        "individual": 0.0236,
+        "family": 0.0114,
+        "country": 0.0232,
+        "other": 0.0051
+      },
+      "total_count": 369,
+      "scale_counts": {
+        "company": 241,
+        "individual": 76,
+        "family": 9,
+        "country": 32,
+        "other": 11
+      },
+      "max_pair_divergence": 0.0387,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "集中・拡大": {
+      "jsd_vs_global": 0.068342,
+      "distribution": {
+        "company": 0.3143,
+        "individual": 0.15,
+        "family": 0.0071,
+        "country": 0.1286,
+        "other": 0.4
+      },
+      "scale_share": {
+        "company": 0.008,
+        "individual": 0.0065,
+        "family": 0.0013,
+        "country": 0.013,
+        "other": 0.0259
+      },
+      "total_count": 140,
+      "scale_counts": {
+        "company": 44,
+        "individual": 21,
+        "family": 1,
+        "country": 18,
+        "other": 56
+      },
+      "max_pair_divergence": 0.0193,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    }
+  },
+  "before_state_polysemy": {
+    "V字回復・大成功": {
+      "jsd_vs_global": 0.23181,
+      "distribution": {
+        "company": 0.3636,
+        "individual": 0.6364,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0007,
+        "individual": 0.0022,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 4,
+        "individual": 7,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0014,
+      "max_divergent_pair": [
+        "company",
+        "individual"
+      ]
+    },
+    "どん底・危機": {
+      "jsd_vs_global": 0.021889,
+      "distribution": {
+        "company": 0.4223,
+        "individual": 0.2858,
+        "family": 0.0468,
+        "country": 0.1742,
+        "other": 0.0709
+      },
+      "scale_share": {
+        "company": 0.1016,
+        "individual": 0.1178,
+        "family": 0.0788,
+        "country": 0.1673,
+        "other": 0.0434
+      },
+      "total_count": 1326,
+      "scale_counts": {
+        "company": 560,
+        "individual": 379,
+        "family": 62,
+        "country": 231,
+        "other": 94
+      },
+      "max_pair_divergence": 0.1239,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    "停滞・閉塞": {
+      "jsd_vs_global": 0.007106,
+      "distribution": {
+        "company": 0.394,
+        "individual": 0.1917,
+        "family": 0.0742,
+        "country": 0.1552,
+        "other": 0.1849
+      },
+      "scale_share": {
+        "company": 0.1802,
+        "individual": 0.1501,
+        "family": 0.2376,
+        "country": 0.2831,
+        "other": 0.2152
+      },
+      "total_count": 2520,
+      "scale_counts": {
+        "company": 993,
+        "individual": 483,
+        "family": 187,
+        "country": 391,
+        "other": 466
+      },
+      "max_pair_divergence": 0.133,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    "安定・停止": {
+      "jsd_vs_global": 0.034829,
+      "distribution": {
+        "company": 0.266,
+        "individual": 0.2411,
+        "family": 0.0656,
+        "country": 0.0904,
+        "other": 0.3369
+      },
+      "scale_share": {
+        "company": 0.0272,
+        "individual": 0.0423,
+        "family": 0.047,
+        "country": 0.0369,
+        "other": 0.0878
+      },
+      "total_count": 564,
+      "scale_counts": {
+        "company": 150,
+        "individual": 136,
+        "family": 37,
+        "country": 51,
+        "other": 190
+      },
+      "max_pair_divergence": 0.0605,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "安定・平和": {
+      "jsd_vs_global": 0.004601,
+      "distribution": {
+        "company": 0.4068,
+        "individual": 0.2966,
+        "family": 0.0752,
+        "country": 0.0763,
+        "other": 0.1451
+      },
+      "scale_share": {
+        "company": 0.2051,
+        "individual": 0.2561,
+        "family": 0.2656,
+        "country": 0.1535,
+        "other": 0.1861
+      },
+      "total_count": 2778,
+      "scale_counts": {
+        "company": 1130,
+        "individual": 824,
+        "family": 209,
+        "country": 212,
+        "other": 403
+      },
+      "max_pair_divergence": 0.1121,
+      "max_divergent_pair": [
+        "family",
+        "country"
+      ]
+    },
+    "安定成長・成功": {
+      "jsd_vs_global": 0.095423,
+      "distribution": {
+        "company": 0.4532,
+        "individual": 0.426,
+        "family": 0.0,
+        "country": 0.003,
+        "other": 0.1178
+      },
+      "scale_share": {
+        "company": 0.0272,
+        "individual": 0.0438,
+        "family": 0.0,
+        "country": 0.0007,
+        "other": 0.018
+      },
+      "total_count": 331,
+      "scale_counts": {
+        "company": 150,
+        "individual": 141,
+        "family": 0,
+        "country": 1,
+        "other": 39
+      },
+      "max_pair_divergence": 0.0258,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    "成長・拡大": {
+      "jsd_vs_global": 0.041485,
+      "distribution": {
+        "company": 0.4524,
+        "individual": 0.2381,
+        "family": 0.0,
+        "country": 0.0595,
+        "other": 0.25
+      },
+      "scale_share": {
+        "company": 0.0069,
+        "individual": 0.0062,
+        "family": 0.0,
+        "country": 0.0036,
+        "other": 0.0097
+      },
+      "total_count": 84,
+      "scale_counts": {
+        "company": 38,
+        "individual": 20,
+        "family": 0,
+        "country": 5,
+        "other": 21
+      },
+      "max_pair_divergence": 0.0061,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    "成長痛": {
+      "jsd_vs_global": 0.017227,
+      "distribution": {
+        "company": 0.5234,
+        "individual": 0.2716,
+        "family": 0.0225,
+        "country": 0.0682,
+        "other": 0.1143
+      },
+      "scale_share": {
+        "company": 0.2494,
+        "individual": 0.2216,
+        "family": 0.075,
+        "country": 0.1296,
+        "other": 0.1386
+      },
+      "total_count": 2625,
+      "scale_counts": {
+        "company": 1374,
+        "individual": 713,
+        "family": 59,
+        "country": 179,
+        "other": 300
+      },
+      "max_pair_divergence": 0.1744,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    "拡大・繁栄": {
+      "jsd_vs_global": 0.028751,
+      "distribution": {
+        "company": 0.3193,
+        "individual": 0.1765,
+        "family": 0.042,
+        "country": 0.1681,
+        "other": 0.2941
+      },
+      "scale_share": {
+        "company": 0.0069,
+        "individual": 0.0065,
+        "family": 0.0064,
+        "country": 0.0145,
+        "other": 0.0162
+      },
+      "total_count": 119,
+      "scale_counts": {
+        "company": 38,
+        "individual": 21,
+        "family": 5,
+        "country": 20,
+        "other": 35
+      },
+      "max_pair_divergence": 0.0098,
+      "max_divergent_pair": [
+        "family",
+        "other"
+      ]
+    },
+    "混乱・カオス": {
+      "jsd_vs_global": 0.058592,
+      "distribution": {
+        "company": 0.2625,
+        "individual": 0.1385,
+        "family": 0.1798,
+        "country": 0.1555,
+        "other": 0.2637
+      },
+      "scale_share": {
+        "company": 0.0392,
+        "individual": 0.0354,
+        "family": 0.1881,
+        "country": 0.0927,
+        "other": 0.1002
+      },
+      "total_count": 823,
+      "scale_counts": {
+        "company": 216,
+        "individual": 114,
+        "family": 148,
+        "country": 128,
+        "other": 217
+      },
+      "max_pair_divergence": 0.1526,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    "混乱・衰退": {
+      "jsd_vs_global": 0.080494,
+      "distribution": {
+        "company": 0.1868,
+        "individual": 0.2491,
+        "family": 0.0611,
+        "country": 0.0708,
+        "other": 0.4322
+      },
+      "scale_share": {
+        "company": 0.0278,
+        "individual": 0.0634,
+        "family": 0.0635,
+        "country": 0.042,
+        "other": 0.1635
+      },
+      "total_count": 819,
+      "scale_counts": {
+        "company": 153,
+        "individual": 204,
+        "family": 50,
+        "country": 58,
+        "other": 354
+      },
+      "max_pair_divergence": 0.1357,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "絶頂・慢心": {
+      "jsd_vs_global": 0.059937,
+      "distribution": {
+        "company": 0.6729,
+        "individual": 0.1499,
+        "family": 0.0294,
+        "country": 0.1028,
+        "other": 0.0451
+      },
+      "scale_share": {
+        "company": 0.1247,
+        "individual": 0.0476,
+        "family": 0.0381,
+        "country": 0.076,
+        "other": 0.0212
+      },
+      "total_count": 1021,
+      "scale_counts": {
+        "company": 687,
+        "individual": 153,
+        "family": 30,
+        "country": 105,
+        "other": 46
+      },
+      "max_pair_divergence": 0.1034,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "縮小安定・生存": {
+      "jsd_vs_global": 0.286805,
+      "distribution": {
+        "company": 0.9444,
+        "individual": 0.0556,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0031,
+        "individual": 0.0003,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 18,
+      "scale_counts": {
+        "company": 17,
+        "individual": 1,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    },
+    "調和・繁栄": {
+      "jsd_vs_global": 0.553078,
+      "distribution": {
+        "company": 0.0,
+        "individual": 1.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0,
+        "individual": 0.0059,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 19,
+      "scale_counts": {
+        "company": 0,
+        "individual": 19,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    }
+  },
+  "after_state_polysemy": {
+    "V字回復・大成功": {
+      "jsd_vs_global": 0.028905,
+      "distribution": {
+        "company": 0.5936,
+        "individual": 0.2136,
+        "family": 0.0153,
+        "country": 0.0721,
+        "other": 0.1054
+      },
+      "scale_share": {
+        "company": 0.0777,
+        "individual": 0.0479,
+        "family": 0.014,
+        "country": 0.0377,
+        "other": 0.0351
+      },
+      "total_count": 721,
+      "scale_counts": {
+        "company": 428,
+        "individual": 154,
+        "family": 11,
+        "country": 52,
+        "other": 76
+      },
+      "max_pair_divergence": 0.0637,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    "どん底・危機": {
+      "jsd_vs_global": 0.040433,
+      "distribution": {
+        "company": 0.4679,
+        "individual": 0.1679,
+        "family": 0.0857,
+        "country": 0.2179,
+        "other": 0.0607
+      },
+      "scale_share": {
+        "company": 0.0238,
+        "individual": 0.0146,
+        "family": 0.0305,
+        "country": 0.0442,
+        "other": 0.0079
+      },
+      "total_count": 280,
+      "scale_counts": {
+        "company": 131,
+        "individual": 47,
+        "family": 24,
+        "country": 61,
+        "other": 17
+      },
+      "max_pair_divergence": 0.0363,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    "停滞・閉塞": {
+      "jsd_vs_global": 0.082003,
+      "distribution": {
+        "company": 0.144,
+        "individual": 0.3907,
+        "family": 0.0292,
+        "country": 0.146,
+        "other": 0.29
+      },
+      "scale_share": {
+        "company": 0.026,
+        "individual": 0.1206,
+        "family": 0.0368,
+        "country": 0.105,
+        "other": 0.133
+      },
+      "total_count": 993,
+      "scale_counts": {
+        "company": 143,
+        "individual": 388,
+        "family": 29,
+        "country": 145,
+        "other": 288
+      },
+      "max_pair_divergence": 0.1071,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "喜び・交流": {
+      "jsd_vs_global": 0.278931,
+      "distribution": {
+        "company": 0.0818,
+        "individual": 0.1455,
+        "family": 0.0818,
+        "country": 0.0,
+        "other": 0.6909
+      },
+      "scale_share": {
+        "company": 0.0033,
+        "individual": 0.0099,
+        "family": 0.0229,
+        "country": 0.0,
+        "other": 0.0702
+      },
+      "total_count": 220,
+      "scale_counts": {
+        "company": 18,
+        "individual": 32,
+        "family": 18,
+        "country": 0,
+        "other": 152
+      },
+      "max_pair_divergence": 0.0669,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "変質・新生": {
+      "jsd_vs_global": 0.011124,
+      "distribution": {
+        "company": 0.3235,
+        "individual": 0.2819,
+        "family": 0.0801,
+        "country": 0.1623,
+        "other": 0.1521
+      },
+      "scale_share": {
+        "company": 0.0579,
+        "individual": 0.0864,
+        "family": 0.1004,
+        "country": 0.1159,
+        "other": 0.0693
+      },
+      "total_count": 986,
+      "scale_counts": {
+        "company": 319,
+        "individual": 278,
+        "family": 79,
+        "country": 160,
+        "other": 150
+      },
+      "max_pair_divergence": 0.058,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    },
+    "安定・停止": {
+      "jsd_vs_global": 0.103644,
+      "distribution": {
+        "company": 0.2066,
+        "individual": 0.5785,
+        "family": 0.0523,
+        "country": 0.0165,
+        "other": 0.146
+      },
+      "scale_share": {
+        "company": 0.0136,
+        "individual": 0.0653,
+        "family": 0.0241,
+        "country": 0.0043,
+        "other": 0.0245
+      },
+      "total_count": 363,
+      "scale_counts": {
+        "company": 75,
+        "individual": 210,
+        "family": 19,
+        "country": 6,
+        "other": 53
+      },
+      "max_pair_divergence": 0.0609,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    "安定・平和": {
+      "jsd_vs_global": 0.011642,
+      "distribution": {
+        "company": 0.4171,
+        "individual": 0.2712,
+        "family": 0.0468,
+        "country": 0.0477,
+        "other": 0.2171
+      },
+      "scale_share": {
+        "company": 0.084,
+        "individual": 0.0936,
+        "family": 0.0661,
+        "country": 0.0384,
+        "other": 0.1113
+      },
+      "total_count": 1110,
+      "scale_counts": {
+        "company": 463,
+        "individual": 301,
+        "family": 52,
+        "country": 53,
+        "other": 241
+      },
+      "max_pair_divergence": 0.0729,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    "安定成長・成功": {
+      "jsd_vs_global": 0.00208,
+      "distribution": {
+        "company": 0.3914,
+        "individual": 0.2301,
+        "family": 0.0587,
+        "country": 0.1283,
+        "other": 0.1916
+      },
+      "scale_share": {
+        "company": 0.0775,
+        "individual": 0.078,
+        "family": 0.0813,
+        "country": 0.1014,
+        "other": 0.0965
+      },
+      "total_count": 1091,
+      "scale_counts": {
+        "company": 427,
+        "individual": 251,
+        "family": 64,
+        "country": 140,
+        "other": 209
+      },
+      "max_pair_divergence": 0.0239,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    },
+    "崩壊・消滅": {
+      "jsd_vs_global": 0.064716,
+      "distribution": {
+        "company": 0.5797,
+        "individual": 0.1203,
+        "family": 0.1642,
+        "country": 0.0797,
+        "other": 0.0561
+      },
+      "scale_share": {
+        "company": 0.1967,
+        "individual": 0.0699,
+        "family": 0.3901,
+        "country": 0.1079,
+        "other": 0.0485
+      },
+      "total_count": 1870,
+      "scale_counts": {
+        "company": 1084,
+        "individual": 225,
+        "family": 307,
+        "country": 149,
+        "other": 105
+      },
+      "max_pair_divergence": 0.3416,
+      "max_divergent_pair": [
+        "family",
+        "other"
+      ]
+    },
+    "成長・拡大": {
+      "jsd_vs_global": 0.067236,
+      "distribution": {
+        "company": 0.4118,
+        "individual": 0.1681,
+        "family": 0.0,
+        "country": 0.0588,
+        "other": 0.3613
+      },
+      "scale_share": {
+        "company": 0.0089,
+        "individual": 0.0062,
+        "family": 0.0,
+        "country": 0.0051,
+        "other": 0.0199
+      },
+      "total_count": 119,
+      "scale_counts": {
+        "company": 49,
+        "individual": 20,
+        "family": 0,
+        "country": 7,
+        "other": 43
+      },
+      "max_pair_divergence": 0.0148,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    "成長痛": {
+      "jsd_vs_global": 0.142893,
+      "distribution": {
+        "company": 0.6154,
+        "individual": 0.0385,
+        "family": 0.0,
+        "country": 0.2692,
+        "other": 0.0769
+      },
+      "scale_share": {
+        "company": 0.0029,
+        "individual": 0.0003,
+        "family": 0.0,
+        "country": 0.0051,
+        "other": 0.0009
+      },
+      "total_count": 26,
+      "scale_counts": {
+        "company": 16,
+        "individual": 1,
+        "family": 0,
+        "country": 7,
+        "other": 2
+      },
+      "max_pair_divergence": 0.0022,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    },
+    "拡大・繁栄": {
+      "jsd_vs_global": 0.092165,
+      "distribution": {
+        "company": 0.1965,
+        "individual": 0.1965,
+        "family": 0.0421,
+        "country": 0.0842,
+        "other": 0.4807
+      },
+      "scale_share": {
+        "company": 0.0102,
+        "individual": 0.0174,
+        "family": 0.0152,
+        "country": 0.0174,
+        "other": 0.0633
+      },
+      "total_count": 285,
+      "scale_counts": {
+        "company": 56,
+        "individual": 56,
+        "family": 12,
+        "country": 24,
+        "other": 137
+      },
+      "max_pair_divergence": 0.0531,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    "持続成長・大成功": {
+      "jsd_vs_global": 0.015478,
+      "distribution": {
+        "company": 0.5229,
+        "individual": 0.2639,
+        "family": 0.0249,
+        "country": 0.083,
+        "other": 0.1052
+      },
+      "scale_share": {
+        "company": 0.2093,
+        "individual": 0.1809,
+        "family": 0.0699,
+        "country": 0.1325,
+        "other": 0.1072
+      },
+      "total_count": 2205,
+      "scale_counts": {
+        "company": 1153,
+        "individual": 582,
+        "family": 55,
+        "country": 183,
+        "other": 232
+      },
+      "max_pair_divergence": 0.1394,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    "混乱・カオス": {
+      "jsd_vs_global": 0.06789,
+      "distribution": {
+        "company": 0.5159,
+        "individual": 0.0899,
+        "family": 0.0026,
+        "country": 0.2143,
+        "other": 0.1772
+      },
+      "scale_share": {
+        "company": 0.0354,
+        "individual": 0.0106,
+        "family": 0.0013,
+        "country": 0.0587,
+        "other": 0.0309
+      },
+      "total_count": 378,
+      "scale_counts": {
+        "company": 195,
+        "individual": 34,
+        "family": 1,
+        "country": 81,
+        "other": 67
+      },
+      "max_pair_divergence": 0.0481,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    "混乱・衰退": {
+      "jsd_vs_global": 0.043277,
+      "distribution": {
+        "company": 0.2837,
+        "individual": 0.1537,
+        "family": 0.0681,
+        "country": 0.1537,
+        "other": 0.3407
+      },
+      "scale_share": {
+        "company": 0.0325,
+        "individual": 0.0302,
+        "family": 0.0546,
+        "country": 0.0702,
+        "other": 0.0993
+      },
+      "total_count": 631,
+      "scale_counts": {
+        "company": 179,
+        "individual": 97,
+        "family": 43,
+        "country": 97,
+        "other": 215
+      },
+      "max_pair_divergence": 0.0692,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    "現状維持・延命": {
+      "jsd_vs_global": 0.003689,
+      "distribution": {
+        "company": 0.4127,
+        "individual": 0.1984,
+        "family": 0.0635,
+        "country": 0.127,
+        "other": 0.1984
+      },
+      "scale_share": {
+        "company": 0.0094,
+        "individual": 0.0078,
+        "family": 0.0102,
+        "country": 0.0116,
+        "other": 0.0115
+      },
+      "total_count": 126,
+      "scale_counts": {
+        "company": 52,
+        "individual": 25,
+        "family": 8,
+        "country": 16,
+        "other": 25
+      },
+      "max_pair_divergence": 0.0038,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    "縮小安定・生存": {
+      "jsd_vs_global": 0.014221,
+      "distribution": {
+        "company": 0.406,
+        "individual": 0.3362,
+        "family": 0.0432,
+        "country": 0.1223,
+        "other": 0.0924
+      },
+      "scale_share": {
+        "company": 0.1109,
+        "individual": 0.1573,
+        "family": 0.0826,
+        "country": 0.1332,
+        "other": 0.0642
+      },
+      "total_count": 1505,
+      "scale_counts": {
+        "company": 611,
+        "individual": 506,
+        "family": 65,
+        "country": 184,
+        "other": 139
+      },
+      "max_pair_divergence": 0.0931,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    "迷走・混乱": {
+      "jsd_vs_global": 0.106304,
+      "distribution": {
+        "company": 0.7297,
+        "individual": 0.0676,
+        "family": 0.0,
+        "country": 0.1081,
+        "other": 0.0946
+      },
+      "scale_share": {
+        "company": 0.0196,
+        "individual": 0.0031,
+        "family": 0.0,
+        "country": 0.0116,
+        "other": 0.0065
+      },
+      "total_count": 148,
+      "scale_counts": {
+        "company": 108,
+        "individual": 10,
+        "family": 0,
+        "country": 16,
+        "other": 14
+      },
+      "max_pair_divergence": 0.0165,
+      "max_divergent_pair": [
+        "company",
+        "individual"
+      ]
+    }
+  },
+  "outcome_polysemy": {
+    "Failure": {
+      "jsd_vs_global": 0.003435,
+      "distribution": {
+        "company": 0.3999,
+        "individual": 0.2444,
+        "family": 0.0866,
+        "country": 0.1283,
+        "other": 0.1409
+      },
+      "scale_share": {
+        "company": 0.3044,
+        "individual": 0.3186,
+        "family": 0.4612,
+        "country": 0.3896,
+        "other": 0.273
+      },
+      "total_count": 4194,
+      "scale_counts": {
+        "company": 1677,
+        "individual": 1025,
+        "family": 363,
+        "country": 538,
+        "other": 591
+      },
+      "max_pair_divergence": 0.1883,
+      "max_divergent_pair": [
+        "family",
+        "other"
+      ]
+    },
+    "Mixed": {
+      "jsd_vs_global": 0.007346,
+      "distribution": {
+        "company": 0.4449,
+        "individual": 0.1796,
+        "family": 0.05,
+        "country": 0.1512,
+        "other": 0.1744
+      },
+      "scale_share": {
+        "company": 0.1875,
+        "individual": 0.1296,
+        "family": 0.1474,
+        "country": 0.2542,
+        "other": 0.1871
+      },
+      "total_count": 2322,
+      "scale_counts": {
+        "company": 1033,
+        "individual": 417,
+        "family": 116,
+        "country": 351,
+        "other": 405
+      },
+      "max_pair_divergence": 0.1245,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    "PartialSuccess": {
+      "jsd_vs_global": 0.002275,
+      "distribution": {
+        "company": 0.4192,
+        "individual": 0.2885,
+        "family": 0.0538,
+        "country": 0.1,
+        "other": 0.1385
+      },
+      "scale_share": {
+        "company": 0.0198,
+        "individual": 0.0233,
+        "family": 0.0178,
+        "country": 0.0188,
+        "other": 0.0166
+      },
+      "total_count": 260,
+      "scale_counts": {
+        "company": 109,
+        "individual": 75,
+        "family": 14,
+        "country": 26,
+        "other": 36
+      },
+      "max_pair_divergence": 0.0067,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    "Success": {
+      "jsd_vs_global": 0.00327,
+      "distribution": {
+        "company": 0.4282,
+        "individual": 0.2705,
+        "family": 0.0468,
+        "country": 0.0742,
+        "other": 0.1803
+      },
+      "scale_share": {
+        "company": 0.4884,
+        "individual": 0.5284,
+        "family": 0.3736,
+        "country": 0.3374,
+        "other": 0.5233
+      },
+      "total_count": 6284,
+      "scale_counts": {
+        "company": 2691,
+        "individual": 1700,
+        "family": 294,
+        "country": 466,
+        "other": 1133
+      },
+      "max_pair_divergence": 0.191,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    }
+  },
+  "polysemy_ranking": [
+    {
+      "label": "action_type:逃げる・分散",
+      "field": "action_type",
+      "value": "逃げる・分散",
+      "jsd_vs_global": 0.553078,
+      "distribution": {
+        "company": 0.0,
+        "individual": 1.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0,
+        "individual": 0.0034,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 0,
+        "individual": 11,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    },
+    {
+      "label": "before_state:調和・繁栄",
+      "field": "before_state",
+      "value": "調和・繁栄",
+      "jsd_vs_global": 0.553078,
+      "distribution": {
+        "company": 0.0,
+        "individual": 1.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0,
+        "individual": 0.0059,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 19,
+      "scale_counts": {
+        "company": 0,
+        "individual": 19,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    },
+    {
+      "label": "action_type:輝く・表現",
+      "field": "action_type",
+      "value": "輝く・表現",
+      "jsd_vs_global": 0.493783,
+      "distribution": {
+        "company": 0.0909,
+        "individual": 0.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.9091
+      },
+      "scale_share": {
+        "company": 0.0002,
+        "individual": 0.0,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0046
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 1,
+        "individual": 0,
+        "family": 0,
+        "country": 0,
+        "other": 10
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    },
+    {
+      "label": "before_state:縮小安定・生存",
+      "field": "before_state",
+      "value": "縮小安定・生存",
+      "jsd_vs_global": 0.286805,
+      "distribution": {
+        "company": 0.9444,
+        "individual": 0.0556,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0031,
+        "individual": 0.0003,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 18,
+      "scale_counts": {
+        "company": 17,
+        "individual": 1,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0,
+      "max_divergent_pair": null
+    },
+    {
+      "label": "after_state:喜び・交流",
+      "field": "after_state",
+      "value": "喜び・交流",
+      "jsd_vs_global": 0.278931,
+      "distribution": {
+        "company": 0.0818,
+        "individual": 0.1455,
+        "family": 0.0818,
+        "country": 0.0,
+        "other": 0.6909
+      },
+      "scale_share": {
+        "company": 0.0033,
+        "individual": 0.0099,
+        "family": 0.0229,
+        "country": 0.0,
+        "other": 0.0702
+      },
+      "total_count": 220,
+      "scale_counts": {
+        "company": 18,
+        "individual": 32,
+        "family": 18,
+        "country": 0,
+        "other": 152
+      },
+      "max_pair_divergence": 0.0669,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:交流・発表",
+      "field": "action_type",
+      "value": "交流・発表",
+      "jsd_vs_global": 0.269074,
+      "distribution": {
+        "company": 0.0821,
+        "individual": 0.159,
+        "family": 0.0923,
+        "country": 0.0,
+        "other": 0.6667
+      },
+      "scale_share": {
+        "company": 0.0029,
+        "individual": 0.0096,
+        "family": 0.0229,
+        "country": 0.0,
+        "other": 0.06
+      },
+      "total_count": 195,
+      "scale_counts": {
+        "company": 16,
+        "individual": 31,
+        "family": 18,
+        "country": 0,
+        "other": 130
+      },
+      "max_pair_divergence": 0.0571,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:撤退・逃げる",
+      "field": "action_type",
+      "value": "撤退・逃げる",
+      "jsd_vs_global": 0.267101,
+      "distribution": {
+        "company": 0.2727,
+        "individual": 0.7273,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0005,
+        "individual": 0.0025,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 3,
+        "individual": 8,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0019,
+      "max_divergent_pair": [
+        "company",
+        "individual"
+      ]
+    },
+    {
+      "label": "before_state:V字回復・大成功",
+      "field": "before_state",
+      "value": "V字回復・大成功",
+      "jsd_vs_global": 0.23181,
+      "distribution": {
+        "company": 0.3636,
+        "individual": 0.6364,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "scale_share": {
+        "company": 0.0007,
+        "individual": 0.0022,
+        "family": 0.0,
+        "country": 0.0,
+        "other": 0.0
+      },
+      "total_count": 11,
+      "scale_counts": {
+        "company": 4,
+        "individual": 7,
+        "family": 0,
+        "country": 0,
+        "other": 0
+      },
+      "max_pair_divergence": 0.0014,
+      "max_divergent_pair": [
+        "company",
+        "individual"
+      ]
+    },
+    {
+      "label": "after_state:成長痛",
+      "field": "after_state",
+      "value": "成長痛",
+      "jsd_vs_global": 0.142893,
+      "distribution": {
+        "company": 0.6154,
+        "individual": 0.0385,
+        "family": 0.0,
+        "country": 0.2692,
+        "other": 0.0769
+      },
+      "scale_share": {
+        "company": 0.0029,
+        "individual": 0.0003,
+        "family": 0.0,
+        "country": 0.0051,
+        "other": 0.0009
+      },
+      "total_count": 26,
+      "scale_counts": {
+        "company": 16,
+        "individual": 1,
+        "family": 0,
+        "country": 7,
+        "other": 2
+      },
+      "max_pair_divergence": 0.0022,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    },
+    {
+      "label": "action_type:撤退・縮小",
+      "field": "action_type",
+      "value": "撤退・縮小",
+      "jsd_vs_global": 0.136123,
+      "distribution": {
+        "company": 0.2857,
+        "individual": 0.1429,
+        "family": 0.0714,
+        "country": 0.0,
+        "other": 0.5
+      },
+      "scale_share": {
+        "company": 0.0007,
+        "individual": 0.0006,
+        "family": 0.0013,
+        "country": 0.0,
+        "other": 0.0032
+      },
+      "total_count": 14,
+      "scale_counts": {
+        "company": 4,
+        "individual": 2,
+        "family": 1,
+        "country": 0,
+        "other": 7
+      },
+      "max_pair_divergence": 0.0025,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "after_state:迷走・混乱",
+      "field": "after_state",
+      "value": "迷走・混乱",
+      "jsd_vs_global": 0.106304,
+      "distribution": {
+        "company": 0.7297,
+        "individual": 0.0676,
+        "family": 0.0,
+        "country": 0.1081,
+        "other": 0.0946
+      },
+      "scale_share": {
+        "company": 0.0196,
+        "individual": 0.0031,
+        "family": 0.0,
+        "country": 0.0116,
+        "other": 0.0065
+      },
+      "total_count": 148,
+      "scale_counts": {
+        "company": 108,
+        "individual": 10,
+        "family": 0,
+        "country": 16,
+        "other": 14
+      },
+      "max_pair_divergence": 0.0165,
+      "max_divergent_pair": [
+        "company",
+        "individual"
+      ]
+    },
+    {
+      "label": "after_state:安定・停止",
+      "field": "after_state",
+      "value": "安定・停止",
+      "jsd_vs_global": 0.103644,
+      "distribution": {
+        "company": 0.2066,
+        "individual": 0.5785,
+        "family": 0.0523,
+        "country": 0.0165,
+        "other": 0.146
+      },
+      "scale_share": {
+        "company": 0.0136,
+        "individual": 0.0653,
+        "family": 0.0241,
+        "country": 0.0043,
+        "other": 0.0245
+      },
+      "total_count": 363,
+      "scale_counts": {
+        "company": 75,
+        "individual": 210,
+        "family": 19,
+        "country": 6,
+        "other": 53
+      },
+      "max_pair_divergence": 0.0609,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    {
+      "label": "before_state:安定成長・成功",
+      "field": "before_state",
+      "value": "安定成長・成功",
+      "jsd_vs_global": 0.095423,
+      "distribution": {
+        "company": 0.4532,
+        "individual": 0.426,
+        "family": 0.0,
+        "country": 0.003,
+        "other": 0.1178
+      },
+      "scale_share": {
+        "company": 0.0272,
+        "individual": 0.0438,
+        "family": 0.0,
+        "country": 0.0007,
+        "other": 0.018
+      },
+      "total_count": 331,
+      "scale_counts": {
+        "company": 150,
+        "individual": 141,
+        "family": 0,
+        "country": 1,
+        "other": 39
+      },
+      "max_pair_divergence": 0.0258,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    {
+      "label": "after_state:拡大・繁栄",
+      "field": "after_state",
+      "value": "拡大・繁栄",
+      "jsd_vs_global": 0.092165,
+      "distribution": {
+        "company": 0.1965,
+        "individual": 0.1965,
+        "family": 0.0421,
+        "country": 0.0842,
+        "other": 0.4807
+      },
+      "scale_share": {
+        "company": 0.0102,
+        "individual": 0.0174,
+        "family": 0.0152,
+        "country": 0.0174,
+        "other": 0.0633
+      },
+      "total_count": 285,
+      "scale_counts": {
+        "company": 56,
+        "individual": 56,
+        "family": 12,
+        "country": 24,
+        "other": 137
+      },
+      "max_pair_divergence": 0.0531,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "after_state:停滞・閉塞",
+      "field": "after_state",
+      "value": "停滞・閉塞",
+      "jsd_vs_global": 0.082003,
+      "distribution": {
+        "company": 0.144,
+        "individual": 0.3907,
+        "family": 0.0292,
+        "country": 0.146,
+        "other": 0.29
+      },
+      "scale_share": {
+        "company": 0.026,
+        "individual": 0.1206,
+        "family": 0.0368,
+        "country": 0.105,
+        "other": 0.133
+      },
+      "total_count": 993,
+      "scale_counts": {
+        "company": 143,
+        "individual": 388,
+        "family": 29,
+        "country": 145,
+        "other": 288
+      },
+      "max_pair_divergence": 0.1071,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:撤退・収縮",
+      "field": "action_type",
+      "value": "撤退・収縮",
+      "jsd_vs_global": 0.080656,
+      "distribution": {
+        "company": 0.3824,
+        "individual": 0.0588,
+        "family": 0.0294,
+        "country": 0.1765,
+        "other": 0.3529
+      },
+      "scale_share": {
+        "company": 0.0024,
+        "individual": 0.0006,
+        "family": 0.0013,
+        "country": 0.0043,
+        "other": 0.0055
+      },
+      "total_count": 34,
+      "scale_counts": {
+        "company": 13,
+        "individual": 2,
+        "family": 1,
+        "country": 6,
+        "other": 12
+      },
+      "max_pair_divergence": 0.0032,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "before_state:混乱・衰退",
+      "field": "before_state",
+      "value": "混乱・衰退",
+      "jsd_vs_global": 0.080494,
+      "distribution": {
+        "company": 0.1868,
+        "individual": 0.2491,
+        "family": 0.0611,
+        "country": 0.0708,
+        "other": 0.4322
+      },
+      "scale_share": {
+        "company": 0.0278,
+        "individual": 0.0634,
+        "family": 0.0635,
+        "country": 0.042,
+        "other": 0.1635
+      },
+      "total_count": 819,
+      "scale_counts": {
+        "company": 153,
+        "individual": 204,
+        "family": 50,
+        "country": 58,
+        "other": 354
+      },
+      "max_pair_divergence": 0.1357,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:捨てる・転換",
+      "field": "action_type",
+      "value": "捨てる・転換",
+      "jsd_vs_global": 0.072651,
+      "distribution": {
+        "company": 0.3533,
+        "individual": 0.4688,
+        "family": 0.0208,
+        "country": 0.0069,
+        "other": 0.1501
+      },
+      "scale_share": {
+        "company": 0.0278,
+        "individual": 0.0631,
+        "family": 0.0114,
+        "country": 0.0022,
+        "other": 0.03
+      },
+      "total_count": 433,
+      "scale_counts": {
+        "company": 153,
+        "individual": 203,
+        "family": 9,
+        "country": 3,
+        "other": 65
+      },
+      "max_pair_divergence": 0.0609,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    {
+      "label": "action_type:集中・拡大",
+      "field": "action_type",
+      "value": "集中・拡大",
+      "jsd_vs_global": 0.068342,
+      "distribution": {
+        "company": 0.3143,
+        "individual": 0.15,
+        "family": 0.0071,
+        "country": 0.1286,
+        "other": 0.4
+      },
+      "scale_share": {
+        "company": 0.008,
+        "individual": 0.0065,
+        "family": 0.0013,
+        "country": 0.013,
+        "other": 0.0259
+      },
+      "total_count": 140,
+      "scale_counts": {
+        "company": 44,
+        "individual": 21,
+        "family": 1,
+        "country": 18,
+        "other": 56
+      },
+      "max_pair_divergence": 0.0193,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    {
+      "label": "after_state:混乱・カオス",
+      "field": "after_state",
+      "value": "混乱・カオス",
+      "jsd_vs_global": 0.06789,
+      "distribution": {
+        "company": 0.5159,
+        "individual": 0.0899,
+        "family": 0.0026,
+        "country": 0.2143,
+        "other": 0.1772
+      },
+      "scale_share": {
+        "company": 0.0354,
+        "individual": 0.0106,
+        "family": 0.0013,
+        "country": 0.0587,
+        "other": 0.0309
+      },
+      "total_count": 378,
+      "scale_counts": {
+        "company": 195,
+        "individual": 34,
+        "family": 1,
+        "country": 81,
+        "other": 67
+      },
+      "max_pair_divergence": 0.0481,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    {
+      "label": "after_state:成長・拡大",
+      "field": "after_state",
+      "value": "成長・拡大",
+      "jsd_vs_global": 0.067236,
+      "distribution": {
+        "company": 0.4118,
+        "individual": 0.1681,
+        "family": 0.0,
+        "country": 0.0588,
+        "other": 0.3613
+      },
+      "scale_share": {
+        "company": 0.0089,
+        "individual": 0.0062,
+        "family": 0.0,
+        "country": 0.0051,
+        "other": 0.0199
+      },
+      "total_count": 119,
+      "scale_counts": {
+        "company": 49,
+        "individual": 20,
+        "family": 0,
+        "country": 7,
+        "other": 43
+      },
+      "max_pair_divergence": 0.0148,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    {
+      "label": "after_state:崩壊・消滅",
+      "field": "after_state",
+      "value": "崩壊・消滅",
+      "jsd_vs_global": 0.064716,
+      "distribution": {
+        "company": 0.5797,
+        "individual": 0.1203,
+        "family": 0.1642,
+        "country": 0.0797,
+        "other": 0.0561
+      },
+      "scale_share": {
+        "company": 0.1967,
+        "individual": 0.0699,
+        "family": 0.3901,
+        "country": 0.1079,
+        "other": 0.0485
+      },
+      "total_count": 1870,
+      "scale_counts": {
+        "company": 1084,
+        "individual": 225,
+        "family": 307,
+        "country": 149,
+        "other": 105
+      },
+      "max_pair_divergence": 0.3416,
+      "max_divergent_pair": [
+        "family",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:拡大・攻め",
+      "field": "action_type",
+      "value": "拡大・攻め",
+      "jsd_vs_global": 0.064451,
+      "distribution": {
+        "company": 0.4138,
+        "individual": 0.1724,
+        "family": 0.0,
+        "country": 0.0603,
+        "other": 0.3534
+      },
+      "scale_share": {
+        "company": 0.0087,
+        "individual": 0.0062,
+        "family": 0.0,
+        "country": 0.0051,
+        "other": 0.0189
+      },
+      "total_count": 116,
+      "scale_counts": {
+        "company": 48,
+        "individual": 20,
+        "family": 0,
+        "country": 7,
+        "other": 41
+      },
+      "max_pair_divergence": 0.0139,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:逃げる・放置",
+      "field": "action_type",
+      "value": "逃げる・放置",
+      "jsd_vs_global": 0.063283,
+      "distribution": {
+        "company": 0.6531,
+        "individual": 0.206,
+        "family": 0.0244,
+        "country": 0.0867,
+        "other": 0.0298
+      },
+      "scale_share": {
+        "company": 0.0437,
+        "individual": 0.0236,
+        "family": 0.0114,
+        "country": 0.0232,
+        "other": 0.0051
+      },
+      "total_count": 369,
+      "scale_counts": {
+        "company": 241,
+        "individual": 76,
+        "family": 9,
+        "country": 32,
+        "other": 11
+      },
+      "max_pair_divergence": 0.0387,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "before_state:絶頂・慢心",
+      "field": "before_state",
+      "value": "絶頂・慢心",
+      "jsd_vs_global": 0.059937,
+      "distribution": {
+        "company": 0.6729,
+        "individual": 0.1499,
+        "family": 0.0294,
+        "country": 0.1028,
+        "other": 0.0451
+      },
+      "scale_share": {
+        "company": 0.1247,
+        "individual": 0.0476,
+        "family": 0.0381,
+        "country": 0.076,
+        "other": 0.0212
+      },
+      "total_count": 1021,
+      "scale_counts": {
+        "company": 687,
+        "individual": 153,
+        "family": 30,
+        "country": 105,
+        "other": 46
+      },
+      "max_pair_divergence": 0.1034,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "before_state:混乱・カオス",
+      "field": "before_state",
+      "value": "混乱・カオス",
+      "jsd_vs_global": 0.058592,
+      "distribution": {
+        "company": 0.2625,
+        "individual": 0.1385,
+        "family": 0.1798,
+        "country": 0.1555,
+        "other": 0.2637
+      },
+      "scale_share": {
+        "company": 0.0392,
+        "individual": 0.0354,
+        "family": 0.1881,
+        "country": 0.0927,
+        "other": 0.1002
+      },
+      "total_count": 823,
+      "scale_counts": {
+        "company": 216,
+        "individual": 114,
+        "family": 148,
+        "country": 128,
+        "other": 217
+      },
+      "max_pair_divergence": 0.1526,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    {
+      "label": "after_state:混乱・衰退",
+      "field": "after_state",
+      "value": "混乱・衰退",
+      "jsd_vs_global": 0.043277,
+      "distribution": {
+        "company": 0.2837,
+        "individual": 0.1537,
+        "family": 0.0681,
+        "country": 0.1537,
+        "other": 0.3407
+      },
+      "scale_share": {
+        "company": 0.0325,
+        "individual": 0.0302,
+        "family": 0.0546,
+        "country": 0.0702,
+        "other": 0.0993
+      },
+      "total_count": 631,
+      "scale_counts": {
+        "company": 179,
+        "individual": 97,
+        "family": 43,
+        "country": 97,
+        "other": 215
+      },
+      "max_pair_divergence": 0.0692,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    {
+      "label": "before_state:成長・拡大",
+      "field": "before_state",
+      "value": "成長・拡大",
+      "jsd_vs_global": 0.041485,
+      "distribution": {
+        "company": 0.4524,
+        "individual": 0.2381,
+        "family": 0.0,
+        "country": 0.0595,
+        "other": 0.25
+      },
+      "scale_share": {
+        "company": 0.0069,
+        "individual": 0.0062,
+        "family": 0.0,
+        "country": 0.0036,
+        "other": 0.0097
+      },
+      "total_count": 84,
+      "scale_counts": {
+        "company": 38,
+        "individual": 20,
+        "family": 0,
+        "country": 5,
+        "other": 21
+      },
+      "max_pair_divergence": 0.0061,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:分散・スピンオフ",
+      "field": "action_type",
+      "value": "分散・スピンオフ",
+      "jsd_vs_global": 0.040614,
+      "distribution": {
+        "company": 0.5503,
+        "individual": 0.0828,
+        "family": 0.0888,
+        "country": 0.0828,
+        "other": 0.1953
+      },
+      "scale_share": {
+        "company": 0.0169,
+        "individual": 0.0044,
+        "family": 0.0191,
+        "country": 0.0101,
+        "other": 0.0152
+      },
+      "total_count": 169,
+      "scale_counts": {
+        "company": 93,
+        "individual": 14,
+        "family": 15,
+        "country": 14,
+        "other": 33
+      },
+      "max_pair_divergence": 0.0147,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    {
+      "label": "after_state:どん底・危機",
+      "field": "after_state",
+      "value": "どん底・危機",
+      "jsd_vs_global": 0.040433,
+      "distribution": {
+        "company": 0.4679,
+        "individual": 0.1679,
+        "family": 0.0857,
+        "country": 0.2179,
+        "other": 0.0607
+      },
+      "scale_share": {
+        "company": 0.0238,
+        "individual": 0.0146,
+        "family": 0.0305,
+        "country": 0.0442,
+        "other": 0.0079
+      },
+      "total_count": 280,
+      "scale_counts": {
+        "company": 131,
+        "individual": 47,
+        "family": 24,
+        "country": 61,
+        "other": 17
+      },
+      "max_pair_divergence": 0.0363,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    {
+      "label": "before_state:安定・停止",
+      "field": "before_state",
+      "value": "安定・停止",
+      "jsd_vs_global": 0.034829,
+      "distribution": {
+        "company": 0.266,
+        "individual": 0.2411,
+        "family": 0.0656,
+        "country": 0.0904,
+        "other": 0.3369
+      },
+      "scale_share": {
+        "company": 0.0272,
+        "individual": 0.0423,
+        "family": 0.047,
+        "country": 0.0369,
+        "other": 0.0878
+      },
+      "total_count": 564,
+      "scale_counts": {
+        "company": 150,
+        "individual": 136,
+        "family": 37,
+        "country": 51,
+        "other": 190
+      },
+      "max_pair_divergence": 0.0605,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:分散・探索",
+      "field": "action_type",
+      "value": "分散・探索",
+      "jsd_vs_global": 0.031667,
+      "distribution": {
+        "company": 0.2906,
+        "individual": 0.2104,
+        "family": 0.0601,
+        "country": 0.1002,
+        "other": 0.3387
+      },
+      "scale_share": {
+        "company": 0.0263,
+        "individual": 0.0326,
+        "family": 0.0381,
+        "country": 0.0362,
+        "other": 0.0781
+      },
+      "total_count": 499,
+      "scale_counts": {
+        "company": 145,
+        "individual": 105,
+        "family": 30,
+        "country": 50,
+        "other": 169
+      },
+      "max_pair_divergence": 0.0517,
+      "max_divergent_pair": [
+        "company",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:捨てる・撤退",
+      "field": "action_type",
+      "value": "捨てる・撤退",
+      "jsd_vs_global": 0.030529,
+      "distribution": {
+        "company": 0.5768,
+        "individual": 0.2521,
+        "family": 0.0259,
+        "country": 0.0373,
+        "other": 0.1079
+      },
+      "scale_share": {
+        "company": 0.1009,
+        "individual": 0.0755,
+        "family": 0.0318,
+        "country": 0.0261,
+        "other": 0.048
+      },
+      "total_count": 964,
+      "scale_counts": {
+        "company": 556,
+        "individual": 243,
+        "family": 25,
+        "country": 36,
+        "other": 104
+      },
+      "max_pair_divergence": 0.0748,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    },
+    {
+      "label": "after_state:V字回復・大成功",
+      "field": "after_state",
+      "value": "V字回復・大成功",
+      "jsd_vs_global": 0.028905,
+      "distribution": {
+        "company": 0.5936,
+        "individual": 0.2136,
+        "family": 0.0153,
+        "country": 0.0721,
+        "other": 0.1054
+      },
+      "scale_share": {
+        "company": 0.0777,
+        "individual": 0.0479,
+        "family": 0.014,
+        "country": 0.0377,
+        "other": 0.0351
+      },
+      "total_count": 721,
+      "scale_counts": {
+        "company": 428,
+        "individual": 154,
+        "family": 11,
+        "country": 52,
+        "other": 76
+      },
+      "max_pair_divergence": 0.0637,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    {
+      "label": "before_state:拡大・繁栄",
+      "field": "before_state",
+      "value": "拡大・繁栄",
+      "jsd_vs_global": 0.028751,
+      "distribution": {
+        "company": 0.3193,
+        "individual": 0.1765,
+        "family": 0.042,
+        "country": 0.1681,
+        "other": 0.2941
+      },
+      "scale_share": {
+        "company": 0.0069,
+        "individual": 0.0065,
+        "family": 0.0064,
+        "country": 0.0145,
+        "other": 0.0162
+      },
+      "total_count": 119,
+      "scale_counts": {
+        "company": 38,
+        "individual": 21,
+        "family": 5,
+        "country": 20,
+        "other": 35
+      },
+      "max_pair_divergence": 0.0098,
+      "max_divergent_pair": [
+        "family",
+        "other"
+      ]
+    },
+    {
+      "label": "before_state:どん底・危機",
+      "field": "before_state",
+      "value": "どん底・危機",
+      "jsd_vs_global": 0.021889,
+      "distribution": {
+        "company": 0.4223,
+        "individual": 0.2858,
+        "family": 0.0468,
+        "country": 0.1742,
+        "other": 0.0709
+      },
+      "scale_share": {
+        "company": 0.1016,
+        "individual": 0.1178,
+        "family": 0.0788,
+        "country": 0.1673,
+        "other": 0.0434
+      },
+      "total_count": 1326,
+      "scale_counts": {
+        "company": 560,
+        "individual": 379,
+        "family": 62,
+        "country": 231,
+        "other": 94
+      },
+      "max_pair_divergence": 0.1239,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:刷新・破壊",
+      "field": "action_type",
+      "value": "刷新・破壊",
+      "jsd_vs_global": 0.019824,
+      "distribution": {
+        "company": 0.4564,
+        "individual": 0.1878,
+        "family": 0.0471,
+        "country": 0.2025,
+        "other": 0.1062
+      },
+      "scale_share": {
+        "company": 0.1178,
+        "individual": 0.083,
+        "family": 0.0851,
+        "country": 0.2085,
+        "other": 0.0697
+      },
+      "total_count": 1422,
+      "scale_counts": {
+        "company": 649,
+        "individual": 267,
+        "family": 67,
+        "country": 288,
+        "other": 151
+      },
+      "max_pair_divergence": 0.1388,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    {
+      "label": "before_state:成長痛",
+      "field": "before_state",
+      "value": "成長痛",
+      "jsd_vs_global": 0.017227,
+      "distribution": {
+        "company": 0.5234,
+        "individual": 0.2716,
+        "family": 0.0225,
+        "country": 0.0682,
+        "other": 0.1143
+      },
+      "scale_share": {
+        "company": 0.2494,
+        "individual": 0.2216,
+        "family": 0.075,
+        "country": 0.1296,
+        "other": 0.1386
+      },
+      "total_count": 2625,
+      "scale_counts": {
+        "company": 1374,
+        "individual": 713,
+        "family": 59,
+        "country": 179,
+        "other": 300
+      },
+      "max_pair_divergence": 0.1744,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    {
+      "label": "action_type:攻める・挑戦",
+      "field": "action_type",
+      "value": "攻める・挑戦",
+      "jsd_vs_global": 0.016099,
+      "distribution": {
+        "company": 0.4485,
+        "individual": 0.3276,
+        "family": 0.0244,
+        "country": 0.0995,
+        "other": 0.1001
+      },
+      "scale_share": {
+        "company": 0.2537,
+        "individual": 0.3174,
+        "family": 0.0966,
+        "country": 0.2245,
+        "other": 0.1441
+      },
+      "total_count": 3117,
+      "scale_counts": {
+        "company": 1398,
+        "individual": 1021,
+        "family": 76,
+        "country": 310,
+        "other": 312
+      },
+      "max_pair_divergence": 0.2208,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    {
+      "label": "after_state:持続成長・大成功",
+      "field": "after_state",
+      "value": "持続成長・大成功",
+      "jsd_vs_global": 0.015478,
+      "distribution": {
+        "company": 0.5229,
+        "individual": 0.2639,
+        "family": 0.0249,
+        "country": 0.083,
+        "other": 0.1052
+      },
+      "scale_share": {
+        "company": 0.2093,
+        "individual": 0.1809,
+        "family": 0.0699,
+        "country": 0.1325,
+        "other": 0.1072
+      },
+      "total_count": 2205,
+      "scale_counts": {
+        "company": 1153,
+        "individual": 582,
+        "family": 55,
+        "country": 183,
+        "other": 232
+      },
+      "max_pair_divergence": 0.1394,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    {
+      "label": "action_type:守る・維持",
+      "field": "action_type",
+      "value": "守る・維持",
+      "jsd_vs_global": 0.014876,
+      "distribution": {
+        "company": 0.4097,
+        "individual": 0.1578,
+        "family": 0.1145,
+        "country": 0.1349,
+        "other": 0.1832
+      },
+      "scale_share": {
+        "company": 0.1201,
+        "individual": 0.0793,
+        "family": 0.2351,
+        "country": 0.1579,
+        "other": 0.1367
+      },
+      "total_count": 1616,
+      "scale_counts": {
+        "company": 662,
+        "individual": 255,
+        "family": 185,
+        "country": 218,
+        "other": 296
+      },
+      "max_pair_divergence": 0.1558,
+      "max_divergent_pair": [
+        "individual",
+        "family"
+      ]
+    },
+    {
+      "label": "after_state:縮小安定・生存",
+      "field": "after_state",
+      "value": "縮小安定・生存",
+      "jsd_vs_global": 0.014221,
+      "distribution": {
+        "company": 0.406,
+        "individual": 0.3362,
+        "family": 0.0432,
+        "country": 0.1223,
+        "other": 0.0924
+      },
+      "scale_share": {
+        "company": 0.1109,
+        "individual": 0.1573,
+        "family": 0.0826,
+        "country": 0.1332,
+        "other": 0.0642
+      },
+      "total_count": 1505,
+      "scale_counts": {
+        "company": 611,
+        "individual": 506,
+        "family": 65,
+        "country": 184,
+        "other": 139
+      },
+      "max_pair_divergence": 0.0931,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    {
+      "label": "action_type:対話・融合",
+      "field": "action_type",
+      "value": "対話・融合",
+      "jsd_vs_global": 0.01195,
+      "distribution": {
+        "company": 0.4508,
+        "individual": 0.1842,
+        "family": 0.0935,
+        "country": 0.0629,
+        "other": 0.2087
+      },
+      "scale_share": {
+        "company": 0.147,
+        "individual": 0.1029,
+        "family": 0.2135,
+        "country": 0.0818,
+        "other": 0.1732
+      },
+      "total_count": 1797,
+      "scale_counts": {
+        "company": 810,
+        "individual": 331,
+        "family": 168,
+        "country": 113,
+        "other": 375
+      },
+      "max_pair_divergence": 0.1316,
+      "max_divergent_pair": [
+        "family",
+        "country"
+      ]
+    },
+    {
+      "label": "after_state:安定・平和",
+      "field": "after_state",
+      "value": "安定・平和",
+      "jsd_vs_global": 0.011642,
+      "distribution": {
+        "company": 0.4171,
+        "individual": 0.2712,
+        "family": 0.0468,
+        "country": 0.0477,
+        "other": 0.2171
+      },
+      "scale_share": {
+        "company": 0.084,
+        "individual": 0.0936,
+        "family": 0.0661,
+        "country": 0.0384,
+        "other": 0.1113
+      },
+      "total_count": 1110,
+      "scale_counts": {
+        "company": 463,
+        "individual": 301,
+        "family": 52,
+        "country": 53,
+        "other": 241
+      },
+      "max_pair_divergence": 0.0729,
+      "max_divergent_pair": [
+        "country",
+        "other"
+      ]
+    },
+    {
+      "label": "after_state:変質・新生",
+      "field": "after_state",
+      "value": "変質・新生",
+      "jsd_vs_global": 0.011124,
+      "distribution": {
+        "company": 0.3235,
+        "individual": 0.2819,
+        "family": 0.0801,
+        "country": 0.1623,
+        "other": 0.1521
+      },
+      "scale_share": {
+        "company": 0.0579,
+        "individual": 0.0864,
+        "family": 0.1004,
+        "country": 0.1159,
+        "other": 0.0693
+      },
+      "total_count": 986,
+      "scale_counts": {
+        "company": 319,
+        "individual": 278,
+        "family": 79,
+        "country": 160,
+        "other": 150
+      },
+      "max_pair_divergence": 0.058,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    },
+    {
+      "label": "action_type:耐える・潜伏",
+      "field": "action_type",
+      "value": "耐える・潜伏",
+      "jsd_vs_global": 0.009652,
+      "distribution": {
+        "company": 0.3147,
+        "individual": 0.2818,
+        "family": 0.0855,
+        "country": 0.1343,
+        "other": 0.1837
+      },
+      "scale_share": {
+        "company": 0.1216,
+        "individual": 0.1865,
+        "family": 0.2313,
+        "country": 0.2071,
+        "other": 0.1806
+      },
+      "total_count": 2129,
+      "scale_counts": {
+        "company": 670,
+        "individual": 600,
+        "family": 182,
+        "country": 286,
+        "other": 391
+      },
+      "max_pair_divergence": 0.1097,
+      "max_divergent_pair": [
+        "company",
+        "family"
+      ]
+    },
+    {
+      "label": "outcome:Mixed",
+      "field": "outcome",
+      "value": "Mixed",
+      "jsd_vs_global": 0.007346,
+      "distribution": {
+        "company": 0.4449,
+        "individual": 0.1796,
+        "family": 0.05,
+        "country": 0.1512,
+        "other": 0.1744
+      },
+      "scale_share": {
+        "company": 0.1875,
+        "individual": 0.1296,
+        "family": 0.1474,
+        "country": 0.2542,
+        "other": 0.1871
+      },
+      "total_count": 2322,
+      "scale_counts": {
+        "company": 1033,
+        "individual": 417,
+        "family": 116,
+        "country": 351,
+        "other": 405
+      },
+      "max_pair_divergence": 0.1245,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    {
+      "label": "before_state:停滞・閉塞",
+      "field": "before_state",
+      "value": "停滞・閉塞",
+      "jsd_vs_global": 0.007106,
+      "distribution": {
+        "company": 0.394,
+        "individual": 0.1917,
+        "family": 0.0742,
+        "country": 0.1552,
+        "other": 0.1849
+      },
+      "scale_share": {
+        "company": 0.1802,
+        "individual": 0.1501,
+        "family": 0.2376,
+        "country": 0.2831,
+        "other": 0.2152
+      },
+      "total_count": 2520,
+      "scale_counts": {
+        "company": 993,
+        "individual": 483,
+        "family": 187,
+        "country": 391,
+        "other": 466
+      },
+      "max_pair_divergence": 0.133,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    {
+      "label": "before_state:安定・平和",
+      "field": "before_state",
+      "value": "安定・平和",
+      "jsd_vs_global": 0.004601,
+      "distribution": {
+        "company": 0.4068,
+        "individual": 0.2966,
+        "family": 0.0752,
+        "country": 0.0763,
+        "other": 0.1451
+      },
+      "scale_share": {
+        "company": 0.2051,
+        "individual": 0.2561,
+        "family": 0.2656,
+        "country": 0.1535,
+        "other": 0.1861
+      },
+      "total_count": 2778,
+      "scale_counts": {
+        "company": 1130,
+        "individual": 824,
+        "family": 209,
+        "country": 212,
+        "other": 403
+      },
+      "max_pair_divergence": 0.1121,
+      "max_divergent_pair": [
+        "family",
+        "country"
+      ]
+    },
+    {
+      "label": "after_state:現状維持・延命",
+      "field": "after_state",
+      "value": "現状維持・延命",
+      "jsd_vs_global": 0.003689,
+      "distribution": {
+        "company": 0.4127,
+        "individual": 0.1984,
+        "family": 0.0635,
+        "country": 0.127,
+        "other": 0.1984
+      },
+      "scale_share": {
+        "company": 0.0094,
+        "individual": 0.0078,
+        "family": 0.0102,
+        "country": 0.0116,
+        "other": 0.0115
+      },
+      "total_count": 126,
+      "scale_counts": {
+        "company": 52,
+        "individual": 25,
+        "family": 8,
+        "country": 16,
+        "other": 25
+      },
+      "max_pair_divergence": 0.0038,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    {
+      "label": "outcome:Failure",
+      "field": "outcome",
+      "value": "Failure",
+      "jsd_vs_global": 0.003435,
+      "distribution": {
+        "company": 0.3999,
+        "individual": 0.2444,
+        "family": 0.0866,
+        "country": 0.1283,
+        "other": 0.1409
+      },
+      "scale_share": {
+        "company": 0.3044,
+        "individual": 0.3186,
+        "family": 0.4612,
+        "country": 0.3896,
+        "other": 0.273
+      },
+      "total_count": 4194,
+      "scale_counts": {
+        "company": 1677,
+        "individual": 1025,
+        "family": 363,
+        "country": 538,
+        "other": 591
+      },
+      "max_pair_divergence": 0.1883,
+      "max_divergent_pair": [
+        "family",
+        "other"
+      ]
+    },
+    {
+      "label": "outcome:Success",
+      "field": "outcome",
+      "value": "Success",
+      "jsd_vs_global": 0.00327,
+      "distribution": {
+        "company": 0.4282,
+        "individual": 0.2705,
+        "family": 0.0468,
+        "country": 0.0742,
+        "other": 0.1803
+      },
+      "scale_share": {
+        "company": 0.4884,
+        "individual": 0.5284,
+        "family": 0.3736,
+        "country": 0.3374,
+        "other": 0.5233
+      },
+      "total_count": 6284,
+      "scale_counts": {
+        "company": 2691,
+        "individual": 1700,
+        "family": 294,
+        "country": 466,
+        "other": 1133
+      },
+      "max_pair_divergence": 0.191,
+      "max_divergent_pair": [
+        "individual",
+        "country"
+      ]
+    },
+    {
+      "label": "outcome:PartialSuccess",
+      "field": "outcome",
+      "value": "PartialSuccess",
+      "jsd_vs_global": 0.002275,
+      "distribution": {
+        "company": 0.4192,
+        "individual": 0.2885,
+        "family": 0.0538,
+        "country": 0.1,
+        "other": 0.1385
+      },
+      "scale_share": {
+        "company": 0.0198,
+        "individual": 0.0233,
+        "family": 0.0178,
+        "country": 0.0188,
+        "other": 0.0166
+      },
+      "total_count": 260,
+      "scale_counts": {
+        "company": 109,
+        "individual": 75,
+        "family": 14,
+        "country": 26,
+        "other": 36
+      },
+      "max_pair_divergence": 0.0067,
+      "max_divergent_pair": [
+        "individual",
+        "other"
+      ]
+    },
+    {
+      "label": "after_state:安定成長・成功",
+      "field": "after_state",
+      "value": "安定成長・成功",
+      "jsd_vs_global": 0.00208,
+      "distribution": {
+        "company": 0.3914,
+        "individual": 0.2301,
+        "family": 0.0587,
+        "country": 0.1283,
+        "other": 0.1916
+      },
+      "scale_share": {
+        "company": 0.0775,
+        "individual": 0.078,
+        "family": 0.0813,
+        "country": 0.1014,
+        "other": 0.0965
+      },
+      "total_count": 1091,
+      "scale_counts": {
+        "company": 427,
+        "individual": 251,
+        "family": 64,
+        "country": 140,
+        "other": 209
+      },
+      "max_pair_divergence": 0.0239,
+      "max_divergent_pair": [
+        "company",
+        "country"
+      ]
+    }
+  ],
+  "schema_deviations": {
+    "extra_action_types": [
+      "交流・発表",
+      "分散する・独立する",
+      "分散・多角化",
+      "分散・探索",
+      "分散・独立",
+      "拡大・攻め",
+      "捨てる・転換",
+      "撤退・収縮",
+      "撤退・縮小",
+      "撤退・逃げる",
+      "輝く・表現",
+      "逃げる・分散",
+      "逃げる・守る",
+      "集中・拡大"
+    ],
+    "extra_before_states": [
+      "V字回復・大成功",
+      "安定・停止",
+      "安定成長・成功",
+      "急成長・拡大",
+      "成長・拡大",
+      "拡大・繁栄",
+      "混乱・衰退",
+      "縮小安定・生存",
+      "調和・繁栄"
+    ],
+    "extra_after_states": [
+      "どん底・危機",
+      "停滞・閉塞",
+      "分岐・様子見",
+      "喜び・交流",
+      "安定・停止",
+      "安定・平和",
+      "安定成長・成功",
+      "成長・拡大",
+      "成長痛",
+      "拡大・繁栄",
+      "持続成長・大成功",
+      "消滅・破綻",
+      "混乱・カオス",
+      "混乱・衰退"
+    ],
+    "extra_outcomes": [],
+    "extra_label_counts": {
+      "action_type:逃げる・分散": 11,
+      "action_type:撤退・収縮": 34,
+      "action_type:交流・発表": 195,
+      "action_type:分散・探索": 499,
+      "action_type:分散・独立": 3,
+      "action_type:撤退・逃げる": 11,
+      "action_type:逃げる・守る": 4,
+      "action_type:分散する・独立する": 3,
+      "action_type:集中・拡大": 140,
+      "action_type:捨てる・転換": 433,
+      "action_type:分散・多角化": 3,
+      "action_type:拡大・攻め": 116,
+      "action_type:輝く・表現": 11,
+      "action_type:撤退・縮小": 14,
+      "before_state:混乱・衰退": 819,
+      "before_state:縮小安定・生存": 18,
+      "before_state:急成長・拡大": 2,
+      "before_state:安定・停止": 564,
+      "before_state:安定成長・成功": 331,
+      "before_state:調和・繁栄": 19,
+      "before_state:拡大・繁栄": 119,
+      "before_state:V字回復・大成功": 11,
+      "before_state:成長・拡大": 84,
+      "after_state:混乱・衰退": 631,
+      "after_state:どん底・危機": 280,
+      "after_state:喜び・交流": 220,
+      "after_state:成長痛": 26,
+      "after_state:安定・停止": 363,
+      "after_state:消滅・破綻": 1,
+      "after_state:安定成長・成功": 1091,
+      "after_state:混乱・カオス": 378,
+      "after_state:持続成長・大成功": 2205,
+      "after_state:分岐・様子見": 2,
+      "after_state:停滞・閉塞": 993,
+      "after_state:拡大・繁栄": 285,
+      "after_state:安定・平和": 1110,
+      "after_state:成長・拡大": 119
+    }
+  },
+  "comparison_samples": {
+    "対話・融合": {
+      "company": [
+        {
+          "transition_id": "CORP_JP_4193",
+          "target_name": "巽順応事例41-1",
+          "scale": "company",
+          "main_domain": "ビジネス",
+          "story_summary": "変化に順応して生き残った企業。",
+          "before_state": "成長痛",
+          "action_type": "対話・融合",
+          "after_state": "安定・平和",
+          "outcome": "Success",
+          "pattern_type": "Crisis_Pivot"
+        },
+        {
+          "transition_id": "CORP_JP_893",
+          "target_name": "スターバックス Japan・サードプレイス戦略で1500万人獲得（2000-2024）",
+          "scale": "company",
+          "main_domain": "テクノロジー",
+          "story_summary": "スターバックスが「サードプレイス」（第三の場所）コンセプトで顧客体験を創出。アプリ利用者1500万人達成。従業員を「パートナー」と呼び70時間教育投資。居心地の良い空間提供で感情的価値を創造。",
+          "before_state": "安定・平和",
+          "action_type": "対話・融合",
+          "after_state": "持続成長・大成功",
+          "outcome": "Success",
+          "pattern_type": "Steady_Growth"
+        },
+        {
+          "transition_id": "CORP_JP_391",
+          "target_name": "OpenAI（サム・アルトマン解任騒動）",
+          "scale": "company",
+          "main_domain": "テクノロジー",
+          "story_summary": "2023年11月17日、OpenAI取締役会がCEOサム・アルトマンを「信頼の欠如」を理由に電撃解任。従業員700人以上が復帰なければ辞職と宣言、マイクロソフトが95%の研究者受け入れを表明。わずか5日後の11月22日にCEO復帰、取締役会は刷新。AIの安全性とビジネス拡大の対立が背景。",
+          "before_state": "絶頂・慢心",
+          "action_type": "対話・融合",
+          "after_state": "変質・新生",
+          "outcome": "Success",
+          "pattern_type": "Shock_Recovery"
+        },
+        {
+          "transition_id": "CORP_JP_4566",
+          "target_name": "アテニア",
+          "scale": "company",
+          "main_domain": "business",
+          "story_summary": "化粧品ブランドのアテニアは20万人以上が参加する国内最大級の化粧品ファンコミュニティを構築。ユーザー同士が「とことん話せる場」を設け、2025年3月末時点で投稿数41万件に達した。顧客との対話から商品開発に活かし、熱狂的なファン層を形成した。",
+          "before_state": "停滞・閉塞",
+          "action_type": "対話・融合",
+          "after_state": "安定成長・成功",
+          "outcome": "Success",
+          "pattern_type": "Pivot_Success"
+        },
+        {
+          "transition_id": "CORP_JP_1838",
+          "target_name": "巽事例5-3 優柔不断で失敗",
+          "scale": "company",
+          "main_domain": "",
+          "story_summary": "決断を先延ばしにして機会を逃したケース。",
+          "before_state": "安定・平和",
+          "action_type": "対話・融合",
+          "after_state": "縮小安定・生存",
+          "outcome": "Failure",
+          "pattern_type": "Stagnation"
+        }
+      ],
+      "individual": [
+        {
+          "transition_id": "PERS_JP_2614",
+          "target_name": "巽順応事例58-2",
+          "scale": "individual",
+          "main_domain": "生活・暮らし",
+          "story_summary": "環境に適応して成功した人物。",
+          "before_state": "停滞・閉塞",
+          "action_type": "対話・融合",
+          "after_state": "持続成長・大成功",
+          "outcome": "Success",
+          "pattern_type": "Steady_Growth"
+        },
+        {
+          "transition_id": "PERS_JP_1433",
+          "target_name": "兌結果失敗事例002-2",
+          "scale": "individual",
+          "main_domain": "生活・暮らし",
+          "story_summary": "協調が裏目に出たケース。",
+          "before_state": "安定・平和",
+          "action_type": "対話・融合",
+          "after_state": "縮小安定・生存",
+          "outcome": "Failure",
+          "pattern_type": "Failed_Attempt"
+        },
+        {
+          "transition_id": "PERS_JP_965",
+          "target_name": "個人_闘病から患者支援へ",
+          "scale": "individual",
+          "main_domain": "Lifestyle",
+          "story_summary": "30代でがん告知。手術、抗がん剤、再発の恐怖と闘う日々。しかし同じ病気の患者と出会い、支え合うことで生きる意味を見出す。寛解後は患者会を立ち上げ、「がんサバイバー」として活動。病気が人生を変えた。",
+          "before_state": "安定・平和",
+          "action_type": "対話・融合",
+          "after_state": "変質・新生",
+          "outcome": "Success",
+          "pattern_type": "Endurance"
+        },
+        {
+          "transition_id": "PERS_JP_1608",
+          "target_name": "巽柔軟事例27-2",
+          "scale": "individual",
+          "main_domain": "",
+          "story_summary": "状況を読んで行動を変えた人物。",
+          "before_state": "成長痛",
+          "action_type": "対話・融合",
+          "after_state": "安定・平和",
+          "outcome": "Success",
+          "pattern_type": "Steady_Growth"
+        },
+        {
+          "transition_id": "PERS_JP_1593",
+          "target_name": "巽風見鶏事例19-1",
+          "scale": "individual",
+          "main_domain": "",
+          "story_summary": "周囲に合わせすぎて失敗した人物。",
+          "before_state": "安定・平和",
+          "action_type": "対話・融合",
+          "after_state": "停滞・閉塞",
+          "outcome": "Failure",
+          "pattern_type": "Stagnation"
+        }
+      ],
+      "company_count": 810,
+      "individual_count": 331
+    },
+    "攻める・挑戦": {
+      "company": [
+        {
+          "transition_id": "CORP_JP_4538",
+          "target_name": "Bumble（マッチングアプリの過剰競争）",
+          "scale": "company",
+          "main_domain": "IT・通信",
+          "story_summary": "女性主導のマッチングアプリBumbleは市場拡大を続けたが、競争激化と市場飽和により2024年に株価が大幅下落。感応ビジネスの終末期、過剰な競争の影響を受けた。",
+          "before_state": "絶頂・慢心",
+          "action_type": "攻める・挑戦",
+          "after_state": "縮小安定・生存",
+          "outcome": "Mixed",
+          "pattern_type": "Hubris_Collapse"
+        },
+        {
+          "transition_id": "CORP_JP_928",
+          "target_name": "第一寶亭留・温泉付改装で高級化（1990-2022）",
+          "scale": "company",
+          "main_domain": "観光・旅行",
+          "story_summary": "北海道定山渓の宿泊施設・第一寶亭留がバブル崩壊後の団体客減少に対応、全室温泉付へ大胆改装し高級志向へ転換。女性限定宿・食特化宿等で差別化、2020年かき氷店「森乃百日氷」8時間待ち行列、2022年複合施設「山ノ風マチ」開業で地域活性化。",
+          "before_state": "停滞・閉塞",
+          "action_type": "攻める・挑戦",
+          "after_state": "持続成長・大成功",
+          "outcome": "Success",
+          "pattern_type": "Pivot_Success"
+        },
+        {
+          "transition_id": "CORP_JP_240",
+          "target_name": "吉野家の牛丼値下げ戦争",
+          "scale": "company",
+          "main_domain": "Business",
+          "story_summary": "牛丼チェーン各社が激しい値下げ競争（兌→兌）を展開。一時は280円まで値下げし、業界全体が大盛況（兌）。しかしBSE問題で一転して危機に陥った。",
+          "before_state": "絶頂・慢心",
+          "action_type": "攻める・挑戦",
+          "after_state": "どん底・危機",
+          "outcome": "Mixed",
+          "pattern_type": "Hubris_Collapse"
+        },
+        {
+          "transition_id": "CORP_JP_2262",
+          "target_name": "メタ（旧Facebook）メタバース転換（2021-2024）",
+          "scale": "company",
+          "main_domain": "テクノロジー",
+          "story_summary": "2021年社名変更でメタバース全振り。巨額投資も成果出ず、AI路線へ軌道修正中。",
+          "before_state": "絶頂・慢心",
+          "action_type": "攻める・挑戦",
+          "after_state": "迷走・混乱",
+          "outcome": "Mixed",
+          "pattern_type": "Hubris_Collapse"
+        },
+        {
+          "transition_id": "CORP_JP_1923",
+          "target_name": "離輝き事例18-1",
+          "scale": "company",
+          "main_domain": "",
+          "story_summary": "注目を集めて成功した企業。",
+          "before_state": "安定・平和",
+          "action_type": "攻める・挑戦",
+          "after_state": "持続成長・大成功",
+          "outcome": "Success",
+          "pattern_type": "Breakthrough"
+        }
+      ],
+      "family": [
+        {
+          "transition_id": "FAM_JP_053",
+          "target_name": "相続_争族_01",
+          "scale": "family",
+          "main_domain": "生活・暮らし",
+          "story_summary": "父の死後、兄弟3人で遺産分割。長男が全て相続すると主張し対立。弁護士を立てて調停、2年かけて決着するも兄弟関係は完全に断絶。",
+          "before_state": "安定・平和",
+          "action_type": "攻める・挑戦",
+          "after_state": "崩壊・消滅",
+          "outcome": "Failure",
+          "pattern_type": "Slow_Decline"
+        },
+        {
+          "transition_id": "FAM_JP_026",
+          "target_name": "D家_事業承継成功",
+          "scale": "family",
+          "main_domain": "小売・サービス",
+          "story_summary": "老舗和菓子店の3代目。父は職人気質で経営には疎い。大学で経営を学んだ息子が30歳で帰郷し、ECサイト開設とSNSマーケティングを導入。父と衝突しながらも売上は3倍に。今では父も息子のやり方を認め、二人三脚で経営。",
+          "before_state": "停滞・閉塞",
+          "action_type": "攻める・挑戦",
+          "after_state": "安定・平和",
+          "outcome": "Success",
+          "pattern_type": "Pivot_Success"
+        },
+        {
+          "transition_id": "FAM_JP_091",
+          "target_name": "リフォーム_予算超過_住み心地改善",
+          "scale": "family",
+          "main_domain": "生活・暮らし",
+          "story_summary": "古民家をリフォーム。予算を50%オーバーし、貯金を大幅に使う。しかし住み心地は劇的に改善し、家族の満足度は高い。お金は減ったが暮らしは豊かに。",
+          "before_state": "安定・平和",
+          "action_type": "攻める・挑戦",
+          "after_state": "安定・平和",
+          "outcome": "PartialSuccess",
+          "pattern_type": "Steady_Growth"
+        },
+        {
+          "transition_id": "FAM_JP_084",
+          "target_name": "転居_環境改善_コミュニティ喪失",
+          "scale": "family",
+          "main_domain": "不動産・建設",
+          "story_summary": "より良い環境を求めて転居。住環境は大幅に改善。しかし友人や知人との繋がりが切れ、孤独感を感じる。新しい土地での人間関係構築に苦労。",
+          "before_state": "停滞・閉塞",
+          "action_type": "攻める・挑戦",
+          "after_state": "安定・平和",
+          "outcome": "Mixed",
+          "pattern_type": "Pivot_Success"
+        },
+        {
+          "transition_id": "FAM_JP_080",
+          "target_name": "国際結婚_愛獲得_文化衝突",
+          "scale": "family",
+          "main_domain": "エンタメ",
+          "story_summary": "外国人パートナーと国際結婚。愛する人と結ばれる幸せ。しかし文化や価値観の違いで衝突も多い。愛情はあるが、理解し合えない部分も。",
+          "before_state": "安定・平和",
+          "action_type": "攻める・挑戦",
+          "after_state": "現状維持・延命",
+          "outcome": "Mixed",
+          "pattern_type": "Pivot_Success"
+        }
+      ],
+      "company_count": 1398,
+      "family_count": 76
+    }
+  },
+  "success_rate_by_action_scale": {
+    "交流・発表": {
+      "company": {
+        "success_rate": 1.0,
+        "total": 16
+      },
+      "individual": {
+        "success_rate": 1.0,
+        "total": 31
+      },
+      "family": {
+        "success_rate": 1.0,
+        "total": 18
+      },
+      "country": {
+        "success_rate": null,
+        "total": 0
+      },
+      "other": {
+        "success_rate": 1.0,
+        "total": 130
+      }
+    },
+    "分散・スピンオフ": {
+      "company": {
+        "success_rate": 0.629,
+        "total": 93
+      },
+      "individual": {
+        "success_rate": 0.929,
+        "total": 14
+      },
+      "family": {
+        "success_rate": 0.767,
+        "total": 15
+      },
+      "country": {
+        "success_rate": 0.393,
+        "total": 14
+      },
+      "other": {
+        "success_rate": 0.485,
+        "total": 33
+      }
+    },
+    "分散・探索": {
+      "company": {
+        "success_rate": 0.048,
+        "total": 145
+      },
+      "individual": {
+        "success_rate": 0.276,
+        "total": 105
+      },
+      "family": {
+        "success_rate": 0.3,
+        "total": 30
+      },
+      "country": {
+        "success_rate": 0.08,
+        "total": 50
+      },
+      "other": {
+        "success_rate": 0.544,
+        "total": 169
+      }
+    },
+    "刷新・破壊": {
+      "company": {
+        "success_rate": 0.697,
+        "total": 649
+      },
+      "individual": {
+        "success_rate": 0.453,
+        "total": 267
+      },
+      "family": {
+        "success_rate": 0.328,
+        "total": 67
+      },
+      "country": {
+        "success_rate": 0.481,
+        "total": 288
+      },
+      "other": {
+        "success_rate": 0.497,
+        "total": 151
+      }
+    },
+    "守る・維持": {
+      "company": {
+        "success_rate": 0.384,
+        "total": 662
+      },
+      "individual": {
+        "success_rate": 0.337,
+        "total": 255
+      },
+      "family": {
+        "success_rate": 0.257,
+        "total": 185
+      },
+      "country": {
+        "success_rate": 0.227,
+        "total": 218
+      },
+      "other": {
+        "success_rate": 0.562,
+        "total": 296
+      }
+    },
+    "対話・融合": {
+      "company": {
+        "success_rate": 0.572,
+        "total": 810
+      },
+      "individual": {
+        "success_rate": 0.604,
+        "total": 331
+      },
+      "family": {
+        "success_rate": 0.539,
+        "total": 168
+      },
+      "country": {
+        "success_rate": 0.739,
+        "total": 113
+      },
+      "other": {
+        "success_rate": 0.725,
+        "total": 375
+      }
+    },
+    "拡大・攻め": {
+      "company": {
+        "success_rate": 0.979,
+        "total": 48
+      },
+      "individual": {
+        "success_rate": 1.0,
+        "total": 20
+      },
+      "family": {
+        "success_rate": null,
+        "total": 0
+      },
+      "country": {
+        "success_rate": null,
+        "total": 7
+      },
+      "other": {
+        "success_rate": 1.0,
+        "total": 41
+      }
+    },
+    "捨てる・撤退": {
+      "company": {
+        "success_rate": 0.218,
+        "total": 556
+      },
+      "individual": {
+        "success_rate": 0.305,
+        "total": 243
+      },
+      "family": {
+        "success_rate": 0.8,
+        "total": 25
+      },
+      "country": {
+        "success_rate": 0.125,
+        "total": 36
+      },
+      "other": {
+        "success_rate": 0.019,
+        "total": 104
+      }
+    },
+    "捨てる・転換": {
+      "company": {
+        "success_rate": 0.562,
+        "total": 153
+      },
+      "individual": {
+        "success_rate": 0.911,
+        "total": 203
+      },
+      "family": {
+        "success_rate": null,
+        "total": 9
+      },
+      "country": {
+        "success_rate": null,
+        "total": 3
+      },
+      "other": {
+        "success_rate": 0.431,
+        "total": 65
+      }
+    },
+    "攻める・挑戦": {
+      "company": {
+        "success_rate": 0.705,
+        "total": 1398
+      },
+      "individual": {
+        "success_rate": 0.652,
+        "total": 1021
+      },
+      "family": {
+        "success_rate": 0.461,
+        "total": 76
+      },
+      "country": {
+        "success_rate": 0.458,
+        "total": 310
+      },
+      "other": {
+        "success_rate": 0.583,
+        "total": 312
+      }
+    },
+    "耐える・潜伏": {
+      "company": {
+        "success_rate": 0.304,
+        "total": 670
+      },
+      "individual": {
+        "success_rate": 0.441,
+        "total": 600
+      },
+      "family": {
+        "success_rate": 0.206,
+        "total": 182
+      },
+      "country": {
+        "success_rate": 0.096,
+        "total": 286
+      },
+      "other": {
+        "success_rate": 0.219,
+        "total": 391
+      }
+    },
+    "逃げる・放置": {
+      "company": {
+        "success_rate": 0.01,
+        "total": 241
+      },
+      "individual": {
+        "success_rate": 0.125,
+        "total": 76
+      },
+      "family": {
+        "success_rate": null,
+        "total": 9
+      },
+      "country": {
+        "success_rate": 0.0,
+        "total": 32
+      },
+      "other": {
+        "success_rate": 0.091,
+        "total": 11
+      }
+    },
+    "集中・拡大": {
+      "company": {
+        "success_rate": 0.886,
+        "total": 44
+      },
+      "individual": {
+        "success_rate": 0.952,
+        "total": 21
+      },
+      "family": {
+        "success_rate": null,
+        "total": 1
+      },
+      "country": {
+        "success_rate": 0.889,
+        "total": 18
+      },
+      "other": {
+        "success_rate": 0.875,
+        "total": 56
+      }
+    }
+  },
+  "success_rate_divergence": {
+    "交流・発表": {
+      "max_success_rate_diff": 0.0,
+      "max_pair": [
+        "family",
+        "other"
+      ],
+      "rates": {
+        "company": 1.0,
+        "individual": 1.0,
+        "family": 1.0,
+        "other": 1.0
+      }
+    },
+    "分散・スピンオフ": {
+      "max_success_rate_diff": 0.536,
+      "max_pair": [
+        "individual",
+        "country"
+      ],
+      "rates": {
+        "company": 0.629,
+        "individual": 0.929,
+        "family": 0.767,
+        "country": 0.393,
+        "other": 0.485
+      }
+    },
+    "分散・探索": {
+      "max_success_rate_diff": 0.496,
+      "max_pair": [
+        "company",
+        "other"
+      ],
+      "rates": {
+        "company": 0.048,
+        "individual": 0.276,
+        "family": 0.3,
+        "country": 0.08,
+        "other": 0.544
+      }
+    },
+    "刷新・破壊": {
+      "max_success_rate_diff": 0.369,
+      "max_pair": [
+        "company",
+        "family"
+      ],
+      "rates": {
+        "company": 0.697,
+        "individual": 0.453,
+        "family": 0.328,
+        "country": 0.481,
+        "other": 0.497
+      }
+    },
+    "守る・維持": {
+      "max_success_rate_diff": 0.335,
+      "max_pair": [
+        "country",
+        "other"
+      ],
+      "rates": {
+        "company": 0.384,
+        "individual": 0.337,
+        "family": 0.257,
+        "country": 0.227,
+        "other": 0.562
+      }
+    },
+    "対話・融合": {
+      "max_success_rate_diff": 0.2,
+      "max_pair": [
+        "family",
+        "country"
+      ],
+      "rates": {
+        "company": 0.572,
+        "individual": 0.604,
+        "family": 0.539,
+        "country": 0.739,
+        "other": 0.725
+      }
+    },
+    "拡大・攻め": {
+      "max_success_rate_diff": 0.021,
+      "max_pair": [
+        "company",
+        "other"
+      ],
+      "rates": {
+        "company": 0.979,
+        "individual": 1.0,
+        "other": 1.0
+      }
+    },
+    "捨てる・撤退": {
+      "max_success_rate_diff": 0.781,
+      "max_pair": [
+        "family",
+        "other"
+      ],
+      "rates": {
+        "company": 0.218,
+        "individual": 0.305,
+        "family": 0.8,
+        "country": 0.125,
+        "other": 0.019
+      }
+    },
+    "捨てる・転換": {
+      "max_success_rate_diff": 0.48,
+      "max_pair": [
+        "individual",
+        "other"
+      ],
+      "rates": {
+        "company": 0.562,
+        "individual": 0.911,
+        "other": 0.431
+      }
+    },
+    "攻める・挑戦": {
+      "max_success_rate_diff": 0.247,
+      "max_pair": [
+        "company",
+        "country"
+      ],
+      "rates": {
+        "company": 0.705,
+        "individual": 0.652,
+        "family": 0.461,
+        "country": 0.458,
+        "other": 0.583
+      }
+    },
+    "耐える・潜伏": {
+      "max_success_rate_diff": 0.345,
+      "max_pair": [
+        "individual",
+        "country"
+      ],
+      "rates": {
+        "company": 0.304,
+        "individual": 0.441,
+        "family": 0.206,
+        "country": 0.096,
+        "other": 0.219
+      }
+    },
+    "逃げる・放置": {
+      "max_success_rate_diff": 0.125,
+      "max_pair": [
+        "individual",
+        "country"
+      ],
+      "rates": {
+        "company": 0.01,
+        "individual": 0.125,
+        "country": 0.0,
+        "other": 0.091
+      }
+    },
+    "集中・拡大": {
+      "max_success_rate_diff": 0.077,
+      "max_pair": [
+        "individual",
+        "other"
+      ],
+      "rates": {
+        "company": 0.886,
+        "individual": 0.952,
+        "country": 0.889,
+        "other": 0.875
+      }
+    }
+  },
+  "pairwise_jsd_scales_action_type": {
+    "company_vs_individual": 0.032453,
+    "company_vs_family": 0.096714,
+    "company_vs_country": 0.060012,
+    "company_vs_other": 0.081488,
+    "individual_vs_family": 0.126751,
+    "individual_vs_country": 0.083654,
+    "individual_vs_other": 0.087381,
+    "family_vs_country": 0.090601,
+    "family_vs_other": 0.057359,
+    "country_vs_other": 0.10817
+  },
+  "schema_compliance": {
+    "action_type_schema_compliant": 11583,
+    "action_type_non_schema": 1477,
+    "non_schema_scale_distribution": {
+      "individual": 410,
+      "company": 431,
+      "other": 492,
+      "country": 84,
+      "family": 60
+    },
+    "schema_scale_distribution": {
+      "company": 5079,
+      "individual": 2807,
+      "country": 1297,
+      "family": 727,
+      "other": 1673
+    }
+  }
+}

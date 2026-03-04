@@ -1,0 +1,831 @@
+{
+  "field_fill_rates": {
+    "scale": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "main_domain": {
+      "filled": 10438,
+      "total": 13060,
+      "fill_rate": 79.92
+    },
+    "sub_domain": {
+      "filled": 0,
+      "total": 13060,
+      "fill_rate": 0.0
+    },
+    "action_detail": {
+      "filled": 0,
+      "total": 13060,
+      "fill_rate": 0.0
+    },
+    "story_summary": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "free_tags": {
+      "filled": 12627,
+      "total": 13060,
+      "fill_rate": 96.68
+    },
+    "source_type": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "credibility_rank": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "entity_type": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "subject_type": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "event_driver_type": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "event_phase": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "period": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "country": {
+      "filled": 11274,
+      "total": 13060,
+      "fill_rate": 86.32
+    },
+    "sources": {
+      "filled": 10684,
+      "total": 13060,
+      "fill_rate": 81.81
+    },
+    "trust_level": {
+      "filled": 9580,
+      "total": 13060,
+      "fill_rate": 73.35
+    },
+    "trust_reason": {
+      "filled": 9447,
+      "total": 13060,
+      "fill_rate": 72.34
+    },
+    "before_state": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "trigger_type": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "action_type": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "after_state": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "before_hex": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "trigger_hex": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "action_hex": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "after_hex": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "pattern_type": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "outcome": {
+      "filled": 13060,
+      "total": 13060,
+      "fill_rate": 100.0
+    },
+    "success_level": {
+      "filled": 12731,
+      "total": 13060,
+      "fill_rate": 97.48
+    },
+    "verification_confidence": {
+      "filled": 12871,
+      "total": 13060,
+      "fill_rate": 98.55
+    },
+    "outcome_status": {
+      "filled": 12871,
+      "total": 13060,
+      "fill_rate": 98.55
+    },
+    "logic_memo": {
+      "filled": 10410,
+      "total": 13060,
+      "fill_rate": 79.71
+    },
+    "classical_before_hexagram": {
+      "filled": 9520,
+      "total": 13060,
+      "fill_rate": 72.89
+    },
+    "classical_action_hexagram": {
+      "filled": 2919,
+      "total": 13060,
+      "fill_rate": 22.35
+    },
+    "classical_after_hexagram": {
+      "filled": 9447,
+      "total": 13060,
+      "fill_rate": 72.34
+    }
+  },
+  "scale_distribution": {
+    "company": 5510,
+    "individual": 3217,
+    "country": 1381,
+    "family": 787,
+    "other": 2165
+  },
+  "entity_type_distribution": {
+    "company": 7610,
+    "individual": 3984,
+    "government": 1407,
+    "organization": 59
+  },
+  "scale_entity_crosstab": {
+    "company|company": 5502,
+    "individual|individual": 3197,
+    "other|company": 2108,
+    "country|government": 1381,
+    "family|individual": 787,
+    "other|organization": 46,
+    "individual|organization": 12,
+    "other|government": 11,
+    "individual|government": 8,
+    "company|government": 7,
+    "company|organization": 1
+  },
+  "edge_cases": {
+    "total_count": 1070,
+    "percentage_of_all": 8.19,
+    "by_scale": {
+      "company": 515,
+      "individual": 255,
+      "country": 36,
+      "family": 169,
+      "other": 95
+    },
+    "by_entity_type": {
+      "company": 608,
+      "individual": 422,
+      "government": 37,
+      "organization": 3
+    },
+    "keyword_frequency": {
+      "スタートアップ": 224,
+      "老舗": 214,
+      "後継": 111,
+      "一人": 100,
+      "夫婦": 71,
+      "起業家": 70,
+      "micro": 52,
+      "兄弟": 51,
+      "家族経営": 45,
+      "フリーランス": 43,
+      "小規模": 36,
+      "親子": 34,
+      "ファミリー": 34,
+      "商店街": 22,
+      "家業": 18,
+      "オーナー": 15,
+      "町工場": 12,
+      "同族": 11,
+      "世襲": 9,
+      "個人事業": 9,
+      "自営業": 5,
+      "零細": 4,
+      "個人商店": 1
+    },
+    "scale_entity_crosstab": {
+      "company|company": 515,
+      "individual|individual": 253,
+      "family|individual": 169,
+      "other|company": 93,
+      "country|government": 36,
+      "other|organization": 2,
+      "individual|organization": 1,
+      "individual|government": 1
+    }
+  },
+  "feature_estimability": {
+    "stakeholder_count": {
+      "existing_proxy_fields": [
+        "entity_type",
+        "scale"
+      ],
+      "text_mining_feasibility": "MEDIUM",
+      "note": "entity_type has 4 values (company/individual/government/organization). Stakeholder count can be partially inferred from keywords in story_summary (一人, 夫婦, 家族, etc.) but direct field is absent.",
+      "family_cases_all_individual_entity": true,
+      "family_787_cases_entity_individual": 787
+    },
+    "resource_constraint": {
+      "existing_proxy_fields": [
+        "success_level",
+        "credibility_rank",
+        "main_domain"
+      ],
+      "text_mining_feasibility": "LOW",
+      "note": "No direct resource measure exists. success_level varies by scale (family: 47.2 lowest). credibility_rank and main_domain provide indirect signals.",
+      "success_level_by_scale": {
+        "company": {
+          "mean_success_level": 56.67,
+          "count": 5258,
+          "min": 15,
+          "max": 85
+        },
+        "individual": {
+          "mean_success_level": 57.67,
+          "count": 3206,
+          "min": 15,
+          "max": 85
+        },
+        "family": {
+          "mean_success_level": 47.2,
+          "count": 787,
+          "min": 15,
+          "max": 85
+        },
+        "country": {
+          "mean_success_level": 48.45,
+          "count": 1378,
+          "min": 15,
+          "max": 85
+        },
+        "other": {
+          "mean_success_level": 58.73,
+          "count": 2102,
+          "min": 15,
+          "max": 85
+        }
+      }
+    },
+    "time_axis": {
+      "existing_proxy_fields": [
+        "period"
+      ],
+      "text_mining_feasibility": "HIGH",
+      "note": "period field contains year ranges (YYYY-YYYY) in 89.6% of cases. Duration can be computed directly. Family (33.6y) and country (33.0y) have longer durations than company (21.9y) and individual (19.3y).",
+      "duration_by_scale": {
+        "company": {
+          "mean_years": 21.9,
+          "median_years": 10,
+          "count": 4918
+        },
+        "individual": {
+          "mean_years": 19.3,
+          "median_years": 9,
+          "count": 2950
+        },
+        "family": {
+          "mean_years": 33.6,
+          "median_years": 24,
+          "count": 748
+        },
+        "country": {
+          "mean_years": 33.0,
+          "median_years": 20,
+          "count": 1143
+        },
+        "other": {
+          "mean_years": 34.4,
+          "median_years": 14,
+          "count": 1948
+        }
+      },
+      "period_format_distribution": {
+        "year_range": 11707,
+        "single_year": 730,
+        "other": 623
+      }
+    },
+    "reversibility": {
+      "existing_proxy_fields": [
+        "outcome",
+        "after_state",
+        "pattern_type"
+      ],
+      "text_mining_feasibility": "MEDIUM",
+      "note": "outcome and after_state provide indirect reversibility signals. Family has highest Failure rate (46.1%). No direct reversibility metric exists.",
+      "outcome_by_scale": {
+        "company": {
+          "Success": {
+            "count": 2691,
+            "pct": 48.8
+          },
+          "Failure": {
+            "count": 1677,
+            "pct": 30.4
+          },
+          "Mixed": {
+            "count": 1033,
+            "pct": 18.7
+          },
+          "PartialSuccess": {
+            "count": 109,
+            "pct": 2.0
+          }
+        },
+        "individual": {
+          "Success": {
+            "count": 1700,
+            "pct": 52.8
+          },
+          "Failure": {
+            "count": 1025,
+            "pct": 31.9
+          },
+          "Mixed": {
+            "count": 417,
+            "pct": 13.0
+          },
+          "PartialSuccess": {
+            "count": 75,
+            "pct": 2.3
+          }
+        },
+        "family": {
+          "Failure": {
+            "count": 363,
+            "pct": 46.1
+          },
+          "Success": {
+            "count": 294,
+            "pct": 37.4
+          },
+          "Mixed": {
+            "count": 116,
+            "pct": 14.7
+          },
+          "PartialSuccess": {
+            "count": 14,
+            "pct": 1.8
+          }
+        },
+        "country": {
+          "Failure": {
+            "count": 538,
+            "pct": 39.0
+          },
+          "Success": {
+            "count": 466,
+            "pct": 33.7
+          },
+          "Mixed": {
+            "count": 351,
+            "pct": 25.4
+          },
+          "PartialSuccess": {
+            "count": 26,
+            "pct": 1.9
+          }
+        },
+        "other": {
+          "Success": {
+            "count": 1133,
+            "pct": 52.3
+          },
+          "Failure": {
+            "count": 591,
+            "pct": 27.3
+          },
+          "Mixed": {
+            "count": 405,
+            "pct": 18.7
+          },
+          "PartialSuccess": {
+            "count": 36,
+            "pct": 1.7
+          }
+        }
+      }
+    },
+    "consensus_cost": {
+      "existing_proxy_fields": [
+        "action_type",
+        "trigger_type"
+      ],
+      "text_mining_feasibility": "LOW",
+      "note": "action_type distribution varies significantly by scale. Family emphasizes 守る・維持 (23.5%) and 対話・融合 (21.3%), suggesting higher consensus cost. Individual emphasizes 攻める・挑戦 (31.7%), suggesting lower consensus cost. No direct metric.",
+      "action_type_by_scale": {
+        "company": {
+          "攻める・挑戦": {
+            "count": 1398,
+            "pct": 25.4
+          },
+          "対話・融合": {
+            "count": 810,
+            "pct": 14.7
+          },
+          "耐える・潜伏": {
+            "count": 670,
+            "pct": 12.2
+          },
+          "守る・維持": {
+            "count": 662,
+            "pct": 12.0
+          },
+          "刷新・破壊": {
+            "count": 649,
+            "pct": 11.8
+          },
+          "捨てる・撤退": {
+            "count": 556,
+            "pct": 10.1
+          },
+          "逃げる・放置": {
+            "count": 241,
+            "pct": 4.4
+          },
+          "捨てる・転換": {
+            "count": 153,
+            "pct": 2.8
+          },
+          "分散・探索": {
+            "count": 145,
+            "pct": 2.6
+          },
+          "分散・スピンオフ": {
+            "count": 93,
+            "pct": 1.7
+          },
+          "拡大・攻め": {
+            "count": 48,
+            "pct": 0.9
+          },
+          "集中・拡大": {
+            "count": 44,
+            "pct": 0.8
+          },
+          "交流・発表": {
+            "count": 16,
+            "pct": 0.3
+          },
+          "撤退・収縮": {
+            "count": 13,
+            "pct": 0.2
+          },
+          "撤退・縮小": {
+            "count": 4,
+            "pct": 0.1
+          },
+          "撤退・逃げる": {
+            "count": 3,
+            "pct": 0.1
+          },
+          "分散・独立": {
+            "count": 2,
+            "pct": 0.0
+          },
+          "分散・多角化": {
+            "count": 1,
+            "pct": 0.0
+          },
+          "分散する・独立する": {
+            "count": 1,
+            "pct": 0.0
+          },
+          "輝く・表現": {
+            "count": 1,
+            "pct": 0.0
+          }
+        },
+        "individual": {
+          "攻める・挑戦": {
+            "count": 1021,
+            "pct": 31.7
+          },
+          "耐える・潜伏": {
+            "count": 600,
+            "pct": 18.7
+          },
+          "対話・融合": {
+            "count": 331,
+            "pct": 10.3
+          },
+          "刷新・破壊": {
+            "count": 267,
+            "pct": 8.3
+          },
+          "守る・維持": {
+            "count": 255,
+            "pct": 7.9
+          },
+          "捨てる・撤退": {
+            "count": 243,
+            "pct": 7.6
+          },
+          "捨てる・転換": {
+            "count": 203,
+            "pct": 6.3
+          },
+          "分散・探索": {
+            "count": 105,
+            "pct": 3.3
+          },
+          "逃げる・放置": {
+            "count": 76,
+            "pct": 2.4
+          },
+          "交流・発表": {
+            "count": 31,
+            "pct": 1.0
+          },
+          "集中・拡大": {
+            "count": 21,
+            "pct": 0.7
+          },
+          "拡大・攻め": {
+            "count": 20,
+            "pct": 0.6
+          },
+          "分散・スピンオフ": {
+            "count": 14,
+            "pct": 0.4
+          },
+          "逃げる・分散": {
+            "count": 11,
+            "pct": 0.3
+          },
+          "撤退・逃げる": {
+            "count": 8,
+            "pct": 0.2
+          },
+          "逃げる・守る": {
+            "count": 4,
+            "pct": 0.1
+          },
+          "分散・多角化": {
+            "count": 2,
+            "pct": 0.1
+          },
+          "撤退・収縮": {
+            "count": 2,
+            "pct": 0.1
+          },
+          "撤退・縮小": {
+            "count": 2,
+            "pct": 0.1
+          },
+          "分散する・独立する": {
+            "count": 1,
+            "pct": 0.0
+          }
+        },
+        "family": {
+          "守る・維持": {
+            "count": 185,
+            "pct": 23.5
+          },
+          "耐える・潜伏": {
+            "count": 182,
+            "pct": 23.1
+          },
+          "対話・融合": {
+            "count": 168,
+            "pct": 21.3
+          },
+          "攻める・挑戦": {
+            "count": 76,
+            "pct": 9.7
+          },
+          "刷新・破壊": {
+            "count": 67,
+            "pct": 8.5
+          },
+          "分散・探索": {
+            "count": 30,
+            "pct": 3.8
+          },
+          "捨てる・撤退": {
+            "count": 25,
+            "pct": 3.2
+          },
+          "交流・発表": {
+            "count": 18,
+            "pct": 2.3
+          },
+          "分散・スピンオフ": {
+            "count": 15,
+            "pct": 1.9
+          },
+          "逃げる・放置": {
+            "count": 9,
+            "pct": 1.1
+          },
+          "捨てる・転換": {
+            "count": 9,
+            "pct": 1.1
+          },
+          "撤退・収縮": {
+            "count": 1,
+            "pct": 0.1
+          },
+          "集中・拡大": {
+            "count": 1,
+            "pct": 0.1
+          },
+          "撤退・縮小": {
+            "count": 1,
+            "pct": 0.1
+          }
+        },
+        "country": {
+          "攻める・挑戦": {
+            "count": 310,
+            "pct": 22.4
+          },
+          "刷新・破壊": {
+            "count": 288,
+            "pct": 20.9
+          },
+          "耐える・潜伏": {
+            "count": 286,
+            "pct": 20.7
+          },
+          "守る・維持": {
+            "count": 218,
+            "pct": 15.8
+          },
+          "対話・融合": {
+            "count": 113,
+            "pct": 8.2
+          },
+          "分散・探索": {
+            "count": 50,
+            "pct": 3.6
+          },
+          "捨てる・撤退": {
+            "count": 36,
+            "pct": 2.6
+          },
+          "逃げる・放置": {
+            "count": 32,
+            "pct": 2.3
+          },
+          "集中・拡大": {
+            "count": 18,
+            "pct": 1.3
+          },
+          "分散・スピンオフ": {
+            "count": 14,
+            "pct": 1.0
+          },
+          "拡大・攻め": {
+            "count": 7,
+            "pct": 0.5
+          },
+          "撤退・収縮": {
+            "count": 6,
+            "pct": 0.4
+          },
+          "捨てる・転換": {
+            "count": 3,
+            "pct": 0.2
+          }
+        },
+        "other": {
+          "耐える・潜伏": {
+            "count": 391,
+            "pct": 18.1
+          },
+          "対話・融合": {
+            "count": 375,
+            "pct": 17.3
+          },
+          "攻める・挑戦": {
+            "count": 312,
+            "pct": 14.4
+          },
+          "守る・維持": {
+            "count": 296,
+            "pct": 13.7
+          },
+          "分散・探索": {
+            "count": 169,
+            "pct": 7.8
+          },
+          "刷新・破壊": {
+            "count": 151,
+            "pct": 7.0
+          },
+          "交流・発表": {
+            "count": 130,
+            "pct": 6.0
+          },
+          "捨てる・撤退": {
+            "count": 104,
+            "pct": 4.8
+          },
+          "捨てる・転換": {
+            "count": 65,
+            "pct": 3.0
+          },
+          "集中・拡大": {
+            "count": 56,
+            "pct": 2.6
+          },
+          "拡大・攻め": {
+            "count": 41,
+            "pct": 1.9
+          },
+          "分散・スピンオフ": {
+            "count": 33,
+            "pct": 1.5
+          },
+          "撤退・収縮": {
+            "count": 12,
+            "pct": 0.6
+          },
+          "逃げる・放置": {
+            "count": 11,
+            "pct": 0.5
+          },
+          "輝く・表現": {
+            "count": 10,
+            "pct": 0.5
+          },
+          "撤退・縮小": {
+            "count": 7,
+            "pct": 0.3
+          },
+          "分散・独立": {
+            "count": 1,
+            "pct": 0.0
+          },
+          "分散する・独立する": {
+            "count": 1,
+            "pct": 0.0
+          }
+        }
+      }
+    }
+  },
+  "structural_issues": {
+    "family_entity_type_mismatch": {
+      "description": "All 787 family-scale cases have entity_type=individual, not a family-specific type",
+      "count": 787
+    },
+    "other_scale_heterogeneity": {
+      "description": "other-scale (2165 cases) contains 2108 company-type entities - likely misclassified or ambiguous",
+      "count": 2165,
+      "company_entity_count": 2108
+    },
+    "scale_entity_mismatches": {
+      "description": "Cases where scale and entity_type have inconsistent mapping",
+      "count": 28,
+      "details": {
+        "individual_as_organization": 12,
+        "individual_as_government": 8,
+        "company_as_government": 7,
+        "company_as_organization": 1
+      }
+    },
+    "main_domain_inconsistency": {
+      "description": "main_domain has duplicate/overlapping categories (e.g., テクノロジー vs technology, ビジネス vs Business)",
+      "missing_count": 2622,
+      "unique_values": 335
+    }
+  }
+}
