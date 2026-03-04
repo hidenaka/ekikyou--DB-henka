@@ -1,831 +1,1661 @@
 {
-  "field_fill_rates": {
-    "scale": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "main_domain": {
-      "filled": 10438,
-      "total": 13060,
-      "fill_rate": 79.92
-    },
-    "sub_domain": {
-      "filled": 0,
-      "total": 13060,
-      "fill_rate": 0.0
-    },
-    "action_detail": {
-      "filled": 0,
-      "total": 13060,
-      "fill_rate": 0.0
-    },
-    "story_summary": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "free_tags": {
-      "filled": 12627,
-      "total": 13060,
-      "fill_rate": 96.68
-    },
-    "source_type": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "credibility_rank": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "entity_type": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "subject_type": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "event_driver_type": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "event_phase": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "period": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "country": {
-      "filled": 11274,
-      "total": 13060,
-      "fill_rate": 86.32
-    },
-    "sources": {
-      "filled": 10684,
-      "total": 13060,
-      "fill_rate": 81.81
-    },
-    "trust_level": {
-      "filled": 9580,
-      "total": 13060,
-      "fill_rate": 73.35
-    },
-    "trust_reason": {
-      "filled": 9447,
-      "total": 13060,
-      "fill_rate": 72.34
-    },
-    "before_state": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "trigger_type": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "action_type": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "after_state": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "before_hex": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "trigger_hex": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "action_hex": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "after_hex": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "pattern_type": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "outcome": {
-      "filled": 13060,
-      "total": 13060,
-      "fill_rate": 100.0
-    },
-    "success_level": {
-      "filled": 12731,
-      "total": 13060,
-      "fill_rate": 97.48
-    },
-    "verification_confidence": {
-      "filled": 12871,
-      "total": 13060,
-      "fill_rate": 98.55
-    },
-    "outcome_status": {
-      "filled": 12871,
-      "total": 13060,
-      "fill_rate": 98.55
-    },
-    "logic_memo": {
-      "filled": 10410,
-      "total": 13060,
-      "fill_rate": 79.71
-    },
-    "classical_before_hexagram": {
-      "filled": 9520,
-      "total": 13060,
-      "fill_rate": 72.89
-    },
-    "classical_action_hexagram": {
-      "filled": 2919,
-      "total": 13060,
-      "fill_rate": 22.35
-    },
-    "classical_after_hexagram": {
-      "filled": 9447,
-      "total": 13060,
-      "fill_rate": 72.34
-    }
+  "metadata": {
+    "total_cases": 13060,
+    "analysis_date": "2026-03-04",
+    "script": "scripts/edge_case_analysis.py"
   },
   "scale_distribution": {
     "company": 5510,
     "individual": 3217,
+    "other": 2165,
     "country": 1381,
-    "family": 787,
-    "other": 2165
+    "family": 787
   },
-  "entity_type_distribution": {
-    "company": 7610,
-    "individual": 3984,
-    "government": 1407,
-    "organization": 59
-  },
-  "scale_entity_crosstab": {
-    "company|company": 5502,
-    "individual|individual": 3197,
-    "other|company": 2108,
-    "country|government": 1381,
-    "family|individual": 787,
-    "other|organization": 46,
-    "individual|organization": 12,
-    "other|government": 11,
-    "individual|government": 8,
-    "company|government": 7,
-    "company|organization": 1
-  },
-  "edge_cases": {
-    "total_count": 1070,
-    "percentage_of_all": 8.19,
-    "by_scale": {
-      "company": 515,
-      "individual": 255,
-      "country": 36,
-      "family": 169,
-      "other": 95
+  "boundary_cases": {
+    "summary": {
+      "family_business": 89,
+      "micro_org": 306,
+      "self_employed": 260,
+      "npo_social": 124,
+      "hybrid": 7,
+      "scale_mismatch_total": 603,
+      "individual_in_company": 57,
+      "org_in_individual": 546
     },
-    "by_entity_type": {
-      "company": 608,
-      "individual": 422,
-      "government": 37,
-      "organization": 3
+    "keyword_match_counts": {
+      "family_business": 89,
+      "micro_org": 306,
+      "self_employed": 260,
+      "npo_social": 124,
+      "hybrid": 7
     },
-    "keyword_frequency": {
-      "スタートアップ": 224,
-      "老舗": 214,
-      "後継": 111,
-      "一人": 100,
-      "夫婦": 71,
-      "起業家": 70,
-      "micro": 52,
-      "兄弟": 51,
-      "家族経営": 45,
-      "フリーランス": 43,
-      "小規模": 36,
-      "親子": 34,
-      "ファミリー": 34,
-      "商店街": 22,
-      "家業": 18,
-      "オーナー": 15,
-      "町工場": 12,
-      "同族": 11,
-      "世襲": 9,
-      "個人事業": 9,
-      "自営業": 5,
-      "零細": 4,
-      "個人商店": 1
-    },
-    "scale_entity_crosstab": {
-      "company|company": 515,
-      "individual|individual": 253,
-      "family|individual": 169,
-      "other|company": 93,
-      "country|government": 36,
-      "other|organization": 2,
-      "individual|organization": 1,
-      "individual|government": 1
-    }
-  },
-  "feature_estimability": {
-    "stakeholder_count": {
-      "existing_proxy_fields": [
-        "entity_type",
-        "scale"
+    "keyword_match_samples": {
+      "family_business": [
+        {
+          "id": "CORP_JP_033",
+          "scale": "company",
+          "main_domain": "金融",
+          "target_name": "ビッグモーター",
+          "matched_keyword": "同族",
+          "story_snippet": "中古車販売で業界トップに急成長したが、過度なノルマ主義により、保険金不正請求や街路樹への除草剤散布などのコンプライアンス無視が横行。内部告発を機に社会から断罪され、事業譲渡に追い込まれた。"
+        },
+        {
+          "id": "FAM_JP_001",
+          "scale": "family",
+          "main_domain": "製造",
+          "target_name": "大塚家具・大塚父娘",
+          "matched_keyword": "家族経営",
+          "story_snippet": "父・大塚勝久が創業した大塚家具で、娘・久美子を社長に据えるも経営方針で対立。2015年の株主総会で父娘が経営権を争い、娘が勝利。しかし業績悪化が続き、最終的にヤマダ電機傘下に。家族の対立が企業の衰退を"
+        },
+        {
+          "id": "FAM_JP_002",
+          "scale": "family",
+          "main_domain": "金融",
+          "target_name": "星野リゾート・星野親子",
+          "matched_keyword": "家族経営",
+          "story_snippet": "星野佳路が父が経営する星野温泉で改革を試みるも、創業家の公私混同にメスを入れたため追放される。2年後、外部株主の支持で社長に復帰したが、父は反対派。その後1年かけて父を会長に迎え和解。現在は世界的リゾ"
+        },
+        {
+          "id": "FAM_JP_003",
+          "scale": "family",
+          "main_domain": "生活・暮らし",
+          "target_name": "旭酒造（獺祭）・桜井親子三代",
+          "matched_keyword": "家族経営",
+          "story_snippet": "桜井博志が家業の酒蔵に入るも父と対立し27歳で解雇。父の突然死後、倒産寸前の酒蔵を継承し「獺祭」ブランドで世界的成功。その後、息子・一宏への承継は円満に進み、三代で危機を乗り越えた。"
+        },
+        {
+          "id": "FAM_JP_004",
+          "scale": "family",
+          "main_domain": "生活・暮らし",
+          "target_name": "サントリー・鳥井佐治両家",
+          "matched_keyword": "家族経営",
+          "story_snippet": "創業者・鳥井信治郎が次男を親戚の佐治家に養子に出し、佐治敬三として育てる。その後、鳥井家と佐治家が共同で経営を続け、90年以上にわたり家族経営を維持。2024年には再び鳥井家から社長を輩出。"
+        },
+        {
+          "id": "FAM_JP_005",
+          "scale": "family",
+          "main_domain": "製造",
+          "target_name": "トヨタ自動車・豊田家",
+          "matched_keyword": "家族経営",
+          "story_snippet": "豊田佐吉から始まる豊田家の事業承継。無理な世襲はせず、豊田家に適材がいなければサラリーマン社長を登用。豊田家出身者が50代中盤になるまで社長就任を待つなど、世襲と実力主義を組み合わせた独自の承継方式で"
+        },
+        {
+          "id": "FAM_JP_006",
+          "scale": "family",
+          "main_domain": "生活・暮らし",
+          "target_name": "竹中工務店・竹中家",
+          "matched_keyword": "家族経営",
+          "story_snippet": "410年続く竹中工務店で、2013年に初めて非一族の社長を選任。竹中統一社長が33年間務めた後、非家族の宮下正裕に承継。「君臨すれども統治せず」の姿勢で、家族が全てのポストを握らず、有能な人材に経営を"
+        },
+        {
+          "id": "FAM_JP_007",
+          "scale": "family",
+          "main_domain": "エネルギー・環境",
+          "target_name": "石坂産業・石坂親子",
+          "matched_keyword": "家族経営",
+          "story_snippet": "石坂典子社長が父・石坂好男から事業を引き継ぐ際、経営方針で激しく対立。環境への取り組みや女性社長への反発もあったが、対話を重ね、最終的に和解。現在は日本一のリサイクル企業として成功。"
+        },
+        {
+          "id": "FAM_JP_009",
+          "scale": "family",
+          "main_domain": "生活・暮らし",
+          "target_name": "ヤンマー・山岡家四代",
+          "matched_keyword": "家族経営",
+          "story_snippet": "創業者・山岡孫吉から4代にわたり家族経営を継続。長男・康人が急逝した際、次男・淳男が35年間社長を務め「中興の祖」に。その後、孫の健人へ円満承継し、100年以上の家族経営を維持。"
+        },
+        {
+          "id": "FAM_JP_010",
+          "scale": "family",
+          "main_domain": "医療・製薬",
+          "target_name": "久光製薬・中冨家",
+          "matched_keyword": "家族経営",
+          "story_snippet": "1847年創業の久光製薬を中冨家が継承。サロンパスを開発した中冨三郎から、正義、博隆、一榮と4代にわたり家族経営を継続。170年以上の歴史を持つ同族経営の成功例。"
+        }
       ],
-      "text_mining_feasibility": "MEDIUM",
-      "note": "entity_type has 4 values (company/individual/government/organization). Stakeholder count can be partially inferred from keywords in story_summary (一人, 夫婦, 家族, etc.) but direct field is absent.",
-      "family_cases_all_individual_entity": true,
-      "family_787_cases_entity_individual": 787
+      "micro_org": [
+        {
+          "id": "CORP_JP_040",
+          "scale": "company",
+          "main_domain": "テクノロジー",
+          "target_name": "DeNA",
+          "matched_keyword": "ベンチャー",
+          "story_snippet": "PCオークションサイトで創業後、「モバゲー」でガラケー市場を制覇。スマホシフトの波に乗りつつ、ゲーム依存からの脱却を目指してヘルスケア、スポーツ（横浜ベイスターズ）、オートモーティブへ事業ポートフォリ"
+        },
+        {
+          "id": "CORP_JP_146",
+          "scale": "company",
+          "main_domain": "テクノロジー",
+          "target_name": "エルピーダメモリ",
+          "matched_keyword": "マイクロ",
+          "story_snippet": "日立・NEC・三菱のDRAM事業を統合した「日の丸半導体」最後の砦だったが、リーマンショック後の円高と価格暴落に耐えきれず破綻。公的資金も投入されたが、市場変化への対応が遅れた。"
+        },
+        {
+          "id": "PERS_JP_003",
+          "scale": "individual",
+          "main_domain": "テクノロジー",
+          "target_name": "Bさん_30代半ば_ITマネージャー",
+          "matched_keyword": "マイクロ",
+          "story_snippet": "プロジェクトマネージャーに昇格し、自信過剰に。「自分のやり方が絶対」とメンバーの意見を聞かず、過重労働を強いた。主要メンバーが一斉離職（クーデター）し、プロジェクトは炎上・頓挫。管理職適性なしと判断さ"
+        },
+        {
+          "id": "PERS_JP_015",
+          "scale": "individual",
+          "main_domain": "テクノロジー",
+          "target_name": "Lさん_30代_銀行員",
+          "matched_keyword": "ベンチャー",
+          "story_snippet": "メガバンクで法人営業をしていたが、古い体質と将来性に限界を感じた。年収ダウンを覚悟でWeb系ベンチャーの管理部門へ転職。カルチャーショックに苦しみつつも、金融知識という武器を活かしてCFO候補となり、"
+        },
+        {
+          "id": "PERS_JP_017",
+          "scale": "individual",
+          "main_domain": "テクノロジー",
+          "target_name": "Nさん_20代後半_公務員",
+          "matched_keyword": "ベンチャー",
+          "story_snippet": "激務の霞が関で働いていたが、心身の摩耗を感じて退職。地方のベンチャー企業の「地域おこし」求人に出会い移住。年収は半減したが、裁量の大きさと生活コストの低さでQOLが劇的に向上し、人間らしい生活を取り戻"
+        },
+        {
+          "id": "COUN_JP_023",
+          "scale": "country",
+          "main_domain": "テクノロジー",
+          "target_name": "スウェーデン",
+          "matched_keyword": "スタートアップ",
+          "story_snippet": "1990年代初頭の金融危機とバブル崩壊を経て、高福祉高負担の「大きな政府」を維持しつつも、財政規律の徹底、年金改革、規制緩和による市場競争の導入を実施。IT産業（Skype, Spotifyなど）やス"
+        },
+        {
+          "id": "COUN_JP_031",
+          "scale": "country",
+          "main_domain": "テクノロジー",
+          "target_name": "イスラエル",
+          "matched_keyword": "スタートアップ",
+          "story_snippet": "資源を持たない小国かつ地政学的リスクを抱えながら、軍事技術の民生転用と政府によるVC育成策により、世界有数のハイテク産業集積地となった。旧ソ連からの技術移民の流入も追い風に、サイバーセキュリティや農業"
+        },
+        {
+          "id": "COUN_JP_093",
+          "scale": "country",
+          "main_domain": "金融",
+          "target_name": "カタール",
+          "matched_keyword": "小規模",
+          "story_snippet": "かつては小規模な産油国に過ぎなかったが、世界最大級の天然ガス田（ノースフィールド）の開発とLNG（液化天然ガス）技術への巨額投資を決断。エネルギー需要の急増を捉えて世界一のLNG輸出国となり、世界最高"
+        },
+        {
+          "id": "OTHR_JP_016",
+          "scale": "other",
+          "main_domain": "エンタメ",
+          "target_name": "地下アイドル界",
+          "matched_keyword": "小規模",
+          "story_snippet": "秋葉原を中心に、小規模なライブハウスで活動するアイドルグループが増加。ファンとの距離の近さが特徴で、独自の文化を形成。一部はメジャーデビューも果たし、新しいアイドルの形を提示。"
+        },
+        {
+          "id": "PERS_JP_117",
+          "scale": "individual",
+          "main_domain": "テクノロジー",
+          "target_name": "秋山咲恵",
+          "matched_keyword": "ベンチャー",
+          "story_snippet": "京大法学部卒、アクセンチュア出身の女性起業家。夫と共にプリント基板検査装置のサキ・コーポレーションを創業し、世界シェア2位まで成長させた。しかしリーマンショックで25億円超の赤字に転落。リストラと研究"
+        }
+      ],
+      "self_employed": [
+        {
+          "id": "CORP_JP_053",
+          "scale": "company",
+          "main_domain": "医療・製薬",
+          "target_name": "中外製薬",
+          "matched_keyword": "独立",
+          "story_snippet": "中堅製薬企業だったが、世界的メガファーマであるロシュと戦略的提携を結ぶ決断をした。ロシュの創薬基盤を活用しつつ経営の独立性を維持し、バイオ医薬品・抗体医薬品のリーディングカンパニーへと飛躍した。"
+        },
+        {
+          "id": "CORP_JP_173",
+          "scale": "company",
+          "main_domain": "医療・製薬",
+          "target_name": "あすか製薬",
+          "matched_keyword": "独立",
+          "story_snippet": "武田薬品工業の子会社からMBO・独立を経て、帝国臓器製薬と合併。産婦人科領域などの「スペシャリティファーマ」として生きる道を選び、大手メガファーマとは異なるニッチ市場での安定成長を実現した。"
+        },
+        {
+          "id": "PERS_JP_006",
+          "scale": "individual",
+          "main_domain": "Lifestyle",
+          "target_name": "Cさん_40代前半_広告クリエイティブ",
+          "matched_keyword": "フリーランス",
+          "story_snippet": "過去の受賞歴を鼻にかけ、クライアントや若手を軽視する態度が目立ち始めた。「自分なら独立してもやっていける」と準備不足のまま退職したが、悪評が広まっており案件が獲得できず。プライドが邪魔して再就職もでき"
+        },
+        {
+          "id": "PERS_JP_013",
+          "scale": "individual",
+          "main_domain": "生活・暮らし",
+          "target_name": "Jさん_20代後半_女性社員",
+          "matched_keyword": "フリーランス",
+          "story_snippet": "結婚直後にパートナーの転勤で退職を余儀なくされた。キャリア断絶の危機だったが、前職のスキルを活かしてフルリモートの業務委託契約を獲得。場所に縛られない働き方を確立し、結果的に収入も増加した。"
+        },
+        {
+          "id": "PERS_JP_019",
+          "scale": "individual",
+          "main_domain": "Lifestyle",
+          "target_name": "Pさん_40代_技術職",
+          "matched_keyword": "フリーランス",
+          "story_snippet": "会社の方針で管理職への昇進を求められたが、現場で手を動かすことにこだわった。会社と交渉し、業務委託契約に切り替えて独立。フリーランスの技術顧問として複数社と契約し、収入アップと技術探求の両立を実現した"
+        },
+        {
+          "id": "PERS_JP_020",
+          "scale": "individual",
+          "main_domain": "Lifestyle",
+          "target_name": "Qさん_30代_経理職",
+          "matched_keyword": "独立",
+          "story_snippet": "地味な経理業務に飽き足らず、働きながら税理士資格の勉強を継続。10年かけて官報合格を果たした。社内でも税務のスペシャリストとして一目置かれるようになり、独立はせずとも社内で確固たる地位と高待遇を手に入"
+        },
+        {
+          "id": "COUN_JP_022",
+          "scale": "country",
+          "main_domain": "金融",
+          "target_name": "オーストラリア",
+          "matched_keyword": "独立",
+          "story_snippet": "1990年代初頭の不況以降、資源ブーム（鉄鉱石・石炭等）と中国経済の台頭を追い風に、28年間リセッション（景気後退）知らずという先進国で稀有な記録を樹立した。資源だけでなく、教育・観光などのサービス輸"
+        },
+        {
+          "id": "COUN_JP_038",
+          "scale": "country",
+          "main_domain": "金融",
+          "target_name": "ボツワナ",
+          "matched_keyword": "独立",
+          "story_snippet": "独立時は世界最貧国の一つだったが、ダイヤモンド鉱脈の発見と、初代大統領カーマ以来の賢明なガバナンスにより、「資源の呪い」を回避。鉱山収入を教育・インフラ・医療へ重点投資し、アフリカで最も安定した民主主"
+        },
+        {
+          "id": "COUN_JP_050",
+          "scale": "country",
+          "main_domain": "製造",
+          "target_name": "モーリシャス",
+          "matched_keyword": "独立",
+          "story_snippet": "独立当初はサトウキビ単一栽培経済で将来を悲観されていたが、輸出加工区（EPZ）を設立し繊維産業を育成。その後、観光業、オフショア金融、ICTへと産業構造を巧みに多角化させた。アフリカ諸国の中でトップク"
+        },
+        {
+          "id": "COUN_JP_116",
+          "scale": "country",
+          "main_domain": "金融",
+          "target_name": "ニュージーランド",
+          "matched_keyword": "独立",
+          "story_snippet": "かつては規制の多い「要塞経済」だったが、1984年からの急進的な市場開放政策（ロジャーノミクス）で経済を一変させた。補助金撤廃、民営化、中央銀行の独立性強化（インフレターゲット導入）を断行。初期の痛み"
+        }
+      ],
+      "npo_social": [
+        {
+          "id": "COUN_JP_187",
+          "scale": "country",
+          "main_domain": "テクノロジー",
+          "target_name": "レバノン",
+          "matched_keyword": "NGO",
+          "story_snippet": "放漫財政と固定相場制の維持が限界に達し、金融システムが崩壊。デフォルト宣言、預金封鎖、通貨の90%下落が発生し、ベイルート港爆発事故が追い打ちをかけた。電力や医薬品も不足する中、国民は海外からの送金や"
+        },
+        {
+          "id": "PERS_JP_099",
+          "scale": "individual",
+          "main_domain": "スポーツ",
+          "target_name": "浅田真央",
+          "matched_keyword": "慈善",
+          "story_snippet": "15歳でグランプリファイナル優勝、世界選手権3回優勝など輝かしい成績を残すも、オリンピック金メダルには届かず。2017年に引退し、現在はアイスショーや慈善活動に注力。"
+        },
+        {
+          "id": "OTHR_JP_030",
+          "scale": "other",
+          "main_domain": "テクノロジー",
+          "target_name": "NPO法人_資金難で解散",
+          "matched_keyword": "NPO",
+          "story_snippet": "障害者支援のNPO法人を設立。10年間、地道な活動を続けるも助成金が打ち切られ資金難に。クラウドファンディングも目標未達。中心メンバーの高齢化もあり、解散を決定。「思いだけでは続かない」という現実。"
+        },
+        {
+          "id": "PERS_JP_538",
+          "scale": "individual",
+          "main_domain": "社会・コミュニティ",
+          "target_name": "転職_年収ダウン_01",
+          "matched_keyword": "NPO",
+          "story_snippet": "やりがいを求めてNPOに転職。年収は半減。しかし理想と現実のギャップに苦しみ、2年で退職。再び企業に戻るも、ブランクで年収は前職の7割止まり。"
+        },
+        {
+          "id": "CORP_JP_385",
+          "scale": "company",
+          "main_domain": "エンタメ",
+          "target_name": "グリー（急成長と急落）",
+          "matched_keyword": "ソーシャル",
+          "story_snippet": "2004年、田中良和氏がSNS「GREE」を個人開発し会社設立。2008年東証マザーズ、2010年東証一部上場（創業者33歳で最年少）。携帯ゲーム「釣り★スタ」等で時価総額2900億円に。しかし201"
+        },
+        {
+          "id": "CORP_JP_398",
+          "scale": "company",
+          "main_domain": "テクノロジー",
+          "target_name": "OpenAI（ChatGPT革命）",
+          "matched_keyword": "非営利",
+          "story_snippet": "2015年12月、サム・アルトマン、イーロン・マスクらが非営利団体として設立、10億ドル出資を宣言。2019年にMicrosoftから10億ドル出資を受け営利化。2022年11月ChatGPT公開、5"
+        },
+        {
+          "id": "PERS_JP_813",
+          "scale": "individual",
+          "main_domain": "エンタメ",
+          "target_name": "J.K.ローリング（ハリー・ポッター作者）",
+          "matched_keyword": "慈善",
+          "story_snippet": "1965年イギリス生まれ。DV被害を受け離婚、無職のシングルマザーとなり生活保護を受給（週69ポンド＝約9,300円）。深刻なうつで自殺も考える。30歳で『ハリー・ポッター』原稿を完成、12の出版社に"
+        },
+        {
+          "id": "CORP_JP_503",
+          "scale": "company",
+          "main_domain": "Technology",
+          "target_name": "Yahoo（インターネット先駆者の没落）",
+          "matched_keyword": "ソーシャル",
+          "story_snippet": "インターネット黎明期の象徴。2000年に時価総額1250億ドルのピーク。しかしGoogleに検索で敗北、Facebookにソーシャルで敗北。2012年、Google出身のマリッサ・メイヤーがCEO就任"
+        },
+        {
+          "id": "PERS_JP_848",
+          "scale": "individual",
+          "main_domain": "製造",
+          "target_name": "内部告発者・大阪トヨペット社員",
+          "matched_keyword": "公益",
+          "story_snippet": "トヨタ自動車系列販売会社の社員。売買契約書捏造による販売実績水増しを発見し、社内ヘルプラインに内部告発。しかし窓口の弁護士事務所が氏名を会社に報告、10日の自宅待機命令を受けるという報復を受けた。公益"
+        },
+        {
+          "id": "PERS_JP_887",
+          "scale": "individual",
+          "main_domain": "教育",
+          "target_name": "不登校経験者Cさん_中学3年間不登校から大学進学",
+          "matched_keyword": "NPO",
+          "story_snippet": "いじめをきっかけに中学3年間不登校。高校は通信制に進学し、自分のペースで学習。フリースクールで同じ境遇の仲間と出会い、自己肯定感を回復。高卒認定試験を経て大学に進学、心理学を専攻。現在は不登校支援のN"
+        }
+      ],
+      "hybrid": [
+        {
+          "id": "PERS_JP_191",
+          "scale": "individual",
+          "main_domain": "国家・政治",
+          "target_name": "中曽根康弘",
+          "matched_keyword": "公社",
+          "story_snippet": "群馬県高崎市出身。東京帝大卒業後、内務省入省、海軍主計少佐で終戦。1947年衆議院議員初当選、「青年将校」と呼ばれ反吉田の急先鋒に。科学技術庁長官、運輸大臣、防衛庁長官、通産大臣を歴任。1982年首相"
+        },
+        {
+          "id": "PERS_JP_406",
+          "scale": "individual",
+          "main_domain": "エネルギー・環境",
+          "target_name": "中曽根康弘",
+          "matched_keyword": "公社",
+          "story_snippet": "群馬県高崎市出身。東京帝国大学法学部卒業。1947年初当選、科学技術庁長官で原子力政策を推進。1982年第71代首相、「戦後政治の総決算」を掲げる。国鉄・電電公社・専売公社の民営化を実現。レーガン大統"
+        },
+        {
+          "id": "CORP_JP_974",
+          "scale": "company",
+          "main_domain": "Telecom",
+          "target_name": "日本電電公社民営化（1985）",
+          "matched_keyword": "公社",
+          "story_snippet": "電電公社がNTTとして民営化され、通信自由化の幕開けとなった。"
+        },
+        {
+          "id": "OTHR_JP_803",
+          "scale": "other",
+          "main_domain": "",
+          "target_name": "電電公社 電話網全国整備（1960-1969）",
+          "matched_keyword": "公社",
+          "story_snippet": "電電公社が全国電話網を整備、高度成長を通信インフラ面から支えた。"
+        },
+        {
+          "id": "CORP_JP_3337",
+          "scale": "company",
+          "main_domain": "IT・通信",
+          "target_name": "NTT分割 - 電電公社グループ再編",
+          "matched_keyword": "公社",
+          "story_snippet": "1985年の民営化後、巨大独占企業だったNTTは1999年に持株会社制へ移行し、東西地域会社・長距離会社・移動体通信会社に分割。既存の一枚岩組織を解体し、それぞれが競争力を持つ事業体として再結集。風水"
+        },
+        {
+          "id": "COUN_JP_1334",
+          "scale": "country",
+          "main_domain": "国家政策",
+          "target_name": "中国（改革開放政策）",
+          "matched_keyword": "公社",
+          "story_snippet": "毛沢東死去後、鄧小平が実権を握り「改革開放」政策を推進。人民公社解体、経済特区設置、外資導入など抜本改革を実施。文化大革命の混乱という閉塞から脱し、高度経済成長への道を開いた。"
+        },
+        {
+          "id": "CORP_JP_3452",
+          "scale": "company",
+          "main_domain": "インフラ",
+          "target_name": "NTT通信インフラの発展",
+          "matched_keyword": "公社",
+          "story_snippet": "戦後の電電公社から始まり、1985年の民営化を経てNTTグループへ。固定電話の全国普及から光ファイバー網の整備、モバイル通信への展開と、時代の変化に対応しながら通信インフラを発展させてきた。現在も5G"
+        }
+      ]
+    },
+    "scale_mismatch_samples": [
+      {
+        "id": "CORP_JP_090",
+        "current_scale": "company",
+        "signal_type": "individual_in_company",
+        "matched_signal": "個人",
+        "main_domain": "観光・旅行",
+        "target_name": "近畿日本ツーリスト",
+        "story_snippet": "団体旅行に強みを持つ旅行大手だったが、個人旅行へのシフトとネット予約（OTA）の普及に乗り遅れた。クラブツーリズムとの統合などで規模維持を図ったが、ビジネスモデルの陳腐化は止まらず存在感が薄れている。"
+      },
+      {
+        "id": "CORP_JP_100",
+        "current_scale": "company",
+        "signal_type": "individual_in_company",
+        "matched_signal": "個人",
+        "main_domain": "金融",
+        "target_name": "りそなホールディングス",
+        "story_snippet": "自己資本比率の低下により実質国有化（公的資金注入）される事態に。メガバンクとは一線を画し、「リテール（個人・中小企業）特化」へ戦略を転換。銀行の常識を覆す24時間営業などを導入し、公的資金を完済した。"
+      },
+      {
+        "id": "CORP_JP_149",
+        "current_scale": "company",
+        "signal_type": "individual_in_company",
+        "matched_signal": "個人",
+        "main_domain": "教育",
+        "target_name": "ベネッセコーポレーション",
+        "story_snippet": "教育業界の最大手として圧倒的なデータベースを持っていたが、セキュリティ管理の甘さから約3500万件の個人情報が流出。ブランドへの過信と対応の遅れが批判され、会員数が激減した。"
+      },
+      {
+        "id": "PERS_JP_008",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "組織",
+        "main_domain": "国家・政治",
+        "target_name": "Eさん_30代後半_中堅商社",
+        "story_snippet": "上司の顔色ばかり伺い、部下には責任を押し付ける「事なかれ主義」を徹底。大きなミスはないが成果もなく、組織内での求心力が低下。後輩に次々と昇進を抜かれ、給与も頭打ちのまま意欲を失っている。"
+      },
+      {
+        "id": "PERS_JP_009",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "会社",
+        "main_domain": "テクノロジー",
+        "target_name": "Fさん_20代後半_システムエンジニア",
+        "story_snippet": "客先常駐（SES）でレガシーシステムの保守のみを5年担当。モダンな技術へのキャッチアップを怠り、転職市場での価値が相対的に低下。所属元の会社も業績が悪化し、給与カットを提示されたが、他に行き場がなく受"
+      },
+      {
+        "id": "PERS_JP_010",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "会社",
+        "main_domain": "Lifestyle",
+        "target_name": "Gさん_20代_大手営業",
+        "story_snippet": "配属直後、重大な発注ミスを犯し会社に損害を与えた。「もう終わりだ」と絶望し退職も考えたが、上司の励ましで奮起。泥臭い謝罪行脚とリカバリー業務を完遂し、その誠実さが評価され、かえって顧客との信頼関係が深"
+      },
+      {
+        "id": "PERS_JP_011",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "部門",
+        "main_domain": "生活・暮らし",
+        "target_name": "Hさん_30代前半_総合職",
+        "story_snippet": "激務とパワハラにより適応障害を発症し休職。キャリアのレールから外れたと感じたが、休養期間中にカウンセリングや自己分析を徹底。復職後は「頑張りすぎない」働き方を確立し、管理部門へ異動して適正な評価を得る"
+      },
+      {
+        "id": "PERS_JP_014",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "経営",
+        "main_domain": "生活・暮らし",
+        "target_name": "Kさん_30代_企画職",
+        "story_snippet": "3年かけた新規事業案が、経営方針の変更で白紙撤回された。失意の底にいたが、その過程で築いた社外人脈から声がかかり、副業として小さく事業を開始。それが軌道に乗り、自信を取り戻して本業でも再評価された。"
+      },
+      {
+        "id": "PERS_JP_015",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "法人",
+        "main_domain": "テクノロジー",
+        "target_name": "Lさん_30代_銀行員",
+        "story_snippet": "メガバンクで法人営業をしていたが、古い体質と将来性に限界を感じた。年収ダウンを覚悟でWeb系ベンチャーの管理部門へ転職。カルチャーショックに苦しみつつも、金融知識という武器を活かしてCFO候補となり、"
+      },
+      {
+        "id": "PERS_JP_016",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "部門",
+        "main_domain": "テクノロジー",
+        "target_name": "Mさん_40代_アパレル店長",
+        "story_snippet": "アパレル販売員として長年働いたが、立ち仕事の限界と業界の斜陽化を感じていた。職業訓練でWebデザインを学び、ECサイトの運営担当へ社内異動を志願。販売の知見とデジタルスキルを掛け合わせ、EC部門のリー"
+      },
+      {
+        "id": "PERS_JP_017",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "企業",
+        "main_domain": "テクノロジー",
+        "target_name": "Nさん_20代後半_公務員",
+        "story_snippet": "激務の霞が関で働いていたが、心身の摩耗を感じて退職。地方のベンチャー企業の「地域おこし」求人に出会い移住。年収は半減したが、裁量の大きさと生活コストの低さでQOLが劇的に向上し、人間らしい生活を取り戻"
+      },
+      {
+        "id": "PERS_JP_018",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "組織",
+        "main_domain": "生活・暮らし",
+        "target_name": "Oさん_30代_営業職",
+        "story_snippet": "営業成績は中の下で、ノルマに追われる日々に疲弊していた。社内公募で「人事・採用担当」に応募。営業で培った「人の話を聞く力」が面接や研修で活きると気づき、人と組織を支えるバックオフィス職として開花した。"
+      },
+      {
+        "id": "PERS_JP_019",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "会社",
+        "main_domain": "Lifestyle",
+        "target_name": "Pさん_40代_技術職",
+        "story_snippet": "会社の方針で管理職への昇進を求められたが、現場で手を動かすことにこだわった。会社と交渉し、業務委託契約に切り替えて独立。フリーランスの技術顧問として複数社と契約し、収入アップと技術探求の両立を実現した"
+      },
+      {
+        "id": "PERS_JP_024",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "上場",
+        "main_domain": "Lifestyle",
+        "target_name": "杉本宏之",
+        "story_snippet": "ゼロから起業しエスグラント社を史上最年少で上場させたが、リーマンショックで30歳にして400億円の負債を抱え破綻。その後ゼロから再起業し、再び成功を収めた。どん底からの起死回生の実例。"
+      },
+      {
+        "id": "PERS_JP_025",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "経営",
+        "main_domain": "小売・サービス",
+        "target_name": "喜多洲山",
+        "story_snippet": "地方小売業を年商1億円から50億円に拡大しIPOを目指したが、経営危機で30億円の借金を抱える。その後、事業再生を成功させ、その経験を活かして20年間で約1100件の事業再生案件を手掛けた。"
+      },
+      {
+        "id": "PERS_JP_033",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "会社",
+        "main_domain": "小売・サービス",
+        "target_name": "宮下雅光",
+        "story_snippet": "父の会社倒産後、仙台でカフェを開業するも3店舗目で失敗し1億3000万円の借金を背負う。しかしフランチャイズ事業で成功し、現在はイチゴホールディングス社長として活躍。"
+      },
+      {
+        "id": "PERS_JP_041",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "企業",
+        "main_domain": "Lifestyle",
+        "target_name": "レイ・クロック",
+        "story_snippet": "52歳までミキサーのセールスマンとして平凡な人生を送る。マクドナルド兄弟の店に出会い、フランチャイズ化を決意。50代で起業し、世界的企業に育て上げた。"
+      },
+      {
+        "id": "PERS_JP_043",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "企業",
+        "main_domain": "小売・サービス",
+        "target_name": "カーネル・サンダース",
+        "story_snippet": "65歳で年金生活者となり、レストランも道路拡張で閉店。しかしフライドチキンのレシピでフランチャイズ展開を決意。KFCを世界的企業に育て上げた。"
+      },
+      {
+        "id": "PERS_JP_062",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "組織",
+        "main_domain": "小売・サービス",
+        "target_name": "小川嶺",
+        "story_snippet": "大学在学中にTimeeを創業し、スキマバイトマッチングサービスで急成長。200万ユーザー・4.4万店舗という成長痛を経験しながらも、組織拡大の壁を乗り越え続けている。"
+      },
+      {
+        "id": "PERS_JP_066",
+        "current_scale": "individual",
+        "signal_type": "org_in_individual",
+        "matched_signal": "社長",
+        "main_domain": "金融",
+        "target_name": "堀江貴文",
+        "story_snippet": "ライブドア社長として時代の寵児となり、「想定内」などの流行語を生む。しかし証券取引法違反で逮捕され、約2年服役。出所後は実業家・タレントとして活動を続け、宇宙事業などに挑戦。"
+      }
+    ],
+    "scale_mismatch_total": 603
+  },
+  "existing_fields": {
+    "all_fields": [
+      "action",
+      "action_hex",
+      "action_type",
+      "after_hex",
+      "after_state",
+      "alias_ids",
+      "annotation_status",
+      "before_hex",
+      "before_state",
+      "canonical_id",
+      "changing_lines_1",
+      "changing_lines_2",
+      "changing_lines_3",
+      "classical_action_hexagram",
+      "classical_after_hexagram",
+      "classical_before_hexagram",
+      "coi_status",
+      "confidence_percent",
+      "country",
+      "created_at",
+      "credibility_rank",
+      "entity_type",
+      "event_driver_type",
+      "event_id",
+      "event_phase",
+      "evidence_notes",
+      "free_tags",
+      "hexagram_id",
+      "hexagram_name",
+      "hexagram_number",
+      "hexagram_yao_id",
+      "id",
+      "interpretations",
+      "is_canonical",
+      "life_domain",
+      "logic_memo",
+      "lower_trigram",
+      "main_domain",
+      "outcome",
+      "outcome_status",
+      "pattern_type",
+      "period",
+      "pre_outcome_text",
+      "primary_subject_id",
+      "scale",
+      "source_type",
+      "sources",
+      "story_summary",
+      "subject_type",
+      "success_level",
+      "target_name",
+      "transition_id",
+      "trigger",
+      "trigger_hex",
+      "trigger_hex_original",
+      "trigger_hex_reassigned",
+      "trigger_hex_rule",
+      "trigger_type",
+      "trust_level",
+      "trust_reason",
+      "updated_at",
+      "upper_trigram",
+      "verification_confidence",
+      "yao",
+      "yao_analysis",
+      "yao_context",
+      "yao_name"
+    ],
+    "field_count": 67
+  },
+  "feature_mapping": {
+    "stakeholder_count": {
+      "description": "当事者数（変化に関わる主体の数）",
+      "related_existing_fields": [
+        {
+          "field": "scale",
+          "relevance": "high",
+          "reason": "company=多, individual=少 の粗い推定"
+        },
+        {
+          "field": "entity_type",
+          "relevance": "medium",
+          "reason": "company/individual/family等が分布"
+        },
+        {
+          "field": "subject_type",
+          "relevance": "medium",
+          "reason": "entity_typeと類似"
+        },
+        {
+          "field": "free_tags",
+          "relevance": "low",
+          "reason": "#M&A等から間接的に推定可能な場合あり"
+        },
+        {
+          "field": "story_summary",
+          "relevance": "medium",
+          "reason": "LLMで人数をテキストから抽出可能"
+        }
+      ],
+      "estimability": "partial_rule_plus_llm",
+      "notes": "scaleで粗い区分(company→多, individual→1-2)は可能。正確な数値にはstory_summaryからのLLM抽出が必要。ルールベース: company=10+, family=2-10, individual=1-3, country=100+, other=variable"
     },
     "resource_constraint": {
-      "existing_proxy_fields": [
-        "success_level",
-        "credibility_rank",
-        "main_domain"
-      ],
-      "text_mining_feasibility": "LOW",
-      "note": "No direct resource measure exists. success_level varies by scale (family: 47.2 lowest). credibility_rank and main_domain provide indirect signals.",
-      "success_level_by_scale": {
-        "company": {
-          "mean_success_level": 56.67,
-          "count": 5258,
-          "min": 15,
-          "max": 85
+      "description": "資源制約（人材・資金・時間の制約度）",
+      "related_existing_fields": [
+        {
+          "field": "scale",
+          "relevance": "high",
+          "reason": "individual→高制約, company→中, country→低"
         },
-        "individual": {
-          "mean_success_level": 57.67,
-          "count": 3206,
-          "min": 15,
-          "max": 85
+        {
+          "field": "main_domain",
+          "relevance": "medium",
+          "reason": "業界によりリソース水準が異なる"
         },
-        "family": {
-          "mean_success_level": 47.2,
-          "count": 787,
-          "min": 15,
-          "max": 85
+        {
+          "field": "story_summary",
+          "relevance": "high",
+          "reason": "資金難/人手不足等の記述からLLM抽出可能"
         },
-        "country": {
-          "mean_success_level": 48.45,
-          "count": 1378,
-          "min": 15,
-          "max": 85
+        {
+          "field": "before_state",
+          "relevance": "medium",
+          "reason": "どん底→高制約, 絶頂→低制約"
         },
-        "other": {
-          "mean_success_level": 58.73,
-          "count": 2102,
-          "min": 15,
-          "max": 85
+        {
+          "field": "action_type",
+          "relevance": "low",
+          "reason": "耐える=高制約, 攻める=低制約の傾向"
         }
-      }
+      ],
+      "estimability": "partial_rule_plus_llm",
+      "notes": "scale + before_state の組み合わせで粗い推定可能。精密な推定にはstory_summaryのLLM分析が必要。ルールベース精度は推定60-70%"
     },
-    "time_axis": {
-      "existing_proxy_fields": [
-        "period"
-      ],
-      "text_mining_feasibility": "HIGH",
-      "note": "period field contains year ranges (YYYY-YYYY) in 89.6% of cases. Duration can be computed directly. Family (33.6y) and country (33.0y) have longer durations than company (21.9y) and individual (19.3y).",
-      "duration_by_scale": {
-        "company": {
-          "mean_years": 21.9,
-          "median_years": 10,
-          "count": 4918
+    "time_horizon": {
+      "description": "時間軸（変化プロセスの所要期間）",
+      "related_existing_fields": [
+        {
+          "field": "period",
+          "relevance": "high",
+          "reason": "'YYYY-YYYY'形式からduration算出可能。12456/13060件パース可能"
         },
-        "individual": {
-          "mean_years": 19.3,
-          "median_years": 9,
-          "count": 2950
+        {
+          "field": "story_summary",
+          "relevance": "medium",
+          "reason": "LLMで時間関連表現を抽出可能"
         },
-        "family": {
-          "mean_years": 33.6,
-          "median_years": 24,
-          "count": 748
-        },
-        "country": {
-          "mean_years": 33.0,
-          "median_years": 20,
-          "count": 1143
-        },
-        "other": {
-          "mean_years": 34.4,
-          "median_years": 14,
-          "count": 1948
+        {
+          "field": "pattern_type",
+          "relevance": "low",
+          "reason": "パターンにより典型的な時間軸が異なる"
         }
-      },
-      "period_format_distribution": {
-        "year_range": 11707,
-        "single_year": 730,
-        "other": 623
-      }
+      ],
+      "estimability": "partial_rule",
+      "notes": "periodフィールドから12456/13060件(95.4%)でduration_years を直接算出可能。推定duration分布: mean=23.8年, median=10年, range=0-928年"
     },
     "reversibility": {
-      "existing_proxy_fields": [
-        "outcome",
-        "after_state",
-        "pattern_type"
-      ],
-      "text_mining_feasibility": "MEDIUM",
-      "note": "outcome and after_state provide indirect reversibility signals. Family has highest Failure rate (46.1%). No direct reversibility metric exists.",
-      "outcome_by_scale": {
-        "company": {
-          "Success": {
-            "count": 2691,
-            "pct": 48.8
-          },
-          "Failure": {
-            "count": 1677,
-            "pct": 30.4
-          },
-          "Mixed": {
-            "count": 1033,
-            "pct": 18.7
-          },
-          "PartialSuccess": {
-            "count": 109,
-            "pct": 2.0
-          }
+      "description": "可逆性（変化を元に戻せる度合い）",
+      "related_existing_fields": [
+        {
+          "field": "after_state",
+          "relevance": "high",
+          "reason": "崩壊・消滅→不可逆, 現状維持→可逆"
         },
-        "individual": {
-          "Success": {
-            "count": 1700,
-            "pct": 52.8
-          },
-          "Failure": {
-            "count": 1025,
-            "pct": 31.9
-          },
-          "Mixed": {
-            "count": 417,
-            "pct": 13.0
-          },
-          "PartialSuccess": {
-            "count": 75,
-            "pct": 2.3
-          }
+        {
+          "field": "outcome",
+          "relevance": "high",
+          "reason": "Failure→多くの場合不可逆"
         },
-        "family": {
-          "Failure": {
-            "count": 363,
-            "pct": 46.1
-          },
-          "Success": {
-            "count": 294,
-            "pct": 37.4
-          },
-          "Mixed": {
-            "count": 116,
-            "pct": 14.7
-          },
-          "PartialSuccess": {
-            "count": 14,
-            "pct": 1.8
-          }
+        {
+          "field": "action_type",
+          "relevance": "medium",
+          "reason": "捨てる・撤退→不可逆傾向, 守る→可逆傾向"
         },
-        "country": {
-          "Failure": {
-            "count": 538,
-            "pct": 39.0
-          },
-          "Success": {
-            "count": 466,
-            "pct": 33.7
-          },
-          "Mixed": {
-            "count": 351,
-            "pct": 25.4
-          },
-          "PartialSuccess": {
-            "count": 26,
-            "pct": 1.9
-          }
+        {
+          "field": "pattern_type",
+          "relevance": "medium",
+          "reason": "Hubris_Collapse→不可逆, Slow_Decline→部分的可逆"
         },
-        "other": {
-          "Success": {
-            "count": 1133,
-            "pct": 52.3
-          },
-          "Failure": {
-            "count": 591,
-            "pct": 27.3
-          },
-          "Mixed": {
-            "count": 405,
-            "pct": 18.7
-          },
-          "PartialSuccess": {
-            "count": 36,
-            "pct": 1.7
-          }
+        {
+          "field": "story_summary",
+          "relevance": "medium",
+          "reason": "破産/倒産/消滅 等のキーワードで補完可能"
         }
-      }
+      ],
+      "estimability": "rule_based",
+      "notes": "after_state + outcome の組み合わせでルールベース推定が高精度で可能。崩壊・消滅+Failure→irreversible(1), V字回復→partially_reversible(3), 現状維持→highly_reversible(5) のようなマッピング。推定精度80%以上。LLM不要"
     },
     "consensus_cost": {
-      "existing_proxy_fields": [
-        "action_type",
-        "trigger_type"
-      ],
-      "text_mining_feasibility": "LOW",
-      "note": "action_type distribution varies significantly by scale. Family emphasizes 守る・維持 (23.5%) and 対話・融合 (21.3%), suggesting higher consensus cost. Individual emphasizes 攻める・挑戦 (31.7%), suggesting lower consensus cost. No direct metric.",
-      "action_type_by_scale": {
-        "company": {
-          "攻める・挑戦": {
-            "count": 1398,
-            "pct": 25.4
-          },
-          "対話・融合": {
-            "count": 810,
-            "pct": 14.7
-          },
-          "耐える・潜伏": {
-            "count": 670,
-            "pct": 12.2
-          },
-          "守る・維持": {
-            "count": 662,
-            "pct": 12.0
-          },
-          "刷新・破壊": {
-            "count": 649,
-            "pct": 11.8
-          },
-          "捨てる・撤退": {
-            "count": 556,
-            "pct": 10.1
-          },
-          "逃げる・放置": {
-            "count": 241,
-            "pct": 4.4
-          },
-          "捨てる・転換": {
-            "count": 153,
-            "pct": 2.8
-          },
-          "分散・探索": {
-            "count": 145,
-            "pct": 2.6
-          },
-          "分散・スピンオフ": {
-            "count": 93,
-            "pct": 1.7
-          },
-          "拡大・攻め": {
-            "count": 48,
-            "pct": 0.9
-          },
-          "集中・拡大": {
-            "count": 44,
-            "pct": 0.8
-          },
-          "交流・発表": {
-            "count": 16,
-            "pct": 0.3
-          },
-          "撤退・収縮": {
-            "count": 13,
-            "pct": 0.2
-          },
-          "撤退・縮小": {
-            "count": 4,
-            "pct": 0.1
-          },
-          "撤退・逃げる": {
-            "count": 3,
-            "pct": 0.1
-          },
-          "分散・独立": {
-            "count": 2,
-            "pct": 0.0
-          },
-          "分散・多角化": {
-            "count": 1,
-            "pct": 0.0
-          },
-          "分散する・独立する": {
-            "count": 1,
-            "pct": 0.0
-          },
-          "輝く・表現": {
-            "count": 1,
-            "pct": 0.0
-          }
+      "description": "合意形成コスト（意思決定に必要な関係者調整の難易度）",
+      "related_existing_fields": [
+        {
+          "field": "scale",
+          "relevance": "high",
+          "reason": "country→極高, company→高, family→中, individual→低"
         },
-        "individual": {
-          "攻める・挑戦": {
-            "count": 1021,
-            "pct": 31.7
-          },
-          "耐える・潜伏": {
-            "count": 600,
-            "pct": 18.7
-          },
-          "対話・融合": {
-            "count": 331,
-            "pct": 10.3
-          },
-          "刷新・破壊": {
-            "count": 267,
-            "pct": 8.3
-          },
-          "守る・維持": {
-            "count": 255,
-            "pct": 7.9
-          },
-          "捨てる・撤退": {
-            "count": 243,
-            "pct": 7.6
-          },
-          "捨てる・転換": {
-            "count": 203,
-            "pct": 6.3
-          },
-          "分散・探索": {
-            "count": 105,
-            "pct": 3.3
-          },
-          "逃げる・放置": {
-            "count": 76,
-            "pct": 2.4
-          },
-          "交流・発表": {
-            "count": 31,
-            "pct": 1.0
-          },
-          "集中・拡大": {
-            "count": 21,
-            "pct": 0.7
-          },
-          "拡大・攻め": {
-            "count": 20,
-            "pct": 0.6
-          },
-          "分散・スピンオフ": {
-            "count": 14,
-            "pct": 0.4
-          },
-          "逃げる・分散": {
-            "count": 11,
-            "pct": 0.3
-          },
-          "撤退・逃げる": {
-            "count": 8,
-            "pct": 0.2
-          },
-          "逃げる・守る": {
-            "count": 4,
-            "pct": 0.1
-          },
-          "分散・多角化": {
-            "count": 2,
-            "pct": 0.1
-          },
-          "撤退・収縮": {
-            "count": 2,
-            "pct": 0.1
-          },
-          "撤退・縮小": {
-            "count": 2,
-            "pct": 0.1
-          },
-          "分散する・独立する": {
-            "count": 1,
-            "pct": 0.0
-          }
+        {
+          "field": "action_type",
+          "relevance": "medium",
+          "reason": "対話・融合→高, 逃げる→低"
         },
-        "family": {
-          "守る・維持": {
-            "count": 185,
-            "pct": 23.5
-          },
-          "耐える・潜伏": {
-            "count": 182,
-            "pct": 23.1
-          },
-          "対話・融合": {
-            "count": 168,
-            "pct": 21.3
-          },
-          "攻める・挑戦": {
-            "count": 76,
-            "pct": 9.7
-          },
-          "刷新・破壊": {
-            "count": 67,
-            "pct": 8.5
-          },
-          "分散・探索": {
-            "count": 30,
-            "pct": 3.8
-          },
-          "捨てる・撤退": {
-            "count": 25,
-            "pct": 3.2
-          },
-          "交流・発表": {
-            "count": 18,
-            "pct": 2.3
-          },
-          "分散・スピンオフ": {
-            "count": 15,
-            "pct": 1.9
-          },
-          "逃げる・放置": {
-            "count": 9,
-            "pct": 1.1
-          },
-          "捨てる・転換": {
-            "count": 9,
-            "pct": 1.1
-          },
-          "撤退・収縮": {
-            "count": 1,
-            "pct": 0.1
-          },
-          "集中・拡大": {
-            "count": 1,
-            "pct": 0.1
-          },
-          "撤退・縮小": {
-            "count": 1,
-            "pct": 0.1
-          }
+        {
+          "field": "entity_type",
+          "relevance": "medium",
+          "reason": "scaleと類似"
         },
-        "country": {
-          "攻める・挑戦": {
-            "count": 310,
-            "pct": 22.4
-          },
-          "刷新・破壊": {
-            "count": 288,
-            "pct": 20.9
-          },
-          "耐える・潜伏": {
-            "count": 286,
-            "pct": 20.7
-          },
-          "守る・維持": {
-            "count": 218,
-            "pct": 15.8
-          },
-          "対話・融合": {
-            "count": 113,
-            "pct": 8.2
-          },
-          "分散・探索": {
-            "count": 50,
-            "pct": 3.6
-          },
-          "捨てる・撤退": {
-            "count": 36,
-            "pct": 2.6
-          },
-          "逃げる・放置": {
-            "count": 32,
-            "pct": 2.3
-          },
-          "集中・拡大": {
-            "count": 18,
-            "pct": 1.3
-          },
-          "分散・スピンオフ": {
-            "count": 14,
-            "pct": 1.0
-          },
-          "拡大・攻め": {
-            "count": 7,
-            "pct": 0.5
-          },
-          "撤退・収縮": {
-            "count": 6,
-            "pct": 0.4
-          },
-          "捨てる・転換": {
-            "count": 3,
-            "pct": 0.2
-          }
+        {
+          "field": "main_domain",
+          "relevance": "low",
+          "reason": "政治/行政→高, 個人→低"
         },
-        "other": {
-          "耐える・潜伏": {
-            "count": 391,
-            "pct": 18.1
-          },
-          "対話・融合": {
-            "count": 375,
-            "pct": 17.3
-          },
-          "攻める・挑戦": {
-            "count": 312,
-            "pct": 14.4
-          },
-          "守る・維持": {
-            "count": 296,
-            "pct": 13.7
-          },
-          "分散・探索": {
-            "count": 169,
-            "pct": 7.8
-          },
-          "刷新・破壊": {
-            "count": 151,
-            "pct": 7.0
-          },
-          "交流・発表": {
-            "count": 130,
-            "pct": 6.0
-          },
-          "捨てる・撤退": {
-            "count": 104,
-            "pct": 4.8
-          },
-          "捨てる・転換": {
-            "count": 65,
-            "pct": 3.0
-          },
-          "集中・拡大": {
-            "count": 56,
-            "pct": 2.6
-          },
-          "拡大・攻め": {
-            "count": 41,
-            "pct": 1.9
-          },
-          "分散・スピンオフ": {
-            "count": 33,
-            "pct": 1.5
-          },
-          "撤退・収縮": {
-            "count": 12,
-            "pct": 0.6
-          },
-          "逃げる・放置": {
-            "count": 11,
-            "pct": 0.5
-          },
-          "輝く・表現": {
-            "count": 10,
-            "pct": 0.5
-          },
-          "撤退・縮小": {
-            "count": 7,
-            "pct": 0.3
-          },
-          "分散・独立": {
-            "count": 1,
-            "pct": 0.0
-          },
-          "分散する・独立する": {
-            "count": 1,
-            "pct": 0.0
-          }
+        {
+          "field": "story_summary",
+          "relevance": "medium",
+          "reason": "交渉/調整/対立等の記述からLLM推定可能"
         }
-      }
+      ],
+      "estimability": "partial_rule",
+      "notes": "scale + action_type の組み合わせでルールベース推定可能。country+対話=5, individual+攻める=1 のようなマッピング。精度は推定65-75%。精密にはstory_summaryのLLM分析が望ましい"
     }
   },
-  "structural_issues": {
-    "family_entity_type_mismatch": {
-      "description": "All 787 family-scale cases have entity_type=individual, not a family-specific type",
-      "count": 787
+  "feasibility_scores": {
+    "stakeholder_count": {
+      "feasibility": 3,
+      "cost": 3,
+      "value": 4,
+      "method": "rule_plus_llm",
+      "rule_coverage_pct": 100,
+      "llm_needed_pct": 40,
+      "priority": "medium",
+      "rationale": "scaleフィールドから全件にルールベースで粗い推定可能 (company→10+, individual→1, family→2-10, country→1000+)。境界事例(自営業=companyだが実質1人等)の精密化にLLM必要。分離ロジックにおけるスケール判定の精度向上に直結する"
     },
-    "other_scale_heterogeneity": {
-      "description": "other-scale (2165 cases) contains 2108 company-type entities - likely misclassified or ambiguous",
-      "count": 2165,
-      "company_entity_count": 2108
+    "resource_constraint": {
+      "feasibility": 2,
+      "cost": 4,
+      "value": 3,
+      "method": "llm_only",
+      "rule_coverage_pct": 50,
+      "llm_needed_pct": 80,
+      "priority": "low",
+      "rationale": "既存フィールドからの推定精度が低い。scale+before_stateで粗い傾向は出るが、同じscale=companyでも トヨタとスタートアップでは資源制約が全く異なる。story_summaryからのLLM抽出が不可欠で、13,060件のバッチ処理コスト大"
     },
-    "scale_entity_mismatches": {
-      "description": "Cases where scale and entity_type have inconsistent mapping",
-      "count": 28,
-      "details": {
-        "individual_as_organization": 12,
-        "individual_as_government": 8,
-        "company_as_government": 7,
-        "company_as_organization": 1
+    "time_horizon": {
+      "feasibility": 4,
+      "cost": 1,
+      "value": 4,
+      "method": "rule_only",
+      "rule_coverage_pct": 95.4,
+      "llm_needed_pct": 0,
+      "priority": "high",
+      "rationale": "periodフィールドから12456/13060件(95.4%)でduration_yearsを直接算出可能。LLM不要。平均23.76年, 中央値10年。残りの事例も「平成後期」等からLLMでapprox推定可能だがコスト低い"
+    },
+    "reversibility": {
+      "feasibility": 4,
+      "cost": 1,
+      "value": 5,
+      "method": "rule_only",
+      "rule_coverage_pct": 100,
+      "llm_needed_pct": 0,
+      "priority": "high",
+      "rationale": "after_state + outcome + action_type の組み合わせで ルールベース推定が高精度で可能。LLM不要。崩壊・消滅+Failure→1(不可逆), V字回復+Success→4(高可逆), 現状維持→3(中可逆)。スケール分離ロジックにおいて、個人の転職(可逆)と企業の倒産(不可逆)の区別に有用"
+    },
+    "consensus_cost": {
+      "feasibility": 3,
+      "cost": 2,
+      "value": 4,
+      "method": "rule_plus_llm",
+      "rule_coverage_pct": 100,
+      "llm_needed_pct": 30,
+      "priority": "medium",
+      "rationale": "scale + action_type で全件にルールベース推定可能。country+対話→5(最高), individual+攻める→1(最低)。精密化にはstory_summaryのLLM分析が望ましいが、ルールベースでも実用的精度(65-75%)が期待できる"
+    }
+  },
+  "reversibility_estimate": {
+    "mapped": 13060,
+    "unmapped": 0,
+    "coverage_pct": 100.0,
+    "distribution": {
+      "mostly_reversible": 3627,
+      "partially_reversible": 718,
+      "mostly_irreversible": 2642,
+      "irreversible": 3464,
+      "highly_reversible": 2609
+    }
+  },
+  "consensus_cost_estimate": {
+    "distribution": {
+      "1": 3007,
+      "2": 2918,
+      "3": 3952,
+      "4": 2120,
+      "5": 1063
+    }
+  },
+  "domain_scale_analysis": {
+    "multi_scale_domains": {
+      "unknown": {
+        "total": 1449,
+        "distribution": {
+          "company": 797,
+          "individual": 373,
+          "other": 195,
+          "country": 84
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.55
+      },
+      "生活・暮らし": {
+        "total": 1204,
+        "distribution": {
+          "individual": 754,
+          "company": 26,
+          "family": 402,
+          "other": 20,
+          "country": 2
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.6262
+      },
+      "null": {
+        "total": 1173,
+        "distribution": {
+          "company": 474,
+          "individual": 210,
+          "family": 156,
+          "country": 132,
+          "other": 201
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.4041
+      },
+      "テクノロジー": {
+        "total": 901,
+        "distribution": {
+          "company": 531,
+          "individual": 175,
+          "country": 85,
+          "other": 102,
+          "family": 8
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.5893
+      },
+      "金融": {
+        "total": 634,
+        "distribution": {
+          "company": 334,
+          "country": 101,
+          "individual": 140,
+          "family": 16,
+          "other": 43
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.5268
+      },
+      "社会・コミュニティ": {
+        "total": 620,
+        "distribution": {
+          "company": 20,
+          "country": 50,
+          "individual": 54,
+          "other": 489,
+          "family": 7
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.7887
+      },
+      "国家・政治": {
+        "total": 612,
+        "distribution": {
+          "individual": 27,
+          "country": 548,
+          "company": 5,
+          "family": 8,
+          "other": 24
+        },
+        "dominant_scale": "country",
+        "dominance_ratio": 0.8954
+      },
+      "小売・サービス": {
+        "total": 576,
+        "distribution": {
+          "company": 395,
+          "country": 3,
+          "individual": 76,
+          "other": 79,
+          "family": 23
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.6858
+      },
+      "エンタメ": {
+        "total": 532,
+        "distribution": {
+          "company": 183,
+          "individual": 197,
+          "family": 33,
+          "other": 103,
+          "country": 16
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.3703
+      },
+      "製造": {
+        "total": 471,
+        "distribution": {
+          "company": 352,
+          "individual": 51,
+          "country": 41,
+          "family": 8,
+          "other": 19
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.7473
+      },
+      "医療・製薬": {
+        "total": 318,
+        "distribution": {
+          "company": 52,
+          "country": 24,
+          "individual": 132,
+          "family": 36,
+          "other": 74
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.4151
+      },
+      "教育": {
+        "total": 294,
+        "distribution": {
+          "company": 28,
+          "individual": 131,
+          "family": 35,
+          "other": 90,
+          "country": 10
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.4456
+      },
+      "エネルギー・環境": {
+        "total": 191,
+        "distribution": {
+          "company": 35,
+          "country": 55,
+          "family": 10,
+          "individual": 51,
+          "other": 40
+        },
+        "dominant_scale": "country",
+        "dominance_ratio": 0.288
+      },
+      "スポーツ": {
+        "total": 189,
+        "distribution": {
+          "company": 11,
+          "individual": 110,
+          "other": 59,
+          "family": 4,
+          "country": 5
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.582
+      },
+      "不動産・建設": {
+        "total": 184,
+        "distribution": {
+          "company": 54,
+          "individual": 47,
+          "country": 30,
+          "family": 17,
+          "other": 36
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.2935
+      },
+      "農林水産": {
+        "total": 181,
+        "distribution": {
+          "country": 27,
+          "family": 8,
+          "individual": 61,
+          "company": 52,
+          "other": 33
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.337
+      },
+      "物流・交通": {
+        "total": 180,
+        "distribution": {
+          "company": 103,
+          "individual": 30,
+          "other": 40,
+          "country": 7
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.5722
+      },
+      "観光・旅行": {
+        "total": 118,
+        "distribution": {
+          "company": 28,
+          "individual": 13,
+          "family": 4,
+          "country": 16,
+          "other": 57
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.4831
+      },
+      "IT・通信": {
+        "total": 106,
+        "distribution": {
+          "company": 81,
+          "individual": 25
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.7642
+      },
+      "製造業": {
+        "total": 87,
+        "distribution": {
+          "company": 35,
+          "individual": 7,
+          "other": 45
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.5172
+      },
+      "政治・行政": {
+        "total": 76,
+        "distribution": {
+          "other": 9,
+          "individual": 22,
+          "country": 45
+        },
+        "dominant_scale": "country",
+        "dominance_ratio": 0.5921
+      },
+      "自動車": {
+        "total": 60,
+        "distribution": {
+          "company": 47,
+          "individual": 12,
+          "family": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.7833
+      },
+      "電機": {
+        "total": 43,
+        "distribution": {
+          "company": 38,
+          "individual": 5
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8837
+      },
+      "電機・電子": {
+        "total": 43,
+        "distribution": {
+          "company": 35,
+          "individual": 8
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.814
+      },
+      "小売": {
+        "total": 36,
+        "distribution": {
+          "company": 26,
+          "individual": 10
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.7222
+      },
+      "IT・テクノロジー": {
+        "total": 28,
+        "distribution": {
+          "company": 24,
+          "individual": 4
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8571
+      },
+      "食品・飲料": {
+        "total": 28,
+        "distribution": {
+          "company": 19,
+          "other": 9
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.6786
+      },
+      "Technology": {
+        "total": 27,
+        "distribution": {
+          "company": 22,
+          "individual": 3,
+          "other": 2
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8148
+      },
+      "IT": {
+        "total": 27,
+        "distribution": {
+          "company": 23,
+          "other": 4
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8519
+      },
+      "観光・レジャー": {
+        "total": 27,
+        "distribution": {
+          "company": 8,
+          "other": 19
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.7037
+      },
+      "finance": {
+        "total": 26,
+        "distribution": {
+          "other": 4,
+          "company": 22
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8462
+      },
+      "小売・流通": {
+        "total": 25,
+        "distribution": {
+          "company": 22,
+          "individual": 2,
+          "other": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.88
+      },
+      "メディア・出版": {
+        "total": 25,
+        "distribution": {
+          "company": 13,
+          "other": 12
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.52
+      },
+      "自動車製造": {
+        "total": 22,
+        "distribution": {
+          "company": 18,
+          "individual": 4
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8182
+      },
+      "金融・保険": {
+        "total": 22,
+        "distribution": {
+          "individual": 6,
+          "company": 14,
+          "other": 1,
+          "country": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.6364
+      },
+      "エンターテインメント": {
+        "total": 20,
+        "distribution": {
+          "company": 9,
+          "other": 3,
+          "individual": 8
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.45
+      },
+      "建設・不動産": {
+        "total": 19,
+        "distribution": {
+          "company": 6,
+          "other": 12,
+          "individual": 1
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.6316
+      },
+      "電機・製造": {
+        "total": 18,
+        "distribution": {
+          "company": 15,
+          "individual": 3
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8333
+      },
+      "エネルギー": {
+        "total": 17,
+        "distribution": {
+          "individual": 5,
+          "company": 11,
+          "country": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.6471
+      },
+      "Retail": {
+        "total": 15,
+        "distribution": {
+          "company": 12,
+          "individual": 3
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8
+      },
+      "航空": {
+        "total": 15,
+        "distribution": {
+          "individual": 3,
+          "company": 12
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8
+      },
+      "インフラ": {
+        "total": 15,
+        "distribution": {
+          "company": 5,
+          "other": 10
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.6667
+      },
+      "文化・芸術": {
+        "total": 12,
+        "distribution": {
+          "individual": 1,
+          "other": 10,
+          "family": 1
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.8333
+      },
+      "航空・運輸": {
+        "total": 11,
+        "distribution": {
+          "company": 9,
+          "individual": 2
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8182
+      },
+      "education": {
+        "total": 11,
+        "distribution": {
+          "company": 8,
+          "other": 3
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.7273
+      },
+      "Manufacturing": {
+        "total": 10,
+        "distribution": {
+          "company": 7,
+          "individual": 2,
+          "other": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.7
+      },
+      "金融・投資": {
+        "total": 9,
+        "distribution": {
+          "individual": 6,
+          "company": 2,
+          "other": 1
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.6667
+      },
+      "通信": {
+        "total": 8,
+        "distribution": {
+          "individual": 2,
+          "company": 6
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.75
+      },
+      "IT・ソフトウェア": {
+        "total": 7,
+        "distribution": {
+          "company": 5,
+          "individual": 2
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.7143
+      },
+      "politics": {
+        "total": 7,
+        "distribution": {
+          "other": 4,
+          "country": 3
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.5714
+      },
+      "Telecom": {
+        "total": 6,
+        "distribution": {
+          "company": 5,
+          "other": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8333
+      },
+      "政治・政策": {
+        "total": 6,
+        "distribution": {
+          "country": 4,
+          "individual": 2
+        },
+        "dominant_scale": "country",
+        "dominance_ratio": 0.6667
+      },
+      "IT・EC": {
+        "total": 6,
+        "distribution": {
+          "company": 5,
+          "individual": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8333
+      },
+      "慈善・フィランソロピー": {
+        "total": 6,
+        "distribution": {
+          "individual": 4,
+          "other": 2
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.6667
+      },
+      "複合企業": {
+        "total": 6,
+        "distribution": {
+          "company": 5,
+          "individual": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8333
+      },
+      "宇宙・航空": {
+        "total": 5,
+        "distribution": {
+          "individual": 1,
+          "company": 4
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.8
+      },
+      "キャリア": {
+        "total": 5,
+        "distribution": {
+          "individual": 3,
+          "other": 2
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.6
+      },
+      "ホテル・観光": {
+        "total": 4,
+        "distribution": {
+          "individual": 2,
+          "company": 2
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.5
+      },
+      "農業": {
+        "total": 4,
+        "distribution": {
+          "company": 3,
+          "country": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.75
+      },
+      "Automotive": {
+        "total": 4,
+        "distribution": {
+          "company": 3,
+          "individual": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.75
+      },
+      "飲料・食品": {
+        "total": 4,
+        "distribution": {
+          "company": 3,
+          "individual": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.75
+      },
+      "健康増進": {
+        "total": 4,
+        "distribution": {
+          "other": 3,
+          "country": 1
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.75
+      },
+      "物流・運輸": {
+        "total": 3,
+        "distribution": {
+          "company": 1,
+          "other": 2
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.6667
+      },
+      "教育・学術": {
+        "total": 3,
+        "distribution": {
+          "individual": 2,
+          "other": 1
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.6667
+      },
+      "ヘルスケア": {
+        "total": 2,
+        "distribution": {
+          "company": 1,
+          "individual": 1
+        },
+        "dominant_scale": "company",
+        "dominance_ratio": 0.5
+      },
+      "政治・歴史": {
+        "total": 2,
+        "distribution": {
+          "individual": 1,
+          "other": 1
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.5
+      },
+      "エネルギー・資源": {
+        "total": 2,
+        "distribution": {
+          "country": 1,
+          "company": 1
+        },
+        "dominant_scale": "country",
+        "dominance_ratio": 0.5
+      },
+      "医療": {
+        "total": 2,
+        "distribution": {
+          "other": 1,
+          "company": 1
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.5
+      },
+      "医療・福祉": {
+        "total": 2,
+        "distribution": {
+          "other": 1,
+          "individual": 1
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.5
+      },
+      "アパレル・繊維": {
+        "total": 2,
+        "distribution": {
+          "individual": 1,
+          "company": 1
+        },
+        "dominant_scale": "individual",
+        "dominance_ratio": 0.5
+      },
+      "予防医療": {
+        "total": 2,
+        "distribution": {
+          "country": 1,
+          "other": 1
+        },
+        "dominant_scale": "country",
+        "dominance_ratio": 0.5
+      },
+      "メンタルヘルス": {
+        "total": 2,
+        "distribution": {
+          "other": 1,
+          "country": 1
+        },
+        "dominant_scale": "other",
+        "dominance_ratio": 0.5
+      },
+      "伝統芸能": {
+        "total": 2,
+        "distribution": {
+          "family": 1,
+          "individual": 1
+        },
+        "dominant_scale": "family",
+        "dominance_ratio": 0.5
+      },
+      "災害対応": {
+        "total": 2,
+        "distribution": {
+          "country": 1,
+          "other": 1
+        },
+        "dominant_scale": "country",
+        "dominance_ratio": 0.5
       }
     },
-    "main_domain_inconsistency": {
-      "description": "main_domain has duplicate/overlapping categories (e.g., テクノロジー vs technology, ビジネス vs Business)",
-      "missing_count": 2622,
-      "unique_values": 335
-    }
+    "total_multi_scale_domain_count": 74
+  },
+  "period_analysis": {
+    "total_with_period": 13060,
+    "parseable": 12456,
+    "parse_rate": 0.9538,
+    "duration_estimates": {
+      "count": 12456,
+      "mean": 23.76,
+      "median": 10,
+      "min": 0,
+      "max": 928
+    },
+    "examples": [
+      "2015-2020",
+      "令和前期",
+      "2009-2015",
+      "2010-2012",
+      "2014-2017",
+      "2012-2018",
+      "1990s-2000s",
+      "2000-2010",
+      "2016-2020",
+      "2013-2015"
+    ]
   }
 }
