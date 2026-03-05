@@ -43,6 +43,13 @@ from analogy_scoring import AnalogyScorer
 # ---------------------------------------------------------------------------
 VALID_SCALES = ("company", "individual", "family", "country", "other")
 
+_VOCABULARY_MAP = {
+    "成功率": "到達確率",
+    "推奨ルート": "選択肢",
+    "スコア": "構造的適合度",
+    "ルート": "選択肢",
+}
+
 # ---------------------------------------------------------------------------
 # 状態ラベルのファジーマッチング
 # ---------------------------------------------------------------------------
@@ -212,6 +219,50 @@ def _wilson_score_interval(
     lower = (centre_adjusted - z * adjusted_standard_deviation) / denominator
     upper = (centre_adjusted + z * adjusted_standard_deviation) / denominator
     return (max(0.0, round(lower, 4)), min(1.0, round(upper, 4)))
+
+
+def _build_number_definition(
+    label: str,
+    value: float,
+    n: int,
+    definition: str,
+    successes: Optional[int] = None,
+    z: float = 1.96,
+) -> dict:
+    """数値に定義書を添付する。
+
+    Returns:
+        {
+          "label": "到達確率",
+          "value": 0.204,
+          "display": "類似721件中147件が到達（20.4%）",
+          "n": 721,
+          "definition": "同一scale×同一before_state→目標after_stateに到達した事例の割合",
+          "confidence_interval": {"lower": 0.175, "upper": 0.237, "z": 1.96},
+          "data_quality": "A"
+        }
+    """
+    if successes is None:
+        successes = int(value * n)
+    if n > 0:
+        ci_lower, ci_upper = _wilson_score_interval(successes, n, z)
+    else:
+        ci_lower, ci_upper = 0.0, 0.0
+    if n >= 100:
+        quality = "A"
+    elif n >= 30:
+        quality = "B"
+    else:
+        quality = "C"
+    return {
+        "label": label,
+        "value": round(value, 4),
+        "display": f"類似{n}件中{successes}件が到達（{round(value * 100, 1)}%）",
+        "n": n,
+        "definition": definition,
+        "confidence_interval": {"lower": ci_lower, "upper": ci_upper, "z": z},
+        "data_quality": quality,
+    }
 
 
 def _sanitize_text(text: str) -> str:
@@ -426,6 +477,171 @@ class BacktraceEngine:
 
         # RouteNavigator は遅延初期化
         self._route_navigator: Optional[Any] = None
+
+    # -----------------------------------------------------------------------
+    # 互卦分析
+    # -----------------------------------------------------------------------
+
+    def _analyze_hu_gua(self, hexagram_number: int) -> dict:
+        """互卦（2-5爻）から潜在要因を抽出する。
+
+        Returns:
+            {
+              "hu_gua_id": int,
+              "hu_gua_name": str,
+              "潜在要因": str,
+              "示唆": str,
+              "対処の方向性": str,
+              "爻構成": {"下卦": "2,3,4爻の値", "上卦": "3,4,5爻の値"},
+            }
+        """
+        hu_id = get_hu_gua(hexagram_number)
+        hu_name = get_hexagram_name(hu_id)
+
+        # hexagram_64.json から情報取得
+        hex64_data = {}
+        if isinstance(self._hex64, list):
+            for item in self._hex64:
+                if item.get("number") == hu_id:
+                    hex64_data = item
+                    break
+        elif isinstance(self._hex64, dict):
+            hex64_data = self._hex64.get(str(hu_id), {})
+
+        meaning = hex64_data.get("meaning", "")
+        situation = hex64_data.get("situation", "")
+        modern_interp = hex64_data.get("modern_interpretation", "")
+        archetype = hex64_data.get("archetype", "")
+
+        # 爻構成の取得
+        lower_trigram, upper_trigram = get_trigrams(hu_id)
+
+        return {
+            "hu_gua_id": hu_id,
+            "hu_gua_name": hu_name,
+            "潜在要因": f"{meaning}。{situation}" if meaning else hu_name,
+            "示唆": modern_interp,
+            "対処の方向性": archetype,
+            "爻構成": {"下卦": lower_trigram, "上卦": upper_trigram},
+        }
+
+    # -----------------------------------------------------------------------
+    # 推論ログ構築
+    # -----------------------------------------------------------------------
+
+    def _build_reasoning_log(self, current_hex, goal_hex, l1, l2, l3, scale) -> dict:
+        """推論過程を因果チェーンとして構造化する。"""
+        # --- 易経構造分析 ---
+        current_lower, current_upper = get_trigrams(current_hex)
+        goal_lower, goal_upper = get_trigrams(goal_hex)
+
+        changing_lines_detail = []
+        for cl in l1.get("changing_lines", []):
+            pos = cl if isinstance(cl, int) else cl.get("position", 0)
+            # 爻辞テキストの取得
+            yao_text = ""
+            hex_texts = (self._iching_texts or {}).get("hexagrams", {}).get(str(current_hex), {})
+            lines_data = hex_texts.get("lines", {})
+            line_data = lines_data.get(str(pos), {})
+            yao_text = line_data.get("modern_ja", "")
+
+            changing_lines_detail.append({
+                "position": pos,
+                "意味": yao_text[:100] if yao_text else "",
+            })
+
+        # 之卦（最初の変爻で計算）
+        zhi_gua_info = {}
+        if changing_lines_detail:
+            first_pos = changing_lines_detail[0]["position"]
+            if isinstance(first_pos, int) and 1 <= first_pos <= 6:
+                zhi_id = get_zhi_gua(current_hex, first_pos)
+                zhi_gua_info = {
+                    "id": zhi_id,
+                    "name": get_hexagram_name(zhi_id),
+                    "解説": "",
+                }
+                # 之卦のjudgment取得
+                zhi_texts = (self._iching_texts or {}).get("hexagrams", {}).get(str(zhi_id), {})
+                zhi_judgment = zhi_texts.get("judgment", {})
+                zhi_gua_info["解説"] = zhi_judgment.get("modern_ja", "")[:150]
+
+        ekikyo_analysis = {
+            "現在卦": {
+                "id": current_hex,
+                "name": get_hexagram_name(current_hex),
+                "upper_trigram": current_upper,
+                "lower_trigram": current_lower,
+            },
+            "目標卦": {
+                "id": goal_hex,
+                "name": get_hexagram_name(goal_hex),
+                "upper_trigram": goal_upper,
+                "lower_trigram": goal_lower,
+            },
+            "変爻": changing_lines_detail,
+            "之卦": zhi_gua_info,
+            "互卦": self._analyze_hu_gua(current_hex),
+            "目標互卦": self._analyze_hu_gua(goal_hex),
+        }
+
+        # --- 事例データ分析 ---
+        case_count = l2.get("case_count", 0)
+        success_rate = 0.0
+        routes = l3.get("routes", [])
+        if routes:
+            sr_values = [r.get("total_success_rate", 0.0) for r in routes if r.get("total_success_rate")]
+            if sr_values:
+                success_rate = sr_values[0]
+
+        successes = int(case_count * success_rate) if case_count > 0 else 0
+        arrival_prob = _build_number_definition(
+            "到達確率", success_rate, case_count,
+            "同一scale×同一経路で目標状態に到達した事例の割合",
+            successes=successes,
+        ) if case_count > 0 else {"label": "到達確率", "value": 0, "n": 0, "display": "データなし"}
+
+        # 主要行動パターン
+        action_recs = l3.get("action_recommendations", [])
+        main_patterns = []
+        for ar in action_recs[:5]:
+            if isinstance(ar, dict):
+                main_patterns.append({
+                    "action": ar.get("action", ar.get("action_type", "")),
+                    "count": ar.get("count", ar.get("case_count", 0)),
+                })
+            elif isinstance(ar, str):
+                main_patterns.append({"action": ar, "count": 0})
+
+        case_data_analysis = {
+            "検索条件": {
+                "scale": scale,
+                "before_state": l2.get("matched_goal_state", l2.get("goal_state", "")),
+                "after_state": l2.get("goal_state", ""),
+            },
+            "ヒット件数": case_count,
+            "到達確率": arrival_prob,
+            "主要行動パターン": main_patterns,
+        }
+
+        # --- 統合判断 ---
+        integration = {
+            "ルート選択根拠": f"scale={scale}における事例{case_count}件の分析に基づく構造的適合度順",
+            "スコア内訳": {
+                "success_rate_weight": "到達確率",
+                "case_count_weight": "事例信頼度",
+                "compatibility_weight": "卦相性",
+                "path_efficiency_weight": "経路効率",
+                "pattern_match_weight": "パターン一致",
+            },
+            "品質ゲート結果": {},
+        }
+
+        return {
+            "易経構造分析": ekikyo_analysis,
+            "事例データ分析": case_data_analysis,
+            "統合判断": integration,
+        }
 
     # -----------------------------------------------------------------------
     # RouteNavigator 遅延初期化
@@ -1411,6 +1627,12 @@ class BacktraceEngine:
             "scale": scale,
             "quality_weight": round(qw, 4),
             "scale_fallback_notes": scale_fallback_notes,
+            "number_definitions": {
+                "primary_route_score": _build_number_definition(
+                    "第一選択肢の構造的適合度", primary_score, l2["case_count"],
+                    "5要素の加重平均スコア × データ品質重み"
+                ),
+            },
         }
 
         # --- Fix3: 全ルートのsteps[].actionから八卦名を日本語行動タイプに変換 ---
@@ -1431,6 +1653,10 @@ class BacktraceEngine:
 
         # --- polysemy_warnings: 多義性警告を集約 ---
         result["polysemy_warnings"] = self._collect_polysemy_warnings(l2, l3, scale)
+
+        result["reasoning_log"] = self._build_reasoning_log(
+            current_hex, goal_hex, l1, l2, l3, scale
+        )
 
         # --- cross_scale_patterns: 他scaleの構造的類似パターン ---
         if include_cross_scale:
@@ -1603,6 +1829,20 @@ class BacktraceEngine:
                     "note": f"{ci_label}信頼区間 (n={ci_n})",
                 },
                 "action_recommendations": l3.get("action_recommendations", []),
+                "display_title": f"選択肢{chr(65 + len(scored))}",
+                "score_display": f"構造的適合度 {round(score * 100, 1)}%",
+                "success_rate_display": f"到達確率 {round(success_rate * 100, 1)}%",
+                "number_definitions": {
+                    "score": _build_number_definition(
+                        "構造的適合度", score, ci_n,
+                        "到達確率×事例信頼度×卦相性×経路効率×パターン一致の加重平均 × 品質重み"
+                    ),
+                    "success_rate": _build_number_definition(
+                        "到達確率", success_rate, ci_n,
+                        "同一scale×同一経路で目標状態に到達した事例の割合",
+                        successes=int(ci_n * success_rate),
+                    ),
+                },
             })
 
         # スコア降順でソート
