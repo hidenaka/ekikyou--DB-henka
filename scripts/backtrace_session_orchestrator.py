@@ -832,7 +832,7 @@ class BacktraceSessionOrchestrator:
             return {"error": f"分析処理中にエラーが発生しました: {e}"}
 
     # ------------------------------------------------------------------
-    # Phase 3 ヘルパー: R1-R5 逆算フィードバック層
+    # Phase 3 ヘルパー: R0-R5 逆算フィードバック層
     # ------------------------------------------------------------------
 
     def _build_reverse_feedback_layers(
@@ -842,7 +842,7 @@ class BacktraceSessionOrchestrator:
         goal_hex: int,
         current_hex: int,
     ) -> dict:
-        """バックトレース結果から R1-R5 の逆算フィードバック層を構築する。
+        """バックトレース結果から R0-R5 の逆算フィードバック層を構築する。
 
         Args:
             backtrace_result: BacktraceEngine.full_backtrace() の出力
@@ -851,7 +851,7 @@ class BacktraceSessionOrchestrator:
             current_hex: 現在卦番号
 
         Returns:
-            {r1, r2, r3, r4, r5} の辞書
+            {r0, r1, r2, r3, r4, r5} の辞書
         """
         goal_info = hex64_lookup.get(goal_hex, {})
         goal_name = goal_info.get("name", goal_info.get("japanese_name", str(goal_hex)))
@@ -859,6 +859,12 @@ class BacktraceSessionOrchestrator:
         l2 = backtrace_result.get("l2_state", {})
         l3 = backtrace_result.get("l3_action", {})
         recommended_routes = backtrace_result.get("recommended_routes", [])
+
+        # ----- R0: 分析ログ -----
+        r0 = {
+            "label": "分析ログ",
+            "reasoning_log": backtrace_result.get("reasoning_log", {}),
+        }
 
         # ----- R1: 目標地点 -----
         # rev_after_hex から目標卦に到達した事例を取得
@@ -892,6 +898,10 @@ class BacktraceSessionOrchestrator:
                 "lower_changes": gap_analysis.get("lower_trigram_changes", ""),
             },
             "intermediate_paths": gap_analysis.get("intermediate_paths", []),
+            "hu_gua_current": backtrace_result.get("reasoning_log", {})
+                .get("易経構造分析", {}).get("互卦", {}),
+            "hu_gua_goal": backtrace_result.get("reasoning_log", {})
+                .get("易経構造分析", {}).get("目標互卦", {}),
         }
 
         # ----- R3: 推奨ルート（上位3件） -----
@@ -901,7 +911,7 @@ class BacktraceSessionOrchestrator:
             ci = route.get("confidence_interval", {})
             raw_steps = route_data.get("steps", [])
             success_rate = route_data.get("total_success_rate", 0.0)
-            title = route.get("title", f"ルート{i + 1}")
+            title = route.get("display_title", route.get("title", f"選択肢{chr(65 + i)}"))
             # フロントエンド互換: step に name フィールドを追加
             path_steps = []
             for step in raw_steps:
@@ -929,7 +939,7 @@ class BacktraceSessionOrchestrator:
             })
 
         r3 = {
-            "label": "推奨ルート",
+            "label": "選択肢",
             "routes": top_routes,
             "route_count": len(top_routes),
             "confidence_note": l2.get("confidence_note", ""),
@@ -1004,7 +1014,7 @@ class BacktraceSessionOrchestrator:
             "reflective_question": reflective_question,
         }
 
-        return {"R1": r1, "R2": r2, "R3": r3, "R4": r4, "R5": r5}
+        return {"R0": r0, "R1": r1, "R2": r2, "R3": r3, "R4": r4, "R5": r5}
 
     # ------------------------------------------------------------------
     # Phase 4: ロードマップ生成（LLM）

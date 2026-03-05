@@ -24,7 +24,7 @@ if _SCRIPTS_DIR not in sys.path:
 if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
-from backtrace_engine import BacktraceEngine, VALID_SCALES, _wilson_score_interval, _sanitize_text
+from backtrace_engine import BacktraceEngine, VALID_SCALES, _wilson_score_interval, _sanitize_text, _build_number_definition, _VOCABULARY_MAP
 from backtrace_session_orchestrator import (
     BacktraceSessionOrchestrator,
     DEMO_ROADMAP,
