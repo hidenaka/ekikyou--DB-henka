@@ -8,18 +8,27 @@
     "before_state": "どん底・危機",
     "trigger_type": "意図的決断",
     "action_type": "攻める・挑戦",
-    "after_state": "成長痛",
+    "after_state": "再起途上",
     "before_hex": "坎",
     "trigger_hex": "乾",
     "action_hex": "離",
     "after_hex": "離",
     "pattern_type": "Endurance",
     "outcome": "Mixed",
-    "free_tags": ["#拉致問題", "#北朝鮮", "#家族の闘い", "#メディア注目", "#世論形成"],
+    "free_tags": [
+      "#拉致問題",
+      "#北朝鮮",
+      "#家族の闘い",
+      "#メディア注目",
+      "#世論形成"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://ja.wikipedia.org/wiki/%E6%A8%AA%E7%94%B0%E3%82%81%E3%81%90%E3%81%BF", "https://www.rachi.go.jp/jp/megumi/gaiyou.html"],
+    "sources": [
+      "https://ja.wikipedia.org/wiki/%E6%A8%AA%E7%94%B0%E3%82%81%E3%81%90%E3%81%BF",
+      "https://www.rachi.go.jp/jp/megumi/gaiyou.html"
+    ],
     "logic_memo": "坎（拉致という家族の深い苦難・危機）から、実名公表という意図的決断（乾・リーダーシップある行動）を経て、メディアによる可視化・注目（離）へと変化した。問題は完全解決には至らないが、家族の苦境が社会に可視化され支援が集まった典型例。"
   },
   {
@@ -31,18 +40,27 @@
     "before_state": "どん底・危機",
     "trigger_type": "意図的決断",
     "action_type": "刷新・破壊",
-    "after_state": "成長痛",
+    "after_state": "変質・新生",
     "before_hex": "坎",
     "trigger_hex": "乾",
     "action_hex": "震",
     "after_hex": "離",
     "pattern_type": "Pivot_Success",
     "outcome": "Success",
-    "free_tags": ["#赤ちゃんポスト", "#こうのとりのゆりかご", "#慈恵病院", "#社会問題の可視化", "#命を救う"],
+    "free_tags": [
+      "#赤ちゃんポスト",
+      "#こうのとりのゆりかご",
+      "#慈恵病院",
+      "#社会問題の可視化",
+      "#命を救う"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://ja.wikipedia.org/wiki/%E8%93%AE%E7%94%B0%E5%A4%AA%E4%BA%8C", "https://spaceshipearth.jp/baby-hatch/"],
+    "sources": [
+      "https://ja.wikipedia.org/wiki/%E8%93%AE%E7%94%B0%E5%A4%AA%E4%BA%8C",
+      "https://spaceshipearth.jp/baby-hatch/"
+    ],
     "logic_memo": "坎（育てられない赤ちゃんの遺棄死という社会的危機）から、蓮田太二の強い意志による刷新的決断を経て、メディア報道により問題が社会全体に可視化（離）された。苦難の中にあった問題が「見える化」されることで支援が集まった坎→離の典型。"
   },
   {
@@ -54,18 +72,27 @@
     "before_state": "どん底・危機",
     "trigger_type": "外部ショック",
     "action_type": "耐える・潜伏",
-    "after_state": "混乱・カオス",
+    "after_state": "停滞継続",
     "before_hex": "坎",
     "trigger_hex": "震",
     "action_hex": "坤",
     "after_hex": "離",
     "pattern_type": "Endurance",
     "outcome": "Mixed",
-    "free_tags": ["#ケネディ家", "#暗殺", "#政治名門", "#悲劇の可視化", "#アメリカ"],
+    "free_tags": [
+      "#ケネディ家",
+      "#暗殺",
+      "#政治名門",
+      "#悲劇の可視化",
+      "#アメリカ"
+    ],
     "source_type": "book",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://en.wikipedia.org/wiki/Kennedy_curse", "https://www.eonline.com/news/1046837/how-the-kennedy-dynasty-has-endured-in-the-wake-of-so-much-scandal-and-tragedy"],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Kennedy_curse",
+      "https://www.eonline.com/news/1046837/how-the-kennedy-dynasty-has-endured-in-the-wake-of-so-much-scandal-and-tragedy"
+    ],
     "logic_memo": "坎（暗殺・事故という繰り返す家族の危機）が、外部ショック的な悲劇の連鎖を経て、メディアにより「ケネディの呪い」として広く社会に可視化（離）された。危機が表面化し注目されることで同情と支持が生まれ、一族の影響力が維持された坎→離の事例。"
   },
   {
@@ -84,11 +111,20 @@
     "after_hex": "乾",
     "pattern_type": "Shock_Recovery",
     "outcome": "Success",
-    "free_tags": ["#英国王室", "#ダイアナ妃", "#王室改革", "#ウィリアム王子", "#リーダーシップ"],
+    "free_tags": [
+      "#英国王室",
+      "#ダイアナ妃",
+      "#王室改革",
+      "#ウィリアム王子",
+      "#リーダーシップ"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://madamefigaro.jp/culture/celebrity/250107-prince-william.html", "https://marxist.com/20-years-on-diana-the-monarchy-and-the-crisis-in-britain.htm"],
+    "sources": [
+      "https://madamefigaro.jp/culture/celebrity/250107-prince-william.html",
+      "https://marxist.com/20-years-on-diana-the-monarchy-and-the-crisis-in-britain.htm"
+    ],
     "logic_memo": "離（ダイアナ妃死去後のメディア批判による王室問題の表面化・炎上）から、衝撃（震）を受けてチャールズとウィリアムが王室近代化を主導し、新たなリーダーシップ（乾）を確立した。問題の可視化が改革のきっかけとなり、新しいリーダーが生まれた離→乾の典型。"
   },
   {
@@ -107,11 +143,20 @@
     "after_hex": "乾",
     "pattern_type": "Pivot_Success",
     "outcome": "Success",
-    "free_tags": ["#FIAT", "#アニェッリ家", "#エルカン", "#ステランティス", "#イタリア財閥"],
+    "free_tags": [
+      "#FIAT",
+      "#アニェッリ家",
+      "#エルカン",
+      "#ステランティス",
+      "#イタリア財閥"
+    ],
     "source_type": "article",
     "credibility_rank": "A",
     "main_domain": "生活・暮らし",
-    "sources": ["https://en.wikipedia.org/wiki/John_Elkann", "https://thececilygroup.com/a-case-study-the-succession-of-gianni-agnelli/"],
+    "sources": [
+      "https://en.wikipedia.org/wiki/John_Elkann",
+      "https://thececilygroup.com/a-case-study-the-succession-of-gianni-agnelli/"
+    ],
     "logic_memo": "離（創業者死去後の後継者問題と経営危機の表面化）から、家族内の内部崩壊（坎）を乗り越え、若きエルカンが強力なリーダーシップ（乾）で企業再建と一族の統率を実現した。問題の露呈が新世代のリーダー確立につながった離→乾の好例。"
   },
   {
@@ -130,11 +175,20 @@
     "after_hex": "乾",
     "pattern_type": "Shock_Recovery",
     "outcome": "Success",
-    "free_tags": ["#大王製紙", "#井川意高", "#カジノ事件", "#脱創業家", "#企業再建"],
+    "free_tags": [
+      "#大王製紙",
+      "#井川意高",
+      "#カジノ事件",
+      "#脱創業家",
+      "#企業再建"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "製造",
-    "sources": ["https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%8E%8B%E8%A3%BD%E7%B4%99%E4%BA%8B%E4%BB%B6", "https://business.nikkei.com/atcl/NBD/19/00114/00107/"],
+    "sources": [
+      "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%8E%8B%E8%A3%BD%E7%B4%99%E4%BA%8B%E4%BB%B6",
+      "https://business.nikkei.com/atcl/NBD/19/00114/00107/"
+    ],
     "logic_memo": "離（カジノ不正流用の発覚による創業家の問題の表面化・炎上）から、内部崩壊を受けて創業家排除という抜本改革（震）を経て、新経営者が強いリーダーシップ（乾）で企業を再建した。問題が露呈した後に新たな指導体制が確立された離→乾の事例。"
   },
   {
@@ -146,18 +200,27 @@
     "before_state": "混乱・カオス",
     "trigger_type": "外部ショック",
     "action_type": "攻める・挑戦",
-    "after_state": "混乱・カオス",
+    "after_state": "停滞継続",
     "before_hex": "離",
     "trigger_hex": "巽",
     "action_hex": "乾",
     "after_hex": "震",
     "pattern_type": "Shock_Recovery",
     "outcome": "Mixed",
-    "free_tags": ["#皇室", "#眞子内親王", "#小室圭", "#皇位継承", "#メディア報道"],
+    "free_tags": [
+      "#皇室",
+      "#眞子内親王",
+      "#小室圭",
+      "#皇位継承",
+      "#メディア報道"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://www.nippon.com/ja/japan-topics/c06121/", "https://www.hellomagazine.com/royalty/20230215164380/royal-family-tensions-princess-mako-japan/"],
+    "sources": [
+      "https://www.nippon.com/ja/japan-topics/c06121/",
+      "https://www.hellomagazine.com/royalty/20230215164380/royal-family-tensions-princess-mako-japan/"
+    ],
     "logic_memo": "離（メディアによる金銭問題の暴露・可視化）が、風評の拡散（巽）を経て、眞子さんの結婚強行という決断（乾）に至り、結果として皇室制度全体への衝撃（震）をもたらした。秘密の表面化がさらなる制度的衝撃へ連鎖した離→震の典型。"
   },
   {
@@ -169,18 +232,27 @@
     "before_state": "混乱・カオス",
     "trigger_type": "内部崩壊",
     "action_type": "攻める・挑戦",
-    "after_state": "混乱・カオス",
+    "after_state": "崩壊・消滅",
     "before_hex": "離",
     "trigger_hex": "坎",
     "action_hex": "乾",
     "after_hex": "震",
     "pattern_type": "Hubris_Collapse",
     "outcome": "Failure",
-    "free_tags": ["#ロッテ", "#重光家", "#お家騒動", "#クーデター", "#日韓財閥"],
+    "free_tags": [
+      "#ロッテ",
+      "#重光家",
+      "#お家騒動",
+      "#クーデター",
+      "#日韓財閥"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://toyokeizai.net/articles/-/80046", "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%83%E3%83%86%E3%81%8A%E5%AE%B6%E9%A8%92%E5%8B%95"],
+    "sources": [
+      "https://toyokeizai.net/articles/-/80046",
+      "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%83%E3%83%86%E3%81%8A%E5%AE%B6%E9%A8%92%E5%8B%95"
+    ],
     "logic_memo": "離（兄弟間の経営権争いのメディアへの表面化）から、内部崩壊（坎）を通じてクーデター未遂や贈賄事件など次々と衝撃的事態（震）が発生。問題が一旦可視化されると連鎖的に新たな衝撃を生み出し続けた離→震の負の連鎖事例。"
   },
   {
@@ -192,18 +264,27 @@
     "before_state": "混乱・カオス",
     "trigger_type": "意図的決断",
     "action_type": "刷新・破壊",
-    "after_state": "混乱・カオス",
+    "after_state": "崩壊・消滅",
     "before_hex": "離",
     "trigger_hex": "乾",
     "action_hex": "震",
     "after_hex": "震",
     "pattern_type": "Hubris_Collapse",
     "outcome": "Failure",
-    "free_tags": ["#英国王室", "#ハリー王子", "#メーガン妃", "#オプラ", "#王室分裂"],
+    "free_tags": [
+      "#英国王室",
+      "#ハリー王子",
+      "#メーガン妃",
+      "#オプラ",
+      "#王室分裂"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://en.wikipedia.org/wiki/Oprah_with_Meghan_and_Harry", "https://www.cnbc.com/2021/03/09/buckingham-palaces-reaction-after-harry-and-meghans-oprah-interview.html"],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Oprah_with_Meghan_and_Harry",
+      "https://www.cnbc.com/2021/03/09/buckingham-palaces-reaction-after-harry-and-meghans-oprah-interview.html"
+    ],
     "logic_memo": "離（王室内の問題が既にメディアで取り沙汰されていた状態）から、ハリーの意図的な暴露（乾・強い意志による決断）を通じて、インタビューという衝撃（震）が世界に走った。内情の表面化がさらなる衝撃的暴露を呼び、家族関係が回復不能になった離→震の連鎖。"
   },
   {
@@ -215,18 +296,27 @@
     "before_state": "混乱・カオス",
     "trigger_type": "内部崩壊",
     "action_type": "捨てる・撤退",
-    "after_state": "安定・平和",
+    "after_state": "縮小安定・生存",
     "before_hex": "離",
     "trigger_hex": "坎",
     "action_hex": "巽",
     "after_hex": "巽",
     "pattern_type": "Pivot_Success",
     "outcome": "Mixed",
-    "free_tags": ["#大戸屋", "#三森家", "#創業家退場", "#コロワイド", "#TOB"],
+    "free_tags": [
+      "#大戸屋",
+      "#三森家",
+      "#創業家退場",
+      "#コロワイド",
+      "#TOB"
+    ],
     "source_type": "news",
     "credibility_rank": "S",
     "main_domain": "生活・暮らし",
-    "sources": ["https://maonline.jp/articles/ootoya_colowide", "https://www.data-max.co.jp/article/31978"],
+    "sources": [
+      "https://maonline.jp/articles/ootoya_colowide",
+      "https://www.data-max.co.jp/article/31978"
+    ],
     "logic_memo": "離（創業者急逝後のお家騒動の表面化・メディア報道）から、内部の資金問題（坎）を受けて、株式売却という柔軟な撤退（巽・従順な適応）を選択し、新体制のもとで柔軟な再建（巽）が進んだ。問題が露呈した後に固執せず柔軟に対応した離→巽の典型。"
   },
   {
@@ -238,18 +328,27 @@
     "before_state": "混乱・カオス",
     "trigger_type": "意図的決断",
     "action_type": "対話・融合",
-    "after_state": "安定・平和",
+    "after_state": "安定成長・成功",
     "before_hex": "離",
     "trigger_hex": "乾",
     "action_hex": "兌",
     "after_hex": "巽",
     "pattern_type": "Pivot_Success",
     "outcome": "Success",
-    "free_tags": ["#マードック家", "#FOX", "#メディア帝国", "#承継問題", "#和解"],
+    "free_tags": [
+      "#マードック家",
+      "#FOX",
+      "#メディア帝国",
+      "#承継問題",
+      "#和解"
+    ],
     "source_type": "news",
     "credibility_rank": "A",
     "main_domain": "生活・暮らし",
-    "sources": ["https://en.wikipedia.org/wiki/Succession_of_Rupert_Murdoch", "https://www.pbs.org/newshour/politics/murdoch-family-reaches-media-empire-succession-deal-that-wont-change-direction-of-fox-news"],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Succession_of_Rupert_Murdoch",
+      "https://www.pbs.org/newshour/politics/murdoch-family-reaches-media-empire-succession-deal-that-wont-change-direction-of-fox-news"
+    ],
     "logic_memo": "離（承継問題の法廷闘争での表面化）から、ルパートの意図的決断（乾）と最終的な交渉・対話（兌）を経て、経済的補償と引き換えの柔軟な妥協（巽）で安定に至った。問題が可視化された後に硬直せず柔軟に適応することで落ち着いた離→巽の好例。"
   },
   {
@@ -261,18 +360,27 @@
     "before_state": "混乱・カオス",
     "trigger_type": "内部崩壊",
     "action_type": "守る・維持",
-    "after_state": "安定・平和",
+    "after_state": "縮小安定・生存",
     "before_hex": "離",
     "trigger_hex": "坎",
     "action_hex": "艮",
     "after_hex": "巽",
     "pattern_type": "Endurance",
     "outcome": "Mixed",
-    "free_tags": ["#ミツカン", "#中埜家", "#お家騒動", "#父子引き離し", "#創業家問題"],
+    "free_tags": [
+      "#ミツカン",
+      "#中埜家",
+      "#お家騒動",
+      "#父子引き離し",
+      "#創業家問題"
+    ],
     "source_type": "news",
     "credibility_rank": "A",
     "main_domain": "生活・暮らし",
-    "sources": ["https://www.moneypost.jp/996709", "https://note.com/nakanodd/n/n23b0cd10070b"],
+    "sources": [
+      "https://www.moneypost.jp/996709",
+      "https://note.com/nakanodd/n/n23b0cd10070b"
+    ],
     "logic_memo": "離（メディアや裁判を通じた家族内問題の国際的な表面化）から、内部の対立（坎）に対して企業と創業家を柔軟に切り離す対応（艮・守りの維持）を取り、事業としては柔軟に適応して安定（巽）を保った。問題が露呈しても柔軟に対応し落ち着きを取り戻した離→巽の事例。"
   }
 ]
