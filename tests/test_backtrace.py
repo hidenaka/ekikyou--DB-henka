@@ -2029,3 +2029,218 @@ class TestAnalogyInBacktrace:
             scale="company", include_cross_scale=False,
         )
         assert "cross_scale_patterns" not in result
+
+
+# ============================================================
+# P1: 推論ログ（reasoning_log）のテスト
+# ============================================================
+
+class TestReasoningLog:
+    """P1: 推論ログ（reasoning_log）のテスト。"""
+
+    @pytest.fixture
+    def engine(self):
+        return BacktraceEngine()
+
+    def test_reasoning_log_exists_in_full_backtrace(self, engine):
+        """reasoning_logキーがfull_backtrace()出力に存在する。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        assert "reasoning_log" in result
+
+    def test_ekikyo_structure_analysis(self, engine):
+        """易経構造分析に現在卦、目標卦、変爻、之卦が含まれる。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        rl = result["reasoning_log"]
+        assert "易経構造分析" in rl
+        ea = rl["易経構造分析"]
+        assert "現在卦" in ea
+        assert "目標卦" in ea
+        assert "変爻" in ea
+        assert "之卦" in ea
+        # 現在卦の構造
+        assert "id" in ea["現在卦"]
+        assert "name" in ea["現在卦"]
+        assert "upper_trigram" in ea["現在卦"]
+        assert "lower_trigram" in ea["現在卦"]
+        assert ea["現在卦"]["id"] == 12
+        assert ea["目標卦"]["id"] == 11
+
+    def test_case_data_analysis(self, engine):
+        """事例データ分析にヒット件数、到達確率が含まれる。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        rl = result["reasoning_log"]
+        assert "事例データ分析" in rl
+        cda = rl["事例データ分析"]
+        assert "ヒット件数" in cda
+        assert "到達確率" in cda
+        assert isinstance(cda["ヒット件数"], int)
+
+    def test_integration_judgment(self, engine):
+        """統合判断にスコア内訳が含まれる。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        rl = result["reasoning_log"]
+        assert "統合判断" in rl
+        ij = rl["統合判断"]
+        assert "スコア内訳" in ij
+        assert "ルート選択根拠" in ij
+
+    def test_hu_gua_in_reasoning_log(self, engine):
+        """reasoning_log.易経構造分析に互卦と目標互卦が含まれる。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        ea = result["reasoning_log"]["易経構造分析"]
+        assert "互卦" in ea
+        assert "目標互卦" in ea
+        assert "hu_gua_id" in ea["互卦"]
+        assert "hu_gua_name" in ea["互卦"]
+
+
+# ============================================================
+# P2: 語彙置換のテスト
+# ============================================================
+
+class TestVocabulary:
+    """P2: 語彙置換のテスト。"""
+
+    @pytest.fixture
+    def engine(self):
+        return BacktraceEngine()
+
+    def test_display_title_format(self, engine):
+        """display_titleが'選択肢A', '選択肢B'等の形式。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        routes = result.get("recommended_routes", [])
+        if routes:
+            assert routes[0].get("display_title", "").startswith("選択肢")
+
+    def test_score_display_exists(self, engine):
+        """score_display, success_rate_displayが存在し日本語ラベル付き。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        routes = result.get("recommended_routes", [])
+        if routes:
+            assert "score_display" in routes[0]
+            assert "success_rate_display" in routes[0]
+            assert "構造的適合度" in routes[0]["score_display"]
+            assert "到達確率" in routes[0]["success_rate_display"]
+
+    def test_existing_keys_preserved(self, engine):
+        """既存キー（score, title等）が壊れていない（回帰テスト）。"""
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        routes = result.get("recommended_routes", [])
+        if routes:
+            route = routes[0]
+            assert "score" in route
+            assert "title" in route
+            assert "route" in route
+            assert "confidence_interval" in route
+            assert isinstance(route["score"], float)
+
+    def test_vocabulary_map_exists(self):
+        """_VOCABULARY_MAPが定義されている。"""
+        from backtrace_engine import _VOCABULARY_MAP
+        assert "成功率" in _VOCABULARY_MAP
+        assert _VOCABULARY_MAP["成功率"] == "到達確率"
+        assert "推奨ルート" in _VOCABULARY_MAP
+        assert _VOCABULARY_MAP["推奨ルート"] == "選択肢"
+
+
+# ============================================================
+# P3: 数字の定義書のテスト
+# ============================================================
+
+class TestNumberDefinition:
+    """P3: 数字の定義書のテスト。"""
+
+    def test_build_number_definition_basic(self):
+        """_build_number_definitionが正しい構造を返す。"""
+        nd = _build_number_definition("到達確率", 0.204, 721, "テスト定義", successes=147)
+        assert nd["label"] == "到達確率"
+        assert nd["value"] == 0.204
+        assert nd["n"] == 721
+        assert nd["definition"] == "テスト定義"
+        assert "confidence_interval" in nd
+        assert "lower" in nd["confidence_interval"]
+        assert "upper" in nd["confidence_interval"]
+        assert "data_quality" in nd
+
+    def test_data_quality_grades(self):
+        """data_qualityがn>=100でA、30-99でB、<30でC。"""
+        assert _build_number_definition("t", 0.5, 100, "d")["data_quality"] == "A"
+        assert _build_number_definition("t", 0.5, 500, "d")["data_quality"] == "A"
+        assert _build_number_definition("t", 0.5, 30, "d")["data_quality"] == "B"
+        assert _build_number_definition("t", 0.5, 99, "d")["data_quality"] == "B"
+        assert _build_number_definition("t", 0.5, 29, "d")["data_quality"] == "C"
+        assert _build_number_definition("t", 0.5, 1, "d")["data_quality"] == "C"
+
+    def test_display_format(self):
+        """displayフォーマットが「類似N件中M件が到達（X%）」。"""
+        nd = _build_number_definition("到達確率", 0.204, 721, "d", successes=147)
+        assert "類似721件中147件が到達" in nd["display"]
+        assert "20.4%" in nd["display"]
+
+    def test_number_definitions_in_scored_routes(self):
+        """各scored_routeにnumber_definitionsキーが存在する。"""
+        engine = BacktraceEngine()
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        routes = result.get("recommended_routes", [])
+        if routes:
+            route = routes[0]
+            assert "number_definitions" in route
+            assert "score" in route["number_definitions"]
+            assert "success_rate" in route["number_definitions"]
+            nd_score = route["number_definitions"]["score"]
+            assert "n" in nd_score
+            assert "definition" in nd_score
+            assert "confidence_interval" in nd_score
+            assert "data_quality" in nd_score
+
+    def test_summary_number_definitions(self):
+        """summaryにnumber_definitionsが含まれる。"""
+        engine = BacktraceEngine()
+        result = engine.full_backtrace(12, "停滞・閉塞", 11, "安定・平和", scale="company")
+        summary = result.get("summary", {})
+        assert "number_definitions" in summary
+        assert "primary_route_score" in summary["number_definitions"]
+
+    def test_zero_n_handling(self):
+        """n=0の場合にエラーにならない。"""
+        nd = _build_number_definition("t", 0.0, 0, "d")
+        assert nd["n"] == 0
+        assert nd["data_quality"] == "C"
+        assert nd["confidence_interval"]["lower"] == 0.0
+        assert nd["confidence_interval"]["upper"] == 0.0
+
+
+# ============================================================
+# P4: 互卦による潜在要因抽出のテスト
+# ============================================================
+
+class TestHuGua:
+    """P4: 互卦による潜在要因抽出のテスト。"""
+
+    @pytest.fixture
+    def engine(self):
+        return BacktraceEngine()
+
+    def test_analyze_hu_gua_returns_structure(self, engine):
+        """_analyze_hu_guaが正しい構造を返す。"""
+        result = engine._analyze_hu_gua(1)
+        assert "hu_gua_id" in result
+        assert "hu_gua_name" in result
+        assert "潜在要因" in result
+        assert "示唆" in result
+        assert "対処の方向性" in result
+        assert "爻構成" in result
+        assert "下卦" in result["爻構成"]
+        assert "上卦" in result["爻構成"]
+
+    def test_hu_gua_name_not_empty(self, engine):
+        """hu_gua_nameが空でない。"""
+        for hex_num in [1, 2, 11, 12, 29, 63, 64]:
+            result = engine._analyze_hu_gua(hex_num)
+            assert result["hu_gua_name"], f"hu_gua_name is empty for hexagram {hex_num}"
+
+    def test_hu_gua_id_is_valid(self, engine):
+        """hu_gua_idが1-64の範囲。"""
+        for hex_num in range(1, 65):
+            result = engine._analyze_hu_gua(hex_num)
+            assert 1 <= result["hu_gua_id"] <= 64, f"Invalid hu_gua_id for hexagram {hex_num}"
