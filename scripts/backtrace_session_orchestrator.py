@@ -1110,6 +1110,192 @@ class BacktraceSessionOrchestrator:
     # Phase 4 ヘルパー
     # ------------------------------------------------------------------
 
+    # --- placeholder format helpers ---
+
+    def _format_gap_summary(self, gap: dict) -> str:
+        """gap_analysis から {gap_summary} 用テキストを組み立てる。"""
+        lines = []
+        lines.append(f"ハミング距離: {gap.get('hamming_distance', '不明')}")
+        lines.append(f"難易度: {gap.get('difficulty', '不明')}")
+        changing = gap.get("changing_lines", [])
+        if changing:
+            positions = [
+                str(c.get("position", c) if isinstance(c, dict) else c)
+                for c in changing
+            ]
+            lines.append(f"変化する爻: {', '.join(positions)}")
+        rel = gap.get("structural_relationship", "")
+        if rel:
+            lines.append(f"構造的関係: {rel}")
+        paths = gap.get("intermediate_paths", [])
+        if paths:
+            lines.append(f"中間経路数: {len(paths)}")
+        return "\n".join(lines)
+
+    def _format_route_summary(self, routes: list) -> str:
+        """recommended_routes から {route_summary} 用テキストを組み立てる。"""
+        if not routes:
+            return "ルート情報なし"
+        lines: list[str] = []
+        for i, route in enumerate(routes[:3]):
+            title = route.get(
+                "display_title", route.get("title", f"選択肢{chr(65 + i)}")
+            )
+            score_disp = route.get(
+                "score_display",
+                f"スコア {round(route.get('score', 0) * 100, 1)}%",
+            )
+            sr_disp = route.get("success_rate_display", "")
+            ci = route.get("confidence_interval", {})
+            ci_note = ci.get("note", "") if ci else ""
+
+            lines.append(f"{title}:")
+            lines.append(f"  {score_disp}")
+            if sr_disp:
+                lines.append(f"  {sr_disp}")
+            if ci_note:
+                lines.append(f"  {ci_note}")
+
+            # number_definitions if available
+            nd = route.get("number_definitions", {})
+            for key, nd_val in nd.items():
+                if isinstance(nd_val, dict) and "display" in nd_val:
+                    lines.append(
+                        f"  {nd_val.get('label', key)}: {nd_val['display']}"
+                        f" (品質{nd_val.get('data_quality', '?')})"
+                    )
+
+            # steps summary
+            route_data = route.get("route", {})
+            steps = route_data.get("steps", [])
+            if steps:
+                step_names: list[str] = []
+                for s in steps[:5]:
+                    if isinstance(s, dict):
+                        act = s.get("action", "")
+                        from_h = s.get("from_hex", "")
+                        to_h = s.get("to_hex", "")
+                        if act:
+                            step_names.append(act)
+                        elif from_h and to_h:
+                            step_names.append(f"{from_h}→{to_h}")
+                if step_names:
+                    lines.append(f"  ステップ: {' → '.join(step_names)}")
+            lines.append("")
+        return "\n".join(lines)
+
+    def _format_action_recommendations(self, l3: dict) -> str:
+        """l3_action から {action_recommendations} 用テキストを組み立てる。"""
+        recs = l3.get("action_recommendations", [])
+        if not recs:
+            return "行動推奨なし"
+        lines: list[str] = []
+        for i, rec in enumerate(recs[:5]):
+            if isinstance(rec, dict):
+                action = rec.get("action", rec.get("action_type", "不明"))
+                count = rec.get("count", rec.get("case_count", 0))
+                sr = rec.get("success_rate", 0)
+                line = f"{i + 1}. {action}"
+                if count:
+                    line += f" (事例{count}件"
+                    if sr:
+                        line += f", 到達確率{round(sr * 100, 1)}%"
+                    line += ")"
+                lines.append(line)
+            elif isinstance(rec, str):
+                lines.append(f"{i + 1}. {rec}")
+        return "\n".join(lines)
+
+    def _format_case_statistics(self, backtrace_result: dict) -> str:
+        """reasoning_log + summary から {case_statistics} 用テキストを組み立てる。"""
+        rl = backtrace_result.get("reasoning_log", {})
+        cda = rl.get("事例データ分析", {})
+        lines: list[str] = []
+
+        hit_count = cda.get("ヒット件数", 0)
+        lines.append(f"ヒット件数: {hit_count}")
+
+        # 到達確率 with number_definition
+        ap = cda.get("到達確率", {})
+        if isinstance(ap, dict) and "display" in ap:
+            lines.append(f"到達確率: {ap['display']}")
+            ci = ap.get("confidence_interval", {})
+            if ci:
+                lines.append(
+                    f"  信頼区間: [{ci.get('lower', '?')}, {ci.get('upper', '?')}]"
+                )
+            lines.append(f"  データ品質: {ap.get('data_quality', '?')}")
+
+        # 検索条件
+        cond = cda.get("検索条件", {})
+        if cond:
+            lines.append(
+                f"検索条件: scale={cond.get('scale', '')},"
+                f" before_state={cond.get('before_state', '')},"
+                f" after_state={cond.get('after_state', '')}"
+            )
+
+        # summary number_definitions
+        summary = backtrace_result.get("summary", {})
+        snd = summary.get("number_definitions", {})
+        for key, nd_val in snd.items():
+            if isinstance(nd_val, dict) and "display" in nd_val:
+                lines.append(
+                    f"{nd_val.get('label', key)}: {nd_val['display']}"
+                    f" (品質{nd_val.get('data_quality', '?')})"
+                )
+
+        # quality weight
+        qi = backtrace_result.get("quality_info", {})
+        if qi:
+            qw = qi.get("quality_weight", 0)
+            lines.append(f"品質重み: {round(qw, 4)} ({qi.get('scale', '')})")
+
+        return "\n".join(lines) if lines else "統計データなし"
+
+    def _format_compatibility_info(self, session: dict) -> str:
+        """feedback / backtrace_result から {compatibility_info} 用テキストを組み立てる。"""
+        feedback = session.get("feedback", {})
+        compat = feedback.get("compatibility", {})
+        if not compat:
+            # Try from backtrace_result
+            bt = session.get("backtrace_result", {})
+            compat = bt.get("compatibility", {})
+        if not compat:
+            return "相性情報なし"
+
+        lines: list[str] = []
+        compat_type = compat.get("type", "不明")
+        score = compat.get("score", 0)
+        summary_text = compat.get("summary", "")
+        lines.append(f"タイプ: {compat_type}")
+        if score:
+            lines.append(f"適合度: {round(score * 100, 1)}%")
+        if summary_text:
+            lines.append(f"要約: {summary_text}")
+        return "\n".join(lines)
+
+    def _format_quality_warnings(self, backtrace_result: dict) -> str:
+        """quality_gates から {quality_warnings} 用テキストを組み立てる。"""
+        qg = backtrace_result.get("quality_gates", {})
+        if not qg:
+            return "警告なし"
+
+        warnings_list: list[str] = []
+        for key, val in qg.items():
+            if isinstance(val, bool) and val:
+                warnings_list.append(key)
+            elif isinstance(val, dict):
+                if val.get("triggered") or val.get("warning"):
+                    msg = val.get("message", val.get("warning", key))
+                    warnings_list.append(str(msg))
+
+        if not warnings_list:
+            return "警告なし"
+        return "\n".join(f"- {w}" for w in warnings_list)
+
+    # --- end placeholder format helpers ---
+
     def _build_roadmap_prompt(
         self,
         template: str,
@@ -1166,6 +1352,26 @@ class BacktraceSessionOrchestrator:
             "{confidence_note}": l2.get("confidence_note", ""),
             "{case_count}": str(l2.get("case_count", 0)),
         }
+
+        # --- 新しいプレースホルダーの注入 ---
+        replacements["{current_hex_number}"] = str(current_hex)
+        replacements["{goal_hex_number}"] = str(goal_hex)
+        replacements["{gap_summary}"] = self._format_gap_summary(gap)
+        replacements["{route_summary}"] = self._format_route_summary(
+            recommended_routes
+        )
+        replacements["{action_recommendations}"] = (
+            self._format_action_recommendations(l3)
+        )
+        replacements["{case_statistics}"] = self._format_case_statistics(
+            backtrace_result
+        )
+        replacements["{compatibility_info}"] = self._format_compatibility_info(
+            session
+        )
+        replacements["{quality_warnings}"] = self._format_quality_warnings(
+            backtrace_result
+        )
 
         prompt = template
         for placeholder, value in replacements.items():

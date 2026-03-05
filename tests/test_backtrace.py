@@ -2244,3 +2244,82 @@ class TestHuGua:
         for hex_num in range(1, 65):
             result = engine._analyze_hu_gua(hex_num)
             assert 1 <= result["hu_gua_id"] <= 64, f"Invalid hu_gua_id for hexagram {hex_num}"
+
+
+# ============================================================
+# ロードマッププロンプト データ注入テスト
+# ============================================================
+
+class TestRoadmapPromptInjection:
+    """ロードマッププロンプトの全プレースホルダーが実データで埋まることを検証。"""
+
+    @pytest.fixture
+    def orchestrator_with_analysis(self):
+        """分析済みセッションを返すfixture。"""
+        o = BacktraceSessionOrchestrator()
+        s = o.create_session()
+        o.describe_current(s, current_hex=12, current_state="停滞・閉塞", scale="company")
+        o.set_goal(s, "hexagram", 11)
+        o.analyze(s)
+        return o, s
+
+    def test_no_unfilled_placeholders(self, orchestrator_with_analysis):
+        """プロンプト内に未置換の{xxx}プレースホルダーが残っていない。"""
+        import re
+        o, s = orchestrator_with_analysis
+        bt = s.get("backtrace_result", {})
+        template_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "prompts", "backtrace_roadmap.txt"
+        )
+        with open(template_path, encoding="utf-8") as f:
+            template = f.read()
+        prompt = o._build_roadmap_prompt(template, s, bt)
+        # JSON出力形式内の{...}は除外（"overview": "..."等）
+        # テンプレートの{placeholder}形式のみチェック
+        unfilled = re.findall(r'\{[a-z][a-z_]*\}', prompt)
+        # JSON keys like {"overview": ...} are OK, filter those
+        actual_unfilled = [p for p in unfilled if p not in [
+            '{overview}', '{title}', '{description}', '{duration_hint}',
+            '{key_action}', '{immediate_action}', '{caution}',
+        ]]
+        # Remove JSON template patterns (出力形式セクションの例示)
+        assert len(actual_unfilled) == 0, f"未置換プレースホルダー: {actual_unfilled}"
+
+    def test_gap_summary_filled(self, orchestrator_with_analysis):
+        """gap_summaryにハミング距離が含まれる。"""
+        o, s = orchestrator_with_analysis
+        bt = s.get("backtrace_result", {})
+        with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "prompts", "backtrace_roadmap.txt"), encoding="utf-8") as f:
+            template = f.read()
+        prompt = o._build_roadmap_prompt(template, s, bt)
+        assert "ハミング距離" in prompt
+
+    def test_route_summary_has_display_title(self, orchestrator_with_analysis):
+        """route_summaryに選択肢Aなどのdisplay_titleが含まれる。"""
+        o, s = orchestrator_with_analysis
+        bt = s.get("backtrace_result", {})
+        with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "prompts", "backtrace_roadmap.txt"), encoding="utf-8") as f:
+            template = f.read()
+        prompt = o._build_roadmap_prompt(template, s, bt)
+        assert "選択肢" in prompt
+
+    def test_case_statistics_has_number_definitions(self, orchestrator_with_analysis):
+        """case_statisticsにヒット件数と品質情報が含まれる。"""
+        o, s = orchestrator_with_analysis
+        bt = s.get("backtrace_result", {})
+        with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "prompts", "backtrace_roadmap.txt"), encoding="utf-8") as f:
+            template = f.read()
+        prompt = o._build_roadmap_prompt(template, s, bt)
+        assert "ヒット件数" in prompt
+
+    def test_current_and_goal_hex_numbers(self, orchestrator_with_analysis):
+        """current_hex_numberとgoal_hex_numberが正しく置換される。"""
+        o, s = orchestrator_with_analysis
+        bt = s.get("backtrace_result", {})
+        with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "prompts", "backtrace_roadmap.txt"), encoding="utf-8") as f:
+            template = f.read()
+        prompt = o._build_roadmap_prompt(template, s, bt)
+        # 12 and 11 should appear as hex numbers
+        assert "12" in prompt  # current_hex
+        assert "11" in prompt  # goal_hex
