@@ -35,7 +35,7 @@ if _SCRIPT_DIR not in sys.path:
 
 from gap_analysis_engine import GapAnalysisEngine
 from case_search import CaseSearchEngine
-from hexagram_transformations import get_hexagram_name, get_trigrams
+from hexagram_transformations import get_hexagram_name, get_trigrams, get_zhi_gua, get_hu_gua
 from analogy_scoring import AnalogyScorer
 
 # ---------------------------------------------------------------------------
@@ -408,6 +408,16 @@ class BacktraceEngine:
 
         # 相性データ
         self._compat: Dict[str, Dict] = _load_json(_COMPAT_PATH)
+
+        # 易経テキスト（爻辞等）
+        self._iching_texts = _load_json(
+            os.path.join(_PROJECT_ROOT, "data", "reference", "iching_texts_ctext_legge_ja.json")
+        )
+
+        # 64卦基本データ
+        self._hex64 = _load_json(
+            os.path.join(_PROJECT_ROOT, "data", "reference", "hexagram_64.json")
+        )
 
         # 依存エンジン
         self._gap_engine = GapAnalysisEngine(compat_path=_COMPAT_PATH)
