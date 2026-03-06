@@ -1540,18 +1540,23 @@
     "avg_duration_hint": 6.1
   },
   "巽|震": {
-    "total_count": 9,
-    "success_count": 6,
-    "success_rate": 0.6667,
+    "total_count": 16,
+    "success_count": 10,
+    "success_rate": 0.625,
     "outcomes": {
-      "PartialSuccess": 2,
-      "Success": 6,
-      "Mixed": 1
+      "PartialSuccess": 4,
+      "Success": 10,
+      "Mixed": 1,
+      "Failure": 1
     },
     "top_actions": [
       {
+        "action_type": "刷新・破壊",
+        "count": 7
+      },
+      {
         "action_type": "攻める・挑戦",
-        "count": 4
+        "count": 5
       },
       {
         "action_type": "捨てる・撤退",
@@ -1560,13 +1565,9 @@
       {
         "action_type": "耐える・潜伏",
         "count": 1
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 1
       }
     ],
-    "avg_duration_hint": 4.4
+    "avg_duration_hint": 6.0
   },
   "巽|巽": {
     "total_count": 7,
@@ -1598,17 +1599,18 @@
     "avg_duration_hint": 12.6
   },
   "巽|坎": {
-    "total_count": 10,
-    "success_count": 0,
-    "success_rate": 0.0,
+    "total_count": 13,
+    "success_count": 1,
+    "success_rate": 0.0769,
     "outcomes": {
-      "Failure": 5,
-      "PartialSuccess": 5
+      "Failure": 7,
+      "PartialSuccess": 5,
+      "Success": 1
     },
     "top_actions": [
       {
         "action_type": "耐える・潜伏",
-        "count": 6
+        "count": 9
       },
       {
         "action_type": "攻める・挑戦",
@@ -1623,7 +1625,7 @@
         "count": 1
       }
     ],
-    "avg_duration_hint": 6.5
+    "avg_duration_hint": 6.1
   },
   "巽|兌": {
     "total_count": 10,
