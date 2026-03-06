@@ -177,7 +177,7 @@
       "before_hex": "艮",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
       "period": "2021-2024"
     },
     {
@@ -186,7 +186,7 @@
       "before_hex": "艮",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
@@ -195,7 +195,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
       "period": "2024-2024"
     },
     {
@@ -276,7 +276,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "安定・平和",
-      "after_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
       "period": "2024"
     },
     {
@@ -285,7 +285,7 @@
       "before_hex": "離",
       "action_type": "守る・維持",
       "before_state": "混乱・カオス",
-      "after_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
       "period": "2023-2024"
     },
     {
@@ -293,8 +293,8 @@
       "target_name": "少子化の加速（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -302,8 +302,8 @@
       "target_name": "人手不足の深刻化（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -311,8 +311,8 @@
       "target_name": "介護人材不足の継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -320,8 +320,8 @@
       "target_name": "医師の地域偏在継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -329,17 +329,17 @@
       "target_name": "物流2024年問題の影響（2024）",
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2024"
     },
     {
       "transition_id": "",
       "target_name": "バス・タクシー運転手不足（2023-2024）",
       "before_hex": "坎",
-      "action_type": "撤退・縮小",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -347,8 +347,8 @@
       "target_name": "地方鉄道の存続危機（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -356,8 +356,8 @@
       "target_name": "空き家問題の深刻化（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -365,8 +365,8 @@
       "target_name": "限界集落の増加（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -374,8 +374,8 @@
       "target_name": "インフラ老朽化の進行（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -383,8 +383,8 @@
       "target_name": "年金制度への不安継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -392,8 +392,8 @@
       "target_name": "健康保険財政の悪化（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -401,8 +401,8 @@
       "target_name": "地方財政の厳しさ継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -410,8 +410,8 @@
       "target_name": "円安による物価高継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -419,8 +419,8 @@
       "target_name": "実質賃金マイナス継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -428,8 +428,8 @@
       "target_name": "エネルギー価格高止まり（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -437,8 +437,8 @@
       "target_name": "食料品価格上昇継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -446,8 +446,8 @@
       "target_name": "世界的インフレ継続（2023-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     }
   ],
@@ -467,7 +467,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2005-現在"
     },
     {
@@ -476,7 +476,7 @@
       "before_hex": "坤",
       "action_type": "耐える・潜伏",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1975-現在"
     },
     {
@@ -494,7 +494,7 @@
       "before_hex": "坤",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2001-現在"
     },
     {
@@ -503,7 +503,7 @@
       "before_hex": "坤",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1982-現在"
     },
     {
@@ -512,7 +512,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2016-現在"
     },
     {
@@ -647,7 +647,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -656,7 +656,7 @@
       "before_hex": "巽",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -665,7 +665,7 @@
       "before_hex": "離",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -692,7 +692,7 @@
       "before_hex": "兌",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -701,7 +701,7 @@
       "before_hex": "離",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2015-2024"
     },
     {
@@ -710,7 +710,7 @@
       "before_hex": "巽",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2010-2024"
     },
     {
@@ -719,7 +719,7 @@
       "before_hex": "離",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -728,7 +728,7 @@
       "before_hex": "離",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -737,7 +737,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -746,160 +746,160 @@
       "before_hex": "離",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "コロナ後の対面交流復活（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "祭り・イベントの完全復活（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "卒業式・入学式の正常化（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "音楽フェス完全復活（2023-2024）",
       "before_hex": "坎",
-      "action_type": "輝く・表現",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "スポーツ観戦の声出し解禁（2023）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023"
     },
     {
       "transition_id": "",
       "target_name": "飲食店の営業正常化（2023）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023"
     },
     {
       "transition_id": "",
       "target_name": "旅行需要爆発（リベンジ旅行）（2023-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "温泉地のにぎわい復活（2023-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "地方観光地の活性化（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "インバウンド観光客との交流（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "訪日客による日本文化体験（2023-2024）",
       "before_hex": "艮",
-      "action_type": "交流・発表",
-      "before_state": "安定・停止",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "国際交流イベント復活（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "留学生交流の正常化（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "姉妹都市交流の再開（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "ビジネス交流の活発化（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "対面オフィスの価値再評価（2023-2024）",
       "before_hex": "艮",
-      "action_type": "交流・発表",
-      "before_state": "安定・停止",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "商店街のにぎわい復活（2023-2024）",
       "before_hex": "坎",
-      "action_type": "交流・発表",
-      "before_state": "混乱・衰退",
-      "after_state": "喜び・交流",
+      "action_type": "対話・融合",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
       "period": "2023-2024"
     }
   ],
@@ -964,7 +964,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2015-2024"
     },
     {
@@ -973,7 +973,7 @@
       "before_hex": "坎",
       "action_type": "攻める・挑戦",
       "before_state": "どん底・危機",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2016-2024"
     },
     {
@@ -982,7 +982,7 @@
       "before_hex": "乾",
       "action_type": "攻める・挑戦",
       "before_state": "絶頂・慢心",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2018-2024"
     },
     {
@@ -991,7 +991,7 @@
       "before_hex": "坤",
       "action_type": "守る・維持",
       "before_state": "停滞・閉塞",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2010-2024"
     },
     {
@@ -1000,7 +1000,7 @@
       "before_hex": "坎",
       "action_type": "攻める・挑戦",
       "before_state": "どん底・危機",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2017-2024"
     },
     {
@@ -1009,7 +1009,7 @@
       "before_hex": "坎",
       "action_type": "攻める・挑戦",
       "before_state": "どん底・危機",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2018-2024"
     },
     {
@@ -1018,7 +1018,7 @@
       "before_hex": "乾",
       "action_type": "守る・維持",
       "before_state": "絶頂・慢心",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2010-2024"
     },
     {
@@ -1027,7 +1027,7 @@
       "before_hex": "坤",
       "action_type": "耐える・潜伏",
       "before_state": "安定・平和",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2010-2024"
     },
     {
@@ -1036,7 +1036,7 @@
       "before_hex": "坎",
       "action_type": "攻める・挑戦",
       "before_state": "どん底・危機",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2011-2021"
     },
     {
@@ -1045,7 +1045,7 @@
       "before_hex": "坤",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2000-2024"
     },
     {
@@ -1054,7 +1054,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2015-2024"
     },
     {
@@ -1063,7 +1063,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2015-2024"
     },
     {
@@ -1081,7 +1081,7 @@
       "before_hex": "震",
       "action_type": "刷新・破壊",
       "before_state": "成長痛",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "1993-2005"
     },
     {
@@ -1099,7 +1099,7 @@
       "before_hex": "震",
       "action_type": "刷新・破壊",
       "before_state": "成長痛",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "1995-2015"
     },
     {
@@ -1117,7 +1117,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2012-2018"
     },
     {
@@ -1198,7 +1198,7 @@
       "before_hex": "坤",
       "action_type": "守る・維持",
       "before_state": "安定・平和",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "1915-2024"
     },
     {
@@ -1207,7 +1207,7 @@
       "before_hex": "艮",
       "action_type": "守る・維持",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2000-2024"
     },
     {
@@ -1216,7 +1216,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2015-2024"
     },
     {
@@ -1225,7 +1225,7 @@
       "before_hex": "坤",
       "action_type": "分散・スピンオフ",
       "before_state": "安定・平和",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "1994-2024"
     },
     {
@@ -1234,7 +1234,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2001-2024"
     },
     {
@@ -1243,7 +1243,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2011-2024"
     },
     {
@@ -1252,7 +1252,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2010-2024"
     },
     {
@@ -1261,7 +1261,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2019-2024"
     },
     {
@@ -1270,7 +1270,7 @@
       "before_hex": "艮",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2016-2024"
     },
     {
@@ -1279,7 +1279,7 @@
       "before_hex": "艮",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2012-2024"
     },
     {
@@ -1288,7 +1288,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -1297,7 +1297,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2015-2024"
     },
     {
@@ -1306,7 +1306,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2008-2024"
     },
     {
@@ -1315,7 +1315,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2009-2024"
     },
     {
@@ -1324,7 +1324,7 @@
       "before_hex": "艮",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2012-2024"
     },
     {
@@ -1333,7 +1333,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -1342,7 +1342,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2005-2024"
     },
     {
@@ -1351,7 +1351,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2000-2024"
     }
   ],
@@ -1362,7 +1362,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2001-現在"
     },
     {
@@ -1371,7 +1371,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2007-現在"
     },
     {
@@ -1389,7 +1389,7 @@
       "before_hex": "兌",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -1407,7 +1407,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -1416,7 +1416,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1425,7 +1425,7 @@
       "before_hex": "離",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1434,7 +1434,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1443,7 +1443,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1452,7 +1452,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1461,7 +1461,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1470,7 +1470,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1479,7 +1479,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1488,7 +1488,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1497,7 +1497,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1506,7 +1506,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1515,7 +1515,7 @@
       "before_hex": "兌",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -1533,7 +1533,7 @@
       "before_hex": "坎",
       "action_type": "刷新・破壊",
       "before_state": "どん底・危機",
-      "after_state": "安定・平和",
+      "after_state": "縮小安定・生存",
       "period": "2015-2024"
     },
     {
@@ -1542,7 +1542,7 @@
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
       "before_state": "どん底・危機",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2013-2022"
     },
     {
@@ -1551,7 +1551,7 @@
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
       "before_state": "どん底・危機",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2016-2024"
     },
     {
@@ -1559,17 +1559,17 @@
       "target_name": "人気バンド・メンバー脱退での危機（2016-2020）",
       "before_hex": "兌",
       "action_type": "耐える・潜伏",
-      "before_state": "安定成長・成功",
-      "after_state": "安定・平和",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
       "period": "2016-2020"
     },
     {
       "transition_id": "",
       "target_name": "人気温泉街・客足減少での再生（2010-2020）",
       "before_hex": "兌",
-      "action_type": "捨てる・転換",
-      "before_state": "安定成長・成功",
-      "after_state": "安定・平和",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
       "period": "2010-2020"
     },
     {
@@ -1577,26 +1577,26 @@
       "target_name": "人気劇場・コロナ禍での危機（2020-2023）",
       "before_hex": "兌",
       "action_type": "耐える・潜伏",
-      "before_state": "安定成長・成功",
-      "after_state": "安定・平和",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
       "period": "2020-2023"
     },
     {
       "transition_id": "",
       "target_name": "人気美術館・来館者減少での改革（2015-2022）",
       "before_hex": "兌",
-      "action_type": "捨てる・転換",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2015-2022"
     },
     {
       "transition_id": "",
       "target_name": "人気動物園・施設老朽化での危機（2010-2020）",
       "before_hex": "兌",
-      "action_type": "捨てる・転換",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2010-2020"
     },
     {
@@ -1604,17 +1604,17 @@
       "target_name": "人気プロ野球チーム・観客減少での危機（2010-2018）",
       "before_hex": "兌",
       "action_type": "耐える・潜伏",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2010-2018"
     },
     {
       "transition_id": "",
       "target_name": "人気バスケチーム・Bリーグ発足での変革（2016-2020）",
       "before_hex": "兌",
-      "action_type": "捨てる・転換",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2016-2020"
     },
     {
@@ -1622,8 +1622,8 @@
       "target_name": "人気マラソン大会・コロナ禍での危機（2020-2023）",
       "before_hex": "兌",
       "action_type": "耐える・潜伏",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2020-2023"
     },
     {
@@ -1631,26 +1631,26 @@
       "target_name": "人気音楽フェス・コロナ禍での危機（2020-2023）",
       "before_hex": "兌",
       "action_type": "耐える・潜伏",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2020-2023"
     },
     {
       "transition_id": "",
       "target_name": "人気アニメイベント・コロナ禍での危機（2020-2023）",
       "before_hex": "兌",
-      "action_type": "捨てる・転換",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2020-2023"
     },
     {
       "transition_id": "",
       "target_name": "人気ロックバンド・メンバー脱退での危機（2018-2022）",
       "before_hex": "兌",
-      "action_type": "捨てる・転換",
-      "before_state": "安定成長・成功",
-      "after_state": "安定成長・成功",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
       "period": "2018-2022"
     },
     {
@@ -1659,7 +1659,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1668,7 +1668,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1677,7 +1677,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1686,7 +1686,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1695,7 +1695,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1704,7 +1704,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1713,7 +1713,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1722,7 +1722,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1731,7 +1731,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1740,7 +1740,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1749,7 +1749,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1758,7 +1758,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1767,7 +1767,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1776,7 +1776,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1785,7 +1785,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1794,7 +1794,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     },
     {
@@ -1803,7 +1803,7 @@
       "before_hex": "巽",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1990-2024"
     }
   ],
@@ -1823,7 +1823,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2015-2024"
     },
     {
@@ -2001,261 +2001,261 @@
       "transition_id": "",
       "target_name": "インバウンド回復中の観光業界（2023-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "人材確保に苦戦中の介護業界（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "教員不足対策中の教育現場（2022-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2022-2024"
     },
     {
       "transition_id": "",
       "target_name": "部活動地域移行中の学校（2023-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "GIGAスクール運用中の学校（2021-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "オンライン診療拡大中の医療機関（2021-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "電子処方箋導入中の薬局（2023-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "キャッシュレス化推進中の商店街（2020-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "EV充電インフラ整備中（2021-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "水素エネルギー実用化中（2020-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "漁業担い手確保中の漁協（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "林業機械化推進中（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "空き家活用事業進行中（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "コンパクトシティ推進中（2018-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2018-2024"
     },
     {
       "transition_id": "",
       "target_name": "公共交通再編中の地方都市（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "音楽配信に取り組むインディーズバンド（2021-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "伝統工芸の後継者育成中（2019-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2019-2024"
     },
     {
       "transition_id": "",
       "target_name": "地域文化財保存中の自治体（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "再生医療研究中の大学（2019-2024）",
       "before_hex": "乾",
-      "action_type": "分散・探索",
-      "before_state": "拡大・繁栄",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
       "period": "2019-2024"
     },
     {
       "transition_id": "",
       "target_name": "核融合発電研究中（2020-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "地方議会のなり手不足対策中（2022-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2022-2024"
     },
     {
       "transition_id": "",
       "target_name": "自治体業務デジタル化中（2021-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "ふるさと納税活用中の自治体（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "観光地オーバーツーリズム対策中（2023-2024）",
       "before_hex": "乾",
-      "action_type": "分散・探索",
-      "before_state": "拡大・繁栄",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "商店街活性化に取り組む地域（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "地域通貨導入中の自治体（2021-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "防災計画見直し中の自治体（2021-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "消防団員確保に苦戦中（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "NPO法人運営中の団体（2020-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "混乱・衰退",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     }
   ],
@@ -2275,7 +2275,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2017-2024"
     },
     {
@@ -2302,7 +2302,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2015-2024"
     },
     {
@@ -2311,7 +2311,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
@@ -2320,7 +2320,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2022-2024"
     },
     {
@@ -2329,7 +2329,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2024-2024"
     },
     {
@@ -2338,7 +2338,7 @@
       "before_hex": "坤",
       "action_type": "刷新・破壊",
       "before_state": "安定・平和",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2022-2024"
     },
     {
@@ -2347,7 +2347,7 @@
       "before_hex": "震",
       "action_type": "耐える・潜伏",
       "before_state": "成長痛",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2021-2024"
     },
     {
@@ -2356,7 +2356,7 @@
       "before_hex": "震",
       "action_type": "耐える・潜伏",
       "before_state": "成長痛",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2365,7 +2365,7 @@
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
       "before_state": "どん底・危機",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2374,7 +2374,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2383,7 +2383,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2000-2024"
     },
     {
@@ -2392,7 +2392,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2401,7 +2401,7 @@
       "before_hex": "震",
       "action_type": "捨てる・撤退",
       "before_state": "混乱・カオス",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2410,7 +2410,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2419,7 +2419,7 @@
       "before_hex": "震",
       "action_type": "耐える・潜伏",
       "before_state": "成長痛",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2428,7 +2428,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2437,7 +2437,7 @@
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
       "before_state": "どん底・危機",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2446,7 +2446,7 @@
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
       "before_state": "どん底・危機",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2455,7 +2455,7 @@
       "before_hex": "震",
       "action_type": "耐える・潜伏",
       "before_state": "成長痛",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2464,7 +2464,7 @@
       "before_hex": "震",
       "action_type": "耐える・潜伏",
       "before_state": "成長痛",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2473,7 +2473,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2482,7 +2482,7 @@
       "before_hex": "震",
       "action_type": "耐える・潜伏",
       "before_state": "成長痛",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2013-2024"
     },
     {
@@ -2491,7 +2491,7 @@
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
       "before_state": "どん底・危機",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2020-2024"
     },
     {
@@ -2500,7 +2500,7 @@
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
       "before_state": "停滞・閉塞",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2509,7 +2509,7 @@
       "before_hex": "兌",
       "action_type": "守る・維持",
       "before_state": "安定・平和",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023"
     },
     {
@@ -2518,7 +2518,7 @@
       "before_hex": "兌",
       "action_type": "守る・維持",
       "before_state": "安定・平和",
-      "after_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
@@ -2527,7 +2527,7 @@
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
       "before_state": "どん底・危機",
-      "after_state": "成長痛",
+      "after_state": "変質・新生",
       "period": "2017-2024"
     },
     {
@@ -2536,115 +2536,115 @@
       "before_hex": "震",
       "action_type": "耐える・潜伏",
       "before_state": "成長痛",
-      "after_state": "成長痛",
+      "after_state": "変質・新生",
       "period": "2010-2024"
     },
     {
       "transition_id": "",
       "target_name": "規制緩和で新規参入急増（2023-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "技術革新で業界勢力図一変（2022-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2022-2024"
     },
     {
       "transition_id": "",
       "target_name": "WBC日本代表 - 14年ぶり世界一（2023）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023"
     },
     {
       "transition_id": "",
       "target_name": "阪神タイガース - 38年ぶり日本一（2023）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023"
     },
     {
       "transition_id": "",
       "target_name": "慶應義塾高校 - 夏の甲子園107年ぶり優勝（2023）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023"
     },
     {
       "transition_id": "",
       "target_name": "横浜DeNAベイスターズ - 26年ぶり日本一（2024）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2024"
     },
     {
       "transition_id": "",
       "target_name": "パリ五輪 - 日本勢がメダル量産（2024）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2024"
     },
     {
       "transition_id": "",
       "target_name": "ChatGPT登場でAI業界激変（2022-2024）",
       "before_hex": "艮",
-      "action_type": "分散・探索",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "分散・スピンオフ",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2022-2024"
     },
     {
       "transition_id": "",
       "target_name": "アイドルグループ解散発表（2023-2024）",
       "before_hex": "乾",
-      "action_type": "撤退・収縮",
-      "before_state": "拡大・繁栄",
-      "after_state": "混乱・衰退",
+      "action_type": "捨てる・撤退",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "ドラマが社会現象化（2023-2024）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "映画が興行収入記録更新（2023-2024）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "アニメが世界的大ヒット（2023-2024）",
       "before_hex": "艮",
-      "action_type": "集中・拡大",
-      "before_state": "安定・停止",
-      "after_state": "拡大・繁栄",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
@@ -2652,8 +2652,8 @@
       "target_name": "災害復興で地域が再生（2021-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "拡大・繁栄",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
       "period": "2021-2024"
     },
     {
@@ -2661,8 +2661,8 @@
       "target_name": "能登半島地震で地域一変（2024）",
       "before_hex": "艮",
       "action_type": "耐える・潜伏",
-      "before_state": "安定・停止",
-      "after_state": "混乱・衰退",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
       "period": "2024"
     },
     {
@@ -2670,44 +2670,44 @@
       "target_name": "洪水被災地が復興完了（2022-2024）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "拡大・繁栄",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
       "period": "2022-2024"
     },
     {
       "transition_id": "",
       "target_name": "過疎地域が移住者で活性化（2021-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "拡大・繁栄",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
       "period": "2021-2024"
     },
     {
       "transition_id": "",
       "target_name": "シャッター街が再生（2022-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "拡大・繁栄",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
       "period": "2022-2024"
     },
     {
       "transition_id": "",
       "target_name": "廃校が地域の拠点に再生（2022-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "拡大・繁栄",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
       "period": "2022-2024"
     },
     {
       "transition_id": "",
       "target_name": "空き家をリノベで観光資源に（2022-2024）",
       "before_hex": "坎",
-      "action_type": "分散・探索",
-      "before_state": "混乱・衰退",
-      "after_state": "拡大・繁栄",
+      "action_type": "分散・スピンオフ",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
       "period": "2022-2024"
     }
   ],
@@ -2799,7 +2799,7 @@
       "before_hex": "乾",
       "action_type": "守る・維持",
       "before_state": "絶頂・慢心",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "1965-2024"
     },
     {
@@ -2817,7 +2817,7 @@
       "before_hex": "坤",
       "action_type": "守る・維持",
       "before_state": "安定・平和",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2004-2024"
     },
     {
@@ -2826,7 +2826,7 @@
       "before_hex": "坤",
       "action_type": "守る・維持",
       "before_state": "安定・平和",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "1877-2024"
     },
     {
@@ -2835,7 +2835,7 @@
       "before_hex": "坤",
       "action_type": "守る・維持",
       "before_state": "安定・平和",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2020-2024"
     },
     {
@@ -2844,7 +2844,7 @@
       "before_hex": "乾",
       "action_type": "守る・維持",
       "before_state": "絶頂・慢心",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2010-2024"
     },
     {
@@ -2862,7 +2862,7 @@
       "before_hex": "坤",
       "action_type": "刷新・破壊",
       "before_state": "安定・平和",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2015-2024"
     },
     {
@@ -2871,7 +2871,7 @@
       "before_hex": "乾",
       "action_type": "耐える・潜伏",
       "before_state": "絶頂・慢心",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2021-2024"
     },
     {
@@ -2880,7 +2880,7 @@
       "before_hex": "震",
       "action_type": "攻める・挑戦",
       "before_state": "成長痛",
-      "after_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
       "period": "2021-2024"
     },
     {
@@ -2914,9 +2914,9 @@
       "transition_id": "",
       "target_name": "名門進学校・少子化後の規模適正化（2010-2020）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2010-2020"
     },
     {
@@ -2924,26 +2924,26 @@
       "target_name": "伝統工芸・後継者問題後の維持（2010-2020）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2010-2020"
     },
     {
       "transition_id": "",
       "target_name": "地方劇場・補助金削減後の存続（2015-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方美術館・来館者減少後の維持（2015-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2022"
     },
     {
@@ -2951,98 +2951,98 @@
       "target_name": "地方図書館・予算削減後の維持（2015-2022）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方スポーツクラブ・会員減少後の維持（2016-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2016-2023"
     },
     {
       "transition_id": "",
       "target_name": "地方病院・医師不足後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
       "transition_id": "",
       "target_name": "地方介護施設・人材難後の維持（2016-2024）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2016-2024"
     },
     {
       "transition_id": "",
       "target_name": "地方郵便局・統廃合後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
       "transition_id": "",
       "target_name": "地方銀行支店・統廃合後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
       "transition_id": "",
       "target_name": "地方JA・組合員減少後の維持（2012-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方商工会・会員減少後の維持（2012-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方消防団・団員減少後の維持（2012-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方青年団・活動縮小後の維持（2012-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
       "transition_id": "",
       "target_name": "町内会・高齢化後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
@@ -3050,8 +3050,8 @@
       "target_name": "老人会・会員減少後の維持（2012-2022）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
@@ -3059,71 +3059,71 @@
       "target_name": "婦人会・担い手不足後の維持（2012-2022）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方大学・定員割れ後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
       "transition_id": "",
       "target_name": "地方短大・少子化後の維持（2012-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
       "transition_id": "",
       "target_name": "専門学校・業界縮小後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
       "transition_id": "",
       "target_name": "地方保育園・園児減少後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
       "transition_id": "",
       "target_name": "地方寺院・檀家減少後の維持（2010-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2010-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方神社・氏子減少後の維持（2010-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2010-2022"
     },
     {
       "transition_id": "",
       "target_name": "地方自治体・人口減少後の安定運営（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
@@ -3131,8 +3131,8 @@
       "target_name": "過疎地域・集落維持（2012-2022）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
@@ -3140,26 +3140,26 @@
       "target_name": "商店街・シャッター街化後の維持（2015-2023）",
       "before_hex": "坎",
       "action_type": "耐える・潜伏",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     },
     {
       "transition_id": "",
       "target_name": "温泉街・衰退後の維持（2012-2022）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2012-2022"
     },
     {
       "transition_id": "",
       "target_name": "NPO法人・活動縮小後の維持（2015-2023）",
       "before_hex": "坎",
-      "action_type": "捨てる・転換",
-      "before_state": "混乱・衰退",
-      "after_state": "安定・停止",
+      "action_type": "捨てる・撤退",
+      "before_state": "混乱・カオス",
+      "after_state": "現状維持・延命",
       "period": "2015-2023"
     }
   ],
@@ -3170,7 +3170,7 @@
       "before_hex": "震",
       "action_type": "守る・維持",
       "before_state": "成長痛",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1971-2024"
     },
     {
@@ -3179,7 +3179,7 @@
       "before_hex": "坎",
       "action_type": "刷新・破壊",
       "before_state": "どん底・危機",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2011-2024"
     },
     {
@@ -3188,7 +3188,7 @@
       "before_hex": "艮",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2016-2024"
     },
     {
@@ -3197,7 +3197,7 @@
       "before_hex": "坤",
       "action_type": "分散・スピンオフ",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1993-2024"
     },
     {
@@ -3206,7 +3206,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2010-2024"
     },
     {
@@ -3215,7 +3215,7 @@
       "before_hex": "坤",
       "action_type": "守る・維持",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1920-2024"
     },
     {
@@ -3224,7 +3224,7 @@
       "before_hex": "震",
       "action_type": "攻める・挑戦",
       "before_state": "成長痛",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1980-2024"
     },
     {
@@ -3233,7 +3233,7 @@
       "before_hex": "艮",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2010-2024"
     },
     {
@@ -3242,7 +3242,7 @@
       "before_hex": "艮",
       "action_type": "対話・融合",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2017-2024"
     },
     {
@@ -3251,7 +3251,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1991-2024"
     },
     {
@@ -3260,7 +3260,7 @@
       "before_hex": "坤",
       "action_type": "刷新・破壊",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2001-2024"
     },
     {
@@ -3269,7 +3269,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2016-2024"
     },
     {
@@ -3278,7 +3278,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2012-2024"
     },
     {
@@ -3287,7 +3287,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2000-2024"
     },
     {
@@ -3296,7 +3296,7 @@
       "before_hex": "坤",
       "action_type": "分散・スピンオフ",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1974-2024"
     },
     {
@@ -3305,7 +3305,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2012-2024"
     },
     {
@@ -3314,7 +3314,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2008-2024"
     },
     {
@@ -3323,7 +3323,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2016-2024"
     },
     {
@@ -3332,7 +3332,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2022-2024"
     },
     {
@@ -3341,7 +3341,7 @@
       "before_hex": "坤",
       "action_type": "刷新・破壊",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2015-2024"
     },
     {
@@ -3350,7 +3350,7 @@
       "before_hex": "艮",
       "action_type": "分散・スピンオフ",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1993-2024"
     },
     {
@@ -3368,7 +3368,7 @@
       "before_hex": "坤",
       "action_type": "分散・スピンオフ",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2001-2024"
     },
     {
@@ -3377,7 +3377,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1971-2024"
     },
     {
@@ -3386,7 +3386,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2004-2024"
     },
     {
@@ -3395,7 +3395,7 @@
       "before_hex": "坤",
       "action_type": "対話・融合",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2004-2024"
     },
     {
@@ -3404,7 +3404,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2012-2024"
     },
     {
@@ -3413,7 +3413,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "1983-2024"
     },
     {
@@ -3422,7 +3422,7 @@
       "before_hex": "艮",
       "action_type": "攻める・挑戦",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2013-2024"
     },
     {
@@ -3440,7 +3440,7 @@
       "before_hex": "坤",
       "action_type": "攻める・挑戦",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2000-2024"
     },
     {
@@ -3449,7 +3449,7 @@
       "before_hex": "艮",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2016-2024"
     },
     {
@@ -3458,7 +3458,7 @@
       "before_hex": "巽",
       "action_type": "攻める・挑戦",
       "before_state": "成長痛",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -3467,7 +3467,7 @@
       "before_hex": "兌",
       "action_type": "刷新・破壊",
       "before_state": "停滞・閉塞",
-      "after_state": "安定成長・成功",
+      "after_state": "V字回復・大成功",
       "period": "2009-2024"
     },
     {
@@ -3503,7 +3503,7 @@
       "before_hex": "離",
       "action_type": "分散・スピンオフ",
       "before_state": "安定・平和",
-      "after_state": "持続成長・大成功",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
@@ -3546,72 +3546,72 @@
       "transition_id": "",
       "target_name": "日本アニメの世界席巻（2023-2024）",
       "before_hex": "離",
-      "action_type": "拡大・攻め",
-      "before_state": "成長・拡大",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "日本漫画の世界展開（2023-2024）",
       "before_hex": "離",
-      "action_type": "拡大・攻め",
-      "before_state": "成長・拡大",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "BTSの世界制覇（2020-2024）",
       "before_hex": "離",
-      "action_type": "拡大・攻め",
-      "before_state": "成長・拡大",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
       "period": "2020-2024"
     },
     {
       "transition_id": "",
       "target_name": "インバウンド観光完全回復（2024）",
       "before_hex": "坎",
-      "action_type": "拡大・攻め",
-      "before_state": "混乱・衰退",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
       "period": "2024"
     },
     {
       "transition_id": "",
       "target_name": "円安による輸出企業好調（2023-2024）",
       "before_hex": "艮",
-      "action_type": "拡大・攻め",
-      "before_state": "安定・停止",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "半導体産業の国内回帰（2023-2024）",
       "before_hex": "艮",
-      "action_type": "拡大・攻め",
-      "before_state": "安定・停止",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "熊本のTSMC誘致成功（2023-2024）",
       "before_hex": "艮",
-      "action_type": "拡大・攻め",
-      "before_state": "安定・停止",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     },
     {
       "transition_id": "",
       "target_name": "北海道のラピダス誘致（2023-2024）",
       "before_hex": "艮",
-      "action_type": "拡大・攻め",
-      "before_state": "安定・停止",
-      "after_state": "成長・拡大",
+      "action_type": "攻める・挑戦",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
       "period": "2023-2024"
     }
   ]

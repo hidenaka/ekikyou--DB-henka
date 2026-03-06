@@ -1,1386 +1,463 @@
 {
   "V字回復・大成功": {
-    "total_count": 839,
+    "total_count": 4558,
     "before_state_distribution": [
       {
-        "state": "どん底・危機",
-        "count": 266,
-        "pct": 31.7
+        "state": "安定・平和",
+        "count": 1331,
+        "pct": 29.2
       },
       {
         "state": "停滞・閉塞",
-        "count": 179,
-        "pct": 21.3
-      },
-      {
-        "state": "安定・平和",
-        "count": 174,
-        "pct": 20.7
+        "count": 1237,
+        "pct": 27.1
       },
       {
         "state": "成長痛",
-        "count": 134,
-        "pct": 16.0
+        "count": 813,
+        "pct": 17.8
       },
       {
-        "state": "絶頂・慢心",
-        "count": 52,
-        "pct": 6.2
+        "state": "どん底・危機",
+        "count": 697,
+        "pct": 15.3
       },
       {
         "state": "混乱・カオス",
-        "count": 33,
-        "pct": 3.9
+        "count": 243,
+        "pct": 5.3
       },
       {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.1
+        "state": "絶頂・慢心",
+        "count": 237,
+        "pct": 5.2
       }
     ],
     "top_actions": [
       {
         "action_type": "攻める・挑戦",
-        "count": 327,
-        "pct": 39.0
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 208,
-        "pct": 24.8
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 101,
-        "pct": 12.0
+        "count": 2090,
+        "pct": 45.9
       },
       {
         "action_type": "対話・融合",
-        "count": 83,
-        "pct": 9.9
+        "count": 738,
+        "pct": 16.2
+      },
+      {
+        "action_type": "刷新・破壊",
+        "count": 627,
+        "pct": 13.8
       },
       {
         "action_type": "守る・維持",
-        "count": 53,
-        "pct": 6.3
+        "count": 374,
+        "pct": 8.2
       },
       {
-        "action_type": "捨てる・撤退",
-        "count": 47,
-        "pct": 5.6
+        "action_type": "耐える・潜伏",
+        "count": 342,
+        "pct": 7.5
       },
       {
         "action_type": "分散・スピンオフ",
-        "count": 20,
-        "pct": 2.4
+        "count": 233,
+        "pct": 5.1
+      },
+      {
+        "action_type": "捨てる・撤退",
+        "count": 148,
+        "pct": 3.2
+      },
+      {
+        "action_type": "逃げる・放置",
+        "count": 6,
+        "pct": 0.1
       }
     ]
   },
   "縮小安定・生存": {
-    "total_count": 1565,
+    "total_count": 2675,
     "before_state_distribution": [
       {
         "state": "成長痛",
-        "count": 509,
-        "pct": 32.5
+        "count": 851,
+        "pct": 31.8
       },
       {
         "state": "安定・平和",
-        "count": 333,
-        "pct": 21.3
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 277,
-        "pct": 17.7
-      },
-      {
-        "state": "どん底・危機",
-        "count": 169,
-        "pct": 10.8
+        "count": 545,
+        "pct": 20.4
       },
       {
         "state": "絶頂・慢心",
-        "count": 151,
-        "pct": 9.6
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 90,
-        "pct": 5.8
-      },
-      {
-        "state": "安定成長・成功",
-        "count": 35,
-        "pct": 2.2
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.1
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "耐える・潜伏",
-        "count": 382,
-        "pct": 24.4
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 381,
-        "pct": 24.3
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 237,
-        "pct": 15.1
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 211,
-        "pct": 13.5
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 137,
-        "pct": 8.8
-      },
-      {
-        "action_type": "攻める・挑戦",
-        "count": 98,
-        "pct": 6.3
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 77,
-        "pct": 4.9
-      },
-      {
-        "action_type": "捨てる・転換",
-        "count": 17,
-        "pct": 1.1
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 16,
-        "pct": 1.0
-      },
-      {
-        "action_type": "撤退・逃げる",
-        "count": 6,
-        "pct": 0.4
-      },
-      {
-        "action_type": "分散・独立",
-        "count": 2,
-        "pct": 0.1
-      },
-      {
-        "action_type": "分散する・独立する",
-        "count": 1,
-        "pct": 0.1
-      }
-    ]
-  },
-  "変質・新生": {
-    "total_count": 1091,
-    "before_state_distribution": [
-      {
-        "state": "安定・平和",
-        "count": 276,
-        "pct": 25.3
+        "count": 453,
+        "pct": 16.9
       },
       {
         "state": "停滞・閉塞",
-        "count": 274,
-        "pct": 25.1
-      },
-      {
-        "state": "どん底・危機",
-        "count": 170,
-        "pct": 15.6
-      },
-      {
-        "state": "成長痛",
-        "count": 166,
-        "pct": 15.2
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 107,
-        "pct": 9.8
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 97,
-        "pct": 8.9
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.1
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "刷新・破壊",
-        "count": 299,
-        "pct": 27.4
-      },
-      {
-        "action_type": "攻める・挑戦",
-        "count": 256,
-        "pct": 23.5
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 192,
-        "pct": 17.6
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 130,
-        "pct": 11.9
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 113,
-        "pct": 10.4
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 46,
-        "pct": 4.2
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 43,
-        "pct": 3.9
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 12,
-        "pct": 1.1
-      }
-    ]
-  },
-  "崩壊・消滅": {
-    "total_count": 1948,
-    "before_state_distribution": [
-      {
-        "state": "停滞・閉塞",
-        "count": 532,
-        "pct": 27.3
-      },
-      {
-        "state": "成長痛",
-        "count": 526,
-        "pct": 27.0
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 312,
-        "pct": 16.0
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 256,
-        "pct": 13.1
-      },
-      {
-        "state": "安定・平和",
-        "count": 185,
-        "pct": 9.5
-      },
-      {
-        "state": "どん底・危機",
-        "count": 134,
-        "pct": 6.9
-      },
-      {
-        "state": "V字回復・大成功",
-        "count": 3,
-        "pct": 0.2
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "耐える・潜伏",
-        "count": 457,
-        "pct": 23.5
-      },
-      {
-        "action_type": "攻める・挑戦",
-        "count": 369,
-        "pct": 18.9
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 345,
-        "pct": 17.7
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 304,
-        "pct": 15.6
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 215,
-        "pct": 11.0
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 160,
-        "pct": 8.2
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 82,
-        "pct": 4.2
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 16,
-        "pct": 0.8
-      }
-    ]
-  },
-  "迷走・混乱": {
-    "total_count": 178,
-    "before_state_distribution": [
-      {
-        "state": "安定・平和",
-        "count": 39,
-        "pct": 21.9
-      },
-      {
-        "state": "成長痛",
-        "count": 35,
-        "pct": 19.7
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 32,
-        "pct": 18.0
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 25,
-        "pct": 14.0
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 24,
-        "pct": 13.5
-      },
-      {
-        "state": "どん底・危機",
-        "count": 21,
-        "pct": 11.8
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 2,
-        "pct": 1.1
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "攻める・挑戦",
-        "count": 81,
-        "pct": 45.5
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 28,
+        "count": 420,
         "pct": 15.7
       },
       {
-        "action_type": "守る・維持",
-        "count": 18,
-        "pct": 10.1
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 18,
-        "pct": 10.1
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 14,
-        "pct": 7.9
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 12,
-        "pct": 6.7
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 5,
-        "pct": 2.8
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 2,
-        "pct": 1.1
-      }
-    ]
-  },
-  "現状維持・延命": {
-    "total_count": 156,
-    "before_state_distribution": [
-      {
-        "state": "安定・平和",
-        "count": 58,
-        "pct": 37.2
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 54,
-        "pct": 34.6
-      },
-      {
-        "state": "成長痛",
-        "count": 14,
-        "pct": 9.0
-      },
-      {
         "state": "どん底・危機",
-        "count": 11,
-        "pct": 7.1
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 10,
-        "pct": 6.4
+        "count": 259,
+        "pct": 9.7
       },
       {
         "state": "混乱・カオス",
-        "count": 9,
-        "pct": 5.8
+        "count": 147,
+        "pct": 5.5
       }
     ],
     "top_actions": [
       {
-        "action_type": "攻める・挑戦",
-        "count": 52,
-        "pct": 33.3
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 29,
-        "pct": 18.6
-      },
-      {
         "action_type": "耐える・潜伏",
-        "count": 28,
-        "pct": 17.9
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 26,
-        "pct": 16.7
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 9,
-        "pct": 5.8
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 6,
-        "pct": 3.8
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 5,
-        "pct": 3.2
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 1,
-        "pct": 0.6
-      }
-    ]
-  },
-  "持続成長・大成功": {
-    "total_count": 2205,
-    "before_state_distribution": [
-      {
-        "state": "安定・平和",
-        "count": 889,
-        "pct": 40.3
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 519,
-        "pct": 23.5
-      },
-      {
-        "state": "成長痛",
-        "count": 474,
-        "pct": 21.5
-      },
-      {
-        "state": "どん底・危機",
-        "count": 261,
-        "pct": 11.8
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 31,
-        "pct": 1.4
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 27,
-        "pct": 1.2
-      },
-      {
-        "state": "V字回復・大成功",
-        "count": 3,
-        "pct": 0.1
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.0
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "攻める・挑戦",
-        "count": 1207,
-        "pct": 54.7
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 411,
-        "pct": 18.6
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 266,
-        "pct": 12.1
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 184,
-        "pct": 8.3
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 79,
-        "pct": 3.6
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 43,
-        "pct": 2.0
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 15,
-        "pct": 0.7
-      }
-    ]
-  },
-  "安定成長・成功": {
-    "total_count": 1110,
-    "before_state_distribution": [
-      {
-        "state": "停滞・閉塞",
-        "count": 342,
-        "pct": 30.8
-      },
-      {
-        "state": "安定・平和",
-        "count": 268,
-        "pct": 24.1
-      },
-      {
-        "state": "どん底・危機",
-        "count": 170,
-        "pct": 15.3
-      },
-      {
-        "state": "成長痛",
-        "count": 129,
-        "pct": 11.6
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 96,
-        "pct": 8.6
-      },
-      {
-        "state": "安定成長・成功",
-        "count": 66,
-        "pct": 5.9
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 32,
-        "pct": 2.9
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 7,
-        "pct": 0.6
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "攻める・挑戦",
-        "count": 302,
-        "pct": 27.2
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 244,
-        "pct": 22.0
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 151,
-        "pct": 13.6
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 150,
-        "pct": 13.5
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 137,
-        "pct": 12.3
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 46,
-        "pct": 4.1
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 36,
-        "pct": 3.2
-      },
-      {
-        "action_type": "捨てる・転換",
-        "count": 35,
-        "pct": 3.2
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 4,
-        "pct": 0.4
-      },
-      {
-        "action_type": "分散・多角化",
-        "count": 2,
-        "pct": 0.2
-      },
-      {
-        "action_type": "撤退・逃げる",
-        "count": 2,
-        "pct": 0.2
-      },
-      {
-        "action_type": "分散・独立",
-        "count": 1,
-        "pct": 0.1
-      }
-    ]
-  },
-  "停滞・閉塞": {
-    "total_count": 993,
-    "before_state_distribution": [
-      {
-        "state": "安定・平和",
-        "count": 290,
-        "pct": 29.2
-      },
-      {
-        "state": "成長痛",
-        "count": 180,
-        "pct": 18.1
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 167,
-        "pct": 16.8
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 162,
-        "pct": 16.3
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 108,
-        "pct": 10.9
-      },
-      {
-        "state": "どん底・危機",
-        "count": 84,
-        "pct": 8.5
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 2,
-        "pct": 0.2
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "攻める・挑戦",
-        "count": 222,
-        "pct": 22.4
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 188,
-        "pct": 18.9
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 184,
-        "pct": 18.5
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 141,
-        "pct": 14.2
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 125,
-        "pct": 12.6
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 107,
-        "pct": 10.8
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 23,
-        "pct": 2.3
-      },
-      {
-        "action_type": "分散・スピンオフ",
-        "count": 3,
-        "pct": 0.3
-      }
-    ]
-  },
-  "どん底・危機": {
-    "total_count": 280,
-    "before_state_distribution": [
-      {
-        "state": "絶頂・慢心",
-        "count": 86,
-        "pct": 30.7
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 61,
-        "pct": 21.8
-      },
-      {
-        "state": "安定・平和",
-        "count": 60,
-        "pct": 21.4
-      },
-      {
-        "state": "成長痛",
-        "count": 45,
-        "pct": 16.1
-      },
-      {
-        "state": "どん底・危機",
-        "count": 14,
-        "pct": 5.0
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 13,
-        "pct": 4.6
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.4
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "攻める・挑戦",
-        "count": 69,
-        "pct": 24.6
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 66,
+        "count": 631,
         "pct": 23.6
       },
       {
         "action_type": "守る・維持",
-        "count": 48,
-        "pct": 17.1
+        "count": 553,
+        "pct": 20.7
       },
       {
-        "action_type": "逃げる・放置",
-        "count": 44,
-        "pct": 15.7
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 28,
-        "pct": 10.0
+        "action_type": "対話・融合",
+        "count": 491,
+        "pct": 18.4
       },
       {
         "action_type": "捨てる・撤退",
-        "count": 25,
-        "pct": 8.9
-      }
-    ]
-  },
-  "混乱・カオス": {
-    "total_count": 378,
-    "before_state_distribution": [
-      {
-        "state": "成長痛",
-        "count": 118,
-        "pct": 31.2
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 117,
-        "pct": 31.0
-      },
-      {
-        "state": "安定・平和",
-        "count": 81,
-        "pct": 21.4
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 31,
-        "pct": 8.2
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 20,
-        "pct": 5.3
-      },
-      {
-        "state": "どん底・危機",
-        "count": 11,
-        "pct": 2.9
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "刷新・破壊",
-        "count": 109,
-        "pct": 28.8
+        "count": 406,
+        "pct": 15.2
       },
       {
         "action_type": "攻める・挑戦",
-        "count": 108,
-        "pct": 28.6
+        "count": 286,
+        "pct": 10.7
       },
       {
-        "action_type": "対話・融合",
-        "count": 75,
-        "pct": 19.8
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 32,
-        "pct": 8.5
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 30,
-        "pct": 7.9
+        "action_type": "刷新・破壊",
+        "count": 190,
+        "pct": 7.1
       },
       {
         "action_type": "逃げる・放置",
-        "count": 10,
-        "pct": 2.6
-      },
-      {
-        "action_type": "捨てる・撤退",
-        "count": 10,
-        "pct": 2.6
+        "count": 90,
+        "pct": 3.4
       },
       {
         "action_type": "分散・スピンオフ",
-        "count": 4,
-        "pct": 1.1
+        "count": 28,
+        "pct": 1.0
       }
     ]
   },
-  "安定・平和": {
-    "total_count": 1110,
+  "変質・新生": {
+    "total_count": 1337,
     "before_state_distribution": [
       {
-        "state": "成長痛",
-        "count": 342,
-        "pct": 30.8
-      },
-      {
-        "state": "安定成長・成功",
-        "count": 216,
-        "pct": 19.5
+        "state": "停滞・閉塞",
+        "count": 337,
+        "pct": 25.2
       },
       {
         "state": "安定・平和",
-        "count": 212,
-        "pct": 19.1
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 140,
-        "pct": 12.6
-      },
-      {
-        "state": "どん底・危機",
-        "count": 90,
-        "pct": 8.1
+        "count": 286,
+        "pct": 21.4
       },
       {
         "state": "混乱・カオス",
-        "count": 57,
-        "pct": 5.1
+        "count": 257,
+        "pct": 19.2
+      },
+      {
+        "state": "どん底・危機",
+        "count": 178,
+        "pct": 13.3
+      },
+      {
+        "state": "成長痛",
+        "count": 171,
+        "pct": 12.8
       },
       {
         "state": "絶頂・慢心",
-        "count": 46,
-        "pct": 4.1
-      },
-      {
-        "state": "V字回復・大成功",
-        "count": 5,
-        "pct": 0.5
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 2,
-        "pct": 0.2
+        "count": 108,
+        "pct": 8.1
       }
     ],
     "top_actions": [
       {
         "action_type": "対話・融合",
-        "count": 280,
-        "pct": 25.2
+        "count": 388,
+        "pct": 29.0
       },
       {
-        "action_type": "耐える・潜伏",
-        "count": 249,
+        "action_type": "刷新・破壊",
+        "count": 299,
         "pct": 22.4
       },
       {
         "action_type": "攻める・挑戦",
-        "count": 188,
-        "pct": 16.9
-      },
-      {
-        "action_type": "守る・維持",
-        "count": 172,
-        "pct": 15.5
-      },
-      {
-        "action_type": "捨てる・転換",
-        "count": 113,
-        "pct": 10.2
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 53,
-        "pct": 4.8
+        "count": 273,
+        "pct": 20.4
       },
       {
         "action_type": "捨てる・撤退",
-        "count": 39,
-        "pct": 3.5
+        "count": 130,
+        "pct": 9.7
+      },
+      {
+        "action_type": "耐える・潜伏",
+        "count": 130,
+        "pct": 9.7
       },
       {
         "action_type": "分散・スピンオフ",
-        "count": 6,
-        "pct": 0.5
+        "count": 59,
+        "pct": 4.4
+      },
+      {
+        "action_type": "守る・維持",
+        "count": 46,
+        "pct": 3.4
       },
       {
         "action_type": "逃げる・放置",
-        "count": 4,
-        "pct": 0.4
-      },
-      {
-        "action_type": "撤退・逃げる",
-        "count": 3,
-        "pct": 0.3
-      },
-      {
-        "action_type": "分散する・独立する",
-        "count": 2,
-        "pct": 0.2
-      },
-      {
-        "action_type": "分散・多角化",
-        "count": 1,
-        "pct": 0.1
+        "count": 12,
+        "pct": 0.9
       }
     ]
   },
-  "成長痛": {
-    "total_count": 26,
+  "崩壊・消滅": {
+    "total_count": 2229,
     "before_state_distribution": [
       {
+        "state": "停滞・閉塞",
+        "count": 594,
+        "pct": 26.6
+      },
+      {
+        "state": "成長痛",
+        "count": 572,
+        "pct": 25.7
+      },
+      {
+        "state": "絶頂・慢心",
+        "count": 401,
+        "pct": 18.0
+      },
+      {
+        "state": "混乱・カオス",
+        "count": 269,
+        "pct": 12.1
+      },
+      {
         "state": "安定・平和",
-        "count": 10,
-        "pct": 38.5
+        "count": 245,
+        "pct": 11.0
       },
       {
         "state": "どん底・危機",
-        "count": 8,
-        "pct": 30.8
-      },
-      {
-        "state": "成長痛",
-        "count": 5,
-        "pct": 19.2
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 2,
-        "pct": 7.7
-      },
-      {
-        "state": "安定成長・成功",
-        "count": 1,
-        "pct": 3.8
+        "count": 148,
+        "pct": 6.6
       }
     ],
     "top_actions": [
       {
         "action_type": "耐える・潜伏",
-        "count": 16,
-        "pct": 61.5
-      },
-      {
-        "action_type": "攻める・挑戦",
-        "count": 9,
-        "pct": 34.6
-      },
-      {
-        "action_type": "対話・融合",
-        "count": 1,
-        "pct": 3.8
-      }
-    ]
-  },
-  "消滅・破綻": {
-    "total_count": 1,
-    "before_state_distribution": [
-      {
-        "state": "成長痛",
-        "count": 1,
-        "pct": 100.0
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "刷新・破壊",
-        "count": 1,
-        "pct": 100.0
-      }
-    ]
-  },
-  "安定・停止": {
-    "total_count": 363,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 307,
-        "pct": 84.6
-      },
-      {
-        "state": "調和・繁栄",
-        "count": 19,
-        "pct": 5.2
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 14,
-        "pct": 3.9
-      },
-      {
-        "state": "安定成長・成功",
-        "count": 13,
-        "pct": 3.6
-      },
-      {
-        "state": "安定・停止",
-        "count": 8,
-        "pct": 2.2
-      },
-      {
-        "state": "急成長・拡大",
-        "count": 2,
-        "pct": 0.6
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "捨てる・転換",
-        "count": 256,
-        "pct": 70.5
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 80,
-        "pct": 22.0
-      },
-      {
-        "action_type": "逃げる・分散",
-        "count": 11,
-        "pct": 3.0
-      },
-      {
-        "action_type": "撤退・収縮",
-        "count": 7,
-        "pct": 1.9
-      },
-      {
-        "action_type": "逃げる・守る",
-        "count": 4,
-        "pct": 1.1
-      },
-      {
-        "action_type": "分散・探索",
-        "count": 4,
-        "pct": 1.1
-      },
-      {
-        "action_type": "集中・拡大",
-        "count": 1,
-        "pct": 0.3
-      }
-    ]
-  },
-  "混乱・衰退": {
-    "total_count": 631,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 307,
-        "pct": 48.7
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 269,
-        "pct": 42.6
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 48,
-        "pct": 7.6
-      },
-      {
-        "state": "成長・拡大",
-        "count": 7,
-        "pct": 1.1
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "分散・探索",
-        "count": 348,
-        "pct": 55.2
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 228,
-        "pct": 36.1
-      },
-      {
-        "action_type": "撤退・収縮",
-        "count": 22,
-        "pct": 3.5
-      },
-      {
-        "action_type": "撤退・縮小",
-        "count": 14,
-        "pct": 2.2
-      },
-      {
-        "action_type": "捨てる・転換",
-        "count": 12,
-        "pct": 1.9
-      },
-      {
-        "action_type": "逃げる・放置",
-        "count": 4,
-        "pct": 0.6
-      },
-      {
-        "action_type": "集中・拡大",
-        "count": 3,
-        "pct": 0.5
-      }
-    ]
-  },
-  "拡大・繁栄": {
-    "total_count": 285,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 160,
-        "pct": 56.1
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 68,
-        "pct": 23.9
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 57,
-        "pct": 20.0
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "集中・拡大",
-        "count": 136,
-        "pct": 47.7
-      },
-      {
-        "action_type": "分散・探索",
-        "count": 129,
-        "pct": 45.3
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 12,
-        "pct": 4.2
-      },
-      {
-        "action_type": "撤退・収縮",
-        "count": 5,
-        "pct": 1.8
-      },
-      {
-        "action_type": "輝く・表現",
-        "count": 3,
-        "pct": 1.1
-      }
-    ]
-  },
-  "喜び・交流": {
-    "total_count": 220,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 160,
-        "pct": 72.7
-      },
-      {
-        "state": "安定・停止",
-        "count": 60,
-        "pct": 27.3
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "交流・発表",
-        "count": 195,
-        "pct": 88.6
-      },
-      {
-        "action_type": "分散・探索",
-        "count": 16,
-        "pct": 7.3
-      },
-      {
-        "action_type": "輝く・表現",
-        "count": 8,
-        "pct": 3.6
-      },
-      {
-        "action_type": "耐える・潜伏",
-        "count": 1,
-        "pct": 0.5
-      }
-    ]
-  },
-  "成長・拡大": {
-    "total_count": 119,
-    "before_state_distribution": [
-      {
-        "state": "成長・拡大",
-        "count": 76,
-        "pct": 63.9
-      },
-      {
-        "state": "安定・停止",
-        "count": 28,
+        "count": 523,
         "pct": 23.5
       },
       {
-        "state": "混乱・衰退",
-        "count": 15,
-        "pct": 12.6
-      }
-    ],
-    "top_actions": [
-      {
-        "action_type": "拡大・攻め",
-        "count": 115,
-        "pct": 96.6
+        "action_type": "攻める・挑戦",
+        "count": 438,
+        "pct": 19.7
       },
       {
-        "action_type": "分散・探索",
-        "count": 2,
-        "pct": 1.7
+        "action_type": "守る・維持",
+        "count": 393,
+        "pct": 17.6
+      },
+      {
+        "action_type": "捨てる・撤退",
+        "count": 329,
+        "pct": 14.8
+      },
+      {
+        "action_type": "逃げる・放置",
+        "count": 259,
+        "pct": 11.6
+      },
+      {
+        "action_type": "対話・融合",
+        "count": 160,
+        "pct": 7.2
       },
       {
         "action_type": "刷新・破壊",
-        "count": 2,
-        "pct": 1.7
+        "count": 111,
+        "pct": 5.0
+      },
+      {
+        "action_type": "分散・スピンオフ",
+        "count": 16,
+        "pct": 0.7
       }
     ]
   },
-  "分岐・様子見": {
-    "total_count": 2,
+  "迷走・混乱": {
+    "total_count": 1187,
     "before_state_distribution": [
       {
-        "state": "成長・拡大",
-        "count": 1,
-        "pct": 50.0
+        "state": "停滞・閉塞",
+        "count": 372,
+        "pct": 31.3
       },
       {
-        "state": "安定・停止",
-        "count": 1,
-        "pct": 50.0
+        "state": "混乱・カオス",
+        "count": 313,
+        "pct": 26.4
+      },
+      {
+        "state": "絶頂・慢心",
+        "count": 190,
+        "pct": 16.0
+      },
+      {
+        "state": "成長痛",
+        "count": 160,
+        "pct": 13.5
+      },
+      {
+        "state": "安定・平和",
+        "count": 120,
+        "pct": 10.1
+      },
+      {
+        "state": "どん底・危機",
+        "count": 32,
+        "pct": 2.7
       }
     ],
     "top_actions": [
       {
-        "action_type": "拡大・攻め",
-        "count": 1,
-        "pct": 50.0
+        "action_type": "分散・スピンオフ",
+        "count": 357,
+        "pct": 30.1
+      },
+      {
+        "action_type": "耐える・潜伏",
+        "count": 276,
+        "pct": 23.3
+      },
+      {
+        "action_type": "攻める・挑戦",
+        "count": 192,
+        "pct": 16.2
       },
       {
         "action_type": "刷新・破壊",
-        "count": 1,
-        "pct": 50.0
+        "count": 137,
+        "pct": 11.5
+      },
+      {
+        "action_type": "対話・融合",
+        "count": 87,
+        "pct": 7.3
+      },
+      {
+        "action_type": "捨てる・撤退",
+        "count": 72,
+        "pct": 6.1
+      },
+      {
+        "action_type": "守る・維持",
+        "count": 50,
+        "pct": 4.2
+      },
+      {
+        "action_type": "逃げる・放置",
+        "count": 16,
+        "pct": 1.3
+      }
+    ]
+  },
+  "現状維持・延命": {
+    "total_count": 1514,
+    "before_state_distribution": [
+      {
+        "state": "混乱・カオス",
+        "count": 478,
+        "pct": 31.6
+      },
+      {
+        "state": "安定・平和",
+        "count": 367,
+        "pct": 24.2
+      },
+      {
+        "state": "停滞・閉塞",
+        "count": 232,
+        "pct": 15.3
+      },
+      {
+        "state": "成長痛",
+        "count": 197,
+        "pct": 13.0
+      },
+      {
+        "state": "絶頂・慢心",
+        "count": 145,
+        "pct": 9.6
+      },
+      {
+        "state": "どん底・危機",
+        "count": 95,
+        "pct": 6.3
+      }
+    ],
+    "top_actions": [
+      {
+        "action_type": "捨てる・撤退",
+        "count": 393,
+        "pct": 26.0
+      },
+      {
+        "action_type": "耐える・潜伏",
+        "count": 296,
+        "pct": 19.6
+      },
+      {
+        "action_type": "攻める・挑戦",
+        "count": 276,
+        "pct": 18.2
+      },
+      {
+        "action_type": "守る・維持",
+        "count": 217,
+        "pct": 14.3
+      },
+      {
+        "action_type": "対話・融合",
+        "count": 167,
+        "pct": 11.0
+      },
+      {
+        "action_type": "刷新・破壊",
+        "count": 114,
+        "pct": 7.5
+      },
+      {
+        "action_type": "逃げる・放置",
+        "count": 43,
+        "pct": 2.8
+      },
+      {
+        "action_type": "分散・スピンオフ",
+        "count": 8,
+        "pct": 0.5
       }
     ]
   }

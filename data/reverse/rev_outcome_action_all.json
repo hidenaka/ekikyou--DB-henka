@@ -4,8 +4,8 @@
     "before_state_distribution": [
       {
         "state": "停滞・閉塞",
-        "count": 273,
-        "pct": 32.8
+        "count": 275,
+        "pct": 33.1
       },
       {
         "state": "どん底・危機",
@@ -19,8 +19,8 @@
       },
       {
         "state": "混乱・カオス",
-        "count": 80,
-        "pct": 9.6
+        "count": 81,
+        "pct": 9.7
       },
       {
         "state": "成長痛",
@@ -31,21 +31,6 @@
         "state": "絶頂・慢心",
         "count": 39,
         "pct": 4.7
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.1
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 1,
-        "pct": 0.1
-      },
-      {
-        "state": "安定・停止",
-        "count": 1,
-        "pct": 0.1
       }
     ]
   },
@@ -85,137 +70,107 @@
     ]
   },
   "Success|対話・融合": {
-    "total_count": 1113,
+    "total_count": 1308,
     "before_state_distribution": [
+      {
+        "state": "停滞・閉塞",
+        "count": 392,
+        "pct": 30.0
+      },
       {
         "state": "安定・平和",
         "count": 342,
-        "pct": 30.7
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 335,
-        "pct": 30.1
+        "pct": 26.1
       },
       {
         "state": "成長痛",
         "count": 264,
-        "pct": 23.7
+        "pct": 20.2
+      },
+      {
+        "state": "混乱・カオス",
+        "count": 204,
+        "pct": 15.6
       },
       {
         "state": "どん底・危機",
         "count": 80,
-        "pct": 7.2
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 64,
-        "pct": 5.8
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 25,
-        "pct": 2.2
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 2,
-        "pct": 0.2
-      },
-      {
-        "state": "V字回復・大成功",
-        "count": 1,
-        "pct": 0.1
-      }
-    ]
-  },
-  "Success|捨てる・撤退": {
-    "total_count": 223,
-    "before_state_distribution": [
-      {
-        "state": "どん底・危機",
-        "count": 60,
-        "pct": 26.9
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 45,
-        "pct": 20.2
-      },
-      {
-        "state": "安定・平和",
-        "count": 39,
-        "pct": 17.5
-      },
-      {
-        "state": "成長痛",
-        "count": 32,
-        "pct": 14.3
+        "pct": 6.1
       },
       {
         "state": "絶頂・慢心",
         "count": 26,
-        "pct": 11.7
+        "pct": 2.0
+      }
+    ]
+  },
+  "Success|捨てる・撤退": {
+    "total_count": 537,
+    "before_state_distribution": [
+      {
+        "state": "絶頂・慢心",
+        "count": 187,
+        "pct": 34.8
       },
       {
         "state": "混乱・カオス",
-        "count": 15,
-        "pct": 6.7
+        "count": 154,
+        "pct": 28.7
       },
       {
-        "state": "縮小安定・生存",
-        "count": 3,
-        "pct": 1.3
+        "state": "どん底・危機",
+        "count": 60,
+        "pct": 11.2
       },
       {
-        "state": "V字回復・大成功",
-        "count": 3,
-        "pct": 1.3
+        "state": "安定・平和",
+        "count": 52,
+        "pct": 9.7
+      },
+      {
+        "state": "停滞・閉塞",
+        "count": 51,
+        "pct": 9.5
+      },
+      {
+        "state": "成長痛",
+        "count": 33,
+        "pct": 6.1
       }
     ]
   },
   "Success|攻める・挑戦": {
-    "total_count": 2087,
+    "total_count": 2338,
     "before_state_distribution": [
+      {
+        "state": "成長痛",
+        "count": 644,
+        "pct": 27.5
+      },
       {
         "state": "安定・平和",
         "count": 632,
-        "pct": 30.3
-      },
-      {
-        "state": "成長痛",
-        "count": 568,
-        "pct": 27.2
+        "pct": 27.0
       },
       {
         "state": "停滞・閉塞",
-        "count": 455,
-        "pct": 21.8
+        "count": 546,
+        "pct": 23.4
       },
       {
         "state": "どん底・危機",
         "count": 324,
-        "pct": 15.5
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 53,
-        "pct": 2.5
+        "pct": 13.9
       },
       {
         "state": "絶頂・慢心",
-        "count": 46,
-        "pct": 2.2
+        "count": 98,
+        "pct": 4.2
       },
       {
-        "state": "縮小安定・生存",
-        "count": 6,
-        "pct": 0.3
-      },
-      {
-        "state": "V字回復・大成功",
-        "count": 3,
-        "pct": 0.1
+        "state": "混乱・カオス",
+        "count": 94,
+        "pct": 4.0
       }
     ]
   },
@@ -229,8 +184,8 @@
       },
       {
         "state": "成長痛",
-        "count": 84,
-        "pct": 23.7
+        "count": 88,
+        "pct": 24.9
       },
       {
         "state": "安定・平和",
@@ -251,36 +206,31 @@
         "state": "どん底・危機",
         "count": 13,
         "pct": 3.7
-      },
-      {
-        "state": "成長・拡大",
-        "count": 4,
-        "pct": 1.1
       }
     ]
   },
   "Failure|攻める・挑戦": {
-    "total_count": 685,
+    "total_count": 686,
     "before_state_distribution": [
       {
         "state": "成長痛",
         "count": 344,
-        "pct": 50.2
+        "pct": 50.1
       },
       {
         "state": "絶頂・慢心",
-        "count": 133,
-        "pct": 19.4
+        "count": 136,
+        "pct": 19.8
       },
       {
         "state": "安定・平和",
         "count": 97,
-        "pct": 14.2
+        "pct": 14.1
       },
       {
         "state": "停滞・閉塞",
-        "count": 70,
-        "pct": 10.2
+        "count": 71,
+        "pct": 10.3
       },
       {
         "state": "混乱・カオス",
@@ -291,11 +241,6 @@
         "state": "どん底・危機",
         "count": 16,
         "pct": 2.3
-      },
-      {
-        "state": "V字回復・大成功",
-        "count": 3,
-        "pct": 0.4
       }
     ]
   },
@@ -304,8 +249,8 @@
     "before_state_distribution": [
       {
         "state": "停滞・閉塞",
-        "count": 324,
-        "pct": 42.8
+        "count": 325,
+        "pct": 42.9
       },
       {
         "state": "安定・平和",
@@ -331,11 +276,6 @@
         "state": "混乱・カオス",
         "count": 7,
         "pct": 0.9
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.1
       }
     ]
   },
@@ -359,8 +299,8 @@
       },
       {
         "state": "停滞・閉塞",
-        "count": 34,
-        "pct": 14.3
+        "count": 36,
+        "pct": 15.2
       },
       {
         "state": "混乱・カオス",
@@ -371,86 +311,76 @@
         "state": "どん底・危機",
         "count": 7,
         "pct": 3.0
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 2,
-        "pct": 0.8
       }
     ]
   },
   "Mixed|逃げる・放置": {
-    "total_count": 31,
+    "total_count": 41,
     "before_state_distribution": [
       {
         "state": "絶頂・慢心",
-        "count": 14,
-        "pct": 45.2
+        "count": 23,
+        "pct": 56.1
+      },
+      {
+        "state": "混乱・カオス",
+        "count": 5,
+        "pct": 12.2
       },
       {
         "state": "安定・平和",
         "count": 5,
-        "pct": 16.1
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 4,
-        "pct": 12.9
+        "pct": 12.2
       },
       {
         "state": "停滞・閉塞",
         "count": 4,
-        "pct": 12.9
+        "pct": 9.8
       },
       {
         "state": "成長痛",
         "count": 3,
-        "pct": 9.7
+        "pct": 7.3
       },
       {
         "state": "どん底・危機",
         "count": 1,
-        "pct": 3.2
+        "pct": 2.4
       }
     ]
   },
   "Mixed|攻める・挑戦": {
-    "total_count": 430,
+    "total_count": 445,
     "before_state_distribution": [
       {
         "state": "成長痛",
-        "count": 127,
-        "pct": 29.5
+        "count": 128,
+        "pct": 28.8
+      },
+      {
+        "state": "停滞・閉塞",
+        "count": 107,
+        "pct": 24.0
       },
       {
         "state": "安定・平和",
         "count": 102,
-        "pct": 23.7
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 98,
-        "pct": 22.8
+        "pct": 22.9
       },
       {
         "state": "どん底・危機",
         "count": 45,
-        "pct": 10.5
+        "pct": 10.1
       },
       {
         "state": "絶頂・慢心",
-        "count": 33,
-        "pct": 7.7
+        "count": 36,
+        "pct": 8.1
       },
       {
         "state": "混乱・カオス",
-        "count": 23,
-        "pct": 5.3
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 2,
-        "pct": 0.5
+        "count": 27,
+        "pct": 6.1
       }
     ]
   },
@@ -490,42 +420,37 @@
     ]
   },
   "Success|分散・スピンオフ": {
-    "total_count": 121,
+    "total_count": 268,
     "before_state_distribution": [
       {
-        "state": "安定・平和",
-        "count": 59,
-        "pct": 48.8
-      },
-      {
         "state": "停滞・閉塞",
-        "count": 30,
-        "pct": 24.8
+        "count": 120,
+        "pct": 44.8
       },
       {
-        "state": "成長痛",
-        "count": 16,
-        "pct": 13.2
-      },
-      {
-        "state": "どん底・危機",
-        "count": 8,
-        "pct": 6.6
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 5,
-        "pct": 4.1
+        "state": "安定・平和",
+        "count": 60,
+        "pct": 22.4
       },
       {
         "state": "混乱・カオス",
-        "count": 2,
-        "pct": 1.7
+        "count": 47,
+        "pct": 17.5
       },
       {
-        "state": "V字回復・大成功",
-        "count": 1,
-        "pct": 0.8
+        "state": "成長痛",
+        "count": 18,
+        "pct": 6.7
+      },
+      {
+        "state": "絶頂・慢心",
+        "count": 14,
+        "pct": 5.2
+      },
+      {
+        "state": "どん底・危機",
+        "count": 9,
+        "pct": 3.4
       }
     ]
   },
@@ -538,74 +463,49 @@
         "pct": 29.1
       },
       {
-        "state": "安定成長・成功",
-        "count": 101,
-        "pct": 16.4
-      },
-      {
-        "state": "安定・平和",
-        "count": 86,
-        "pct": 14.0
+        "state": "絶頂・慢心",
+        "count": 122,
+        "pct": 19.8
       },
       {
         "state": "停滞・閉塞",
-        "count": 83,
-        "pct": 13.5
+        "count": 90,
+        "pct": 14.6
       },
       {
-        "state": "混乱・衰退",
-        "count": 61,
-        "pct": 9.9
-      },
-      {
-        "state": "成長痛",
-        "count": 60,
-        "pct": 9.7
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 19,
-        "pct": 3.1
+        "state": "安定・平和",
+        "count": 89,
+        "pct": 14.4
       },
       {
         "state": "混乱・カオス",
-        "count": 14,
-        "pct": 2.3
+        "count": 75,
+        "pct": 12.2
       },
       {
-        "state": "安定・停止",
-        "count": 7,
-        "pct": 1.1
-      },
-      {
-        "state": "調和・繁栄",
-        "count": 3,
-        "pct": 0.5
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 2,
-        "pct": 0.3
-      },
-      {
-        "state": "急成長・拡大",
-        "count": 1,
-        "pct": 0.2
+        "state": "成長痛",
+        "count": 61,
+        "pct": 9.9
       }
     ]
   },
   "Success|守る・維持": {
-    "total_count": 592,
+    "total_count": 596,
     "before_state_distribution": [
       {
         "state": "安定・平和",
         "count": 402,
-        "pct": 67.9
+        "pct": 67.4
       },
       {
         "state": "成長痛",
         "count": 68,
-        "pct": 11.5
+        "pct": 11.4
+      },
+      {
+        "state": "混乱・カオス",
+        "count": 36,
+        "pct": 6.0
       },
       {
         "state": "停滞・閉塞",
@@ -616,11 +516,6 @@
         "state": "どん底・危機",
         "count": 34,
         "pct": 5.7
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 32,
-        "pct": 5.4
       },
       {
         "state": "絶頂・慢心",
@@ -658,14 +553,14 @@
     "total_count": 1043,
     "before_state_distribution": [
       {
-        "state": "停滞・閉塞",
-        "count": 222,
-        "pct": 21.3
+        "state": "混乱・カオス",
+        "count": 388,
+        "pct": 37.2
       },
       {
-        "state": "混乱・カオス",
-        "count": 217,
-        "pct": 20.8
+        "state": "停滞・閉塞",
+        "count": 237,
+        "pct": 22.7
       },
       {
         "state": "どん底・危機",
@@ -673,14 +568,9 @@
         "pct": 19.6
       },
       {
-        "state": "混乱・衰退",
-        "count": 171,
-        "pct": 16.4
-      },
-      {
         "state": "成長痛",
-        "count": 85,
-        "pct": 8.1
+        "count": 87,
+        "pct": 8.3
       },
       {
         "state": "安定・平和",
@@ -691,86 +581,76 @@
         "state": "絶頂・慢心",
         "count": 62,
         "pct": 5.9
-      },
-      {
-        "state": "安定・停止",
-        "count": 15,
-        "pct": 1.4
-      },
-      {
-        "state": "成長・拡大",
-        "count": 2,
-        "pct": 0.2
       }
     ]
   },
   "Mixed|捨てる・撤退": {
-    "total_count": 158,
+    "total_count": 307,
     "before_state_distribution": [
       {
+        "state": "混乱・カオス",
+        "count": 105,
+        "pct": 34.2
+      },
+      {
         "state": "停滞・閉塞",
-        "count": 48,
-        "pct": 30.4
+        "count": 66,
+        "pct": 21.5
+      },
+      {
+        "state": "絶頂・慢心",
+        "count": 59,
+        "pct": 19.2
       },
       {
         "state": "成長痛",
         "count": 40,
-        "pct": 25.3
+        "pct": 13.0
       },
       {
         "state": "どん底・危機",
         "count": 23,
-        "pct": 14.6
-      },
-      {
-        "state": "絶頂・慢心",
-        "count": 23,
-        "pct": 14.6
+        "pct": 7.5
       },
       {
         "state": "安定・平和",
         "count": 14,
-        "pct": 8.9
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 10,
-        "pct": 6.3
+        "pct": 4.6
       }
     ]
   },
   "Mixed|分散・スピンオフ": {
-    "total_count": 44,
+    "total_count": 405,
     "before_state_distribution": [
       {
         "state": "停滞・閉塞",
-        "count": 20,
-        "pct": 45.5
+        "count": 277,
+        "pct": 68.4
+      },
+      {
+        "state": "混乱・カオス",
+        "count": 66,
+        "pct": 16.3
       },
       {
         "state": "絶頂・慢心",
-        "count": 7,
-        "pct": 15.9
+        "count": 46,
+        "pct": 11.4
       },
       {
         "state": "安定・平和",
         "count": 6,
-        "pct": 13.6
+        "pct": 1.5
       },
       {
         "state": "成長痛",
         "count": 6,
-        "pct": 13.6
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 3,
-        "pct": 6.8
+        "pct": 1.5
       },
       {
         "state": "どん底・危機",
-        "count": 2,
-        "pct": 4.5
+        "count": 4,
+        "pct": 1.0
       }
     ]
   },
@@ -779,8 +659,8 @@
     "before_state_distribution": [
       {
         "state": "停滞・閉塞",
-        "count": 59,
-        "pct": 31.7
+        "count": 60,
+        "pct": 32.3
       },
       {
         "state": "成長痛",
@@ -806,11 +686,6 @@
         "state": "絶頂・慢心",
         "count": 18,
         "pct": 9.7
-      },
-      {
-        "state": "縮小安定・生存",
-        "count": 1,
-        "pct": 0.5
       }
     ]
   },
@@ -889,8 +764,18 @@
     "before_state_distribution": [
       {
         "state": "成長痛",
-        "count": 170,
-        "pct": 36.5
+        "count": 171,
+        "pct": 36.7
+      },
+      {
+        "state": "絶頂・慢心",
+        "count": 91,
+        "pct": 19.5
+      },
+      {
+        "state": "混乱・カオス",
+        "count": 58,
+        "pct": 12.4
       },
       {
         "state": "どん底・危機",
@@ -898,54 +783,14 @@
         "pct": 11.4
       },
       {
-        "state": "絶頂・慢心",
-        "count": 49,
-        "pct": 10.5
+        "state": "停滞・閉塞",
+        "count": 48,
+        "pct": 10.3
       },
       {
         "state": "安定・平和",
-        "count": 44,
-        "pct": 9.4
-      },
-      {
-        "state": "安定成長・成功",
-        "count": 39,
-        "pct": 8.4
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 34,
-        "pct": 7.3
-      },
-      {
-        "state": "停滞・閉塞",
-        "count": 29,
-        "pct": 6.2
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 24,
-        "pct": 5.2
-      },
-      {
-        "state": "安定・停止",
-        "count": 19,
-        "pct": 4.1
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 3,
-        "pct": 0.6
-      },
-      {
-        "state": "調和・繁栄",
-        "count": 1,
-        "pct": 0.2
-      },
-      {
-        "state": "成長・拡大",
-        "count": 1,
-        "pct": 0.2
+        "count": 45,
+        "pct": 9.7
       }
     ]
   },
@@ -1054,8 +899,8 @@
     "before_state_distribution": [
       {
         "state": "停滞・閉塞",
-        "count": 94,
-        "pct": 34.9
+        "count": 95,
+        "pct": 35.3
       },
       {
         "state": "安定・平和",
@@ -1081,11 +926,6 @@
         "state": "成長痛",
         "count": 16,
         "pct": 5.9
-      },
-      {
-        "state": "安定・停止",
-        "count": 1,
-        "pct": 0.4
       }
     ]
   },
@@ -1185,32 +1025,32 @@
     ]
   },
   "Failure|捨てる・撤退": {
-    "total_count": 578,
+    "total_count": 596,
     "before_state_distribution": [
       {
         "state": "成長痛",
         "count": 297,
-        "pct": 51.4
+        "pct": 49.8
       },
       {
         "state": "停滞・閉塞",
-        "count": 136,
-        "pct": 23.5
+        "count": 141,
+        "pct": 23.7
       },
       {
         "state": "混乱・カオス",
-        "count": 75,
-        "pct": 13.0
+        "count": 87,
+        "pct": 14.6
       },
       {
         "state": "絶頂・慢心",
-        "count": 52,
-        "pct": 9.0
+        "count": 53,
+        "pct": 8.9
       },
       {
         "state": "安定・平和",
         "count": 11,
-        "pct": 1.9
+        "pct": 1.8
       },
       {
         "state": "どん底・危機",
@@ -1220,412 +1060,32 @@
     ]
   },
   "Success|逃げる・放置": {
-    "total_count": 11,
+    "total_count": 23,
     "before_state_distribution": [
+      {
+        "state": "混乱・カオス",
+        "count": 9,
+        "pct": 39.1
+      },
       {
         "state": "どん底・危機",
         "count": 6,
-        "pct": 54.5
+        "pct": 26.1
       },
       {
         "state": "絶頂・慢心",
-        "count": 2,
-        "pct": 18.2
-      },
-      {
-        "state": "混乱・カオス",
-        "count": 1,
-        "pct": 9.1
+        "count": 4,
+        "pct": 17.4
       },
       {
         "state": "安定・平和",
-        "count": 1,
-        "pct": 9.1
+        "count": 3,
+        "pct": 13.0
       },
       {
         "state": "停滞・閉塞",
         "count": 1,
-        "pct": 9.1
-      }
-    ]
-  },
-  "Success|分散・多角化": {
-    "total_count": 3,
-    "before_state_distribution": [
-      {
-        "state": "成長痛",
-        "count": 2,
-        "pct": 66.7
-      },
-      {
-        "state": "安定・平和",
-        "count": 1,
-        "pct": 33.3
-      }
-    ]
-  },
-  "Success|分散・独立": {
-    "total_count": 1,
-    "before_state_distribution": [
-      {
-        "state": "どん底・危機",
-        "count": 1,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Mixed|分散・独立": {
-    "total_count": 2,
-    "before_state_distribution": [
-      {
-        "state": "どん底・危機",
-        "count": 2,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Mixed|撤退・逃げる": {
-    "total_count": 9,
-    "before_state_distribution": [
-      {
-        "state": "安定成長・成功",
-        "count": 9,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Mixed|分散する・独立する": {
-    "total_count": 1,
-    "before_state_distribution": [
-      {
-        "state": "安定成長・成功",
-        "count": 1,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Success|捨てる・転換": {
-    "total_count": 307,
-    "before_state_distribution": [
-      {
-        "state": "安定成長・成功",
-        "count": 147,
-        "pct": 47.9
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 135,
-        "pct": 44.0
-      },
-      {
-        "state": "調和・繁栄",
-        "count": 13,
-        "pct": 4.2
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 11,
-        "pct": 3.6
-      },
-      {
-        "state": "急成長・拡大",
-        "count": 1,
-        "pct": 0.3
-      }
-    ]
-  },
-  "Mixed|捨てる・転換": {
-    "total_count": 126,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 85,
-        "pct": 67.5
-      },
-      {
-        "state": "安定成長・成功",
-        "count": 30,
-        "pct": 23.8
-      },
-      {
-        "state": "安定・停止",
-        "count": 11,
-        "pct": 8.7
-      }
-    ]
-  },
-  "Success|分散する・独立する": {
-    "total_count": 2,
-    "before_state_distribution": [
-      {
-        "state": "安定成長・成功",
-        "count": 2,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Success|撤退・逃げる": {
-    "total_count": 2,
-    "before_state_distribution": [
-      {
-        "state": "安定成長・成功",
-        "count": 2,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Success|逃げる・分散": {
-    "total_count": 10,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 8,
-        "pct": 80.0
-      },
-      {
-        "state": "調和・繁栄",
-        "count": 2,
-        "pct": 20.0
-      }
-    ]
-  },
-  "Mixed|逃げる・分散": {
-    "total_count": 1,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 1,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Success|逃げる・守る": {
-    "total_count": 4,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 4,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Mixed|分散・探索": {
-    "total_count": 358,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 257,
-        "pct": 71.8
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 63,
-        "pct": 17.6
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 38,
-        "pct": 10.6
-      }
-    ]
-  },
-  "Success|集中・拡大": {
-    "total_count": 125,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 58,
-        "pct": 46.4
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 48,
-        "pct": 38.4
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 19,
-        "pct": 15.2
-      }
-    ]
-  },
-  "Success|撤退・収縮": {
-    "total_count": 7,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 4,
-        "pct": 57.1
-      },
-      {
-        "state": "安定・停止",
-        "count": 3,
-        "pct": 42.9
-      }
-    ]
-  },
-  "Mixed|撤退・収縮": {
-    "total_count": 23,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 10,
-        "pct": 43.5
-      },
-      {
-        "state": "安定・停止",
-        "count": 7,
-        "pct": 30.4
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 6,
-        "pct": 26.1
-      }
-    ]
-  },
-  "Success|分散・探索": {
-    "total_count": 141,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 90,
-        "pct": 63.8
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 45,
-        "pct": 31.9
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 6,
         "pct": 4.3
-      }
-    ]
-  },
-  "Failure|集中・拡大": {
-    "total_count": 1,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 1,
-        "pct": 100.0
-      }
-    ]
-  },
-  "Mixed|集中・拡大": {
-    "total_count": 14,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 7,
-        "pct": 50.0
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 4,
-        "pct": 28.6
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 3,
-        "pct": 21.4
-      }
-    ]
-  },
-  "Success|輝く・表現": {
-    "total_count": 11,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 8,
-        "pct": 72.7
-      },
-      {
-        "state": "安定・停止",
-        "count": 2,
-        "pct": 18.2
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 1,
-        "pct": 9.1
-      }
-    ]
-  },
-  "Failure|撤退・収縮": {
-    "total_count": 4,
-    "before_state_distribution": [
-      {
-        "state": "安定・停止",
-        "count": 3,
-        "pct": 75.0
-      },
-      {
-        "state": "拡大・繁栄",
-        "count": 1,
-        "pct": 25.0
-      }
-    ]
-  },
-  "Success|交流・発表": {
-    "total_count": 195,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 140,
-        "pct": 71.8
-      },
-      {
-        "state": "安定・停止",
-        "count": 55,
-        "pct": 28.2
-      }
-    ]
-  },
-  "Failure|撤退・縮小": {
-    "total_count": 14,
-    "before_state_distribution": [
-      {
-        "state": "混乱・衰退",
-        "count": 12,
-        "pct": 85.7
-      },
-      {
-        "state": "安定・停止",
-        "count": 2,
-        "pct": 14.3
-      }
-    ]
-  },
-  "Success|拡大・攻め": {
-    "total_count": 115,
-    "before_state_distribution": [
-      {
-        "state": "成長・拡大",
-        "count": 76,
-        "pct": 66.1
-      },
-      {
-        "state": "安定・停止",
-        "count": 25,
-        "pct": 21.7
-      },
-      {
-        "state": "混乱・衰退",
-        "count": 14,
-        "pct": 12.2
-      }
-    ]
-  },
-  "Mixed|拡大・攻め": {
-    "total_count": 1,
-    "before_state_distribution": [
-      {
-        "state": "成長・拡大",
-        "count": 1,
-        "pct": 100.0
       }
     ]
   }
