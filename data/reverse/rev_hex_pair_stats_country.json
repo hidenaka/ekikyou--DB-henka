@@ -840,15 +840,19 @@
     "avg_duration_hint": 11.4
   },
   "兌|震": {
-    "total_count": 4,
+    "total_count": 5,
     "success_count": 1,
-    "success_rate": 0.25,
+    "success_rate": 0.2,
     "outcomes": {
       "Success": 1,
-      "Mixed": 2,
+      "Mixed": 3,
       "Failure": 1
     },
     "top_actions": [
+      {
+        "action_type": "刷新・破壊",
+        "count": 2
+      },
       {
         "action_type": "攻める・挑戦",
         "count": 2
@@ -856,13 +860,9 @@
       {
         "action_type": "守る・維持",
         "count": 1
-      },
-      {
-        "action_type": "刷新・破壊",
-        "count": 1
       }
     ],
-    "avg_duration_hint": 2.5
+    "avg_duration_hint": 2.3
   },
   "乾|離": {
     "total_count": 4,
@@ -1412,28 +1412,34 @@
     "avg_duration_hint": 2.0
   },
   "巽|巽": {
-    "total_count": 3,
+    "total_count": 4,
     "success_count": 2,
-    "success_rate": 0.6667,
+    "success_rate": 0.5,
     "outcomes": {
       "Success": 2,
-      "Mixed": 1
+      "Mixed": 1,
+      "Failure": 1
     },
     "top_actions": [
       {
         "action_type": "刷新・破壊",
         "count": 3
+      },
+      {
+        "action_type": "捨てる・撤退",
+        "count": 1
       }
     ],
-    "avg_duration_hint": 2.5
+    "avg_duration_hint": 3.7
   },
   "離|震": {
-    "total_count": 3,
+    "total_count": 4,
     "success_count": 1,
-    "success_rate": 0.3333,
+    "success_rate": 0.25,
     "outcomes": {
       "Mixed": 2,
-      "Success": 1
+      "Success": 1,
+      "Failure": 1
     },
     "top_actions": [
       {
@@ -1443,9 +1449,13 @@
       {
         "action_type": "対話・融合",
         "count": 1
+      },
+      {
+        "action_type": "刷新・破壊",
+        "count": 1
       }
     ],
-    "avg_duration_hint": 4.3
+    "avg_duration_hint": 6.2
   },
   "巽|坎": {
     "total_count": 2,
@@ -1779,19 +1789,50 @@
     "avg_duration_hint": 13.0
   },
   "兌|兌": {
-    "total_count": 2,
+    "total_count": 3,
     "success_count": 0,
     "success_rate": 0.0,
     "outcomes": {
       "Mixed": 1,
-      "PartialSuccess": 1
+      "PartialSuccess": 1,
+      "Failure": 1
     },
     "top_actions": [
       {
         "action_type": "対話・融合",
-        "count": 2
+        "count": 3
       }
     ],
-    "avg_duration_hint": 2.0
+    "avg_duration_hint": 4.0
+  },
+  "巽|震": {
+    "total_count": 1,
+    "success_count": 1,
+    "success_rate": 1.0,
+    "outcomes": {
+      "Success": 1
+    },
+    "top_actions": [
+      {
+        "action_type": "刷新・破壊",
+        "count": 1
+      }
+    ],
+    "avg_duration_hint": 1.0
+  },
+  "巽|兌": {
+    "total_count": 1,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "outcomes": {
+      "Failure": 1
+    },
+    "top_actions": [
+      {
+        "action_type": "対話・融合",
+        "count": 1
+      }
+    ],
+    "avg_duration_hint": 5.0
   }
 }

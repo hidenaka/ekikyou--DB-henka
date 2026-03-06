@@ -1,6 +1,6 @@
 {
   "Endurance|縮小安定・生存": {
-    "total_count": 58,
+    "total_count": 63,
     "entries": [
       {
         "before_hex": "坎",
@@ -11,6 +11,11 @@
         "before_hex": "坤",
         "action_type": "守る・維持",
         "count": 7
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "耐える・潜伏",
+        "count": 4
       },
       {
         "before_hex": "坤",
@@ -63,11 +68,6 @@
         "count": 2
       },
       {
-        "before_hex": "巽",
-        "action_type": "耐える・潜伏",
-        "count": 1
-      },
-      {
         "before_hex": "震",
         "action_type": "守る・維持",
         "count": 1
@@ -96,11 +96,16 @@
         "before_hex": "坤",
         "action_type": "捨てる・撤退",
         "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "対話・融合",
+        "count": 1
       }
     ]
   },
   "Hubris_Collapse|崩壊・消滅": {
-    "total_count": 127,
+    "total_count": 134,
     "entries": [
       {
         "before_hex": "震",
@@ -125,7 +130,7 @@
       {
         "before_hex": "離",
         "action_type": "逃げる・放置",
-        "count": 6
+        "count": 7
       },
       {
         "before_hex": "乾",
@@ -159,6 +164,11 @@
       },
       {
         "before_hex": "兌",
+        "action_type": "刷新・破壊",
+        "count": 3
+      },
+      {
+        "before_hex": "兌",
         "action_type": "攻める・挑戦",
         "count": 2
       },
@@ -194,11 +204,6 @@
       },
       {
         "before_hex": "震",
-        "action_type": "耐える・潜伏",
-        "count": 1
-      },
-      {
-        "before_hex": "離",
         "action_type": "耐える・潜伏",
         "count": 1
       }
@@ -250,7 +255,7 @@
     ]
   },
   "Slow_Decline|縮小安定・生存": {
-    "total_count": 39,
+    "total_count": 43,
     "entries": [
       {
         "before_hex": "震",
@@ -265,7 +270,7 @@
       {
         "before_hex": "兌",
         "action_type": "耐える・潜伏",
-        "count": 3
+        "count": 4
       },
       {
         "before_hex": "坎",
@@ -275,6 +280,11 @@
       {
         "before_hex": "震",
         "action_type": "守る・維持",
+        "count": 2
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "耐える・潜伏",
         "count": 2
       },
       {
@@ -295,11 +305,6 @@
       {
         "before_hex": "兌",
         "action_type": "攻める・挑戦",
-        "count": 1
-      },
-      {
-        "before_hex": "巽",
-        "action_type": "耐える・潜伏",
         "count": 1
       },
       {
@@ -330,6 +335,16 @@
       {
         "before_hex": "離",
         "action_type": "攻める・挑戦",
+        "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "捨てる・撤退",
+        "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "対話・融合",
         "count": 1
       }
     ]
@@ -380,7 +395,7 @@
     ]
   },
   "Shock_Recovery|V字回復・大成功": {
-    "total_count": 93,
+    "total_count": 96,
     "entries": [
       {
         "before_hex": "坎",
@@ -420,7 +435,7 @@
       {
         "before_hex": "兌",
         "action_type": "攻める・挑戦",
-        "count": 3
+        "count": 4
       },
       {
         "before_hex": "坎",
@@ -453,6 +468,11 @@
         "count": 2
       },
       {
+        "before_hex": "巽",
+        "action_type": "刷新・破壊",
+        "count": 2
+      },
+      {
         "before_hex": "艮",
         "action_type": "攻める・挑戦",
         "count": 2
@@ -476,16 +496,11 @@
         "before_hex": "艮",
         "action_type": "耐える・潜伏",
         "count": 1
-      },
-      {
-        "before_hex": "坎",
-        "action_type": "守る・維持",
-        "count": 1
       }
     ]
   },
   "Shock_Recovery|変質・新生": {
-    "total_count": 78,
+    "total_count": 83,
     "entries": [
       {
         "before_hex": "坎",
@@ -554,6 +569,11 @@
       },
       {
         "before_hex": "離",
+        "action_type": "刷新・破壊",
+        "count": 2
+      },
+      {
+        "before_hex": "離",
         "action_type": "耐える・潜伏",
         "count": 1
       },
@@ -580,11 +600,6 @@
       {
         "before_hex": "坎",
         "action_type": "逃げる・放置",
-        "count": 1
-      },
-      {
-        "before_hex": "坤",
-        "action_type": "捨てる・撤退",
         "count": 1
       }
     ]
@@ -845,7 +860,7 @@
     ]
   },
   "Pivot_Success|変質・新生": {
-    "total_count": 191,
+    "total_count": 198,
     "entries": [
       {
         "before_hex": "坤",
@@ -923,6 +938,11 @@
         "count": 5
       },
       {
+        "before_hex": "兌",
+        "action_type": "捨てる・撤退",
+        "count": 4
+      },
+      {
         "before_hex": "乾",
         "action_type": "攻める・挑戦",
         "count": 4
@@ -934,18 +954,13 @@
       },
       {
         "before_hex": "巽",
-        "action_type": "攻める・挑戦",
-        "count": 3
-      },
-      {
-        "before_hex": "巽",
-        "action_type": "分散・スピンオフ",
-        "count": 3
-      },
-      {
-        "before_hex": "離",
         "action_type": "捨てる・撤退",
-        "count": 2
+        "count": 3
+      },
+      {
+        "before_hex": "兌",
+        "action_type": "刷新・破壊",
+        "count": 3
       }
     ]
   },
@@ -1150,7 +1165,7 @@
     ]
   },
   "Endurance|V字回復・大成功": {
-    "total_count": 31,
+    "total_count": 32,
     "entries": [
       {
         "before_hex": "艮",
@@ -1196,11 +1211,16 @@
         "before_hex": "兌",
         "action_type": "耐える・潜伏",
         "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "耐える・潜伏",
+        "count": 1
       }
     ]
   },
   "Pivot_Success|V字回復・大成功": {
-    "total_count": 90,
+    "total_count": 95,
     "entries": [
       {
         "before_hex": "坤",
@@ -1219,6 +1239,11 @@
       },
       {
         "before_hex": "乾",
+        "action_type": "攻める・挑戦",
+        "count": 7
+      },
+      {
+        "before_hex": "巽",
         "action_type": "攻める・挑戦",
         "count": 7
       },
@@ -1243,11 +1268,6 @@
         "count": 5
       },
       {
-        "before_hex": "巽",
-        "action_type": "攻める・挑戦",
-        "count": 5
-      },
-      {
         "before_hex": "坤",
         "action_type": "刷新・破壊",
         "count": 5
@@ -1255,6 +1275,11 @@
       {
         "before_hex": "艮",
         "action_type": "対話・融合",
+        "count": 4
+      },
+      {
+        "before_hex": "離",
+        "action_type": "刷新・破壊",
         "count": 4
       },
       {
@@ -1268,18 +1293,13 @@
         "count": 3
       },
       {
-        "before_hex": "離",
-        "action_type": "刷新・破壊",
-        "count": 3
+        "before_hex": "巽",
+        "action_type": "対話・融合",
+        "count": 2
       },
       {
         "before_hex": "坎",
         "action_type": "捨てる・撤退",
-        "count": 1
-      },
-      {
-        "before_hex": "巽",
-        "action_type": "対話・融合",
         "count": 1
       },
       {
@@ -1294,6 +1314,11 @@
       },
       {
         "before_hex": "離",
+        "action_type": "対話・融合",
+        "count": 1
+      },
+      {
+        "before_hex": "乾",
         "action_type": "対話・融合",
         "count": 1
       }
@@ -1390,8 +1415,13 @@
     ]
   },
   "Slow_Decline|迷走・混乱": {
-    "total_count": 11,
+    "total_count": 15,
     "entries": [
+      {
+        "before_hex": "兌",
+        "action_type": "耐える・潜伏",
+        "count": 3
+      },
       {
         "before_hex": "艮",
         "action_type": "攻める・挑戦",
@@ -1403,11 +1433,6 @@
         "count": 2
       },
       {
-        "before_hex": "兌",
-        "action_type": "耐える・潜伏",
-        "count": 1
-      },
-      {
         "before_hex": "坎",
         "action_type": "耐える・潜伏",
         "count": 1
@@ -1436,11 +1461,21 @@
         "before_hex": "震",
         "action_type": "攻める・挑戦",
         "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "捨てる・撤退",
+        "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "攻める・挑戦",
+        "count": 1
       }
     ]
   },
   "Endurance|変質・新生": {
-    "total_count": 28,
+    "total_count": 30,
     "entries": [
       {
         "before_hex": "坎",
@@ -1525,6 +1560,16 @@
       {
         "before_hex": "震",
         "action_type": "攻める・挑戦",
+        "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "耐える・潜伏",
+        "count": 1
+      },
+      {
+        "before_hex": "巽",
+        "action_type": "捨てる・撤退",
         "count": 1
       }
     ]
@@ -2450,7 +2495,7 @@
     ]
   },
   "Endurance|現状維持・延命": {
-    "total_count": 23,
+    "total_count": 25,
     "entries": [
       {
         "before_hex": "坤",
@@ -2470,7 +2515,7 @@
       {
         "before_hex": "巽",
         "action_type": "耐える・潜伏",
-        "count": 2
+        "count": 3
       },
       {
         "before_hex": "震",
@@ -2506,11 +2551,16 @@
         "before_hex": "坎",
         "action_type": "耐える・潜伏",
         "count": 1
+      },
+      {
+        "before_hex": "兌",
+        "action_type": "捨てる・撤退",
+        "count": 1
       }
     ]
   },
   "Pivot_Success|縮小安定・生存": {
-    "total_count": 10,
+    "total_count": 11,
     "entries": [
       {
         "before_hex": "坤",
@@ -2545,6 +2595,11 @@
       {
         "before_hex": "坎",
         "action_type": "刷新・破壊",
+        "count": 1
+      },
+      {
+        "before_hex": "兌",
+        "action_type": "対話・融合",
         "count": 1
       }
     ]
