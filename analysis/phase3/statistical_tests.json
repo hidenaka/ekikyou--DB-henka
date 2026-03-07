@@ -55,10 +55,14 @@
     }
   },
   "combined_judgment": {
-    "fisher_statistic": 1404.4096955586583,
-    "fisher_p_value": 0.0,
-    "level": "Moderate",
-    "summary": "Fisher chi2=1404.41, p=0.000000, level=Moderate. Pro方向medium+: 3/5, Pro方向small+: 3/5",
+    "fisher_statistic": 1404.41,
+    "fisher_p_value_note": "参考値。テスト間非独立性、p=0処理の問題により信頼性が限定的",
+    "level": "Q6隣接仮説棄却・(Z2)^6対称性の部分的反映",
+    "adjacency_hypothesis": "rejected",
+    "symmetry_correspondence": "partial",
+    "parity_structure": "even_parity_dominant_98.6pct",
+    "summary": "Q6隣接遷移仮説は反証された（Test A/B）。6bit空間の対称性構造（スペクトル・錯卦）が観測遷移に部分的に反映されている（Test C/D/E）。偶数パリティへの集中（98.6%）はQ6モデルとは異なる構造的制約の存在を示唆する。",
+    "practical_value": "Q6は予測モデルではなく表現・正則化のための符号体系として限定的に有用",
     "effect_profile": [
       {
         "test": "test_a_edge_overlap",
