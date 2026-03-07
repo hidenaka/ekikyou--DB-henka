@@ -1,757 +1,976 @@
 {
-  "preconditions": {
-    "condition1_column_correlation": {
-      "common_categories": 51,
-      "correlations": {
-        "Dim1": {
-          "pearson_r": -0.225107,
-          "abs_r": 0.225107,
-          "sign_flipped": false,
-          "stable": false
-        },
-        "Dim2": {
-          "pearson_r": 0.266438,
-          "abs_r": 0.266438,
-          "sign_flipped": false,
-          "stable": false
-        }
-      },
-      "all_stable": false,
-      "conclusion": "Dim1-2 show instability; interpret with caution."
-    },
-    "condition2_data_selection": {
-      "data": "raw (original categories)",
-      "n_dimensions": 5,
-      "rationale": "Dim1-2 are unstable across raw and clean data. Using raw data with 5 dimensions (scree elbow) to preserve all information."
-    },
-    "condition3_benzecri_note": "The minimum eigenvalue (0.14288) exceeds the Kaiser/Benzecri threshold (1/K = 0.14286) by only 0.00002. This margin is smaller than floating-point precision concerns. Consequently, the Benzecri upper-bound criterion (dims with corrected eigenvalue > 0) has no discriminating power: it classifies all 30 computed dimensions as significant. Only the Benzecri cumulative 80% criterion (6 dims) retains utility."
-  },
-  "data_used": {
-    "type": "raw",
-    "n_records": 13060,
-    "n_dimensions": 5,
-    "category_merge_applied": false
-  },
-  "clustering_comparison": {
+  "n_records": 11336,
+  "mca_dimensions_used": 10,
+  "methods_compared": {
     "kmeans": {
-      "best_k": 2,
-      "best_silhouette": 0.5935110973614752,
-      "silhouettes": {
-        "2": 0.5935,
-        "3": 0.4509,
-        "4": 0.455,
-        "5": 0.5322,
-        "6": 0.5561,
-        "7": 0.4798,
-        "8": 0.4818,
-        "9": 0.486,
-        "10": 0.4915,
-        "11": 0.3984,
-        "12": 0.4035,
-        "13": 0.4042,
-        "14": 0.3579,
-        "15": 0.3748,
-        "16": 0.3837,
-        "17": 0.3861,
-        "18": 0.3724,
-        "19": 0.3715,
-        "20": 0.3705
-      }
-    },
-    "gap_statistic": {
-      "optimal_k": 15,
-      "gaps": {
-        "2": 2.1463,
-        "3": 2.1911,
-        "4": 2.2977,
-        "5": 2.5859,
-        "6": 2.8837,
-        "7": 2.9653,
-        "8": 3.063,
-        "9": 3.1379,
-        "10": 3.2253,
-        "11": 3.2349,
-        "12": 3.3495,
-        "13": 3.3908,
-        "14": 3.4138,
-        "15": 3.4467
-      }
+      "silhouette_scores": {
+        "k_2": 0.1391,
+        "k_3": 0.162,
+        "k_4": 0.1757,
+        "k_5": 0.188,
+        "k_6": 0.2041,
+        "k_7": 0.1915,
+        "k_8": 0.2074,
+        "k_9": 0.2119,
+        "k_10": 0.2137,
+        "k_11": 0.215,
+        "k_12": 0.2185,
+        "k_13": 0.2191,
+        "k_14": 0.2074,
+        "k_15": 0.2205,
+        "k_16": 0.2109,
+        "k_17": 0.2051,
+        "k_18": 0.21,
+        "k_19": 0.212,
+        "k_20": 0.2171
+      },
+      "inertia": {
+        "k_2": 25451.38,
+        "k_3": 22625.17,
+        "k_4": 20780.0,
+        "k_5": 18987.18,
+        "k_6": 17303.54,
+        "k_7": 16471.37,
+        "k_8": 15235.35,
+        "k_9": 14332.34,
+        "k_10": 13652.15,
+        "k_11": 13011.81,
+        "k_12": 12438.46,
+        "k_13": 12079.5,
+        "k_14": 11666.76,
+        "k_15": 11302.86,
+        "k_16": 10999.93,
+        "k_17": 10628.96,
+        "k_18": 10507.69,
+        "k_19": 10118.81,
+        "k_20": 9992.08
+      },
+      "calinski_harabasz": {
+        "k_2": 1793.54,
+        "k_3": 1716.53,
+        "k_4": 1581.27,
+        "k_5": 1565.29,
+        "k_6": 1594.43,
+        "k_7": 1491.1,
+        "k_8": 1512.94,
+        "k_9": 1496.33,
+        "k_10": 1458.9,
+        "k_11": 1433.23,
+        "k_12": 1410.33,
+        "k_13": 1359.14,
+        "k_14": 1329.68,
+        "k_15": 1300.37,
+        "k_16": 1267.78,
+        "k_17": 1254.61,
+        "k_18": 1202.01,
+        "k_19": 1202.92,
+        "k_20": 1161.51
+      },
+      "best_k": 15
     },
     "dbscan": {
-      "parameter_search": [
-        {
-          "eps": 0.1424,
-          "min_samples": 5,
-          "n_clusters": 94,
-          "n_noise": 418,
-          "noise_pct": 3.2,
-          "silhouette": -0.0311,
-          "labels": "see dbscan_labels.json key=entry_0_eps0.1424_ms5"
-        },
-        {
-          "eps": 0.1424,
-          "min_samples": 10,
-          "n_clusters": 58,
-          "n_noise": 766,
-          "noise_pct": 5.87,
-          "silhouette": -0.1884,
-          "labels": []
-        },
-        {
-          "eps": 0.1424,
-          "min_samples": 20,
-          "n_clusters": 35,
-          "n_noise": 1263,
-          "noise_pct": 9.67,
-          "silhouette": -0.1193,
-          "labels": []
-        },
-        {
-          "eps": 0.2161,
-          "min_samples": 5,
-          "n_clusters": 69,
-          "n_noise": 242,
-          "noise_pct": 1.85,
-          "silhouette": -0.1086,
-          "labels": []
-        },
-        {
-          "eps": 0.2161,
-          "min_samples": 10,
-          "n_clusters": 41,
-          "n_noise": 456,
-          "noise_pct": 3.49,
-          "silhouette": 0.1181,
-          "labels": "see dbscan_labels.json key=entry_4_eps0.2161_ms10"
-        },
-        {
-          "eps": 0.2161,
-          "min_samples": 20,
-          "n_clusters": 28,
-          "n_noise": 709,
-          "noise_pct": 5.43,
-          "silhouette": 0.0029,
-          "labels": []
-        },
-        {
-          "eps": 0.2897,
-          "min_samples": 5,
-          "n_clusters": 60,
-          "n_noise": 172,
-          "noise_pct": 1.32,
-          "silhouette": -0.0632,
-          "labels": []
-        },
-        {
-          "eps": 0.2897,
-          "min_samples": 10,
-          "n_clusters": 41,
-          "n_noise": 293,
-          "noise_pct": 2.24,
-          "silhouette": 0.1278,
-          "labels": "see dbscan_labels.json key=entry_7_eps0.2897_ms10"
-        },
-        {
-          "eps": 0.2897,
-          "min_samples": 20,
-          "n_clusters": 25,
-          "n_noise": 539,
-          "noise_pct": 4.13,
-          "silhouette": 0.1193,
-          "labels": []
-        },
-        {
-          "eps": 0.3634,
-          "min_samples": 5,
-          "n_clusters": 41,
-          "n_noise": 118,
-          "noise_pct": 0.9,
-          "silhouette": 0.2555,
-          "labels": "see dbscan_labels.json key=entry_9_eps0.3634_ms5"
-        },
-        {
-          "eps": 0.3634,
-          "min_samples": 10,
-          "n_clusters": 27,
-          "n_noise": 220,
-          "noise_pct": 1.68,
-          "silhouette": 0.2583,
-          "labels": "see dbscan_labels.json key=entry_10_eps0.3634_ms10"
-        },
-        {
-          "eps": 0.3634,
-          "min_samples": 20,
-          "n_clusters": 20,
-          "n_noise": 363,
-          "noise_pct": 2.78,
-          "silhouette": 0.2585,
-          "labels": "see dbscan_labels.json key=entry_11_eps0.3634_ms20"
-        },
-        {
-          "eps": 0.437,
-          "min_samples": 5,
-          "n_clusters": 38,
-          "n_noise": 85,
-          "noise_pct": 0.65,
-          "silhouette": 0.2622,
-          "labels": "see dbscan_labels.json key=entry_12_eps0.437_ms5"
-        },
-        {
-          "eps": 0.437,
-          "min_samples": 10,
-          "n_clusters": 23,
-          "n_noise": 195,
-          "noise_pct": 1.49,
-          "silhouette": 0.2718,
-          "labels": "see dbscan_labels.json key=entry_13_eps0.437_ms10"
-        },
-        {
-          "eps": 0.437,
-          "min_samples": 20,
-          "n_clusters": 15,
-          "n_noise": 318,
-          "noise_pct": 2.43,
-          "silhouette": 0.2697,
-          "labels": []
-        },
-        {
-          "eps": 0.5106,
-          "min_samples": 5,
-          "n_clusters": 32,
-          "n_noise": 74,
-          "noise_pct": 0.57,
-          "silhouette": 0.1789,
-          "labels": []
-        },
-        {
-          "eps": 0.5106,
-          "min_samples": 10,
-          "n_clusters": 19,
-          "n_noise": 173,
-          "noise_pct": 1.32,
-          "silhouette": 0.1889,
-          "labels": []
-        },
-        {
-          "eps": 0.5106,
-          "min_samples": 20,
-          "n_clusters": 15,
-          "n_noise": 241,
-          "noise_pct": 1.85,
-          "silhouette": 0.1873,
-          "labels": []
-        },
-        {
-          "eps": 0.5843,
-          "min_samples": 5,
-          "n_clusters": 21,
-          "n_noise": 34,
-          "noise_pct": 0.26,
-          "silhouette": 0.5098,
-          "labels": "see dbscan_labels.json key=entry_18_eps0.5843_ms5"
-        },
-        {
-          "eps": 0.5843,
-          "min_samples": 10,
-          "n_clusters": 10,
-          "n_noise": 129,
-          "noise_pct": 0.99,
-          "silhouette": 0.5513,
-          "labels": "see dbscan_labels.json key=entry_19_eps0.5843_ms10"
-        },
-        {
-          "eps": 0.5843,
-          "min_samples": 20,
-          "n_clusters": 12,
-          "n_noise": 203,
-          "noise_pct": 1.55,
-          "silhouette": 0.428,
-          "labels": []
-        },
-        {
-          "eps": 0.6579,
-          "min_samples": 5,
-          "n_clusters": 12,
-          "n_noise": 26,
-          "noise_pct": 0.2,
-          "silhouette": 0.4683,
-          "labels": []
-        },
-        {
-          "eps": 0.6579,
-          "min_samples": 10,
-          "n_clusters": 9,
-          "n_noise": 69,
-          "noise_pct": 0.53,
-          "silhouette": 0.5659,
-          "labels": "see dbscan_labels.json key=entry_22_eps0.6579_ms10"
-        },
-        {
-          "eps": 0.6579,
-          "min_samples": 20,
-          "n_clusters": 8,
-          "n_noise": 108,
-          "noise_pct": 0.83,
-          "silhouette": 0.5526,
-          "labels": []
-        },
-        {
-          "eps": 0.7316,
-          "min_samples": 5,
-          "n_clusters": 9,
-          "n_noise": 18,
-          "noise_pct": 0.14,
-          "silhouette": 0.4808,
-          "labels": []
-        },
-        {
-          "eps": 0.7316,
-          "min_samples": 10,
-          "n_clusters": 8,
-          "n_noise": 27,
-          "noise_pct": 0.21,
-          "silhouette": 0.5295,
-          "labels": []
-        },
-        {
-          "eps": 0.7316,
-          "min_samples": 20,
-          "n_clusters": 5,
-          "n_noise": 76,
-          "noise_pct": 0.58,
-          "silhouette": 0.6497,
-          "labels": "see dbscan_labels.json key=entry_26_eps0.7316_ms20"
-        },
-        {
-          "eps": 0.8052,
-          "min_samples": 5,
-          "n_clusters": 9,
-          "n_noise": 12,
-          "noise_pct": 0.09,
-          "silhouette": 0.4798,
-          "labels": []
-        },
-        {
-          "eps": 0.8052,
-          "min_samples": 10,
-          "n_clusters": 8,
-          "n_noise": 20,
-          "noise_pct": 0.15,
-          "silhouette": 0.5291,
-          "labels": []
-        },
-        {
-          "eps": 0.8052,
-          "min_samples": 20,
-          "n_clusters": 5,
-          "n_noise": 62,
-          "noise_pct": 0.47,
-          "silhouette": 0.6488,
-          "labels": []
-        }
-      ],
-      "best": {
-        "eps": 0.7316,
-        "min_samples": 20,
-        "n_clusters": 5,
-        "n_noise": 76,
-        "noise_pct": 0.58,
-        "silhouette": 0.6497
-      },
-      "labels_file": "dbscan_labels.json",
-      "labels_separated": true,
-      "n_entries_with_labels": 12
+      "best_eps": 2.0,
+      "best_min_samples": 5,
+      "n_clusters": 2,
+      "n_noise": 22,
+      "silhouette_score": 0.2788
     },
     "hierarchical": {
-      "is_sampled": true,
-      "sample_size": 5000,
-      "method": "ward",
-      "results_by_k": {
-        "2": {
-          "silhouette": 0.6148,
-          "cluster_sizes": {
-            "2": 4515,
-            "1": 485
-          }
-        },
-        "3": {
-          "silhouette": 0.4413,
-          "cluster_sizes": {
-            "2": 1692,
-            "3": 2823,
-            "1": 485
-          }
-        },
-        "4": {
-          "silhouette": 0.461,
-          "cluster_sizes": {
-            "3": 1692,
-            "4": 2823,
-            "2": 429,
-            "1": 56
-          }
-        },
-        "5": {
-          "silhouette": 0.5222,
-          "cluster_sizes": {
-            "3": 1692,
-            "5": 2610,
-            "2": 429,
-            "4": 213,
-            "1": 56
-          }
-        },
-        "6": {
-          "silhouette": 0.5415,
-          "cluster_sizes": {
-            "4": 1692,
-            "6": 2610,
-            "3": 356,
-            "2": 73,
-            "5": 213,
-            "1": 56
-          }
-        },
-        "7": {
-          "silhouette": 0.4526,
-          "cluster_sizes": {
-            "4": 1692,
-            "7": 1227,
-            "6": 1383,
-            "3": 356,
-            "2": 73,
-            "5": 213,
-            "1": 56
-          }
-        },
-        "8": {
-          "silhouette": 0.4577,
-          "cluster_sizes": {
-            "5": 1692,
-            "8": 1227,
-            "7": 1383,
-            "4": 223,
-            "2": 73,
-            "3": 133,
-            "6": 213,
-            "1": 56
-          }
-        },
-        "9": {
-          "silhouette": 0.461,
-          "cluster_sizes": {
-            "5": 1692,
-            "9": 1227,
-            "8": 1383,
-            "4": 223,
-            "2": 73,
-            "3": 133,
-            "7": 206,
-            "1": 56,
-            "6": 7
-          }
-        },
-        "10": {
-          "silhouette": 0.4678,
-          "cluster_sizes": {
-            "6": 1692,
-            "10": 1227,
-            "9": 1383,
-            "4": 80,
-            "2": 73,
-            "3": 133,
-            "8": 206,
-            "5": 143,
-            "1": 56,
-            "7": 7
-          }
-        },
-        "11": {
-          "silhouette": 0.4688,
-          "cluster_sizes": {
-            "7": 1692,
-            "11": 1227,
-            "10": 1383,
-            "5": 80,
-            "3": 73,
-            "4": 133,
-            "9": 206,
-            "6": 143,
-            "1": 34,
-            "2": 22,
-            "8": 7
-          }
-        },
-        "12": {
-          "silhouette": 0.435,
-          "cluster_sizes": {
-            "7": 1692,
-            "12": 874,
-            "10": 1383,
-            "5": 80,
-            "3": 73,
-            "11": 353,
-            "4": 133,
-            "9": 206,
-            "6": 143,
-            "1": 34,
-            "2": 22,
-            "8": 7
-          }
-        },
-        "13": {
-          "silhouette": 0.3805,
-          "cluster_sizes": {
-            "8": 1145,
-            "13": 874,
-            "7": 547,
-            "11": 1383,
-            "5": 80,
-            "3": 73,
-            "12": 353,
-            "4": 133,
-            "10": 206,
-            "6": 143,
-            "1": 34,
-            "2": 22,
-            "9": 7
-          }
-        },
-        "14": {
-          "silhouette": 0.3679,
-          "cluster_sizes": {
-            "9": 725,
-            "14": 874,
-            "7": 547,
-            "12": 1383,
-            "5": 80,
-            "8": 420,
-            "3": 73,
-            "13": 353,
-            "4": 133,
-            "11": 206,
-            "6": 143,
-            "1": 34,
-            "2": 22,
-            "10": 7
-          }
-        },
-        "15": {
-          "silhouette": 0.3634,
-          "cluster_sizes": {
-            "9": 725,
-            "15": 874,
-            "7": 547,
-            "13": 1383,
-            "5": 80,
-            "8": 420,
-            "3": 73,
-            "14": 353,
-            "4": 133,
-            "11": 70,
-            "12": 136,
-            "6": 143,
-            "1": 34,
-            "2": 22,
-            "10": 7
-          }
-        }
+      "silhouette_scores": {
+        "k_2": 0.1002,
+        "k_3": 0.1282,
+        "k_4": 0.15,
+        "k_5": 0.1579,
+        "k_6": 0.1745,
+        "k_7": 0.1694,
+        "k_8": 0.1786,
+        "k_9": 0.1867,
+        "k_10": 0.183,
+        "k_11": 0.1561,
+        "k_12": 0.1607,
+        "k_13": 0.1613,
+        "k_14": 0.1644,
+        "k_15": 0.1613,
+        "k_16": 0.1624,
+        "k_17": 0.1643,
+        "k_18": 0.1665,
+        "k_19": 0.1627,
+        "k_20": 0.1641
       },
-      "best_k": 2,
-      "best_silhouette": 0.6148
+      "calinski_harabasz": {
+        "k_2": 1454.61,
+        "k_3": 1434.16,
+        "k_4": 1372.81,
+        "k_5": 1337.88,
+        "k_6": 1336.14,
+        "k_7": 1293.68,
+        "k_8": 1277.66,
+        "k_9": 1255.26,
+        "k_10": 1210.39,
+        "k_11": 1171.15,
+        "k_12": 1140.92,
+        "k_13": 1114.61,
+        "k_14": 1087.37,
+        "k_15": 1060.03,
+        "k_16": 1036.15,
+        "k_17": 1013.13,
+        "k_18": 991.87,
+        "k_19": 973.92,
+        "k_20": 951.53
+      },
+      "best_k": 9
     }
   },
-  "final_clustering": {
-    "method": "k-means",
-    "k": 2,
-    "silhouette_score": 0.5935,
-    "k_selection_method": "majority vote across 3 methods (k-means silhouette, gap statistic, hierarchical ward)",
-    "k_candidates": {
-      "kmeans_silhouette": 2,
-      "gap_statistic": 15,
-      "hierarchical_ward": 2
-    }
-  },
+  "best_method": "kmeans",
+  "best_k": 15,
+  "best_silhouette": 0.2205,
   "cluster_profiles": {
-    "0": {
-      "size": 11258,
-      "pct": 86.2,
-      "before_state": {
-        "安定・平和": 0.2468,
-        "成長痛": 0.2332,
-        "停滞・閉塞": 0.2238
-      },
-      "trigger_type": {
-        "意図的決断": 0.4165,
-        "外部ショック": 0.3327,
-        "内部崩壊": 0.1654
-      },
-      "action_type": {
-        "攻める・挑戦": 0.2769,
-        "耐える・潜伏": 0.1598,
-        "対話・融合": 0.1596
-      },
-      "after_state": {
-        "持続成長・大成功": 0.1959,
-        "崩壊・消滅": 0.1661,
-        "縮小安定・生存": 0.1315
-      },
-      "pattern_type": {
-        "Steady_Growth": 0.1743,
-        "Slow_Decline": 0.1279,
-        "Pivot_Success": 0.118
-      },
-      "outcome": {
-        "Success": 0.4697,
-        "Failure": 0.3541,
-        "Mixed": 0.153
-      },
-      "scale": {
-        "company": 0.4491,
-        "individual": 0.2421,
-        "other": 0.1363
-      },
-      "centroid": [
-        -0.2794,
-        -0.0392,
-        -0.0512,
-        -0.036,
-        0.0144
-      ]
+    "cluster_0": {
+      "size": 654,
+      "dominant_before_state": "停滞・閉塞",
+      "dominant_after_state": "V字回復・大成功",
+      "dominant_trigger_type": "偶発・出会い",
+      "dominant_action_type": "攻める・挑戦",
+      "dominant_pattern_type": "Pivot_Success",
+      "dominant_scale": "individual",
+      "full_distribution": {
+        "before_state": {
+          "停滞・閉塞": 250,
+          "安定・平和": 209,
+          "成長痛": 99,
+          "どん底・危機": 73,
+          "混乱・カオス": 16,
+          "絶頂・慢心": 7
+        },
+        "after_state": {
+          "V字回復・大成功": 483,
+          "変質・新生": 75,
+          "縮小安定・生存": 64,
+          "崩壊・消滅": 24,
+          "現状維持・延命": 5,
+          "迷走・混乱": 3
+        },
+        "trigger_type": {
+          "偶発・出会い": 650,
+          "外部ショック": 2,
+          "意図的決断": 1,
+          "内部崩壊": 1
+        },
+        "action_type": {
+          "攻める・挑戦": 371,
+          "対話・融合": 193,
+          "耐える・潜伏": 29,
+          "守る・維持": 23,
+          "刷新・破壊": 20,
+          "分散・スピンオフ": 10,
+          "捨てる・撤退": 7,
+          "逃げる・放置": 1
+        },
+        "pattern_type": {
+          "Pivot_Success": 541,
+          "Shock_Recovery": 57,
+          "Endurance": 34,
+          "Slow_Decline": 12,
+          "Hubris_Collapse": 10
+        },
+        "scale": {
+          "individual": 397,
+          "company": 115,
+          "other": 84,
+          "family": 48,
+          "country": 10
+        }
+      }
     },
-    "1": {
-      "size": 1802,
-      "pct": 13.8,
-      "before_state": {
-        "混乱・衰退": 0.4545,
-        "安定・停止": 0.313,
-        "安定成長・成功": 0.1104
-      },
-      "trigger_type": {
-        "外部ショック": 0.4922,
-        "自然推移": 0.369,
-        "内部矛盾・自壊": 0.1182
-      },
-      "action_type": {
-        "分散・探索": 0.2769,
-        "捨てる・転換": 0.2403,
-        "耐える・潜伏": 0.1831
-      },
-      "after_state": {
-        "混乱・衰退": 0.3479,
-        "安定・停止": 0.2009,
-        "拡大・繁栄": 0.1582
-      },
-      "pattern_type": {
-        "Crisis_Pivot": 0.3208,
-        "Breakthrough": 0.2075,
-        "Exploration": 0.1826
-      },
-      "outcome": {
-        "Success": 0.5527,
-        "Mixed": 0.3324,
-        "Failure": 0.1149
-      },
-      "scale": {
-        "other": 0.3496,
-        "individual": 0.273,
-        "company": 0.2519
-      },
-      "centroid": [
-        1.7454,
-        0.2448,
-        0.3197,
-        0.2249,
-        -0.0899
-      ]
+    "cluster_1": {
+      "size": 713,
+      "dominant_before_state": "混乱・カオス",
+      "dominant_after_state": "変質・新生",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "対話・融合",
+      "dominant_pattern_type": "Shock_Recovery",
+      "dominant_scale": "other",
+      "full_distribution": {
+        "before_state": {
+          "混乱・カオス": 278,
+          "停滞・閉塞": 199,
+          "安定・平和": 115,
+          "成長痛": 80,
+          "絶頂・慢心": 22,
+          "どん底・危機": 19
+        },
+        "after_state": {
+          "変質・新生": 432,
+          "V字回復・大成功": 196,
+          "縮小安定・生存": 75,
+          "迷走・混乱": 6,
+          "現状維持・延命": 4
+        },
+        "trigger_type": {
+          "外部ショック": 420,
+          "意図的決断": 253,
+          "内部崩壊": 24,
+          "偶発・出会い": 16
+        },
+        "action_type": {
+          "対話・融合": 580,
+          "攻める・挑戦": 62,
+          "刷新・破壊": 22,
+          "耐える・潜伏": 17,
+          "分散・スピンオフ": 14,
+          "捨てる・撤退": 11,
+          "守る・維持": 6,
+          "逃げる・放置": 1
+        },
+        "pattern_type": {
+          "Shock_Recovery": 344,
+          "Pivot_Success": 336,
+          "Slow_Decline": 16,
+          "Endurance": 15,
+          "Hubris_Collapse": 2
+        },
+        "scale": {
+          "other": 415,
+          "company": 128,
+          "family": 80,
+          "individual": 56,
+          "country": 34
+        }
+      }
+    },
+    "cluster_2": {
+      "size": 908,
+      "dominant_before_state": "絶頂・慢心",
+      "dominant_after_state": "崩壊・消滅",
+      "dominant_trigger_type": "内部崩壊",
+      "dominant_action_type": "攻める・挑戦",
+      "dominant_pattern_type": "Hubris_Collapse",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "絶頂・慢心": 533,
+          "成長痛": 220,
+          "安定・平和": 89,
+          "混乱・カオス": 27,
+          "停滞・閉塞": 25,
+          "どん底・危機": 14
+        },
+        "after_state": {
+          "崩壊・消滅": 615,
+          "迷走・混乱": 146,
+          "現状維持・延命": 50,
+          "縮小安定・生存": 49,
+          "変質・新生": 36,
+          "V字回復・大成功": 12
+        },
+        "trigger_type": {
+          "内部崩壊": 412,
+          "外部ショック": 252,
+          "意図的決断": 237,
+          "偶発・出会い": 7
+        },
+        "action_type": {
+          "攻める・挑戦": 316,
+          "逃げる・放置": 197,
+          "守る・維持": 107,
+          "耐える・潜伏": 88,
+          "刷新・破壊": 86,
+          "捨てる・撤退": 60,
+          "対話・融合": 45,
+          "分散・スピンオフ": 9
+        },
+        "pattern_type": {
+          "Hubris_Collapse": 884,
+          "Slow_Decline": 15,
+          "Shock_Recovery": 6,
+          "Endurance": 2,
+          "Pivot_Success": 1
+        },
+        "scale": {
+          "company": 560,
+          "individual": 203,
+          "country": 103,
+          "other": 26,
+          "family": 16
+        }
+      }
+    },
+    "cluster_3": {
+      "size": 1935,
+      "dominant_before_state": "成長痛",
+      "dominant_after_state": "V字回復・大成功",
+      "dominant_trigger_type": "意図的決断",
+      "dominant_action_type": "攻める・挑戦",
+      "dominant_pattern_type": "Pivot_Success",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "成長痛": 730,
+          "安定・平和": 594,
+          "停滞・閉塞": 405,
+          "絶頂・慢心": 94,
+          "どん底・危機": 82,
+          "混乱・カオス": 30
+        },
+        "after_state": {
+          "V字回復・大成功": 1657,
+          "変質・新生": 119,
+          "縮小安定・生存": 116,
+          "迷走・混乱": 28,
+          "現状維持・延命": 11,
+          "崩壊・消滅": 4
+        },
+        "trigger_type": {
+          "意図的決断": 1601,
+          "外部ショック": 329,
+          "内部崩壊": 3,
+          "偶発・出会い": 2
+        },
+        "action_type": {
+          "攻める・挑戦": 1591,
+          "対話・融合": 194,
+          "分散・スピンオフ": 45,
+          "耐える・潜伏": 38,
+          "守る・維持": 31,
+          "捨てる・撤退": 29,
+          "刷新・破壊": 5,
+          "逃げる・放置": 2
+        },
+        "pattern_type": {
+          "Pivot_Success": 1799,
+          "Shock_Recovery": 86,
+          "Slow_Decline": 22,
+          "Endurance": 17,
+          "Hubris_Collapse": 11
+        },
+        "scale": {
+          "company": 1042,
+          "individual": 565,
+          "other": 243,
+          "country": 71,
+          "family": 14
+        }
+      }
+    },
+    "cluster_4": {
+      "size": 773,
+      "dominant_before_state": "安定・平和",
+      "dominant_after_state": "縮小安定・生存",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "捨てる・撤退",
+      "dominant_pattern_type": "Shock_Recovery",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "安定・平和": 356,
+          "成長痛": 142,
+          "絶頂・慢心": 139,
+          "停滞・閉塞": 69,
+          "どん底・危機": 42,
+          "混乱・カオス": 25
+        },
+        "after_state": {
+          "縮小安定・生存": 543,
+          "V字回復・大成功": 102,
+          "変質・新生": 75,
+          "迷走・混乱": 38,
+          "現状維持・延命": 10,
+          "崩壊・消滅": 5
+        },
+        "trigger_type": {
+          "外部ショック": 516,
+          "内部崩壊": 148,
+          "意図的決断": 103,
+          "偶発・出会い": 6
+        },
+        "action_type": {
+          "捨てる・撤退": 368,
+          "対話・融合": 113,
+          "守る・維持": 95,
+          "耐える・潜伏": 67,
+          "攻める・挑戦": 55,
+          "刷新・破壊": 55,
+          "分散・スピンオフ": 14,
+          "逃げる・放置": 6
+        },
+        "pattern_type": {
+          "Shock_Recovery": 480,
+          "Slow_Decline": 135,
+          "Pivot_Success": 92,
+          "Hubris_Collapse": 46,
+          "Endurance": 20
+        },
+        "scale": {
+          "company": 496,
+          "individual": 229,
+          "other": 40,
+          "country": 5,
+          "family": 3
+        }
+      }
+    },
+    "cluster_5": {
+      "size": 1103,
+      "dominant_before_state": "成長痛",
+      "dominant_after_state": "崩壊・消滅",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "耐える・潜伏",
+      "dominant_pattern_type": "Slow_Decline",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "成長痛": 554,
+          "停滞・閉塞": 351,
+          "安定・平和": 56,
+          "どん底・危機": 51,
+          "絶頂・慢心": 46,
+          "混乱・カオス": 45
+        },
+        "after_state": {
+          "崩壊・消滅": 643,
+          "縮小安定・生存": 394,
+          "迷走・混乱": 40,
+          "現状維持・延命": 11,
+          "変質・新生": 10,
+          "V字回復・大成功": 5
+        },
+        "trigger_type": {
+          "外部ショック": 694,
+          "内部崩壊": 302,
+          "意図的決断": 106,
+          "偶発・出会い": 1
+        },
+        "action_type": {
+          "耐える・潜伏": 359,
+          "捨てる・撤退": 352,
+          "守る・維持": 138,
+          "対話・融合": 107,
+          "攻める・挑戦": 84,
+          "逃げる・放置": 37,
+          "刷新・破壊": 17,
+          "分散・スピンオフ": 9
+        },
+        "pattern_type": {
+          "Slow_Decline": 1085,
+          "Hubris_Collapse": 12,
+          "Shock_Recovery": 3,
+          "Pivot_Success": 3
+        },
+        "scale": {
+          "company": 787,
+          "individual": 182,
+          "other": 75,
+          "country": 52,
+          "family": 7
+        }
+      }
+    },
+    "cluster_6": {
+      "size": 777,
+      "dominant_before_state": "停滞・閉塞",
+      "dominant_after_state": "V字回復・大成功",
+      "dominant_trigger_type": "意図的決断",
+      "dominant_action_type": "刷新・破壊",
+      "dominant_pattern_type": "Pivot_Success",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "停滞・閉塞": 449,
+          "安定・平和": 182,
+          "混乱・カオス": 49,
+          "どん底・危機": 42,
+          "成長痛": 38,
+          "絶頂・慢心": 17
+        },
+        "after_state": {
+          "V字回復・大成功": 473,
+          "変質・新生": 208,
+          "迷走・混乱": 44,
+          "縮小安定・生存": 27,
+          "崩壊・消滅": 22,
+          "現状維持・延命": 3
+        },
+        "trigger_type": {
+          "意図的決断": 636,
+          "外部ショック": 99,
+          "内部崩壊": 34,
+          "偶発・出会い": 8
+        },
+        "action_type": {
+          "刷新・破壊": 560,
+          "攻める・挑戦": 93,
+          "対話・融合": 54,
+          "分散・スピンオフ": 32,
+          "捨てる・撤退": 19,
+          "守る・維持": 13,
+          "耐える・潜伏": 6
+        },
+        "pattern_type": {
+          "Pivot_Success": 674,
+          "Slow_Decline": 43,
+          "Shock_Recovery": 37,
+          "Hubris_Collapse": 19,
+          "Endurance": 4
+        },
+        "scale": {
+          "company": 281,
+          "country": 275,
+          "individual": 98,
+          "family": 62,
+          "other": 61
+        }
+      }
+    },
+    "cluster_7": {
+      "size": 448,
+      "dominant_before_state": "混乱・カオス",
+      "dominant_after_state": "迷走・混乱",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "耐える・潜伏",
+      "dominant_pattern_type": "Slow_Decline",
+      "dominant_scale": "other",
+      "full_distribution": {
+        "before_state": {
+          "混乱・カオス": 306,
+          "停滞・閉塞": 84,
+          "成長痛": 39,
+          "絶頂・慢心": 8,
+          "どん底・危機": 7,
+          "安定・平和": 4
+        },
+        "after_state": {
+          "迷走・混乱": 344,
+          "V字回復・大成功": 34,
+          "現状維持・延命": 31,
+          "崩壊・消滅": 28,
+          "変質・新生": 8,
+          "縮小安定・生存": 3
+        },
+        "trigger_type": {
+          "外部ショック": 405,
+          "意図的決断": 23,
+          "内部崩壊": 20
+        },
+        "action_type": {
+          "耐える・潜伏": 324,
+          "攻める・挑戦": 49,
+          "分散・スピンオフ": 37,
+          "捨てる・撤退": 22,
+          "守る・維持": 6,
+          "対話・融合": 6,
+          "刷新・破壊": 4
+        },
+        "pattern_type": {
+          "Slow_Decline": 275,
+          "Shock_Recovery": 105,
+          "Endurance": 59,
+          "Hubris_Collapse": 8,
+          "Pivot_Success": 1
+        },
+        "scale": {
+          "other": 255,
+          "country": 97,
+          "company": 40,
+          "individual": 32,
+          "family": 24
+        }
+      }
+    },
+    "cluster_8": {
+      "size": 509,
+      "dominant_before_state": "停滞・閉塞",
+      "dominant_after_state": "迷走・混乱",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "分散・スピンオフ",
+      "dominant_pattern_type": "Endurance",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "停滞・閉塞": 384,
+          "混乱・カオス": 69,
+          "絶頂・慢心": 44,
+          "安定・平和": 9,
+          "成長痛": 2,
+          "どん底・危機": 1
+        },
+        "after_state": {
+          "迷走・混乱": 358,
+          "V字回復・大成功": 130,
+          "変質・新生": 14,
+          "縮小安定・生存": 7
+        },
+        "trigger_type": {
+          "外部ショック": 430,
+          "内部崩壊": 51,
+          "意図的決断": 28
+        },
+        "action_type": {
+          "分散・スピンオフ": 507,
+          "攻める・挑戦": 2
+        },
+        "pattern_type": {
+          "Endurance": 331,
+          "Pivot_Success": 143,
+          "Shock_Recovery": 24,
+          "Slow_Decline": 10,
+          "Hubris_Collapse": 1
+        },
+        "scale": {
+          "company": 165,
+          "other": 162,
+          "individual": 104,
+          "country": 50,
+          "family": 28
+        }
+      }
+    },
+    "cluster_9": {
+      "size": 749,
+      "dominant_before_state": "安定・平和",
+      "dominant_after_state": "縮小安定・生存",
+      "dominant_trigger_type": "意図的決断",
+      "dominant_action_type": "守る・維持",
+      "dominant_pattern_type": "Endurance",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "安定・平和": 512,
+          "停滞・閉塞": 128,
+          "成長痛": 55,
+          "混乱・カオス": 28,
+          "絶頂・慢心": 21,
+          "どん底・危機": 5
+        },
+        "after_state": {
+          "縮小安定・生存": 347,
+          "V字回復・大成功": 238,
+          "現状維持・延命": 114,
+          "変質・新生": 27,
+          "迷走・混乱": 20,
+          "崩壊・消滅": 3
+        },
+        "trigger_type": {
+          "意図的決断": 341,
+          "外部ショック": 312,
+          "内部崩壊": 80,
+          "偶発・出会い": 16
+        },
+        "action_type": {
+          "守る・維持": 613,
+          "対話・融合": 83,
+          "耐える・潜伏": 23,
+          "攻める・挑戦": 13,
+          "刷新・破壊": 11,
+          "分散・スピンオフ": 4,
+          "逃げる・放置": 1,
+          "捨てる・撤退": 1
+        },
+        "pattern_type": {
+          "Endurance": 550,
+          "Pivot_Success": 144,
+          "Slow_Decline": 45,
+          "Shock_Recovery": 9,
+          "Hubris_Collapse": 1
+        },
+        "scale": {
+          "company": 231,
+          "other": 218,
+          "individual": 124,
+          "country": 94,
+          "family": 82
+        }
+      }
+    },
+    "cluster_10": {
+      "size": 685,
+      "dominant_before_state": "どん底・危機",
+      "dominant_after_state": "縮小安定・生存",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "耐える・潜伏",
+      "dominant_pattern_type": "Endurance",
+      "dominant_scale": "individual",
+      "full_distribution": {
+        "before_state": {
+          "どん底・危機": 282,
+          "安定・平和": 141,
+          "成長痛": 111,
+          "停滞・閉塞": 104,
+          "混乱・カオス": 34,
+          "絶頂・慢心": 13
+        },
+        "after_state": {
+          "縮小安定・生存": 402,
+          "V字回復・大成功": 153,
+          "現状維持・延命": 53,
+          "変質・新生": 42,
+          "崩壊・消滅": 23,
+          "迷走・混乱": 12
+        },
+        "trigger_type": {
+          "外部ショック": 416,
+          "意図的決断": 167,
+          "内部崩壊": 73,
+          "偶発・出会い": 29
+        },
+        "action_type": {
+          "耐える・潜伏": 622,
+          "攻める・挑戦": 26,
+          "守る・維持": 14,
+          "対話・融合": 13,
+          "逃げる・放置": 5,
+          "捨てる・撤退": 3,
+          "分散・スピンオフ": 2
+        },
+        "pattern_type": {
+          "Endurance": 541,
+          "Shock_Recovery": 124,
+          "Slow_Decline": 18,
+          "Pivot_Success": 1,
+          "Hubris_Collapse": 1
+        },
+        "scale": {
+          "individual": 316,
+          "company": 170,
+          "country": 113,
+          "other": 54,
+          "family": 32
+        }
+      }
+    },
+    "cluster_11": {
+      "size": 552,
+      "dominant_before_state": "安定・平和",
+      "dominant_after_state": "現状維持・延命",
+      "dominant_trigger_type": "意図的決断",
+      "dominant_action_type": "攻める・挑戦",
+      "dominant_pattern_type": "Slow_Decline",
+      "dominant_scale": "individual",
+      "full_distribution": {
+        "before_state": {
+          "安定・平和": 221,
+          "混乱・カオス": 119,
+          "成長痛": 89,
+          "停滞・閉塞": 86,
+          "絶頂・慢心": 28,
+          "どん底・危機": 9
+        },
+        "after_state": {
+          "現状維持・延命": 519,
+          "V字回復・大成功": 10,
+          "縮小安定・生存": 8,
+          "崩壊・消滅": 8,
+          "迷走・混乱": 4,
+          "変質・新生": 3
+        },
+        "trigger_type": {
+          "意図的決断": 255,
+          "外部ショック": 183,
+          "内部崩壊": 107,
+          "偶発・出会い": 7
+        },
+        "action_type": {
+          "攻める・挑戦": 201,
+          "耐える・潜伏": 144,
+          "対話・融合": 65,
+          "守る・維持": 64,
+          "刷新・破壊": 44,
+          "逃げる・放置": 25,
+          "捨てる・撤退": 7,
+          "分散・スピンオフ": 2
+        },
+        "pattern_type": {
+          "Slow_Decline": 270,
+          "Endurance": 237,
+          "Shock_Recovery": 18,
+          "Hubris_Collapse": 14,
+          "Pivot_Success": 13
+        },
+        "scale": {
+          "individual": 327,
+          "country": 71,
+          "company": 63,
+          "other": 59,
+          "family": 32
+        }
+      }
+    },
+    "cluster_12": {
+      "size": 340,
+      "dominant_before_state": "停滞・閉塞",
+      "dominant_after_state": "崩壊・消滅",
+      "dominant_trigger_type": "内部崩壊",
+      "dominant_action_type": "守る・維持",
+      "dominant_pattern_type": "Slow_Decline",
+      "dominant_scale": "family",
+      "full_distribution": {
+        "before_state": {
+          "停滞・閉塞": 122,
+          "混乱・カオス": 79,
+          "安定・平和": 75,
+          "成長痛": 30,
+          "どん底・危機": 24,
+          "絶頂・慢心": 10
+        },
+        "after_state": {
+          "崩壊・消滅": 295,
+          "縮小安定・生存": 17,
+          "現状維持・延命": 12,
+          "変質・新生": 10,
+          "V字回復・大成功": 4,
+          "迷走・混乱": 2
+        },
+        "trigger_type": {
+          "内部崩壊": 256,
+          "外部ショック": 51,
+          "意図的決断": 30,
+          "偶発・出会い": 3
+        },
+        "action_type": {
+          "守る・維持": 108,
+          "逃げる・放置": 71,
+          "耐える・潜伏": 70,
+          "対話・融合": 40,
+          "刷新・破壊": 25,
+          "攻める・挑戦": 17,
+          "捨てる・撤退": 6,
+          "分散・スピンオフ": 3
+        },
+        "pattern_type": {
+          "Slow_Decline": 303,
+          "Hubris_Collapse": 18,
+          "Pivot_Success": 10,
+          "Endurance": 7,
+          "Shock_Recovery": 2
+        },
+        "scale": {
+          "family": 226,
+          "company": 42,
+          "country": 38,
+          "individual": 27,
+          "other": 7
+        }
+      }
+    },
+    "cluster_13": {
+      "size": 390,
+      "dominant_before_state": "混乱・カオス",
+      "dominant_after_state": "現状維持・延命",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "捨てる・撤退",
+      "dominant_pattern_type": "Slow_Decline",
+      "dominant_scale": "individual",
+      "full_distribution": {
+        "before_state": {
+          "混乱・カオス": 317,
+          "安定・平和": 28,
+          "成長痛": 27,
+          "絶頂・慢心": 15,
+          "停滞・閉塞": 3
+        },
+        "after_state": {
+          "現状維持・延命": 367,
+          "変質・新生": 14,
+          "迷走・混乱": 4,
+          "縮小安定・生存": 2,
+          "V字回復・大成功": 2,
+          "崩壊・消滅": 1
+        },
+        "trigger_type": {
+          "外部ショック": 218,
+          "内部崩壊": 119,
+          "意図的決断": 42,
+          "偶発・出会い": 11
+        },
+        "action_type": {
+          "捨てる・撤退": 353,
+          "耐える・潜伏": 26,
+          "逃げる・放置": 10,
+          "分散・スピンオフ": 1
+        },
+        "pattern_type": {
+          "Slow_Decline": 230,
+          "Shock_Recovery": 152,
+          "Pivot_Success": 7,
+          "Endurance": 1
+        },
+        "scale": {
+          "individual": 202,
+          "other": 87,
+          "company": 85,
+          "family": 9,
+          "country": 7
+        }
+      }
+    },
+    "cluster_14": {
+      "size": 800,
+      "dominant_before_state": "どん底・危機",
+      "dominant_after_state": "V字回復・大成功",
+      "dominant_trigger_type": "外部ショック",
+      "dominant_action_type": "刷新・破壊",
+      "dominant_pattern_type": "Shock_Recovery",
+      "dominant_scale": "company",
+      "full_distribution": {
+        "before_state": {
+          "どん底・危機": 554,
+          "混乱・カオス": 68,
+          "安定・平和": 68,
+          "絶頂・慢心": 58,
+          "停滞・閉塞": 32,
+          "成長痛": 20
+        },
+        "after_state": {
+          "V字回復・大成功": 507,
+          "変質・新生": 204,
+          "縮小安定・生存": 50,
+          "迷走・混乱": 26,
+          "現状維持・延命": 8,
+          "崩壊・消滅": 5
+        },
+        "trigger_type": {
+          "外部ショック": 413,
+          "意図的決断": 277,
+          "内部崩壊": 101,
+          "偶発・出会い": 9
+        },
+        "action_type": {
+          "刷新・破壊": 356,
+          "攻める・挑戦": 219,
+          "耐える・潜伏": 105,
+          "対話・融合": 50,
+          "捨てる・撤退": 45,
+          "守る・維持": 10,
+          "分散・スピンオフ": 8,
+          "逃げる・放置": 7
+        },
+        "pattern_type": {
+          "Shock_Recovery": 751,
+          "Pivot_Success": 40,
+          "Slow_Decline": 5,
+          "Endurance": 3,
+          "Hubris_Collapse": 1
+        },
+        "scale": {
+          "company": 337,
+          "individual": 227,
+          "country": 201,
+          "other": 23,
+          "family": 12
+        }
+      }
     }
   },
-  "hexagram_association": {
-    "before_hex": {
-      "contingency_table_shape": [
-        2,
-        8
-      ],
-      "chi2": 1320.38,
-      "p_value": 6.47800429708715e-281,
-      "dof": 7,
-      "cramers_v": 0.318,
-      "association_strength": "strong",
-      "significant": true,
-      "note": "Reports association only. Isomorphism determination is reserved for Phase 3 isomorphism-checker."
+  "correspondence_analysis": {
+    "vs_8_trigrams": "なし",
+    "vs_8_trigrams_detail": {
+      "adjusted_rand_index": 0.0696,
+      "normalized_mutual_info": 0.1433
     },
-    "after_hex": {
-      "contingency_table_shape": [
-        2,
-        8
-      ],
-      "chi2": 1910.7,
-      "p_value": 0.0,
-      "dof": 7,
-      "cramers_v": 0.3825,
-      "association_strength": "strong",
-      "significant": true,
-      "note": "Reports association only. Isomorphism determination is reserved for Phase 3 isomorphism-checker."
-    }
-  },
-  "transition_by_cluster": {
-    "0": [
-      {
-        "before": "安定・平和",
-        "after": "持続成長・大成功",
-        "count": 889
-      },
-      {
-        "before": "停滞・閉塞",
-        "after": "崩壊・消滅",
-        "count": 525
-      },
-      {
-        "before": "停滞・閉塞",
-        "after": "持続成長・大成功",
-        "count": 519
-      },
-      {
-        "before": "成長痛",
-        "after": "崩壊・消滅",
-        "count": 518
-      },
-      {
-        "before": "成長痛",
-        "after": "縮小安定・生存",
-        "count": 504
-      }
-    ],
-    "1": [
-      {
-        "before": "安定・停止",
-        "after": "混乱・衰退",
-        "count": 307
-      },
-      {
-        "before": "混乱・衰退",
-        "after": "安定・停止",
-        "count": 307
-      },
-      {
-        "before": "混乱・衰退",
-        "after": "混乱・衰退",
-        "count": 269
-      },
-      {
-        "before": "安定・停止",
-        "after": "拡大・繁栄",
-        "count": 160
-      },
-      {
-        "before": "混乱・衰退",
-        "after": "喜び・交流",
-        "count": 160
-      }
-    ]
-  },
-  "cluster_sizes": {
-    "0": 11258,
-    "1": 1802
+    "vs_5_patterns": "部分的",
+    "vs_5_patterns_detail": {
+      "adjusted_rand_index": 0.3205,
+      "normalized_mutual_info": 0.4684
+    },
+    "vs_64_hexagrams": "検証対象外（Phase 3）"
   }
 }
