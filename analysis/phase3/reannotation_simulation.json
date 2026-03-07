@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-07T17:24:36.562366",
+    "n_simulations": 1000,
+    "seed": 42,
+    "n_samples": 411,
+    "n_cases_in_db": 11336
+  },
+  "original_data": {
+    "sample_diagonal_rate": 0.4866,
+    "sample_n_diagonal": 200,
+    "sample_n_total": 411,
+    "full_db_diagonal_rate": 0.9788,
+    "full_db_n_diagonal": 9016,
+    "full_db_n_total": 9211
+  },
+  "simulation_results": {
+    "diagonal_rate_mean": 0.9522,
+    "diagonal_rate_std": 0.0105,
+    "diagonal_rate_95ci_lower": 0.9319,
+    "diagonal_rate_95ci_upper": 0.9708,
+    "diagonal_rate_median": 0.9513,
+    "diagonal_rate_min": 0.9148,
+    "diagonal_rate_max": 0.9878
+  },
+  "random_baseline": {
+    "theoretical_diagonal_rate": 0.125,
+    "n_diagonal_pairs": 512,
+    "n_total_pairs": 4096
+  },
+  "statistical_tests": {
+    "sample_vs_simulation": {
+      "z_score": -44.1445,
+      "p_value_two_sided": 0.0,
+      "observed": 0.4866,
+      "expected": 0.9522
+    },
+    "full_db_vs_simulation": {
+      "z_score": 2.5215,
+      "p_value_two_sided": 0.011684144387105633,
+      "observed": 0.9788,
+      "expected": 0.9522
+    }
+  },
+  "source_type_breakdown": {
+    "blog": {
+      "sim_mean": 0.9571,
+      "sim_std": 0.0437,
+      "original_rate": 1.0,
+      "original_diagonal": 20,
+      "original_total": 20,
+      "n_simulations": 190
+    },
+    "book": {
+      "sim_mean": 0.9524,
+      "sim_std": 0.0229,
+      "original_rate": 0.4167,
+      "original_diagonal": 40,
+      "original_total": 96,
+      "n_simulations": 190
+    },
+    "news": {
+      "sim_mean": 0.9565,
+      "sim_std": 0.0157,
+      "original_rate": 0.5882,
+      "original_diagonal": 100,
+      "original_total": 170,
+      "n_simulations": 190
+    },
+    "official": {
+      "sim_mean": 0.95,
+      "sim_std": 0.0212,
+      "original_rate": 0.32,
+      "original_diagonal": 40,
+      "original_total": 125,
+      "n_simulations": 190
+    }
+  },
+  "probability_table_summary": {
+    "before_states": {
+      "停滞・閉塞": {
+        "n_hexagrams": 25,
+        "top3": [
+          {
+            "kw": 52,
+            "prob": 0.749
+          },
+          {
+            "kw": 2,
+            "prob": 0.1182
+          },
+          {
+            "kw": 57,
+            "prob": 0.0598
+          }
+        ]
+      },
+      "混乱・カオス": {
+        "n_hexagrams": 14,
+        "top3": [
+          {
+            "kw": 29,
+            "prob": 0.8533
+          },
+          {
+            "kw": 57,
+            "prob": 0.0535
+          },
+          {
+            "kw": 51,
+            "prob": 0.0489
+          }
+        ]
+      },
+      "どん底・危機": {
+        "n_hexagrams": 21,
+        "top3": [
+          {
+            "kw": 29,
+            "prob": 0.8829
+          },
+          {
+            "kw": 2,
+            "prob": 0.0608
+          },
+          {
+            "kw": 3,
+            "prob": 0.0124
+          }
+        ]
+      },
+      "成長痛": {
+        "n_hexagrams": 26,
+        "top3": [
+          {
+            "kw": 51,
+            "prob": 0.684
+          },
+          {
+            "kw": 30,
+            "prob": 0.1552
+          },
+          {
+            "kw": 57,
+            "prob": 0.0689
+          }
+        ]
+      },
+      "安定・平和": {
+        "n_hexagrams": 23,
+        "top3": [
+          {
+            "kw": 2,
+            "prob": 0.3285
+          },
+          {
+            "kw": 58,
+            "prob": 0.235
+          },
+          {
+            "kw": 52,
+            "prob": 0.2122
+          }
+        ]
+      },
+      "絶頂・慢心": {
+        "n_hexagrams": 18,
+        "top3": [
+          {
+            "kw": 1,
+            "prob": 0.7705
+          },
+          {
+            "kw": 30,
+            "prob": 0.1173
+          },
+          {
+            "kw": 58,
+            "prob": 0.0593
+          }
+        ]
+      }
+    },
+    "after_states": {
+      "V字回復・大成功": {
+        "n_hexagrams": 24,
+        "top3": [
+          {
+            "kw": 1,
+            "prob": 0.4029
+          },
+          {
+            "kw": 30,
+            "prob": 0.2721
+          },
+          {
+            "kw": 2,
+            "prob": 0.1159
+          }
+        ]
+      },
+      "縮小安定・生存": {
+        "n_hexagrams": 16,
+        "top3": [
+          {
+            "kw": 52,
+            "prob": 0.4732
+          },
+          {
+            "kw": 2,
+            "prob": 0.4274
+          },
+          {
+            "kw": 30,
+            "prob": 0.037
+          }
+        ]
+      },
+      "変質・新生": {
+        "n_hexagrams": 19,
+        "top3": [
+          {
+            "kw": 58,
+            "prob": 0.4528
+          },
+          {
+            "kw": 57,
+            "prob": 0.285
+          },
+          {
+            "kw": 30,
+            "prob": 0.1043
+          }
+        ]
+      },
+      "崩壊・消滅": {
+        "n_hexagrams": 12,
+        "top3": [
+          {
+            "kw": 2,
+            "prob": 0.6652
+          },
+          {
+            "kw": 29,
+            "prob": 0.3129
+          },
+          {
+            "kw": 64,
+            "prob": 0.0051
+          }
+        ]
+      },
+      "迷走・混乱": {
+        "n_hexagrams": 7,
+        "top3": [
+          {
+            "kw": 29,
+            "prob": 0.4154
+          },
+          {
+            "kw": 57,
+            "prob": 0.3935
+          },
+          {
+            "kw": 51,
+            "prob": 0.1785
+          }
+        ]
+      },
+      "現状維持・延命": {
+        "n_hexagrams": 13,
+        "top3": [
+          {
+            "kw": 52,
+            "prob": 0.7244
+          },
+          {
+            "kw": 2,
+            "prob": 0.2104
+          },
+          {
+            "kw": 51,
+            "prob": 0.0428
+          }
+        ]
+      }
+    }
+  },
+  "conclusion": "[主要結論] 全DB対角率(97.9%)と独立サンプリング対角率(95.2%)の差は有意水準5%で有意(z=2.52, p=0.0117)。全DB対角率はシミュレーション対角率よりやや高く、状態ラベルの分布構造が対角率の大部分(95.2%)を説明するが、残り約2.7%ポイントは追加的制約による可能性がある。 [背景] 状態ラベル条件付き確率テーブルでは、各状態が少数の卦に集中（例: 'どん底・危機'→坎88.3%、'絶頂・慢心'→乾77.0%）しており、独立サンプリングでも対角率95.2%が自然に発生する。ランダムベースライン(12.5%)と比較すると、状態ラベルの分布構造が対角構造の主要因(95.2% vs 12.5%)であることが明確。[注意] サンプル対角率(48.7%)は層化抽出(diagonal200件/exception211件)によるもので、全DB対角率とは異なる。"
+}
