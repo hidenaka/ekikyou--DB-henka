@@ -105,14 +105,38 @@
   - `"B"`（信頼性は中程度） 
   - `"C"`（噂レベル・SNS単独 等） 
 
+### 2段階八卦アノテーション（内卦・外卦の独立サンプリング）
+
+変化前後の状態を、内卦（lower trigram = 内的状態）と外卦（upper trigram = 外的状況）に分解して記録する。
+これにより64卦の全パターンを活用し、純卦（上卦==下卦）への崩壊を防ぐ。
+
+- `before_lower_trigram` : string（enum）
+  - 変化前の内卦（内的状態）。`before_state` から確率テーブルで決定。
+  - `"乾" | "坤" | "震" | "巽" | "坎" | "離" | "艮" | "兌"`
+- `before_upper_trigram` : string（enum）
+  - 変化前の外卦（外的状況）。`before_state` から確率テーブルで決定。
+  - `"乾" | "坤" | "震" | "巽" | "坎" | "離" | "艮" | "兌"`
+- `after_lower_trigram` : string（enum）
+  - 変化後の内卦（内的状態）。`after_state` から確率テーブルで決定。
+  - `"乾" | "坤" | "震" | "巽" | "坎" | "離" | "艮" | "兌"`
+- `after_upper_trigram` : string（enum）
+  - 変化後の外卦（外的状況）。`after_state` から確率テーブルで決定。
+  - `"乾" | "坤" | "震" | "巽" | "坎" | "離" | "艮" | "兌"`
+
+`(lower_trigram, upper_trigram)` のペアから King Wen 番号を逆引きし、`classical_before_hexagram` / `classical_after_hexagram` を更新する。
+フォーマット: `"{kw_number}_{卦名}"` （例: `"63_水火既済"`）。
+
 ### 任意フィールド（易的な深掘り用）
 
-- `classical_before_hexagram` : string  
-  - 例：`"剥 (山地剥)"` のような64卦名＋彖辞。 
-- `classical_action_hexagram` : string 
-- `classical_after_hexagram` : string 
-- `logic_memo` : string  
-  - なぜそのタグや八卦を選んだか、100〜300文字程度の日本語で説明。 
+- `classical_before_hexagram` : string
+  - 64卦名。フォーマット: `"{kw_number}_{卦名}"` （例: `"14_火天大有"`）。
+  - 2段階八卦アノテーションにより `(before_lower_trigram, before_upper_trigram)` から自動生成。
+- `classical_action_hexagram` : string
+- `classical_after_hexagram` : string
+  - 64卦名。フォーマット: `"{kw_number}_{卦名}"` （例: `"63_水火既済"`）。
+  - 2段階八卦アノテーションにより `(after_lower_trigram, after_upper_trigram)` から自動生成。
+- `logic_memo` : string
+  - なぜそのタグや八卦を選んだか、100〜300文字程度の日本語で説明。
 
 ## 保存形式
 

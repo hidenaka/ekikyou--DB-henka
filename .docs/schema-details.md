@@ -23,6 +23,15 @@
 ### 八卦タグ
 - `before_hex`, `trigger_hex`, `action_hex`, `after_hex`: 乾/坤/震/巽/坎/離/艮/兌
 
+### 2段階八卦アノテーション（内卦・外卦）
+- `before_lower_trigram`: 変化前の内卦（内的状態）— 乾/坤/震/巽/坎/離/艮/兌
+- `before_upper_trigram`: 変化前の外卦（外的状況）— 同上
+- `after_lower_trigram`: 変化後の内卦（内的状態）— 同上
+- `after_upper_trigram`: 変化後の外卦（外的状況）— 同上
+- `before_state` / `after_state` から確率テーブル（P(trigram|state)）で独立にサンプリング
+- (lower, upper) ペアから King Wen 番号を逆引きし `classical_before/after_hexagram` を `"{KW番号}_{卦名}"` 形式で更新
+- シード: transition_id のハッシュにより決定論的（再実行で同一結果）
+
 ### 384爻（変爻）
 - `changing_lines_1`: before→trigger での変爻（1-3の配列）
 - `changing_lines_2`: trigger→action での変爻
