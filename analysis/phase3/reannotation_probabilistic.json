@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "n_simulations": 1000,
+    "n_cases": 11336,
+    "seed": 42,
+    "method": "probabilistic_2step_trigram"
+  },
+  "reannotation": {
+    "diagonal_rate": {
+      "mean": 0.3156,
+      "ci_lo": 0.3069,
+      "ci_hi": 0.3239
+    },
+    "even_parity_rate": {
+      "mean": 0.4998,
+      "ci_lo": 0.4907,
+      "ci_hi": 0.509
+    },
+    "before_pure_rate": {
+      "mean": 0.1778,
+      "ci_lo": 0.1708,
+      "ci_hi": 0.1852
+    },
+    "after_pure_rate": {
+      "mean": 0.1767,
+      "ci_lo": 0.1695,
+      "ci_hi": 0.1839
+    }
+  },
+  "baseline": {
+    "diagonal_rate": 0.978,
+    "even_parity_rate": 0.986,
+    "before_pure_rate": 0.982,
+    "after_pure_rate": 0.982
+  },
+  "hamming_distribution": {
+    "0": 175,
+    "1": 1082,
+    "2": 2581,
+    "3": 3561,
+    "4": 2610,
+    "5": 1130,
+    "6": 197
+  }
+}
