@@ -1,15 +1,309 @@
 {
   "summary": {
     "n_total": 100,
-    "n_diagonal": 0,
-    "diagonal_rate": 0.0
+    "n_diagonal": 42,
+    "diagonal_rate": 0.42,
+    "random_baseline": 0.3125,
+    "excess_pp": 10.7
+  },
+  "1_random_baseline": {
+    "hamming_dist_distribution": {
+      "0": 8,
+      "1": 24,
+      "2": 24,
+      "3": 8
+    },
+    "hamming_dist_probs": {
+      "0": 0.125,
+      "1": 0.375,
+      "2": 0.375,
+      "3": 0.125
+    },
+    "theoretical_diagonal_rate": 0.3125
   },
   "1_statistical_test": {
-    "observed_rate": 0.0,
-    "n_diagonal": 0,
+    "observed_rate": 0.42,
+    "n_diagonal": 42,
     "n_total": 100,
-    "p0_random": 0.309,
-    "p_value": 1.0,
-    "ci_95_lower": 0.0,
+    "p0_random": 0.3125,
+    "p_value": 0.01503926,
+    "ci_95_lower": 0.342,
     "ci_95_upper": 1.0,
-    "significant_at_005": 
+    "significant_at_005": true,
+    "significant_at_001": false
+  },
+  "2a_before_state_rates": {
+    "安定・平和": {
+      "n": 25,
+      "n_diagonal": 11,
+      "diagonal_rate": 0.44
+    },
+    "停滞・閉塞": {
+      "n": 25,
+      "n_diagonal": 10,
+      "diagonal_rate": 0.4
+    },
+    "成長痛": {
+      "n": 19,
+      "n_diagonal": 9,
+      "diagonal_rate": 0.4737
+    },
+    "混乱・カオス": {
+      "n": 14,
+      "n_diagonal": 6,
+      "diagonal_rate": 0.4286
+    },
+    "どん底・危機": {
+      "n": 9,
+      "n_diagonal": 3,
+      "diagonal_rate": 0.3333
+    },
+    "絶頂・慢心": {
+      "n": 8,
+      "n_diagonal": 3,
+      "diagonal_rate": 0.375
+    }
+  },
+  "2b_after_state_rates": {
+    "V字回復・大成功": {
+      "n": 35,
+      "n_diagonal": 13,
+      "diagonal_rate": 0.3714
+    },
+    "変質・新生": {
+      "n": 20,
+      "n_diagonal": 10,
+      "diagonal_rate": 0.5
+    },
+    "崩壊・消滅": {
+      "n": 14,
+      "n_diagonal": 7,
+      "diagonal_rate": 0.5
+    },
+    "縮小安定・生存": {
+      "n": 11,
+      "n_diagonal": 3,
+      "diagonal_rate": 0.2727
+    },
+    "現状維持・延命": {
+      "n": 11,
+      "n_diagonal": 4,
+      "diagonal_rate": 0.3636
+    },
+    "迷走・混乱": {
+      "n": 9,
+      "n_diagonal": 5,
+      "diagonal_rate": 0.5556
+    }
+  },
+  "2c_outcome_rates": {
+    "Success": {
+      "n": 63,
+      "n_diagonal": 23,
+      "diagonal_rate": 0.3651
+    },
+    "Failure": {
+      "n": 20,
+      "n_diagonal": 12,
+      "diagonal_rate": 0.6
+    },
+    "Mixed": {
+      "n": 15,
+      "n_diagonal": 6,
+      "diagonal_rate": 0.4
+    },
+    "PartialSuccess": {
+      "n": 2,
+      "n_diagonal": 1,
+      "diagonal_rate": 0.5
+    }
+  },
+  "2d_trigger_type_rates": {
+    "意図的決断": {
+      "n": 45,
+      "n_diagonal": 17,
+      "diagonal_rate": 0.3778
+    },
+    "外部ショック": {
+      "n": 31,
+      "n_diagonal": 16,
+      "diagonal_rate": 0.5161
+    },
+    "内部崩壊": {
+      "n": 16,
+      "n_diagonal": 6,
+      "diagonal_rate": 0.375
+    },
+    "偶発・出会い": {
+      "n": 8,
+      "n_diagonal": 3,
+      "diagonal_rate": 0.375
+    }
+  },
+  "2e_delta_pair_distribution": {
+    "pair_distribution": {
+      "(0,2)": {
+        "count": 4,
+        "rate": 0.04,
+        "is_diagonal": false
+      },
+      "(0,3)": {
+        "count": 1,
+        "rate": 0.01,
+        "is_diagonal": false
+      },
+      "(1,1)": {
+        "count": 23,
+        "rate": 0.23,
+        "is_diagonal": true
+      },
+      "(1,2)": {
+        "count": 17,
+        "rate": 0.17,
+        "is_diagonal": false
+      },
+      "(1,3)": {
+        "count": 3,
+        "rate": 0.03,
+        "is_diagonal": false
+      },
+      "(2,0)": {
+        "count": 2,
+        "rate": 0.02,
+        "is_diagonal": false
+      },
+      "(2,1)": {
+        "count": 15,
+        "rate": 0.15,
+        "is_diagonal": false
+      },
+      "(2,2)": {
+        "count": 17,
+        "rate": 0.17,
+        "is_diagonal": true
+      },
+      "(2,3)": {
+        "count": 5,
+        "rate": 0.05,
+        "is_diagonal": false
+      },
+      "(3,1)": {
+        "count": 5,
+        "rate": 0.05,
+        "is_diagonal": false
+      },
+      "(3,2)": {
+        "count": 6,
+        "rate": 0.06,
+        "is_diagonal": false
+      },
+      "(3,3)": {
+        "count": 2,
+        "rate": 0.02,
+        "is_diagonal": true
+      }
+    },
+    "diagonal_breakdown_by_hamming": {
+      "(0,0)": 0,
+      "(1,1)": 23,
+      "(2,2)": 17,
+      "(3,3)": 2
+    }
+  },
+  "3_llm_bias": {
+    "lower_unchanged_n": 5,
+    "lower_unchanged_rate": 0.05,
+    "upper_unchanged_n": 2,
+    "upper_unchanged_rate": 0.02,
+    "diagonal_breakdown": {
+      "total_diagonal": 42,
+      "both_delta_0": 0,
+      "both_delta_1": 23,
+      "both_delta_2": 17,
+      "both_delta_3": 2
+    },
+    "trigram_distribution": {
+      "overall_counts": {
+        "乾": 36,
+        "坤": 61,
+        "震": 47,
+        "巽": 46,
+        "坎": 54,
+        "離": 48,
+        "艮": 63,
+        "兌": 45
+      },
+      "expected_uniform": 50.0,
+      "chi2": 11.12,
+      "chi2_p_value": 0.13347,
+      "significant_bias": false
+    },
+    "position_counts": {
+      "before_lower": {
+        "乾": 9,
+        "坤": 19,
+        "震": 14,
+        "巽": 2,
+        "坎": 16,
+        "離": 9,
+        "艮": 25,
+        "兌": 6
+      },
+      "before_upper": {
+        "乾": 8,
+        "坤": 14,
+        "震": 17,
+        "巽": 7,
+        "坎": 16,
+        "離": 17,
+        "艮": 8,
+        "兌": 13
+      },
+      "after_lower": {
+        "乾": 10,
+        "坤": 19,
+        "震": 12,
+        "巽": 16,
+        "坎": 5,
+        "離": 13,
+        "艮": 17,
+        "兌": 8
+      },
+      "after_upper": {
+        "乾": 9,
+        "坤": 9,
+        "震": 4,
+        "巽": 21,
+        "坎": 17,
+        "離": 9,
+        "艮": 13,
+        "兌": 18
+      }
+    }
+  },
+  "4_reasoning_analysis": {
+    "intra_reasoning_overlap": {
+      "diagonal_before_mean": 0.0196,
+      "diagonal_after_mean": 0.0107,
+      "non_diagonal_before_mean": 0.0082,
+      "non_diagonal_after_mean": 0.0172
+    },
+    "cross_reasoning_overlap": {
+      "diagonal_mean": 0.0849,
+      "non_diagonal_mean": 0.092,
+      "mann_whitney_u": 1156.5,
+      "mann_whitney_p": 0.680726,
+      "diagonal_has_higher_overlap": false
+    },
+    "same_logic_keywords_gte3": {
+      "diagonal_cases": 0,
+      "non_diagonal_cases": 0,
+      "diagonal_rate": 0.0,
+      "non_diagonal_rate": 0.0
+    },
+    "same_direction_in_reasoning": {
+      "count": 11,
+      "rate": 0.11
+    }
+  }
+}
