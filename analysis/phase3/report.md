@@ -1,6 +1,6 @@
 # Phase 3 レポート: 同型性検証結果
 
-**実行日時**: 2026-02-25 17:27:47
+**実行日時**: 2026-03-07 15:06:15
 **乱数シード**: 42
 **置換回数**: 1000
 **有意水準**: alpha=0.05, Bonferroni補正後 alpha'=0.00833
@@ -9,24 +9,24 @@
 
 ## 総合判定
 
-**同型性レベル**: **ANALOGOUS**
+**同型性レベル**: **PARTIAL**
 
-- H0棄却数: 2/6
+- H0棄却数: 3/6
 - 同型性方向(pro)の大効果量: 1件
 - 同型性方向(pro)の中以上効果量: 2件
-- 反同型性方向(anti)の大効果量: 2件
-- 反同型性方向(anti)の中以上効果量: 3件
+- 反同型性方向(anti)の大効果量: 1件
+- 反同型性方向(anti)の中以上効果量: 2件
 
-**要約**: 八卦タグとデータパターンの間に弱い統計的関連がある（Cramer's V ≈ 0.28-0.30, small effect）が、Q6超立方体との構造的同型性を積極的に支持する証拠は限定的である。一部の検証（3件）は反同型性方向の中〜大効果を示す。
+**要約**: 3/6検証でH0棄却（Bonferroni補正後）、同型性方向の中以上効果量2件。部分同型性が示唆される。
 
 ### 効果量の方向一覧
 
 | 検証 | 効果量ラベル | 方向 |
 |------|------------|------|
-| 検証1 | large_pro | 同型性方向 |
+| 検証1 | negligible | 中立/微小 |
 | 検証2 | large_anti | 反同型性方向 |
 | 検証3 | medium_pro | 同型性方向 |
-| 検証4 | large_anti | 反同型性方向 |
+| 検証4 | large_pro | 同型性方向 |
 | 検証5 | medium_anti | 反同型性方向 |
 | 検証6 | small_pro | 同型性方向 |
 
@@ -40,15 +40,15 @@
 
 | 指標 | 値 |
 |------|-----|
-| 検定統計量 | 5.0000 |
-| p値 | 0.499000 |
+| 検定統計量 | 10.0000 |
+| p値 | 1.000000 |
 | p値 (Bonferroni) | 1.000000 |
-| 効果量 (standardized_gap_difference (random_mean_gap - observed_gap) / random_gap_sd. positive=pro-isomorphism) | 0.9005 |
-| 効果量ラベル | large_pro |
-| 効果量方向 | 同型性方向 |
+| 効果量 (standardized_gap_difference (random_mean_gap - observed_gap) / random_gap_sd. positive=pro-isomorphism) | 0.0000 |
+| 効果量ラベル | negligible |
+| 効果量方向 | 中立/微小 |
 | **判定** | **H0棄却できず** |
 
-**備考**: Scree elbow=5, Benzecri cum80%=6, Q6 dim=6. Benzecri cum80%次元はQ6の6次元と完全一致。ランダム置換分布の平均=7.02 (SD=6.91)
+**備考**: Scree elbow=10, Cumulative 70%=10, Q6 dim=6. Cumulative 70%次元とQ6の6次元の差=4。ランダム置換分布の平均=27.00 (SD=0.00)
 
 
 ### 検証2: 遷移パターンとQ6エッジの対応
@@ -57,15 +57,15 @@
 
 | 指標 | 値 |
 |------|-----|
-| 検定統計量 | 1.8422 |
-| p値 | 0.971000 |
+| 検定統計量 | 2.7755 |
+| p値 | 0.998000 |
 | p値 (Bonferroni) | 1.000000 |
-| 効果量 (z-score (standardized difference). positive=observed farther than random (anti-isomorphism)) | 1.8422 |
+| 効果量 (z-score (standardized difference). positive=observed farther than random (anti-isomorphism)) | 2.7755 |
 | 効果量ラベル | large_anti |
 | 効果量方向 | 反同型性方向 |
 | **判定** | **H0棄却できず** |
 
-**備考**: 八卦(3ビット)空間でのハミング距離分析。距離0=同一八卦, 距離3=錯卦(全ビット反転)。観測平均(1.4711)>ランダム平均(1.4574): 実データの遷移はランダムより遠い八卦間で発生（反同型性方向）。
+**備考**: 八卦(3ビット)空間でのハミング距離分析。距離0=同一八卦, 距離3=錯卦(全ビット反転)。観測平均(1.4913)>ランダム平均(1.4691): 実データの遷移はランダムより遠い八卦間で発生（反同型性方向）。
 
 
 ### 検証3: 八卦タグとクラスタの対応
@@ -74,15 +74,15 @@
 
 | 指標 | 値 |
 |------|-----|
-| 検定統計量 | 0.3502 |
+| 検定統計量 | 0.3750 |
 | p値 | 0.000000 |
 | p値 (Bonferroni) | 0.000000 |
-| 効果量 (Cramer's V (average of before/after). positive=pro-isomorphism) | 0.3502 |
+| 効果量 (Cramer's V (average of before/after). positive=pro-isomorphism) | 0.3750 |
 | 効果量ラベル | medium_pro |
 | 効果量方向 | 同型性方向 |
 | **判定** | **H0棄却** |
 
-**備考**: 方法: KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates. 再実行クラスタサイズ: {'0': 11258, '1': 1802}. Phase 2報告クラスタサイズ: {'0': 11258, '1': 1802}. Phase 2報告値: before_V=0.318, after_V=0.3825. 再実行計算値: before_V=0.3180, after_V=0.3825
+**備考**: 方法: KMeans k=15 re-execution with seed=42 on MCA 10-dim row coordinates. 再実行クラスタサイズ: {'0': 654, '1': 713, '2': 908, '3': 1935, '4': 773, '5': 1103, '6': 777, '7': 448, '8': 509, '9': 749, '10': 685, '11': 552, '12': 340, '13': 390, '14': 800}. Phase 2報告クラスタサイズ: {'cluster_0': 654, 'cluster_1': 713, 'cluster_2': 908, 'cluster_3': 1935, 'cluster_4': 773, 'cluster_5': 1103, 'cluster_6': 777, 'cluster_7': 448, 'cluster_8': 509, 'cluster_9': 749, 'cluster_10': 685, 'cluster_11': 552, 'cluster_12': 340, 'cluster_13': 390, 'cluster_14': 800}. 再実行計算値: before_V=0.3337, after_V=0.4164
 
 
 ### 検証4: スペクトル構造の比較
@@ -91,15 +91,15 @@
 
 | 指標 | 値 |
 |------|-----|
-| 検定統計量 | 18.4474 |
-| p値 | 1.000000 |
-| p値 (Bonferroni) | 1.000000 |
-| 効果量 (z-score (Wasserstein distance). positive=observed farther from Q6 (anti-isomorphism)) | 18.4474 |
-| 効果量ラベル | large_anti |
-| 効果量方向 | 反同型性方向 |
-| **判定** | **H0棄却できず** |
+| 検定統計量 | -32.4262 |
+| p値 | 0.000000 |
+| p値 (Bonferroni) | 0.000000 |
+| 効果量 (z-score (Wasserstein distance). positive=observed farther from Q6 (anti-isomorphism)) | -32.4262 |
+| 効果量ラベル | large_pro |
+| 効果量方向 | 同型性方向 |
+| **判定** | **H0棄却** |
 
-**備考**: Q6は7つのユニーク固有値（等間隔）を持つ完全に規則的なスペクトル。MCAの30固有値との直接比較は次元数が異なるため限定的。Wasserstein距離は正規化後の分布形状を比較。ベースライン: surrogate_mca. MCAスペクトルのWasserstein距離(0.2938)はランダム(0.1110)より大きく、MCAはQ6からランダムより遠い（反同型性方向）。
+**備考**: Q6は7つのユニーク固有値（等間隔）を持つ完全に規則的なスペクトル。MCAの30固有値との直接比較は次元数が異なるため限定的。Wasserstein距離は正規化後の分布形状を比較。ベースライン: surrogate_mca. MCAスペクトルのWasserstein距離(0.2385)はランダム(0.3645)より大きく、MCAはQ6からランダムより遠い（反同型性方向）。
 
 
 ### 検証5: 構造的関係の保存（錯卦ペア対称性）
@@ -108,15 +108,15 @@
 
 | 指標 | 値 |
 |------|-----|
-| 検定統計量 | -0.6631 |
-| p値 | 0.780000 |
+| 検定統計量 | -0.6636 |
+| p値 | 0.737000 |
 | p値 (Bonferroni) | 1.000000 |
-| 効果量 (z-score (cosine similarity). positive=cuogua more similar (pro-isomorphism)) | -0.6631 |
+| 効果量 (z-score (cosine similarity). positive=cuogua more similar (pro-isomorphism)) | -0.6636 |
 | 効果量ラベル | medium_anti |
 | 効果量方向 | 反同型性方向 |
 | **判定** | **H0棄却できず** |
 
-**備考**: 八卦レベルでの錯卦ペア（乾↔坤, 震↔巽, 坎↔離, 艮↔兌）のbefore_state分布のコサイン類似度を、ランダムペアと比較。八卦は8個のため、錯卦ペアは4組のみ（64卦レベルの32組ではない）。錯卦ペア平均類似度(0.2910)<ランダム平均(0.3412): 錯卦ペアはランダムより類似度が低い（反同型性方向）。
+**備考**: 八卦レベルでの錯卦ペア（乾↔坤, 震↔巽, 坎↔離, 艮↔兌）のbefore_state分布のコサイン類似度を、ランダムペアと比較。八卦は8個のため、錯卦ペアは4組のみ（64卦レベルの32組ではない）。錯卦ペア平均類似度(0.3038)<ランダム平均(0.3599): 錯卦ペアはランダムより類似度が低い（反同型性方向）。
 
 
 ### 検証6: 部分同型性テスト
@@ -125,10 +125,10 @@
 
 | 指標 | 値 |
 |------|-----|
-| 検定統計量 | 115.6743 |
+| 検定統計量 | 81.4638 |
 | p値 | 0.000000 |
 | p値 (Bonferroni) | 0.000000 |
-| 効果量 (Cramer's V (before_hex x pattern_type). positive=pro-isomorphism) | 0.2991 |
+| 効果量 (Cramer's V (before_hex x pattern_type). positive=pro-isomorphism) | 0.2881 |
 | 効果量ラベル | small_pro |
 | 効果量方向 | 同型性方向 |
 | **判定** | **H0棄却** |
@@ -163,4 +163,4 @@
 
 ---
 
-*Generated by Phase 3 isomorphism_test.py on 2026-02-25 17:27:47*
+*Generated by Phase 3 isomorphism_test.py on 2026-03-07 15:06:15*
