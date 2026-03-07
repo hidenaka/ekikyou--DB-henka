@@ -1,0 +1,4366 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-07T17:14:19.036565",
+    "n_cases_total": 11336,
+    "n_transitions_valid": 9228,
+    "n_transitions_excluded": 2108,
+    "description": "Δ_lower == Δ_upper 対角偏向のアノテーションバイアス検証"
+  },
+  "part1_contingency_table": {
+    "total": 9228,
+    "diagonal_count": 9017,
+    "off_diagonal_count": 211,
+    "diagonal_ratio": 0.977135,
+    "expected_diagonal_under_independence": 1174.1,
+    "expected_diagonal_ratio": 0.127231,
+    "diagonal_enrichment": 7.68,
+    "chi2_8x8": {
+      "statistic": 61202.05,
+      "p_value": 0.0,
+      "df": 49,
+      "cramers_v": 0.9734
+    },
+    "chi2_diag_vs_offdiag": {
+      "statistic": 60027.88,
+      "p_value": 0.0
+    },
+    "contingency_table": [
+      [
+        1113,
+        1,
+        2,
+        2,
+        1,
+        6,
+        4,
+        5
+      ],
+      [
+        3,
+        912,
+        4,
+        1,
+        1,
+        4,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        1377,
+        0,
+        6,
+        6,
+        5,
+        4
+      ],
+      [
+        4,
+        6,
+        8,
+        1153,
+        5,
+        7,
+        0,
+        9
+      ],
+      [
+        4,
+        2,
+        5,
+        1,
+        1286,
+        4,
+        3,
+        3
+      ],
+      [
+        2,
+        7,
+        6,
+        2,
+        7,
+        955,
+        4,
+        4
+      ],
+      [
+        3,
+        1,
+        4,
+        1,
+        1,
+        5,
+        1226,
+        7
+      ],
+      [
+        1,
+        1,
+        5,
+        4,
+        6,
+        6,
+        8,
+        995
+      ]
+    ]
+  },
+  "part2_exception_audit": {
+    "n_exceptions": 211,
+    "exception_rate": 0.022865,
+    "by_main_domain": [
+      {
+        "domain": "生活・暮らし",
+        "total": 1039,
+        "exceptions": 3,
+        "exception_rate": 0.0029
+      },
+      {
+        "domain": "テクノロジー",
+        "total": 889,
+        "exceptions": 54,
+        "exception_rate": 0.0607
+      },
+      {
+        "domain": "国家・政治",
+        "total": 600,
+        "exceptions": 5,
+        "exception_rate": 0.0083
+      },
+      {
+        "domain": "金融",
+        "total": 580,
+        "exceptions": 40,
+        "exception_rate": 0.069
+      },
+      {
+        "domain": "小売・サービス",
+        "total": 550,
+        "exceptions": 10,
+        "exception_rate": 0.0182
+      },
+      {
+        "domain": "社会・コミュニティ",
+        "total": 519,
+        "exceptions": 4,
+        "exception_rate": 0.0077
+      },
+      {
+        "domain": "エンタメ",
+        "total": 450,
+        "exceptions": 7,
+        "exception_rate": 0.0156
+      },
+      {
+        "domain": "製造",
+        "total": 445,
+        "exceptions": 37,
+        "exception_rate": 0.0831
+      },
+      {
+        "domain": "ビジネス",
+        "total": 431,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Lifestyle",
+        "total": 365,
+        "exceptions": 6,
+        "exception_rate": 0.0164
+      },
+      {
+        "domain": "医療・製薬",
+        "total": 311,
+        "exceptions": 5,
+        "exception_rate": 0.0161
+      },
+      {
+        "domain": "教育",
+        "total": 265,
+        "exceptions": 1,
+        "exception_rate": 0.0038
+      },
+      {
+        "domain": "Business",
+        "total": 226,
+        "exceptions": 13,
+        "exception_rate": 0.0575
+      },
+      {
+        "domain": "エネルギー・環境",
+        "total": 191,
+        "exceptions": 7,
+        "exception_rate": 0.0366
+      },
+      {
+        "domain": "不動産・建設",
+        "total": 184,
+        "exceptions": 10,
+        "exception_rate": 0.0543
+      },
+      {
+        "domain": "農林水産",
+        "total": 181,
+        "exceptions": 1,
+        "exception_rate": 0.0055
+      },
+      {
+        "domain": "物流・交通",
+        "total": 178,
+        "exceptions": 5,
+        "exception_rate": 0.0281
+      },
+      {
+        "domain": "スポーツ",
+        "total": 156,
+        "exceptions": 2,
+        "exception_rate": 0.0128
+      },
+      {
+        "domain": "観光・旅行",
+        "total": 118,
+        "exceptions": 1,
+        "exception_rate": 0.0085
+      },
+      {
+        "domain": "Other",
+        "total": 53,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Technology",
+        "total": 27,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Retail",
+        "total": 15,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "電機",
+        "total": 15,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "小売",
+        "total": 11,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "自動車",
+        "total": 11,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Manufacturing",
+        "total": 9,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "自動車製造",
+        "total": 8,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "食品・農業",
+        "total": 8,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "電機・製造",
+        "total": 8,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "IT・通信",
+        "total": 7,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Telecom",
+        "total": 6,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "航空",
+        "total": 5,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "食品製造",
+        "total": 4,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Automotive",
+        "total": 4,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "飲料製造",
+        "total": 3,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "建設",
+        "total": 3,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "IT・EC",
+        "total": 3,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "サービス",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "ホテル・観光",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "エネルギー",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "物流・運輸",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Service",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "建設・不動産",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Electronics",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "飲料",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "化粧品・日用品",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "航空・運輸",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "製薬・医療",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "IT・投資",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "小売・アパレル",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "IT・テクノロジー",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "ゲーム・エンタメ",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "IT・半導体",
+        "total": 2,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Healthcare",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Consumer",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "ゲーム",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "運輸",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "商社",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "農業",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "バイオテクノロジー",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "通信",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "外食",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Logistics",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Sports",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Consumer_Goods",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Management",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Aviation",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "Science",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "食品",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "商業・倫理",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "旅行",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "IT",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "複合",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "製造・小売",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "政治",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "電機・医療",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "IT・金融",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "化学・医療",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "食品・消費財",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "文具・事務用品",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "食品・流通",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "不動産",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "金融・証券",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "金融・銀行",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "住宅・建材",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "精密機器・医療",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "金融・政策",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "小売・生活雑貨",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "自動車・EV",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "外食・飲食",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "政治・政策",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "アパレル・アウトドア",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "製造業",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "食品・製造",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "小売・家具",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "自動車・部品",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "食品・飲料",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "消費財・日用品",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "domain": "化学・ヘルスケア",
+        "total": 1,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      }
+    ],
+    "by_scale": [
+      {
+        "scale": "company",
+        "total": 3580,
+        "exceptions": 139,
+        "exception_rate": 0.0388
+      },
+      {
+        "scale": "individual",
+        "total": 2566,
+        "exceptions": 19,
+        "exception_rate": 0.0074
+      },
+      {
+        "scale": "other",
+        "total": 1400,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "scale": "country",
+        "total": 1072,
+        "exceptions": 53,
+        "exception_rate": 0.0494
+      },
+      {
+        "scale": "family",
+        "total": 610,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      }
+    ],
+    "by_source_type": [
+      {
+        "source_type": "news",
+        "total": 8505,
+        "exceptions": 70,
+        "exception_rate": 0.0082
+      },
+      {
+        "source_type": "book",
+        "total": 419,
+        "exceptions": 56,
+        "exception_rate": 0.1337
+      },
+      {
+        "source_type": "blog",
+        "total": 156,
+        "exceptions": 0,
+        "exception_rate": 0.0
+      },
+      {
+        "source_type": "official",
+        "total": 148,
+        "exceptions": 85,
+        "exception_rate": 0.5743
+      }
+    ],
+    "before_hexagram_frequency": [
+      {
+        "hexagram": "水雷屯",
+        "count": 21
+      },
+      {
+        "hexagram": "艮為山",
+        "count": 15
+      },
+      {
+        "hexagram": "山地剥",
+        "count": 12
+      },
+      {
+        "hexagram": "地風升",
+        "count": 11
+      },
+      {
+        "hexagram": "水山蹇",
+        "count": 10
+      },
+      {
+        "hexagram": "天雷無妄",
+        "count": 10
+      },
+      {
+        "hexagram": "震為雷",
+        "count": 9
+      },
+      {
+        "hexagram": "天火同人",
+        "count": 8
+      },
+      {
+        "hexagram": "火水未済",
+        "count": 8
+      },
+      {
+        "hexagram": "天沢履",
+        "count": 7
+      },
+      {
+        "hexagram": "山水蒙",
+        "count": 7
+      },
+      {
+        "hexagram": "沢水困",
+        "count": 6
+      },
+      {
+        "hexagram": "兌為沢",
+        "count": 6
+      },
+      {
+        "hexagram": "水沢節",
+        "count": 5
+      },
+      {
+        "hexagram": "地山謙",
+        "count": 5
+      },
+      {
+        "hexagram": "乾為天",
+        "count": 5
+      },
+      {
+        "hexagram": "地火明夷",
+        "count": 4
+      },
+      {
+        "hexagram": "1_乾",
+        "count": 4
+      },
+      {
+        "hexagram": "地水師",
+        "count": 4
+      },
+      {
+        "hexagram": "坎為水",
+        "count": 4
+      },
+      {
+        "hexagram": "地天泰",
+        "count": 4
+      },
+      {
+        "hexagram": "火天大有",
+        "count": 3
+      },
+      {
+        "hexagram": "52_艮",
+        "count": 3
+      },
+      {
+        "hexagram": "51_震",
+        "count": 3
+      },
+      {
+        "hexagram": "地雷復",
+        "count": 2
+      },
+      {
+        "hexagram": "天水訟",
+        "count": 2
+      },
+      {
+        "hexagram": "沢天夬",
+        "count": 2
+      },
+      {
+        "hexagram": "天山遁",
+        "count": 2
+      },
+      {
+        "hexagram": "離為火",
+        "count": 2
+      },
+      {
+        "hexagram": "2_坤",
+        "count": 2
+      },
+      {
+        "hexagram": "火沢睽",
+        "count": 2
+      },
+      {
+        "hexagram": "水地比",
+        "count": 2
+      },
+      {
+        "hexagram": "坤為地",
+        "count": 2
+      },
+      {
+        "hexagram": "雷天大壮",
+        "count": 2
+      },
+      {
+        "hexagram": "風地観",
+        "count": 2
+      },
+      {
+        "hexagram": "山風蠱",
+        "count": 2
+      },
+      {
+        "hexagram": "雷火豊",
+        "count": 2
+      },
+      {
+        "hexagram": "山天大畜",
+        "count": 1
+      },
+      {
+        "hexagram": "山沢損",
+        "count": 1
+      },
+      {
+        "hexagram": "沢風大過",
+        "count": 1
+      },
+      {
+        "hexagram": "雷風恒",
+        "count": 1
+      },
+      {
+        "hexagram": "山火賁",
+        "count": 1
+      },
+      {
+        "hexagram": "天風姤",
+        "count": 1
+      },
+      {
+        "hexagram": "火風鼎",
+        "count": 1
+      },
+      {
+        "hexagram": "風天小畜",
+        "count": 1
+      },
+      {
+        "hexagram": "雷沢帰妹",
+        "count": 1
+      },
+      {
+        "hexagram": "天地否",
+        "count": 1
+      },
+      {
+        "hexagram": "火雷噬嗑",
+        "count": 1
+      }
+    ],
+    "after_hexagram_frequency": [
+      {
+        "hexagram": "火天大有",
+        "count": 24
+      },
+      {
+        "hexagram": "乾為天",
+        "count": 21
+      },
+      {
+        "hexagram": "地天泰",
+        "count": 19
+      },
+      {
+        "hexagram": "離為火",
+        "count": 17
+      },
+      {
+        "hexagram": "火風鼎",
+        "count": 11
+      },
+      {
+        "hexagram": "天火同人",
+        "count": 9
+      },
+      {
+        "hexagram": "地火明夷",
+        "count": 9
+      },
+      {
+        "hexagram": "地風升",
+        "count": 9
+      },
+      {
+        "hexagram": "艮為山",
+        "count": 9
+      },
+      {
+        "hexagram": "沢水困",
+        "count": 9
+      },
+      {
+        "hexagram": "火水未済",
+        "count": 8
+      },
+      {
+        "hexagram": "地雷復",
+        "count": 8
+      },
+      {
+        "hexagram": "地山謙",
+        "count": 8
+      },
+      {
+        "hexagram": "山地剥",
+        "count": 7
+      },
+      {
+        "hexagram": "水山蹇",
+        "count": 5
+      },
+      {
+        "hexagram": "天沢履",
+        "count": 3
+      },
+      {
+        "hexagram": "水雷屯",
+        "count": 3
+      },
+      {
+        "hexagram": "兌為沢",
+        "count": 3
+      },
+      {
+        "hexagram": "天風姤",
+        "count": 3
+      },
+      {
+        "hexagram": "天山遁",
+        "count": 3
+      },
+      {
+        "hexagram": "風火家人",
+        "count": 2
+      },
+      {
+        "hexagram": "火山旅",
+        "count": 2
+      },
+      {
+        "hexagram": "水沢節",
+        "count": 2
+      },
+      {
+        "hexagram": "地水師",
+        "count": 2
+      },
+      {
+        "hexagram": "2_坤",
+        "count": 1
+      },
+      {
+        "hexagram": "29_坎",
+        "count": 1
+      },
+      {
+        "hexagram": "水天需",
+        "count": 1
+      },
+      {
+        "hexagram": "火沢睽",
+        "count": 1
+      },
+      {
+        "hexagram": "天山遯",
+        "count": 1
+      },
+      {
+        "hexagram": "沢地萃",
+        "count": 1
+      },
+      {
+        "hexagram": "火地晋",
+        "count": 1
+      },
+      {
+        "hexagram": "坎為水",
+        "count": 1
+      },
+      {
+        "hexagram": "風天小畜",
+        "count": 1
+      },
+      {
+        "hexagram": "山天大畜",
+        "count": 1
+      },
+      {
+        "hexagram": "雷天大壮",
+        "count": 1
+      },
+      {
+        "hexagram": "水火既済",
+        "count": 1
+      },
+      {
+        "hexagram": "習坎",
+        "count": 1
+      },
+      {
+        "hexagram": "坤為地",
+        "count": 1
+      },
+      {
+        "hexagram": "風地観",
+        "count": 1
+      }
+    ],
+    "delta_pattern_distribution": [
+      {
+        "delta_lower": 3,
+        "delta_upper": 7,
+        "delta_lower_bits": "011",
+        "delta_upper_bits": "111",
+        "count": 9
+      },
+      {
+        "delta_lower": 7,
+        "delta_upper": 6,
+        "delta_lower_bits": "111",
+        "delta_upper_bits": "110",
+        "count": 8
+      },
+      {
+        "delta_lower": 3,
+        "delta_upper": 2,
+        "delta_lower_bits": "011",
+        "delta_upper_bits": "010",
+        "count": 8
+      },
+      {
+        "delta_lower": 3,
+        "delta_upper": 5,
+        "delta_lower_bits": "011",
+        "delta_upper_bits": "101",
+        "count": 7
+      },
+      {
+        "delta_lower": 5,
+        "delta_upper": 1,
+        "delta_lower_bits": "101",
+        "delta_upper_bits": "001",
+        "count": 7
+      },
+      {
+        "delta_lower": 6,
+        "delta_upper": 7,
+        "delta_lower_bits": "110",
+        "delta_upper_bits": "111",
+        "count": 7
+      },
+      {
+        "delta_lower": 5,
+        "delta_upper": 4,
+        "delta_lower_bits": "101",
+        "delta_upper_bits": "100",
+        "count": 7
+      },
+      {
+        "delta_lower": 5,
+        "delta_upper": 2,
+        "delta_lower_bits": "101",
+        "delta_upper_bits": "010",
+        "count": 6
+      },
+      {
+        "delta_lower": 2,
+        "delta_upper": 5,
+        "delta_lower_bits": "010",
+        "delta_upper_bits": "101",
+        "count": 6
+      },
+      {
+        "delta_lower": 0,
+        "delta_upper": 5,
+        "delta_lower_bits": "000",
+        "delta_upper_bits": "101",
+        "count": 6
+      },
+      {
+        "delta_lower": 7,
+        "delta_upper": 5,
+        "delta_lower_bits": "111",
+        "delta_upper_bits": "101",
+        "count": 6
+      },
+      {
+        "delta_lower": 3,
+        "delta_upper": 1,
+        "delta_lower_bits": "011",
+        "delta_upper_bits": "001",
+        "count": 6
+      },
+      {
+        "delta_lower": 7,
+        "delta_upper": 4,
+        "delta_lower_bits": "111",
+        "delta_upper_bits": "100",
+        "count": 6
+      },
+      {
+        "delta_lower": 2,
+        "delta_upper": 4,
+        "delta_lower_bits": "010",
+        "delta_upper_bits": "100",
+        "count": 6
+      },
+      {
+        "delta_lower": 4,
+        "delta_upper": 2,
+        "delta_lower_bits": "100",
+        "delta_upper_bits": "010",
+        "count": 5
+      },
+      {
+        "delta_lower": 7,
+        "delta_upper": 2,
+        "delta_lower_bits": "111",
+        "delta_upper_bits": "010",
+        "count": 5
+      },
+      {
+        "delta_lower": 2,
+        "delta_upper": 6,
+        "delta_lower_bits": "010",
+        "delta_upper_bits": "110",
+        "count": 5
+      },
+      {
+        "delta_lower": 6,
+        "delta_upper": 5,
+        "delta_lower_bits": "110",
+        "delta_upper_bits": "101",
+        "count": 5
+      },
+      {
+        "delta_lower": 0,
+        "delta_upper": 7,
+        "delta_lower_bits": "000",
+        "delta_upper_bits": "111",
+        "count": 5
+      },
+      {
+        "delta_lower": 3,
+        "delta_upper": 4,
+        "delta_lower_bits": "011",
+        "delta_upper_bits": "100",
+        "count": 5
+      },
+      {
+        "delta_lower": 4,
+        "delta_upper": 5,
+        "delta_lower_bits": "100",
+        "delta_upper_bits": "101",
+        "count": 4
+      },
+      {
+        "delta_lower": 7,
+        "delta_upper": 3,
+        "delta_lower_bits": "111",
+        "delta_upper_bits": "011",
+        "count": 4
+      },
+      {
+        "delta_lower": 6,
+        "delta_upper": 2,
+        "delta_lower_bits": "110",
+        "delta_upper_bits": "010",
+        "count": 4
+      },
+      {
+        "delta_lower": 1,
+        "delta_upper": 7,
+        "delta_lower_bits": "001",
+        "delta_upper_bits": "111",
+        "count": 4
+      },
+      {
+        "delta_lower": 5,
+        "delta_upper": 6,
+        "delta_lower_bits": "101",
+        "delta_upper_bits": "110",
+        "count": 4
+      },
+      {
+        "delta_lower": 1,
+        "delta_upper": 5,
+        "delta_lower_bits": "001",
+        "delta_upper_bits": "101",
+        "count": 4
+      },
+      {
+        "delta_lower": 2,
+        "delta_upper": 7,
+        "delta_lower_bits": "010",
+        "delta_upper_bits": "111",
+        "count": 4
+      },
+      {
+        "delta_lower": 1,
+        "delta_upper": 2,
+        "delta_lower_bits": "001",
+        "delta_upper_bits": "010",
+        "count": 4
+      },
+      {
+        "delta_lower": 0,
+        "delta_upper": 6,
+        "delta_lower_bits": "000",
+        "delta_upper_bits": "110",
+        "count": 4
+      },
+      {
+        "delta_lower": 5,
+        "delta_upper": 7,
+        "delta_lower_bits": "101",
+        "delta_upper_bits": "111",
+        "count": 4
+      },
+      {
+        "delta_lower": 4,
+        "delta_upper": 0,
+        "delta_lower_bits": "100",
+        "delta_upper_bits": "000",
+        "count": 4
+      },
+      {
+        "delta_lower": 3,
+        "delta_upper": 0,
+        "delta_lower_bits": "011",
+        "delta_upper_bits": "000",
+        "count": 4
+      },
+      {
+        "delta_lower": 4,
+        "delta_upper": 7,
+        "delta_lower_bits": "100",
+        "delta_upper_bits": "111",
+        "count": 3
+      },
+      {
+        "delta_lower": 1,
+        "delta_upper": 0,
+        "delta_lower_bits": "001",
+        "delta_upper_bits": "000",
+        "count": 3
+      },
+      {
+        "delta_lower": 6,
+        "delta_upper": 0,
+        "delta_lower_bits": "110",
+        "delta_upper_bits": "000",
+        "count": 3
+      },
+      {
+        "delta_lower": 4,
+        "delta_upper": 6,
+        "delta_lower_bits": "100",
+        "delta_upper_bits": "110",
+        "count": 3
+      },
+      {
+        "delta_lower": 1,
+        "delta_upper": 6,
+        "delta_lower_bits": "001",
+        "delta_upper_bits": "110",
+        "count": 3
+      },
+      {
+        "delta_lower": 5,
+        "delta_upper": 3,
+        "delta_lower_bits": "101",
+        "delta_upper_bits": "011",
+        "count": 2
+      },
+      {
+        "delta_lower": 4,
+        "delta_upper": 1,
+        "delta_lower_bits": "100",
+        "delta_upper_bits": "001",
+        "count": 2
+      },
+      {
+        "delta_lower": 2,
+        "delta_upper": 1,
+        "delta_lower_bits": "010",
+        "delta_upper_bits": "001",
+        "count": 2
+      },
+      {
+        "delta_lower": 5,
+        "delta_upper": 0,
+        "delta_lower_bits": "101",
+        "delta_upper_bits": "000",
+        "count": 2
+      },
+      {
+        "delta_lower": 0,
+        "delta_upper": 2,
+        "delta_lower_bits": "000",
+        "delta_upper_bits": "010",
+        "count": 2
+      },
+      {
+        "delta_lower": 0,
+        "delta_upper": 3,
+        "delta_lower_bits": "000",
+        "delta_upper_bits": "011",
+        "count": 2
+      },
+      {
+        "delta_lower": 7,
+        "delta_upper": 0,
+        "delta_lower_bits": "111",
+        "delta_upper_bits": "000",
+        "count": 1
+      },
+      {
+        "delta_lower": 4,
+        "delta_upper": 3,
+        "delta_lower_bits": "100",
+        "delta_upper_bits": "011",
+        "count": 1
+      },
+      {
+        "delta_lower": 6,
+        "delta_upper": 1,
+        "delta_lower_bits": "110",
+        "delta_upper_bits": "001",
+        "count": 1
+      },
+      {
+        "delta_lower": 2,
+        "delta_upper": 0,
+        "delta_lower_bits": "010",
+        "delta_upper_bits": "000",
+        "count": 1
+      },
+      {
+        "delta_lower": 1,
+        "delta_upper": 4,
+        "delta_lower_bits": "001",
+        "delta_upper_bits": "100",
+        "count": 1
+      },
+      {
+        "delta_lower": 0,
+        "delta_upper": 4,
+        "delta_lower_bits": "000",
+        "delta_upper_bits": "100",
+        "count": 1
+      },
+      {
+        "delta_lower": 1,
+        "delta_upper": 3,
+        "delta_lower_bits": "001",
+        "delta_upper_bits": "011",
+        "count": 1
+      },
+      {
+        "delta_lower": 0,
+        "delta_upper": 1,
+        "delta_lower_bits": "000",
+        "delta_upper_bits": "001",
+        "count": 1
+      },
+      {
+        "delta_lower": 6,
+        "delta_upper": 3,
+        "delta_lower_bits": "110",
+        "delta_upper_bits": "011",
+        "count": 1
+      },
+      {
+        "delta_lower": 6,
+        "delta_upper": 4,
+        "delta_lower_bits": "110",
+        "delta_upper_bits": "100",
+        "count": 1
+      },
+      {
+        "delta_lower": 7,
+        "delta_upper": 1,
+        "delta_lower_bits": "111",
+        "delta_upper_bits": "001",
+        "count": 1
+      }
+    ],
+    "exception_records": [
+      {
+        "transition_id": "CORP_JP_008",
+        "target_name": "日立製作所",
+        "before_hexagram": "地雷復",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "101",
+        "delta_lower_int": 3,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_009",
+        "target_name": "日本航空（JAL）",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "天火同人",
+        "delta_lower": "100",
+        "delta_upper": "101",
+        "delta_lower_int": 4,
+        "delta_upper_int": 5,
+        "main_domain": "物流・交通",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_010",
+        "target_name": "日本マクドナルド",
+        "before_hexagram": "天水訟",
+        "after_hexagram": "火天大有",
+        "delta_lower": "101",
+        "delta_upper": "010",
+        "delta_lower_int": 5,
+        "delta_upper_int": 2,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_011",
+        "target_name": "ソニーグループ",
+        "before_hexagram": "沢水困",
+        "after_hexagram": "離為火",
+        "delta_lower": "111",
+        "delta_upper": "011",
+        "delta_lower_int": 7,
+        "delta_upper_int": 3,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_013",
+        "target_name": "富士フイルム",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_014",
+        "target_name": "ワークマン",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天沢履",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "不動産・建設",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_015",
+        "target_name": "MIXI（ミクシィ）",
+        "before_hexagram": "地火明夷",
+        "after_hexagram": "火天大有",
+        "delta_lower": "010",
+        "delta_upper": "101",
+        "delta_lower_int": 2,
+        "delta_upper_int": 5,
+        "main_domain": "エンタメ",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_016",
+        "target_name": "オリンパス",
+        "before_hexagram": "沢水困",
+        "after_hexagram": "乾為天",
+        "delta_lower": "101",
+        "delta_upper": "001",
+        "delta_lower_int": 5,
+        "delta_upper_int": 1,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_017",
+        "target_name": "ロート製薬",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "風火家人",
+        "delta_lower": "100",
+        "delta_upper": "010",
+        "delta_lower_int": 4,
+        "delta_upper_int": 2,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_020",
+        "target_name": "そごう",
+        "before_hexagram": "沢天夬",
+        "after_hexagram": "2_坤",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_021",
+        "target_name": "ダイエー",
+        "before_hexagram": "火天大有",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "010",
+        "delta_upper": "101",
+        "delta_lower_int": 2,
+        "delta_upper_int": 5,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_022",
+        "target_name": "雪印乳業",
+        "before_hexagram": "1_乾",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "100",
+        "delta_upper": "010",
+        "delta_lower_int": 4,
+        "delta_upper_int": 2,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_023",
+        "target_name": "カネボウ",
+        "before_hexagram": "地水師",
+        "after_hexagram": "火水未済",
+        "delta_lower": "000",
+        "delta_upper": "101",
+        "delta_lower_int": 0,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_024",
+        "target_name": "東芝",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "29_坎",
+        "delta_lower": "111",
+        "delta_upper": "101",
+        "delta_lower_int": 7,
+        "delta_upper_int": 5,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_026",
+        "target_name": "三洋電機",
+        "before_hexagram": "1_乾",
+        "after_hexagram": "地雷復",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_027",
+        "target_name": "シャープ",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "110",
+        "delta_upper": "010",
+        "delta_lower_int": 6,
+        "delta_upper_int": 2,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_028",
+        "target_name": "日本航空（JAL）",
+        "before_hexagram": "天山遁",
+        "after_hexagram": "水山蹇",
+        "delta_lower": "000",
+        "delta_upper": "101",
+        "delta_lower_int": 0,
+        "delta_upper_int": 5,
+        "main_domain": "物流・交通",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_029",
+        "target_name": "タカタ",
+        "before_hexagram": "1_乾",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "100",
+        "delta_upper": "010",
+        "delta_lower_int": 4,
+        "delta_upper_int": 2,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_030",
+        "target_name": "ライブドア",
+        "before_hexagram": "離為火",
+        "after_hexagram": "火水未済",
+        "delta_lower": "111",
+        "delta_upper": "000",
+        "delta_lower_int": 7,
+        "delta_upper_int": 0,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_031",
+        "target_name": "NOVA",
+        "before_hexagram": "天沢履",
+        "after_hexagram": "水雷屯",
+        "delta_lower": "010",
+        "delta_upper": "101",
+        "delta_lower_int": 2,
+        "delta_upper_int": 5,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_032",
+        "target_name": "大塚家具",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "地雷復",
+        "delta_lower": "101",
+        "delta_upper": "001",
+        "delta_lower_int": 5,
+        "delta_upper_int": 1,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_033",
+        "target_name": "ビッグモーター",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "火山旅",
+        "delta_lower": "101",
+        "delta_upper": "010",
+        "delta_lower_int": 5,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_035",
+        "target_name": "リクルートホールディングス",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_036",
+        "target_name": "任天堂",
+        "before_hexagram": "山天大畜",
+        "after_hexagram": "兌為沢",
+        "delta_lower": "001",
+        "delta_upper": "111",
+        "delta_lower_int": 1,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_037",
+        "target_name": "丸井グループ",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天沢履",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_040",
+        "target_name": "DeNA",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "111",
+        "delta_upper": "010",
+        "delta_lower_int": 7,
+        "delta_upper_int": 2,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_041",
+        "target_name": "イビデン",
+        "before_hexagram": "山水蒙",
+        "after_hexagram": "乾為天",
+        "delta_lower": "101",
+        "delta_upper": "110",
+        "delta_lower_int": 5,
+        "delta_upper_int": 6,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_042",
+        "target_name": "オリックス",
+        "before_hexagram": "地風升",
+        "after_hexagram": "火天大有",
+        "delta_lower": "100",
+        "delta_upper": "101",
+        "delta_lower_int": 4,
+        "delta_upper_int": 5,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_044",
+        "target_name": "RIZAPグループ",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "兌為沢",
+        "delta_lower": "100",
+        "delta_upper": "011",
+        "delta_lower_int": 4,
+        "delta_upper_int": 3,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_046",
+        "target_name": "東急",
+        "before_hexagram": "地風升",
+        "after_hexagram": "乾為天",
+        "delta_lower": "100",
+        "delta_upper": "111",
+        "delta_lower_int": 4,
+        "delta_upper_int": 7,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_048",
+        "target_name": "GMOインターネットグループ",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "001",
+        "delta_lower_int": 3,
+        "delta_upper_int": 1,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_050",
+        "target_name": "岩谷産業",
+        "before_hexagram": "地火明夷",
+        "after_hexagram": "離為火",
+        "delta_lower": "000",
+        "delta_upper": "101",
+        "delta_lower_int": 0,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_052",
+        "target_name": "SHIFT",
+        "before_hexagram": "52_艮",
+        "after_hexagram": "天風姤",
+        "delta_lower": "010",
+        "delta_upper": "110",
+        "delta_lower_int": 2,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_054",
+        "target_name": "JR九州",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "火天大有",
+        "delta_lower": "110",
+        "delta_upper": "111",
+        "delta_lower_int": 6,
+        "delta_upper_int": 7,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_055",
+        "target_name": "東レ",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "乾為天",
+        "delta_lower": "011",
+        "delta_upper": "101",
+        "delta_lower_int": 3,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_056",
+        "target_name": "サントリー（ビール事業）",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "地山謙",
+        "delta_lower": "101",
+        "delta_upper": "100",
+        "delta_lower_int": 5,
+        "delta_upper_int": 4,
+        "main_domain": "スポーツ",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_057",
+        "target_name": "味の素",
+        "before_hexagram": "地風升",
+        "after_hexagram": "離為火",
+        "delta_lower": "110",
+        "delta_upper": "101",
+        "delta_lower_int": 6,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_058",
+        "target_name": "TOTO",
+        "before_hexagram": "52_艮",
+        "after_hexagram": "天沢履",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "エンタメ",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_059",
+        "target_name": "信越化学工業",
+        "before_hexagram": "水沢節",
+        "after_hexagram": "乾為天",
+        "delta_lower": "001",
+        "delta_upper": "101",
+        "delta_lower_int": 1,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_060",
+        "target_name": "マツダ",
+        "before_hexagram": "沢水困",
+        "after_hexagram": "離為火",
+        "delta_lower": "111",
+        "delta_upper": "011",
+        "delta_lower_int": 7,
+        "delta_upper_int": 3,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_061",
+        "target_name": "ダイキン工業",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天風姤",
+        "delta_lower": "010",
+        "delta_upper": "110",
+        "delta_lower_int": 2,
+        "delta_upper_int": 6,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_063",
+        "target_name": "ファナック",
+        "before_hexagram": "51_震",
+        "after_hexagram": "天山遁",
+        "delta_lower": "101",
+        "delta_upper": "011",
+        "delta_lower_int": 5,
+        "delta_upper_int": 3,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_065",
+        "target_name": "村田製作所",
+        "before_hexagram": "地山謙",
+        "after_hexagram": "乾為天",
+        "delta_lower": "110",
+        "delta_upper": "111",
+        "delta_lower_int": 6,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_066",
+        "target_name": "キーエンス",
+        "before_hexagram": "51_震",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "001",
+        "delta_lower_int": 3,
+        "delta_upper_int": 1,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_067",
+        "target_name": "キッコーマン",
+        "before_hexagram": "地風升",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "000",
+        "delta_upper": "101",
+        "delta_lower_int": 0,
+        "delta_upper_int": 5,
+        "main_domain": "エンタメ",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_068",
+        "target_name": "ユニ・チャーム",
+        "before_hexagram": "51_震",
+        "after_hexagram": "地風升",
+        "delta_lower": "111",
+        "delta_upper": "100",
+        "delta_lower_int": 7,
+        "delta_upper_int": 4,
+        "main_domain": "不動産・建設",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_070",
+        "target_name": "オリエンタルランド",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "兌為沢",
+        "delta_lower": "010",
+        "delta_upper": "100",
+        "delta_lower_int": 2,
+        "delta_upper_int": 4,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_071",
+        "target_name": "ヤクルト本社",
+        "before_hexagram": "地水師",
+        "after_hexagram": "水天需",
+        "delta_lower": "101",
+        "delta_upper": "010",
+        "delta_lower_int": 5,
+        "delta_upper_int": 2,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_073",
+        "target_name": "パイオニア",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "100",
+        "delta_upper": "001",
+        "delta_lower_int": 4,
+        "delta_upper_int": 1,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_074",
+        "target_name": "NEC（PC・携帯事業）",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "火沢睽",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_075",
+        "target_name": "ダイエー",
+        "before_hexagram": "火天大有",
+        "after_hexagram": "地雷復",
+        "delta_lower": "011",
+        "delta_upper": "101",
+        "delta_lower_int": 3,
+        "delta_upper_int": 5,
+        "main_domain": "不動産・建設",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_076",
+        "target_name": "みずほ銀行（システム統合）",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "水雷屯",
+        "delta_lower": "110",
+        "delta_upper": "111",
+        "delta_lower_int": 6,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_077",
+        "target_name": "ルネサスエレクトロニクス",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "艮為山",
+        "delta_lower": "001",
+        "delta_upper": "000",
+        "delta_lower_int": 1,
+        "delta_upper_int": 0,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_078",
+        "target_name": "三越伊勢丹HD（地方店舗）",
+        "before_hexagram": "2_坤",
+        "after_hexagram": "地山謙",
+        "delta_lower": "001",
+        "delta_upper": "000",
+        "delta_lower_int": 1,
+        "delta_upper_int": 0,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_079",
+        "target_name": "東京電力",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "沢水困",
+        "delta_lower": "110",
+        "delta_upper": "001",
+        "delta_lower_int": 6,
+        "delta_upper_int": 1,
+        "main_domain": "エネルギー・環境",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_080",
+        "target_name": "ミクシィ（SNS事業）",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "000",
+        "delta_upper": "111",
+        "delta_lower_int": 0,
+        "delta_upper_int": 7,
+        "main_domain": "物流・交通",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_081",
+        "target_name": "ジャパンディスプレイ（JDI）",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "沢水困",
+        "delta_lower": "010",
+        "delta_upper": "111",
+        "delta_lower_int": 2,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_082",
+        "target_name": "オンキヨー",
+        "before_hexagram": "52_艮",
+        "after_hexagram": "火水未済",
+        "delta_lower": "011",
+        "delta_upper": "100",
+        "delta_lower_int": 3,
+        "delta_upper_int": 4,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_083",
+        "target_name": "サンヨー食品（サッポロ一番）",
+        "before_hexagram": "地山謙",
+        "after_hexagram": "地天泰",
+        "delta_lower": "110",
+        "delta_upper": "000",
+        "delta_lower_int": 6,
+        "delta_upper_int": 0,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_084",
+        "target_name": "レオパレス21",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "水沢節",
+        "delta_lower": "010",
+        "delta_upper": "101",
+        "delta_lower_int": 2,
+        "delta_upper_int": 5,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_085",
+        "target_name": "東芝（白物家電事業）",
+        "before_hexagram": "2_坤",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "011",
+        "delta_upper": "101",
+        "delta_lower_int": 3,
+        "delta_upper_int": 5,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_086",
+        "target_name": "千趣会（ベルメゾン）",
+        "before_hexagram": "地風升",
+        "after_hexagram": "地山謙",
+        "delta_lower": "010",
+        "delta_upper": "000",
+        "delta_lower_int": 2,
+        "delta_upper_int": 0,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_087",
+        "target_name": "新生銀行（現SBI新生銀行）",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "001",
+        "delta_upper": "010",
+        "delta_lower_int": 1,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_088",
+        "target_name": "ヤマダデンキ",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "艮為山",
+        "delta_lower": "100",
+        "delta_upper": "110",
+        "delta_lower_int": 4,
+        "delta_upper_int": 6,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_089",
+        "target_name": "アルペン",
+        "before_hexagram": "1_乾",
+        "after_hexagram": "地山謙",
+        "delta_lower": "110",
+        "delta_upper": "111",
+        "delta_lower_int": 6,
+        "delta_upper_int": 7,
+        "main_domain": "スポーツ",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_090",
+        "target_name": "近畿日本ツーリスト",
+        "before_hexagram": "地風升",
+        "after_hexagram": "艮為山",
+        "delta_lower": "010",
+        "delta_upper": "001",
+        "delta_lower_int": 2,
+        "delta_upper_int": 1,
+        "main_domain": "観光・旅行",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_091",
+        "target_name": "船井電機",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "火水未済",
+        "delta_lower": "010",
+        "delta_upper": "100",
+        "delta_lower_int": 2,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_092",
+        "target_name": "ミノルタ",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "地風升",
+        "delta_lower": "001",
+        "delta_upper": "101",
+        "delta_lower_int": 1,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_093",
+        "target_name": "日立製作所",
+        "before_hexagram": "山沢損",
+        "after_hexagram": "火天大有",
+        "delta_lower": "001",
+        "delta_upper": "100",
+        "delta_lower_int": 1,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_098",
+        "target_name": "オリンパス",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "乾為天",
+        "delta_lower": "011",
+        "delta_upper": "101",
+        "delta_lower_int": 3,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_100",
+        "target_name": "りそなホールディングス",
+        "before_hexagram": "沢風大過",
+        "after_hexagram": "地風升",
+        "delta_lower": "000",
+        "delta_upper": "110",
+        "delta_lower_int": 0,
+        "delta_upper_int": 6,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_101",
+        "target_name": "トヨタ自動車",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "火天大有",
+        "delta_lower": "101",
+        "delta_upper": "000",
+        "delta_lower_int": 5,
+        "delta_upper_int": 0,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_102",
+        "target_name": "ユー・エス・ジェイ（USJ）",
+        "before_hexagram": "沢水困",
+        "after_hexagram": "離為火",
+        "delta_lower": "111",
+        "delta_upper": "011",
+        "delta_lower_int": 7,
+        "delta_upper_int": 3,
+        "main_domain": "エンタメ",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_103",
+        "target_name": "吉野家ホールディングス",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地風升",
+        "delta_lower": "111",
+        "delta_upper": "010",
+        "delta_lower_int": 7,
+        "delta_upper_int": 2,
+        "main_domain": "不動産・建設",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_104",
+        "target_name": "すかいらーくホールディングス",
+        "before_hexagram": "火沢睽",
+        "after_hexagram": "天火同人",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_105",
+        "target_name": "パナソニックホールディングス",
+        "before_hexagram": "坎為水",
+        "after_hexagram": "地山謙",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_107",
+        "target_name": "西武ホールディングス",
+        "before_hexagram": "天水訟",
+        "after_hexagram": "地風升",
+        "delta_lower": "001",
+        "delta_upper": "111",
+        "delta_lower_int": 1,
+        "delta_upper_int": 7,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_109",
+        "target_name": "ヤマトホールディングス",
+        "before_hexagram": "雷風恒",
+        "after_hexagram": "地山謙",
+        "delta_lower": "010",
+        "delta_upper": "100",
+        "delta_lower_int": 2,
+        "delta_upper_int": 4,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_112",
+        "target_name": "スノーピーク",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "天火同人",
+        "delta_lower": "100",
+        "delta_upper": "101",
+        "delta_lower_int": 4,
+        "delta_upper_int": 5,
+        "main_domain": "社会・コミュニティ",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_114",
+        "target_name": "ダイキン工業",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天風姤",
+        "delta_lower": "010",
+        "delta_upper": "110",
+        "delta_lower_int": 2,
+        "delta_upper_int": 6,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_115",
+        "target_name": "伊藤忠商事",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_117",
+        "target_name": "シマノ",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天山遯",
+        "delta_lower": "000",
+        "delta_upper": "110",
+        "delta_lower_int": 0,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_118",
+        "target_name": "村田製作所",
+        "before_hexagram": "地山謙",
+        "after_hexagram": "離為火",
+        "delta_lower": "100",
+        "delta_upper": "101",
+        "delta_lower_int": 4,
+        "delta_upper_int": 5,
+        "main_domain": "不動産・建設",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_121",
+        "target_name": "オリエンタルランド",
+        "before_hexagram": "兌為沢",
+        "after_hexagram": "沢地萃",
+        "delta_lower": "110",
+        "delta_upper": "000",
+        "delta_lower_int": 6,
+        "delta_upper_int": 0,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_122",
+        "target_name": "セブン&アイ・ホールディングス",
+        "before_hexagram": "地風升",
+        "after_hexagram": "乾為天",
+        "delta_lower": "100",
+        "delta_upper": "111",
+        "delta_lower_int": 4,
+        "delta_upper_int": 7,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_124",
+        "target_name": "KDDI",
+        "before_hexagram": "水地比",
+        "after_hexagram": "地天泰",
+        "delta_lower": "111",
+        "delta_upper": "010",
+        "delta_lower_int": 7,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_125",
+        "target_name": "バンダイナムコホールディングス",
+        "before_hexagram": "山火賁",
+        "after_hexagram": "離為火",
+        "delta_lower": "000",
+        "delta_upper": "100",
+        "delta_lower_int": 0,
+        "delta_upper_int": 4,
+        "main_domain": "エンタメ",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_126",
+        "target_name": "テルモ",
+        "before_hexagram": "地風升",
+        "after_hexagram": "天火同人",
+        "delta_lower": "110",
+        "delta_upper": "111",
+        "delta_lower_int": 6,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_127",
+        "target_name": "良品計画",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地天泰",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_128",
+        "target_name": "ヤクルト本社",
+        "before_hexagram": "坤為地",
+        "after_hexagram": "火地晋",
+        "delta_lower": "000",
+        "delta_upper": "101",
+        "delta_lower_int": 0,
+        "delta_upper_int": 5,
+        "main_domain": "医療・製薬",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_129",
+        "target_name": "NTTデータ",
+        "before_hexagram": "地天泰",
+        "after_hexagram": "乾為天",
+        "delta_lower": "000",
+        "delta_upper": "111",
+        "delta_lower_int": 0,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_130",
+        "target_name": "エムスリー",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "天火同人",
+        "delta_lower": "001",
+        "delta_upper": "011",
+        "delta_lower_int": 1,
+        "delta_upper_int": 3,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_133",
+        "target_name": "日本長期信用銀行",
+        "before_hexagram": "乾為天",
+        "after_hexagram": "山地剥",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_134",
+        "target_name": "マイカル",
+        "before_hexagram": "火天大有",
+        "after_hexagram": "火水未済",
+        "delta_lower": "101",
+        "delta_upper": "000",
+        "delta_lower_int": 5,
+        "delta_upper_int": 0,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_135",
+        "target_name": "グッドウィル・グループ",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "火山旅",
+        "delta_lower": "101",
+        "delta_upper": "010",
+        "delta_lower_int": 5,
+        "delta_upper_int": 2,
+        "main_domain": "医療・製薬",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_136",
+        "target_name": "スカイマーク",
+        "before_hexagram": "雷天大壮",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "100",
+        "delta_upper": "001",
+        "delta_lower_int": 4,
+        "delta_upper_int": 1,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_137",
+        "target_name": "オリンパス",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "011",
+        "delta_upper": "100",
+        "delta_lower_int": 3,
+        "delta_upper_int": 4,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_138",
+        "target_name": "日産自動車（ゴーン体制末期）",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "坎為水",
+        "delta_lower": "111",
+        "delta_upper": "101",
+        "delta_lower_int": 7,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_139",
+        "target_name": "スルガ銀行",
+        "before_hexagram": "天沢履",
+        "after_hexagram": "地風升",
+        "delta_lower": "101",
+        "delta_upper": "111",
+        "delta_lower_int": 5,
+        "delta_upper_int": 7,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_141",
+        "target_name": "レナウン",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "山地剥",
+        "delta_lower": "001",
+        "delta_upper": "000",
+        "delta_lower_int": 1,
+        "delta_upper_int": 0,
+        "main_domain": "小売・サービス",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_142",
+        "target_name": "神戸製鋼所",
+        "before_hexagram": "地山謙",
+        "after_hexagram": "艮為山",
+        "delta_lower": "000",
+        "delta_upper": "001",
+        "delta_lower_int": 0,
+        "delta_upper_int": 1,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_143",
+        "target_name": "レオパレス21",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "水沢節",
+        "delta_lower": "010",
+        "delta_upper": "101",
+        "delta_lower_int": 2,
+        "delta_upper_int": 5,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_144",
+        "target_name": "林原",
+        "before_hexagram": "天風姤",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "110",
+        "delta_upper": "111",
+        "delta_lower_int": 6,
+        "delta_upper_int": 7,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_145",
+        "target_name": "武富士",
+        "before_hexagram": "天沢履",
+        "after_hexagram": "火水未済",
+        "delta_lower": "100",
+        "delta_upper": "010",
+        "delta_lower_int": 4,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_146",
+        "target_name": "エルピーダメモリ",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "離為火",
+        "delta_lower": "000",
+        "delta_upper": "010",
+        "delta_lower_int": 0,
+        "delta_upper_int": 2,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_147",
+        "target_name": "アーバンコーポレイション",
+        "before_hexagram": "兌為沢",
+        "after_hexagram": "沢水困",
+        "delta_lower": "100",
+        "delta_upper": "000",
+        "delta_lower_int": 4,
+        "delta_upper_int": 0,
+        "main_domain": "不動産・建設",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_148",
+        "target_name": "SFCG（旧商工ファンド）",
+        "before_hexagram": "天沢履",
+        "after_hexagram": "火水未済",
+        "delta_lower": "100",
+        "delta_upper": "010",
+        "delta_lower_int": 4,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_149",
+        "target_name": "ベネッセコーポレーション",
+        "before_hexagram": "地風升",
+        "after_hexagram": "山地剥",
+        "delta_lower": "011",
+        "delta_upper": "001",
+        "delta_lower_int": 3,
+        "delta_upper_int": 1,
+        "main_domain": "教育",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_150",
+        "target_name": "東洋ゴム工業（現TOYO TIRE）",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地水師",
+        "delta_lower": "110",
+        "delta_upper": "010",
+        "delta_lower_int": 6,
+        "delta_upper_int": 2,
+        "main_domain": "Business",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_152",
+        "target_name": "足利銀行",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "地雷復",
+        "delta_lower": "000",
+        "delta_upper": "111",
+        "delta_lower_int": 0,
+        "delta_upper_int": 7,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_154",
+        "target_name": "凸版印刷（TOPPAN）",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "010",
+        "delta_upper": "100",
+        "delta_lower_int": 2,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_155",
+        "target_name": "日本郵船",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地水師",
+        "delta_lower": "110",
+        "delta_upper": "010",
+        "delta_lower_int": 6,
+        "delta_upper_int": 2,
+        "main_domain": "物流・交通",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_156",
+        "target_name": "JVCケンウッド",
+        "before_hexagram": "火沢睽",
+        "after_hexagram": "艮為山",
+        "delta_lower": "111",
+        "delta_upper": "100",
+        "delta_lower_int": 7,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_158",
+        "target_name": "セイコーエプソン",
+        "before_hexagram": "雷天大壮",
+        "after_hexagram": "離為火",
+        "delta_lower": "010",
+        "delta_upper": "001",
+        "delta_lower_int": 2,
+        "delta_upper_int": 1,
+        "main_domain": "エネルギー・環境",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_159",
+        "target_name": "ヤマハ発動機",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地天泰",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_162",
+        "target_name": "カゴメ",
+        "before_hexagram": "地天泰",
+        "after_hexagram": "乾為天",
+        "delta_lower": "000",
+        "delta_upper": "111",
+        "delta_lower_int": 0,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_163",
+        "target_name": "ミネベアミツミ",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天火同人",
+        "delta_lower": "100",
+        "delta_upper": "110",
+        "delta_lower_int": 4,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_164",
+        "target_name": "LIXIL",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "離為火",
+        "delta_lower": "101",
+        "delta_upper": "100",
+        "delta_lower_int": 5,
+        "delta_upper_int": 4,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_165",
+        "target_name": "丸紅",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "天山遁",
+        "delta_lower": "000",
+        "delta_upper": "101",
+        "delta_lower_int": 0,
+        "delta_upper_int": 5,
+        "main_domain": "エネルギー・環境",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_166",
+        "target_name": "スクウェア・エニックス・ホールディングス",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "天火同人",
+        "delta_lower": "111",
+        "delta_upper": "010",
+        "delta_lower_int": 7,
+        "delta_upper_int": 2,
+        "main_domain": "エンタメ",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_168",
+        "target_name": "横河電機",
+        "before_hexagram": "山水蒙",
+        "after_hexagram": "離為火",
+        "delta_lower": "111",
+        "delta_upper": "100",
+        "delta_lower_int": 7,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_169",
+        "target_name": "あおぞら銀行",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "艮為山",
+        "delta_lower": "101",
+        "delta_upper": "011",
+        "delta_lower_int": 5,
+        "delta_upper_int": 3,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_170",
+        "target_name": "マネックスグループ",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "010",
+        "delta_upper": "100",
+        "delta_lower_int": 2,
+        "delta_upper_int": 4,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_172",
+        "target_name": "相鉄ホールディングス",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天山遁",
+        "delta_lower": "000",
+        "delta_upper": "110",
+        "delta_lower_int": 0,
+        "delta_upper_int": 6,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_173",
+        "target_name": "あすか製薬",
+        "before_hexagram": "地水師",
+        "after_hexagram": "艮為山",
+        "delta_lower": "011",
+        "delta_upper": "001",
+        "delta_lower_int": 3,
+        "delta_upper_int": 1,
+        "main_domain": "医療・製薬",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_174",
+        "target_name": "ホリプロ",
+        "before_hexagram": "兌為沢",
+        "after_hexagram": "地山謙",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "CORP_JP_175",
+        "target_name": "富士フイルム",
+        "before_hexagram": "地天泰",
+        "after_hexagram": "沢水困",
+        "delta_lower": "101",
+        "delta_upper": "110",
+        "delta_lower_int": 5,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_176",
+        "target_name": "富士フイルム",
+        "before_hexagram": "沢水困",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_177",
+        "target_name": "富士フイルム",
+        "before_hexagram": "火風鼎",
+        "after_hexagram": "火天大有",
+        "delta_lower": "100",
+        "delta_upper": "000",
+        "delta_lower_int": 4,
+        "delta_upper_int": 0,
+        "main_domain": "金融",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_181",
+        "target_name": "富士フイルム",
+        "before_hexagram": "天火同人",
+        "after_hexagram": "地天泰",
+        "delta_lower": "010",
+        "delta_upper": "111",
+        "delta_lower_int": 2,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_002",
+        "target_name": "Aさん_20代後半_不動産営業",
+        "before_hexagram": "乾為天",
+        "after_hexagram": "山地剥",
+        "delta_lower": "111",
+        "delta_upper": "110",
+        "delta_lower_int": 7,
+        "delta_upper_int": 6,
+        "main_domain": "不動産・建設",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_003",
+        "target_name": "Bさん_30代半ば_ITマネージャー",
+        "before_hexagram": "天沢履",
+        "after_hexagram": "水山蹇",
+        "delta_lower": "111",
+        "delta_upper": "101",
+        "delta_lower_int": 7,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_006",
+        "target_name": "Cさん_40代前半_広告クリエイティブ",
+        "before_hexagram": "兌為沢",
+        "after_hexagram": "沢水困",
+        "delta_lower": "100",
+        "delta_upper": "000",
+        "delta_lower_int": 4,
+        "delta_upper_int": 0,
+        "main_domain": "Lifestyle",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_007",
+        "target_name": "Dさん_40代_事務職",
+        "before_hexagram": "地風升",
+        "after_hexagram": "山地剥",
+        "delta_lower": "011",
+        "delta_upper": "001",
+        "delta_lower_int": 3,
+        "delta_upper_int": 1,
+        "main_domain": "テクノロジー",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_008",
+        "target_name": "Eさん_30代後半_中堅商社",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "001",
+        "delta_upper": "010",
+        "delta_lower_int": 1,
+        "delta_upper_int": 2,
+        "main_domain": "国家・政治",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_009",
+        "target_name": "Fさん_20代後半_システムエンジニア",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "沢水困",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_010",
+        "target_name": "Gさん_20代_大手営業",
+        "before_hexagram": "坎為水",
+        "after_hexagram": "火天大有",
+        "delta_lower": "101",
+        "delta_upper": "111",
+        "delta_lower_int": 5,
+        "delta_upper_int": 7,
+        "main_domain": "Lifestyle",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_012",
+        "target_name": "Iさん_40代_製造業エンジニア",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "地山謙",
+        "delta_lower": "101",
+        "delta_upper": "100",
+        "delta_lower_int": 5,
+        "delta_upper_int": 4,
+        "main_domain": "製造",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_013",
+        "target_name": "Jさん_20代後半_女性社員",
+        "before_hexagram": "山水蒙",
+        "after_hexagram": "風天小畜",
+        "delta_lower": "101",
+        "delta_upper": "010",
+        "delta_lower_int": 5,
+        "delta_upper_int": 2,
+        "main_domain": "生活・暮らし",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_014",
+        "target_name": "Kさん_30代_企画職",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "生活・暮らし",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_015",
+        "target_name": "Lさん_30代_銀行員",
+        "before_hexagram": "艮為山",
+        "after_hexagram": "天火同人",
+        "delta_lower": "100",
+        "delta_upper": "110",
+        "delta_lower_int": 4,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_016",
+        "target_name": "Mさん_40代_アパレル店長",
+        "before_hexagram": "地風升",
+        "after_hexagram": "風火家人",
+        "delta_lower": "110",
+        "delta_upper": "011",
+        "delta_lower_int": 6,
+        "delta_upper_int": 3,
+        "main_domain": "テクノロジー",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_017",
+        "target_name": "Nさん_20代後半_公務員",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "地雷復",
+        "delta_lower": "110",
+        "delta_upper": "101",
+        "delta_lower_int": 6,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_018",
+        "target_name": "Oさん_30代_営業職",
+        "before_hexagram": "水沢節",
+        "after_hexagram": "地天泰",
+        "delta_lower": "001",
+        "delta_upper": "010",
+        "delta_lower_int": 1,
+        "delta_upper_int": 2,
+        "main_domain": "生活・暮らし",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_019",
+        "target_name": "Pさん_40代_技術職",
+        "before_hexagram": "風天小畜",
+        "after_hexagram": "火天大有",
+        "delta_lower": "000",
+        "delta_upper": "110",
+        "delta_lower_int": 0,
+        "delta_upper_int": 6,
+        "main_domain": "Lifestyle",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_020",
+        "target_name": "Qさん_30代_経理職",
+        "before_hexagram": "地山謙",
+        "after_hexagram": "乾為天",
+        "delta_lower": "110",
+        "delta_upper": "111",
+        "delta_lower_int": 6,
+        "delta_upper_int": 7,
+        "main_domain": "Lifestyle",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_021",
+        "target_name": "Rさん_40代_ルート営業",
+        "before_hexagram": "風地観",
+        "after_hexagram": "地天泰",
+        "delta_lower": "111",
+        "delta_upper": "011",
+        "delta_lower_int": 7,
+        "delta_upper_int": 3,
+        "main_domain": "Lifestyle",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_022",
+        "target_name": "Sさん_20代後半_Webマーケター",
+        "before_hexagram": "山水蒙",
+        "after_hexagram": "地天泰",
+        "delta_lower": "101",
+        "delta_upper": "001",
+        "delta_lower_int": 5,
+        "delta_upper_int": 1,
+        "main_domain": "Lifestyle",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "PERS_JP_023",
+        "target_name": "Tさん_40代後半_研究職",
+        "before_hexagram": "地火明夷",
+        "after_hexagram": "火天大有",
+        "delta_lower": "010",
+        "delta_upper": "101",
+        "delta_lower_int": 2,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "individual",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_001",
+        "target_name": "日本",
+        "before_hexagram": "乾為天",
+        "after_hexagram": "水雷屯",
+        "delta_lower": "011",
+        "delta_upper": "101",
+        "delta_lower_int": 3,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_002",
+        "target_name": "日本",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "艮為山",
+        "delta_lower": "000",
+        "delta_upper": "011",
+        "delta_lower_int": 0,
+        "delta_upper_int": 3,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_004",
+        "target_name": "アメリカ合衆国",
+        "before_hexagram": "乾為天",
+        "after_hexagram": "地雷復",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_005",
+        "target_name": "アメリカ合衆国",
+        "before_hexagram": "坎為水",
+        "after_hexagram": "火天大有",
+        "delta_lower": "101",
+        "delta_upper": "111",
+        "delta_lower_int": 5,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_006",
+        "target_name": "中国",
+        "before_hexagram": "地火明夷",
+        "after_hexagram": "乾為天",
+        "delta_lower": "010",
+        "delta_upper": "111",
+        "delta_lower_int": 2,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_014",
+        "target_name": "ドイツ（西ドイツ）",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "火天大有",
+        "delta_lower": "111",
+        "delta_upper": "100",
+        "delta_lower_int": 7,
+        "delta_upper_int": 4,
+        "main_domain": "社会・コミュニティ",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_015",
+        "target_name": "ドイツ",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "沢水困",
+        "delta_lower": "000",
+        "delta_upper": "011",
+        "delta_lower_int": 0,
+        "delta_upper_int": 3,
+        "main_domain": "社会・コミュニティ",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_016",
+        "target_name": "ドイツ",
+        "before_hexagram": "沢水困",
+        "after_hexagram": "地天泰",
+        "delta_lower": "101",
+        "delta_upper": "110",
+        "delta_lower_int": 5,
+        "delta_upper_int": 6,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_017",
+        "target_name": "イギリス",
+        "before_hexagram": "山風蠱",
+        "after_hexagram": "山地剥",
+        "delta_lower": "011",
+        "delta_upper": "000",
+        "delta_lower_int": 3,
+        "delta_upper_int": 0,
+        "main_domain": "国家・政治",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_018",
+        "target_name": "イギリス",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "離為火",
+        "delta_lower": "101",
+        "delta_upper": "100",
+        "delta_lower_int": 5,
+        "delta_upper_int": 4,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_019",
+        "target_name": "韓国",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "離為火",
+        "delta_lower": "001",
+        "delta_upper": "111",
+        "delta_lower_int": 1,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_020",
+        "target_name": "シンガポール",
+        "before_hexagram": "地天泰",
+        "after_hexagram": "乾為天",
+        "delta_lower": "000",
+        "delta_upper": "111",
+        "delta_lower_int": 0,
+        "delta_upper_int": 7,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_022",
+        "target_name": "オーストラリア",
+        "before_hexagram": "山水蒙",
+        "after_hexagram": "地天泰",
+        "delta_lower": "101",
+        "delta_upper": "001",
+        "delta_lower_int": 5,
+        "delta_upper_int": 1,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_023",
+        "target_name": "スウェーデン",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "地天泰",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_024",
+        "target_name": "インド",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "乾為天",
+        "delta_lower": "110",
+        "delta_upper": "101",
+        "delta_lower_int": 6,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_026",
+        "target_name": "イラン",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "沢水困",
+        "delta_lower": "110",
+        "delta_upper": "100",
+        "delta_lower_int": 6,
+        "delta_upper_int": 4,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_027",
+        "target_name": "キューバ",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "地風升",
+        "delta_lower": "011",
+        "delta_upper": "001",
+        "delta_lower_int": 3,
+        "delta_upper_int": 1,
+        "main_domain": "医療・製薬",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_028",
+        "target_name": "ベトナム",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "火天大有",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_029",
+        "target_name": "ポーランド",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "地天泰",
+        "delta_lower": "011",
+        "delta_upper": "100",
+        "delta_lower_int": 3,
+        "delta_upper_int": 4,
+        "main_domain": "国家・政治",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_030",
+        "target_name": "アイルランド",
+        "before_hexagram": "山水蒙",
+        "after_hexagram": "火天大有",
+        "delta_lower": "101",
+        "delta_upper": "100",
+        "delta_lower_int": 5,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_031",
+        "target_name": "イスラエル",
+        "before_hexagram": "水地比",
+        "after_hexagram": "乾為天",
+        "delta_lower": "111",
+        "delta_upper": "101",
+        "delta_lower_int": 7,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_032",
+        "target_name": "チリ",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "地天泰",
+        "delta_lower": "011",
+        "delta_upper": "100",
+        "delta_lower_int": 3,
+        "delta_upper_int": 4,
+        "main_domain": "小売・サービス",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_033",
+        "target_name": "北朝鮮",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "101",
+        "delta_upper": "001",
+        "delta_lower_int": 5,
+        "delta_upper_int": 1,
+        "main_domain": "不動産・建設",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_034",
+        "target_name": "ベネズエラ",
+        "before_hexagram": "雷火豊",
+        "after_hexagram": "沢水困",
+        "delta_lower": "111",
+        "delta_upper": "010",
+        "delta_lower_int": 7,
+        "delta_upper_int": 2,
+        "main_domain": "エネルギー・環境",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_035",
+        "target_name": "アルゼンチン",
+        "before_hexagram": "坎為水",
+        "after_hexagram": "水山蹇",
+        "delta_lower": "011",
+        "delta_upper": "000",
+        "delta_lower_int": 3,
+        "delta_upper_int": 0,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_036",
+        "target_name": "ギリシャ",
+        "before_hexagram": "雷沢帰妹",
+        "after_hexagram": "地雷復",
+        "delta_lower": "010",
+        "delta_upper": "100",
+        "delta_lower_int": 2,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_037",
+        "target_name": "イタリア",
+        "before_hexagram": "天地否",
+        "after_hexagram": "艮為山",
+        "delta_lower": "001",
+        "delta_upper": "110",
+        "delta_lower_int": 1,
+        "delta_upper_int": 6,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_038",
+        "target_name": "ボツワナ",
+        "before_hexagram": "地水師",
+        "after_hexagram": "山天大畜",
+        "delta_lower": "101",
+        "delta_upper": "001",
+        "delta_lower_int": 5,
+        "delta_upper_int": 1,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_050",
+        "target_name": "モーリシャス",
+        "before_hexagram": "山水蒙",
+        "after_hexagram": "地天泰",
+        "delta_lower": "101",
+        "delta_upper": "001",
+        "delta_lower_int": 5,
+        "delta_upper_int": 1,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_077",
+        "target_name": "エチオピア",
+        "before_hexagram": "地雷復",
+        "after_hexagram": "雷天大壮",
+        "delta_lower": "011",
+        "delta_upper": "100",
+        "delta_lower_int": 3,
+        "delta_upper_int": 4,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_092",
+        "target_name": "アラブ首長国連邦（UAE）",
+        "before_hexagram": "乾為天",
+        "after_hexagram": "火天大有",
+        "delta_lower": "000",
+        "delta_upper": "010",
+        "delta_lower_int": 0,
+        "delta_upper_int": 2,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_093",
+        "target_name": "カタール",
+        "before_hexagram": "水沢節",
+        "after_hexagram": "乾為天",
+        "delta_lower": "001",
+        "delta_upper": "101",
+        "delta_lower_int": 1,
+        "delta_upper_int": 5,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_094",
+        "target_name": "マレーシア",
+        "before_hexagram": "風地観",
+        "after_hexagram": "火水未済",
+        "delta_lower": "010",
+        "delta_upper": "110",
+        "delta_lower_int": 2,
+        "delta_upper_int": 6,
+        "main_domain": "国家・政治",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_095",
+        "target_name": "タイ",
+        "before_hexagram": "離為火",
+        "after_hexagram": "地風升",
+        "delta_lower": "110",
+        "delta_upper": "101",
+        "delta_lower_int": 6,
+        "delta_upper_int": 5,
+        "main_domain": "製造",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_096",
+        "target_name": "カナダ",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "地天泰",
+        "delta_lower": "110",
+        "delta_upper": "010",
+        "delta_lower_int": 6,
+        "delta_upper_int": 2,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_116",
+        "target_name": "ニュージーランド",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "離為火",
+        "delta_lower": "100",
+        "delta_upper": "111",
+        "delta_lower_int": 4,
+        "delta_upper_int": 7,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_138",
+        "target_name": "オランダ",
+        "before_hexagram": "水沢節",
+        "after_hexagram": "地天泰",
+        "delta_lower": "001",
+        "delta_upper": "010",
+        "delta_lower_int": 1,
+        "delta_upper_int": 2,
+        "main_domain": "医療・製薬",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_161",
+        "target_name": "南アフリカ",
+        "before_hexagram": "火雷噬嗑",
+        "after_hexagram": "水山蹇",
+        "delta_lower": "101",
+        "delta_upper": "111",
+        "delta_lower_int": 5,
+        "delta_upper_int": 7,
+        "main_domain": "エネルギー・環境",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_185",
+        "target_name": "ジンバブエ",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "地火明夷",
+        "delta_lower": "001",
+        "delta_upper": "111",
+        "delta_lower_int": 1,
+        "delta_upper_int": 7,
+        "main_domain": "不動産・建設",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_186",
+        "target_name": "トルコ",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "水火既済",
+        "delta_lower": "001",
+        "delta_upper": "110",
+        "delta_lower_int": 1,
+        "delta_upper_int": 6,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_187",
+        "target_name": "レバノン",
+        "before_hexagram": "山風蠱",
+        "after_hexagram": "山地剥",
+        "delta_lower": "011",
+        "delta_upper": "000",
+        "delta_lower_int": 3,
+        "delta_upper_int": 0,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_188",
+        "target_name": "エジプト",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "水山蹇",
+        "delta_lower": "101",
+        "delta_upper": "110",
+        "delta_lower_int": 5,
+        "delta_upper_int": 6,
+        "main_domain": "不動産・建設",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_189",
+        "target_name": "パキスタン",
+        "before_hexagram": "水沢節",
+        "after_hexagram": "習坎",
+        "delta_lower": "100",
+        "delta_upper": "000",
+        "delta_lower_int": 4,
+        "delta_upper_int": 0,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_218",
+        "target_name": "ナイジェリア",
+        "before_hexagram": "雷火豊",
+        "after_hexagram": "坤為地",
+        "delta_lower": "101",
+        "delta_upper": "100",
+        "delta_lower_int": 5,
+        "delta_upper_int": 4,
+        "main_domain": "エネルギー・環境",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "COUN_JP_248",
+        "target_name": "ポルトガル",
+        "before_hexagram": "兌為沢",
+        "after_hexagram": "地雷復",
+        "delta_lower": "010",
+        "delta_upper": "110",
+        "delta_lower_int": 2,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_274",
+        "target_name": "韓国",
+        "before_hexagram": "天沢履",
+        "after_hexagram": "離為火",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_275",
+        "target_name": "スウェーデン",
+        "before_hexagram": "兌為沢",
+        "after_hexagram": "地天泰",
+        "delta_lower": "001",
+        "delta_upper": "110",
+        "delta_lower_int": 1,
+        "delta_upper_int": 6,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_276",
+        "target_name": "アイスランド",
+        "before_hexagram": "沢天夬",
+        "after_hexagram": "風地観",
+        "delta_lower": "111",
+        "delta_upper": "101",
+        "delta_lower_int": 7,
+        "delta_upper_int": 5,
+        "main_domain": "金融",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_277",
+        "target_name": "インド",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "乾為天",
+        "delta_lower": "110",
+        "delta_upper": "101",
+        "delta_lower_int": 6,
+        "delta_upper_int": 5,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_278",
+        "target_name": "エストニア",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "離為火",
+        "delta_lower": "101",
+        "delta_upper": "100",
+        "delta_lower_int": 5,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_279",
+        "target_name": "メキシコ",
+        "before_hexagram": "震為雷",
+        "after_hexagram": "地風升",
+        "delta_lower": "111",
+        "delta_upper": "100",
+        "delta_lower_int": 7,
+        "delta_upper_int": 4,
+        "main_domain": "農林水産",
+        "scale": "country",
+        "source_type": "news"
+      },
+      {
+        "transition_id": "COUN_JP_280",
+        "target_name": "ルワンダ",
+        "before_hexagram": "坤為地",
+        "after_hexagram": "火天大有",
+        "delta_lower": "111",
+        "delta_upper": "101",
+        "delta_lower_int": 7,
+        "delta_upper_int": 5,
+        "main_domain": "社会・コミュニティ",
+        "scale": "country",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "COUN_JP_288",
+        "target_name": "クウェート",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "地天泰",
+        "delta_lower": "111",
+        "delta_upper": "001",
+        "delta_lower_int": 7,
+        "delta_upper_int": 1,
+        "main_domain": "エネルギー・環境",
+        "scale": "country",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_222",
+        "target_name": "ゼネラルモーターズ (GM)",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "乾為天",
+        "delta_lower": "011",
+        "delta_upper": "000",
+        "delta_lower_int": 3,
+        "delta_upper_int": 0,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_223",
+        "target_name": "フォード・モーター",
+        "before_hexagram": "水山蹇",
+        "after_hexagram": "火風鼎",
+        "delta_lower": "010",
+        "delta_upper": "111",
+        "delta_lower_int": 2,
+        "delta_upper_int": 7,
+        "main_domain": "国家・政治",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_225",
+        "target_name": "富士フイルム",
+        "before_hexagram": "山地剥",
+        "after_hexagram": "火天大有",
+        "delta_lower": "111",
+        "delta_upper": "100",
+        "delta_lower_int": 7,
+        "delta_upper_int": 4,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_226",
+        "target_name": "レゴ (Lego Group)",
+        "before_hexagram": "火水未済",
+        "after_hexagram": "乾為天",
+        "delta_lower": "101",
+        "delta_upper": "010",
+        "delta_lower_int": 5,
+        "delta_upper_int": 2,
+        "main_domain": "製造",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_227",
+        "target_name": "スターバックス",
+        "before_hexagram": "天沢履",
+        "after_hexagram": "離為火",
+        "delta_lower": "011",
+        "delta_upper": "010",
+        "delta_lower_int": 3,
+        "delta_upper_int": 2,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_230",
+        "target_name": "デルタ航空",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "天火同人",
+        "delta_lower": "001",
+        "delta_upper": "101",
+        "delta_lower_int": 1,
+        "delta_upper_int": 5,
+        "main_domain": "物流・交通",
+        "scale": "company",
+        "source_type": "official"
+      },
+      {
+        "transition_id": "CORP_JP_231",
+        "target_name": "IBM",
+        "before_hexagram": "天山遁",
+        "after_hexagram": "乾為天",
+        "delta_lower": "110",
+        "delta_upper": "000",
+        "delta_lower_int": 6,
+        "delta_upper_int": 0,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_232",
+        "target_name": "Apple",
+        "before_hexagram": "水雷屯",
+        "after_hexagram": "乾為天",
+        "delta_lower": "011",
+        "delta_upper": "101",
+        "delta_lower_int": 3,
+        "delta_upper_int": 5,
+        "main_domain": "エンタメ",
+        "scale": "company",
+        "source_type": "book"
+      },
+      {
+        "transition_id": "CORP_JP_233",
+        "target_name": "AIG (アメリカン・インターナショナル・グループ)",
+        "before_hexagram": "天雷無妄",
+        "after_hexagram": "地天泰",
+        "delta_lower": "011",
+        "delta_upper": "111",
+        "delta_lower_int": 3,
+        "delta_upper_int": 7,
+        "main_domain": "テクノロジー",
+        "scale": "company",
+        "source_type": "official"
+      }
+    ]
+  },
+  "part3_diagonal_patterns": {
+    "n_diagonal": 9017,
+    "patterns": [
+      {
+        "delta_value": 0,
+        "delta_bits": "000",
+        "count": 1113,
+        "ratio": 0.1234,
+        "meaning": "変化なし",
+        "trigram_transform_examples": [
+          "坤(地)=不変",
+          "艮(山)=不変",
+          "坎(水)=不変",
+          "巽(風)=不変",
+          "震(雷)=不変",
+          "離(火)=不変",
+          "兌(沢)=不変",
+          "乾(天)=不変"
+        ]
+      },
+      {
+        "delta_value": 1,
+        "delta_bits": "001",
+        "count": 912,
+        "ratio": 0.1011,
+        "meaning": "1爻変 (初爻/四爻)",
+        "trigram_transform_examples": [
+          "坤(地)→艮(山)",
+          "坎(水)→巽(風)",
+          "震(雷)→離(火)",
+          "兌(沢)→乾(天)"
+        ]
+      },
+      {
+        "delta_value": 2,
+        "delta_bits": "010",
+        "count": 1377,
+        "ratio": 0.1527,
+        "meaning": "1爻変 (二爻/五爻)",
+        "trigram_transform_examples": [
+          "坤(地)→坎(水)",
+          "艮(山)→巽(風)",
+          "震(雷)→兌(沢)",
+          "離(火)→乾(天)"
+        ]
+      },
+      {
+        "delta_value": 3,
+        "delta_bits": "011",
+        "count": 1153,
+        "ratio": 0.1279,
+        "meaning": "2爻変",
+        "trigram_transform_examples": [
+          "坤(地)→巽(風)",
+          "艮(山)→坎(水)",
+          "震(雷)→乾(天)",
+          "離(火)→兌(沢)"
+        ]
+      },
+      {
+        "delta_value": 4,
+        "delta_bits": "100",
+        "count": 1286,
+        "ratio": 0.1426,
+        "meaning": "1爻変 (三爻/上爻)",
+        "trigram_transform_examples": [
+          "坤(地)→震(雷)",
+          "艮(山)→離(火)",
+          "坎(水)→兌(沢)",
+          "巽(風)→乾(天)"
+        ]
+      },
+      {
+        "delta_value": 5,
+        "delta_bits": "101",
+        "count": 955,
+        "ratio": 0.1059,
+        "meaning": "2爻変",
+        "trigram_transform_examples": [
+          "坤(地)→離(火)",
+          "艮(山)→震(雷)",
+          "坎(水)→乾(天)",
+          "巽(風)→兌(沢)"
+        ]
+      },
+      {
+        "delta_value": 6,
+        "delta_bits": "110",
+        "count": 1226,
+        "ratio": 0.136,
+        "meaning": "2爻変",
+        "trigram_transform_examples": [
+          "坤(地)→兌(沢)",
+          "艮(山)→乾(天)",
+          "坎(水)→震(雷)",
+          "巽(風)→離(火)"
+        ]
+      },
+      {
+        "delta_value": 7,
+        "delta_bits": "111",
+        "count": 995,
+        "ratio": 0.1103,
+        "meaning": "全爻変 (錯卦)",
+        "trigram_transform_examples": [
+          "坤(地)→乾(天)",
+          "艮(山)→兌(沢)",
+          "坎(水)→離(火)",
+          "巽(風)→震(雷)"
+        ]
+      }
+    ],
+    "same_hexagram_count": 1113,
+    "same_hexagram_ratio": 0.1234,
+    "hamming_weight_groups": {
+      "0": 1113,
+      "1": 3575,
+      "2": 3334,
+      "3": 995
+    }
+  }
+}
