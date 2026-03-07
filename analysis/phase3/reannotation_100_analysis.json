@@ -1,0 +1,159 @@
+{
+  "n_cases": 100,
+  "valid_transitions": 100,
+  "before_pure_rate": 0.0,
+  "after_pure_rate": 0.0,
+  "diagonal_rate": 42.0,
+  "even_parity_rate": 56.0,
+  "hamming_distribution": {
+    "0": 0,
+    "1": 0,
+    "2": 29,
+    "3": 33,
+    "4": 25,
+    "5": 11,
+    "6": 2
+  },
+  "before_unique_hexagrams": 37,
+  "after_unique_hexagrams": 34,
+  "before_kw_top10": [
+    [
+      15,
+      11
+    ],
+    [
+      40,
+      10
+    ],
+    [
+      39,
+      8
+    ],
+    [
+      35,
+      6
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      55,
+      4
+    ],
+    [
+      43,
+      4
+    ],
+    [
+      23,
+      4
+    ],
+    [
+      45,
+      4
+    ],
+    [
+      21,
+      3
+    ]
+  ],
+  "after_kw_top10": [
+    [
+      23,
+      10
+    ],
+    [
+      39,
+      5
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      48,
+      5
+    ],
+    [
+      61,
+      5
+    ],
+    [
+      49,
+      5
+    ],
+    [
+      37,
+      4
+    ],
+    [
+      28,
+      4
+    ],
+    [
+      53,
+      4
+    ],
+    [
+      13,
+      4
+    ]
+  ],
+  "trigram_freq": {
+    "乾": {
+      "before_lower": 9,
+      "before_upper": 8,
+      "after_lower": 10,
+      "after_upper": 9
+    },
+    "坤": {
+      "before_lower": 19,
+      "before_upper": 14,
+      "after_lower": 19,
+      "after_upper": 9
+    },
+    "震": {
+      "before_lower": 14,
+      "before_upper": 17,
+      "after_lower": 12,
+      "after_upper": 4
+    },
+    "巽": {
+      "before_lower": 2,
+      "before_upper": 7,
+      "after_lower": 16,
+      "after_upper": 21
+    },
+    "坎": {
+      "before_lower": 16,
+      "before_upper": 16,
+      "after_lower": 5,
+      "after_upper": 17
+    },
+    "離": {
+      "before_lower": 9,
+      "before_upper": 17,
+      "after_lower": 13,
+      "after_upper": 9
+    },
+    "艮": {
+      "before_lower": 25,
+      "before_upper": 8,
+      "after_lower": 17,
+      "after_upper": 13
+    },
+    "兌": {
+      "before_lower": 6,
+      "before_upper": 13,
+      "after_lower": 8,
+      "after_upper": 18
+    }
+  },
+  "baseline_comparison": {
+    "before_pure_rate_baseline": 98.2,
+    "after_pure_rate_baseline": 98.2,
+    "diagonal_rate_baseline": 97.8,
+    "even_parity_baseline": 98.6
+  }
+}
