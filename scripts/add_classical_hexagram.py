@@ -142,10 +142,14 @@ def main():
                 old_before = case.get('classical_before_hexagram')
                 old_after = case.get('classical_after_hexagram')
 
-                # 変化前の状態を表す卦（before_hex単独の重卦）
-                before_num, before_name = get_classical_hexagram(before_hex, before_hex)
-                # 変化後の状態を表す卦（after_hex単独の重卦）
-                after_num, after_name = get_classical_hexagram(after_hex, after_hex)
+                # 変化前の状態を表す卦（trigramフィールド優先、なければ重卦にフォールバック）
+                b_lower = case.get('before_lower_trigram', before_hex)
+                b_upper = case.get('before_upper_trigram', before_hex)
+                before_num, before_name = get_classical_hexagram(b_upper, b_lower)
+                # 変化後の状態を表す卦（trigramフィールド優先、なければ重卦にフォールバック）
+                a_lower = case.get('after_lower_trigram', after_hex)
+                a_upper = case.get('after_upper_trigram', after_hex)
+                after_num, after_name = get_classical_hexagram(a_upper, a_lower)
 
                 if not old_before and before_name:
                     case['classical_before_hexagram'] = f'{before_num}_{before_name}'
