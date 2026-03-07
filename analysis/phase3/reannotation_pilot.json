@@ -1,0 +1,535 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-07 18:39:37",
+    "n_cases": 20,
+    "seed": 42,
+    "method": "2-step trigram annotation"
+  },
+  "stats": {
+    "total_cases": 20,
+    "before": {
+      "success": 15,
+      "fail": 5,
+      "pure": 6,
+      "non_pure": 9,
+      "unique_hexagrams": [
+        3,
+        11,
+        12,
+        29,
+        39,
+        58
+      ],
+      "unique_count": 6,
+      "pure_rate": 40.0,
+      "non_pure_rate": 60.0
+    },
+    "after": {
+      "success": 15,
+      "fail": 5,
+      "pure": 1,
+      "non_pure": 14,
+      "unique_hexagrams": [
+        2,
+        3,
+        14,
+        15,
+        23,
+        39,
+        42,
+        48,
+        50,
+        53,
+        59,
+        61
+      ],
+      "unique_count": 12,
+      "pure_rate": 6.7,
+      "non_pure_rate": 93.3
+    },
+    "errors": [
+      {
+        "case_id": "CORP_JP_2419",
+        "phase": "before",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7a9-f14d-7130-89fb-6f1c7790e973\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱自動車 燃費不正と日産傘下（2016-2024）\n- 時期: 2016-2024\n- 概要: 燃費不正発覚で経営危機。日産傘下入りで再建、ASEAN市場に注力し黒字"
+      },
+      {
+        "case_id": "CORP_JP_2419",
+        "phase": "after",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-0432-7991-a44b-c1a777baa616\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱自動車 燃費不正と日産傘下（2016-2024）\n- 時期: 2016-2024\n- 概要: 燃費不正発覚で経営危機。日産傘下入りで再建、ASEAN市場に注力し黒字"
+      },
+      {
+        "case_id": "COUN_JP_394",
+        "phase": "before",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-19f6-7c63-a8fa-879c4f1d18e0\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: アルメニア_ナゴルノ・カラバフ敗北\n- 時期: 1991-2024\n- 概要: 独立後、ナゴルノ・カラバフを巡りアゼルバイジャンと紛争。2020年44日戦争で敗北、20"
+      },
+      {
+        "case_id": "COUN_JP_394",
+        "phase": "after",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-2ce2-7ac0-b7cd-e02c70a9c221\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: アルメニア_ナゴルノ・カラバフ敗北\n- 時期: 1991-2024\n- 概要: 独立後、ナゴルノ・カラバフを巡りアゼルバイジャンと紛争。2020年44日戦争で敗北、20"
+      },
+      {
+        "case_id": "OTHR_JP_719",
+        "phase": "before",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-4330-7b03-949e-cf5ff0e5bb57\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 大阪・関西万博2025 開催準備（2018-2025）\n- 時期: 2018-2025\n- 概要: 2025年開催決定。コロナ・資材高騰・建設遅延等で費用膨張、開催可否"
+      },
+      {
+        "case_id": "OTHR_JP_719",
+        "phase": "after",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-5570-7331-9010-680724aa5500\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 大阪・関西万博2025 開催準備（2018-2025）\n- 時期: 2018-2025\n- 概要: 2025年開催決定。コロナ・資材高騰・建設遅延等で費用膨張、開催可否"
+      },
+      {
+        "case_id": "case_18",
+        "phase": "before",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-6b2f-7d23-9b6e-763a7a1a17f1\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: オリエンタルランドの復活成長（2023-2024）\n- 時期: 2023-2024\n- 概要: 東京ディズニーリゾートがコロナ後の回復で過去最高の入場者数と売上を達成。"
+      },
+      {
+        "case_id": "case_18",
+        "phase": "after",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-7d62-7b83-b82e-94ad97be6c76\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: オリエンタルランドの復活成長（2023-2024）\n- 時期: 2023-2024\n- 概要: 東京ディズニーリゾートがコロナ後の回復で過去最高の入場者数と売上を達成。"
+      },
+      {
+        "case_id": "CORP_JP_3044",
+        "phase": "before",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-939f-7a10-81d1-fdabdbedb89e\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱グループ（財閥解体からの再結集）\n- 時期: 1950-1970\n- 概要: GHQによる財閥解体後、金曜会を中心にグループ企業が緩やかに再結集。重工業・銀行・商事"
+      },
+      {
+        "case_id": "CORP_JP_3044",
+        "phase": "after",
+        "error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-a863-73d2-99e7-056a4df4c824\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱グループ（財閥解体からの再結集）\n- 時期: 1950-1970\n- 概要: GHQによる財閥解体後、金曜会を中心にグループ企業が緩やかに再結集。重工業・銀行・商事"
+      }
+    ]
+  },
+  "results": [
+    {
+      "transition_id": "PERS_JP_1896",
+      "target_name": "個人 借金苦からの資産形成",
+      "source_type": "news",
+      "original_before": "2_坤",
+      "original_after": "52_艮",
+      "before_result": {
+        "lower_trigram": "坎",
+        "lower_reasoning": "事業失敗と多額の借金により、内面の基盤が不安・恐れ・不安定さに支配されており、本質として『困難・危険』が強い状態だから。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外的状況もまた、負債返済の圧力と生活苦によって、継続的な危機と険しさに包まれていたため、『困難・危険』を表す坎が最も適切だから。",
+        "hexagram_number": 29,
+        "hexagram_name": "坎為水"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "艮",
+        "lower_reasoning": "内面の基盤は、拡大よりも停止・節制・蓄積を重んじる状態であり、借金完済後も慎重に守りながら資産を積む本質が最もよく表れるため。",
+        "upper_trigram": "坤",
+        "upper_reasoning": "外面には、低姿勢で無理に前へ出ず、環境に順応しながら生活基盤を安定させる受容的な状態が現れているため。",
+        "hexagram_number": 15,
+        "hexagram_name": "地山謙"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "COUN_JP_690",
+      "target_name": "東日本大震災と復興（2011-2020）",
+      "source_type": "news",
+      "original_before": "52_艮",
+      "original_after": "57_巽",
+      "before_result": {
+        "lower_trigram": "乾",
+        "lower_reasoning": "社会の内的基盤には、秩序を維持し全体を動かす力強い機能性があり、平時の安定を内側から支えていたため。",
+        "upper_trigram": "坤",
+        "upper_reasoning": "外的環境は受容的で穏やかであり、全体として平和で安定した状況が表面に現れていたため。",
+        "hexagram_number": 11,
+        "hexagram_name": "地天泰"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "巽",
+        "lower_reasoning": "長期復興の基盤は、一挙の回復ではなく、制度・地域・意識が時間をかけて浸透するように変わる柔軟な適応力にあったため。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外的状況には、原発事故の長期化、避難、風評、不確実性など、危険と困難が持続して表れていたため。",
+        "hexagram_number": 48,
+        "hexagram_name": "水風井"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "CORP_JP_3355",
+      "target_name": "アップル（スティーブ・ジョブズ復帰）",
+      "source_type": "book",
+      "original_before": null,
+      "original_after": null,
+      "before_result": {
+        "lower_trigram": "坎",
+        "lower_reasoning": "経営の根底が資金・戦略・組織の各面で深い危険に沈み、内側の本質が『困難・危険・流動』そのものであったため。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "市場や経営環境から見ても危機が表面化し、外から見える姿もまた連続する危険と閉塞として現れていたため。",
+        "hexagram_number": 29,
+        "hexagram_name": "坎為水"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "乾",
+        "lower_reasoning": "変化後の内的基盤には、ジョブズ復帰によって回復した強い意志、創造力、主導性がある。製品整理と再建を支える中核の力は、受け身ではなく自ら方向を切り開く乾の性質が最も強い。",
+        "upper_trigram": "離",
+        "upper_reasoning": "変化後の外的な現れは、ブランドの再点火、注目の集中、革新的イメージの鮮明化である。V字回復と大成功が社会的に可視化され、輝きとして現れた状態は離が最もよく表す。",
+        "hexagram_number": 14,
+        "hexagram_name": "火天大有"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "CORP_JP_324",
+      "target_name": "人気企業_ブランド失墜_信頼回復中",
+      "source_type": "news",
+      "original_before": "58_兌",
+      "original_after": "52_艮",
+      "before_result": {
+        "lower_trigram": "兌",
+        "lower_reasoning": "内側の基盤は、成功体験に支えられた悦びと自己肯定が強く、絶頂がそのまま慢心へ傾いていたため。",
+        "upper_trigram": "兌",
+        "upper_reasoning": "外側にも、人気・好感・開放的なブランド像が広がり、市場から歓迎される華やかな状態が前面に出ていたため。",
+        "hexagram_number": 58,
+        "hexagram_name": "兌為沢"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "艮",
+        "lower_reasoning": "内的基盤は拡大ではなく停止と守成にあり、損耗を止めて縮小均衡を保ちながら生存を優先しているため。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外的環境はなお信頼失墜後の危険と困難の中にあり、回復途上で不安定さと警戒が表面化しているため。",
+        "hexagram_number": 39,
+        "hexagram_name": "水山蹇"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "CORP_JP_3055",
+      "target_name": "トヨタ自動車創業",
+      "source_type": "news",
+      "original_before": "51_震",
+      "original_after": "57_巽",
+      "before_result": {
+        "lower_trigram": "震",
+        "lower_reasoning": "内側では新事業への衝動と創業的な推進力がすでに動いており、既存の織機事業の枠に収まりきらない『新しい動き』が本質だったため。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外部には技術開発、資金負担、市場開拓、戦時下の制約など多くの障害と不確実性があり、成長がそのまま危険と試練を伴って表れていたため。",
+        "hexagram_number": 3,
+        "hexagram_name": "水雷屯"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "震",
+        "lower_reasoning": "父の事業から分離して自動車事業を立ち上げた内的本質は、既存秩序を破って新しい動きを起こす『震』が最も適切である。『変質・新生』と『攻める・挑戦』が、覚醒と発動の力として表れている。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外的状況は、国産乗用車開発の困難さに加え、戦時下で軍用車両生産へ向かう不安定で危険を伴う環境であり、『坎』が最もよく表す。成果が一方的成功ではなくMixedである点も合致する。",
+        "hexagram_number": 3,
+        "hexagram_name": "水雷屯"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "CORP_JP_1600",
+      "target_name": "震結果失敗事例015-1",
+      "source_type": "news",
+      "original_before": "51_震",
+      "original_after": "2_坤",
+      "before_result": {
+        "lower_trigram": "震",
+        "lower_reasoning": "「成長痛」の核には、内側から突き上げる成長衝動と拡大への勢いがある。未成熟さを抱えつつも動きを止められない本質は震に当たる。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外側には急成長に伴うひずみ、危うさ、運営上の難所が表面化している。内部崩壊の引き金を抱えた不安定な環境は坎が最も近い。",
+        "hexagram_number": 3,
+        "hexagram_name": "水雷屯"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "坤",
+        "lower_reasoning": "崩壊・消滅の後の内的基盤は、主導性を失って受け身となり、自力で支え切れない状態にあるため、受容・地盤・従順を示す坤が最も適切です。",
+        "upper_trigram": "艮",
+        "upper_reasoning": "外的には拡大や進展が止まり、表面上は切り崩されて終息へ向かう局面であるため、停止・終止・閉塞を示す艮が適切です。",
+        "hexagram_number": 23,
+        "hexagram_name": "山地剥"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "OTHR_JP_299",
+      "target_name": "尾道市空き家再生まちづくり（2010-2024）",
+      "source_type": "news",
+      "original_before": "巽為風",
+      "original_after": "兌為沢",
+      "before_result": {
+        "lower_trigram": "艮",
+        "lower_reasoning": "空き家の蓄積と地域活動の停滞が基盤にあり、内側では動きが止まり、状況が固着していたため。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外部環境としては人口減少や空洞化、活用の難しさが重なり、表面には困難と閉塞が強く現れていたため。",
+        "hexagram_number": 39,
+        "hexagram_name": "水山蹇"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "巽",
+        "lower_reasoning": "再生の核は、空き家活用を地域へ柔軟に浸透させ、住民協力と移住者受け入れを通じて持続的な基盤を育てた点にあるため。",
+        "upper_trigram": "離",
+        "upper_reasoning": "外側には、アートイベントやゲストハウスの増加によって街の魅力が明るく可視化され、注目と活気を集める成功として現れているため。",
+        "hexagram_number": 50,
+        "hexagram_name": "火風鼎"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "COUN_JP_1040",
+      "target_name": "中世王国6-1",
+      "source_type": "book",
+      "original_before": "52_艮",
+      "original_after": "51_震",
+      "before_result": {
+        "lower_trigram": "乾",
+        "lower_reasoning": "中世王国の変化前の内的基盤には、秩序を維持し発展を支える統治力と主導性があるため、強い意志と創造的原動力を示す乾が最も適切です。",
+        "upper_trigram": "坤",
+        "upper_reasoning": "外的状況としては、社会や領域全体が受容的で安定し、平和が広がっている状態であるため、基盤の安定と包容を示す坤が最も適切です。",
+        "hexagram_number": 11,
+        "hexagram_name": "地天泰"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "震",
+        "lower_reasoning": "刷新と破壊を経た後、内側では旧秩序を突き破って新しい力が芽生え、目覚めと始動が本質になっているため。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外側では再編後の不安定さや危うさがなお強く、新生は見えるが環境は流動的で結果も吉凶混合になりやすいため。",
+        "hexagram_number": 3,
+        "hexagram_name": "水雷屯"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "COUN_JP_929",
+      "target_name": "兌前失敗事例031-4",
+      "source_type": "news",
+      "original_before": "58_兌",
+      "original_after": "2_坤",
+      "before_result": {
+        "lower_trigram": "兌",
+        "lower_reasoning": "内面の本質は、苦しさを抱えながらもなお前向きさと楽観を保つ状態であり、成長痛を『喜び・期待・開放性』で支える兌が最も適切です。",
+        "upper_trigram": "兌",
+        "upper_reasoning": "外面にも明るさや期待感が表れ、周囲からはまだ希望的で開放的な局面に見えていたため、表面的な現れも兌で表すのが妥当です。",
+        "hexagram_number": 58,
+        "hexagram_name": "兌為沢"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "坤",
+        "lower_reasoning": "内的には楽観の芯が完全に失われ、能動的に立て直す力も尽きている。崩壊・消滅の本質は、力を失って受け身のまま地に還る坤にある。",
+        "upper_trigram": "坤",
+        "upper_reasoning": "外的にも撤退ののちに存在感が平板化し、組織や国家の形が吸収・解体されるように消えていく。表面に現れるのも終息と従属の相であり、坤が最も近い。",
+        "hexagram_number": 2,
+        "hexagram_name": "坤為地"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "PERS_JP_018",
+      "target_name": "Oさん_30代_営業職",
+      "source_type": "official",
+      "original_before": "水沢節",
+      "original_after": "地天泰",
+      "before_result": {
+        "lower_trigram": "坤",
+        "lower_reasoning": "本質には相手を受け止め、支える側に回る受容性が強く、当時はその力が営業成果に直結せず、耐えながら埋もれていたため。",
+        "upper_trigram": "乾",
+        "upper_reasoning": "外側の環境は、成果・推進・達成を強く求める営業組織で、ノルマに追われる乾的な圧力が表面を支配していたため。",
+        "hexagram_number": 12,
+        "hexagram_name": "天地否"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "兌",
+        "lower_reasoning": "営業で培った傾聴力と対話力が内的資質として定着し、人と関わること自体が成果の源泉になっているため。",
+        "upper_trigram": "巽",
+        "upper_reasoning": "人事・採用という役割で組織全体へ柔らかく浸透し、人と組織をつなぐ形で影響を広げているため。",
+        "hexagram_number": 61,
+        "hexagram_name": "風沢中孚"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "CORP_JP_1947",
+      "target_name": "兌喜び事例10-1",
+      "source_type": "news",
+      "original_before": "58_兌",
+      "original_after": "1_乾",
+      "before_result": {
+        "lower_trigram": "兌",
+        "lower_reasoning": "内的基盤は、強い対立や停滞ではなく、満足・和悦・開放性に支えられた安定である。顧客満足を本質に据える姿勢は、内面の価値観として兌が最も適切。",
+        "upper_trigram": "兌",
+        "upper_reasoning": "外的にも、平和で和やかな関係性と、交流を通じた好循環が表面化している。周囲から見える状態も『喜び・親和・円満』の兌が最もよく表す。",
+        "hexagram_number": 58,
+        "hexagram_name": "兌為沢"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "乾",
+        "lower_reasoning": "V字回復を自力で切り開き、大成功へ押し上げた根底には、強い意志・主導性・創造的推進力があるため。",
+        "upper_trigram": "離",
+        "upper_reasoning": "変化後の外面には、成功が明確に可視化され、注目・評価・輝きとして現れているため。",
+        "hexagram_number": 14,
+        "hexagram_name": "火天大有"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "case_11",
+      "target_name": "離婚後の共同親権で家族形態変化（2024）",
+      "source_type": "news",
+      "original_before": "29_坎",
+      "original_after": "51_震",
+      "before_result": {
+        "lower_trigram": "坎",
+        "lower_reasoning": "家族の根底では、離婚によって信頼・役割・情緒の基盤が揺らぎ、内面は不安定で先の見えない流動状態にあるため、困難・危険・不安定さを示す坎が最も適切。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外的にも、親権・生活設計・対人関係の再編が重なり、状況全体が混乱し続ける不安定な環境として現れているため、表面化したカオスを示す坎が適切。",
+        "hexagram_number": 29,
+        "hexagram_name": "坎為水"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "坎",
+        "lower_reasoning": "離婚後の共同親権では、親子関係や役割分担の基盤が流動化しやすく、内面には不安・試行錯誤・先行きの見えにくさが生じるため、内卦は坎が最も適切です。",
+        "upper_trigram": "巽",
+        "upper_reasoning": "外的には家族機能が複数の拠点や関係へ分散し、調整がじわじわ広がる形で進むため、表面の現れとしては分散・浸透・柔軟化を示す巽が適切です。",
+        "hexagram_number": 59,
+        "hexagram_name": "風水渙"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "case_12",
+      "target_name": "GM経営破綻と再建（2009-2014）",
+      "source_type": "news",
+      "original_before": "29_坎",
+      "original_after": "1_乾",
+      "before_result": {
+        "lower_trigram": "震",
+        "lower_reasoning": "内部では経営基盤が大きく揺さぶられ、組織全体が衝撃によって不安定化していたため。震は内側から走る動揺、覚醒、強制的な始動を表し、破綻直前後のGMの本質に合う。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外部環境は金融危機と破綻圧力に包まれ、危険・困難・流動性不安が表面化していたため。坎は外から迫る危機的状況をよく表す。",
+        "hexagram_number": 3,
+        "hexagram_name": "水雷屯"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "乾",
+        "lower_reasoning": "破綻後の再建を支えた本質は、主導性・再創造力・強い意志であり、内的基盤として自ら立て直す推進力が中核にあるため。",
+        "upper_trigram": "離",
+        "upper_reasoning": "再建成功が外部から明確に認識され、企業価値の回復と注目・評価の高まりが表面的な輝きとして現れているため。",
+        "hexagram_number": 14,
+        "hexagram_name": "火天大有"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "FAM_JP_309",
+      "target_name": "不妊治療保険適用拡大効果（2022-2024）",
+      "source_type": "news",
+      "original_before": "巽為風",
+      "original_after": "巽為風",
+      "before_result": {
+        "lower_trigram": "艮",
+        "lower_reasoning": "変化前の基盤には、治療を始めたくても始めにくい「止まり」の性質が強く、内側で動きが抑え込まれていたためです。高い費用負担と心理的なためらいが、根底で前進を止める力として働いていました。",
+        "upper_trigram": "坎",
+        "upper_reasoning": "外的環境には、保険適用前の経済的負担、不確実性、制度上の障壁という「困難・危険」が表れていたためです。表面上は進もうとすると壁に当たる状況で、閉塞感が強く現れていました。",
+        "hexagram_number": 39,
+        "hexagram_name": "水山蹇"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "震",
+        "lower_reasoning": "保険適用拡大によって治療開始のハードルが下がり、内的基盤として新しい動きと再始動が生まれているため。『変質・新生』の核にあるのは、停滞からの覚醒と具体的な始動である。",
+        "upper_trigram": "巽",
+        "upper_reasoning": "制度改正の効果が社会と医療現場に段階的に浸透し、利用拡大と成果向上が外的状況として広がっているため。『対話・融合』にも通じる柔軟な浸透と拡張の相が強い。",
+        "hexagram_number": 42,
+        "hexagram_name": "風雷益"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "CORP_JP_2702",
+      "target_name": "無印良品（ロンドン撤退からの再挑戦）",
+      "source_type": "news",
+      "original_before": "30_離",
+      "original_after": "57_巽",
+      "before_result": {
+        "lower_trigram": "乾",
+        "lower_reasoning": "変化前の無印良品には、既存事業の成功を背景にした強い推進力と、自ら市場を切り開こうとする主導性が内在していたため、内的基盤は乾が最も適切です。",
+        "upper_trigram": "坤",
+        "upper_reasoning": "変化前の表面的な状況は、国内での安定を土台に外部環境も一見受容的で穏やかに見えており、平和で安定した外的状態として坤が適切です。",
+        "hexagram_number": 11,
+        "hexagram_name": "地天泰"
+      },
+      "before_error": null,
+      "after_result": {
+        "lower_trigram": "艮",
+        "lower_reasoning": "失敗後に拙速を止め、足元を固めて一店舗ずつ黒字化するという、停止と蓄積を重んじる内的基盤が中心にあるため。",
+        "upper_trigram": "巽",
+        "upper_reasoning": "外部には、現地ニーズへ柔軟に適応しながら、無理なく段階的に市場へ浸透して成功を広げていく姿が現れているため。",
+        "hexagram_number": 53,
+        "hexagram_name": "風山漸"
+      },
+      "after_error": null
+    },
+    {
+      "transition_id": "CORP_JP_2419",
+      "target_name": "三菱自動車 燃費不正と日産傘下（2016-2024）",
+      "source_type": "news",
+      "original_before": "30_離",
+      "original_after": "57_巽",
+      "before_result": null,
+      "before_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7a9-f14d-7130-89fb-6f1c7790e973\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱自動車 燃費不正と日産傘下（2016-2024）\n- 時期: 2016-2024\n- 概要: 燃費不正発覚で経営危機。日産傘下入りで再建、ASEAN市場に注力し黒字",
+      "after_result": null,
+      "after_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-0432-7991-a44b-c1a777baa616\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱自動車 燃費不正と日産傘下（2016-2024）\n- 時期: 2016-2024\n- 概要: 燃費不正発覚で経営危機。日産傘下入りで再建、ASEAN市場に注力し黒字"
+    },
+    {
+      "transition_id": "COUN_JP_394",
+      "target_name": "アルメニア_ナゴルノ・カラバフ敗北",
+      "source_type": "news",
+      "original_before": "坤為地",
+      "original_after": "坎為水",
+      "before_result": null,
+      "before_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-19f6-7c63-a8fa-879c4f1d18e0\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: アルメニア_ナゴルノ・カラバフ敗北\n- 時期: 1991-2024\n- 概要: 独立後、ナゴルノ・カラバフを巡りアゼルバイジャンと紛争。2020年44日戦争で敗北、20",
+      "after_result": null,
+      "after_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-2ce2-7ac0-b7cd-e02c70a9c221\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: アルメニア_ナゴルノ・カラバフ敗北\n- 時期: 1991-2024\n- 概要: 独立後、ナゴルノ・カラバフを巡りアゼルバイジャンと紛争。2020年44日戦争で敗北、20"
+    },
+    {
+      "transition_id": "OTHR_JP_719",
+      "target_name": "大阪・関西万博2025 開催準備（2018-2025）",
+      "source_type": "news",
+      "original_before": "30_離",
+      "original_after": "29_坎",
+      "before_result": null,
+      "before_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-4330-7b03-949e-cf5ff0e5bb57\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 大阪・関西万博2025 開催準備（2018-2025）\n- 時期: 2018-2025\n- 概要: 2025年開催決定。コロナ・資材高騰・建設遅延等で費用膨張、開催可否",
+      "after_result": null,
+      "after_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-5570-7331-9010-680724aa5500\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 大阪・関西万博2025 開催準備（2018-2025）\n- 時期: 2018-2025\n- 概要: 2025年開催決定。コロナ・資材高騰・建設遅延等で費用膨張、開催可否"
+    },
+    {
+      "transition_id": "case_18",
+      "target_name": "オリエンタルランドの復活成長（2023-2024）",
+      "source_type": "news",
+      "original_before": "29_坎",
+      "original_after": "1_乾",
+      "before_result": null,
+      "before_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-6b2f-7d23-9b6e-763a7a1a17f1\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: オリエンタルランドの復活成長（2023-2024）\n- 時期: 2023-2024\n- 概要: 東京ディズニーリゾートがコロナ後の回復で過去最高の入場者数と売上を達成。",
+      "after_result": null,
+      "after_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-7d62-7b83-b82e-94ad97be6c76\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: オリエンタルランドの復活成長（2023-2024）\n- 時期: 2023-2024\n- 概要: 東京ディズニーリゾートがコロナ後の回復で過去最高の入場者数と売上を達成。"
+    },
+    {
+      "transition_id": "CORP_JP_3044",
+      "target_name": "三菱グループ（財閥解体からの再結集）",
+      "source_type": "news",
+      "original_before": "29_坎",
+      "original_after": "1_乾",
+      "before_result": null,
+      "before_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-939f-7a10-81d1-fdabdbedb89e\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化前」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱グループ（財閥解体からの再結集）\n- 時期: 1950-1970\n- 概要: GHQによる財閥解体後、金曜会を中心にグループ企業が緩やかに再結集。重工業・銀行・商事",
+      "after_result": null,
+      "after_error": "JSON parse failed. Raw output: OpenAI Codex v0.101.0 (research preview)\n--------\nworkdir: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB\nmodel: gpt-5.4\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: xhigh\nreasoning summaries: auto\nsession id: 019cc7aa-a863-73d2-99e7-056a4df4c824\n--------\nuser\nあなたは易経の専門家です。以下の事例の「変化後」の状態を、八卦の上卦と下卦で表現してください。\n\n【事例情報】\n- タイトル: 三菱グループ（財閥解体からの再結集）\n- 時期: 1950-1970\n- 概要: GHQによる財閥解体後、金曜会を中心にグループ企業が緩やかに再結集。重工業・銀行・商事"
+    }
+  ]
+}
