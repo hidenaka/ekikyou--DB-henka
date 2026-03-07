@@ -178,7 +178,9 @@ def build_before_prompt(case):
   "hexagram_number": <1-64>,
   "hexagram_name": "<64卦名>"
 }}
-```"""
+```
+
+上記のJSON以外は一切出力しないでください。説明文・前置き・補足は不要です。JSONだけを返してください。"""
 
 
 def build_after_prompt(case):
@@ -229,7 +231,9 @@ def build_after_prompt(case):
   "hexagram_number": <1-64>,
   "hexagram_name": "<64卦名>"
 }}
-```"""
+```
+
+上記のJSON以外は一切出力しないでください。説明文・前置き・補足は不要です。JSONだけを返してください。"""
 
 
 # ── Codex exec ──
@@ -294,7 +298,7 @@ def extract_json_from_text(text):
     return None
 
 
-def call_codex(prompt, timeout=120, max_retries=1):
+def call_codex(prompt, timeout=180, max_retries=3):
     """Call codex exec and return parsed JSON result."""
     for attempt in range(max_retries + 1):
         try:
@@ -319,8 +323,9 @@ def call_codex(prompt, timeout=120, max_retries=1):
                 return parsed, None
 
             if attempt < max_retries:
-                print(f"    Parse failed (attempt {attempt+1}), retrying...")
-                time.sleep(3)
+                wait = 5 + attempt * 3  # 5s, 8s, 11s
+                print(f"    Parse failed (attempt {attempt+1}/{max_retries+1}), retrying in {wait}s...")
+                time.sleep(wait)
                 continue
 
             # For error reporting, show what we got
@@ -329,10 +334,11 @@ def call_codex(prompt, timeout=120, max_retries=1):
 
         except subprocess.TimeoutExpired:
             if attempt < max_retries:
-                print(f"    Timeout (attempt {attempt+1}), retrying...")
-                time.sleep(3)
+                wait = 5 + attempt * 3
+                print(f"    Timeout (attempt {attempt+1}/{max_retries+1}), retrying in {wait}s...")
+                time.sleep(wait)
                 continue
-            return None, "Timeout after 120s"
+            return None, "Timeout after 180s"
 
         except Exception as e:
             return None, f"Exception: {str(e)}"
@@ -565,6 +571,79 @@ def run_reannotation(n_cases=20, output_path=None):
     return stats
 
 
+def retry_failed(input_path, output_path=None):
+    """Retry only failed cases from a previous run."""
+    if output_path is None:
+        output_path = input_path
+
+    with open(input_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    all_cases = load_cases()
+    case_map = {}
+    for c in all_cases:
+        tid = c.get('transition_id', '')
+        if tid:
+            case_map[tid] = c
+
+    results = data.get('results', [])
+    retry_count = 0
+    success_count = 0
+
+    for i, entry in enumerate(results):
+        needs_retry = False
+        tid = entry.get('transition_id', '')
+        case = case_map.get(tid)
+        if not case:
+            continue
+
+        for phase in ['before', 'after']:
+            if entry.get(f'{phase}_error') is not None:
+                needs_retry = True
+                print(f"\n[Retry] {tid} ({phase}): {entry.get('target_name', '')[:50]}")
+                prompt = build_before_prompt(case) if phase == 'before' else build_after_prompt(case)
+                result, error = call_codex(prompt)
+
+                if result:
+                    is_valid, issues = validate_result(result, phase)
+                    if is_valid:
+                        entry[f'{phase}_result'] = result
+                        entry[f'{phase}_error'] = None
+                        lower = result.get('lower_trigram', '')
+                        upper = result.get('upper_trigram', '')
+                        kw = TRIGRAM_TO_KW.get((lower, upper))
+                        name = KW_TO_NAME.get(kw, '?')
+                        print(f"  SUCCESS: {name} (#{kw})")
+                        success_count += 1
+                    else:
+                        entry[f'{phase}_error'] = f"Validation: {'; '.join(issues)}"
+                        print(f"  Validation failed: {issues}")
+                else:
+                    entry[f'{phase}_error'] = error
+                    print(f"  Still failed: {error[:100]}")
+
+                time.sleep(2)
+
+        if needs_retry:
+            retry_count += 1
+
+    print(f"\nRetried {retry_count} cases, {success_count} newly succeeded")
+
+    # Re-analyze and save
+    stats = analyze_results(results)
+    print_stats(stats)
+
+    data['stats'] = {
+        k: {kk: vv for kk, vv in v.items()} if isinstance(v, dict) else v
+        for k, v in stats.items()
+    }
+    data['metadata']['retry_timestamp'] = time.strftime('%Y-%m-%d %H:%M:%S')
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"Updated results saved to {output_path}")
+
+
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='Hexagram re-annotation with 2-step trigram method')
@@ -572,12 +651,16 @@ if __name__ == '__main__':
     group.add_argument('--pilot', action='store_true', help='Pilot run with 20 cases')
     group.add_argument('--full', action='store_true', help='Full run with 500 cases')
     group.add_argument('--count', type=int, help='Custom number of cases')
+    group.add_argument('--retry', type=str, help='Retry failed cases from a previous result file')
+    parser.add_argument('--seed', type=int, default=42, help='Random seed (default: 42)')
     args = parser.parse_args()
 
-    if args.full:
+    if args.retry:
+        retry_failed(args.retry)
+    elif args.full:
         run_reannotation(n_cases=500, output_path=FULL_OUTPUT)
     elif args.count:
-        run_reannotation(n_cases=args.count, output_path=PILOT_OUTPUT)
+        run_reannotation(n_cases=args.count, output_path=OUTPUT_DIR / f"reannotation_{args.count}.json")
     else:
         # Default: pilot with 20
         run_reannotation(n_cases=20, output_path=PILOT_OUTPUT)
