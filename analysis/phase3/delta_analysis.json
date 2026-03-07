@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-07T16:32:02.277559",
+    "n_cases_used": 9228,
+    "n_cases_excluded": 2108,
+    "seed": 42
+  },
+  "hamming_weight_distribution": {
+    "0": 1113,
+    "1": 12,
+    "2": 3616,
+    "3": 78,
+    "4": 3376,
+    "5": 38,
+    "6": 995
+  },
+  "even_parity_ratio": 0.9861291720849589,
+  "even_parity_binomial_test": {
+    "p_value": 0.0,
+    "effect_size": 0.9722583441699177,
+    "n": 9228,
+    "even_count": 9100
+  },
+  "top_delta_patterns": [
+    {
+      "delta_bits": "010010",
+      "count": 1377,
+      "percentage": 14.92,
+      "interpretation": "ハミング重み=2"
+    },
+    {
+      "delta_bits": "100100",
+      "count": 1286,
+      "percentage": 13.94,
+      "interpretation": "ハミング重み=2"
+    },
+    {
+      "delta_bits": "110110",
+      "count": 1226,
+      "percentage": 13.29,
+      "interpretation": "ハミング重み=4"
+    },
+    {
+      "delta_bits": "011011",
+      "count": 1153,
+      "percentage": 12.49,
+      "interpretation": "ハミング重み=4"
+    },
+    {
+      "delta_bits": "000000",
+      "count": 1113,
+      "percentage": 12.06,
+      "interpretation": "同一卦への遷移; ハミング重み=0"
+    },
+    {
+      "delta_bits": "111111",
+      "count": 995,
+      "percentage": 10.78,
+      "interpretation": "錯卦（全反転）への遷移; ハミング重み=6"
+    },
+    {
+      "delta_bits": "101101",
+      "count": 955,
+      "percentage": 10.35,
+      "interpretation": "ハミング重み=4"
+    },
+    {
+      "delta_bits": "001001",
+      "count": 912,
+      "percentage": 9.88,
+      "interpretation": "ハミング重み=2"
+    },
+    {
+      "delta_bits": "011111",
+      "count": 9,
+      "percentage": 0.1,
+      "interpretation": "ハミング重み=5"
+    },
+    {
+      "delta_bits": "111110",
+      "count": 8,
+      "percentage": 0.09,
+      "interpretation": "ハミング重み=5"
+    },
+    {
+      "delta_bits": "011010",
+      "count": 8,
+      "percentage": 0.09,
+      "interpretation": "ハミング重み=3"
+    },
+    {
+      "delta_bits": "011101",
+      "count": 7,
+      "percentage": 0.08,
+      "interpretation": "ハミング重み=4"
+    },
+    {
+      "delta_bits": "101001",
+      "count": 7,
+      "percentage": 0.08,
+      "interpretation": "ハミング重み=3"
+    },
+    {
+      "delta_bits": "110111",
+      "count": 7,
+      "percentage": 0.08,
+      "interpretation": "ハミング重み=5"
+    },
+    {
+      "delta_bits": "101100",
+      "count": 7,
+      "percentage": 0.08,
+      "interpretation": "ハミング重み=3"
+    },
+    {
+      "delta_bits": "101010",
+      "count": 6,
+      "percentage": 0.07,
+      "interpretation": "ハミング重み=3"
+    },
+    {
+      "delta_bits": "010101",
+      "count": 6,
+      "percentage": 0.07,
+      "interpretation": "ハミング重み=3"
+    },
+    {
+      "delta_bits": "000101",
+      "count": 6,
+      "percentage": 0.07,
+      "interpretation": "上卦のみ変化; ハミング重み=2"
+    },
+    {
+      "delta_bits": "111101",
+      "count": 6,
+      "percentage": 0.07,
+      "interpretation": "ハミング重み=5"
+    },
+    {
+      "delta_bits": "011001",
+      "count": 6,
+      "percentage": 0.07,
+      "interpretation": "ハミング重み=3"
+    }
+  ],
+  "n_unique_patterns": 62,
+  "special_patterns": {
+    "same_hexagram": 1113,
+    "cuogua_full_flip": 995,
+    "lower_only_full_flip": 1,
+    "upper_only_full_flip": 5
+  },
+  "chi2_goodness_of_fit": {
+    "statistic": 17548.835717381815,
+    "p_value": 0.0,
+    "df": 6,
+    "expected_dist": {
+      "0": 144.19,
+      "1": 865.13,
+      "2": 2162.81,
+      "3": 2883.75,
+      "4": 2162.81,
+      "5": 865.13,
+      "6": 144.19
+    },
+    "observed_dist": {
+      "0": 1113,
+      "1": 12,
+      "2": 3616,
+      "3": 78,
+      "4": 3376,
+      "5": 38,
+      "6": 995
+    },
+    "even_prob_theoretical": 0.5000000000000002
+  },
+  "bit_flip_rates": {
+    "bit0_lower1": 0.4951,
+    "bit1_lower2": 0.5274,
+    "bit2_lower3": 0.4483,
+    "bit3_upper1": 0.4974,
+    "bit4_upper2": 0.5265,
+    "bit5_upper3": 0.4465,
+    "lower_trigram_avg": 0.4903,
+    "upper_trigram_avg": 0.4901
+  },
+  "upper_lower_independence": {
+    "chi2": 8860.230356618767,
+    "p_value": 0.0,
+    "cramers_v": 0.9798705692760957,
+    "contingency_table": {
+      "lower_unchanged_upper_unchanged": 1113,
+      "lower_unchanged_upper_changed": 21,
+      "lower_changed_upper_unchanged": 18,
+      "lower_changed_upper_changed": 8076
+    }
+  },
+  "permutation_test": {
+    "observed_even_ratio": 0.9861291720849589,
+    "null_mean": 0.9785520156046815,
+    "null_std": 0.00020894991598182318,
+    "p_value": 0.0,
+    "z_score": 36.26302716932652,
+    "n_permutations": 1000
+  }
+}
