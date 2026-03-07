@@ -156,6 +156,12 @@ class Case(BaseModel):
     classical_after_hexagram: Optional[str] = None
     logic_memo: Optional[str] = None
 
+    # 八卦ペアの内訳（上卦・下卦）
+    before_lower_trigram: Optional[str] = None
+    before_upper_trigram: Optional[str] = None
+    after_lower_trigram: Optional[str] = None
+    after_upper_trigram: Optional[str] = None
+
     # 384爻（変爻）情報 - 各変化でどの爻が変化したか (1-6)
     # 1=初爻, 2=二爻, 3=三爻, 4=四爻, 5=五爻, 6=上爻
     changing_lines_1: Optional[List[int]] = None  # before_hex → trigger_hex での変爻
