@@ -1,0 +1,565 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-07T17:31:36.495420",
+    "total_cases": 11336,
+    "valid_cases": 9228,
+    "excluded_cases": 2108
+  },
+  "pure_rate": {
+    "total": 9228,
+    "expected_pure_rate_pct": 12.5,
+    "before_pure_count": 9062,
+    "before_pure_rate_pct": 98.2,
+    "after_pure_count": 9062,
+    "after_pure_rate_pct": 98.2,
+    "before_pure_detail": {
+      "1": 697,
+      "2": 1005,
+      "29": 1908,
+      "30": 677,
+      "51": 1422,
+      "52": 2156,
+      "57": 518,
+      "58": 679
+    },
+    "after_pure_detail": {
+      "1": 1232,
+      "2": 2283,
+      "29": 833,
+      "30": 998,
+      "51": 644,
+      "52": 1660,
+      "57": 728,
+      "58": 684
+    }
+  },
+  "state_pure_rates": {
+    "before_state_pure_rates": {
+      "どん底・危機": {
+        "total": 884,
+        "pure_count": 853,
+        "pure_rate_pct": 96.49
+      },
+      "停滞・閉塞": {
+        "total": 2267,
+        "pure_count": 2223,
+        "pure_rate_pct": 98.06
+      },
+      "安定・平和": {
+        "total": 2042,
+        "pure_count": 2015,
+        "pure_rate_pct": 98.68
+      },
+      "成長痛": {
+        "total": 1934,
+        "pure_count": 1925,
+        "pure_rate_pct": 99.53
+      },
+      "混乱・カオス": {
+        "total": 1310,
+        "pure_count": 1291,
+        "pure_rate_pct": 98.55
+      },
+      "絶頂・慢心": {
+        "total": 791,
+        "pure_count": 755,
+        "pure_rate_pct": 95.45
+      }
+    },
+    "after_state_pure_rates": {
+      "V字回復・大成功": {
+        "total": 3004,
+        "pure_count": 2932,
+        "pure_rate_pct": 97.6
+      },
+      "変質・新生": {
+        "total": 1008,
+        "pure_count": 981,
+        "pure_rate_pct": 97.32
+      },
+      "崩壊・消滅": {
+        "total": 1371,
+        "pure_count": 1345,
+        "pure_rate_pct": 98.1
+      },
+      "現状維持・延命": {
+        "total": 1075,
+        "pure_count": 1059,
+        "pure_rate_pct": 98.51
+      },
+      "縮小安定・生存": {
+        "total": 1812,
+        "pure_count": 1789,
+        "pure_rate_pct": 98.73
+      },
+      "迷走・混乱": {
+        "total": 958,
+        "pure_count": 956,
+        "pure_rate_pct": 99.79
+      }
+    }
+  },
+  "source_pure_rates": {
+    "source_type_pure_rates": {
+      "blog": {
+        "total": 156,
+        "before_pure_rate_pct": 100.0,
+        "after_pure_rate_pct": 100.0
+      },
+      "book": {
+        "total": 419,
+        "before_pure_rate_pct": 88.31,
+        "after_pure_rate_pct": 90.45
+      },
+      "news": {
+        "total": 8505,
+        "before_pure_rate_pct": 99.38,
+        "after_pure_rate_pct": 99.32
+      },
+      "official": {
+        "total": 148,
+        "before_pure_rate_pct": 56.76,
+        "after_pure_rate_pct": 54.05
+      }
+    }
+  },
+  "diagonal_by_purity": {
+    "diagonal_by_purity": {
+      "both_pure": {
+        "total": 9007,
+        "diagonal_count": 9007,
+        "diagonal_rate_pct": 100.0
+      },
+      "one_pure": {
+        "total": 110,
+        "diagonal_count": 0,
+        "diagonal_rate_pct": 0.0
+      },
+      "both_nonpure": {
+        "total": 111,
+        "diagonal_count": 10,
+        "diagonal_rate_pct": 9.01
+      },
+      "both_nonpure_binomial_test": {
+        "expected_p": 0.125,
+        "observed_p": 0.0901,
+        "p_value": 0.31579965829125367
+      }
+    }
+  },
+  "frequency_distribution": {
+    "before_hexagram": {
+      "n_used": 46,
+      "entropy_bits": 2.98,
+      "max_entropy_bits": 6.0,
+      "entropy_ratio": 0.497,
+      "top10": [
+        {
+          "kw": 52,
+          "count": 2156,
+          "pct": 23.36,
+          "is_pure": true
+        },
+        {
+          "kw": 29,
+          "count": 1908,
+          "pct": 20.68,
+          "is_pure": true
+        },
+        {
+          "kw": 51,
+          "count": 1422,
+          "pct": 15.41,
+          "is_pure": true
+        },
+        {
+          "kw": 2,
+          "count": 1005,
+          "pct": 10.89,
+          "is_pure": true
+        },
+        {
+          "kw": 1,
+          "count": 697,
+          "pct": 7.55,
+          "is_pure": true
+        },
+        {
+          "kw": 58,
+          "count": 679,
+          "pct": 7.36,
+          "is_pure": true
+        },
+        {
+          "kw": 30,
+          "count": 677,
+          "pct": 7.34,
+          "is_pure": true
+        },
+        {
+          "kw": 57,
+          "count": 518,
+          "pct": 5.61,
+          "is_pure": true
+        },
+        {
+          "kw": 3,
+          "count": 21,
+          "pct": 0.23,
+          "is_pure": false
+        },
+        {
+          "kw": 23,
+          "count": 12,
+          "pct": 0.13,
+          "is_pure": false
+        }
+      ],
+      "bottom10": [
+        {
+          "kw": 5,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 16,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 19,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 27,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 31,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 35,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 37,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 40,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 42,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 45,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        }
+      ],
+      "pure_8_share_pct": 98.2
+    },
+    "after_hexagram": {
+      "n_used": 37,
+      "entropy_bits": 3.007,
+      "max_entropy_bits": 6.0,
+      "entropy_ratio": 0.501,
+      "top10": [
+        {
+          "kw": 2,
+          "count": 2283,
+          "pct": 24.74,
+          "is_pure": true
+        },
+        {
+          "kw": 52,
+          "count": 1660,
+          "pct": 17.99,
+          "is_pure": true
+        },
+        {
+          "kw": 1,
+          "count": 1232,
+          "pct": 13.35,
+          "is_pure": true
+        },
+        {
+          "kw": 30,
+          "count": 998,
+          "pct": 10.81,
+          "is_pure": true
+        },
+        {
+          "kw": 29,
+          "count": 833,
+          "pct": 9.03,
+          "is_pure": true
+        },
+        {
+          "kw": 57,
+          "count": 728,
+          "pct": 7.89,
+          "is_pure": true
+        },
+        {
+          "kw": 58,
+          "count": 684,
+          "pct": 7.41,
+          "is_pure": true
+        },
+        {
+          "kw": 51,
+          "count": 644,
+          "pct": 6.98,
+          "is_pure": true
+        },
+        {
+          "kw": 14,
+          "count": 25,
+          "pct": 0.27,
+          "is_pure": false
+        },
+        {
+          "kw": 11,
+          "count": 20,
+          "pct": 0.22,
+          "is_pure": false
+        }
+      ],
+      "bottom10": [
+        {
+          "kw": 4,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 6,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 8,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 12,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 16,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 17,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 18,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 19,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 21,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        },
+        {
+          "kw": 22,
+          "count": 0,
+          "pct": 0.0,
+          "is_pure": false
+        }
+      ],
+      "pure_8_share_pct": 98.2
+    },
+    "full_distribution": {
+      "before": {
+        "1": 697,
+        "2": 1005,
+        "3": 21,
+        "4": 8,
+        "5": 0,
+        "6": 2,
+        "7": 8,
+        "8": 2,
+        "9": 1,
+        "10": 8,
+        "11": 4,
+        "12": 1,
+        "13": 8,
+        "14": 3,
+        "15": 5,
+        "16": 0,
+        "17": 1,
+        "18": 2,
+        "19": 0,
+        "20": 2,
+        "21": 1,
+        "22": 1,
+        "23": 12,
+        "24": 2,
+        "25": 11,
+        "26": 1,
+        "27": 0,
+        "28": 1,
+        "29": 1908,
+        "30": 677,
+        "31": 0,
+        "32": 1,
+        "33": 2,
+        "34": 2,
+        "35": 0,
+        "36": 4,
+        "37": 0,
+        "38": 2,
+        "39": 11,
+        "40": 0,
+        "41": 1,
+        "42": 0,
+        "43": 2,
+        "44": 1,
+        "45": 0,
+        "46": 11,
+        "47": 6,
+        "48": 0,
+        "49": 0,
+        "50": 1,
+        "51": 1422,
+        "52": 2156,
+        "53": 0,
+        "54": 1,
+        "55": 2,
+        "56": 0,
+        "57": 518,
+        "58": 679,
+        "59": 0,
+        "60": 5,
+        "61": 0,
+        "62": 0,
+        "63": 0,
+        "64": 9
+      },
+      "after": {
+        "1": 1232,
+        "2": 2283,
+        "3": 3,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 2,
+        "8": 0,
+        "9": 1,
+        "10": 3,
+        "11": 20,
+        "12": 0,
+        "13": 13,
+        "14": 25,
+        "15": 8,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 2,
+        "21": 0,
+        "22": 0,
+        "23": 8,
+        "24": 8,
+        "25": 0,
+        "26": 1,
+        "27": 0,
+        "28": 0,
+        "29": 833,
+        "30": 998,
+        "31": 0,
+        "32": 0,
+        "33": 4,
+        "34": 1,
+        "35": 1,
+        "36": 9,
+        "37": 2,
+        "38": 1,
+        "39": 6,
+        "40": 0,
+        "41": 0,
+        "42": 0,
+        "43": 0,
+        "44": 3,
+        "45": 1,
+        "46": 10,
+        "47": 9,
+        "48": 0,
+        "49": 0,
+        "50": 11,
+        "51": 644,
+        "52": 1660,
+        "53": 0,
+        "54": 0,
+        "55": 0,
+        "56": 2,
+        "57": 728,
+        "58": 684,
+        "59": 0,
+        "60": 2,
+        "61": 0,
+        "62": 0,
+        "63": 1,
+        "64": 8
+      }
+    }
+  },
+  "verdict": {
+    "verdict": "SUPPORTED: 純卦への崩壊が検出された",
+    "diagonal_implication": "対角構造は純卦崩壊の機械的帰結である可能性が高い",
+    "is_collapsed": true,
+    "is_diverse": false,
+    "collapse_threshold_pct": 25.0,
+    "key_metrics": {
+      "before_pure_rate_pct": 98.2,
+      "after_pure_rate_pct": 98.2,
+      "before_n_used": 46,
+      "after_n_used": 37,
+      "before_entropy_ratio": 0.497,
+      "after_entropy_ratio": 0.501,
+      "both_pure_share_pct": 97.61,
+      "both_nonpure_diagonal_rate_pct": 9.01
+    }
+  }
+}
