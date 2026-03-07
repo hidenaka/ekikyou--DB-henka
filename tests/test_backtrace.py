@@ -1190,40 +1190,40 @@ class TestFuzzyStateMatching:
 
     def test_exact_match_still_works(self, engine):
         """完全一致は引き続き動作する。"""
-        # "安定成長・成功" は rev_after_state.json に実在するキー (1091件)
-        result = engine.reverse_state("停滞・閉塞", "安定成長・成功")
+        # "V字回復・大成功" は正規化後の rev_after_state.json に実在するキー
+        result = engine.reverse_state("停滞・閉塞", "V字回復・大成功")
         assert result.get("case_count", 0) > 0, (
-            "Exact match for '安定成長・成功' should return cases"
+            "Exact match for 'V字回復・大成功' should return cases"
         )
 
-    def test_partial_match_juncho_to_seikou(self, engine):
-        """'安定成長・順調' → '安定成長・成功' にマッチ。"""
-        result = engine.reverse_state("停滞・閉塞", "安定成長・順調")
+    def test_partial_match_v_ji_kaifuku(self, engine):
+        """'V字回復' → 'V字回復・大成功' にマッチ。"""
+        result = engine.reverse_state("停滞・閉塞", "V字回復")
         assert result.get("total_cases", result.get("case_count", 0)) > 0, (
-            "'安定成長・順調' should fuzzy-match to '安定成長・成功'"
+            "'V字回復' should fuzzy-match to 'V字回復・大成功'"
         )
 
-    def test_partial_match_suitai(self, engine):
-        """'衰退・下降' → 類似ラベルにマッチ。"""
-        result = engine.reverse_state("安定成長・成功", "衰退・下降")
+    def test_partial_match_meisou(self, engine):
+        """'迷走' → '迷走・混乱' にマッチ。"""
+        result = engine.reverse_state("安定・平和", "迷走")
         assert result.get("total_cases", result.get("case_count", 0)) > 0, (
-            "'衰退・下降' should fuzzy-match to a similar label"
+            "'迷走' should fuzzy-match to '迷走・混乱'"
         )
 
     def test_fuzzy_match_returns_matched_label(self, engine):
         """ファジーマッチ時、実際にマッチしたラベルを返す。"""
-        result = engine.reverse_state("停滞・閉塞", "安定成長・順調")
+        result = engine.reverse_state("停滞・閉塞", "V字回復")
         assert "matched_goal_state" in result, (
             "Fuzzy match result should contain 'matched_goal_state'"
         )
-        assert result["matched_goal_state"] == "安定成長・成功", (
-            "matched_goal_state should be '安定成長・成功'"
+        assert result["matched_goal_state"] == "V字回復・大成功", (
+            "matched_goal_state should be 'V字回復・大成功'"
         )
 
     def test_exact_match_matched_label_is_same(self, engine):
         """完全一致時、matched_goal_state は入力と同じ。"""
-        result = engine.reverse_state("停滞・閉塞", "安定成長・成功")
-        assert result.get("matched_goal_state") == "安定成長・成功"
+        result = engine.reverse_state("停滞・閉塞", "V字回復・大成功")
+        assert result.get("matched_goal_state") == "V字回復・大成功"
 
     def test_no_match_returns_empty(self, engine):
         """完全に無関係な入力は空結果。"""
@@ -1232,11 +1232,11 @@ class TestFuzzyStateMatching:
             "Completely unrelated input should return 0 cases"
         )
 
-    def test_donzoko_alias(self, engine):
-        """'どん底' → 'どん底・危機' にマッチ。"""
-        result = engine.reverse_state("停滞・閉塞", "どん底")
+    def test_shukushou_alias(self, engine):
+        """'縮小安定' → '縮小安定・生存' にマッチ。"""
+        result = engine.reverse_state("停滞・閉塞", "縮小安定")
         assert result.get("case_count", 0) > 0
-        assert result.get("matched_goal_state") == "どん底・危機"
+        assert result.get("matched_goal_state") == "縮小安定・生存"
 
     def test_fuzzy_current_state_also_works(self, engine):
         """current_state のファジーマッチもテスト。
@@ -1250,6 +1250,82 @@ class TestFuzzyStateMatching:
             "current_state '停滞' should fuzzy-match to '停滞・閉塞' "
             "and contribute to goal_reachability"
         )
+
+
+# ============================================================
+# 17.5. before_state系goal_stateのafter_stateマッピングテスト
+# ============================================================
+
+
+class TestBeforeToAfterStateMapping:
+    """before_state系の語彙がgoal_stateとして渡された場合に、
+    対応するafter_stateにマッピングされてrev_after_stateから結果を取得できること。"""
+
+    @pytest.fixture(scope="class")
+    def engine(self):
+        return BacktraceEngine()
+
+    def test_goal_state_teitai_heisoku(self, engine):
+        """停滞・閉塞 → 現状維持・延命 にマッピングされ、actionsが0より大きい。"""
+        result = engine.reverse_state("成長・拡大", "停滞・閉塞")
+        assert result["matched_goal_state"] == "現状維持・延命", (
+            f"Expected '現状維持・延命', got '{result['matched_goal_state']}'"
+        )
+        assert result["case_count"] > 0, "case_count should be > 0"
+
+    def test_goal_state_donzoko_kiki(self, engine):
+        """どん底・危機 → 崩壊・消滅 にマッピングされ、actionsが0より大きい。"""
+        result = engine.reverse_state("成長・拡大", "どん底・危機")
+        assert result["matched_goal_state"] == "崩壊・消滅", (
+            f"Expected '崩壊・消滅', got '{result['matched_goal_state']}'"
+        )
+        assert result["case_count"] > 0, "case_count should be > 0"
+
+    def test_goal_state_antei_heiwa(self, engine):
+        """安定・平和 → 縮小安定・生存 にマッピングされ、actionsが0より大きい。"""
+        result = engine.reverse_state("停滞・閉塞", "安定・平和")
+        assert result["matched_goal_state"] == "縮小安定・生存", (
+            f"Expected '縮小安定・生存', got '{result['matched_goal_state']}'"
+        )
+        assert result["case_count"] > 0, "case_count should be > 0"
+
+    def test_goal_state_seicho_kakudai(self, engine):
+        """成長・拡大 → V字回復・大成功 にマッピングされ、actionsが0より大きい。"""
+        result = engine.reverse_state("停滞・閉塞", "成長・拡大")
+        assert result["matched_goal_state"] == "V字回復・大成功", (
+            f"Expected 'V字回復・大成功', got '{result['matched_goal_state']}'"
+        )
+        assert result["case_count"] > 0, "case_count should be > 0"
+
+    def test_existing_after_state_unchanged(self, engine):
+        """既存のafter_state系goal_state（V字回復・大成功等）は変更なく動作する。"""
+        result = engine.reverse_state("停滞・閉塞", "V字回復・大成功")
+        assert result["matched_goal_state"] == "V字回復・大成功"
+        assert result["case_count"] > 0
+
+    def test_goal_state_konran_chaos(self, engine):
+        """混乱・カオス → 迷走・混乱 にマッピングされる。"""
+        result = engine.reverse_state("停滞・閉塞", "混乱・カオス")
+        assert result["matched_goal_state"] == "迷走・混乱", (
+            f"Expected '迷走・混乱', got '{result['matched_goal_state']}'"
+        )
+        assert result["case_count"] > 0
+
+    def test_goal_state_seichotsu(self, engine):
+        """成長痛 → 変質・新生 にマッピングされる。"""
+        result = engine.reverse_state("停滞・閉塞", "成長痛")
+        assert result["matched_goal_state"] == "変質・新生", (
+            f"Expected '変質・新生', got '{result['matched_goal_state']}'"
+        )
+        assert result["case_count"] > 0
+
+    def test_goal_state_zettcho_manshin(self, engine):
+        """絶頂・慢心 → V字回復・大成功 にマッピングされる。"""
+        result = engine.reverse_state("停滞・閉塞", "絶頂・慢心")
+        assert result["matched_goal_state"] == "V字回復・大成功", (
+            f"Expected 'V字回復・大成功', got '{result['matched_goal_state']}'"
+        )
+        assert result["case_count"] > 0
 
 
 # ============================================================

@@ -123,6 +123,7 @@ def main():
         "Exploration→Pivot_Success": 0,
         "Exploration→Endurance(据置)": 0,
         "Steady_Growth→Pivot_Success": 0,
+        "Steady_Growth→Slow_Decline": 0,
         "Steady_Growth→Endurance(据置)": 0,
     }
 
@@ -132,7 +133,7 @@ def main():
     print("\n--- Step 1: before_state 上書き ---")
     for i, (cur, bak) in enumerate(zip(current, backup)):
         raw_bs = bak.get("before_state")
-        if raw_bs == "安定成長・成功":
+        if raw_bs == "安定成長・成功" and current[i]["before_state"] != "安定・平和":
             current[i]["before_state"] = "安定・平和"
             counters["before_state: 安定成長・成功→安定・平和"] += 1
 
@@ -144,7 +145,7 @@ def main():
     print("\n--- Step 2: action_type 上書き ---")
     for i, (cur, bak) in enumerate(zip(current, backup)):
         raw_at = bak.get("action_type")
-        if raw_at == "逃げる・守る":
+        if raw_at == "逃げる・守る" and current[i]["action_type"] != "耐える・潜伏":
             current[i]["action_type"] = "耐える・潜伏"
             counters["action_type: 逃げる・守る→耐える・潜伏"] += 1
 
@@ -167,10 +168,11 @@ def main():
             if norm_before == "絶頂・慢心" and norm_after == "崩壊・消滅":
                 # 据え置き Hubris_Collapse
                 counters["Failed_Attempt→Hubris_Collapse(据置)"] += 1
-                # current[i]["pattern_type"] は既に Hubris_Collapse
             else:
-                current[i]["pattern_type"] = "Slow_Decline"
-                counters["Failed_Attempt→Slow_Decline"] += 1
+                target = "Slow_Decline"
+                if current[i]["pattern_type"] != target:
+                    current[i]["pattern_type"] = target
+                    counters["Failed_Attempt→Slow_Decline"] += 1
 
         # --- Rule 2: Stagnation ---
         elif raw_pt == "Stagnation":
@@ -178,14 +180,18 @@ def main():
                 # 据え置き Slow_Decline
                 counters["Stagnation→Slow_Decline(据置)"] += 1
             else:
-                current[i]["pattern_type"] = "Endurance"
-                counters["Stagnation→Endurance"] += 1
+                target = "Endurance"
+                if current[i]["pattern_type"] != target:
+                    current[i]["pattern_type"] = target
+                    counters["Stagnation→Endurance"] += 1
 
         # --- Rule 3: Exploration ---
         elif raw_pt == "Exploration":
             if norm_after in {"V字回復・大成功", "変質・新生"}:
-                current[i]["pattern_type"] = "Pivot_Success"
-                counters["Exploration→Pivot_Success"] += 1
+                target = "Pivot_Success"
+                if current[i]["pattern_type"] != target:
+                    current[i]["pattern_type"] = target
+                    counters["Exploration→Pivot_Success"] += 1
             else:
                 # 据え置き Endurance
                 counters["Exploration→Endurance(据置)"] += 1
@@ -196,9 +202,17 @@ def main():
                norm_after in {"現状維持・延命", "縮小安定・生存"}:
                 # 据え置き Endurance
                 counters["Steady_Growth→Endurance(据置)"] += 1
+            elif norm_after in {"崩壊・消滅", "迷走・混乱"}:
+                # 安定成長からの崩壊/混乱 = 緩慢な衰退
+                target = "Slow_Decline"
+                if current[i]["pattern_type"] != target:
+                    current[i]["pattern_type"] = target
+                    counters["Steady_Growth→Slow_Decline"] += 1
             else:
-                current[i]["pattern_type"] = "Pivot_Success"
-                counters["Steady_Growth→Pivot_Success"] += 1
+                target = "Pivot_Success"
+                if current[i]["pattern_type"] != target:
+                    current[i]["pattern_type"] = target
+                    counters["Steady_Growth→Pivot_Success"] += 1
 
     # --- 変換サマリー ---
     print("\n  [Failed_Attempt (818件)]")
@@ -215,6 +229,7 @@ def main():
 
     print(f"\n  [Steady_Growth (1,975件)]")
     print(f"    → Pivot_Success:    {counters['Steady_Growth→Pivot_Success']}")
+    print(f"    → Slow_Decline:     {counters['Steady_Growth→Slow_Decline']}")
     print(f"    → Endurance(据置): {counters['Steady_Growth→Endurance(据置)']}")
 
     # --- 変換後 pattern_type 分布 ---
@@ -240,9 +255,9 @@ def main():
     print("=" * 70)
 
     delta_hc = -counters["Failed_Attempt→Slow_Decline"]
-    delta_sd = counters["Failed_Attempt→Slow_Decline"] - counters["Stagnation→Endurance"]
+    delta_sd = counters["Failed_Attempt→Slow_Decline"] - counters["Stagnation→Endurance"] + counters["Steady_Growth→Slow_Decline"]
     delta_end = counters["Stagnation→Endurance"] - counters["Exploration→Pivot_Success"] - counters["Steady_Growth→Pivot_Success"]
-    delta_ps = counters["Exploration→Pivot_Success"] + counters["Steady_Growth→Pivot_Success"]
+    delta_ps = counters["Exploration→Pivot_Success"] + counters["Steady_Growth→Pivot_Success"] - counters["Steady_Growth→Slow_Decline"]
     delta_sr = 0
 
     actual_delta_hc = after_pt.get("Hubris_Collapse", 0) - before_pt.get("Hubris_Collapse", 0)
@@ -328,6 +343,7 @@ def main():
         + counters["Stagnation→Endurance"]
         + counters["Exploration→Pivot_Success"]
         + counters["Steady_Growth→Pivot_Success"]
+        + counters["Steady_Growth→Slow_Decline"]
     )
     print(f"\n総変換件数: {total_changes}件（据え置き除く）")
 

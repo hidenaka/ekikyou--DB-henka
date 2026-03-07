@@ -1717,7 +1717,7 @@
             <div id="bt-result-layers"></div>
             <div id="bt-cross-scale-section" style="margin:16px 0;">
                 <button class="btn btn-secondary" id="btn-cross-scale-toggle" onclick="handleCrossScaleToggle()" style="font-size:0.82rem; padding:8px 16px; opacity:0.7;">
-                    他カテゴリの類似パターンを表示
+                    他カテゴリの類似パターンを表示 (β版)
                 </button>
                 <div id="bt-cross-scale-container" class="hidden" style="margin-top:12px;"></div>
             </div>
@@ -3170,7 +3170,7 @@
             }
             const crossScaleBtn = document.getElementById('btn-cross-scale-toggle');
             if (crossScaleBtn) {
-                crossScaleBtn.textContent = '他カテゴリの類似パターンを表示';
+                crossScaleBtn.textContent = '他カテゴリの類似パターンを表示 (β版)';
                 crossScaleBtn.disabled = false;
             }
 
@@ -3362,8 +3362,8 @@
                 const isHidden = container.classList.contains('hidden');
                 container.classList.toggle('hidden');
                 btn.textContent = isHidden
-                    ? '他カテゴリの類似パターンを非表示'
-                    : '他カテゴリの類似パターンを表示';
+                    ? '他カテゴリの類似パターンを非表示 (β版)'
+                    : '他カテゴリの類似パターンを表示 (β版)';
                 return;
             }
 
@@ -3392,10 +3392,10 @@
                 container.innerHTML = buildCrossScaleContent(patterns);
                 container.classList.remove('hidden');
                 crossScaleLoaded = true;
-                btn.textContent = '他カテゴリの類似パターンを非表示';
+                btn.textContent = '他カテゴリの類似パターンを非表示 (β版)';
             } catch (e) {
                 showToast('他カテゴリパターンの取得に失敗しました: ' + e.message);
-                btn.textContent = '他カテゴリの類似パターンを表示';
+                btn.textContent = '他カテゴリの類似パターンを表示 (β版)';
             } finally {
                 btn.disabled = false;
             }

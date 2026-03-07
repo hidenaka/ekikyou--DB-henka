@@ -5,3 +5,52 @@
 削除数: 110件
 
 削除されたケース:
+
+=== 重複削除ログ（安全キー適用） ===
+実行日時: 2026-03-07 09:20:26
+削除キー: scale + target_name + before_state + after_state + period
+復元元: cases.jsonl.backup_20260307_092026 (11,371件)
+削除前: 11,371件
+削除後: 11,336件
+削除数: 35件
+削除グループ数: 35
+
+前回の旧キー(title+before_state+after_state+period)による削除(1,837件)は
+バックアップから復元済み。安全キーでの再実行により35件のみ削除。
+
+削除されたレコード:
+   1. scale=company | target_name=サイゼリヤ（低価格戦略確立まで） | transition_id=N/A | canonical_id=CAN_CE2CE776 | period=1973-1992 | before=安定・平和 | after=V字回復・大成功
+   2. scale=individual | target_name=イチロー（オリックス時代の下積み） | transition_id=N/A | canonical_id=CAN_F1BAF371 | period=1992-1994 | before=停滞・閉塞 | after=V字回復・大成功
+   3. scale=company | target_name=京セラ（創業初期の技術蓄積） | transition_id=N/A | canonical_id=CAN_7C55F3C9 | period=1959-1969 | before=どん底・危機 | after=V字回復・大成功
+   4. scale=individual | target_name=松下幸之助（二番手戦略の確立） | transition_id=N/A | canonical_id=CAN_7A08B12F | period=1920-1960 | before=安定・平和 | after=V字回復・大成功
+   5. scale=company | target_name=ソニー（プレイステーション戦略） | transition_id=N/A | canonical_id=CAN_FBFD6F9C | period=1993-1995 | before=安定・平和 | after=V字回復・大成功
+   6. scale=company | target_name=楽天（EC市場のフォロワー戦略） | transition_id=N/A | canonical_id=CAN_6DED3D19 | period=1997-2005 | before=どん底・危機 | after=V字回復・大成功
+   7. scale=company | target_name=LINEの普及（スマホ時代への追随） | transition_id=N/A | canonical_id=CAN_E81197E6 | period=2011-2015 | before=停滞・閉塞 | after=V字回復・大成功
+   8. scale=company | target_name=トヨタ生産方式の確立 | transition_id=N/A | canonical_id=CAN_5BCA4834 | period=1950-1980 | before=どん底・危機 | after=V字回復・大成功
+   9. scale=company | target_name=ファナックの技術蓄積 | transition_id=N/A | canonical_id=CAN_CD880E55 | period=1972-2000 | before=安定・平和 | after=V字回復・大成功
+  10. scale=individual | target_name=大谷翔平（二刀流の準備） | transition_id=N/A | canonical_id=CAN_D750C3CA | period=2013-2017 | before=成長痛 | after=V字回復・大成功
+  11. scale=company | target_name=星野リゾートのブランド戦略 | transition_id=N/A | canonical_id=CAN_B8FBC435 | period=2001-2020 | before=停滞・閉塞 | after=V字回復・大成功
+  12. scale=other | target_name=公正取引委員会による談合摘発 | transition_id=N/A | canonical_id=CAN_E30C2416 | period=2005-2010 | before=停滞・閉塞 | after=変質・新生
+  13. scale=company | target_name=AKB48商法（握手券戦略） | transition_id=N/A | canonical_id=CAN_1CF7C673 | period=2005-2015 | before=成長痛 | after=V字回復・大成功
+  14. scale=other | target_name=就活の「意識高い系」ブーム | transition_id=N/A | canonical_id=CAN_9F71054D | period=2010-2018 | before=停滞・閉塞 | after=現状維持・延命
+  15. scale=country | target_name=日本の外貨準備蓄積 | transition_id=N/A | canonical_id=CAN_EA2E29CB | period=1990-2020 | before=成長痛 | after=縮小安定・生存
+  16. scale=country | target_name=日本の失われた30年 | transition_id=N/A | canonical_id=CAN_445AF453 | period=1991-2020 | before=絶頂・慢心 | after=現状維持・延命
+  17. scale=other | target_name=日本映画産業（1970年代の衰退） | transition_id=N/A | canonical_id=CAN_00F000D0 | period=1960-1980 | before=絶頂・慢心 | after=縮小安定・生存
+  18. scale=company | target_name=ユニクロ（原宿店出店前の地方展開期） | transition_id=N/A | canonical_id=CAN_07DEA6B2 | period=1984-1998 | before=安定・平和 | after=V字回復・大成功
+  19. scale=company | target_name=キーエンスの利益蓄積モデル | transition_id=N/A | canonical_id=CAN_614D6016 | period=1974-2020 | before=安定・平和 | after=V字回復・大成功
+  20. scale=company | target_name=シャープ（液晶偏重と経営危機） | transition_id=N/A | canonical_id=CAN_DFFFA378 | period=2008-2016 | before=絶頂・慢心 | after=崩壊・消滅
+  21. scale=company | target_name=みずほ銀行（システム障害連発） | transition_id=N/A | canonical_id=CAN_2113DFBE | period=2002-2021 | before=混乱・カオス | after=現状維持・延命
+  22. scale=individual | target_name=村上春樹（デビュー前の準備期） | transition_id=N/A | canonical_id=CAN_5512BF7D | period=1974-1979 | before=安定・平和 | after=変質・新生
+  23. scale=other | target_name=バブル期の企業メセナブーム | transition_id=N/A | canonical_id=CAN_45C32478 | period=1985-1991 | before=絶頂・慢心 | after=崩壊・消滅
+  24. scale=other | target_name=インスタグラムと見せかけの成功 | transition_id=N/A | canonical_id=CAN_67760170 | period=2015-2020 | before=成長痛 | after=現状維持・延命
+  25. scale=individual | target_name=羽生善治の将棋研究蓄積 | transition_id=N/A | canonical_id=CAN_102AABE8 | period=1985-1996 | before=成長痛 | after=V字回復・大成功
+  26. scale=company | target_name=東芝（2015年不正会計問題） | transition_id=N/A | canonical_id=CAN_EA15E44B | period=2008-2017 | before=停滞・閉塞 | after=崩壊・消滅
+  27. scale=company | target_name=旭化成建材のデータ偽装問題 | transition_id=N/A | canonical_id=CAN_DFB11347 | period=2015 | before=安定・平和 | after=崩壊・消滅
+  28. scale=company | target_name=オリンパス粉飾決算事件 | transition_id=N/A | canonical_id=CAN_D69AC131 | period=1990-2012 | before=停滞・閉塞 | after=変質・新生
+  29. scale=other | target_name=東京地検特捜部による政治家摘発 | transition_id=N/A | canonical_id=CAN_FF4CCDE8 | period=2000-2010 | before=停滞・閉塞 | after=変質・新生
+  30. scale=other | target_name=日大アメフト悪質タックル問題 | transition_id=N/A | canonical_id=CAN_B7DE6CA7 | period=2018 | before=絶頂・慢心 | after=縮小安定・生存
+  31. scale=company | target_name=セブン-イレブン日本上陸 | transition_id=N/A | canonical_id=CAN_3E7AE1EA | period=1973-1980 | before=安定・平和 | after=V字回復・大成功
+  32. scale=company | target_name=日本郵政グループ（民営化後の混迷） | transition_id=N/A | canonical_id=CAN_AE4E0C81 | period=2007-2020 | before=停滞・閉塞 | after=現状維持・延命
+  33. scale=company | target_name=日産自動車（電気自動車リーフ） | transition_id=N/A | canonical_id=CAN_711E6965 | period=2009-2012 | before=どん底・危機 | after=変質・新生
+  34. scale=company | target_name=ライブドア事件（堀江貴文逮捕） | transition_id=N/A | canonical_id=CAN_BC34F07F | period=2004-2006 | before=絶頂・慢心 | after=崩壊・消滅
+  35. scale=individual | target_name=カルロス・ゴーン逮捕事件 | transition_id=N/A | canonical_id=CAN_D143118D | period=2018-2020 | before=絶頂・慢心 | after=崩壊・消滅

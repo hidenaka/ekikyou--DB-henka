@@ -1112,15 +1112,6 @@
       "period": "1814-2022"
     },
     {
-      "transition_id": "COUN_JP_1296",
-      "target_name": "スウェーデン（中立政策の誠実な堅持）",
-      "before_hex": "坤",
-      "action_type": "守る・維持",
-      "before_state": "安定・平和",
-      "after_state": "V字回復・大成功",
-      "period": "1814-2022"
-    },
-    {
       "transition_id": "COUN_JP_1333",
       "target_name": "ソ連崩壊（共産主義体制の終焉）",
       "before_hex": "艮",
@@ -2549,15 +2540,6 @@
       "period": "2006-2023"
     },
     {
-      "transition_id": "COUN_JP_1217",
-      "target_name": "東京オリンピック開催（1964）",
-      "before_hex": "震",
-      "action_type": "攻める・挑戦",
-      "before_state": "成長痛",
-      "after_state": "V字回復・大成功",
-      "period": "1964"
-    },
-    {
       "transition_id": "COUN_JP_1235",
       "target_name": "長州藩の倒幕運動",
       "before_hex": "坎",
@@ -2565,6 +2547,15 @@
       "before_state": "混乱・カオス",
       "after_state": "V字回復・大成功",
       "period": "1858-1868"
+    },
+    {
+      "transition_id": "COUN_JP_1238",
+      "target_name": "日清戦争勝利",
+      "before_hex": "震",
+      "action_type": "攻める・挑戦",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "period": "1894-1895"
     }
   ],
   "坤": [

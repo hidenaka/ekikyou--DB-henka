@@ -112,6 +112,21 @@ _STATE_ALIASES: Dict[str, str] = {
     "安定・停止": "安定・停止",
 }
 
+# before_state系の語彙 → after_state系の語彙へのマッピング
+# UIのgoal_stateドロップダウンにはbefore_state系の値が含まれるが、
+# L2のrev_after_state_*.jsonはafter_stateをキーとしているため、
+# before_state系がgoal_stateとして渡された場合に対応するafter_stateに変換する。
+_BEFORE_TO_AFTER_STATE: Dict[str, str] = {
+    "停滞・閉塞": "現状維持・延命",       # 停滞の延長
+    "どん底・危機": "崩壊・消滅",         # 危機の帰結
+    "安定・平和": "縮小安定・生存",       # 安定の維持
+    "成長痛": "変質・新生",               # 成長による変質
+    "混乱・カオス": "迷走・混乱",         # 混乱の継続
+    "絶頂・慢心": "V字回復・大成功",      # 絶頂の維持
+    "成長・拡大": "V字回復・大成功",      # 成長の成功
+    "拡大・繁栄": "V字回復・大成功",      # 拡大の成功
+}
+
 
 def _fuzzy_match_state(query: str, valid_keys: List[str]) -> Optional[str]:
     """
@@ -137,6 +152,13 @@ def _fuzzy_match_state(query: str, valid_keys: List[str]) -> Optional[str]:
     alias_match = _STATE_ALIASES.get(query)
     if alias_match and alias_match in valid_keys:
         return alias_match
+
+    # 2.5. before_state → after_state マッピング
+    # goal_stateとしてbefore_state系の語彙が渡された場合、
+    # 対応するafter_state系の語彙に変換する
+    before_to_after = _BEFORE_TO_AFTER_STATE.get(query)
+    if before_to_after and before_to_after in valid_keys:
+        return before_to_after
 
     # 3. 「・」区切りの前半 or 後半で部分一致
     parts = query.split("・")
