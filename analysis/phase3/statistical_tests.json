@@ -1,275 +1,95 @@
 {
-  "tests": [
-    {
-      "name": "dimension_correspondence",
-      "null_hypothesis": "MCAの次元数はQ6の6次元と無関係（ランダムシャッフルで同等の次元数が得られる）",
-      "observed_scree_dim": 10,
-      "observed_cum70_dim": 10,
-      "q6_geometric_dim": 6,
-      "permutation_distribution": {
-        "mean": 27.0,
-        "std": 0.0,
-        "median": 27.0
-      },
-      "test_statistic": 10.0,
-      "p_value": 1.0,
-      "p_value_bonferroni": 1.0,
-      "effect_size": 0.0,
-      "effect_size_type": "standardized_gap_difference (random_mean_gap - observed_gap) / random_gap_sd. positive=pro-isomorphism",
-      "effect_size_label": "negligible",
-      "effect_direction": "neutral",
-      "cum70_q6_match": false,
-      "conclusion": "fail_to_reject",
-      "details": {
-        "note": "Scree elbow=10, Cumulative 70%=10, Q6 dim=6. Cumulative 70%次元とQ6の6次元の差=4。ランダム置換分布の平均=27.00 (SD=0.00)"
-      }
-    },
-    {
-      "name": "transition_hamming_distance",
-      "null_hypothesis": "実データの遷移ペア間ハミング距離はランダム遷移と同等",
-      "n_pairs": 11336,
-      "observed_mean_hamming": 1.4912667607621737,
-      "observed_chain_mean_hamming": 1.420753940249353,
-      "random_mean_hamming": 1.4690792166549047,
-      "random_std_hamming": 0.007994018581222345,
-      "test_statistic": 2.7755182054976326,
-      "p_value": 0.998,
-      "p_value_bonferroni": 1.0,
-      "effect_size": 2.7755182054976326,
-      "effect_size_type": "z-score (standardized difference). positive=observed farther than random (anti-isomorphism)",
-      "effect_size_label": "large_anti",
-      "effect_direction": "anti_isomorphism",
-      "conclusion": "fail_to_reject",
-      "details": {
-        "hamming_distribution": {
-          "0": 1422,
-          "1": 4300,
-          "2": 4237,
-          "3": 1377
-        },
-        "note": "八卦(3ビット)空間でのハミング距離分析。距離0=同一八卦, 距離3=錯卦(全ビット反転)。観測平均(1.4913)>ランダム平均(1.4691): 実データの遷移はランダムより遠い八卦間で発生（反同型性方向）。"
-      }
-    },
-    {
-      "name": "hex_cluster_cramers_v",
-      "null_hypothesis": "八卦タグとクラスタの間のCramer's Vはランダムに期待される値と同等",
-      "observed": {
-        "before_hex_v": 0.33367086669638185,
-        "after_hex_v": 0.4163800982298469
-      },
-      "cluster_reconstruction": {
-        "method": "KMeans k=15 re-execution with seed=42 on MCA 10-dim row coordinates",
-        "mca_recomputed": true,
-        "reconstructed_sizes": {
-          "0": 654,
-          "1": 713,
-          "2": 908,
-          "3": 1935,
-          "4": 773,
-          "5": 1103,
-          "6": 777,
-          "7": 448,
-          "8": 509,
-          "9": 749,
-          "10": 685,
-          "11": 552,
-          "12": 340,
-          "13": 390,
-          "14": 800
-        },
-        "phase2_sizes": {
-          "cluster_0": 654,
-          "cluster_1": 713,
-          "cluster_2": 908,
-          "cluster_3": 1935,
-          "cluster_4": 773,
-          "cluster_5": 1103,
-          "cluster_6": 777,
-          "cluster_7": 448,
-          "cluster_8": 509,
-          "cluster_9": 749,
-          "cluster_10": 685,
-          "cluster_11": 552,
-          "cluster_12": 340,
-          "cluster_13": 390,
-          "cluster_14": 800
-        }
-      },
-      "random_baseline": {
-        "before_hex_v_mean": 0.035020101621343315,
-        "before_hex_v_std": 0.0025877569990317697,
-        "after_hex_v_mean": 0.034994147937622885,
-        "after_hex_v_std": 0.002438663041340149
-      },
-      "test_statistic": 0.3750254824631144,
-      "p_value": 0.0,
-      "p_value_bonferroni": 0.0,
-      "p_value_before": 0.0,
-      "p_value_after": 0.0,
-      "effect_size": 0.3750254824631144,
-      "effect_size_type": "Cramer's V (average of before/after). positive=pro-isomorphism",
-      "effect_size_label": "medium_pro",
-      "effect_direction": "pro_isomorphism",
-      "conclusion": "reject",
-      "details": {
-        "note": "方法: KMeans k=15 re-execution with seed=42 on MCA 10-dim row coordinates. 再実行クラスタサイズ: {'0': 654, '1': 713, '2': 908, '3': 1935, '4': 773, '5': 1103, '6': 777, '7': 448, '8': 509, '9': 749, '10': 685, '11': 552, '12': 340, '13': 390, '14': 800}. Phase 2報告クラスタサイズ: {'cluster_0': 654, 'cluster_1': 713, 'cluster_2': 908, 'cluster_3': 1935, 'cluster_4': 773, 'cluster_5': 1103, 'cluster_6': 777, 'cluster_7': 448, 'cluster_8': 509, 'cluster_9': 749, 'cluster_10': 685, 'cluster_11': 552, 'cluster_12': 340, 'cluster_13': 390, 'cluster_14': 800}. 再実行計算値: before_V=0.3337, after_V=0.4164"
-      }
-    },
-    {
-      "name": "spectral_structure_comparison",
-      "null_hypothesis": "MCA固有値分布とQ6スペクトルのWasserstein距離はランダム固有値と同等",
-      "q6_spectrum": {
-        "unique_eigenvalues": {
-          "-6.0": 1,
-          "-4.0": 6,
-          "-2.0": 15,
-          "-0.0": 20,
-          "2.0": 15,
-          "4.0": 6,
-          "6.0": 1
-        },
-        "n_eigenvalues": 64
-      },
-      "mca_spectrum": {
-        "n_eigenvalues": 10,
-        "range": [
-          0.180164,
-          0.455956
-        ],
-        "gap_cv": 1.0347018278428881
-      },
-      "observed_wasserstein": 0.23847809218541505,
-      "random_wasserstein_mean": 0.36448596087901,
-      "random_wasserstein_std": 0.0038859884721823743,
-      "baseline_method": "surrogate_mca",
-      "baseline_n_valid": 1000,
-      "test_statistic": -32.42620753911522,
-      "p_value": 0.0,
-      "p_value_bonferroni": 0.0,
-      "effect_size": -32.42620753911522,
-      "effect_size_type": "z-score (Wasserstein distance). positive=observed farther from Q6 (anti-isomorphism)",
-      "effect_size_label": "large_pro",
-      "effect_direction": "pro_isomorphism",
-      "conclusion": "reject",
-      "details": {
-        "q6_gap_cv": 0.0,
-        "mca_gap_cv": 1.0347018278428881,
-        "note": "Q6は7つのユニーク固有値（等間隔）を持つ完全に規則的なスペクトル。MCAの30固有値との直接比較は次元数が異なるため限定的。Wasserstein距離は正規化後の分布形状を比較。ベースライン: surrogate_mca. MCAスペクトルのWasserstein距離(0.2385)はランダム(0.3645)より大きく、MCAはQ6からランダムより遠い（反同型性方向）。"
-      }
-    },
-    {
-      "name": "cuogua_symmetry",
-      "null_hypothesis": "錯卦ペアのbefore_state分布のコサイン類似度はランダムペアと同等",
-      "cuogua_trigram_pairs": [
-        [
-          "乾",
-          "坤"
-        ],
-        [
-          "兌",
-          "艮"
-        ],
-        [
-          "坎",
-          "離"
-        ],
-        [
-          "巽",
-          "震"
-        ]
-      ],
-      "n_cuogua_pairs": 4,
-      "observed_mean_similarity_before": 0.3038227173190097,
-      "observed_similarities_before": [
-        0.13334007098511466,
-        0.3915936644732874,
-        0.1772477227901534,
-        0.5131094110274834
-      ],
-      "observed_mean_similarity_after": 0.8423963528310693,
-      "random_mean_similarity": 0.35992070276191884,
-      "random_std_similarity": 0.08453274849900326,
-      "test_statistic": -0.6636242928215043,
-      "p_value": 0.737,
-      "p_value_bonferroni": 1.0,
-      "effect_size": -0.6636242928215043,
-      "effect_size_type": "z-score (cosine similarity). positive=cuogua more similar (pro-isomorphism)",
-      "effect_size_label": "medium_anti",
-      "effect_direction": "anti_isomorphism",
-      "conclusion": "fail_to_reject",
-      "details": {
-        "trigram_cuogua_mapping": {
-          "乾": "坤",
-          "坤": "乾",
-          "震": "巽",
-          "巽": "震",
-          "坎": "離",
-          "離": "坎",
-          "艮": "兌",
-          "兌": "艮"
-        },
-        "note": "八卦レベルでの錯卦ペア（乾↔坤, 震↔巽, 坎↔離, 艮↔兌）のbefore_state分布のコサイン類似度を、ランダムペアと比較。八卦は8個のため、錯卦ペアは4組のみ（64卦レベルの32組ではない）。錯卦ペア平均類似度(0.3038)<ランダム平均(0.3599): 錯卦ペアはランダムより類似度が低い（反同型性方向）。",
-        "power_analysis": "検出力の限界: C(8,2)=28ペア中4ペアのみが錯卦。ランダム完全ペアリングの空間は105通り。仕様では64卦レベルの32ペアを想定していたが、cases.jsonlにはbefore_hex/after_hex（八卦タグ）しかないため、八卦レベルの4ペアに制限される。サンプルサイズの不足により、中程度以下の効果を検出する力が限定的。"
-      }
-    },
-    {
-      "name": "partial_isomorphism",
-      "null_hypothesis": "Q6のコミュニティ構造と実データの変化パターンに部分的対応は存在しない",
-      "q6_communities": 5,
-      "dbscan_optimal_clusters": 2,
-      "dbscan_robustness": "N/A",
-      "community_count_match": false,
-      "observed_cramers_v_before_pattern": 0.2880564466080343,
-      "observed_cramers_v_after_pattern": 0.390774133436639,
-      "random_v_mean": 0.024613978245332575,
-      "random_v_std": 0.0032338575043536592,
-      "test_statistic": 81.46384558009619,
-      "p_value": 0.0,
-      "p_value_bonferroni": 0.0,
-      "effect_size": 0.2880564466080343,
-      "effect_size_type": "Cramer's V (before_hex x pattern_type). positive=pro-isomorphism",
-      "effect_size_label": "small_pro",
-      "effect_direction": "pro_isomorphism",
-      "conclusion": "reject",
-      "details": {
-        "community_count_note": "Q6 Louvainコミュニティ数(5)とDBSCAN最適クラスタ数(2)が一致",
-        "dbscan_robustness_note": "DBSCAN k=2。パラメータ探索データなし。Q6 Louvainコミュニティ数(5)との一致は評価不能。",
-        "note": "八卦×パターンタイプの分割表のCramer's Vを、八卦タグのランダムシャッフルと比較。Q6のコミュニティ構造を直接テストするのではなく、八卦タグがパターンを構造的に区別する力を検証。"
-      }
-    }
-  ],
-  "overall_conclusion": {
-    "isomorphism_level": "partial",
-    "significant_tests": 3,
-    "total_tests": 6,
-    "large_effect_count_pro": 1,
-    "large_effect_count_anti": 1,
-    "medium_or_larger_effect_count_pro": 2,
-    "medium_or_larger_effect_count_anti": 2,
-    "rejected_pro_direction": 3,
-    "rejected_anti_direction": 0,
-    "effect_labels": [
-      "negligible",
-      "large_anti",
-      "medium_pro",
-      "large_pro",
-      "medium_anti",
-      "small_pro"
-    ],
-    "effect_directions": [
-      "neutral",
-      "anti_isomorphism",
-      "pro_isomorphism",
-      "pro_isomorphism",
-      "anti_isomorphism",
-      "pro_isomorphism"
-    ],
-    "summary": "3/6検証でH0棄却（Bonferroni補正後）、同型性方向の中以上効果量2件。部分同型性が示唆される。"
+  "metadata": {
+    "timestamp": "2026-03-07T15:48:28.688569",
+    "seed": 42,
+    "n_permutations": 1000,
+    "n_cases_used": 9228,
+    "n_cases_excluded": 2108,
+    "version": "2.0"
   },
-  "random_seed": 42,
-  "n_permutations": 1000,
-  "alpha": 0.05,
-  "alpha_bonferroni": 0.008333333333333333,
-  "n_cases": 11336,
-  "execution_timestamp": "2026-03-07T15:06:15.541271"
+  "tests": {
+    "test_a_edge_overlap": {
+      "h0": "G_obsのQ6エッジ重複率はランダム遷移と同等",
+      "statistic": 0.05154639175257732,
+      "p_value": 1.0,
+      "effect_size": -3.985290683580958,
+      "effect_label": "large",
+      "effect_direction": "anti",
+      "notes": "overlap=10/194, null_mean=0.0954, null_std=0.0110"
+    },
+    "test_b_hamming_6bit": {
+      "h0": "遷移ペアの平均ハミング距離はランダム遷移と同等",
+      "statistic": 2.9412657130472475,
+      "p_value": 0.906,
+      "effect_size": 1.358037266104064,
+      "effect_label": "large",
+      "effect_direction": "anti",
+      "notes": "null_mean=2.9184, null_std=0.0168, dist_distribution={0: 1113, 1: 12, 2: 3616, 3: 78, 4: 3376, 5: 38, 6: 995}"
+    },
+    "test_c_laplacian_spectrum": {
+      "h0": "G_obsのラプラシアンスペクトルとQ6のWasserstein距離はランダムグラフと同等",
+      "statistic": 0.4314486501719824,
+      "p_value": 0.0,
+      "effect_size": -4.034306872626668,
+      "effect_label": "large",
+      "effect_direction": "pro",
+      "notes": "null_mean=0.456181, null_std=0.006130, n_valid_perms=1000"
+    },
+    "test_d_cuogua_symmetry": {
+      "h0": "錯卦ペアの遷移確率類似度はランダムペアと同等",
+      "statistic": 0.3661100986223819,
+      "p_value": 0.001,
+      "effect_size": 3.881179144000453,
+      "effect_label": "large",
+      "effect_direction": "pro",
+      "notes": "valid_pairs=17/32, zero_outdeg=18, null_mean=0.1741"
+    },
+    "test_e_community_nmi": {
+      "h0": "G_obsとQ6のコミュニティ構造のNMIはランダム遷移と同等",
+      "statistic": 0.2759833234330157,
+      "p_value": 0.012,
+      "effect_size": 2.6877234071653757,
+      "effect_label": "large",
+      "effect_direction": "pro",
+      "notes": "G_obs communities=16, Q6 communities=5, null_mean=0.2207"
+    }
+  },
+  "combined_judgment": {
+    "fisher_statistic": 1404.4096955586583,
+    "fisher_p_value": 0.0,
+    "level": "Moderate",
+    "summary": "Fisher chi2=1404.41, p=0.000000, level=Moderate. Pro方向medium+: 3/5, Pro方向small+: 3/5",
+    "effect_profile": [
+      {
+        "test": "test_a_edge_overlap",
+        "effect_size": -3.985290683580958,
+        "direction": "anti",
+        "label": "large"
+      },
+      {
+        "test": "test_b_hamming_6bit",
+        "effect_size": 1.358037266104064,
+        "direction": "anti",
+        "label": "large"
+      },
+      {
+        "test": "test_c_laplacian_spectrum",
+        "effect_size": -4.034306872626668,
+        "direction": "pro",
+        "label": "large"
+      },
+      {
+        "test": "test_d_cuogua_symmetry",
+        "effect_size": 3.881179144000453,
+        "direction": "pro",
+        "label": "large"
+      },
+      {
+        "test": "test_e_community_nmi",
+        "effect_size": 2.6877234071653757,
+        "direction": "pro",
+        "label": "large"
+      }
+    ]
+  }
 }
