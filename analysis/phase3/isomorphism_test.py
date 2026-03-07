@@ -195,7 +195,7 @@ def cramers_v_label(v):
 # ============================================================
 def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
     """
-    Q6の幾何学的次元(6)とMCAのスクリー次元(5)/Benzecri累積80%次元(6)の対応検証。
+    Q6の幾何学的次元(6)とMCAの推奨次元/累積70%次元の対応検証。
 
     置換テスト: カテゴリラベルをランダムに再割り当てした場合のMCA次元数の分布を生成し、
     実データの次元数がこの分布の下でどの位置にあるかを評価。
@@ -204,9 +204,10 @@ def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
     """
     print("  [Test 1] 次元数の対応...")
 
-    # 実データ: スクリー次元=5, Benzecri cum80%=6
-    observed_scree_dim = dimension_report["recommended_dimensions"]  # 5
-    observed_benzecri_dim = dimension_report["dimension_decision"]["benzecri"]["dimensions_cum80"]  # 6
+    # 実データ: スクリー次元=10(recommended), 累積70%次元
+    observed_scree_dim = dimension_report["recommended_dimensions"]  # 10
+    observed_cum70_dim = dimension_report.get("determination_criteria", {}).get(
+        "cumulative_70pct", dimension_report["recommended_dimensions"])
     q6_dim = 6
 
     # MCA固有値
@@ -224,8 +225,8 @@ def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
     # 各事例の7カテゴリカル変数をシャッフル → indicator matrix → 固有値計算
     # 簡略化: 各変数を独立にシャッフルして指示行列の特異値分解
 
-    mca_columns = ["before_state", "trigger_type", "action_type", "after_state",
-                    "pattern_type", "outcome", "scale"]
+    mca_columns = ["before_state", "after_state", "trigger_type", "action_type",
+                    "pattern_type", "scale"]
 
     # データ行列の構築
     data_matrix = []
@@ -335,7 +336,7 @@ def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
         effect_d = 0.0
 
     # Benzecriの6次元がQ6の6次元と一致する点も考慮
-    dim_gap = abs(q6_dim - observed_benzecri_dim)  # 0 (完全一致)
+    dim_gap = abs(q6_dim - observed_cum70_dim)  # 0 (完全一致)
     scree_gap = abs(q6_dim - observed_scree_dim)   # 1
 
     # 同型性方向の効果量: Q6との距離（gap）で評価
@@ -355,7 +356,7 @@ def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
         "name": "dimension_correspondence",
         "null_hypothesis": "MCAの次元数はQ6の6次元と無関係（ランダムシャッフルで同等の次元数が得られる）",
         "observed_scree_dim": int(observed_scree_dim),
-        "observed_benzecri_cum80_dim": int(observed_benzecri_dim),
+        "observed_cum70_dim": int(observed_cum70_dim),
         "q6_geometric_dim": q6_dim,
         "permutation_distribution": {
             "mean": float(np.mean(perm_scree_dims)) if len(perm_scree_dims) > 0 else None,
@@ -369,16 +370,16 @@ def test1_dimension_correspondence(cases, mca_results, dimension_report, rng):
         "effect_size_type": "standardized_gap_difference (random_mean_gap - observed_gap) / random_gap_sd. positive=pro-isomorphism",
         "effect_size_label": es_label,
         "effect_direction": effect_direction_from_label(es_label),
-        "benzecri_q6_match": dim_gap == 0,
+        "cum70_q6_match": dim_gap == 0,
         "conclusion": "reject" if min(p_value_scree * N_TESTS, 1.0) < ALPHA else "fail_to_reject",
         "details": {
-            "note": f"Scree elbow={observed_scree_dim}, Benzecri cum80%={observed_benzecri_dim}, Q6 dim=6. "
-                    f"Benzecri cum80%次元はQ6の6次元と完全一致。"
+            "note": f"Scree elbow={observed_scree_dim}, Cumulative 70%={observed_cum70_dim}, Q6 dim=6. "
+                    f"Cumulative 70%次元とQ6の6次元の差={abs(q6_dim - observed_cum70_dim)}。"
                     f"ランダム置換分布の平均={np.mean(perm_scree_dims):.2f} (SD={np.std(perm_scree_dims):.2f})" if len(perm_scree_dims) > 0 else "Permutation test incomplete"
         }
     }
 
-    print(f"    Scree dim={observed_scree_dim}, Benzecri cum80%={observed_benzecri_dim}, Q6=6")
+    print(f"    Scree dim={observed_scree_dim}, Cumulative 70%={observed_cum70_dim}, Q6=6")
     print(f"    p={p_value_scree:.4f}, Bonferroni p={min(p_value_scree * N_TESTS, 1.0):.4f}, gap_d={gap_effect:.3f} ({es_label})")
 
     return result
@@ -496,27 +497,24 @@ def test2_transition_hamming(cases, graph_data, rng):
 def _fallback_cluster_assignment(cases, cluster_results):
     """
     MCA再計算が失敗した場合のフォールバック: Phase 2のクラスタプロファイルに基づく
-    ユークリッド距離最近傍割り当て。
+    サイズ比率によるランダム割り当て。
     """
-    profiles = cluster_results.get("final_clustering", {}).get("cluster_profiles", {})
+    profiles = cluster_results.get("cluster_profiles", {})
     if not profiles:
         # プロファイルがない場合、全件をクラスタ0に割り当て
         return np.zeros(len(cases), dtype=int)
 
-    centroids = {}
-    for cid, prof in profiles.items():
-        centroids[int(cid)] = np.array(prof.get("centroid", [0, 0, 0, 0, 0]))
-
-    # 各事例をプロファイルのセントロイドに基づいて分類
-    # ただしMCA座標がないので、Phase 2のクラスタサイズ比率でランダム割り当て
-    sizes = cluster_results.get("cluster_sizes", {})
-    total = sum(int(v) for v in sizes.values())
+    # クラスタサイズの比率でランダム割り当て
+    sizes = {int(k.replace("cluster_", "")): v.get("size", 0) for k, v in profiles.items()}
+    total = sum(sizes.values())
     if total == 0:
         return np.zeros(len(cases), dtype=int)
-    prob_1 = int(sizes.get("1", 0)) / total
+
+    cluster_ids = sorted(sizes.keys())
+    probs = np.array([sizes[cid] / total for cid in cluster_ids])
 
     rng_fb = np.random.default_rng(42)
-    labels = (rng_fb.random(len(cases)) < prob_1).astype(int)
+    labels = rng_fb.choice(cluster_ids, size=len(cases), p=probs)
     return labels
 
 
@@ -525,25 +523,21 @@ def _fallback_cluster_assignment(cases, cluster_results):
 # ============================================================
 def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
     """
-    Phase 2のCramer's V (before_hex=0.318, after_hex=0.3825) が
+    八卦タグとクラスタの間のCramer's Vが
     ランダムに期待される値より有意に大きいかを置換テストで検証。
 
-    MF-3修正: KMeansをseed=42で再実行してクラスタ割り当てを復元（近似ではなく再現）
+    MF-3修正: KMeans(k=15)をseed=42で再実行してクラスタ割り当てを復元（近似ではなく再現）
     """
     print("  [Test 3] 八卦タグとクラスタの対応...")
 
-    # Phase 2から報告されたCramer's V
-    reported_v_before = cluster_results["hexagram_association"]["before_hex"]["cramers_v"]
-    reported_v_after = cluster_results["hexagram_association"]["after_hex"]["cramers_v"]
-
     # Phase 2と同じ prince.MCA + KMeans で再実行 (MF-3)
-    # Phase 2の設定: prince.MCA(n_components=5, random_state=42), KMeans(k=2, seed=42, n_init=10)
+    # Phase 2の設定: prince.MCA(n_components=10, random_state=42), KMeans(k=15, seed=42, n_init=10)
     import pandas as pd
     import prince
     from sklearn.cluster import KMeans
 
-    mca_columns = ["before_state", "trigger_type", "action_type", "after_state",
-                    "pattern_type", "outcome", "scale"]
+    mca_columns = ["before_state", "after_state", "trigger_type", "action_type",
+                    "pattern_type", "scale"]
 
     # DataFrameを構築（prince.MCAはpandasを要求）
     data_rows = []
@@ -553,19 +547,22 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
     df_mca = pd.DataFrame(data_rows)
 
     # prince.MCA で行座標を計算（Phase 2と同一の設定）
-    mca = prince.MCA(n_components=5, random_state=42)
+    mca = prince.MCA(n_components=10, random_state=42)
     mca.fit(df_mca)
     row_coords = mca.row_coordinates(df_mca)
     print(f"    prince.MCA行座標: shape={row_coords.shape}")
 
-    # KMeans k=2, seed=42 で再実行
-    km = KMeans(n_clusters=2, random_state=42, n_init=10)
+    # KMeans k=15, seed=42 で再実行
+    km = KMeans(n_clusters=15, random_state=42, n_init=10)
     cluster_labels = km.fit_predict(row_coords.values)
     mca_recomputed = True
 
     # Phase 2のクラスタサイズと照合
-    cluster_sizes = {str(i): int(np.sum(cluster_labels == i)) for i in range(2)}
-    phase2_sizes = cluster_results.get("cluster_sizes", {})
+    n_clusters_used = 15
+    cluster_sizes = {str(i): int(np.sum(cluster_labels == i)) for i in range(n_clusters_used)}
+    # Phase 2の cluster_profiles からサイズを取得
+    phase2_profiles = cluster_results.get("cluster_profiles", {})
+    phase2_sizes = {k: v.get("size", 0) for k, v in phase2_profiles.items()} if phase2_profiles else {}
     print(f"    KMeans再実行クラスタサイズ: {cluster_sizes}")
     print(f"    Phase 2報告クラスタサイズ: {phase2_sizes}")
 
@@ -578,13 +575,13 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
     unique_after = sorted(set(after_hex_values))
 
     # before_hex × cluster
-    before_table = np.zeros((2, len(unique_before)))
+    before_table = np.zeros((n_clusters_used, len(unique_before)))
     for i, (cl, bh) in enumerate(zip(cluster_labels, before_hex_values)):
         if bh in unique_before:
             before_table[cl, unique_before.index(bh)] += 1
 
     # after_hex × cluster
-    after_table = np.zeros((2, len(unique_after)))
+    after_table = np.zeros((n_clusters_used, len(unique_after)))
     for i, (cl, ah) in enumerate(zip(cluster_labels, after_hex_values)):
         if ah in unique_after:
             after_table[cl, unique_after.index(ah)] += 1
@@ -601,7 +598,7 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
         # before_hexをシャッフル
         perm_before = list(before_hex_values)
         rng.shuffle(perm_before)
-        perm_table = np.zeros((2, len(unique_before)))
+        perm_table = np.zeros((n_clusters_used, len(unique_before)))
         for cl, bh in zip(cluster_labels, perm_before):
             if bh in unique_before:
                 perm_table[cl, unique_before.index(bh)] += 1
@@ -610,7 +607,7 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
         # after_hexをシャッフル
         perm_after = list(after_hex_values)
         rng.shuffle(perm_after)
-        perm_table = np.zeros((2, len(unique_after)))
+        perm_table = np.zeros((n_clusters_used, len(unique_after)))
         for cl, ah in zip(cluster_labels, perm_after):
             if ah in unique_after:
                 perm_table[cl, unique_after.index(ah)] += 1
@@ -634,24 +631,19 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
 
     # クラスタ再現精度を計算
     if mca_recomputed:
-        recon_method = "KMeans k=2 re-execution with seed=42 on MCA 5-dim row coordinates"
+        recon_method = "KMeans k=15 re-execution with seed=42 on MCA 10-dim row coordinates"
     else:
         recon_method = "Fallback: random assignment based on Phase 2 cluster size ratio"
     cluster_reconstruction_note = (
         f"方法: {recon_method}. "
         f"再実行クラスタサイズ: {cluster_sizes}. "
         f"Phase 2報告クラスタサイズ: {dict(phase2_sizes)}. "
-        f"Phase 2報告値: before_V={reported_v_before}, after_V={reported_v_after}. "
         f"再実行計算値: before_V={observed_v_before:.4f}, after_V={observed_v_after:.4f}"
     )
 
     result = {
         "name": "hex_cluster_cramers_v",
         "null_hypothesis": "八卦タグとクラスタの間のCramer's Vはランダムに期待される値と同等",
-        "phase2_reported": {
-            "before_hex_v": float(reported_v_before),
-            "after_hex_v": float(reported_v_after),
-        },
         "observed": {
             "before_hex_v": float(observed_v_before),
             "after_hex_v": float(observed_v_after),
@@ -660,7 +652,7 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
             "method": recon_method,
             "mca_recomputed": mca_recomputed,
             "reconstructed_sizes": cluster_sizes,
-            "phase2_sizes": dict(phase2_sizes),
+            "phase2_sizes": phase2_sizes,
         },
         "random_baseline": {
             "before_hex_v_mean": float(np.mean(perm_v_before)),
@@ -683,8 +675,8 @@ def test3_hex_cluster_association(cases, cluster_results, mca_results, rng):
         }
     }
 
-    print(f"    before_hex V={observed_v_before:.4f} (Phase2: {reported_v_before}), p={p_before:.4f}")
-    print(f"    after_hex V={observed_v_after:.4f} (Phase2: {reported_v_after}), p={p_after:.4f}")
+    print(f"    before_hex V={observed_v_before:.4f}, p={p_before:.4f}")
+    print(f"    after_hex V={observed_v_after:.4f}, p={p_after:.4f}")
     print(f"    Bonferroni p={min(p_combined * N_TESTS, 1.0):.4f} ({es_label_t3})")
 
     return result
@@ -742,8 +734,8 @@ def test4_spectral_comparison(mca_results, graph_data, rng):
     # 検証1と同様のアプローチ: 各カテゴリカル変数を独立にシャッフル → 指示行列 → SVD → 固有値
     # 計算コスト: N_PERMUTATIONS回のSVD。時間計測して制限する
     import time
-    mca_columns_t4 = ["before_state", "trigger_type", "action_type", "after_state",
-                       "pattern_type", "outcome", "scale"]
+    mca_columns_t4 = ["before_state", "after_state", "trigger_type", "action_type",
+                       "pattern_type", "scale"]
 
     # データ行列の構築（Test 1と同様）
     data_matrix_t4 = []
@@ -1134,25 +1126,31 @@ def test6_partial_isomorphism(cases, graph_data, cluster_results, rng):
     observed_v = cramers_v(observed_table)
 
     # SF-3: DBSCAN最適kをcluster_results.jsonから動的に読み取り
-    dbscan_best = cluster_results.get("clustering_comparison", {}).get("dbscan", {}).get("best", {})
+    dbscan_best = cluster_results.get("methods_compared", {}).get("dbscan", {})
     dbscan_best_k = dbscan_best.get("n_clusters", None)
     if dbscan_best_k is None:
         print("    警告: DBSCAN best n_clustersがcluster_results.jsonに見つかりません。デフォルト値を使用。")
         dbscan_best_k = 5
     else:
-        print(f"    DBSCAN best k={dbscan_best_k} (eps={dbscan_best.get('eps')}, "
-              f"min_samples={dbscan_best.get('min_samples')}, silhouette={dbscan_best.get('silhouette')})")
+        print(f"    DBSCAN best k={dbscan_best_k}")
     community_count_match = (n_communities == dbscan_best_k)
 
-    # DBSCAN k=5の出現頻度を計算（ロバスト性評価）
-    dbscan_params = cluster_results.get("clustering_comparison", {}).get("dbscan", {}).get("parameter_search", [])
-    n_dbscan_configs = len(dbscan_params)
-    n_matching_configs = sum(1 for p in dbscan_params if p.get("n_clusters") == dbscan_best_k)
-    dbscan_robustness_note = (
-        f"DBSCAN k={dbscan_best_k}は{n_dbscan_configs}通りのパラメータ組み合わせ中"
-        f"{n_matching_configs}通りで出現。Q6 Louvainコミュニティ数({n_communities})との"
-        f"一致は偶然の可能性がある（ロバスト性: {n_matching_configs}/{n_dbscan_configs}）。"
-    )
+    # DBSCAN k出現頻度を計算（ロバスト性評価）
+    # 新フォーマットではparameter_searchが存在しない場合がある
+    dbscan_params = cluster_results.get("methods_compared", {}).get("dbscan", {}).get("parameter_search", [])
+    n_dbscan_configs = len(dbscan_params) if dbscan_params else 0
+    n_matching_configs = sum(1 for p in dbscan_params if p.get("n_clusters") == dbscan_best_k) if dbscan_params else 0
+    if n_dbscan_configs > 0:
+        dbscan_robustness_note = (
+            f"DBSCAN k={dbscan_best_k}は{n_dbscan_configs}通りのパラメータ組み合わせ中"
+            f"{n_matching_configs}通りで出現。Q6 Louvainコミュニティ数({n_communities})との"
+            f"一致は偶然の可能性がある（ロバスト性: {n_matching_configs}/{n_dbscan_configs}）。"
+        )
+    else:
+        dbscan_robustness_note = (
+            f"DBSCAN k={dbscan_best_k}。パラメータ探索データなし。"
+            f"Q6 Louvainコミュニティ数({n_communities})との一致は評価不能。"
+        )
 
     # 置換テスト: 八卦タグをシャッフルしてCramer's V分布を生成
     perm_v = []
@@ -1196,7 +1194,7 @@ def test6_partial_isomorphism(cases, graph_data, cluster_results, rng):
         "null_hypothesis": "Q6のコミュニティ構造と実データの変化パターンに部分的対応は存在しない",
         "q6_communities": n_communities,
         "dbscan_optimal_clusters": dbscan_best_k,
-        "dbscan_robustness": f"{n_matching_configs}/{n_dbscan_configs}",
+        "dbscan_robustness": f"{n_matching_configs}/{n_dbscan_configs}" if n_dbscan_configs > 0 else "N/A",
         "community_count_match": community_count_match,
         "observed_cramers_v_before_pattern": float(observed_v),
         "observed_cramers_v_after_pattern": float(observed_v_after),
@@ -1477,10 +1475,10 @@ def main():
           f"{graph_data['basic_properties']['num_edges']}エッジ")
 
     mca_results = load_json(PHASE2_DIR / "mca_results.json")
-    print(f"  MCA: {mca_results['n_components_computed']}成分, "
-          f"推奨{mca_results['recommended_dimensions']}次元")
-
     dimension_report = load_json(PHASE2_DIR / "dimension_report.json")
+    print(f"  MCA: {len(mca_results['eigenvalues'])}成分, "
+          f"推奨{dimension_report['recommended_dimensions']}次元")
+
     cluster_results = load_json(PHASE2_DIR / "cluster_results.json")
     transition_stats = load_json(PHASE2_DIR / "transition_stats.json")
 
