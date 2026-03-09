@@ -1,0 +1,817 @@
+{
+  "batch_id": 29,
+  "pass_number": 2,
+  "prompt_type": "holistic",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Internally the company was already mired in hidden peril — falsified accounts concealing rot beneath a functioning surface. 坎 as danger lurking within, the trap of deception that has not yet surfaced."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally the firm still projected the appearance of a major construction company — visible reputation, market standing, the bright surface of 離. This façade of clarity made the eventual exposure all the more devastating."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After exposure, the internal state is pure crisis — existential threat, employees fleeing, trust annihilated. 坎 at its deepest: drowning, no foothold, survival itself uncertain."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external world delivers cascading shocks — banks pulling out, contracts terminated, civil rehabilitation filing. 震 as thunderbolt after thunderbolt striking the organization from outside."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Before the breakthrough, the founder was in quiet receptive preparation — accumulating deep technical knowledge, building internal capability patiently. 坤 as fertile inner ground awaiting activation."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external market was settled and still — no disruption yet, industry conventions unchallenged. 艮 as a stable, unmoving landscape, the mountain that has not been shaken."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After launch, the founder's inner state blazes with pure creative will — visionary certainty, unstoppable drive, unifying the company around a singular mission. 乾 as heaven's creative force fully activated."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally everything accelerates upward — investment flows in, market dominance achieved, global expansion underway. The environment itself becomes 乾: unlimited expansion, every door opening."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Both companies were stuck in competitive deadlock — progress blocked, old models no longer working but no alternative in sight. 艮 as the mountain of arrested movement, internal frustration at stalemate."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Industry structural change was creating a harsh external environment — eroding margins, threatening survival. 坎 as the dangerous waters of market disruption pressing in from all sides."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Partnership transforms the inner experience into joyful exchange — open dialogue, mutual trust, genuine delight in collaboration. 兌 as the lake: two bodies of water meeting, sharing freely."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The external result is gradual, organic growth — an ecosystem forming naturally, cooperation spreading through the industry like wind. 巽 as gentle penetration, the new paradigm spreading without force."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Society's inner state was one of hidden peril — corruption flowing unseen beneath the surface, citizens unaware of the rot in their institutions. 坎 as concealed danger, the underground current of deceit."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external appearance was one of stable normalcy — institutions functioning, no visible crisis, a placid surface. 坤 as passive acceptance, the receptive ground that does not question."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The reporter's investigation brings inner clarity — truth illuminated, hidden structures made visible, the fire of understanding ignited. 離 as the flame of revelation burning away concealment."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external impact is seismic — society shocked awake, investigations launched, movements born. 震 as the thunderclap that breaks the silence and mobilizes collective action."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The company's internal state is stable, receptive, unhurried — no burning ambition or crisis, just steady stewardship. 坤 as the nurturing ground that sustains without transforming."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external market is changing only gradually — no dramatic disruption, just slow-moving shifts. 坤 as the flat, broad landscape where change is diffuse and undramatic."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Internally the company shifts to gentle, incremental adaptation — small investments, gradual portfolio adjustments, nothing radical. 巽 as wind: flexible, adaptive, penetrating slowly."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Externally the company maintains a stable but fading presence — financially sound but losing visibility. 坤 as the enduring earth, present but not prominent, supporting without leading."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_306",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Stay-at-home parents felt trapped and immobilized — unable to access childcare, isolated within their homes. 艮 as the mountain blocking movement, the inner experience of being stuck with no outlet."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The institutional system was rigid — childcare access required employment proof, creating an immovable barrier for non-working parents. 艮 as systemic rigidity, the wall that does not yield."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The new policy gently opens a pathway — 10 hours per month, gradual access, incremental relief from isolation. 巽 as the soft wind that slowly penetrates barriers, not dramatic but real."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external policy environment shifts gradually — pilot programs in 2024, full implementation planned for 2026, step-by-step institutional reform. 巽 as wind of change moving through bureaucracy slowly."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_239",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Yukawa's inner state was one of brilliant intellectual clarity — deep engagement with quantum mechanics, the fire of theoretical insight burning intensely. 離 as the illuminating flame of the mind at its sharpest."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, physics was at a standstill regarding nuclear forces — the strong interaction had no theoretical explanation. 艮 as the impasse, the mountain of unsolved problems blocking the field."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After the Nobel Prize, Yukawa's inner state embodies sovereign creative power — the first Japanese laureate, founding an institute, leading peace movements. 乾 as heaven's authority, the creative will fully realized."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Externally, his achievement brought immense joy to a defeated nation — hope, pride, and collective uplift in post-war Japan. 兌 as the lake of shared joy, the gift that replenished a parched people."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_258",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The AI technology itself was a crystallization of brilliant vision and technical clarity — years of research reaching a breakthrough moment. 離 as the fire of innovation, the clarity of a transformative idea."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The market experienced sudden, electrifying disruption — 100 million users in two months, industries scrambling to respond. 震 as thunderbolt arrival, the shock wave that jolts the entire landscape."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Companies with clear vision led the transformation — those who could see the opportunity clearly captured first-mover advantage. 離 as discernment, the inner clarity that separates leaders from followers."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The external landscape is now one of explosive expansion — AI adoption accelerating across all industries, market growth seemingly limitless. 乾 as creative force unleashed, heaven's expansion in the marketplace."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_736",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The brewery was internally stuck — no successor, aging methods, unable to adapt to shrinking sake demand. 艮 as the mountain of accumulated tradition that has become an immovable burden."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The external environment was hostile — sake market declining, urban land costs rising, regulatory hurdles for city brewing. 坎 as the dangerous waters eroding the foundations of the business."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The brewery surrenders to dissolution — acceptance of the end, the inner state returning to formless earth. 坤 as return to ground, the receptive acceptance of cessation."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally, the brewery simply stops — operations cease, a 140-year presence becomes a monument to what was. 艮 as the final stopping, the mountain that no longer moves because it is no longer alive."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_537",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "CVS Health's internal state was stable and established — a massive healthcare operation running on established processes, quietly absorbing Aetna. 坤 as the broad, stable ground of institutional inertia."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external healthcare market appeared manageable — steady demand, regulated environment, predictable revenue streams. 坤 as the calm landscape before the storm."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Internally the company plunges into crisis — medical loss ratios exploding, profits evaporating from $5.6B to $307M, leadership forced to change. 坎 as the flood of losses engulfing the organization from within."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, shocks cascade — stock drops 30%, star ratings plummet, forced ACA market withdrawal, CEO replaced. 震 as the series of thunderbolts battering the company's external position."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_540",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The investor's inner state was one of aggressive willpower — investing everything, riding the boom with total conviction. 乾 as unbridled ambition, the creative force untempered by caution."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The crypto market was an environment of electrifying volatility — dramatic rises creating excitement and FOMO. 震 as the market's thunderous energy, thrilling and dangerous."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After losing 80% of everything, the inner state is abject crisis — financial ruin, self-recognition that it was gambling not investing. 坎 as drowning in the consequences of recklessness."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external world has gone flat — no more volatility to ride, just the barren aftermath. 坤 as the empty ground after the flood recedes, nothing left to work with."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_709",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "A century-old textile firm operating in quiet stability — established processes, institutional routine, nothing remarkable. 坤 as the broad, level ground of long-established normalcy."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment was stable — listed on the stock exchange, regulated, conventional. 坤 as the calm surface of institutional order."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The fraud revelation plunges the company into existential crisis — multiple irregularities exposed, trust destroyed, survival impossible. 坎 as the pit opening beneath, inescapable peril."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the shock of fraud exposure triggers corporate rehabilitation proceedings — the legal and market thunderbolt that ends the company's independence. 震 as the sudden, devastating external blow."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2008",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Tanaka's inner state at peak was pure sovereign will — the 'Remodeling the Japanese Archipelago' vision, aggressive infrastructure ambition, total conviction in his transformative power. 乾 as the ruler's creative will at its zenith."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Externally he radiated visibility and brilliance — national spotlight, bold policy announcements, the fire of public attention. 離 as the flame of prominence, the leader in full display."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The oil shock shattered his inner certainty — policies crumbling, inflation spiraling, his grand vision drowning. 坎 as the crisis that overwhelms from within, the drowning of ambition."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the oil crisis struck like a thunderbolt — global shock, economic upheaval, his infrastructure plans collapsing. 震 as the external blow that derails everything."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_0229",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The designer possessed clear creative vision and proven skill — award-winning packaging design, strong aesthetic clarity. 離 as the inner fire of artistic excellence, the clarity of craft mastery."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external market was stable and predictable — retail packaging was an established field with reliable demand. 坤 as the steady ground of a mature market."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Over 7 years the designer gradually adapted — patiently learning D2C branding and video advertising, slowly penetrating a new domain. 巽 as the wind of gradual transformation, flexible and persistent."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The external result is renewed visibility and recognition — re-evaluated by the market, creative work shining again in a new medium. 離 as the flame reignited, clarity of vision now visible in a new context."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_327",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Malaysia's internal drive under Mahathir was one of ambitious willpower — Look East, industrialize, modernize at all costs. 乾 as the sovereign creative force propelling rapid development."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally Malaysia was visible and bright — the Tiger Economy success story, international recognition, economic brilliance. 離 as the flame of emerging-market prestige on the world stage."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Internally the country is mired in structural crises — corruption (1MDB), ethnic tensions, political instability, unresolved identity conflicts. 坎 as the deep, persistent internal dangers that never fully resolve."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally the country has stabilized but stopped growing dynamically — surviving but no longer ascending, structural problems blocking progress. 艮 as the mountain of arrested development, stable but stuck."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_003",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "A village with fewer than 10 people faces existential threat — the community is dying, inner despair at impending extinction. 坎 as the deepest crisis, the pit of demographic collapse."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally the village was invisible, forgotten, immovable — remote, ignored by policy, locked in geographic isolation. 艮 as the immovable mountain, cut off from the currents of change."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Internally the community becomes receptive — opening itself to newcomers, accepting change, nurturing new residents. 坤 as the earth that welcomes seeds, the receptive ground of hospitality."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally, gradual improvement materializes — 5 families over 14 years, renovated houses, a thin but real lifeline. 巽 as the gentle wind of slow, incremental renewal, not a boom but a breath of life."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_054",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Before the mother's death, the family's inner state was stable and bonded — sisters connected by shared family life, quiet normalcy. 坤 as the nurturing ground of family stability."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally the family appeared peaceful and functional — no visible conflict, relationships intact. 坤 as the calm surface of an ordinary family."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The inheritance dispute ignites fierce emotions — resentment over caregiving inequality burns hot, feelings that were suppressed now blaze. 離 as the consuming fire of emotional exposure, painful clarity about unequal sacrifice."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external outcome is permanent severance — legal settlement achieved but relationship irreparably stopped, sisters never speaking again. 艮 as the immovable wall between them, the final stopping of connection."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2160",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The silk company was stuck — its original industry dying, core business no longer viable, searching for direction. 艮 as the blocked mountain, the impasse of a declining industry."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally the silk market was in crisis — Japan's sericulture industry collapsing, demand evaporating. 坎 as the dangerous waters of industrial decline threatening survival."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The pivot to metal oxide sensors represents brilliant technical clarity — identifying a niche technology from the 1970s and focusing on it with precision. 離 as the fire of clear vision, seeing the future in humidity sensing."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Externally the company achieves world-leading market position — global top share in humidity sensors, complete transformation into a different industry. 乾 as the sovereign expansion into undisputed leadership."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_0172",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Before injury, the MVP-level athlete was in a stable state of proven excellence — established, confident, settled in peak performance. 坤 as the solid ground of achieved mastery."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Externally the player's status was secure — recognized, valued, part of the league's fabric. 坤 as the stable platform of an established career."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The 4-year rehabilitation required extraordinary willpower — the inner force to rebuild from Achilles tendon rupture demands 乾: sovereign determination, the refusal to accept the end."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The external outcome is triumphant celebration — contributing to a league championship, the joy of return validated by collective success. 兌 as the lake of shared victory, joy overflowing."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_571",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Before the panic disorder, the person's inner state was ordinary stability — functioning normally, commuting routinely. 坤 as the unremarkable ground of daily normalcy."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external work environment was stable and conventional — office-based, commute-dependent, no flexibility. 坤 as the flat institutional landscape that cannot accommodate deviation."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Panic disorder traps the person in inner crisis — unable to ride trains, body rebelling, daily life becoming a minefield. 坎 as the internal waters of anxiety flooding every channel."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, every path is blocked — telework denied, resignation forced, remote job search fruitless. 艮 as the wall at every turn, the mountain that will not move to accommodate."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3268",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Jensen Huang's inner state was one of visionary clarity — years of investing in GPU computing for AI before the market validated it. 離 as the fire of foresight, seeing what others could not."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Before ChatGPT, the GPU market for AI was a niche — NVIDIA was strong but not yet at its explosive potential, the market waiting. 艮 as the stillness before the eruption."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After the AI boom, NVIDIA's inner drive is pure creative dominance — sovereign market position, unstoppable momentum, the king of AI infrastructure. 乾 as heaven's creative force at full power."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, the market validates with staggering scale — $3 trillion valuation, every tech company dependent on NVIDIA chips. 乾 as the limitless expansion of market dominance."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4454",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Mercari launched with explosive energy — imperfect but bold, moving fast despite an incomplete product. 震 as the thunder of startup energy, raw momentum without refinement."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The C2C marketplace in Japan was relatively undeveloped — open ground waiting to be claimed. 坤 as the receptive, unclaimed territory ready for cultivation."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Through iterative improvement, Mercari developed clear product vision — polishing the app while simultaneously scaling. 離 as the clarity of product-market fit achieved through relentless refinement."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "TV commercials drove explosive growth — mass awareness, rapid user acquisition, market dominance. 乾 as the expansive force of a startup hitting escape velocity."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1006",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Traditional vegetable varieties were on the edge of extinction — seeds disappearing, cultivation knowledge fading, an inner crisis of cultural loss. 坎 as the danger of irreversible disappearance."
+      },
+      "before_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external forces were the quiet erosion of efficiency-driven agriculture — slow, invisible displacement by mass-produced varieties. 巽 as the wind that gradually wore away diversity without anyone noticing."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The inner state shifts to preservation — stopping the loss, creating formal structures to hold and protect what remains. 艮 as the mountain of conservation, anchoring heritage against further erosion."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "External recognition brings visibility — certification programs, high-end restaurant adoption, cultural revaluation. 離 as the light of appreciation, seeing the beauty and value that was always there."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3123",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "SoftBank's inner state was one of aggressive ambition — Vision Fund pouring massive capital into transformative bets, Son's sovereign will driving the strategy. 乾 as the creative force of unlimited ambition."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The WeWork situation was volatile and shocking — IPO collapse, governance scandals, dramatic loss of confidence. 震 as the thunderbolt of market rejection and public exposure."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "SoftBank's inner state shifts to restraint and reflection — pulling back additional support, limiting exposure, stopping the bleeding. 艮 as the mountain of deliberate stopping, choosing to cut losses."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external outcome is gradual policy adjustment — investment approach revised, more cautious methodology, incremental recalibration. 巽 as the gentle wind of strategic course correction, not dramatic reversal but adaptive shift."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3383",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Netflix's leadership had extraordinary foresight — seeing the streaming future while DVDs were still profitable. 離 as the inner fire of visionary clarity, the ability to see beyond the current success."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The DVD market was stable and profitable — broadband still emerging, streaming not yet a viable mass market. 坤 as the settled ground of the existing business model."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The decision to build streaming required immense creative will — cannibalizing their own profitable DVD business, building entirely new infrastructure. 乾 as the sovereign force of transformation driven from within."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally streaming surpassed DVDs completely — market dominance, global expansion, industry redefinition. 乾 as the unlimited creative expansion that reshaped entertainment itself."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3610",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Kodak's inner state was paralyzed rigidity — clinging to film despite all evidence, unable to let go of identity. 艮 as the mountain of obstinate refusal to move, the fatal stopping."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The external digital revolution was an existential flood — the entire photographic industry transforming, film demand evaporating. 坎 as the overwhelming waters of technological displacement."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Bankruptcy filing is the return to formless ground — surrender, dissolution of the existing entity, returning to earth. 坤 as the acceptance of ending, the receptive yielding to annihilation."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally, the company simply ceases — operations stop, a once-great name becomes a historical monument. 艮 as the final stopping, the mountain that will never move again."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1413",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The Six-Party Talks represented an attempt at diplomatic exchange — dialogue, negotiation, the surface appearance of collaborative engagement. 兌 as the open mouth of discussion, the aspiration for joyful resolution."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally the situation was fundamentally deadlocked — North Korea's nuclear program continuing regardless of talks, no real movement. 艮 as the immovable mountain of strategic stalemate."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The nuclear test destroys all trust — internally the diplomatic framework is now a hollow shell, the inner reality is danger and betrayal. 坎 as the perilous reality beneath broken promises."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally nothing changes — the situation remains frozen, talks suspended, no progress, the same impasse but now with shattered trust. 艮 as the mountain that has not moved, will not move."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1381",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Students' inner state was one of anxious immobility — conforming to expected patterns, afraid to deviate from the template. 艮 as the inner rigidity of following a prescribed path without questioning."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external job market emphasized surface appearance — visibility, credentials, polished presentations. 離 as the fire of display, the emphasis on how things look rather than what they are."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Nothing fundamentally changes inside — students remain stuck in the same anxious conformity, just with more elaborate decorations. 艮 as the unchanged mountain, the same inner paralysis with better packaging."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external system persists in its emphasis on surface — appearances still dominate over substance, the display culture sustained. 離 as the continued fire of appearances, illuminating nothing real."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2146",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Hamada Shoji's inner state was one of patient receptivity — absorbing Yanagi's mingei philosophy, letting the theory enter him through practice. 坤 as the fertile ground receiving the seed of ideas."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, Yanagi's folk craft movement provided theoretical illumination — a clear intellectual framework that needed embodiment. 離 as the light of the philosophy waiting to be grounded in clay."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Through Mashiko-yaki, Hamada achieved brilliant clarity of craft expression — his pottery became the living proof of mingei beauty, inner vision made tangible. 離 as the fire of artistic mastery, theory transformed into luminous practice."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Externally, his work brought joy and recognition worldwide — Living National Treasure designation, international exhibitions, the folk craft movement gaining global appreciation. 兌 as the shared joy of beauty recognized."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_3009",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "ASKA's inner state during addiction was deep crisis — trapped in substance dependency, the perilous waters of self-destruction. 坎 as the abyss of addiction, the internal danger consuming everything."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external impact was shock — arrest of a national icon, media frenzy, public disbelief. 震 as the thunderbolt striking public consciousness, the fall of a beloved figure."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The gradual return to music represents slow, patient rebuilding — not explosive recovery but step-by-step re-entry into creative life. 巽 as the gentle wind of rehabilitation, the gradual penetration back into one's own art."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Externally, the concert tours represent renewed visibility — the artist stepping back into the light, albeit with a changed identity. 離 as the flame reignited, the performer visible again but transformed."
+      }
+    }
+  ]
+}

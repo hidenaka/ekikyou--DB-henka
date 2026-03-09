@@ -1,0 +1,817 @@
+{
+  "batch_id": 28,
+  "pass_number": 2,
+  "prompt_type": "holistic",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The construction company harbored concealed rot — falsified accounts festering beneath a functional exterior. Internally, the reality was peril hidden within (坎), a crisis incubating unseen."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, the company projected visibility and apparent legitimacy — a major player with bank relationships and contracts. The離 façade of clarity masked the corruption underneath."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After the scandal breaks, internal experience is drowning — mass resignations, shattered morale, survival itself uncertain. The deepest坎: engulfed by danger with no firm ground."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, a cascade of shocks — banks cut lending, clients flee, civil rehabilitation filed. The震 quality of thunderous external blows landing one after another."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Before the breakthrough, the founder was in receptive accumulation — gathering capability, building inner resources in patient stillness. The坤 quality of fertile earth before the seed sprouts."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The market was conventional and settled — no disruption, no urgency. A calm, receptive landscape that had not yet been challenged by anything revolutionary."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The founder's inner state ignites with pure creative will — visionary clarity, unshakeable drive, the force that rallies an entire company. The essence of乾: heaven's creative power unleashed."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external world responds with explosive expansion — investors flooding in, competitors falling behind, global markets opening. Everything in the environment ascends with乾 momentum."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Both companies were internally stuck — competitive rigidity blocking forward movement. The艮 quality of a mountain: unable to advance, sensing the need for change but frozen."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The industry faced structural upheaval — painful environmental pressure eroding old models. The坎 danger of external forces demanding adaptation or decline."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After forming the alliance, the internal experience shifts to joyful openness — genuine exchange, mutual delight, the兌 warmth of hearts meeting across former barriers."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally, a new ecosystem emerges through gradual, organic growth — cooperation spreading naturally across the industry. The巽 quality of gentle wind carrying change through the whole landscape."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The journalist's inner state was one of navigating hidden danger — years spent probing concealed corruption, working in the dark. The坎 quality of moving through perilous, unseen territory."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Society's surface was stagnant and passive — corruption entrenched, citizens unaware, a landscape of inert acceptance. The坤 quality of undisturbed earth hiding what lies beneath."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "After revelation, society's inner state shifts to illumination — truth seen clearly for the first time, awakened consciousness. The離 fire of clarity burning through deception."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The external world is jolted into action — investigations launched, movements spreading nationwide, the entire landscape shaken. The震 thunder of social upheaval catalyzed by truth."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The manufacturer's inner state is patient, steady receptivity — no bold vision, no crisis, simply maintaining what exists. The坤 quality of earth holding its form without aspiration."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The market environment was calm and undemanding — gradual shifts, no disruptions. A stable, yielding landscape where survival required only modest adaptation."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Internally, the company adopts gentle, incremental adjustment — small investments, cautious efficiency gains, nothing dramatic. The巽 quality of wind: flexible adaptation without force."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The external environment continues its slow evolution — the company's presence fades gradually but finances remain healthy. The巽 quality of gradual change, neither dramatic nor catastrophic."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_301",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The hikikomori experience is the ultimate expression of stopping — withdrawal from all movement, frozen inside. Internally, the 146万 individuals are in艮: complete immobilization, unable to engage with the world."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The 8050 problem represents an external environment of deepening crisis — aging parents, no support systems, society unable to reach those in need. The坎 danger of a structural trap tightening around families."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The shift to 'ibasho-zukuri' (creating a place to belong) reflects a new inner orientation of acceptance and connection — family associations activating, human exchange beginning. The兌 quality of opening to relationship."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Support legislation and paradigm shifts move gradually through society — from demanding employment to offering belonging. The巽 quality of gentle, persistent change reshaping the external landscape."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_422",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Microsoft was internally petrified — siloed culture, defensive mindset, clinging to Windows. The艮 mountain of rigidity: the organization's internal posture was completely stuck, unable to move."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Externally, the mobile and cloud revolution was a crisis washing over Microsoft — competitors surging ahead, the landscape shifting dangerously. The坎 quality of being left behind in treacherous waters."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Nadella brought visionary clarity internally — 'growth mindset,' cultural renewal, a clear fire of purpose illuminating the path forward. The離 quality of inner vision that transforms everything it touches."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external result is pure creative expansion — $300B to $2.5T, 10x growth, dominance in cloud. The environment itself became乾: limitless upward momentum in every direction."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_147",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Regional banks were internally frozen — legacy systems, traditional mindset, unable to innovate or adapt. The艮 quality of institutional inertia: knowing change is needed but unable to initiate it."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Low interest rates and population decline created a hostile, squeezing external environment — a坎 trap of structural forces beyond any single bank's control."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Those surviving adapt gradually — digitalization, local service specialization, modest repositioning. The巽 quality of bending with the wind rather than breaking, gentle internal adjustment."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment remains harsh — consolidation continues, numbers falling below 100, ongoing attrition. The坎 danger persists; survival is not guaranteed, only temporarily achieved."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_863",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Before the scam, the family was in peaceful receptivity — an 80-year-old mother living normally, trusting the world. The坤 quality of open, unguarded earth: stable, vulnerable, unsuspecting."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment appeared safe and ordinary — normal daily life, no visible threats. A坤 landscape of calm surface with predators lurking undetected."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The protagonist's inner state shifts to fierce determination — 'I will not be a victim,' independent investigation, organizing others. The乾 quality of unyielding will: a creative force refusing to accept defeat."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Externally, truth comes to light — media coverage illuminates the crime, arrests follow, partial recovery achieved. The離 quality of exposure and clarity, though the damage cannot be fully undone."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_526",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "After Ahrendts' departure, Burberry's inner direction froze — unable to find a coherent identity, stuck between heritage and luxury aspiration. The艮 quality of a blocked mountain: knowing something must move but paralyzed."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The luxury market was fiercely competitive — LVMH and Hermès dominating, leaving Burberry in dangerous territory. The坎 quality of threatening external waters where the brand could not find safe footing."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Internally, the brand plunges deeper into crisis — 4 CEOs, no stable identity, 20% revenue decline. The inner state is坎: sinking further, each strategy change adding confusion rather than clarity."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, the 70% stock crash and leadership churn deliver repeated shocks. The震 quality of disruptive jolts from the market, each CEO change creating another external tremor."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2846",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "At the peak, the Neo Hills lifestyle embodied raw ambition and self-aggrandizing will — boundless confidence, flashy display of power. The乾 quality of creative force unchecked by wisdom or restraint."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The external environment was one of adulation and excess — media attention, celebrity status, the兌 quality of superficial joy and social reward that masked fragile foundations."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After complete collapse and rebuilding, the inner state returns to powerful creative will — but now channeled through investment, Dubai relocation, strategic reinvention. The乾 force is reborn, more focused."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Externally, the comeback manifests as dramatic expansion — 70億円 net worth, global positioning. The environment reflects乾 momentum: upward trajectory regained through sheer force of will."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2643",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The office furniture company was internally stagnant — traditional product-push approach, lacking fresh direction. The艮 quality of stillness without purpose: waiting, but not knowing what for."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The market was stable but uninspiring — conventional demand, no disruption. The坤 quality of flat, unremarkable external terrain where differentiation was difficult."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "By deeply listening to customer challenges with empathy, the company's inner orientation becomes兌 — joyful exchange, genuine human connection, the pleasure of understanding another's needs."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external result is modest but sustainable differentiation — a gradual repositioning through empathy-driven proposals. The巽 quality of gentle penetration into a niche, not explosive growth but steady survival."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_766",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The real estate industry's inner state was passive and traditional — settled practices, paper-based processes, no internal drive for change. The坤 quality of earth resting undisturbed."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable and predictable — consumers followed established patterns, no urgent pressure. A坤 landscape of calm equilibrium."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Digitalization penetrates the industry gradually — online viewings, electronic contracts, IT-based explanations. The巽 quality of wind entering every crack, transforming processes from within without dramatic disruption."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Consumer behavior shifts gently — digital tools become normalized, expectations evolve incrementally. The external landscape changes through巽: gradual, pervasive, irreversible transformation."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_298",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The regional electronics retailer was internally stable and complacent — established business, loyal local customers, no urgency to change. The坤 quality of settled earth, comfortable in its form."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was peaceful and predictable before Amazon's full impact — local retail still dominant, competition manageable. A坤 landscape of unremarkable stability."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Over 7 years, the store gradually reinvented itself — shifting to experiential retail and repair services. The巽 quality of patient, adaptive change: bending rather than breaking, finding new form through persistence."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment remains challenging — Amazon continues to dominate, the retail landscape is harsh. Survival was achieved, but the坎 quality of ongoing competitive threat persists."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_017",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Britain's internal state under the welfare model was passive dependency — the nation's economic engine dulled by over-nationalization and complacency. The坤 quality of receptive earth that has lost its creative spark."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the economy was blocked — powerful unions creating stoppages, stagnant productivity, a frozen landscape. The艮 quality of mountain: immovable obstacles preventing progress in every direction."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Internally, the nation plunges into existential crisis — stagflation, fiscal bankruptcy, the humiliation of IMF intervention. The坎 quality of drowning: no firm ground, no reserves, only peril."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, the environment is one of cascading failure — international credibility lost, IMF dependency, economic system collapsing. The坎 quality of floodwaters overwhelming all structures."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_246",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The urban family was in a state of comfortable stability — routines established, life predictable. The坤 quality of settled earth, functional but not deeply examined."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment was normal urban life — reliable infrastructure, familiar surroundings. A坤 landscape of unremarkable, sustaining stability."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Through rural relocation, the family discovers clarity about what truly matters — 'redefining what is important.' The離 quality of inner illumination: seeing life's priorities with fresh eyes."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The rural environment brings community connection, nature, joyful child-rearing — a new external world of warmth and belonging. The兌 quality of shared joy and fulfilling exchange with the community."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_481",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Chávez's inner state was one of grandiose will — redistributing oil wealth with total confidence, expanding state power without restraint. The乾 quality of unchecked creative force, operating without wisdom."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, high oil prices created an environment of abundance and apparent success — welfare flowing, popular support, the兌 quality of shared pleasure built on unsustainable foundations."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "When oil prices collapsed, the internal reality became pure crisis — hyperinflation, humanitarian disaster, the坎 quality of drowning in a catastrophe with no reserves and no path out."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, the environment is total collapse — mass emigration, humanitarian crisis, economic ruin. The坎 quality of floodwaters that have destroyed all structures and continue to rise."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_856",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Internally, the protagonist was drowning — job loss, failed reemployment, reliance on welfare. The坎 quality of peril and despair: engulfed by crisis with seemingly no way forward."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment was hostile — no job opportunities, social stigma of welfare, a坎 landscape offering no lifelines or support."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The 'ichinen hokki' (determined resolve) ignited pure creative will — sacrificing from meager welfare to buy textbooks, 2 years of self-study. The乾 quality of indomitable spirit rising from nothing."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally, clarity emerges — passing the real estate license exam opens doors, employment follows, welfare ends. The離 quality of illumination: a clear path visible where before there was only darkness."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2877",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The athlete's inner world was shaken — public bashing for the 'sagging pants' incident, social condemnation. The震 quality of being struck by lightning: sudden, disorienting shock to identity."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external environment delivered violent shock — media firestorm, public outrage, social punishment. The震 quality of thunder striking from the outside, destroying the old public persona."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Through reinvention as a backcountry filmmaker, a new inner vision emerged — artistic clarity, creative purpose found outside competitive sports. The離 quality of discovering one's true light."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Netflix recognition brings renewed external visibility — talent seen and appreciated in a new form. The離 quality of being illuminated again, but this time by authentic creative work."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_047",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Panic disorder plunged the comedian into internal crisis — unable to ride trains, body betraying the mind. The坎 quality of being trapped in peril, internal waters overwhelming all normal function."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external world became a source of sudden terror — public spaces, audiences, transit all triggering panic. The震 quality of the environment itself feeling like a threatening, unpredictable force."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "After a year of rest, medical treatment, and his brother Reiji's support, the inner state settled into receptive stability — allowing healing, accepting help. The坤 quality of earth receiving nourishment."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Return to comedy and continued success represents joyful external engagement — the兌 quality of performing, connecting with audiences, shared laughter as the medium of recovery and professional life."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_0169",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The surfer on the world tour was internally driven — competitive fire, physical confidence, the乾 quality of creative force expressed through athletic mastery."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The external competitive environment was stable and familiar — established tour circuits, known rivals. The坤 quality of a predictable landscape where the surfer had found a place."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The major shoulder injury forced a complete stop — 4 years of rehabilitation, patient rebuilding. The艮 quality of mountain: the body demands stillness, the athlete must pause and reconstruct."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The return to domestic competition (not world tour) reflects a reduced but sustainable external scope — the巽 quality of gradual re-entry, adjusting ambitions to meet new reality."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4418",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Japan's semiconductor industry was in deep internal crisis — decades of decline, lost market share, technological gap widening. The坎 quality of being submerged in a seemingly irreversible predicament."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The global semiconductor landscape was dominated by TSMC and Samsung — a hostile, competitive environment where Japan was left behind. The坎 quality of dangerous waters controlled by others."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The trilateral alliance with IBM and imec creates internal joy of collaboration — pooling strengths, open exchange of breakthrough technology. The兌 quality of parties meeting with shared purpose and mutual benefit."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally, this 'most ambitious alliance in semiconductor history' projects creative ambition — aiming for 2nm mass production, repositioning Japan globally. The乾 quality of audacious upward aspiration."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_858",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Urasenke in its stable era was grounded in tradition — faithful preservation of established forms, the坤 quality of earth maintaining its shape across centuries."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment for traditional tea ceremony was stable and self-contained — a坤 landscape of cultural continuity, predictable and enduring."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Sen Genshitsu's vision to connect tea ceremony with peace, and the 16th iemoto's educational outreach, represent inner illumination — the離 quality of seeing how ancient practice can light new paths globally."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Globally expanding to 1M+ members while innovating (chair-style temae, business tea, university programs) represents乾 creative expansion — tradition ascending to new heights through visionary leadership."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3118",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "LIXIL's internal state was shattered — founding family vs. management conflict, China subsidiary scandal, leadership chaos. The震 quality of internal earthquake: every structure shaking, no stable ground."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Externally, the post-merger environment was treacherous — 5 companies with different cultures, market skepticism, governance failures. The坎 quality of dangerous waters where integration keeps failing."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Seto Kinya's return brought clarity of vision — governance reform, committee-based structure, transparent management. The離 quality of illumination cutting through the confusion, making the path visible."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external transformation was structural and gradual — transitioning to a 'company with nomination committee,' rebuilding stakeholder trust systematically. The巽 quality of wind reshaping the organizational landscape over time."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3381",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Holmes projected dazzling internal vision — a world transformed by one drop of blood testing. But the離 was illusory: a false fire, brilliant appearance without substance. Vision disconnected from reality."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, investors and media celebrated — $9B valuation, celebrity board members, the兌 quality of collective excitement and willingness to believe, a shared euphoria built on nothing real."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After the WSJ exposé, the internal reality is revealed as total crisis — fraud, criminal conviction, imprisonment. The坎 quality of absolute peril: there is no escape from the consequences."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the collapse delivers a seismic shock — industry scandal, regulatory fallout, cautionary tale reverberating through Silicon Valley. The震 quality of thunder that shakes the entire landscape."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3609",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The VOC in its declining phase had lost all creative vitality internally — exhausted, passive, merely maintaining existing operations. The坤 quality of depleted earth: receptive but with nothing left to give."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Externally, defeat in Anglo-Dutch wars and intensifying competition created a hostile environment — the坎 quality of dangerous waters closing in, trade routes under threat, military defeats."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Internally, the company simply ceased to exist — all energy exhausted, all vitality gone. The坤 quality in its terminal form: earth returning to formlessness, dissolution into nothing."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The external environment consumed the company — competition, debt, structural collapse. The坎 quality of floodwaters overwhelming and dissolving the world's first corporation after 200 years."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1396",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The League of Nations' inner state was passive impotence — unable to generate will, unable to act, merely receiving events. The坤 quality of earth without creative force: receptive to the point of helplessness."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the political landscape was paralyzed — member states blocked action, sanctions ineffective, the艮 quality of immovable obstacles: Italy's aggression met only by frozen inaction."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Internally, the institution collapsed into total passivity — no remaining capacity to function, credibility dissolved. The坤 quality of complete dissolution: returning to formless earth."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the world plunged into WWII — the ultimate震 shock, the catastrophic external event that made the League's continued existence impossible and irrelevant."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1380",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The Instagram culture was driven by the pursuit of visual brilliance — appearance, image, the離 quality of fire that illuminates surfaces. But it was離 without depth: dazzling display masking emptiness."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Externally, the environment rewarded spectacle and social approval — likes, followers, viral moments. The兌 quality of collective pleasure-seeking, a marketplace of superficial joy and validation."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Internally, the orientation remains surface-level — visual priority over substance, appearance over quality. The離 quality persists but is now hollow: fire without fuel, illumination without insight."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally, the culture continues its superficial trajectory — restaurants prioritize photogenicity, consumers chase appearance. The兌 quality of empty pleasure sustains itself, neither growing nor deepening."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2145",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Miyazaki at Toei Douga carried an enormous inner vision — artistic fire, creative passion yearning for expression. The離 quality of burning clarity about what animation could become."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external environment was constraining — working within established studio systems, hierarchical structures limiting creative freedom. The艮 quality of institutional mountain blocking full expression."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "With Studio Ghibli, Miyazaki's inner state achieves full creative sovereignty — directing masterpiece after masterpiece, pure artistic will manifested. The乾 quality of heaven's creative power fully realized."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Externally, Japanese animation is elevated to world-class art — global recognition, Academy Awards, cultural transformation. The離 quality of brilliant fire illuminating the world, making the invisible visible."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2991",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Kagoike's inner state was one of grandiose ambition — leveraging political connections, acquiring land, expanding his educational empire. The乾 quality of unchecked will: confident, assertive, operating without restraint."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, political connections opened doors — favorable negotiations, supportive relationships. The兌 quality of social exchange working in his favor, doors opening through relationship and charm."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After arrest and conviction, the internal state is existential crisis — 300 days of detention, 5-year prison sentence, complete personal ruin. The坎 quality of being submerged in inescapable peril."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the scandal exploded — Diet testimony, media frenzy, arrest. The震 quality of thunderous public exposure: the very political connections that enabled him became the source of catastrophic external shocks."
+      }
+    }
+  ]
+}
