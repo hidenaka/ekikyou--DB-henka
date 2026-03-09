@@ -1,0 +1,97 @@
+[
+  {
+    "transition_id": "CALIBRATION_001",
+    "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+    "before_state": "成長痛",
+    "after_state": "どん底・危機",
+    "main_domain": "不動産・建設",
+    "scale": "company",
+    "expected_before_lower": "坎",
+    "expected_before_upper": "震",
+    "expected_after_lower": "坎",
+    "expected_after_upper": "艮",
+    "acceptable_alternatives": {
+      "before_lower": [],
+      "before_upper": ["坎"],
+      "after_lower": [],
+      "after_upper": ["坎", "坤"]
+    },
+    "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+  },
+  {
+    "transition_id": "CALIBRATION_002",
+    "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+    "before_state": "静的安定",
+    "after_state": "V字回復・大成功",
+    "main_domain": "テクノロジー",
+    "scale": "company",
+    "expected_before_lower": "乾",
+    "expected_before_upper": "離",
+    "expected_after_lower": "乾",
+    "expected_after_upper": "乾",
+    "acceptable_alternatives": {
+      "before_lower": [],
+      "before_upper": ["乾"],
+      "after_lower": [],
+      "after_upper": ["離"]
+    },
+    "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+  },
+  {
+    "transition_id": "CALIBRATION_003",
+    "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+    "before_state": "成長痛",
+    "after_state": "共創・協調",
+    "main_domain": "製造",
+    "scale": "company",
+    "expected_before_lower": "震",
+    "expected_before_upper": "坎",
+    "expected_after_lower": "兌",
+    "expected_after_upper": "兌",
+    "acceptable_alternatives": {
+      "before_lower": ["坎", "艮"],
+      "before_upper": ["震", "艮"],
+      "after_lower": [],
+      "after_upper": ["巽", "離"]
+    },
+    "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+  },
+  {
+    "transition_id": "CALIBRATION_004",
+    "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+    "before_state": "沈滞・衰退",
+    "after_state": "覚醒・発見",
+    "main_domain": "社会・コミュニティ",
+    "scale": "other",
+    "expected_before_lower": "離",
+    "expected_before_upper": "坎",
+    "expected_after_lower": "離",
+    "expected_after_upper": "離",
+    "acceptable_alternatives": {
+      "before_lower": ["坎"],
+      "before_upper": ["坤"],
+      "after_lower": [],
+      "after_upper": ["乾", "震"]
+    },
+    "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+  },
+  {
+    "transition_id": "CALIBRATION_005",
+    "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+    "before_state": "静的安定",
+    "after_state": "漸進的変化",
+    "main_domain": "製造",
+    "scale": "company",
+    "expected_before_lower": "坤",
+    "expected_before_upper": "艮",
+    "expected_after_lower": "巽",
+    "expected_after_upper": "坤",
+    "acceptable_alternatives": {
+      "before_lower": ["艮", "巽"],
+      "before_upper": ["坤", "巽"],
+      "after_lower": ["坤", "艮"],
+      "after_upper": ["艮", "巽"]
+    },
+    "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+  }
+]
