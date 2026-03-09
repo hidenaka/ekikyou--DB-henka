@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * LLM Debate Skill - Codex (GPT-5.2) 批評スクリプト
+ * LLM Debate Skill - Codex (GPT-5.4) 批評スクリプト
  *
  * Claudeの意見に対してCodexが厳格な批評を行う
  *
@@ -23,7 +23,7 @@ import { execSync } from "node:child_process";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // タイムアウト設定（ミリ秒）
-const CODEX_TIMEOUT = 300000; // 5分
+const CODEX_TIMEOUT = 600000; // 10分
 
 const { values } = parseArgs({
   options: {
@@ -113,7 +113,7 @@ ${sharedContext}
 `
     : "";
 
-  return `あなたはOpenAI GPT-5.2として、以下の議題について**プロフェッショナルとして忖度なく厳密に**批評してください。
+  return `あなたはOpenAI GPT-5.4として、以下の議題について**プロフェッショナルとして忖度なく厳密に**批評してください。
 
 ## あなたの役割
 あなたは該当分野の第一人者であり、査読者・批評家です。
@@ -168,7 +168,7 @@ ${claudeOpinion}
  * Codex呼び出し
  */
 async function callCodex() {
-  console.error("[Codex] GPT-5.2 にリクエスト中...");
+  console.error("[Codex] GPT-5.4 にリクエスト中...");
   const start = Date.now();
 
   const prompt = buildPrompt();
@@ -182,7 +182,7 @@ async function callCodex() {
     }, CODEX_TIMEOUT);
 
     try {
-      const command = `codex exec --dangerously-bypass-approvals-and-sandbox --model "gpt-5.2" "$(cat '${tempPromptPath}')"`;
+      const command = `codex exec --dangerously-bypass-approvals-and-sandbox --model "gpt-5.4" "$(cat '${tempPromptPath}')"`;
 
       const result = execSync(command, {
         encoding: "utf-8",
@@ -226,7 +226,7 @@ ${topic}
 ## Claude (Anthropic) の見解
 ${claudeOpinion}
 
-## Codex (OpenAI GPT-5.2) の批評
+## Codex (OpenAI GPT-5.4) の批評
 ${codexContent}
 
 ## 統合分析
@@ -274,14 +274,14 @@ async function main() {
   if (codexResult.status === "fulfilled") {
     writeFileSync(
       codexPath,
-      `# Codex (OpenAI GPT-5.2) の批評\n\n${codexResult.value}`,
+      `# Codex (OpenAI GPT-5.4) の批評\n\n${codexResult.value}`,
       "utf-8"
     );
     console.error(`[保存] ${codexPath}`);
   } else {
     writeFileSync(
       codexPath,
-      `# Codex (OpenAI GPT-5.2) の批評\n\n（エラー: ${codexResult.reason?.message || "不明なエラー"}）`,
+      `# Codex (OpenAI GPT-5.4) の批評\n\n（エラー: ${codexResult.reason?.message || "不明なエラー"}）`,
       "utf-8"
     );
     console.error(`[エラー] Codex: ${codexResult.reason?.message}`);

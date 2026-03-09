@@ -109,7 +109,12 @@ python3 scripts/diagnostic_engine.py
 
 ## 🔍 LLM Debate（Codex批評）
 
-**重要な判断時には、Codex (GPT-5.2) に批評を依頼すること。**
+**重要な判断時には、Codex (GPT-5.4) に批評を依頼すること。**
+
+### 必須ルール: Codexモデルバージョン
+- **必ず GPT-5.4 を使用すること**（`--model "gpt-5.4"`）
+- GPT-5.2やそれ以前のバージョンは使用禁止
+- スクリプト内のモデル指定: `.claude/skills/llm-debate/scripts/llm-debate.js` の `--model "gpt-5.4"`
 
 ### 必須発動ケース
 - 新しいアーキテクチャや設計パターンを提案する時
