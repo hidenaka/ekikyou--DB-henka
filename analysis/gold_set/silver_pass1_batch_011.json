@@ -1,0 +1,817 @@
+{
+  "batch_id": 11,
+  "pass_number": 1,
+  "prompt_type": "analytical",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Before the scandal, the construction company was operating with visibility and outward presentation (粉飾決算 = fabricated clarity/image). Inner state was about maintaining appearances and projecting success."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, the company was in a growth phase with banks lending and partners cooperating—a welcoming, supportive environment of exchange and trust."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After the scandal broke, the company is in deep crisis internally—trust lost, executives resigned, employees fleeing. Pure difficulty and danger."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "External environment is equally harsh—banks cut funding, partners cancel contracts, civil rehabilitation. A hostile, dangerous external environment."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Before the visionary founder acted, the company was in static stability—receptive, passive, maintaining the status quo without strong direction."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment was stable and calm, without dramatic change—a settled market with established norms."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The founder exercises powerful leadership and clear vision, driving the company forward with will and creative force. All employees united under strong leadership."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Externally, investors fund eagerly, the market welcomes the product, competitors are left behind—a praising, receptive, welcoming environment."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Both companies were competing fiercely—driven by willpower and competitive ambition. Their inner state was assertive and combative."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The industry was undergoing structural change creating difficulties—a challenging, turbulent external environment that pressured both companies."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After partnership, both sides engage in open dialogue, mutual exchange, and joyful collaboration. Inner state is communicative and harmonious."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "A new cooperative ecosystem forms across the industry—welcoming, collaborative external environment with shared benefits."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The journalist was in a difficult, dangerous investigative process over years—navigating hidden corruption, working through hardship to uncover truth."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Society was stagnant and declining—corruption was concealed, barriers to transparency existed, information was blocked."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The truth is revealed with clarity—evidence-based reporting illuminates the hidden corruption. Inner state shifts to vision and illumination (覚醒・発見)."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, media scrutiny intensifies, investigations proceed, citizens become aware—the environment is one of exposure, visibility, and public attention."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The mid-sized manufacturer was in static stability—receptive, maintaining operations without strong initiative or ambition."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "External environment was stable and calm—no dramatic market shifts, gradual changes only."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The company gradually adapts—reviewing portfolio step by step, making small investments, flexible adjustment without bold moves."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "External environment changes slowly—market shifts are gradual, no sudden disruptions. The company's presence fades but finances remain sound."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_030",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The family was in a peaceful, stable state—unaware of the father's debts, passively living in what they believed was normalcy."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "External environment appeared calm and stable—no visible signs of crisis, ordinary family life."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The family is plunged into crisis—betrayal, discovering 20M yen debt, racing against legal deadlines. Deep emotional difficulty and feelings of being deceived."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The father's sudden death and debt revelation is an external shock/disruption that shattered the family's reality unexpectedly."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_087",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The person actively pursued overseas assignment with ambition and willpower—driven to gain global experience and career advancement."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment offered growth opportunities abroad—an expansive, demanding professional environment."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "After the experience, clarity emerges—gained global vision and perspective, but also clarity about what was sacrificed (family time). A state of illuminated awareness."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, the career experience is welcomed and valued—gaining recognition and broader professional horizons. But the trade-off with family creates tension."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_725",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The regional newspaper was stuck in stagnation—unable to adapt, readers aging, no significant innovation or movement. Inner state of being stopped/blocked."
+      },
+      "before_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "External environment was changing gradually—digital media slowly rising, readership slowly declining. A slow, persistent environmental shift rather than sudden disruption."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The newspaper passively succumbed to closure—no fight, no pivot, just acceptance of dissolution. A complete yielding."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment became untenable—impossible conditions for print journalism survival, a harsh hostile market."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_0100",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The piano teacher faced declining enrollment but reflected on how to survive—a state of stopping and reconsidering one's approach over 14 years."
+      },
+      "before_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "External environment changed gradually—declining birthrate and digitalization slowly eroding the traditional piano lesson market."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The teacher gradually adapted—shifting to senior students and recital-focused model, flexible adjustment over time. Gradual adaptation rather than bold transformation."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external environment reached a constrained but stable plateau—market is smaller with barriers but a niche exists for quality-focused teaching."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1165",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The comedian was at peak popularity—joyful performance, communication-focused career, basking in public love and exchange with audiences."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally, constant TV appearances and media spotlight—an environment of intense scrutiny and visibility (引っ張りだこ)."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After reflection and rest, the comedian gradually rebuilt through humble local shows and YouTube—flexible adaptation, step-by-step re-entry rather than explosive comeback."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Found new fans and a welcoming environment through different channels—YouTube audience provides fresh exchange and appreciation."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_002",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Hoshino Yoshiharu showed strong will and leadership attempting reforms—boldly challenging the family business's private-public entanglement. Driven and assertive."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "External environment was chaotic and hostile—expelled from the company, father opposing, internal conflict. A dangerous, difficult external situation."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "After returning as president, Hoshino maintained his strong leadership and vision—driving the company to become a global resort enterprise."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Reconciled with father, gained external stakeholder support, grew into a world-class brand—a welcoming, praising, harmonious external environment."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_071",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Nissan was in crisis—chairman arrested, management confusion, declining performance. Internal state of deep difficulty and danger."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Ghosn's arrest was an external shock/disruption—sudden, unexpected upheaval that shook the entire organization and its partnerships."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Nissan gradually restructured—reviewing Renault relationship, executing layoffs, slowly pivoting to EV. Gradual adaptation and adjustment over years."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "External environment is slowly shifting—EV market evolving gradually, industry transformation underway. Stabilizing but with continued slow change."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2177",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "COVID caused 80% reservation drop, 25% staff cut—the company was in deep crisis internally, struggling for survival."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "COVID was an external shock/disruption—sudden, overwhelming force that destroyed the business environment overnight."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Strategic pivot to long-stay model showed decisive leadership and willpower—achieving record-high revenue demonstrates strong creative drive."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The market welcomed the long-stay concept—past-highest revenue indicates customers embraced the new offering enthusiastically."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_853",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "MUJI was in a peaceful, stable state—receptive and steady brand maintaining its simple, honest image without dramatic initiative."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "External environment was calm and stable—established brand presence, loyal customer base, no crisis."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "MUJI actively emphasized dialogue and exchange with customers—SNS interaction, store events, communication-focused approach. Inner state of joyful exchange."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Customers respond warmly—friendly, approachable brand image creates a welcoming environment of mutual appreciation and positive exchange."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_821",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Japan's education system was driven by strong will and discipline—詰め込み education reflecting an assertive, forceful approach to academic achievement."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The broader environment was stable with established norms—world-class academic results, a calm system that appeared to function well."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "After swinging between extremes (cramming→yutori→back), the education system is in confusion and difficulty—unable to find the right balance, struggling internally."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "External environment is disrupted—societal problems emerged (truancy, declining creativity, then declining scores), policy reversals creating instability."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_496",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Political leadership is in constant crisis—presidents resigning, being removed, arrested one after another. Deep internal difficulty and instability."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "External environment is shocked by constant political disruption—abnormal situation of successive presidential crises creating upheaval."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Despite political chaos, the economy is passively stable—resource exports (copper) maintain growth without active leadership. A receptive, yielding inner state that endures."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external economic environment is relatively welcoming—global demand for resources provides a supportive, favorable trade environment despite political instability."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_200",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The painting company faced intense price competition and market pressure—difficulty and struggle internally as business environment deteriorated."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "External environment was harsh—price wars and comparison sites created a brutal competitive landscape."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Over 14 years, the company gradually adapted—developing insulation painting and long-term guarantees. Flexible, step-by-step differentiation rather than dramatic change."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "External market is constrained but the company carved a stable niche—barriers exist but quality-focused customers provide a small, stable space."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1187",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The instructor was burning bright with passion and visibility—popular online courses, high demand, intense output. But the fire of clarity/passion was consuming them."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "External environment was praising and welcoming—high demand, popularity, enthusiastic reception from students."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After burnout, the instructor stopped—1 year rest, intentional pause and reflection. Then restarted with quality-over-quantity approach, a deliberate constraint."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "External environment is calmer, more stable—smaller audience but sustainable. No longer frenzied demand, a quieter landscape."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1314",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "UK political system was in deep difficulty—May failed 3 times, Johnson clashed with parliament, political paralysis. Internal crisis of governance."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Brexit referendum was an external shock that disrupted the entire political system—a disruptive force that shattered normal governance."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "UK ended up in a constrained, reduced position—indecisive, stopped, blocked. International credibility damaged, stuck in a diminished state."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "External environment remained harsh—repeated deadline extensions, international frustration, damaged credibility abroad."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4558",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Starbucks had a clear vision—'third place' concept shows clarity of purpose and passionate brand identity. Inner state of illumination and vision."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Before state labeled 成長痛 suggests the external environment posed challenges—competitive market pressures, growing pains as the brand scaled."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Starbucks built loyalty through exchange and communication—rewards program, mobile ordering, creating joyful connection with customers."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Externally, enthusiastic fans embrace the brand—welcoming environment of passionate customer loyalty and praise."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2071",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Jobs was at rock bottom—expelled from Apple, the company near bankruptcy. Internal state of deep crisis and difficulty."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Apple's external situation was dire—company on verge of collapse, harsh market conditions, near death."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Jobs returned with clarity and vision—deep empathetic collaboration with Ive, passion for design excellence. Inner state of illumination and creative fire."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "iMac/iPod/iPhone were embraced enthusiastically—market welcomed Apple's products with praise, creating a joyful exchange between brand and consumers."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2834",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Chikirin was a stable corporate employee—receptive, settled in a conventional role, not yet expressing her analytical talents publicly."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "External environment was stable—normal corporate life, no dramatic external pressures or opportunities."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Chikirin developed clarity and vision—social analysis, bestselling books on thinking methods. Inner state of intellectual illumination and passionate expression."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "External reception was welcoming—bestsellers, Voicy audience, paid newsletter subscribers. Public praise and exchange, building a knowledge brand."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1371",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The Eastern Bloc was stagnant—political and economic systems were frozen, stopped, unable to reform or progress."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "External environment was blocked—Iron Curtain creating barriers, Cold War rigidity preventing movement or change."
+      },
+      "after_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The Berlin Wall fell—sudden, shocking collapse of solidarity. The internal structure shattered with sudden force and upheaval."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, massive disruption—Soviet dissolution, geopolitical earthquake, entire bloc system collapsed in rapid succession."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2767",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The actress showed strong will and determination—2 years of intense English study without study abroad experience. Driven, ambitious self-improvement."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The entertainment environment demanded growth—competitive industry where additional skills were needed to stand out, a challenging but growth-oriented environment."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "With English mastery, she gained clarity and broader vision—new international perspective, illuminated career path. Passionate skill opening new horizons."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "International brands welcomed her—ambassador contracts increased, CM fees exceeded 50M yen. External environment of praise, exchange, and welcoming reception."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3188",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Fujifilm faced existential crisis—core photo film market vanishing. Deep internal difficulty and danger of corporate death."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "External environment was devastating—digital revolution destroyed the film market entirely. A harsh, unforgiving external landscape."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "CEO Komori showed decisive leadership—boldly pivoting to cosmetics and medical equipment. Strong will and creative drive executing simultaneous shrinkage and growth."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "New markets for cosmetics and medical offered growth opportunity—an expansive external environment for the diversified Fujifilm."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3501",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Sharp was in deep crisis—LCD business failed catastrophically, company couldn't survive independently. Internal state of extreme difficulty."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "External environment was harsh—market rejected Sharp's LCD strategy, competitive landscape was unforgiving."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Under Foxconn's ownership, Sharp became receptive—accepting foreign management, passively undergoing restructuring. 潜伏期 (incubation) suggests yielding and receiving."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "External environment gradually improved—4 years of slow restructuring, gradual shift to AIoT, steady recovery. Slow, incremental environmental change."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4945",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Son Masayoshi's aggressive $21.6B Sprint acquisition showed supreme confidence and willpower—assertive, bold, forceful leadership at its peak."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The US market represented a vast growth frontier—an expansive environment that Son aimed to conquer."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "SoftBank shifted to dialogue and compromise—merging with T-Mobile, accepting reduced stake. Internal state changed to negotiation, exchange, and compromise."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The outcome was constrained—reduced ownership, limited control, Sprint's independent identity ended. External environment imposed barriers and limits on SoftBank's ambitions."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_752",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The Murdoch children coexisted peacefully under the father—receptive, accepting the family structure, passively sharing in the empire."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "External environment was stable—the media empire operated smoothly, family trust structure maintained order."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Family is now in crisis mode—legal battles, feelings of betrayal, the father's 'malicious scheme' exposed. Internal difficulty and danger."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The court case brought public scrutiny—'malicious plot' ruling exposed family dynamics publicly. Media scrutiny on a media family."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_947",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Traditional Kampo medicine was stagnant—stopped, blocked from mainstream acceptance, confined to traditional practice without modern integration."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "External environment had barriers—Western medicine dominated, Kampo was marginalized, institutional barriers prevented integration."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Kampo gradually integrated with Western medicine—insurance coverage, university education, evidence-based research. Slow, persistent adaptation over decades."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "90% of doctors now prescribe Kampo—external environment is welcoming and accepting. Global recognition as integrated medicine, praise and exchange."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2730",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The office worker was in stable employment—receptive, settled in a conventional job while exploring side business. Underlying state was passive stability."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "External environment was calm and stable—regular employment, Amazon platform operating normally, no apparent threats."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Hit by IP violation claim—account suspended, 2M yen inventory stranded. Internal state of crisis, difficulty, and loss."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Amazon's sudden account suspension was an external shock—unexpected disruption that shattered the business overnight. Platform dependency risk materialized suddenly."
+      }
+    }
+  ]
+}
