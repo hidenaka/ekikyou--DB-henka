@@ -1,0 +1,817 @@
+{
+  "batch_id": 9,
+  "pass_number": 2,
+  "prompt_type": "holistic",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "A major construction company operating with confidence and ambition — the inner will that drove aggressive growth, which also set the stage for the fraud. The emotional tenor before exposure is one of assertive self-belief."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The company was in a visible, exposed environment — publicly traded, scrutinized. The outer world was one of illumination and media attention, which is precisely what made the fraud discoverable."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After the fraud is exposed, the inner state is pure crisis — existential difficulty, drowning in consequences. Mass resignations, loss of trust, civil rehabilitation filing. This is the abyss."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The external environment is harsh and unforgiving — banks cutting funding, partners canceling contracts. A hostile, dangerous outer landscape with no safe harbor."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Before the visionary launch, the startup was in a still, patient inner state — the quiet period of preparation and gestation. Static stability suggests an inner stillness, not yet activated."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment before the breakthrough was calm and stable — no disruption yet. A receptive, undisturbed market waiting to be reshaped."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The founder's inner state after success is pure creative will — unstoppable confidence, clear leadership, the entire company galvanized under one vision. This is 乾 at its purest."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment is one of illumination — the innovative product captures worldwide attention, investors flock, competitors are outshone. Brilliant visibility and recognition."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Two rival companies feeling the internal jolt of structural industry change — a shock that disrupts the old competitive stance. The inner state carries urgency and restlessness."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external environment is challenging — structural industry changes creating difficulty and pressure. A harsh landscape that forces adaptation."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The inner state after partnership is joyful exchange — open dialogue, mutual appreciation, the pleasure of finding complementary strengths. This is the warmth of genuine connection."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The outer environment has become welcoming — an ecosystem of cooperation, industry-wide harmony. Partnerships flourishing, a new collaborative atmosphere."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The inner state of the journalist (and society) before the revelation is one of struggle against hidden darkness — years of difficult, grueling investigation. The emotional undercurrent is endurance through hardship."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Society is in stagnation — the corruption is hidden, nothing moves. The external environment is stuck, blocked by concealed power structures."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The inner state after the exposé is clarity and illumination — truth revealed, consciousness awakened. The 'aha' of seeing what was hidden. This is 離 as inner vision."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The external environment is now one of bright exposure — media attention, public scrutiny, the truth laid bare for all. A nationwide movement for transparency emerges under the light."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The inner state is passive and receptive — no strong drive, no urgency. A steady, unhurried disposition content with the status quo. Quietly accepting rather than pushing."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment is calm and stable — no major disruptions, a settled market. The peaceful conditions that enable (or enforce) inertia."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The inner state after gradual change is gentle, flexible adaptation — small adjustments, incremental pivots. Not dramatic, but a quiet responsiveness to shifting winds."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The external environment reflects slow, steady change — the market shifts gradually, no shocks. A gentle wind of transformation rather than a storm."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_017",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Morita Akio's inner state is powerful will and conviction — the strength of a founder who has the authority to choose succession freely. His inner fire is one of principled determination, not sentiment."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external context is one of disruption — the growing tension around succession at a major corporation. The outside world presents the turbulent question of who leads next."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "After choosing meritocracy over bloodline, the inner state is clarity of vision — a luminous principle enacted. Morita sees clearly what the company needs and acts on that insight."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The external outcome is a gradual, organic transformation — the company evolves under new leadership. Not sudden but steady, the wind of change blowing through the organization."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_081",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The initial inner state is joy and openness — the deep desire to become parents, the happiness of welcoming a child. There's warmth and eager receptivity."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external situation before adoption was stuck — stagnation, the inability to have children naturally creating a blocked feeling. The outer world felt immovable."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The inner state after facing the child's trauma is difficulty and struggle — love alone isn't enough, the parents are in over their heads. An emotional crisis beneath the surface."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external reality remains stuck — they're maintaining the situation but not progressing. The environment feels stagnant, trapped in a pattern that love alone can't break through."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2685",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Fujifilm in its stable era was internally receptive and grounded — a patient, established company resting on decades of film expertise. Not aggressively pushing but quietly solid."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was calm and stable — the film market was steady and predictable before the digital tsunami. A peaceful world about to be disrupted."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After the transformation, Fujifilm's inner state is powerful creative will — the audacity to reinvent entirely, repurposing film chemistry into healthcare and cosmetics. This is the inner dragon fully awakened."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment celebrates Fujifilm with brilliant visibility — 'miracle of innovation' accolades, worldwide attention and admiration. The company shines in the spotlight."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_596",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Before deepening, the EU-Japan relationship was internally stable and receptive — a foundation of calm cooperation, not aggressive but quietly supportive."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable and peaceful — existing trade frameworks functioning without disruption. A calm diplomatic landscape."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After deepening the EPA, the inner state is joyful exchange — flexible dialogue, mutual benefit, the pleasure of partnership. Open communication and genuine reciprocity."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The external environment is welcoming and cooperative — regulatory harmonization reduces friction, a warm atmosphere of partnership. Win-win describes an 兌 environment perfectly."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_082",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Honda Tsubasa as model/actress already possessed inner clarity about her creative identity and public visibility — an illuminated self-awareness and artistic vision."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable and calm — a settled career in entertainment with no upheaval. Peaceful conditions within her industry."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After launching the YouTube channel, the inner state is pure joy and playful openness — gaming streams, authentic self-expression, the delight of connecting with audiences in a new way."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment shines with visibility — success in two domains drawing broad media attention. Her dual career puts her in a bright spotlight."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_436",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Before the federation and transformation, the inner state of the emirates was stagnation — small desert states with limited vision, stopped in development. An inner stillness born of limitation."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external environment was stuck — harsh desert conditions, undeveloped economy, no international standing. A blocked, stagnant outer world."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After transformation, the inner state is towering ambition and creative will — Mars probes, Expo, becoming a global hub. The bold, sovereign confidence of 乾 fully manifested."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment blazes with visibility — 'miracle in the desert,' global recognition, dazzling achievements on the world stage. Pure illumination and spectacle."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_026",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Shin-Etsu Chemical's inner state is strong, steady will — nearly a century of disciplined confidence, the quiet determination to maintain world-leading market share. Inner strength without flashiness."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable — the semiconductor materials market, while competitive, provided a calm and predictable landscape for a well-positioned leader."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The inner state remains powerful will — 30%+ operating margins reflect an internal engine of confidence and mastery. The dragon sustains its flight, not through transformation but through continuous excellence."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The external environment shifts to one of recognition and visibility — high profitability and world-leading position draw attention. The company's excellence becomes illuminated and admired."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1454",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The inner state of the ISS project during its growth phase was one of joyful exchange — 15 nations opening to each other, sharing expertise, the warmth of unprecedented international cooperation."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external environment during construction was one of disruption and challenge — technical difficulties, scheduling problems, the inherent turbulence of a massive multi-nation engineering project."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "After 26 years of operation, the inner quality is sovereign achievement — humanity's will manifested in space. The quiet confidence of having accomplished what was once impossible."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external environment is one of welcoming cooperation — a symbol of partnership, over 1,100 experiments completed through open international collaboration. The world celebrates this shared achievement."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3119",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Seven & i launched 7pay with confident ambition — the will to enter digital payments aggressively. An inner drive fueled by the desire to dominate yet another retail frontier."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external environment was one of disruption — the fintech revolution, rapid digital payment adoption, external forces demanding hasty action."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After the humiliating failure, the inner state is painful clarity — seeing the depth of their own digital incompetence ('didn't know two-factor authentication'). Forced illumination through failure."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external environment is blazing scrutiny — media criticism, public embarrassment, the harsh light of exposure. Everything laid bare under unwanted visibility."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_279",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The inner state of the parents is shock and upheaval — the sudden eruption of a child's rebellion, the jarring disruption of what was familiar. Internal trembling and confusion."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external environment is difficult — daily conflict, a household in crisis. The harsh reality of adolescent rebellion creating a challenging, turbulent home atmosphere."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After shifting to a 'watching over' approach, the inner state becomes receptive and yielding — letting go of control, accepting rather than fighting. The deep patience of 坤."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The external environment shifts to gradual, gentle improvement — the relationship slowly heals over time. A steady wind of change, not dramatic recovery but organic growth."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1416",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The inner state immediately after the Meiji Restoration is shock and upheaval — the tremor of revolution still reverberating, the urgency and volatility of overthrowing the old order."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The external environment is harsh and dangerous — civil war remnants, institutional chaos, the daunting challenge of building a new nation from the ruins of the old."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The new government deliberately pauses and restrains — prioritizing domestic stability, holding back radical reform. This is the inner mountain, the conscious decision to stop and consolidate."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment settles into stability — reconciliation with former enemies, a calm being imposed on the landscape. The outer world becomes receptive and still."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_740",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The inner state of this century-old wagashi shop is frozen stillness — a traditional business unable to move, stuck in old patterns. The mountain that cannot adapt."
+      },
+      "before_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external environment is one of slow, steady erosion — the wagashi market gradually shrinking, consumer tastes shifting like a persistent wind wearing away stone."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "After multiple closures, the inner state is passive acceptance — yielding to market forces, surviving rather than thriving. A receptive resignation to reduced circumstances."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment remains harsh — continued store closures, a difficult market. The company persists in a tough landscape, merely staying afloat."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1045",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The inner state before taking paternity leave is strong will and conviction — a department head who decides to challenge norms despite potential career cost. Inner sovereignty and courage."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment was stable and calm — a conventional corporate culture where things simply continued as they always had. Peaceful but unchanging."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "After returning, the inner state is illumination and clarity — becoming the visible embodiment of work-style reform, seeing and showing a new way. The fire of insight and example."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment transforms through gradual influence — paternity leave rates triple over time. A gentle but persistent wind of cultural change sweeping through the organization."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1525",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The inner state before vision clarity is difficulty and struggle — PMI failures stemming from internal confusion, the drowning feeling of merged organizations without direction."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external environment is disruptive — the chaos of post-merger integration, the shock of organizational collision. External turbulence from competing cultures and systems."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "After establishing clear vision, the inner state is illumination — clarity of purpose shared on day one. The light of a unified vision cutting through confusion."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment becomes welcoming and unified — all employees aligned, organizational harmony achieved. The joy of working together under a shared vision."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1080",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The inner state as a civil servant is stopped and stagnant — life is frozen in place, the feeling of being trapped in a role that doesn't fit. An inner mountain blocking the path forward."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment was stable but uninspiring — the calm predictability of government employment. A safe, quiet world that provides security but not meaning."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After finding success in farming, the inner state is joy — 'the happiness of delivering what I made with my own hands.' Pure 兌: the delight of authentic exchange."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment shifts to visibility and recognition — direct sales and online channels illuminate the farm's products. The work becomes seen and appreciated by others."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2775",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "NTT Docomo after separation and IPO had an inner will for independence — the ambition to grow as a sovereign entity, the confidence of charting its own course."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external environment was turbulent — growing criticism of parent-child listing, conflicts of interest, regulatory and market pressures creating disruption around the company."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After being reabsorbed by NTT, the inner state is receptive submission — yielding independence, accepting a subordinate role. The inner quality shifts from sovereign to passive."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external environment is now dominated by the parent company's powerful will — NTT's 4 trillion yen acquisition creates a strong, authoritative outer structure. The environment is defined by sovereign power above."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1056",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The Library of Congress's inner state in its stable era was mountain-like — a massive, still institution preserving knowledge. The quiet, immovable solidity of 224 years of accumulation."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment was stable and calm — a long-established institution in a settled role, serving Congress quietly. Peaceful, unchanging conditions."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After digitization, the inner quality transforms to illumination — knowledge made visible, accessible, luminous. The fire of democratized information radiating outward from within."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment becomes one of bright visibility — vast archives now available online, illuminating the world. The institution shines as a beacon of open knowledge."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4933",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Toshiba's inner state is deep crisis — accounting fraud, nuclear losses, existential threat. The emotional tenor is drowning in cascading disasters, an abyss of difficulty."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external environment is unrelentingly harsh — stock exchange demotion, hostile scrutiny, the brutal landscape of a company under siege from all sides."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After going private via JIP acquisition, the inner state is passive acceptance — yielding to external rescue, surrendering independence. A receptive, subdued inner quality of survival through submission."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The external environment after going private is stopped and contained — removed from public markets, out of the spotlight. A mountain-like stability imposed from outside, but also a sense of being stuck."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_962",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The inner state of Scandinavian design was aesthetic clarity and vision — Aalto and Jacobsen possessed an inner fire of artistic insight, seeing the harmony of function and beauty."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment was calm and stable — a peaceful Nordic context that provided the quiet conditions for deep creative work. Stable, nurturing conditions."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The inner quality remains illumination — the design philosophy's clarity has not dimmed but intensified over 70 years. The vision burns steady and bright."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external environment becomes welcoming and open — worldwide adoption through IKEA and Marimekko, homes around the globe embracing the aesthetic. A warm, receptive global market."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3179",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Patagonia's inner state was clear vision — Yvon Chouinard's luminous insight that business should serve the planet. Inner clarity of purpose and values before the movement began."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable and calm — the outdoor apparel market provided a peaceful context. No crisis, just steady conditions that allowed vision to germinate."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The inner state intensifies as illumination — the vision not only persists but radiates outward, inspiring 5,700+ companies. The fire of purpose burning brighter with each year."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external environment becomes joyfully cooperative — thousands of companies joining, an international movement of partnership and shared purpose. A welcoming ecosystem of environmental commitment."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3489",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "A 300-year-old linen merchant's inner state was frozen tradition — stopped in time, resting on historical prestige but internally stagnant. The mountain of accumulated tradition becoming a weight."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment for traditional crafts was harsh and declining — a difficult market where old ways of doing business were under threat. The challenging landscape of cultural industry decline."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Under the 13th generation leader, the inner state becomes visionary clarity — seeing craft as the basis for modern SPA retail, illuminating a path forward. The fire of renewed purpose."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external environment becomes welcoming — consulting for craft makers nationwide, 'revitalizing Japanese craft' as a shared mission. An open, collaborative ecosystem forming."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4830",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Sanyo Trading's inner state was quietly receptive — a stable trading company, not aggressive but open to opportunities. The calm, patient disposition of a company ready to receive."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable — normal business conditions in the trading sector. A calm, settled market landscape."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "After the rapid partnership, the inner state shifts to confident will — decisive action in just 9 months from contact to capital alliance. The inner quality of swift, determined execution."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The external environment is one of joyful partnership — a welcoming AI startup, strategic collaboration, mutual opening. The warmth and exchange of a successful alliance."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_531",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The inner state after the founder's death is difficulty and grief — the weight of succession, the crisis of losing the patriarch. An emotional abyss that must be navigated."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external environment is disrupted — the shock of the founder's death sending tremors through the organization and family. External instability and uncertainty."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Lee Kun-hee's inner state after consolidating power is sovereign will — the 'New Management' declaration reflects powerful inner confidence and determination to transform Samsung into a world enterprise."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The external environment becomes one of visibility and recognition — Samsung's transformation announced to the world, a new era illuminated. The family enterprise steps into the global spotlight."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_862",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The inner state of Japanese food culture before UNESCO recognition was quietly receptive — a deep, nurturing tradition sustained through generations. The patient, earthy quality of 坤."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable — washoku existed peacefully in its traditional context. Calm, undramatic conditions without international spotlight."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "After UNESCO recognition, the inner quality becomes illumination — washoku seen with new clarity as four distinct elements (nature respect, nutrition balance, seasonal connection, beautiful presentation). A revelatory self-understanding."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment blazes with visibility — international recognition, UNESCO status, worldwide attention. Japanese food culture is illuminated on the global stage."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2707",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The inner state of a care worker in stagnation is stopped — feeling blocked, seeing inefficiencies but stuck in a system. The mountain that hasn't yet found its path."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external environment in care facilities was stagnant — paper-based records, old systems, a sector resistant to change. A stuck, immovable landscape."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "After creating the digitization tool and founding a startup, the inner state is clarity and vision — seeing how technology can transform care, the illumination of a new purpose. Despite 'survival-level' label, the narrative clearly describes remarkable success."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The external environment shifts to gradual, spreading change — adoption across 100 facilities, organic growth through word of mouth. A steady wind of transformation across the care sector."
+      }
+    }
+  ]
+}
