@@ -384,9 +384,18 @@ _POLITE_PATTERN = re.compile(
 
 
 def _is_polite_narimasu(line: str, match_start: int) -> bool:
-    """Return True if 'になります' in this context is polite, not predictive."""
-    window_start = max(0, match_start - 30)
-    window = line[window_start : match_start + 10]
+    """Return True if 'になります' in this context is polite, not predictive.
+
+    The match_start points to the start of the '.になります' match (i.e. the
+    character before 'に').  We locate 'になります' within that match and then
+    look backwards up to 30 characters for a polite prefix.
+    """
+    # Find the position of 'になります' inside the match
+    ni_pos = line.find("になります", match_start)
+    if ni_pos < 0:
+        return False
+    window_start = max(0, ni_pos - 30)
+    window = line[window_start : ni_pos + len("になります")]
     return bool(_POLITE_PATTERN.search(window))
 
 
