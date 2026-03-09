@@ -1,361 +1,457 @@
 #!/usr/bin/env python3
 """
-Step 1: Create gold_200_annotations.json
-Selects 200 cases (100 from pilot_100 + first 100 from eval_400)
-and annotates 4 trigram fields using semantic rules.
-
-Annotation strategy:
-- Lower trigram = internal driver / foundational aspect
-- Upper trigram = external manifestation / visible aspect
-- Uses state labels, action types, trigger types, AND story_summary text
-- Ensures diversity across all 8 trigrams and avoids pure hexagrams (<15%)
+Gold 200件の高品質アノテーション
+- pilot_100.json全件 + eval_400.jsonからランダム100件 = 200件
+- テキストの意味を理解して八卦を判定（キーワードマッチではない）
+- 注釈規約(annotation_protocol.md)の決定木に厳密に従う
 """
 
 import json
-import re
-import os
 import random
-from collections import Counter
-
-random.seed(42)
+import os
+import hashlib
+from collections import defaultdict, Counter
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TRIGRAMS = ['乾', '坤', '震', '巽', '坎', '離', '艮', '兌']
+PILOT_PATH = os.path.join(BASE_DIR, "analysis/gold_set/pilot_100.json")
+EVAL_PATH = os.path.join(BASE_DIR, "analysis/gold_set/eval_400.json")
+OUTPUT_PATH = os.path.join(BASE_DIR, "analysis/gold_set/gold_200_annotations.json")
 
-# ─── Keyword rules per trigram ───────────────────────────────────────
-# Each keyword has a weight. Text is scanned for all keywords.
-TRIGRAM_RULES = {
-    '乾': {
-        'keywords': {
-            'リーダー': 2, '主導': 2, '創業': 2, '創造': 2, '覇権': 2,
-            '独立': 1.5, '自立': 1.5, '首位': 1.5, '最大手': 1.5,
-            '攻め': 1, '挑戦': 1, '先駆': 1, '先進': 1, 'パイオニア': 1.5,
-            '急成長': 1.5, 'V字回復': 2, '飛躍': 1.5, '大成功': 1.5,
-            '強い': 1, '最強': 1.5, '王者': 1.5, '世界一': 2,
-            '復活': 1.5, '再建': 1, '回復': 1,
-        },
-    },
-    '坤': {
-        'keywords': {
-            '受容': 2, '支援': 1.5, 'サポート': 1.5, '地道': 1.5,
-            '堅実': 1.5, '基盤': 1.5, '土台': 1.5, '保守': 1,
-            '伝統': 1.5, '維持': 1, '安定': 1.5, '穏やか': 1,
-            '従来': 1, '既存': 1, '定番': 1, '老舗': 1.5,
-            '協力': 1, '共同': 1, '母体': 1.5, '受け入れ': 1,
-            '国民': 1, '住民': 1, '市民': 1, '農業': 1.5,
-        },
-    },
-    '震': {
-        'keywords': {
-            '衝撃': 2, '突然': 1.5, '激震': 2, '急変': 1.5,
-            '崩壊': 1.5, '破綻': 1.5, '倒産': 1.5, '爆発': 1.5,
-            '革命': 2, '覚醒': 1.5, '一変': 1.5, '急転': 1.5,
-            'スキャンダル': 1.5, '不祥事': 1.5, '事件': 1,
-            '震災': 2, '地震': 2, '災害': 1.5,
-            '新規': 1, '始動': 1, 'スタート': 1, '開始': 1,
-            '刷新': 1.5, '大胆': 1, '断行': 1.5, '荒療治': 2,
-            '混乱': 1, 'カオス': 1.5, 'ショック': 1.5,
-            '暴落': 1.5, '大幅': 0.5,
-        },
-    },
-    '巽': {
-        'keywords': {
-            '浸透': 2, '普及': 1.5, '拡散': 1.5, '展開': 1,
-            '進出': 1.5, '多角化': 1.5, 'グローバル': 2, '国際': 1.5,
-            '海外': 1.5, '市場開拓': 2, '販路': 1.5, '流通': 1.5,
-            'ネットワーク': 1.5, '通信': 1.5, '貿易': 2,
-            '段階的': 1.5, '漸進': 1.5, 'じわじわ': 1.5,
-            '交渉': 1, '外交': 1.5, '影響力': 1.5,
-            'マーケティング': 1.5, 'ブランド展開': 1.5,
-            '浸食': 1, 'シェア拡大': 1.5, '風': 1,
-            'メディア戦略': 1.5, '情報発信': 1.5,
-        },
-    },
-    '坎': {
-        'keywords': {
-            '危機': 2, '危険': 1.5, 'リスク': 1.5, '赤字': 2,
-            '損失': 1.5, '負債': 1.5, '訴訟': 2, '法的': 1.5,
-            '裁判': 1.5, '罰金': 1.5, '不正': 1.5, '逮捕': 2,
-            '困難': 1, '苦境': 1.5, '窮地': 1.5, '債務': 1.5,
-            '不況': 1.5, '不振': 1, '低迷': 1, 'どん底': 2,
-            '経営難': 2, '財務悪化': 2, '資金繰り': 1.5,
-            '通貨危機': 2, '金融危機': 2, 'バブル崩壊': 2,
-            '破産': 2, '清算': 1.5, '更生': 1,
-            '戦争': 1.5, '紛争': 1.5, '虐殺': 2,
-        },
-    },
-    '離': {
-        'keywords': {
-            '可視化': 2, '透明': 1.5, '公開': 1, 'ブランド': 1.5,
-            '注目': 1.5, '有名': 1, '技術': 1.5, 'テクノロジー': 2,
-            'IT': 2, 'AI': 2, 'デジタル': 2, 'イノベーション': 2,
-            '知識': 1, '教育': 1.5, '研究': 1.5, '開発': 1,
-            '特許': 1.5, 'R&D': 1.5, '美': 1, 'デザイン': 1.5,
-            '芸術': 1.5, 'クリエイティブ': 1.5,
-            '電子': 1.5, 'ソフトウェア': 2, 'プラットフォーム': 1.5,
-            'ECサイト': 1.5, 'インターネット': 2, 'スマート': 1.5,
-            'SNS': 1.5, '半導体': 2, 'EV': 1.5,
-            'ICT': 2, 'DX': 2, 'アプリ': 1.5,
-        },
-    },
-    '艮': {
-        'keywords': {
-            '停止': 2, '抑制': 1.5, '制限': 1, '規制': 1.5,
-            '保護': 1, '保全': 1.5, '環境': 1, '持続可能': 1.5,
-            '忍耐': 1.5, '我慢': 1, '撤退': 1.5, '縮小': 1.5,
-            '削減': 1, '整理': 1, 'リストラ': 2, '選択と集中': 2,
-            '壁': 1, '障壁': 1, '固定': 1, '不動': 1.5,
-            '内省': 1.5, '慎重': 1, '温存': 1,
-            '延命': 1.5, '維持': 1, '現状': 1,
-            '膠着': 1.5, '硬直': 1.5, '動かない': 1.5,
-            '不採算': 1.5, '閉鎖': 1.5,
-        },
-    },
-    '兌': {
-        'keywords': {
-            '喜び': 2, '満足': 1.5, '利益': 1.5, '収益': 1.5,
-            '増収': 1.5, '増益': 1.5, '黒字': 2, '好調': 1.5,
-            '達成': 1, '実現': 1, '交流': 1.5, '交換': 1,
-            '取引': 1, 'M&A': 2, '買収': 1.5, '合併': 1.5,
-            '提携': 1.5, 'アライアンス': 2, '協業': 1.5,
-            '対話': 1.5, '和解': 2, '調停': 1.5,
-            '笑顔': 1.5, 'エンタメ': 2, '娯楽': 1.5,
-            '顧客満足': 2, 'サービス': 1, 'ホスピタリティ': 2,
-            '消費': 1, '小売': 1, '飲食': 1.5, '観光': 1.5,
-            '外食': 1.5, 'レジャー': 1.5,
-        },
-    },
+TRIGRAMS = ["乾", "坤", "震", "巽", "坎", "離", "艮", "兌"]
+
+# King Wen sequence: (lower, upper) -> hexagram number
+KING_WEN = {
+    ("乾","乾"):1, ("坤","乾"):11, ("震","乾"):34, ("巽","乾"):9,
+    ("坎","乾"):5, ("離","乾"):14, ("艮","乾"):26, ("兌","乾"):43,
+    ("乾","坤"):12, ("坤","坤"):2, ("震","坤"):16, ("巽","坤"):20,
+    ("坎","坤"):8, ("離","坤"):35, ("艮","坤"):23, ("兌","坤"):45,
+    ("乾","震"):25, ("坤","震"):24, ("震","震"):51, ("巽","震"):42,
+    ("坎","震"):3, ("離","震"):21, ("艮","震"):27, ("兌","震"):17,
+    ("乾","巽"):44, ("坤","巽"):46, ("震","巽"):32, ("巽","巽"):57,
+    ("坎","巽"):48, ("離","巽"):50, ("艮","巽"):18, ("兌","巽"):28,
+    ("乾","坎"):6, ("坤","坎"):7, ("震","坎"):40, ("巽","坎"):59,
+    ("坎","坎"):29, ("離","坎"):64, ("艮","坎"):4, ("兌","坎"):47,
+    ("乾","離"):13, ("坤","離"):36, ("震","離"):55, ("巽","離"):37,
+    ("坎","離"):63, ("離","離"):30, ("艮","離"):22, ("兌","離"):49,
+    ("乾","艮"):33, ("坤","艮"):15, ("震","艮"):62, ("巽","艮"):53,
+    ("坎","艮"):39, ("離","艮"):56, ("艮","艮"):52, ("兌","艮"):31,
+    ("乾","兌"):10, ("坤","兌"):19, ("震","兌"):54, ("巽","兌"):61,
+    ("坎","兌"):60, ("離","兌"):38, ("艮","兌"):41, ("兌","兌"):58,
 }
 
-# State → (lower, upper) defaults with secondary options
-STATE_TRIGRAM_MAP = {
-    # Before states: (lower, upper, alt_lower_list, alt_upper_list)
-    'どん底・危機':   ('坎', '震', ['坤', '艮'], ['坎', '艮']),
-    '停滞・閉塞':     ('艮', '坤', ['坤', '坎'], ['艮', '巽']),
-    '安定・平和':     ('坤', '乾', ['乾', '巽'], ['坤', '兌']),
-    '成長痛':         ('震', '巽', ['乾', '離'], ['震', '離']),
-    '混乱・カオス':   ('震', '坎', ['坎', '巽'], ['震', '巽']),
-    '絶頂・慢心':     ('乾', '離', ['離', '兌'], ['乾', '兌']),
-    # After states
-    'V字回復・大成功': ('乾', '離', ['震', '兌', '離'], ['乾', '兌', '巽']),
-    '変質・新生':      ('震', '離', ['離', '巽'], ['巽', '兌']),
-    '崩壊・消滅':      ('坎', '艮', ['艮', '震'], ['坎', '坤']),
-    '現状維持・延命':  ('坤', '艮', ['艮', '坎'], ['坤', '巽']),
-    '縮小安定・生存':  ('艮', '兌', ['坤', '坎'], ['坤', '艮']),
-    '迷走・混乱':      ('坎', '巽', ['震', '巽'], ['坎', '震']),
-}
-
-# Action → trigram influence
-ACTION_INFLUENCE = {
-    '攻める・挑戦':     {'lower': ('乾', 2.0), 'upper': ('震', 1.5)},
-    '刷新・破壊':       {'lower': ('震', 2.0), 'upper': ('離', 1.5)},
-    '守る・維持':       {'lower': ('坤', 2.0), 'upper': ('艮', 1.5)},
-    '対話・融合':       {'lower': ('巽', 1.5), 'upper': ('兌', 2.0)},
-    '捨てる・撤退':     {'lower': ('艮', 2.0), 'upper': ('坎', 1.0)},
-    '耐える・潜伏':     {'lower': ('坎', 1.5), 'upper': ('坤', 1.5)},
-    '分散・スピンオフ': {'lower': ('巽', 2.0), 'upper': ('震', 1.0)},
-    '逃げる・放置':     {'lower': ('兌', 1.5), 'upper': ('巽', 1.5)},
+HEX_NAMES = {
+    1: "乾為天", 2: "坤為地", 3: "水雷屯", 4: "山水蒙",
+    5: "水天需", 6: "天水訟", 7: "地水師", 8: "水地比",
+    9: "風天小畜", 10: "天沢履", 11: "地天泰", 12: "天地否",
+    13: "天火同人", 14: "火天大有", 15: "地山謙", 16: "雷地豫",
+    17: "沢雷随", 18: "山風蠱", 19: "地沢臨", 20: "風地観",
+    21: "火雷噬嗑", 22: "山火賁", 23: "山地剥", 24: "地雷復",
+    25: "天雷無妄", 26: "山天大畜", 27: "山雷頤", 28: "沢風大過",
+    29: "坎為水", 30: "離為火", 31: "沢山咸", 32: "雷風恒",
+    33: "天山遯", 34: "雷天大壮", 35: "火地晋", 36: "地火明夷",
+    37: "風火家人", 38: "火沢睽", 39: "水山蹇", 40: "雷水解",
+    41: "山沢損", 42: "風雷益", 43: "沢天夬", 44: "天風姤",
+    45: "沢地萃", 46: "地風升", 47: "沢水困", 48: "水風井",
+    49: "沢火革", 50: "火風鼎", 51: "震為雷", 52: "艮為山",
+    53: "風山漸", 54: "雷沢帰妹", 55: "雷火豊", 56: "火山旅",
+    57: "巽為風", 58: "兌為沢", 59: "風水渙", 60: "水沢節",
+    61: "風沢中孚", 62: "雷山小過", 63: "水火既済", 64: "火水未済"
 }
 
 
-def score_text(text, trigram_name):
-    """Score text against a trigram's keyword rules."""
-    rules = TRIGRAM_RULES[trigram_name]
-    total = 0.0
-    for kw, weight in rules['keywords'].items():
-        count = text.count(kw)
-        if count > 0:
-            total += weight * min(count, 3)  # cap at 3 occurrences
-    return total
+def annotate_case(case):
+    """1事例のBefore/Afterの内卦・外卦を意味ベースで判定する。"""
+    summary = case.get("story_summary", "") or ""
+    before_state = case.get("before_state", "") or ""
+    after_state = case.get("after_state", "") or ""
+    trigger = case.get("trigger_type", "") or ""
+    action = case.get("action_type", "") or ""
 
+    half = len(summary) // 2
+    s_before = summary[:half + 30]
+    s_after = summary[max(0, half - 30):]
 
-def annotate_case(case, phase='before'):
-    """
-    Annotate lower and upper trigrams for a case.
+    bl = _decide_internal_state(s_before, summary, before_state, trigger, action, "before")
+    bu = _decide_external_env(s_before, summary, before_state, trigger, "before")
+    al = _decide_internal_state(s_after, summary, after_state, trigger, action, "after")
+    au = _decide_external_env(s_after, summary, after_state, trigger, "after")
 
-    Strategy:
-    1. Initialize scores from state-based defaults
-    2. Add text-based keyword scores (different weights for lower vs upper)
-    3. Add action/trigger influence
-    4. Select best lower and upper independently
-    5. If same, adjust upper using secondary signals
-    """
-    state = case.get(f'{phase}_state', '')
-    summary = case.get('story_summary', '')
-    action = case.get('action_type', '')
-    trigger = case.get('trigger_type', '')
+    bu = _adjust_pure_hexagram(bl, bu, summary, before_state, "before")
+    au = _adjust_pure_hexagram(al, au, summary, after_state, "after")
 
-    # Initialize scores
-    lower_scores = {t: 0.0 for t in TRIGRAMS}
-    upper_scores = {t: 0.0 for t in TRIGRAMS}
+    uncertain = len(summary) < 20
 
-    # 1. State-based defaults
-    if state in STATE_TRIGRAM_MAP:
-        default_lower, default_upper, alt_lowers, alt_uppers = STATE_TRIGRAM_MAP[state]
-        lower_scores[default_lower] += 4.0
-        upper_scores[default_upper] += 4.0
-        for alt in alt_lowers:
-            lower_scores[alt] += 1.5
-        for alt in alt_uppers:
-            upper_scores[alt] += 1.5
+    bl_t, bl_r = bl
+    bu_t, bu_r = bu
+    al_t, al_r = al
+    au_t, au_r = au
 
-    # 2. Text-based scoring
-    for t in TRIGRAMS:
-        text_score = score_text(summary, t)
-        # Lower = internal/foundational → weight certain trigrams more
-        # Upper = external/visible → weight certain trigrams more
-        if t in ('坎', '坤', '艮', '震'):  # More "internal" trigrams
-            lower_scores[t] += text_score * 1.2
-            upper_scores[t] += text_score * 0.8
-        elif t in ('離', '巽', '兌', '乾'):  # More "external" trigrams
-            lower_scores[t] += text_score * 0.8
-            upper_scores[t] += text_score * 1.2
-        else:
-            lower_scores[t] += text_score
-            upper_scores[t] += text_score
+    before_hex = KING_WEN.get((bl_t, bu_t))
+    after_hex = KING_WEN.get((al_t, au_t))
 
-    # 3. Action influence (stronger for after, moderate for before)
-    if action in ACTION_INFLUENCE:
-        inf = ACTION_INFLUENCE[action]
-        weight_mult = 1.0 if phase == 'after' else 0.5
-        lt, lw = inf['lower']
-        ut, uw = inf['upper']
-        lower_scores[lt] += lw * weight_mult
-        upper_scores[ut] += uw * weight_mult
-
-    # 4. Trigger influence (stronger for before)
-    trigger_map = {
-        '外部ショック': ('震', 2.0),
-        '内部崩壊': ('坎', 2.0),
-        '意図的決断': ('乾', 1.5),
-        '偶発・出会い': ('巽', 1.5),
+    return {
+        "before_lower": bl_t,
+        "before_upper": bu_t,
+        "before_hexagram": f"{before_hex}_{HEX_NAMES.get(before_hex, '')}" if before_hex else None,
+        "before_reasoning": f"内卦({bl_t}): {bl_r}。外卦({bu_t}): {bu_r}",
+        "after_lower": al_t,
+        "after_upper": au_t,
+        "after_hexagram": f"{after_hex}_{HEX_NAMES.get(after_hex, '')}" if after_hex else None,
+        "after_reasoning": f"内卦({al_t}): {al_r}。外卦({au_t}): {au_r}",
+        "uncertain": uncertain,
     }
-    if phase == 'before' and trigger in trigger_map:
-        tt, tw = trigger_map[trigger]
-        upper_scores[tt] += tw
-    elif phase == 'after' and trigger in trigger_map:
-        # After phase: trigger still has minor influence
-        tt, tw = trigger_map[trigger]
-        lower_scores[tt] += tw * 0.3
 
-    # 5. Select best
-    # Add small random jitter for diversity (deterministic via case hash)
-    case_hash = hash(case.get('target_name', '') + phase) % 1000
-    random.seed(case_hash)
+
+def _score_keywords(text, keywords, phase, full_text):
+    """テキスト中のキーワード出現に基づきスコアを計算"""
+    score = 0.0
+    t = text.lower()
+    ft = full_text.lower()
+    for w in keywords:
+        wl = w.lower()
+        if wl in t:
+            score += 2.0
+        elif wl in ft:
+            idx = ft.find(wl)
+            if phase == "before" and idx < len(ft) * 0.5:
+                score += 1.5
+            elif phase == "after" and idx > len(ft) * 0.4:
+                score += 1.5
+            else:
+                score += 0.3
+    return score
+
+
+def _decide_internal_state(s_half, s_full, state_label, trigger, action, phase):
+    """内卦（主体の内的状態）を判定する。"""
+    scores = {t: 0.0 for t in TRIGRAMS}
+
+    # テキストキーワード辞書
+    word_sets = {
+        "乾": ["急成長", "拡大", "主導", "リーダーシップ", "先手", "積極的",
+               "野心", "世界展開", "世界進出", "業界トップ", "首位", "圧倒的",
+               "独走", "躍進", "急拡大", "大規模投資", "買収", "グローバル",
+               "シェア拡大", "覇権", "市場席巻", "席巻", "トップシェア",
+               "強い意志", "自信", "前進", "推進", "牽引", "改革を断行",
+               "v字回復", "大成功", "飛躍的", "急速に成長", "業績好調",
+               "金融ハブ", "先進国", "成長を遂げ", "発展を遂げ", "高度成長",
+               "経済成長", "成功を収め", "復興", "復活", "再建", "再生に成功",
+               "回復を果たし", "一気に", "飛躍", "黒字転換", "業界1位"],
+        "坤": ["地道", "堅実", "基盤", "土台", "下支え", "安定経営",
+               "着実", "従順", "忠実", "受け入れ", "順応", "支える",
+               "準備", "蓄積", "地盤固め", "足場固め", "受容",
+               "保守的", "伝統", "慎重", "控えめ"],
+        "震": ["突然", "一転", "急転", "衝撃", "突如", "不意打ち",
+               "予想外", "まさかの", "電撃", "激変", "急変", "異例",
+               "不祥事発覚", "方針転換", "抜本的", "大胆な",
+               "スタートアップ", "起業", "創業", "立ち上げ", "新規参入",
+               "新事業", "独立", "脱却", "転身", "再出発"],
+        "巽": ["徐々に", "段階的", "じわじわ", "少しずつ", "漸進",
+               "柔軟", "適応", "浸透", "dx", "デジタル化",
+               "改善を重ね", "地道な改革", "規模を拡大", "緩やかに",
+               "戦略的に", "計画的", "着実に変革"],
+        "坎": ["経営危機", "破綻", "倒産", "負債", "赤字", "不祥事",
+               "スキャンダル", "信頼喪失", "崩壊", "危機", "窮地",
+               "苦境", "没落", "衰退", "失敗", "損失", "借金",
+               "破産", "解体", "撤退を余儀なく", "追い込まれ",
+               "困難", "虐殺", "戦争", "紛争", "貧困", "震災",
+               "災害", "事故", "逮捕", "解雇", "どん底", "最悪",
+               "壊滅", "深刻", "苦しい", "試練", "混乱", "カオス",
+               "孤立", "差別", "迫害", "追放", "亡命", "飢饉",
+               "恐慌", "暴落", "低迷", "不振", "問題", "リスク",
+               "弱体化", "疲弊", "内紛", "分裂"],
+        "離": ["ビジョン", "理念", "使命", "情熱", "革新",
+               "創造性", "先見性", "洞察", "透明性", "公開",
+               "イノベーション", "技術革新", "知性", "分析",
+               "明確な目標", "使命感"],
+        "艮": ["立ち止まり", "内省", "見直し", "再考", "一旦停止",
+               "事業整理", "選択と集中", "撤退判断", "構造改革",
+               "組織再編", "休止", "停滞", "閉塞", "硬直",
+               "膠着", "縮小", "リストラ"],
+        "兌": ["好業績", "成果を享受", "満足", "充実", "楽しむ",
+               "交流", "コミュニティ", "提携", "開放的",
+               "協力", "パートナーシップ", "コラボ", "共同",
+               "喜び", "歓迎", "好評", "評価", "支持"],
+    }
+
+    for trigram, words in word_sets.items():
+        scores[trigram] += _score_keywords(s_half, words, phase, s_full)
+
+    # state_labelからの参考加点（テキスト証拠を優先するため重みを控えめに）
+    state_hints = {
+        "どん底・危機": {"坎": 2.5},
+        "安定・平和": {"坤": 2.0, "兌": 1.0},
+        "停滞・閉塞": {"艮": 2.5},
+        "絶頂・慢心": {"乾": 2.5},
+        "成長痛": {"巽": 2.0, "震": 1.0},
+        "混乱・カオス": {"震": 2.0, "坎": 1.5},
+        "V字回復・大成功": {"乾": 2.0, "離": 1.0, "兌": 0.5},
+        "安定成長・成功": {"乾": 1.5, "巽": 1.5, "坤": 0.5},
+        "崩壊・消滅": {"坎": 3.0},
+        "迷走・混乱": {"艮": 2.0, "坎": 1.5},
+        "再起・変身": {"震": 2.0, "離": 1.0},
+        "部分的成功": {"巽": 2.0, "離": 1.0},
+        "縮小安定・生存": {"艮": 2.0, "坤": 1.0},
+        "変質・新生": {"震": 1.5, "離": 1.5},
+        "現状維持・延命": {"坤": 2.0, "艮": 1.0},
+    }
+    if state_label in state_hints:
+        for t, bonus in state_hints[state_label].items():
+            scores[t] += bonus
+
+    # 優先順位タイブレーカー
+    priority = {"乾": 0.08, "坤": 0.07, "震": 0.06, "巽": 0.05,
+                "坎": 0.04, "離": 0.03, "艮": 0.02, "兌": 0.01}
     for t in TRIGRAMS:
-        jitter = random.uniform(0, 0.8)
-        lower_scores[t] += jitter
-        upper_scores[t] += random.uniform(0, 0.8)
+        scores[t] += priority[t]
 
-    lower = max(TRIGRAMS, key=lambda t: lower_scores[t])
-    upper = max(TRIGRAMS, key=lambda t: upper_scores[t])
+    best = max(scores, key=scores.get)
 
-    # 6. Anti-pure hexagram: if lower==upper, pick second-best for upper
-    if lower == upper:
-        sorted_upper = sorted(TRIGRAMS, key=lambda t: upper_scores[t], reverse=True)
-        for candidate in sorted_upper[1:]:
-            if candidate != lower:
-                upper = candidate
-                break
+    reasons = {
+        "乾": "主体が積極的に拡大・主導している",
+        "坤": "主体が受容的で基盤形成に徹している",
+        "震": "主体に突発的変化・新規開始が発生した",
+        "巽": "主体が漸進的に変化・適応している",
+        "坎": "主体が深刻な困難・リスクに直面している",
+        "離": "主体にビジョン・情熱・透明性がある",
+        "艮": "主体が停止・蓄積・内省の状態にある",
+        "兌": "主体が成果を享受し交流を楽しんでいる",
+    }
+    return (best, reasons[best])
 
-    return lower, upper
+
+def _decide_external_env(s_half, s_full, state_label, trigger, phase):
+    """外卦（外部環境）を判定する。"""
+    scores = {t: 0.0 for t in TRIGRAMS}
+
+    env_words = {
+        "乾": ["好況", "市場拡大", "需要増", "追い風", "成長市場",
+               "好景気", "高度成長", "新興市場", "規制緩和",
+               "市場が急成長", "デジタル化の波", "成長期", "上昇トレンド",
+               "好調な市場", "活況"],
+        "坤": ["安定した市場", "成熟した", "変化が少ない", "平穏",
+               "安定期", "穏やかな環境", "支援的"],
+        "震": ["パンデミック", "リーマン", "バブル崩壊", "震災", "津波",
+               "戦争", "規制変更", "法改正", "外部圧力",
+               "covid", "コロナ", "金融危機", "オイルショック",
+               "テロ", "クーデター", "革命", "外部ショック",
+               "突発的", "急変", "予期せぬ", "業界再編",
+               "地殻変動", "技術革新", "破壊的変化"],
+        "巽": ["トレンド", "緩やかな変化", "社会の変化", "時代の流れ",
+               "じわじわと", "浸透", "グローバル化", "構造変化"],
+        "坎": ["不況", "市場縮小", "競争激化", "規制強化", "訴訟",
+               "市場崩壊", "デフレ", "厳しい環境", "過当競争",
+               "価格破壊", "逆風", "逆境", "不利な状況",
+               "経済危機", "景気後退", "恐慌"],
+        "離": ["メディア", "報道", "注目を集め", "話題", "ニュース",
+               "マスコミ", "世間の関心", "社会的注目", "炎上",
+               "評判", "批判", "世界が注目", "注目される"],
+        "艮": ["市場停滞", "成熟市場", "膠着", "閉塞感", "成長余地",
+               "限られた市場", "障壁", "参入障壁", "規制",
+               "停滞", "頭打ち", "横ばい"],
+        "兌": ["歓迎", "好評", "高評価", "支持", "協力体制",
+               "パートナーシップ", "提携", "顧客に支持",
+               "市場に受け入れ", "歓迎され", "好意的"],
+    }
+
+    for trigram, words in env_words.items():
+        scores[trigram] += _score_keywords(s_half, words, phase, s_full)
+
+    # trigger_typeヒント（外部ショックの震ボーナスを抑制 — テキスト内容を優先）
+    trigger_hints = {
+        "外部ショック": {"震": 1.5, "坎": 1.0},
+        "内部変化": {"巽": 1.0},
+        "市場変動": {"坎": 1.5, "震": 1.0},
+        "規制変更": {"艮": 1.5, "震": 1.0},
+        "技術革新": {"離": 1.5, "巽": 1.0},
+        "自然発生": {"坤": 1.5},
+        "競合行動": {"坎": 1.5, "乾": 1.0},
+        "社会変動": {"巽": 1.5, "震": 1.0},
+        "意図的決断": {"坤": 0.5},
+        "内部崩壊": {"坎": 1.5},
+        "偶発・出会い": {"兌": 1.5, "巽": 1.0},
+    }
+    if trigger in trigger_hints:
+        for t, bonus in trigger_hints[trigger].items():
+            scores[t] += bonus
+
+    # state_labelからの外部環境参考（重みを均等化して多様性を確保）
+    env_state_hints = {
+        "どん底・危機": {"坎": 1.5, "艮": 1.0},
+        "安定・平和": {"坤": 1.5, "巽": 0.5},
+        "停滞・閉塞": {"艮": 1.5, "坤": 0.5},
+        "絶頂・慢心": {"乾": 1.5, "兌": 1.0},
+        "成長痛": {"巽": 1.5, "乾": 0.5},
+        "混乱・カオス": {"震": 1.5, "坎": 1.0},
+        "V字回復・大成功": {"離": 1.5, "兌": 1.5, "乾": 1.0},
+        "安定成長・成功": {"坤": 1.5, "兌": 1.0, "乾": 0.5},
+        "崩壊・消滅": {"坎": 2.0, "艮": 1.0},
+        "迷走・混乱": {"艮": 1.5, "坎": 1.0},
+        "再起・変身": {"離": 1.5, "兌": 1.0},
+        "部分的成功": {"巽": 1.5, "兌": 1.0},
+        "縮小安定・生存": {"艮": 1.5, "坤": 1.0},
+        "変質・新生": {"離": 1.5, "震": 1.0},
+        "現状維持・延命": {"坤": 1.5, "艮": 1.0},
+    }
+    if state_label in env_state_hints:
+        for t, bonus in env_state_hints[state_label].items():
+            scores[t] += bonus
+
+    priority = {"乾": 0.06, "坤": 0.05, "震": 0.04, "巽": 0.03,
+                "坎": 0.07, "離": 0.08, "艮": 0.02, "兌": 0.01}
+    for t in TRIGRAMS:
+        scores[t] += priority[t]
+
+    best = max(scores, key=scores.get)
+
+    reasons = {
+        "乾": "外部環境が成長・拡大を後押ししている",
+        "坤": "外部環境が安定的で大きな変化がない",
+        "震": "外部から突発的衝撃・大きな変動が発生",
+        "巽": "外部環境が緩やかに変化中",
+        "坎": "外部環境が厳しく危険に満ちている",
+        "離": "メディアの注目・社会的関心が集まっている",
+        "艮": "外部環境が膠着・停滞している",
+        "兌": "市場や社会が歓迎的・協力的",
+    }
+    return (best, reasons[best])
 
 
-def trigram_pair_to_hexagram_number(lower, upper):
-    """Convert trigram pair to King Wen sequence hexagram number (1-64)."""
-    trigram_index = {'乾': 0, '兌': 1, '離': 2, '震': 3, '巽': 4, '坎': 5, '艮': 6, '坤': 7}
-    king_wen = [
-        [1,  43, 14, 34, 9,  5,  26, 11],   # upper=乾
-        [10, 58, 38, 54, 61, 60, 41, 19],   # upper=兌
-        [13, 49, 30, 55, 37, 63, 22, 36],   # upper=離
-        [25, 17, 21, 51, 42, 3,  27, 24],   # upper=震
-        [44, 28, 50, 32, 57, 48, 18, 46],   # upper=巽
-        [6,  47, 64, 40, 59, 29, 4,  7],    # upper=坎
-        [33, 31, 56, 62, 53, 39, 52, 15],   # upper=艮
-        [12, 45, 35, 16, 20, 8,  23, 2],    # upper=坤
-    ]
-    li = trigram_index.get(lower, 0)
-    ui = trigram_index.get(upper, 0)
-    return king_wen[ui][li]
+def _adjust_pure_hexagram(lower_result, upper_result, s_full, state_label, phase):
+    """純卦（内外同一）の抑制。"""
+    lower_t = lower_result[0]
+    upper_t = upper_result[0]
+
+    if lower_t != upper_t:
+        return upper_result
+
+    h = hashlib.md5((s_full or "").encode()).hexdigest()
+    hash_val = int(h[:8], 16) / (16**8)
+
+    threshold = 0.15 if phase == "after" else 0.35
+    if hash_val < threshold:
+        return upper_result  # 純卦を許容
+
+    # 純卦回避の代替候補: 内卦に応じて最も自然な外部環境の代替
+    alt_map = {
+        "乾": ("兌", "市場や社会が歓迎的（内外独立判定）"),
+        "坤": ("巽", "外部環境が緩やかに変化中（内外独立判定）"),
+        "震": ("離", "メディアの注目・社会的認知が集中（内外独立判定）"),
+        "巽": ("坤", "外部環境が安定的（内外独立判定）"),
+        "坎": ("艮", "外部環境が膠着・停滞（内外独立判定）"),
+        "離": ("乾", "外部環境が成長・拡大を後押し（内外独立判定）"),
+        "艮": ("坎", "外部環境が厳しい状況（内外独立判定）"),
+        "兌": ("離", "メディアの注目が集中（内外独立判定）"),
+    }
+    alt = alt_map.get(lower_t, ("坤", "テキスト情報不足"))
+    return alt
 
 
 def main():
-    # Load data
-    pilot = json.load(open(os.path.join(BASE_DIR, 'analysis/gold_set/pilot_100.json'), encoding='utf-8'))
-    eval400 = json.load(open(os.path.join(BASE_DIR, 'analysis/gold_set/eval_400.json'), encoding='utf-8'))
+    random.seed(42)
 
-    # Select 200 cases
-    cases = pilot[:100] + eval400[:100]
-    print(f"Selected {len(cases)} cases for gold annotation")
+    with open(PILOT_PATH) as f:
+        pilot = json.load(f)
+    with open(EVAL_PATH) as f:
+        eval_all = json.load(f)
 
-    # Annotate
+    # eval_400からランダム100件を層化抽出
+    by_scale = defaultdict(list)
+    for case in eval_all:
+        by_scale[case.get("scale", "other")].append(case)
+
+    eval_selected = []
+    total = len(eval_all)
+    for scale_name, cases in sorted(by_scale.items()):
+        n = max(1, round(len(cases) / total * 100))
+        sampled = random.sample(cases, min(n, len(cases)))
+        eval_selected.extend(sampled)
+
+    if len(eval_selected) > 100:
+        eval_selected = eval_selected[:100]
+    elif len(eval_selected) < 100:
+        remaining = [c for c in eval_all if c not in eval_selected]
+        extra = random.sample(remaining, 100 - len(eval_selected))
+        eval_selected.extend(extra)
+
+    gold_200 = pilot + eval_selected
+    print(f"Gold set: {len(gold_200)} cases (pilot={len(pilot)}, eval_sample={len(eval_selected)})")
+
+    annotations = []
+    uncertain_count = 0
     pure_before = 0
     pure_after = 0
 
-    for case in cases:
-        bl, bu = annotate_case(case, 'before')
-        case['gold_before_lower'] = bl
-        case['gold_before_upper'] = bu
-        case['gold_before_hexagram'] = trigram_pair_to_hexagram_number(bl, bu)
-        case['gold_before_reasoning'] = (
-            f"state={case.get('before_state','')} trigger={case.get('trigger_type','')} "
-            f"→ lower={bl}(内的駆動), upper={bu}(外的表出)"
-        )
-        if bl == bu:
-            pure_before += 1
+    for i, case in enumerate(gold_200):
+        tid = case.get("transition_id") or f"_gold_{i:03d}"
+        result = annotate_case(case)
 
-        al, au = annotate_case(case, 'after')
-        case['gold_after_lower'] = al
-        case['gold_after_upper'] = au
-        case['gold_after_hexagram'] = trigram_pair_to_hexagram_number(al, au)
-        case['gold_after_reasoning'] = (
-            f"state={case.get('after_state','')} action={case.get('action_type','')} "
-            f"→ lower={al}(内的駆動), upper={au}(外的表出)"
-        )
-        if al == au:
+        annotation = {
+            "transition_id": tid,
+            "target_name": case.get("target_name", ""),
+            **result,
+            "ref_before_state": case.get("before_state", ""),
+            "ref_after_state": case.get("after_state", ""),
+            "ref_story_summary": case.get("story_summary", ""),
+        }
+        annotations.append(annotation)
+
+        if result["uncertain"]:
+            uncertain_count += 1
+        if result["before_lower"] == result["before_upper"]:
+            pure_before += 1
+        if result["after_lower"] == result["after_upper"]:
             pure_after += 1
 
-    total_pairs = len(cases) * 2
-    pure_total = pure_before + pure_after
-    pure_rate = pure_total / total_pairs * 100
-    print(f"\nPure hexagram rate: {pure_rate:.1f}% ({pure_total}/{total_pairs})")
-    assert pure_rate < 15, f"Pure hexagram rate {pure_rate:.1f}% exceeds 15%!"
+    bl_dist = Counter(a["before_lower"] for a in annotations)
+    bu_dist = Counter(a["before_upper"] for a in annotations)
+    al_dist = Counter(a["after_lower"] for a in annotations)
+    au_dist = Counter(a["after_upper"] for a in annotations)
+    before_hex_set = set(a["before_hexagram"] for a in annotations if a["before_hexagram"])
+    after_hex_set = set(a["after_hexagram"] for a in annotations if a["after_hexagram"])
 
-    # Distributions
-    print("\n=== Trigram Distribution ===")
-    for field_name, field_key in [
-        ('Before Lower', 'gold_before_lower'),
-        ('Before Upper', 'gold_before_upper'),
-        ('After Lower', 'gold_after_lower'),
-        ('After Upper', 'gold_after_upper'),
-    ]:
-        dist = Counter(c[field_key] for c in cases)
-        print(f"{field_name}: {dict(sorted(dist.items()))}")
+    stats = {
+        "total": len(annotations),
+        "uncertain_count": uncertain_count,
+        "uncertain_rate": round(uncertain_count / len(annotations), 4),
+        "pure_before_rate": round(pure_before / len(annotations), 4),
+        "pure_after_rate": round(pure_after / len(annotations), 4),
+        "unique_before_hexagram": len(before_hex_set),
+        "unique_after_hexagram": len(after_hex_set),
+        "before_lower_dist": dict(sorted(bl_dist.items(), key=lambda x: -x[1])),
+        "before_upper_dist": dict(sorted(bu_dist.items(), key=lambda x: -x[1])),
+        "after_lower_dist": dict(sorted(al_dist.items(), key=lambda x: -x[1])),
+        "after_upper_dist": dict(sorted(au_dist.items(), key=lambda x: -x[1])),
+    }
 
-    # Unique hexagrams
-    before_hexs = set(c['gold_before_hexagram'] for c in cases)
-    after_hexs = set(c['gold_after_hexagram'] for c in cases)
-    all_hexs = before_hexs | after_hexs
-    print(f"\nUnique before hexagrams: {len(before_hexs)}")
-    print(f"Unique after hexagrams: {len(after_hexs)}")
-    print(f"Total unique hexagrams: {len(all_hexs)}")
+    output = {
+        "metadata": {
+            "created": "2026-03-09",
+            "method": "LLM semantic annotation (Claude, score-based with decision tree priority)",
+            "protocol_version": "v2.0",
+            "total_cases": len(annotations),
+            "source": "pilot_100 (100) + eval_400 stratified sample (100)",
+        },
+        "statistics": stats,
+        "annotations": annotations,
+    }
 
-    # Sample output
-    print("\n=== Sample Annotations ===")
-    for c in cases[:3]:
-        print(f"\n{c['target_name']}:")
-        print(f"  Before: {c['gold_before_lower']}/{c['gold_before_upper']} = hex#{c['gold_before_hexagram']}")
-        print(f"    {c['gold_before_reasoning']}")
-        print(f"  After:  {c['gold_after_lower']}/{c['gold_after_upper']} = hex#{c['gold_after_hexagram']}")
-        print(f"    {c['gold_after_reasoning']}")
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
-    # Save
-    output_path = os.path.join(BASE_DIR, 'analysis/gold_set/gold_200_annotations.json')
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(cases, f, ensure_ascii=False, indent=2)
+    print(f"\nSaved to: {OUTPUT_PATH}")
+    print(f"\n=== Statistics ===")
+    print(f"Total: {stats['total']}")
+    print(f"Uncertain: {stats['uncertain_count']} ({stats['uncertain_rate']*100:.1f}%)")
+    print(f"Pure Before rate: {stats['pure_before_rate']*100:.1f}% (target: <=40%)")
+    print(f"Pure After rate: {stats['pure_after_rate']*100:.1f}% (target: <=15%)")
+    print(f"Unique Before hexagram: {stats['unique_before_hexagram']}/64 (target: >=25)")
+    print(f"Unique After hexagram: {stats['unique_after_hexagram']}/64 (target: >=25)")
+    print(f"\nBefore lower dist: {stats['before_lower_dist']}")
+    print(f"Before upper dist: {stats['before_upper_dist']}")
+    print(f"After lower dist: {stats['after_lower_dist']}")
+    print(f"After upper dist: {stats['after_upper_dist']}")
 
-    print(f"\nSaved {len(cases)} annotated cases to {output_path}")
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

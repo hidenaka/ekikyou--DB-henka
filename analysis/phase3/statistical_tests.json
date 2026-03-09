@@ -1,96 +1,92 @@
 {
   "metadata": {
-    "timestamp": "2026-03-07T15:48:28.688569",
+    "timestamp": "2026-03-09T12:35:20.092140",
     "seed": 42,
     "n_permutations": 1000,
-    "n_cases_used": 9228,
-    "n_cases_excluded": 2108,
+    "n_cases_used": 11225,
+    "n_cases_excluded": 111,
     "version": "2.0"
   },
   "tests": {
     "test_a_edge_overlap": {
       "h0": "G_obsのQ6エッジ重複率はランダム遷移と同等",
-      "statistic": 0.05154639175257732,
-      "p_value": 1.0,
-      "effect_size": -3.985290683580958,
-      "effect_label": "large",
+      "statistic": 0.07272727272727272,
+      "p_value": 0.61,
+      "effect_size": -0.32371151988787433,
+      "effect_label": "medium",
       "effect_direction": "anti",
-      "notes": "overlap=10/194, null_mean=0.0954, null_std=0.0110"
+      "notes": "overlap=8/110, null_mean=0.0752, null_std=0.0076"
     },
     "test_b_hamming_6bit": {
       "h0": "遷移ペアの平均ハミング距離はランダム遷移と同等",
-      "statistic": 2.9412657130472475,
-      "p_value": 0.906,
-      "effect_size": 1.358037266104064,
+      "statistic": 3.0684187082405345,
+      "p_value": 0.722,
+      "effect_size": 0.5601547431841741,
       "effect_label": "large",
       "effect_direction": "anti",
-      "notes": "null_mean=2.9184, null_std=0.0168, dist_distribution={0: 1113, 1: 12, 2: 3616, 3: 78, 4: 3376, 5: 38, 6: 995}"
+      "notes": "null_mean=3.0633, null_std=0.0092, dist_distribution={0: 197, 1: 227, 2: 2922, 3: 3314, 4: 4395, 5: 170}"
     },
     "test_c_laplacian_spectrum": {
       "h0": "G_obsのラプラシアンスペクトルとQ6のWasserstein距離はランダムグラフと同等",
-      "statistic": 0.4314486501719824,
+      "statistic": 0.4270722278569801,
       "p_value": 0.0,
-      "effect_size": -4.034306872626668,
+      "effect_size": -4.73509992971898,
       "effect_label": "large",
       "effect_direction": "pro",
-      "notes": "null_mean=0.456181, null_std=0.006130, n_valid_perms=1000"
+      "notes": "null_mean=0.454959, null_std=0.005889, n_valid_perms=1000"
     },
     "test_d_cuogua_symmetry": {
       "h0": "錯卦ペアの遷移確率類似度はランダムペアと同等",
-      "statistic": 0.3661100986223819,
-      "p_value": 0.001,
-      "effect_size": 3.881179144000453,
-      "effect_label": "large",
-      "effect_direction": "pro",
-      "notes": "valid_pairs=17/32, zero_outdeg=18, null_mean=0.1741"
+      "statistic": 0.34357603889143074,
+      "p_value": 0.63,
+      "effect_size": -0.350582110439596,
+      "effect_label": "medium",
+      "effect_direction": "anti",
+      "notes": "valid_pairs=2/32, zero_outdeg=47, null_mean=0.4176"
     },
     "test_e_community_nmi": {
       "h0": "G_obsとQ6のコミュニティ構造のNMIはランダム遷移と同等",
-      "statistic": 0.2759833234330157,
-      "p_value": 0.012,
-      "effect_size": 2.6877234071653757,
+      "statistic": 0.4078265263526699,
+      "p_value": 0.078,
+      "effect_size": 1.575113142080123,
       "effect_label": "large",
       "effect_direction": "pro",
-      "notes": "G_obs communities=16, Q6 communities=5, null_mean=0.2207"
+      "notes": "G_obs communities=36, Q6 communities=5, null_mean=0.3822"
     }
   },
   "combined_judgment": {
-    "fisher_statistic": 1404.41,
-    "fisher_p_value_note": "参考値。テスト間非独立性、p=0処理の問題により信頼性が限定的",
-    "level": "Q6隣接仮説棄却・(Z2)^6対称性の部分的反映",
-    "adjacency_hypothesis": "rejected",
-    "symmetry_correspondence": "partial",
-    "parity_structure": "even_parity_dominant_98.6pct",
-    "summary": "Q6隣接遷移仮説は反証された（Test A/B）。6bit空間の対称性構造（スペクトル・錯卦）が観測遷移に部分的に反映されている（Test C/D/E）。偶数パリティへの集中（98.6%）はQ6モデルとは異なる構造的制約の存在を示唆する。",
-    "practical_value": "Q6は予測モデルではなく表現・正則化のための符号体系として限定的に有用",
+    "fisher_statistic": 1389.2172725440137,
+    "fisher_p_value": 0.0,
+    "level": "Weak",
+    "summary": "Fisher chi2=1389.22, p=0.000000, level=Weak. Pro方向medium+: 2/5, Pro方向small+: 2/5",
     "effect_profile": [
       {
         "test": "test_a_edge_overlap",
-        "effect_size": -3.985290683580958,
+        "effect_size": -0.32371151988787433,
         "direction": "anti",
-        "label": "large"
+        "label": "medium"
       },
       {
         "test": "test_b_hamming_6bit",
-        "effect_size": 1.358037266104064,
+        "effect_size": 0.5601547431841741,
         "direction": "anti",
         "label": "large"
       },
       {
         "test": "test_c_laplacian_spectrum",
-        "effect_size": -4.034306872626668,
+        "effect_size": -4.73509992971898,
         "direction": "pro",
         "label": "large"
       },
       {
         "test": "test_d_cuogua_symmetry",
-        "effect_size": 3.881179144000453,
-        "direction": "pro",
-        "label": "large"
+        "effect_size": -0.350582110439596,
+        "direction": "anti",
+        "label": "medium"
       },
       {
         "test": "test_e_community_nmi",
-        "effect_size": 2.6877234071653757,
+        "effect_size": 1.575113142080123,
         "direction": "pro",
         "label": "large"
       }
