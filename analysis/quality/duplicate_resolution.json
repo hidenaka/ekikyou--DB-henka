@@ -1,0 +1,775 @@
+{
+  "timestamp": "2026-03-09T11:46:43.633555",
+  "backup": "/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/data/raw/cases_backup_20260309_114642.jsonl",
+  "total_cases": 8982,
+  "exact_match_pairs": 26,
+  "high_risk_near_miss_pairs": 57,
+  "results": {
+    "duplicate_of": 26,
+    "probable_duplicate_of": 6,
+    "possible_duplicate_of": 23,
+    "independent": 22,
+    "total_flagged": 55,
+    "unique_ids_flagged": 52,
+    "actual_flags_in_jsonl": {
+      "duplicate_of": 25,
+      "probable_duplicate_of": 6,
+      "possible_duplicate_of": 22,
+      "note": "3 IDs appear in multiple pairs; later flag overwrites earlier one"
+    }
+  },
+  "details": {
+    "exact_flagged": [
+      {
+        "flagged_id": "CORP_JP_4252",
+        "keep_id": "CORP_JP_008",
+        "flag": "duplicate_of",
+        "entity_name": "日立製作所",
+        "period": "2009-2015",
+        "info_score_keep": 241,
+        "info_score_flagged": 186
+      },
+      {
+        "flagged_id": "CORP_JP_3547",
+        "keep_id": "CORP_JP_027",
+        "flag": "duplicate_of",
+        "entity_name": "シャープ",
+        "period": "2012-2016",
+        "info_score_keep": 137,
+        "info_score_flagged": 46
+      },
+      {
+        "flagged_id": "CORP_JP_027",
+        "keep_id": "CORP_JP_4931",
+        "flag": "duplicate_of",
+        "entity_name": "シャープ",
+        "period": "2012-2016",
+        "info_score_keep": 142,
+        "info_score_flagged": 137
+      },
+      {
+        "flagged_id": "CORP_JP_3547",
+        "keep_id": "CORP_JP_4931",
+        "flag": "duplicate_of",
+        "entity_name": "シャープ",
+        "period": "2012-2016",
+        "info_score_keep": 142,
+        "info_score_flagged": 46
+      },
+      {
+        "flagged_id": "CORP_JP_2686",
+        "keep_id": "CORP_JP_3424",
+        "flag": "duplicate_of",
+        "entity_name": "任天堂",
+        "period": "1889-2024",
+        "info_score_keep": 249,
+        "info_score_flagged": 248
+      },
+      {
+        "flagged_id": "CORP_JP_2671",
+        "keep_id": "CORP_JP_3425",
+        "flag": "duplicate_of",
+        "entity_name": "トヨタ自動車",
+        "period": "1937-2024",
+        "info_score_keep": 246,
+        "info_score_flagged": 234
+      },
+      {
+        "flagged_id": "PERS_JP_2989",
+        "keep_id": "PERS_JP_2956",
+        "flag": "duplicate_of",
+        "entity_name": "清原和博",
+        "period": "2008-2016",
+        "info_score_keep": 167,
+        "info_score_flagged": 163
+      },
+      {
+        "flagged_id": "PERS_JP_2847",
+        "keep_id": "PERS_JP_2946",
+        "flag": "duplicate_of",
+        "entity_name": "堀江貴文",
+        "period": "2006-2013",
+        "info_score_keep": 172,
+        "info_score_flagged": 120
+      },
+      {
+        "flagged_id": "PERS_JP_2152",
+        "keep_id": "PERS_JP_111",
+        "flag": "duplicate_of",
+        "entity_name": "スティーブ・ジョブズ",
+        "period": "1985-1997",
+        "info_score_keep": 176,
+        "info_score_flagged": 140
+      },
+      {
+        "flagged_id": "CORP_JP_3269",
+        "keep_id": "CORP_JP_391",
+        "flag": "duplicate_of",
+        "entity_name": "OpenAI（サム・アルトマン解任騒動）",
+        "period": "2023",
+        "info_score_keep": 194,
+        "info_score_flagged": 191
+      },
+      {
+        "flagged_id": "COUN_JP_723",
+        "keep_id": "COUN_JP_1241",
+        "flag": "duplicate_of",
+        "entity_name": "日中国交正常化（1972）",
+        "period": "1972",
+        "info_score_keep": 85,
+        "info_score_flagged": 77
+      },
+      {
+        "flagged_id": "CORP_JP_3063",
+        "keep_id": "CORP_JP_1149",
+        "flag": "duplicate_of",
+        "entity_name": "ウォークマン発売（1979）",
+        "period": "1979",
+        "info_score_keep": 84,
+        "info_score_flagged": 82
+      },
+      {
+        "flagged_id": "CORP_JP_3531",
+        "keep_id": "CORP_JP_3526",
+        "flag": "duplicate_of",
+        "entity_name": "WeWork",
+        "period": "2017-2019",
+        "info_score_keep": 67,
+        "info_score_flagged": 52
+      },
+      {
+        "flagged_id": "CORP_JP_3421",
+        "keep_id": "CORP_JP_2680",
+        "flag": "duplicate_of",
+        "entity_name": "金剛組",
+        "period": "578-2024",
+        "info_score_keep": 159,
+        "info_score_flagged": 152
+      },
+      {
+        "flagged_id": "CORP_JP_2901",
+        "keep_id": "CORP_JP_3073",
+        "flag": "duplicate_of",
+        "entity_name": "マツダ ロータリーエンジン実用化（1967）",
+        "period": "1967",
+        "info_score_keep": 86,
+        "info_score_flagged": 81
+      },
+      {
+        "flagged_id": "COUN_JP_1410",
+        "keep_id": "COUN_JP_1339",
+        "flag": "duplicate_of",
+        "entity_name": "ベルリンの壁崩壊",
+        "period": "1989",
+        "info_score_keep": 138,
+        "info_score_flagged": 58
+      },
+      {
+        "flagged_id": "CORP_JP_3418",
+        "keep_id": "CORP_JP_3402",
+        "flag": "duplicate_of",
+        "entity_name": "ノキア（スマートフォン時代への対応遅れ）",
+        "period": "2007-2013",
+        "info_score_keep": 130,
+        "info_score_flagged": 120
+      },
+      {
+        "flagged_id": "CORP_JP_3614",
+        "keep_id": "CORP_JP_3617",
+        "flag": "duplicate_of",
+        "entity_name": "リーマン・ブラザーズ",
+        "period": "2008",
+        "info_score_keep": 76,
+        "info_score_flagged": 50
+      },
+      {
+        "flagged_id": "COUN_JP_1374",
+        "keep_id": "COUN_JP_1397",
+        "flag": "duplicate_of",
+        "entity_name": "清朝",
+        "period": "1908-1912",
+        "info_score_keep": 48,
+        "info_score_flagged": 45
+      },
+      {
+        "flagged_id": "CORP_JP_3596",
+        "keep_id": "CORP_JP_3562",
+        "flag": "duplicate_of",
+        "entity_name": "ネットフリックス",
+        "period": "2011-2013",
+        "info_score_keep": 79,
+        "info_score_flagged": 56
+      },
+      {
+        "flagged_id": "CORP_JP_4600",
+        "keep_id": "CORP_JP_4486",
+        "flag": "duplicate_of",
+        "entity_name": "Buffer社（給与透明性の実験）",
+        "period": "2013-2015",
+        "info_score_keep": 127,
+        "info_score_flagged": 127
+      },
+      {
+        "flagged_id": "CORP_JP_4604",
+        "keep_id": "CORP_JP_4490",
+        "flag": "duplicate_of",
+        "entity_name": "湘南美容外科クリニック（価格透明化）",
+        "period": "2010-2020",
+        "info_score_keep": 123,
+        "info_score_flagged": 123
+      },
+      {
+        "flagged_id": "CORP_JP_4802",
+        "keep_id": "CORP_JP_4790",
+        "flag": "duplicate_of",
+        "entity_name": "Palantir Technologies（Defense/AI転換の成功）",
+        "period": "2022-2025",
+        "info_score_keep": 278,
+        "info_score_flagged": 278
+      },
+      {
+        "flagged_id": "PERS_JP_2747",
+        "keep_id": "PERS_JP_2646",
+        "flag": "duplicate_of",
+        "entity_name": "マナブ（坂内学）",
+        "period": "2016-2021",
+        "info_score_keep": 222,
+        "info_score_flagged": 154
+      },
+      {
+        "flagged_id": "PERS_JP_2818",
+        "keep_id": "PERS_JP_2685",
+        "flag": "duplicate_of",
+        "entity_name": "Ali Abdaal",
+        "period": "2017-2023",
+        "info_score_keep": 248,
+        "info_score_flagged": 174
+      },
+      {
+        "flagged_id": "PERS_JP_2794",
+        "keep_id": "PERS_JP_2692",
+        "flag": "duplicate_of",
+        "entity_name": "Rachel Hollis",
+        "period": "2015-2020",
+        "info_score_keep": 242,
+        "info_score_flagged": 181
+      }
+    ],
+    "probable_flagged": [
+      {
+        "flagged_id": "COUN_JP_1248",
+        "keep_id": "COUN_JP_681",
+        "flag": "probable_duplicate_of",
+        "jaccard": 1.0,
+        "entity_a": "証券不況（1964-1965）",
+        "entity_b": "証券不況と山一救済（1964-1965）",
+        "info_score_keep": 81,
+        "info_score_flagged": 81
+      },
+      {
+        "flagged_id": "COUN_JP_695",
+        "keep_id": "COUN_JP_1249",
+        "flag": "probable_duplicate_of",
+        "jaccard": 0.786,
+        "entity_a": "朝鮮戦争特需（1950-1953）",
+        "entity_b": "朝鮮戦争特需と日本経済復興（1950-1953）",
+        "info_score_keep": 79,
+        "info_score_flagged": 78
+      },
+      {
+        "flagged_id": "COUN_JP_696",
+        "keep_id": "COUN_JP_1250",
+        "flag": "probable_duplicate_of",
+        "jaccard": 0.625,
+        "entity_a": "サンフランシスコ講和条約（1951-1952）",
+        "entity_b": "サンフランシスコ講和条約（1951）",
+        "info_score_keep": 82,
+        "info_score_flagged": 76
+      },
+      {
+        "flagged_id": "PERS_JP_2029",
+        "keep_id": "PERS_JP_1957",
+        "flag": "probable_duplicate_of",
+        "jaccard": 1.0,
+        "entity_a": "湯川秀樹 ノーベル物理学賞（1949）",
+        "entity_b": "湯川秀樹 ノーベル物理学賞受賞（1949）",
+        "info_score_keep": 81,
+        "info_score_flagged": 81
+      },
+      {
+        "flagged_id": "COUN_JP_1219",
+        "keep_id": "COUN_JP_1267",
+        "flag": "probable_duplicate_of",
+        "jaccard": 0.575,
+        "entity_a": "日本万国博覧会（1970）",
+        "entity_b": "日本万国博覧会開催（1970）",
+        "info_score_keep": 88,
+        "info_score_flagged": 83
+      },
+      {
+        "flagged_id": "CORP_JP_4339",
+        "keep_id": "CORP_JP_4343",
+        "flag": "probable_duplicate_of",
+        "jaccard": 0.519,
+        "entity_a": "風沢中孚の信頼関係が末期に終焉（2018-2023）",
+        "entity_b": "風沢中孚の信頼関係が末期に終焉（2016-2022）",
+        "info_score_keep": 72,
+        "info_score_flagged": 59
+      }
+    ],
+    "possible_flagged": [
+      {
+        "flagged_id": "COUN_JP_482",
+        "keep_id": "COUN_JP_038",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.343,
+        "entity_a": "ボツワナ",
+        "entity_b": "ボツワナ_ダイヤモンドの優等生",
+        "info_score_keep": 175,
+        "info_score_flagged": 128
+      },
+      {
+        "flagged_id": "PERS_JP_628",
+        "keep_id": "PERS_JP_554",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.325,
+        "entity_a": "事故被害_01_交通事故",
+        "entity_b": "事故被害_01",
+        "info_score_keep": 118,
+        "info_score_flagged": 106
+      },
+      {
+        "flagged_id": "CORP_JP_501",
+        "keep_id": "CORP_JP_409",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.342,
+        "entity_a": "Blockbuster（Netflix買収拒否）",
+        "entity_b": "Blockbuster（Netflixに敗れた巨人）",
+        "info_score_keep": 316,
+        "info_score_flagged": 250
+      },
+      {
+        "flagged_id": "CORP_JP_2180",
+        "keep_id": "CORP_JP_3246",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.337,
+        "entity_a": "Blockbuster（Netflix買収拒否）",
+        "entity_b": "Blockbuster Netflix提携拒否で破綻（2000-2010）",
+        "info_score_keep": 261,
+        "info_score_flagged": 101
+      },
+      {
+        "flagged_id": "COUN_JP_452",
+        "keep_id": "COUN_JP_372",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.328,
+        "entity_a": "シリア_内戦10年の破壊",
+        "entity_b": "シリア_内戦と難民危機",
+        "info_score_keep": 158,
+        "info_score_flagged": 142
+      },
+      {
+        "flagged_id": "COUN_JP_482",
+        "keep_id": "COUN_JP_409",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.307,
+        "entity_a": "ボツワナ_アフリカの奇跡",
+        "entity_b": "ボツワナ_ダイヤモンドの優等生",
+        "info_score_keep": 143,
+        "info_score_flagged": 128
+      },
+      {
+        "flagged_id": "OTHR_JP_165",
+        "keep_id": "OTHR_JP_932",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.309,
+        "entity_a": "横浜みなとみらい_ウォーターフロント開発",
+        "entity_b": "横浜みなとみらい開発",
+        "info_score_keep": 152,
+        "info_score_flagged": 132
+      },
+      {
+        "flagged_id": "CORP_JP_2217",
+        "keep_id": "CORP_JP_621",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.3,
+        "entity_a": "ワークマン_作業服からカジュアルへ",
+        "entity_b": "ワークマン 作業着から一般向けへ（2018-2023）",
+        "info_score_keep": 126,
+        "info_score_flagged": 95
+      },
+      {
+        "flagged_id": "COUN_JP_1119",
+        "keep_id": "COUN_JP_481",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.317,
+        "entity_a": "ベネズエラ_石油の呪い",
+        "entity_b": "ベネズエラ 石油依存から経済崩壊（1999-2020）",
+        "info_score_keep": 125,
+        "info_score_flagged": 97
+      },
+      {
+        "flagged_id": "COUN_JP_1125",
+        "keep_id": "COUN_JP_504",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.303,
+        "entity_a": "ルワンダ_虐殺からの奇跡の復興",
+        "entity_b": "ルワンダ 大虐殺からの復興（1994-2020）",
+        "info_score_keep": 135,
+        "info_score_flagged": 107
+      },
+      {
+        "flagged_id": "CORP_JP_757",
+        "keep_id": "CORP_JP_738",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.323,
+        "entity_a": "松河屋（名古屋市・和菓子）",
+        "entity_b": "松河屋（名古屋・老舗和菓子）",
+        "info_score_keep": 193,
+        "info_score_flagged": 162
+      },
+      {
+        "flagged_id": "CORP_JP_4924",
+        "keep_id": "CORP_JP_888",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.438,
+        "entity_a": "NTTドコモ・携帯満足度4年連続1位（2021-2024）",
+        "entity_b": "NTTドコモ（顧客満足度4年連続1位）",
+        "info_score_keep": 150,
+        "info_score_flagged": 97
+      },
+      {
+        "flagged_id": "OTHR_JP_342",
+        "keep_id": "OTHR_JP_804",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.448,
+        "entity_a": "日本道路公団設立（1956）",
+        "entity_b": "日本道路公団設立と高速道路建設（1956-1960）",
+        "info_score_keep": 76,
+        "info_score_flagged": 73
+      },
+      {
+        "flagged_id": "COUN_JP_723",
+        "keep_id": "COUN_JP_1270",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.37,
+        "entity_a": "日中国交正常化（1972）",
+        "entity_b": "日中国交正常化",
+        "info_score_keep": 94,
+        "info_score_flagged": 77
+      },
+      {
+        "flagged_id": "CORP_JP_1378",
+        "keep_id": "CORP_JP_1264",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.433,
+        "entity_a": "いすゞ 米国乗用車撤退（2009）",
+        "entity_b": "いすゞ 米国乗用車撤退（1981-2009）",
+        "info_score_keep": 78,
+        "info_score_flagged": 73
+      },
+      {
+        "flagged_id": "CORP_JP_1386",
+        "keep_id": "CORP_JP_1268",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.4,
+        "entity_a": "スイス航空 破綻（2001）",
+        "entity_b": "スイス航空 破綻（1931-2002）",
+        "info_score_keep": 79,
+        "info_score_flagged": 75
+      },
+      {
+        "flagged_id": "CORP_JP_2143",
+        "keep_id": "CORP_JP_2759",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.315,
+        "entity_a": "日本航空（JAL）経営破綻からの復活（2010-2012）",
+        "entity_b": "日本航空（V字回復のためのリストラ）",
+        "info_score_keep": 151,
+        "info_score_flagged": 111
+      },
+      {
+        "flagged_id": "CORP_JP_4891",
+        "keep_id": "CORP_JP_2268",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.315,
+        "entity_a": "GE金融事業売却 製造業回帰（2015-2020）",
+        "entity_b": "GE金融事業売却",
+        "info_score_keep": 86,
+        "info_score_flagged": 42
+      },
+      {
+        "flagged_id": "CORP_JP_4241",
+        "keep_id": "CORP_JP_2761",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.366,
+        "entity_a": "パナソニック（不採算事業からの撤退）",
+        "entity_b": "パナソニック・プラズマTV",
+        "info_score_keep": 157,
+        "info_score_flagged": 99
+      },
+      {
+        "flagged_id": "COUN_JP_1214",
+        "keep_id": "COUN_JP_1257",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.316,
+        "entity_a": "農地改革の完了（1950）",
+        "entity_b": "農地改革（1946-1950）",
+        "info_score_keep": 83,
+        "info_score_flagged": 75
+      },
+      {
+        "flagged_id": "CORP_JP_3191",
+        "keep_id": "CORP_JP_3289",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.396,
+        "entity_a": "日本航空（JAL稲盛改革の確立）",
+        "entity_b": "日本航空（JAL）稲盛改革",
+        "info_score_keep": 191,
+        "info_score_flagged": 125
+      },
+      {
+        "flagged_id": "CORP_JP_3560",
+        "keep_id": "CORP_JP_3306",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.336,
+        "entity_a": "リーマン・ブラザーズ 過剰レバレッジと破綻",
+        "entity_b": "リーマン・ブラザーズ",
+        "info_score_keep": 144,
+        "info_score_flagged": 73
+      },
+      {
+        "flagged_id": "CORP_JP_3568",
+        "keep_id": "CORP_JP_3368",
+        "flag": "possible_duplicate_of",
+        "jaccard": 0.306,
+        "entity_a": "FTX（仮想通貨取引所の崩壊）",
+        "entity_b": "FTX",
+        "info_score_keep": 189,
+        "info_score_flagged": 175
+      }
+    ],
+    "independent_pairs": [
+      {
+        "id_a": "CORP_JP_009",
+        "id_b": "CORP_JP_228",
+        "jaccard": 0.311,
+        "entity_a": "日本航空（JAL）",
+        "entity_b": "日本航空 (JAL)",
+        "reason": "different_state_combination",
+        "state_a": "どん底・危機 → V字回復・大成功",
+        "state_b": "絶頂・慢心 → V字回復・大成功"
+      },
+      {
+        "id_a": "PERS_JP_375",
+        "id_b": "PERS_JP_2944",
+        "jaccard": 0.317,
+        "entity_a": "吉田沙保里",
+        "entity_b": "吉田沙保里（レスリング選手）",
+        "reason": "different_state_combination",
+        "state_a": "成長痛 → 変質・新生",
+        "state_b": "絶頂・慢心 → 縮小安定・生存"
+      },
+      {
+        "id_a": "CORP_JP_523",
+        "id_b": "CORP_JP_541",
+        "jaccard": 0.312,
+        "entity_a": "First Republic Bank（JPMorganに救済買収）",
+        "entity_b": "First Republic Bank（JPMorgan救済買収）",
+        "reason": "different_state_combination",
+        "state_a": "どん底・危機 → 変質・新生",
+        "state_b": "安定・平和 → 崩壊・消滅"
+      },
+      {
+        "id_a": "COUN_JP_323",
+        "id_b": "COUN_JP_474",
+        "jaccard": 0.341,
+        "entity_a": "ミャンマー_民主化から軍事クーデターへ",
+        "entity_b": "ミャンマー_民主化の頓挫",
+        "reason": "different_state_combination",
+        "state_a": "成長痛 → 迷走・混乱",
+        "state_b": "安定・平和 → 崩壊・消滅"
+      },
+      {
+        "id_a": "COUN_JP_430",
+        "id_b": "COUN_JP_474",
+        "jaccard": 0.358,
+        "entity_a": "ミャンマー_民主化から軍事クーデターへ",
+        "entity_b": "ミャンマー_民主化の頓挫",
+        "reason": "different_state_combination",
+        "state_a": "成長痛 → 迷走・混乱",
+        "state_b": "安定・平和 → 崩壊・消滅"
+      },
+      {
+        "id_a": "COUN_JP_374",
+        "id_b": "COUN_JP_453",
+        "jaccard": 0.306,
+        "entity_a": "リビア_カダフィ後の混沌",
+        "entity_b": "リビア_カダフィ後の分裂",
+        "reason": "different_state_combination",
+        "state_a": "絶頂・慢心 → 迷走・混乱",
+        "state_b": "停滞・閉塞 → 迷走・混乱"
+      },
+      {
+        "id_a": "COUN_JP_484",
+        "id_b": "COUN_JP_1129",
+        "jaccard": 0.302,
+        "entity_a": "バングラデシュ_縫製業の発展",
+        "entity_b": "バングラデシュ 縫製業による発展（1980-2020）",
+        "reason": "different_state_combination",
+        "state_a": "停滞・閉塞 → V字回復・大成功",
+        "state_b": "どん底・危機 → 迷走・混乱"
+      },
+      {
+        "id_a": "CORP_JP_744",
+        "id_b": "CORP_JP_759",
+        "jaccard": 0.36,
+        "entity_a": "岩手中央タクシー（盛岡市）",
+        "entity_b": "岩手中央タクシー（盛岡）",
+        "reason": "different_state_combination",
+        "state_a": "どん底・危機 → 崩壊・消滅",
+        "state_b": "停滞・閉塞 → 崩壊・消滅"
+      },
+      {
+        "id_a": "CORP_JP_767",
+        "id_b": "CORP_JP_3164",
+        "jaccard": 0.378,
+        "entity_a": "個別指導塾スタンダード（福岡・民事再生）",
+        "entity_b": "個別指導塾スタンダード",
+        "reason": "different_state_combination",
+        "state_a": "成長痛 → 変質・新生",
+        "state_b": "成長痛 → 崩壊・消滅"
+      },
+      {
+        "id_a": "COUN_JP_719",
+        "id_b": "OTHR_JP_781",
+        "jaccard": 0.655,
+        "entity_a": "公害問題の顕在化（1960-1970）",
+        "entity_b": "公害問題の顕在化（1960年代）",
+        "reason": "different_state_combination",
+        "state_a": "成長痛 → 変質・新生",
+        "state_b": "成長痛 → 迷走・混乱"
+      },
+      {
+        "id_a": "COUN_JP_1241",
+        "id_b": "COUN_JP_1270",
+        "jaccard": 0.346,
+        "entity_a": "日中国交正常化（1972）",
+        "entity_b": "日中国交正常化",
+        "reason": "different_state_combination",
+        "state_a": "安定・平和 → 変質・新生",
+        "state_b": "停滞・閉塞 → 変質・新生"
+      },
+      {
+        "id_a": "CORP_JP_1175",
+        "id_b": "CORP_JP_3537",
+        "jaccard": 0.344,
+        "entity_a": "ブロックバスター倒産（1985-2010）",
+        "entity_b": "ブロックバスター",
+        "reason": "different_state_combination",
+        "state_a": "絶頂・慢心 → 崩壊・消滅",
+        "state_b": "停滞・閉塞 → 崩壊・消滅"
+      },
+      {
+        "id_a": "CORP_JP_1284",
+        "id_b": "CORP_JP_1399",
+        "jaccard": 0.559,
+        "entity_a": "Mic ピボット失敗（2018）",
+        "entity_b": "Mic ピボット失敗（2011-2018）",
+        "reason": "different_state_combination",
+        "state_a": "成長痛 → 崩壊・消滅",
+        "state_b": "成長痛 → 縮小安定・生存"
+      },
+      {
+        "id_a": "CORP_JP_4249",
+        "id_b": "CORP_JP_4269",
+        "jaccard": 0.3,
+        "entity_a": "Netflix",
+        "entity_b": "Netflix（DVD→ストリーミング変革）",
+        "reason": "different_state_combination",
+        "state_a": "安定・平和 → V字回復・大成功",
+        "state_b": "安定・平和 → 変質・新生"
+      },
+      {
+        "id_a": "PERS_JP_1987",
+        "id_b": "PERS_JP_2020",
+        "jaccard": 0.322,
+        "entity_a": "伊藤博文_憲法制定と立憲政治",
+        "entity_b": "伊藤博文（憲法制定）",
+        "reason": "different_state_combination",
+        "state_a": "混乱・カオス → 崩壊・消滅",
+        "state_b": "成長痛 → V字回復・大成功"
+      },
+      {
+        "id_a": "COUN_JP_1220",
+        "id_b": "COUN_JP_1238",
+        "jaccard": 0.337,
+        "entity_a": "日清戦争_日本の台頭",
+        "entity_b": "日清戦争勝利",
+        "reason": "different_state_combination",
+        "state_a": "安定・平和 → V字回復・大成功",
+        "state_b": "成長痛 → V字回復・大成功"
+      },
+      {
+        "id_a": "PERS_JP_2017",
+        "id_b": "PERS_JP_2030",
+        "jaccard": 0.345,
+        "entity_a": "渋沢栄一（近代資本主義の父）",
+        "entity_b": "渋沢栄一 近代産業育成（1873-1920）",
+        "reason": "different_state_combination",
+        "state_a": "安定・平和 → V字回復・大成功",
+        "state_b": "停滞・閉塞 → V字回復・大成功"
+      },
+      {
+        "id_a": "CORP_JP_3232",
+        "id_b": "CORP_JP_3568",
+        "jaccard": 0.327,
+        "entity_a": "FTX（サム・バンクマン＝フリードの崩壊）",
+        "entity_b": "FTX",
+        "reason": "different_state_combination",
+        "state_a": "成長痛 → 崩壊・消滅",
+        "state_b": "絶頂・慢心 → 崩壊・消滅"
+      },
+      {
+        "id_a": "CORP_JP_3402",
+        "id_b": "CORP_JP_3554",
+        "jaccard": 0.412,
+        "entity_a": "ノキア（スマートフォン時代への対応遅れ）",
+        "entity_b": "ノキア",
+        "reason": "different_state_combination",
+        "state_a": "絶頂・慢心 → 縮小安定・生存",
+        "state_b": "絶頂・慢心 → 崩壊・消滅"
+      },
+      {
+        "id_a": "CORP_JP_3614",
+        "id_b": "CORP_JP_4851",
+        "jaccard": 0.303,
+        "entity_a": "リーマン・ブラザーズ",
+        "entity_b": "リーマン・ブラザーズ破綻",
+        "reason": "different_state_combination",
+        "state_a": "どん底・危機 → 崩壊・消滅",
+        "state_b": "絶頂・慢心 → 崩壊・消滅"
+      },
+      {
+        "id_a": "CORP_JP_4243",
+        "id_b": "CORP_JP_4268",
+        "jaccard": 0.376,
+        "entity_a": "Microsoft（Satya Nadella時代）",
+        "entity_b": "Microsoft（Satya Nadella文化変革）",
+        "reason": "different_state_combination",
+        "state_a": "停滞・閉塞 → V字回復・大成功",
+        "state_b": "停滞・閉塞 → 変質・新生"
+      },
+      {
+        "id_a": "PERS_JP_2668",
+        "id_b": "PERS_JP_2783",
+        "jaccard": 0.352,
+        "entity_a": "Pat Flynn（Smart Passive Income）",
+        "entity_b": "Pat Flynn",
+        "reason": "different_state_combination",
+        "state_a": "混乱・カオス → V字回復・大成功",
+        "state_b": "どん底・危機 → 変質・新生"
+      }
+    ]
+  }
+}
