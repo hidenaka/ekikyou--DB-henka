@@ -6,109 +6,109 @@
     {
       "transition_id": "CALIBRATION_001",
       "before_lower": {
-        "trigram": "坎",
+        "trigram": "乾",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "Beneath the surface of a major construction company, hidden fraud was festering — the internal state is one of concealed peril, a坎 quality of danger masked by outward normality."
+        "alternative": "離",
+        "reasoning": "大手建設会社が粉飾決算を行うほどの拡大意志と自信過剰。内面は強気で拡張を追求し、見せかけの成長を維持しようとする乾の意志が暴走していた。"
       },
       "before_upper": {
-        "trigram": "離",
+        "trigram": "坎",
         "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "Externally the company still projected an image of a functioning enterprise — the facade of growth. But離 captures the quality of visibility and exposure that was about to come, the light about to reveal truth."
+        "alternative": "巽",
+        "reasoning": "粉飾の裏には実態の危うさが外部環境に潜んでいた。成長痛の表面下で、隠れたリスクと困難が蓄積していた。"
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "坤",
-        "reasoning": "After exposure, the internal state plunges into existential crisis — mass exodus, leadership collapse, survival in question. The deepest experience of坎: drowning in danger."
+        "reasoning": "信用失墜、経営陣辞任、大量離職。内面は完全な危機状態、絶望と無力感に沈んでいる。"
       },
       "after_upper": {
-        "trigram": "震",
+        "trigram": "坎",
         "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "The external environment erupts in shock — banks sever ties, contracts dissolve, civil rehabilitation. A thunderclap of consequences shattering the company's world."
+        "alternative": "艮",
+        "reasoning": "融資打ち切り、取引先離反、民事再生法適用。外部環境は全方位から困難が押し寄せるどん底。"
       }
     },
     {
       "transition_id": "CALIBRATION_002",
       "before_lower": {
         "trigram": "坤",
-        "confidence": "medium",
+        "confidence": "high",
         "alternative": "艮",
-        "reasoning": "Before the breakthrough, the company existed in quiet receptivity — the founder building internally, accumulating capability in a坤 state of patient gestation."
+        "reasoning": "静的安定からの出発。創業者の内面はまだ静かで受容的な状態、力を蓄えている段階。"
       },
       "before_upper": {
         "trigram": "坤",
-        "confidence": "medium",
+        "confidence": "high",
         "alternative": "巽",
-        "reasoning": "The external environment was calm, a settled market with no disruption — the stable ground of坤 before the visionary storm."
+        "reasoning": "安定した外部環境。市場に劇的な変動はなく、穏やかな状況。"
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The founder's inner state is pure creative force — overwhelming will, vision, and confidence. 乾 as the driving engine of expansion, with the entire organization unified under this energy."
+        "reasoning": "先見性ある創業者の圧倒的なリーダーシップと強い意志。全社員を率いる力強い内面エネルギー。"
       },
       "after_upper": {
-        "trigram": "乾",
+        "trigram": "離",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Externally, everything aligns for explosive growth — investors, market dominance, global expansion. The environment itself is propulsive, a乾 field of upward momentum."
+        "alternative": "乾",
+        "reasoning": "革新的プロダクトが市場を席巻。ビジョンの明確さが外部世界を照らし、投資家からの支持も得て輝かしい環境。"
       }
     },
     {
       "transition_id": "CALIBRATION_003",
       "before_lower": {
-        "trigram": "艮",
+        "trigram": "乾",
         "confidence": "medium",
-        "alternative": "坎",
-        "reasoning": "Both companies were stuck in a competitive deadlock — unable to advance alone. The inner state is艮: halted, the old pattern exhausted, needing a new way forward."
+        "alternative": "震",
+        "reasoning": "競合関係にあった両社。内面には対抗心と自社の強みへのプライドがあり、強い意志で競争していた。"
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "medium",
         "alternative": "震",
-        "reasoning": "The industry was undergoing painful structural transformation — the harsh external pressure of坎 that eroded the old competitive model and forced adaptation."
+        "reasoning": "業界の構造変化という困難な外部環境。成長痛として競争の限界が見え始めていた。"
       },
       "after_lower": {
         "trigram": "兌",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "After partnership, the inner state transforms into joyful openness — genuine delight in sharing, mutual benefit, the兌 quality of communication and exchange."
+        "reasoning": "対話を重ね、オープンな情報共有と対等な関係。内面は喜びと協調の精神で満たされている。"
       },
       "after_upper": {
-        "trigram": "巽",
+        "trigram": "兌",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "The external environment reflects gradual, organic growth through cooperation — a new ecosystem forming through gentle, adaptive change. 巽 as the wind of collaborative transformation spreading through the industry."
+        "alternative": "巽",
+        "reasoning": "業界全体に協調の機運が広がり、新たなエコシステム形成。外部環境は開放的で協力的な場になった。"
       }
     },
     {
       "transition_id": "CALIBRATION_004",
       "before_lower": {
-        "trigram": "坎",
+        "trigram": "離",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "Beneath the surface of society, corruption flows like hidden water — the坎 quality of concealed danger, structural rot invisible to most."
+        "alternative": "乾",
+        "reasoning": "調査報道記者の数年にわたる粘り強い取材。真実を照らし出そうとする明晰な洞察と使命感が内面を貫いている。"
       },
       "before_upper": {
-        "trigram": "艮",
+        "trigram": "坤",
         "confidence": "medium",
-        "alternative": "坤",
-        "reasoning": "Externally, society appeared stagnant and stuck — declining trust, suppressed truths, the艮 quality of immobility masking the rot beneath."
+        "alternative": "坎",
+        "reasoning": "沈滞・衰退の社会。癒着構造が隠蔽され、社会全体が受動的に不正を受け入れている停滞した環境。"
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "The reporter's investigation brings clarity and illumination — truth revealed, hidden structures exposed. 離 as the fire of revelation burning through deception."
+        "reasoning": "真相が明るみに出て市民の意識が覚醒。内面に明確な認識と気づきの火が灯る。"
       },
       "after_upper": {
         "trigram": "震",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The external impact is seismic — investigations launched, social movements erupting nationwide, consciousness awakened. A thunderclap of societal shock and transformation."
+        "reasoning": "報道がきっかけで社会に衝撃が走り、透明性を求める社会運動が全国に広がる。外部環境に激しい変動が起きた。"
       }
     },
     {
@@ -117,25 +117,25 @@
         "trigram": "坤",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "The mid-tier manufacturer is internally stable and receptive — no crisis, no ambition for disruption, just steady坤 ground of continued operation."
+        "reasoning": "安定した中堅メーカーの内面。受容的で大きな野心はなく、現状を維持する穏やかな姿勢。"
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "The external environment is calm and undramatic — gentle market shifts, no upheaval. A坤 field of quiet stability."
+        "reasoning": "市場環境は緩やかに変化している程度で、大きな波乱はない安定した外部環境。"
       },
       "after_lower": {
         "trigram": "巽",
         "confidence": "high",
         "alternative": "坤",
-        "reasoning": "Internally, the company adapts through small, incremental adjustments — portfolio review, efficiency gains, modest investments. 巽 as the gentle wind of gradual adaptation."
+        "reasoning": "段階的な見直しと小規模投資を継続。内面は柔軟に少しずつ適応していく巽の姿勢。"
       },
       "after_upper": {
-        "trigram": "坤",
+        "trigram": "巽",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "Externally, the company maintains its stable position — no dramatic change, sound finances, quiet presence. The坤 field of steady-state continuation."
+        "alternative": "坤",
+        "reasoning": "大きな成功も失敗もなく、緩やかな変化の中で存在感は薄れつつも健全。外部環境も漸進的。"
       }
     },
     {
@@ -144,79 +144,79 @@
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "Rama IX embodied sovereign authority for 70 years — the inner essence of the Thai monarchy at its peak is乾: divine will, absolute leadership, a celestial presence revered by the nation."
+        "reasoning": "ラーマ9世は70年在位し神のように敬愛される。王室の内面は絶対的な権威と強い自信に満ちた乾の頂点。"
       },
       "before_upper": {
-        "trigram": "離",
+        "trigram": "坤",
         "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The external perception was radiant — the king as a luminous, almost divine figure. 離 captures the brilliance and visibility of this reverence, the light of a beloved monarch."
+        "reasoning": "国民が従順に敬愛する安定した外部環境。王室への揺るぎない支持が社会の基盤だった。"
       },
       "after_lower": {
-        "trigram": "坎",
+        "trigram": "巽",
         "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "Under Rama X, the inner state of the monarchy is troubled — multiple divorces, long absences, criticism simmering beneath legal suppression. 坎 as hidden danger and instability within."
+        "alternative": "坎",
+        "reasoning": "ラーマ10世は複数の離婚やドイツ滞在など揺れ動く内面。先代ほどの確固たる意志はなく、風に流されるような不安定さ。"
       },
       "after_upper": {
         "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "Externally, lèse-majesté laws freeze public discourse — the monarchy maintains its form through suppression rather than genuine reverence. 艮 as the enforced stillness, the mountain blocking change while trust erodes."
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "不敬罪で議論が抑圧され、表面的には動きが止まっている外部環境。批判はあるが封じ込められ、硬直した状態。"
       }
     },
     {
       "transition_id": "FAM_JP_253",
       "before_lower": {
-        "trigram": "艮",
+        "trigram": "坎",
         "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "The couple's inner state is one of frustration and blockage — wanting a child but unable to conceive. 艮 as the painful stuckness, the body refusing to move toward what is desired."
+        "alternative": "艮",
+        "reasoning": "なかなか授からず不妊治療を開始。内面は苦しみ、焦り、300万円以上の費用と精神的負担に沈む困難の連続。"
       },
       "before_upper": {
-        "trigram": "坎",
+        "trigram": "艮",
         "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "The external journey of fertility treatment is harsh — escalating from artificial insemination to IVF, 3 million yen in costs, years of emotional strain. 坎 as the difficult waters they must navigate."
+        "alternative": "坎",
+        "reasoning": "停滞・閉塞の状況。望む結果が得られず、進展が壁に阻まれているような外部環境。"
       },
       "after_lower": {
         "trigram": "兌",
         "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "After 7 years, the arrival of a child transforms the inner state into pure joy — the兌 quality of happiness, fulfillment, and delight in family life with a 3-year-old."
+        "alternative": "離",
+        "reasoning": "7年かかって授かり、3歳の子供との幸せな生活。内面は深い喜びと充足感で満たされている。"
       },
       "after_upper": {
         "trigram": "坤",
         "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The external environment settles into nurturing stability — a family structure now complete, daily life grounded in care. 坤 as the receptive earth of new parenthood."
+        "reasoning": "安定した家庭生活が新たに形成された。子育ての日常という受容的で温かい外部環境。"
       }
     },
     {
       "transition_id": "COUN_JP_425",
       "before_lower": {
-        "trigram": "艮",
+        "trigram": "坎",
         "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "Ireland's inner state before transformation was blocked — historically stagnant, population hemorrhaging through emigration. 艮 as the mountain of economic immobility and cultural despair."
+        "alternative": "坤",
+        "reasoning": "停滞からEU加盟で急成長するもバブル崩壊で銀行危機、IMF支援に至る。内面は深い困難と苦闘の渦中。"
       },
       "before_upper": {
         "trigram": "坎",
-        "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "The external environment was harsh — limited opportunities, peripheral European economy, the坎 quality of difficulty and disadvantage."
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "2008年の世界金融危機がアイルランドを直撃。外部環境は荒波に翻弄される危機的状況。"
       },
       "after_lower": {
-        "trigram": "乾",
+        "trigram": "離",
         "confidence": "high",
-        "alternative": "離",
-        "reasoning": "Ireland's inner transformation is remarkable — strategic education investment, tech-sector cultivation, willful reinvention. 乾 as the creative force and ambition driving the Celtic Tiger and its post-crisis rebirth."
+        "alternative": "乾",
+        "reasoning": "教育投資とIT企業誘致という明確なビジョンで復活。戦略的な洞察力と先見性が内面を照らしている。"
       },
       "after_upper": {
-        "trigram": "兌",
-        "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "The external environment reflects openness and welcoming — EU integration, international companies flooding in, population reversal. 兌 as the joyful reception and exchange that fuels Ireland's success."
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "EU随一の成長国として力強く拡大。人口流出も逆転し、外部環境は躍動的で上昇している。"
       }
     },
     {
@@ -225,25 +225,25 @@
         "trigram": "乾",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "Even in post-war poverty with hand-sewn gloves and bamboo bats, the young Nagashima carried an inner fire of will and determination. 乾 as the indomitable spirit that drives someone from nothing to greatness."
+        "reasoning": "終戦直後の貧困から手縫いグラブで野球を始める。甲子園に届かなくても折れない強い意志と情熱が内面に燃えていた。"
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "坤",
-        "reasoning": "Post-war Japan was a harsh environment — devastation, scarcity, a country in rubble. 坎 as the difficult waters of the era, no high school tournament success, only 1 official home run."
+        "reasoning": "終戦直後の困窮した環境。物資もなく、甲子園出場も叶わない厳しい外部条件。"
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "Nagashima's inner state in his prime is pure乾 — dominant will, MVP 5 times, batting champion 6 times, the driving force of V9. 'Mr. Pro Baseball' embodies sovereign creative power."
+        "reasoning": "MVP5回、首位打者6回、国民栄誉賞、文化勲章。「ミスタープロ野球」としての圧倒的な意志と実力。"
       },
       "after_upper": {
         "trigram": "離",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Externally he became a national icon — National Honor Award, Order of Culture, a figure of radiant visibility. 離 as the brilliance of recognition, the light by which an entire sport was illuminated."
+        "alternative": "乾",
+        "reasoning": "国民から敬愛され、プロ野球の象徴として輝く。外部環境は栄光と名声に照らされた世界。"
       }
     },
     {
@@ -251,53 +251,53 @@
       "before_lower": {
         "trigram": "坎",
         "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "The wife's inner state is one of crisis — overwhelmed by unfair household burden despite dual-income reality. 坎 as the dangerous imbalance threatening to break the household."
+        "alternative": "震",
+        "reasoning": "妻が限界を迎えている状態。家事の偏りによるストレスと不満が内面に蓄積し、苦しみの中にある。"
       },
       "before_upper": {
-        "trigram": "艮",
+        "trigram": "乾",
         "confidence": "medium",
-        "alternative": "坤",
-        "reasoning": "The external household structure was stuck in an old pattern — traditional gendered expectations persisting despite modern work arrangements. 艮 as the immovable mountain of outdated norms."
+        "alternative": "艮",
+        "reasoning": "共働きという構造的な圧力と、家事分担が偏った旧来的な家庭環境。動かない力が支配する外部。"
       },
       "after_lower": {
         "trigram": "兌",
-        "confidence": "medium",
+        "confidence": "high",
         "alternative": "巽",
-        "reasoning": "After the conversation and restructuring, the family achieves a state of open communication and shared joy — husband cooking, children participating. 兌 as the pleasure of fairness and connection."
+        "reasoning": "話し合いの結果、フェアな分担が実現。夫も料理、子供も参加する開放的で喜びある内面状態。"
       },
       "after_upper": {
         "trigram": "巽",
         "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "The external household culture adapts to a new model — 'nobody dumps on anyone else' becomes the guiding wind. 巽 as the gentle, persistent change that reshapes family dynamics."
+        "alternative": "兌",
+        "reasoning": "「誰かに押し付けない」文化が家庭に定着。柔軟で適応的な新しい家庭環境が自然に浸透した。"
       }
     },
     {
       "transition_id": "OTHR_JP_291",
       "before_lower": {
         "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "Kitakyushu's inner state was stagnation — an industrial city whose old identity as a steel town had become a mountain of immobility. 艮 as the stuck quality of a city that had lost its economic engine."
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "工業都市として停滞。過去のアイデンティティに縛られ、内面は立ち止まった反省的な状態。"
       },
       "before_upper": {
-        "trigram": "坤",
+        "trigram": "坎",
         "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The external environment was quiet decline — no dramatic crisis, just the slow erosion of relevance. 坤 as the flat, undifferentiated landscape of a forgotten industrial zone."
+        "reasoning": "閉塞した外部環境。かつての工業都市の衰退イメージに覆われた困難な状況。"
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
         "alternative": "乾",
-        "reasoning": "The city's inner transformation is one of vision — SDGs, environmental technology, circular economy as a new identity. 離 as the clarity of a new self-image, a bright vision illuminating the path forward."
+        "reasoning": "SDGs未来都市としてのビジョンとブランド転換。明るいイメージで若者を呼び込む明確な先見性。"
       },
       "after_upper": {
         "trigram": "兌",
-        "confidence": "high",
-        "alternative": "離",
-        "reasoning": "Externally, the city becomes welcoming — international attention, investment flowing in, young people attracted. 兌 as the joyful openness and reception that accompanies successful rebranding."
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "国際評価を受け、視察・投資が増加。明るく開放的な外部環境が形成されている。"
       }
     },
     {
@@ -306,25 +306,25 @@
         "trigram": "坎",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "The US economy's inner state was one of systemic danger — subprime rot had hollowed out the financial system. 坎 as the hidden perilous water that finally burst through."
+        "reasoning": "サブプライム危機とリーマン破綻で深刻な不況。内面は危機感と混乱に満ちた状態。"
       },
       "before_upper": {
         "trigram": "震",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "The Lehman collapse was a seismic shock to the global system — 震 as the thunderbolt that shattered confidence and triggered cascading failures worldwide."
+        "reasoning": "金融危機が突然発生し世界に衝撃波が走った。外部環境は激しい震動と混乱のカオス。"
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "The US response embodied decisive will — the Fed's quantitative easing, auto industry bailouts, forceful intervention. 乾 as the sovereign creative power exercised to restart the economic engine."
+        "alternative": "離",
+        "reasoning": "FRBの量的緩和と大規模な公的支援という決断力のある対応。強い意志での迅速な行動。"
       },
       "after_upper": {
         "trigram": "巽",
         "confidence": "medium",
         "alternative": "乾",
-        "reasoning": "The external recovery was not instantaneous but gradual — policy working its way through the system, confidence slowly rebuilding. 巽 as the adaptive, penetrating wind of recovery spreading through the economy."
+        "reasoning": "景気回復軌道に乗せた。急激ではなく比較的早期に段階的に回復した外部環境。"
       }
     },
     {
@@ -332,26 +332,26 @@
       "before_lower": {
         "trigram": "乾",
         "confidence": "high",
-        "alternative": "離",
-        "reasoning": "AirAsia at its peak embodied ambitious expansion — LCC pioneer, super-app dreams, aggressive growth across Southeast Asia. 乾 as the driving will and ambition of a company at its zenith."
+        "alternative": "兌",
+        "reasoning": "LCCのパイオニアとして急成長、スーパーアプリ構想まで描く。内面は野心と拡大意欲に溢れた絶頂期。"
       },
       "before_upper": {
-        "trigram": "兌",
-        "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "The external environment was welcoming — booming travel demand, growth markets, investor enthusiasm. 兌 as the joyful openness of a market eager for low-cost travel."
-      },
-      "after_lower": {
-        "trigram": "巽",
-        "confidence": "medium",
-        "alternative": "坤",
-        "reasoning": "After near-death during COVID, the internal state becomes adaptive — scaling back super-app ambitions, restructuring debt, accepting a smaller but viable identity. 巽 as the flexibility of bending rather than breaking."
-      },
-      "after_upper": {
         "trigram": "乾",
         "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The external environment rebounds — travel demand recovers, airlines needed again. 乾 as the upward momentum of a recovering industry lifting the company back to health."
+        "reasoning": "東南アジアの急成長市場が追い風。外部環境も力強い拡大基調だった。"
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "スーパーアプリ構想は縮小し、債務再編で身の丈に合った経営に適応。内面は柔軟に縮小を受け入れた。"
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "航空需要回復で業績改善。政府支援を受けつつ徐々に回復する漸進的な外部環境。"
       }
     },
     {
@@ -360,25 +360,25 @@
         "trigram": "坤",
         "confidence": "high",
         "alternative": "兌",
-        "reasoning": "The family's inner state before the crisis was one of quiet stability — settled lives in Tokyo and the countryside respectively. 坤 as the receptive, peaceful earth of an undisturbed family equilibrium."
+        "reasoning": "安定・平和な状態。親のことは気にしつつも穏やかな日常を送っていた受容的な内面。"
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "The external environment was calm — no disruption, routine life, the坤 field of normalcy before illness strikes."
+        "reasoning": "東京での生活は安定。特に波乱のない穏やかな外部環境だった。"
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "The inner state becomes one of ongoing difficulty — the strain of long-distance caregiving, balancing work and parental needs over 5 years. 坎 as the deep water of sustained hardship and emotional burden."
+        "reasoning": "遠距離介護と仕事の両立に苦労する5年間。内面は困難と忍耐の連続。"
       },
       "after_upper": {
         "trigram": "艮",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "The external structure constrains — monthly visits, monitoring services, support center coordination. 艮 as the mountain of limitations that must be navigated, the situation that cannot be fully resolved."
+        "alternative": "坎",
+        "reasoning": "見守りサービスや支援センターを活用しつつも制約が多い。立ち止まりながら維持する縮小安定の外部環境。"
       }
     },
     {
@@ -387,25 +387,25 @@
         "trigram": "坤",
         "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "Before YouTube, the IT executive was in a stable, grounded state — running a business competently but not yet channeling creative energy outward. 坤 as the receptive ground from which a new venture would grow."
+        "reasoning": "IT企業経営者として安定した日常。YouTubeは副業的な位置づけで、まだ大きな野心は顕在化していない受容的な内面。"
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "The external environment was calm — a side project beginning, no pressure, no urgency. 坤 as the peaceful field before the seed sprouts."
+        "alternative": "巽",
+        "reasoning": "安定・平和な外部環境。既にIT企業を経営しており、特に危機も高揚もない平穏な状況。"
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
         "alternative": "乾",
-        "reasoning": "The creator becomes a figure of clarity and vision — 'financial literacy' as a mission, books selling millions, a community built on illumination. 離 as the fire of teaching, revealing knowledge to the masses."
+        "reasoning": "「お金の教養」という明確なビジョンで250万人超を啓発。知識を照らし教える使命感に満ちた内面。"
       },
       "after_upper": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "兌",
-        "reasoning": "The external success is explosive — 2.5 million subscribers, million-selling book, education empire. 乾 as the powerful upward growth and expansion into a dominant position."
+        "reasoning": "100万部突破、オンラインコミュニティ運営と教育事業の急拡大。外部環境は力強い成長と拡張。"
       }
     },
     {
@@ -414,25 +414,25 @@
         "trigram": "艮",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "East Germany's inner state was one of enforced immobility — the Stasi surveillance state freezing all movement, the Berlin Wall as literal艮: a mountain blocking escape, citizens trapped in stasis."
+        "reasoning": "シュタージによる監視社会と壁による封鎖。国家の内面は硬直し、動きを止めた抑圧的な状態。"
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "The external environment was harsh — economic failure compared to the West, ideological rigidity, the坎 quality of a system drowning in its own contradictions."
+        "reasoning": "経済は西に大敗し、閉塞した外部環境。壁に囲まれた困難な状況。"
       },
       "after_lower": {
         "trigram": "震",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "The internal state erupts — citizens fleeing through Hungary, mass demonstrations, the震 of pent-up desire for freedom finally exploding."
+        "reasoning": "ハンガリー経由の脱出が雪崩を打ち、壁崩壊。内面から突如として爆発的なエネルギーが解放された。"
       },
       "after_upper": {
         "trigram": "震",
         "confidence": "high",
-        "alternative": "離",
-        "reasoning": "The external collapse is total — the Wall falls, the state dissolves, an entire nation vanishes. 震 as the ultimate shock that demolishes the old structure completely."
+        "alternative": "坎",
+        "reasoning": "国家が消滅するという衝撃的な外部変動。壁崩壊は外部世界に激震をもたらした。"
       }
     },
     {
@@ -441,106 +441,106 @@
         "trigram": "巽",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "The organization had been excessively adaptive — bending to every wind, changing too much. 巽 in its shadow form: adaptation without center, flexibility becoming chaos."
+        "reasoning": "柔軟に変化に対応していたが適応しすぎた。内面は風に吹かれるままに方向を変え続けた巽の過剰。"
       },
       "before_upper": {
         "trigram": "震",
         "confidence": "medium",
         "alternative": "坎",
-        "reasoning": "The external environment was turbulent and disorienting — constant disruptions that the company kept reacting to without strategic coherence. 震 as the ongoing shocks driving chaotic responses."
+        "reasoning": "混乱・カオスの外部環境。次々と変化が押し寄せ、振り回される激しい状況。"
       },
       "after_lower": {
         "trigram": "艮",
         "confidence": "high",
         "alternative": "坤",
-        "reasoning": "The organization deliberately pauses — stopping to find its identity again. 艮 as the conscious halt, the mountain of stillness needed to recover a sense of self."
+        "reasoning": "立て直しのため一時停止。内面は意識的に止まり、反省と再構築を選んだ。"
       },
       "after_upper": {
-        "trigram": "坤",
-        "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "The external posture becomes minimal — reduced operations, quiet stabilization, no more reactive adaptation. 坤 as the receptive ground from which a new direction might eventually emerge."
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "縮小安定の外部環境。動きを止め、これ以上の混乱を防ぐ壁のような環境を作った。"
       }
     },
     {
       "transition_id": "PERS_JP_1164",
       "before_lower": {
-        "trigram": "乾",
+        "trigram": "兌",
         "confidence": "medium",
-        "alternative": "離",
-        "reasoning": "The influencer at 500K followers was riding high — self-assured, perhaps overconfident. 乾 as the sense of personal power and dominance in their domain."
+        "alternative": "乾",
+        "reasoning": "50万人のフォロワーを持つインフルエンサー。開放的で表現を楽しむ内面。不用意な発言も兌の過剰な開放性から。"
       },
       "before_upper": {
-        "trigram": "離",
-        "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Maximum visibility — a public figure in the spotlight, corporate deals, social media attention. 離 as the brightness of fame and exposure."
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "絶頂期の外部環境。ファンとの交流、企業案件に恵まれた華やかさの世界。"
       },
       "after_lower": {
         "trigram": "艮",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "Six months of silence — a forced pause, withdrawal from public life, the艮 quality of stopping and sitting with the consequences."
+        "reasoning": "半年間の沈黙。内面は深い反省と立ち止まりの時期。意図的に動きを止めている。"
       },
       "after_upper": {
         "trigram": "坎",
-        "confidence": "medium",
+        "confidence": "high",
         "alternative": "艮",
-        "reasoning": "The external environment is hostile — cancellations, income loss, public backlash. 坎 as the harsh waters of consequences, navigating a damaged reputation."
+        "reasoning": "炎上により企業案件全キャンセル、収入激減。外部環境は厳しく困難に満ちている。"
       }
     },
     {
       "transition_id": "OTHR_JP_830",
       "before_lower": {
-        "trigram": "乾",
-        "confidence": "medium",
-        "alternative": "離",
-        "reasoning": "The Hong Kong activists carried fierce inner conviction — fighting for democracy despite overwhelming odds. 乾 as the indomitable will and moral courage that drove their resistance."
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "民主派活動家たちの信念と理想。自由と民主主義への明確なビジョンが内面を照らしていた。"
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "The National Security Law created a brutally dangerous environment — arrest, persecution, freedom crushed. 坎 as the deep perilous waters of authoritarian crackdown."
+        "alternative": "艮",
+        "reasoning": "国家安全法施行、どん底の危機的外部環境。弾圧と抑圧が活動家を追い詰めている。"
       },
       "after_lower": {
-        "trigram": "巽",
+        "trigram": "坎",
         "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "In exile, the activists adapt — like wounded birds finding new perches, they continue their work from abroad. 巽 as the wind that bends and finds new paths when the direct route is blocked."
+        "alternative": "巽",
+        "reasoning": "傷ついた鳥のように故郷を離れる。内面は痛みと喪失感を抱えながらも生き延びようとしている。"
       },
       "after_upper": {
-        "trigram": "艮",
+        "trigram": "巽",
         "confidence": "medium",
-        "alternative": "坤",
-        "reasoning": "The external situation is one of constrained stability — exile offers safety but separation from homeland, limited reach. 艮 as the mountain between them and home, a stable but restricted existence."
+        "alternative": "坎",
+        "reasoning": "英国やカナダなど海外で活動を続ける。異国の地で風に乗り適応しながら新たな拠点を探す外部環境。"
       }
     },
     {
       "transition_id": "CORP_JP_4564",
       "before_lower": {
         "trigram": "坤",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "Calbee's Jagarico brand was in a state of stable, grounded production — a successful product but running on conventional development cycles. 坤 as the receptive earth of established operation."
+        "reasoning": "安定した大手菓子メーカーとしての内面。受容的で堅実、既存の製品開発プロセスを維持していた。"
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "The external market was steady — snack food industry humming along without disruption. 坤 as the calm, stable field before innovation."
+        "reasoning": "安定した菓子市場。特に危機もなく穏やかな外部環境。"
       },
       "after_lower": {
         "trigram": "兌",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The fan community 'Jagariko School' creates a joyful inner dynamic — customers as 'students' testing products, delightful co-creation. 兌 as the pleasure and openness of collaborative exchange."
+        "reasoning": "ファン参加型の商品開発モデル。「生徒」との対話と交流を通じた開放的で喜びに満ちた内面。"
       },
       "after_upper": {
-        "trigram": "離",
-        "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "The external result is one of clarity and visibility — a model case of fan-driven development, recognition as an innovation leader. 離 as the illumination of a successful new paradigm."
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "ファンコミュニティとの共創が外部環境を形成。開かれた協力関係と交流の場。"
       }
     },
     {
@@ -549,25 +549,25 @@
         "trigram": "坤",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "Hakone's inner nature was grounded and receptive — hot springs as a natural gift, a place of healing and rest from the Edo period. 坤 as the earth's nurturing warmth."
+        "reasoning": "江戸時代からの湯治場。長い歴史に根ざした受容的で安定した内面。土地の恵みを受け入れる坤の性質。"
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "The external environment was stable — a well-established post-town on the Tokaido, generations of travelers, steady and predictable. 坤 as the broad, stable road of tradition."
+        "alternative": "巽",
+        "reasoning": "東海道の宿場町として安定した外部環境。自然の恵みが豊かな穏やかな土地柄。"
       },
       "after_lower": {
         "trigram": "離",
-        "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "Hakone developed a clear vision — combining Mt. Fuji and hot springs into a compelling brand, attracting international visitors. 離 as the radiant appeal and clarity of identity."
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "富士山と温泉を組み合わせた魅力。明確なブランドビジョンが内面から輝きを放っている。"
       },
       "after_upper": {
         "trigram": "乾",
         "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The external growth is powerful — 20 million visitors annually, one of Japan's top resort destinations, continuous expansion. 乾 as the upward momentum and dominant market position."
+        "reasoning": "年間2,000万人以上が訪れる日本屈指の温泉リゾート。力強い成長と拡大を続ける外部環境。"
       }
     },
     {
@@ -576,52 +576,52 @@
         "trigram": "艮",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "Sharp was stuck — unable to let go of its LCD business, paralyzed by attachment to its core identity. 艮 as the mountain of immobility, the fatal inability to retreat when retreat was essential."
+        "reasoning": "撤退判断が遅れた。退くべき時に退けなかった固着した内面。液晶事業への執着が動きを止めた艮の負の側面。"
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "The market environment was punishing — competitors advancing, prices collapsing, losses mounting. 坎 as the dangerous waters closing in around a company that refused to swim to shore."
+        "reasoning": "液晶市場の競争激化と経営危機。外部環境は困難に満ちたどん底。"
       },
       "after_lower": {
         "trigram": "坤",
         "confidence": "medium",
         "alternative": "坎",
-        "reasoning": "After Foxconn acquisition, Sharp's inner identity is dissolved — no longer an independent entity, absorbed into another company's structure. 坤 as the passive receptivity of being subsumed."
+        "reasoning": "鴻海に買収され、自主性を喪失。内面は受動的に他者に委ねるしかない状態に変質。"
       },
       "after_upper": {
-        "trigram": "乾",
+        "trigram": "震",
         "confidence": "medium",
-        "alternative": "震",
-        "reasoning": "Foxconn (Hon Hai) exerts dominant external control — a powerful acquirer reshaping Sharp's destiny. 乾 as the forceful will of the new owner imposed on the absorbed company."
+        "alternative": "坎",
+        "reasoning": "買収という衝撃的な外部変動。日本の名門企業が外資に渡るという激震。"
       }
     },
     {
       "transition_id": "OTHR_JP_833",
       "before_lower": {
         "trigram": "乾",
-        "confidence": "high",
-        "alternative": "離",
-        "reasoning": "The Beatles at their peak embodied unprecedented creative power — the most successful musical partnership in history. 乾 as the supreme creative force driving an era of innovation."
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "音楽史上最も成功したバンド。各メンバーの強い個性と創造力。リーダーシップの衝突を含む乾の意志が4人分ぶつかり合う。"
       },
       "before_upper": {
         "trigram": "離",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Maximum global visibility and brilliance — the most famous band on earth, cultural icons. 離 as the dazzling light of their fame illuminating the world."
+        "alternative": "乾",
+        "reasoning": "絶頂期の輝かしい外部環境。世界中から愛される音楽の輝き。最高の名声と可視性。"
       },
       "after_lower": {
         "trigram": "震",
         "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "McCartney's departure announcement was an internal shock — the partnership shattered, the creative engine broken. 震 as the disruptive force that split the unit apart."
+        "reasoning": "ポールの脱退表明という衝撃。パートナーシップの突然の断裂が内面に走った激震。"
       },
       "after_upper": {
-        "trigram": "艮",
+        "trigram": "坎",
         "confidence": "medium",
-        "alternative": "坤",
-        "reasoning": "The external result is termination — the partnership stops, the entity ceases to exist. 艮 as the final stop, the mountain of ending that cannot be moved past."
+        "alternative": "震",
+        "reasoning": "最も成功したパートナーシップの終焉。外部環境は喪失と困難に変わった。"
       }
     },
     {
@@ -630,25 +630,25 @@
         "trigram": "坤",
         "confidence": "medium",
         "alternative": "乾",
-        "reasoning": "Toyota's inner state was one of stable, grounded strength — the world's largest automaker operating from a secure foundation. 坤 as the vast, receptive earth of accumulated capability."
+        "reasoning": "安定・平和な大企業としての内面。トヨタの堅実で受容的な経営基盤。"
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "The external automotive industry was in steady state — established patterns of production and sales. 坤 as the broad, stable ground of the traditional auto market."
+        "reasoning": "自動車産業の安定した外部環境。大きな変動のない穏やかな市場。"
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
         "alternative": "乾",
-        "reasoning": "Woven City represents a bold vision — robotics, AI, autonomous driving integrated into a living laboratory. 離 as the fire of visionary clarity, illuminating a future that others cannot yet see."
+        "reasoning": "未来型都市のビジョン。ロボット工学、AI、自動運転を統合する明確で革新的な洞察。先を照らす火。"
       },
       "after_upper": {
         "trigram": "乾",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "離",
-        "reasoning": "The external scale is ambitious and powerful — building an entire city, pursuing technology innovation at the societal level. 乾 as the creative force and will to reshape the future of mobility and urban life."
+        "reasoning": "社会全体への恵みを追求する壮大な外部展開。技術革新と価値創造の力強い拡張。"
       }
     },
     {
@@ -656,26 +656,26 @@
       "before_lower": {
         "trigram": "乾",
         "confidence": "high",
-        "alternative": "離",
-        "reasoning": "FTX's inner state was pure ambition — $32 billion valuation, aggressive expansion, using its own token as collateral. 乾 as the unchecked drive for dominance that became hubris."
+        "alternative": "兌",
+        "reasoning": "企業価値320億ドル、過剰な資金調達と拡大投資。内面は止まらない拡張意欲と慢心に支配されていた。"
       },
       "before_upper": {
-        "trigram": "兌",
+        "trigram": "乾",
         "confidence": "medium",
-        "alternative": "離",
-        "reasoning": "The external environment was welcoming — crypto enthusiasm, investor excitement, a market eager to believe. 兌 as the joyful, almost giddy reception that fueled FTX's growth."
+        "alternative": "兌",
+        "reasoning": "暗号資産市場の急成長で追い風。外部環境も力強い拡大基調に見えていた。"
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "The inner state collapses into existential crisis — a bank run reveals hollow foundations, the entire structure implodes. 坎 as the terrifying depths of financial ruin."
+        "reasoning": "信用不安から取り付け騒ぎ、破綻。内面は全てが崩れ落ちる危機と絶望。"
       },
       "after_upper": {
         "trigram": "震",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "The external shockwave is devastating — trust shattered across the crypto industry, regulatory fury, criminal charges. 震 as the thunderclap of a spectacular public collapse."
+        "reasoning": "蓄積の限界を超えた突然の崩壊。外部環境に走った衝撃波。"
       }
     },
     {
@@ -684,25 +684,25 @@
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "GE at its peak was the embodiment of corporate power — world's largest market cap, a conglomerate spanning every sector. 乾 as the supreme will and ambition of a company that believed it could dominate everything."
+        "reasoning": "世界最大の時価総額を誇ったGE。内面は絶対的な自信とコングロマリット戦略への確信に満ちていた。"
       },
       "before_upper": {
-        "trigram": "離",
-        "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "GE was one of the most visible companies in the world — Dow Jones stalwart, a beacon of American capitalism. 離 as the brilliance and visibility of a universally recognized brand."
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "世界のトップに君臨する絶頂の外部環境。圧倒的な存在感と力。"
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "Financial losses devoured the company from within — GE Capital's toxic exposure, strategic failure across divisions. 坎 as the dangerous waters flooding the internal structure."
+        "alternative": "坤",
+        "reasoning": "金融事業の損失と戦略の失敗。株価90%下落の中、内面は深い困難と崩壊感。"
       },
       "after_upper": {
-        "trigram": "震",
+        "trigram": "坎",
         "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "Removal from the Dow after over a century, stock price down 90% — the external shock of a corporate titan's fall. 震 as the thunderclap that announced the end of an era."
+        "alternative": "震",
+        "reasoning": "ダウ平均から除外という象徴的な転落。外部環境は厳しい現実を突きつけている。"
       }
     },
     {
@@ -710,107 +710,107 @@
       "before_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "Chernobyl was the ultimate internal crisis — a nuclear reactor in meltdown, radiation spewing, the坎 of catastrophic hidden danger made real."
+        "alternative": "艮",
+        "reasoning": "チェルノブイリ事故発生と隠蔽を図るソ連政府。内面は深刻な危機と秘密主義の苦悩に満ちている。"
       },
       "before_upper": {
         "trigram": "震",
         "confidence": "high",
         "alternative": "坎",
-        "reasoning": "The accident was a shock to the entire Soviet system — chaos, international panic, radioactive fallout crossing borders. 震 as the seismic disruption that shook the foundations of a superpower."
+        "reasoning": "原発事故という衝撃的な外部事象。放射性物質の拡散と国際的非難のカオス。"
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "Gorbachev's response was an act of revelation — 'dispersing sweat through a great proclamation,' choosing transparency over concealment. 離 as the fire of truth-telling that burned away secrecy."
+        "alternative": "震",
+        "reasoning": "ゴルバチョフが危機を公表し情報公開に踏み切る。隠蔽から透明性へ、内面に明確な認識の光が灯った。"
       },
       "after_upper": {
         "trigram": "巽",
-        "confidence": "high",
-        "alternative": "離",
-        "reasoning": "Glasnost as policy became a wind of gradual transformation — information openness spreading through Soviet society, changing the system from within. 巽 as the penetrating wind of reform that would ultimately reshape the empire."
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "グラスノスチ政策の転換点。体制変革への漸進的な変化が外部環境に浸透していく。"
       }
     },
     {
       "transition_id": "HEX13_YAO6_001",
       "before_lower": {
         "trigram": "坤",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "Keidanren's inner nature is inherently receptive and stable — a coordinating body that serves rather than disrupts, gathering and harmonizing. 坤 as the broad, accommodating earth that supports all industries."
+        "reasoning": "経団連の安定した内面。業界横断的な受容的姿勢で、各企業の意見を受け止める坤の性質。"
       },
       "before_upper": {
         "trigram": "坤",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "The external environment is one of calm stability — established institutional relationships, policy advocacy within known channels. 坤 as the steady, predictable field of Japanese institutional life."
+        "reasoning": "日本経済全体の安定した外部環境。大きな波乱のない平穏な経済基盤。"
       },
       "after_lower": {
         "trigram": "兌",
         "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "Keidanren maintains a quality of open communication and exchange — policy proposals, cross-industry dialogue, the兌 quality of harmonious exchange beyond direct self-interest."
+        "reasoning": "直接的な利害を超えた緩やかな連携。業界を超えた対話と協力の精神が内面にある。"
       },
       "after_upper": {
         "trigram": "巽",
         "confidence": "medium",
         "alternative": "坤",
-        "reasoning": "The external impact is one of gentle, persistent influence — not dramatic change but the巽 quality of wind gradually shaping the economic landscape through soft coordination."
+        "reasoning": "広範な協力関係の維持。郊外での緩やかな同人関係のように、穏やかに浸透する外部環境。"
       }
     },
     {
       "transition_id": "OTHR_JP_955",
       "before_lower": {
-        "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "Sleep science was stuck — poorly understood, dismissed as passive inactivity. 艮 as the mountain of ignorance blocking recognition of sleep's importance."
-      },
-      "before_upper": {
-        "trigram": "坤",
+        "trigram": "坎",
         "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The external environment offered no momentum — sleep was taken for granted, no industry, no research priority. 坤 as the flat, unremarkable landscape of public indifference."
+        "reasoning": "睡眠の重要性が認識されていない停滞期。無理解と無関心の中で研究者たちが苦闘していた内面。"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "睡眠軽視の社会。進展が阻まれ、壁に囲まれたような閉塞した外部環境。"
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
         "alternative": "乾",
-        "reasoning": "Scientific discoveries illuminated sleep's true nature — REM sleep, sleep apnea, sleep debt. 離 as the fire of revelation, each discovery casting light on what had been hidden in darkness."
+        "reasoning": "REM睡眠発見から科学的解明へ。「睡眠は投資」という認識の覚醒。知の光が内面から広がる。"
       },
       "after_upper": {
         "trigram": "乾",
         "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The external result is powerful growth — 'sleep as investment' becoming mainstream, SleepTech industry booming. 乾 as the upward force of a new field ascending rapidly."
+        "reasoning": "スリープテック産業の成長。睡眠負債概念の普及で市場が力強く拡大する外部環境。"
       }
     },
     {
       "transition_id": "PERS_JP_2793",
       "before_lower": {
-        "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "A 26-year-old salesperson felt stuck — career stagnation, no technical skills, sensing a dead end. 艮 as the mountain of professional immobility and unfulfilled potential."
-      },
-      "before_upper": {
-        "trigram": "坤",
+        "trigram": "坎",
         "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The external environment was stable but uninspiring — a conventional sales job with limited upward trajectory. 坤 as the flat ground offering no elevation."
+        "reasoning": "営業職26歳が現状に行き詰まり感を抱えている。停滞した内面には不満と閉塞感。"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "営業職という固定された環境。成長の壁に直面した閉塞的な外部状況。"
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The transformation is driven by fierce inner will — learning Rails, going freelance, building a SaaS product, raising seed funding. 乾 as the relentless creative force turning a complete career around."
+        "reasoning": "6ヶ月でフリーランス転職、自身のSaaS開発、シードラウンド調達。強い意志と実行力で人生を切り拓いた内面。"
       },
       "after_upper": {
-        "trigram": "乾",
-        "confidence": "high",
-        "alternative": "離",
-        "reasoning": "External success accelerates powerfully — 650K monthly freelance rate, MRR surpassing 1M yen, 50M seed round. 乾 as the expansive growth of a new enterprise gaining momentum."
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "MRR100万円突破、5000万円調達。新しいキャリアが明確なビジョンとともに輝きを放つ外部環境。"
       }
     }
   ]
