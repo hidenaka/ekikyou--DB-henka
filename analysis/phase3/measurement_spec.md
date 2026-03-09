@@ -1,293 +1,408 @@
-# Measurement Specification: Transition Graph G_obs
+# Phase 3 Measurement Specification
 
-**Document**: `analysis/phase3/measurement_spec.md`
-**Created**: 2026-03-09
-**Purpose**: Fix the measurement instrument definition before running Phase 3 isomorphism tests (Step 0 of phase3_v4_action_plan.md)
+**Version**: 1.0
+**Date**: 2026-03-09
+**Status**: DRAFT — to be frozen before any Phase 3 test execution
+**Prerequisite for**: Step 1 (Gold Set), Step 2 (Labeler), Step 3 (Graph), Step 4 (Tests)
 
 ---
 
 ## 1. Label Definition
 
-Each case receives exactly **one** hexagram for the before-state and **one** for the after-state.
+### 1.1 State Encoding
 
-- **Hexagram** = (lower_trigram, upper_trigram), where each trigram is drawn from {乾, 坤, 震, 巽, 坎, 離, 艮, 兌}.
-- **Lower trigram** = internal/foundational driver of the state.
-- **Upper trigram** = external/visible manifestation of the state.
-- **Encoding**: Each trigram maps to a 3-bit vector (see `TRIGRAM_BITS` in `isomorphism_test.py`). A hexagram is therefore a 6-bit vector: `lower_3bit + upper_3bit`.
-- **King Wen ordering**: Hexagrams are numbered 1--64 following the traditional King Wen sequence. The mapping from (lower, upper) trigram pairs to King Wen numbers is defined by the reference file `data/reference/iching_texts_ctext_legge_ja.json`.
+Each case has two states: **before** and **after**.
+Each state is encoded as a single hexagram from the 64-hexagram system.
 
-### Single-label assumption
+A hexagram = (lower_trigram, upper_trigram), where each trigram is one of:
 
-The current schema assigns exactly one hexagram per state per case. Whether this single-label assumption is valid (i.e., whether the mapping from real-world state descriptions to hexagrams is sufficiently deterministic) is an open empirical question. Step 0-A of the action plan calls for validation via dual-annotation agreement analysis. If agreement is low, the model must shift to a probabilistic (multi-label or distribution-over-hexagrams) graph.
+| Trigram | Binary | Meaning |
+|---------|--------|---------|
+| 乾 | 111 | Heaven |
+| 兌 | 110 | Lake |
+| 離 | 101 | Fire |
+| 震 | 100 | Thunder |
+| 巽 | 011 | Wind |
+| 坎 | 010 | Water |
+| 艮 | 001 | Mountain |
+| 坤 | 000 | Earth |
 
-### Field resolution
+A hexagram is therefore a 6-bit vector in (Z_2)^6 = {lower_bit2, lower_bit1, lower_bit0, upper_bit2, upper_bit1, upper_bit0}.
 
-The fields `classical_before_hexagram` and `classical_after_hexagram` in `cases.jsonl` use two formats:
-1. `"NUMBER_NAME"` (e.g., `"52_艮"`) -- resolved by parsing the integer prefix.
-2. Hexagram name (e.g., `"艮為山"`, `"地雷復"`) -- resolved by lookup against `local_name` in the reference file.
-3. Variant characters (e.g., `遁→遯`, `無妄→无妄`) are handled by fallback mapping.
+### 1.2 Assignment Rule
+
+- **Single-label**: Each state receives exactly one hexagram assignment.
+- No multi-label, no probability distributions, no "top-k" lists.
+- Source fields: `before_lower_trigram` + `before_upper_trigram` -> before hexagram; `after_lower_trigram` + `after_upper_trigram` -> after hexagram.
+- The legacy `before_hex` / `after_hex` fields (single trigram) are NOT used for Phase 3. These encode trigram-level labels only and were the source of the pure hexagram collapse (98.2%).
+
+### 1.3 Hexagram Numbering
+
+King Wen sequence (1-64). The mapping from (lower, upper) trigram pair to King Wen number is fixed and defined in `data/reference/iching_texts_ctext_legge_ja.json`.
 
 ---
 
 ## 2. Transition Definition
 
-- A **transition** is a directed edge from `classical_before_hexagram` to `classical_after_hexagram` within the same case.
-- **Self-loops** (before == after) are included. Currently 11 unique self-loop edges exist.
-- Each case contributes exactly **one** edge.
-- Edges are **weighted by count**: if N cases produce the same (before, after) pair, the edge weight is N.
-- Cases where either hexagram field cannot be resolved are **excluded** from graph construction.
+### 2.1 What Constitutes a Transition
 
-### What a transition represents
+A transition is a directed pair:
 
-A transition represents an observed state change in a real-world entity (company, person, nation, family, etc.). The before-hexagram captures the initial condition; the after-hexagram captures the resulting condition. The transition is not a prediction; it is a post-hoc annotation of an observed change.
+```
+(before_hexagram, after_hexagram)
+```
+
+where both hexagrams are derived from the same case record.
+
+### 2.2 Scope
+
+- **Within-case only**: A transition connects the before-state and after-state of a single case.
+- **Not time-series**: Transitions across different cases (e.g., "case A's after -> case B's before") are not considered.
+- Each case contributes exactly 0 or 1 transition (0 if excluded per Section 5).
+
+### 2.3 Transition Identity
+
+Two transitions are the **same type** if and only if they share the same (before_hexagram_number, after_hexagram_number) pair. The transition (11 -> 13) from case X and the transition (11 -> 13) from case Y are counted as two instances of the same transition type.
 
 ---
 
 ## 3. Graph Construction Specification
 
-**G_obs** is a directed, weighted graph on 64 nodes.
+### 3.1 Node Set
 
-| Property | Specification |
-|----------|--------------|
-| Node set | Fixed at {1, 2, ..., 64} (all King Wen hexagrams), regardless of data coverage |
-| Edge (u, v, w) | Exists if at least 1 case transitions from hexagram u to hexagram v; w = count of such cases |
-| Edge filtering | None. All observed transitions are included (no minimum weight threshold) |
-| Self-loops | Included |
-| Isolated nodes | Retained in the graph but flagged as zero-frequency |
-| Directionality | Preserved. Edge (u→v) and edge (v→u) are distinct |
+- **64 nodes**, one per hexagram (King Wen 1-64).
+- All 64 nodes are always present in the graph, including those with zero frequency.
+- Node attribute: `total_frequency` = count as before + count as after (across all valid cases).
 
-### Derived graphs
+### 3.2 Edge Set
 
-- **G_obs_undirected**: The undirected version of G_obs, obtained by ignoring edge direction and summing weights for (u,v) and (v,u). Used for Tests A, C, E.
-- **Q6**: The 6-dimensional hypercube graph on the same 64 nodes, with edges between all pairs at Hamming distance 1 in the 6-bit encoding. Q6 has exactly 192 edges and is 6-regular.
+- **Directed edges**: An edge from node A to node B exists if at least one case has before_hexagram=A and after_hexagram=B.
+- **Edge weight** = number of cases with that specific (before, after) pair.
+- Maximum possible edges: 64 x 64 = 4,096 (including self-loops).
 
----
+### 3.3 Self-Loops
 
-## 4. Acceptance Criteria
+- **Included**. A case where before_hexagram = after_hexagram creates a self-loop.
+- Self-loops are counted in degree calculations (both in-degree and out-degree).
 
-For Phase 3 isomorphism tests to produce valid results, the following minimum data quality conditions must be met:
+### 3.4 Edge Weight Thresholds
 
-### 4.1 Node coverage
+Results must be reported at **three thresholds**:
 
-- **Required**: At least **60 of 64** nodes must have non-zero frequency (appearing as either before or after hexagram in at least one case).
-- **Rationale**: Tests C (Laplacian spectrum) and D (cuogua symmetry) are structurally degraded when many nodes are isolated. With 47/64 nodes having zero out-degree (current state), Test D could only evaluate 2/32 cuogua pairs.
+| Threshold | Description | Purpose |
+|-----------|-------------|---------|
+| w >= 1 | All observed transitions | Maximum coverage |
+| w >= 2 | Transitions observed at least twice | Remove singletons |
+| w >= 3 | Transitions observed at least three times | Stability check |
 
-### 4.2 Minimum node support
+The primary analysis uses **w >= 1**. Thresholds w >= 2 and w >= 3 serve as sensitivity checks. If results change qualitatively across thresholds, this indicates fragility and must be reported.
 
-- Each active node (non-zero frequency) must have a combined (before + after) frequency of at least **5 cases**.
-- **Rationale**: Nodes with 1--2 occurrences contribute noise rather than signal to the transition probability matrix.
+### 3.5 Missing Data Handling
 
-### 4.3 Mean out-degree of active nodes
+A case is **excluded** from graph construction if:
+- `before_lower_trigram` OR `before_upper_trigram` is missing/null/invalid
+- `after_lower_trigram` OR `after_upper_trigram` is missing/null/invalid
+- Either trigram value is not in {乾, 坤, 震, 巽, 坎, 離, 艮, 兌}
 
-- The mean out-degree of active nodes (nodes with out-degree > 0) should be at least **3**.
-- **Rationale**: Below this threshold, the transition graph is too sparse for community detection (Test E) and spectral analysis (Test C) to be meaningful.
+Excluded cases are counted and reported but do not contribute edges or node frequencies.
 
-### 4.4 Connectivity
+### 3.6 Graph Output Format
 
-- The largest weakly connected component should contain at least **58 of 64** nodes.
-- **Rationale**: Disconnected subgraphs cannot be compared to Q6 (which is connected) in a structurally meaningful way.
-
----
-
-## 5. Current Status
-
-**Data snapshot**: 2026-03-09, 11,336 cases in `data/raw/cases.jsonl`.
-
-### 5.1 Resolution rate
-
-| Metric | Value |
-|--------|-------|
-| Total cases | 11,336 |
-| Cases with resolvable before AND after | 11,336 (100%) |
-| Excluded cases | 0 |
-
-### 5.2 Node coverage
-
-| Metric | Value | Criterion | Status |
-|--------|-------|-----------|--------|
-| Unique hexagrams as before | 43/64 | -- | -- |
-| Unique hexagrams as after | 39/64 | -- | -- |
-| Unique hexagrams (either) | **52/64** | >=60 | FAIL |
-| Isolated nodes (zero frequency) | **12** | <=4 | FAIL |
-
-### 5.3 Hexagrams with zero occurrences (12 hexagrams)
-
-| KW | Name | Upper Trigram | Lower Trigram |
-|----|------|---------------|---------------|
-| 17 | 沢雷随 | 兌 | 震 |
-| 28 | 沢風大過 | 兌 | 巽 |
-| 31 | 沢山咸 | 兌 | 艮 |
-| 43 | 沢天夬 | 兌 | 乾 |
-| 45 | 沢地萃 | 兌 | 坤 |
-| 47 | 沢水困 | 兌 | 坎 |
-| 50 | 火風鼎 | 離 | 巽 |
-| 54 | 雷沢帰妹 | 震 | 兌 |
-| 56 | 火山旅 | 離 | 艮 |
-| 58 | 兌為沢 | 兌 | 兌 |
-| 60 | 水沢節 | 坎 | 兌 |
-| 64 | 火水未済 | 離 | 坎 |
-
-**Pattern**: 7 of 8 hexagrams with 兌 (沢) as upper trigram are missing. 3 of 8 with 離 (火) as upper trigram are missing. The labeling pipeline has a systematic blind spot for the 兌 trigram.
-
-### 5.4 Nodes with insufficient support (<5 cases)
-
-24 nodes have total frequency (before + after) below 5:
-
-| KW | Name | Before | After | Total |
-|----|------|--------|-------|-------|
-| 17 | 沢雷随 | 0 | 0 | 0 |
-| 28 | 沢風大過 | 0 | 0 | 0 |
-| 31 | 沢山咸 | 0 | 0 | 0 |
-| 43 | 沢天夬 | 0 | 0 | 0 |
-| 45 | 沢地萃 | 0 | 0 | 0 |
-| 47 | 沢水困 | 0 | 0 | 0 |
-| 50 | 火風鼎 | 0 | 0 | 0 |
-| 54 | 雷沢帰妹 | 0 | 0 | 0 |
-| 56 | 火山旅 | 0 | 0 | 0 |
-| 58 | 兌為沢 | 0 | 0 | 0 |
-| 60 | 水沢節 | 0 | 0 | 0 |
-| 64 | 火水未済 | 0 | 0 | 0 |
-| 14 | 火天大有 | 0 | 1 | 1 |
-| 19 | 地沢臨 | 0 | 1 | 1 |
-| 34 | 雷天大壮 | 0 | 1 | 1 |
-| 11 | 地天泰 | 2 | 0 | 2 |
-| 16 | 雷地豫 | 1 | 1 | 2 |
-| 30 | 離為火 | 0 | 2 | 2 |
-| 41 | 山沢損 | 1 | 1 | 2 |
-| 61 | 風沢中孚 | 2 | 0 | 2 |
-| 21 | 火雷噬嗑 | 0 | 3 | 3 |
-| 49 | 沢火革 | 0 | 3 | 3 |
-| 26 | 山天大畜 | 4 | 0 | 4 |
-| 37 | 風火家人 | 1 | 3 | 4 |
-
-**Status**: 24/64 nodes fail the >=5 minimum support criterion. **FAIL**.
-
-### 5.5 Edge statistics
-
-| Metric | Value |
-|--------|-------|
-| Unique directed edges | 391 |
-| Self-loop edges | 11 |
-| Edge weight min | 1 |
-| Edge weight max | 834 (地風升→天火同人) |
-| Edge weight mean | 28.99 |
-| Edge weight median | 4 |
-
-### 5.6 Degree distribution
-
-| Metric | All 64 nodes | Active nodes only (52) |
-|--------|-------------|----------------------|
-| In-degree: nodes > 0 | 39 | 39 |
-| Out-degree: nodes > 0 | 43 | 43 |
-| In-degree mean | 6.11 | 7.52 |
-| Out-degree mean | 6.11 | 7.52 |
-| In-degree max | 38 | 38 |
-| Out-degree max | 28 | 28 |
-
-**Mean out-degree of active nodes with out-degree > 0**: 391 edges / 43 nodes = **9.09**. Criterion (>=3) is **PASS**.
-
-However, 21 of 64 nodes have out-degree 0, meaning they never serve as a transition source.
-
-### 5.7 Connected components
-
-| Metric | Value |
-|--------|-------|
-| Weakly connected components | 13 |
-| Largest WCC size | 52 nodes |
-| Singleton components | 12 (the zero-frequency hexagrams) |
-| Strongly connected components | 36 |
-| Largest SCC size | 29 nodes |
-
-**Criterion** (largest WCC >= 58): **FAIL** (52/64).
-
-### 5.8 Concentration and skew
-
-The top 5 edges by weight account for a disproportionate share of all transitions:
-
-| Rank | Edge | Weight | Cumulative % |
-|------|------|--------|-------------|
-| 1 | 地風升(46)→天火同人(13) | 834 | 7.4% |
-| 2 | 水山蹇(39)→天火同人(13) | 672 | 13.3% |
-| 3 | 山雷頤(27)→天火同人(13) | 568 | 18.3% |
-| 4 | 地風升(46)→山雷頤(27) | 364 | 21.5% |
-| 5 | 山雷頤(27)→水山蹇(39) | 349 | 24.6% |
-
-Node 13 (天火同人) receives 4,130 of 11,336 after-transitions (36.4%), indicating extreme sink concentration. The top 5 before-nodes (46, 27, 39, 55, 42) account for 5,580/11,336 = 49.2% of all transitions.
-
-### 5.9 Impact on Phase 3 test results (current run)
-
-| Test | Result | Root cause |
-|------|--------|-----------|
-| A: Edge overlap | p=0.61, anti | Sparse graph; only 110 unique undirected edges; 8 overlap Q6 |
-| B: Hamming distance | p=0.72, anti | Transitions skewed to a few hub nodes, not governed by bit-distance |
-| C: Laplacian spectrum | p=0.00, pro | Spectral shape partially resembles Q6 despite sparsity |
-| D: Cuogua symmetry | p=0.63, anti | Only 2/32 valid cuogua pairs (47 nodes have zero out-degree) |
-| E: Community NMI | p=0.08, pro | Marginal; 36 SCCs vs Q6's clean 5-community structure |
-| **Combined** | **Weak** | Tests C/E show structural signal, but A/B/D are uninformative due to data sparsity |
+```json
+{
+  "metadata": {
+    "n_cases_total": 11336,
+    "n_cases_valid": "...",
+    "n_cases_excluded": "...",
+    "threshold": 1,
+    "generated_at": "ISO-8601"
+  },
+  "nodes": [
+    {"id": 1, "name": "乾為天", "lower": "乾", "upper": "乾", "freq_before": 0, "freq_after": 0, "freq_total": 0}
+  ],
+  "edges": [
+    {"source": 11, "target": 13, "weight": 42}
+  ]
+}
+```
 
 ---
 
-## 6. Gap Analysis
+## 4. Q6 Hypercube Reference Graph
 
-### 6.1 Summary of criterion failures
+### 4.1 Definition
 
-| Criterion | Required | Actual | Gap |
-|-----------|----------|--------|-----|
-| Node coverage (non-zero) | >=60/64 | 52/64 | 12 hexagrams missing |
-| Node minimum support (>=5) | 64/64 active nodes | 40/64 | 24 nodes below threshold |
-| Largest WCC | >=58 nodes | 52 nodes | 6 nodes short |
-| Mean out-degree (active) | >=3 | 9.09 | PASS |
+Q6 is the 6-dimensional hypercube graph:
+- 64 nodes (all 6-bit binary strings)
+- Two nodes are adjacent if and only if they differ in exactly 1 bit (Hamming distance = 1)
+- Each node has degree 6
+- Total edges: 192 (undirected) or 384 (directed, both directions)
 
-### 6.2 Root causes
+### 4.2 Mapping to Hexagrams
 
-1. **Systematic labeling gap for 兌 (沢) trigram**: 7/8 hexagrams with 兌 as upper trigram have zero occurrences. This is a labeler deficiency, not a data deficiency -- 沢 appears in real-world cases (M&A joy/openness, diplomatic exchanges, financial liquidity events) but the classifier fails to assign it.
+Node mapping: hexagram -> 6-bit vector via trigram binary encoding (Section 1.1).
+The Q6 adjacency is determined by the binary encoding, not the King Wen sequence number.
 
-2. **Extreme concentration on a few hexagrams**: 5 hexagrams (天火同人, 水山蹇, 山雷頤, 地風升, 雷火豊) account for >60% of all node frequencies. This suggests either (a) the labeler has a strong bias toward these hexagrams, or (b) the case corpus is dominated by a narrow set of transformation types.
+### 4.3 Q6 Edge Set
 
-3. **Directional asymmetry**: Several hexagrams appear only as before (e.g., 天山遯: 181 before, 0 after) or only as after (e.g., 天火同人: 1 before, 4130 after). This creates structurally degenerate rows/columns in the transition matrix.
-
-### 6.3 What must change to meet acceptance criteria
-
-| Action | Expected impact | Dependency |
-|--------|----------------|------------|
-| **Fix 兌-trigram labeling** in classifier | +7--8 nodes (兌 upper hexagrams) | Step 2: Labeler rebuild |
-| **Fix 離-trigram labeling** gaps | +3 nodes (火風鼎, 火山旅, 火水未済) | Step 2: Labeler rebuild |
-| **Targeted case collection** for zero-occurrence hexagrams | +12 nodes if labeled correctly | Step 1: Gold set |
-| **Redistribute hub concentration** via labeler calibration | Reduces sink bias on node 13 | Step 1 + Step 2 |
-| **Dual-annotation validation** | Confirms whether single-label is viable | Step 1: Gold set |
-
-### 6.4 No-Go conditions
-
-If after Steps 1--2:
-- Dual-annotation agreement (Cohen's kappa) < 0.6 across hexagram classes → single-label model is invalid; shift to probabilistic graph.
-- Active nodes still < 50 after labeler rebuild → Phase 3 tests structurally cannot be valid; terminate isomorphism hypothesis.
-- 兌-trigram recall < 0.3 in gold set → trigram classifier fundamentally cannot distinguish this trigram; document as negative result.
+An edge (A, B) is a "Q6 edge" if hamming_distance(binary(A), binary(B)) = 1.
+This means exactly one trigram line (yao) changes between A and B.
 
 ---
 
-## Appendix A: Reference Implementation
+## 5. Acceptance Criteria (Gate for Phase 3 Execution)
 
-Graph construction is implemented in `analysis/phase3/isomorphism_test.py`, function `build_g_obs()` (lines 213--251). The function:
+All four criteria must be met before running Phase 3 statistical tests. If any criterion fails, the corresponding remediation must be applied before proceeding.
 
-1. Iterates over all cases
-2. Resolves `classical_before_hexagram` and `classical_after_hexagram` to King Wen numbers
-3. Excludes cases where resolution fails or the hexagram lacks a 6-bit mapping
-4. Constructs a `nx.DiGraph` with all 64 nodes and weighted edges from transition counts
+### 5.1 Node Coverage
 
-No modifications to this function are proposed. The measurement instrument (graph construction) is sound; the input data quality is the problem.
+**Criterion**: >= 60 out of 64 hexagrams have non-zero frequency (across before OR after assignments in the valid case set).
 
-## Appendix B: Trigram-to-Bit Mapping
+**Current status (2026-03-09)**: 34/64 active (30 at zero). **NOT MET.**
 
-| Trigram | Symbol | Bits | Decimal |
-|---------|--------|------|---------|
-| 乾 | ☰ | (1,1,1) | 7 |
-| 兌 | ☱ | (1,1,0) | 6 |
-| 離 | ☲ | (1,0,1) | 5 |
-| 震 | ☳ | (1,0,0) | 4 |
-| 巽 | ☴ | (0,1,1) | 3 |
-| 坎 | ☵ | (0,1,0) | 2 |
-| 艮 | ☶ | (0,0,1) | 1 |
-| 坤 | ☷ | (0,0,0) | 0 |
+**Remediation**: Gold set expansion (Step 1) targeting zero-occurrence hexagrams.
 
-Hexagram 6-bit = lower_trigram_3bit + upper_trigram_3bit.
-Example: 乾為天 (KW=1) = 乾 over 乾 = (1,1,1,1,1,1). 坤為地 (KW=2) = 坤 over 坤 = (0,0,0,0,0,0).
+### 5.2 Minimum Node Support
+
+**Criterion**: Each of the 60+ active nodes has a minimum support of >= 5 cases in the gold set.
+
+**Current status (2026-03-09)**: 30/64 have >= 5 support. **NOT MET.**
+
+**Remediation**: Active sampling to fill low-support hexagrams (Step 1).
+
+### 5.3 Graph Connectivity
+
+**Criterion**: Mean out-degree >= 3 at threshold w >= 1.
+
+**Rationale**: A mean out-degree of 3 ensures the graph is sufficiently connected for spectral analysis (Test C) and community detection (Test E) to be meaningful. Below this, the graph fragments into disconnected components and these tests produce artifacts.
+
+**Measurement**: out-degree of node i = number of distinct nodes j such that edge (i, j) exists with weight >= threshold. Mean over all 64 nodes.
+
+### 5.4 No Dominant Hexagram
+
+**Criterion**: No single hexagram accounts for > 15% of all assignments (before + after combined).
+
+**Current status (2026-03-09)**: #13 天火同人 = 4,139 / 22,672 total assignments = 18.3%. **NOT MET.**
+
+**Rationale**: A dominant hexagram distorts degree distributions and inflates edge overlap with Q6 by chance.
+
+**Remediation**: If this persists after gold set expansion and reclassification, report results with and without the dominant hexagram as a sensitivity analysis.
+
+---
+
+## 6. Null Model Specification
+
+### 6.1 Model Type
+
+**Degree-preserving randomization** (configuration model for directed graphs).
+
+### 6.2 Procedure
+
+1. Take the observed directed graph G_obs (after thresholding).
+2. For each permutation:
+   a. Fix the in-degree sequence and out-degree sequence of G_obs.
+   b. Randomly rewire edges while preserving both degree sequences.
+   c. Result: a random graph G_rand with identical degree distribution but randomized edge targets.
+3. Repeat 1,000 times to generate the null distribution.
+
+### 6.3 What Is Preserved
+
+- In-degree of each node (number of distinct sources pointing to it)
+- Out-degree of each node (number of distinct targets it points to)
+- Total number of edges
+
+### 6.4 What Is NOT Preserved
+
+- Specific edge targets (which node connects to which)
+- Edge weights (randomized graphs are unweighted; thresholding is applied before randomization)
+- Self-loop structure (self-loops participate in rewiring)
+
+### 6.5 Implementation Notes
+
+- Use `networkx.directed_configuration_model` or equivalent.
+- Remove multi-edges after generation (collapse to simple directed graph).
+- Seed each permutation for reproducibility.
+- Store the random seed array for replication.
+
+---
+
+## 7. Statistical Tests (Phase 3)
+
+Five tests, each with a pre-specified null hypothesis, test statistic, and decision rule.
+All p-values are two-sided unless noted. Bonferroni correction is applied across the 5 tests (alpha = 0.05, alpha_adjusted = 0.01).
+
+### Test A: Edge Overlap with Q6
+
+**Question**: Do observed transitions preferentially follow Q6-adjacent hexagram pairs?
+
+**H0**: The fraction of observed edges that are Q6 edges is equal to the expected fraction under the null model.
+
+**Test statistic**: `overlap_ratio = |E_obs ∩ E_Q6| / |E_obs|`
+
+**Null distribution**: Compute overlap_ratio for each of 1,000 null model graphs.
+
+**Decision**: Reject H0 if observed overlap_ratio falls above the 99.5th percentile of the null distribution (one-sided: "more Q6-like than random", Bonferroni-adjusted).
+
+**Effect size**: z = (observed - mean_null) / std_null.
+
+### Test B: Hamming Distance Distribution
+
+**Question**: Are observed transitions biased toward small Hamming distances (single-bit changes)?
+
+**H0**: The mean Hamming distance of observed transitions equals the expected mean under the null model.
+
+**Test statistic**: Mean Hamming distance across all observed transitions (weighted by edge weight).
+
+**Null distribution**: Compute mean Hamming distance for each of 1,000 null model graphs, using the same Hamming metric on their edges.
+
+**Decision**: Reject H0 if observed mean is below the 0.5th percentile of the null distribution (one-sided test for "closer than random", Bonferroni-adjusted).
+
+**Effect size**: z-score.
+
+### Test C: Laplacian Spectral Similarity
+
+**Question**: Is the spectral structure of the observed graph similar to Q6?
+
+**H0**: The Wasserstein distance between the Laplacian spectrum of G_obs and Q6 is equal to the expected distance under the null model.
+
+**Test statistic**: `W1 = wasserstein_distance(eigenvalues(L_obs), eigenvalues(L_Q6))`
+where L is the normalized Laplacian of the undirected version of the graph.
+
+**Null distribution**: Compute W1 for each of 1,000 null model graphs vs Q6.
+
+**Decision**: Reject H0 if observed W1 is below the 0.5th percentile (one-sided: "more similar than random", Bonferroni-adjusted).
+
+**Critical safeguard**: Compute L_obs only on the **largest connected component**. Report the size of the LCC. If the LCC contains < 40 nodes, Test C is declared **inconclusive** (not failed, not passed).
+
+**Effect size**: z-score.
+
+### Test D: Cuogua (錯卦) Symmetry
+
+**Question**: Do complementary hexagram pairs (each bit flipped) show similar transition behavior?
+
+**H0**: The mean cosine similarity of transition probability vectors between cuogua pairs equals the expected similarity under the null model.
+
+**Test statistic**: For each cuogua pair (h, h_complement), compute cosine similarity of their outgoing transition probability vectors. Report the mean over all 32 pairs.
+
+**Null distribution**: Same computation on 1,000 null model graphs.
+
+**Decision**: Reject H0 if observed mean similarity exceeds the 99.5th percentile (one-sided: "more symmetric than random", Bonferroni-adjusted).
+
+**Note**: Cuogua pairs where both nodes have zero out-degree are excluded from the mean. Report the number of excluded pairs.
+
+**Effect size**: z-score.
+
+### Test E: Community Structure (NMI)
+
+**Question**: Does the community structure of the observed graph resemble Q6's natural partition?
+
+**H0**: The Normalized Mutual Information (NMI) between community assignments of G_obs and Q6's partition is equal to expected NMI under the null model.
+
+**Q6 partition**: The 6-dimensional hypercube has a natural partition into 8 groups of 8 (by lower trigram). Use this 8-group partition as the reference.
+
+**Test statistic**: Apply Louvain community detection to G_obs (undirected version). Compute NMI between detected communities and Q6's 8-group partition.
+
+**Null distribution**: Same procedure on 1,000 null model graphs.
+
+**Decision**: Reject H0 if observed NMI exceeds the 99.5th percentile (one-sided: "more similar to Q6 partition than random", Bonferroni-adjusted).
+
+**Stability check**: Run Louvain 10 times on G_obs with different random seeds. Report mean and std of NMI. If std > 0.1, declare the community structure unstable and Test E inconclusive.
+
+**Effect size**: z-score.
+
+---
+
+## 8. Reporting Requirements
+
+### 8.1 Per-Test Report
+
+Each test must report:
+- Observed test statistic value
+- Null distribution: mean, std, 2.5th and 97.5th percentiles
+- Raw p-value
+- Bonferroni-adjusted p-value
+- Effect size (z-score) with interpretation: |z| < 0.5 negligible, 0.5-1.0 small, 1.0-2.0 medium, > 2.0 large
+- Direction: pro-isomorphism, anti-isomorphism, or neutral
+
+### 8.2 Summary Table
+
+| Test | Statistic | p (raw) | p (Bonf.) | z-score | Direction | Decision |
+|------|-----------|---------|-----------|---------|-----------|----------|
+
+### 8.3 Sensitivity Analysis
+
+Report the summary table at each of the three edge weight thresholds (w >= 1, w >= 2, w >= 3). Flag any test whose decision changes across thresholds.
+
+---
+
+## 9. No-Go Criteria
+
+These are hard stops. If any is triggered, the corresponding action replaces further Phase 3 testing.
+
+### 9.1 Single-Label Breakdown
+
+**Trigger**: Gold set annotation reveals that independent annotators consistently assign different hexagrams to the same case (inter-annotator agreement kappa < 0.4 at the hexagram level).
+
+**Action**: Abandon single-label graph. Switch to probabilistic transition graph where edge weights represent expected transition probabilities under the annotation distribution. Redefine all 5 tests for the probabilistic setting. Document as a methodology contribution.
+
+### 9.2 Insufficient Node Coverage
+
+**Trigger**: After gold set expansion and reclassification (Steps 1-2), the number of active hexagrams (non-zero frequency) remains <= 40 out of 64.
+
+**Action**: Phase 3 input does not exist. The (Z_2)^6 space is too sparse for isomorphism testing. Document the sparsity pattern as a finding. Investigate whether a reduced model (e.g., trigram-level 8-node graph, or subset of hexagrams) is testable.
+
+### 9.3 Classifier Failure
+
+**Trigger**: The hexagram classifier (Step 2) achieves macro-F1 < 0.75 on the gold set.
+
+**Action**: Full-corpus Phase 3 is unreliable because label noise dominates signal. Restrict analysis to the gold set only (subset study). Report results with explicit "gold-set-only" qualifier and note that generalization to full corpus is not supported.
+
+---
+
+## 10. Data Flow Summary
+
+```
+cases.jsonl (11,336 records)
+    |
+    v
+[Exclude invalid] -- report exclusion count
+    |
+    v
+Valid cases (with before_hexagram + after_hexagram)
+    |
+    v
+[Build transition list: (before_hex_num, after_hex_num) x N]
+    |
+    v
+[Construct directed graph G_obs]
+    |        |
+    |        v
+    |   [Apply threshold w >= {1, 2, 3}]
+    |        |
+    |        v
+    |   [G_obs_thresholded]
+    |
+    v
+[Check Acceptance Criteria (Section 5)]
+    |
+    +--> FAIL --> Remediation or No-Go
+    |
+    +--> PASS
+         |
+         v
+    [Generate 1,000 null model graphs]
+         |
+         v
+    [Run Tests A-E on G_obs vs null distribution]
+         |
+         v
+    [Report per Section 8]
+```
+
+---
+
+## 11. Version History
+
+| Version | Date | Change |
+|---------|------|--------|
+| 1.0 | 2026-03-09 | Initial specification. Created per GPT-5.4 recommendation (Step 0-B of v4.0 action plan). |
