@@ -1,0 +1,217 @@
+{
+  "batch_id": 24,
+  "pass_number": 1,
+  "prompt_type": "analytical",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {"trigram": "巽", "confidence": "medium", "alternative": "乾", "reasoning": "Internally the company was gradually manipulating/adapting its numbers (粉飾決算) — a hidden, wind-like deception rather than honest inner strength"},
+      "before_upper": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "Outwardly the company appeared successful and visible as a major construction firm — public scrutiny/exposure environment"},
+      "after_lower": {"trigram": "坎", "confidence": "high", "alternative": "坤", "reasoning": "Internal state is pure crisis — trust destroyed, leadership gone, employees fleeing, existential danger"},
+      "after_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "External environment is harsh — banks cutting funding, partners canceling contracts, hostile conditions from all directions"}
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "Before the breakthrough, the company was in static stability — receptive, waiting, not yet activated"},
+      "before_upper": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "External environment was stagnant — conventional market with no disruption yet"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "Founder's overwhelming willpower and leadership driving the entire organization — pure creative force"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "Rapid expansion, investor enthusiasm, market dominance — growth environment at full force"}
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {"trigram": "乾", "confidence": "medium", "alternative": "坎", "reasoning": "Both companies had strong competitive will and drive — adversarial inner stance against each other"},
+      "before_upper": {"trigram": "坎", "confidence": "medium", "alternative": "震", "reasoning": "Structural change in the industry creating difficult, challenging external conditions forcing adaptation"},
+      "after_lower": {"trigram": "兌", "confidence": "high", "alternative": "巽", "reasoning": "Open communication, dialogue, joy in cooperation — inner state of mutual receptivity and exchange"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "巽", "reasoning": "Welcoming ecosystem formed, cooperative atmosphere spread across the industry — praise-worthy environment"}
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "坎", "reasoning": "Society was passive, unaware of the corruption — the general public in a receptive/unknowing state"},
+      "before_upper": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "Stagnant, blocked external environment — corruption hidden, decline ongoing, no movement"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "Clarity, illumination, truth revealed through investigative journalism — inner awakening and vision"},
+      "after_upper": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "Media scrutiny, public exposure, the story became visible to all — society under the spotlight of truth"}
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "Receptive, passive inner state — the company is stable but not driving hard, accepting market conditions"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "Stable, unchanging external environment — no major disruptions, steady market"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "坤", "reasoning": "Gradual, incremental internal adaptation — small investments, step-by-step portfolio review, wind-like gentle shifts"},
+      "after_upper": {"trigram": "巽", "confidence": "high", "alternative": "坤", "reasoning": "Slow external change — no dramatic shifts, presence fading gradually, gentle environmental evolution"}
+    },
+    {
+      "transition_id": "FAM_JP_264",
+      "before_lower": {"trigram": "乾", "confidence": "medium", "alternative": "震", "reasoning": "Parental ambition and drive pushing the child into multiple activities — forceful will to maximize the child's potential"},
+      "before_upper": {"trigram": "坎", "confidence": "medium", "alternative": "震", "reasoning": "The child's environment was overwhelming and harsh — too many demands creating difficulty and exhaustion"},
+      "after_lower": {"trigram": "離", "confidence": "medium", "alternative": "兌", "reasoning": "Family gained clarity through dialogue with the child — discernment about what truly matters, seeing clearly"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "坤", "reasoning": "Joyful family environment restored — child smiling, more family time together on weekends, welcoming atmosphere"}
+    },
+    {
+      "transition_id": "PERS_JP_686",
+      "before_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "Individual in a stagnant, blocked personal state before starting SNS — stopped, going nowhere"},
+      "before_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "External environment was stagnant for this person — no visibility, no platform, no audience"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "兌", "reasoning": "Gained influence and vision through information sharing — inner passion and clarity driving content creation"},
+      "after_upper": {"trigram": "離", "confidence": "high", "alternative": "坎", "reasoning": "Under intense public scrutiny — 50K followers means constant media exposure, criticism, loss of privacy; the spotlight environment"}
+    },
+    {
+      "transition_id": "OTHR_JP_102",
+      "before_lower": {"trigram": "離", "confidence": "high", "alternative": "兌", "reasoning": "Linus had a clear personal vision and passion for OS development — inner clarity and creative fire, even as a hobby"},
+      "before_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "Software industry was dominated by proprietary models — stagnant, closed environment where sharing was blocked"},
+      "after_lower": {"trigram": "兌", "confidence": "high", "alternative": "巽", "reasoning": "Open source = sharing, community joy, open communication — the inner principle is exchange and openness"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "Linux became the foundation of servers, smartphones, IoT — massive growth, world-changing expansion"}
+    },
+    {
+      "transition_id": "PERS_JP_307",
+      "before_lower": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "Beat Takeshi had burning creative passion and vision from the start — inner fire through comedy, film, and art"},
+      "before_upper": {"trigram": "震", "confidence": "medium", "alternative": "坎", "reasoning": "The entertainment world was disruptive and chaotic — Takeshi's early career involved shock comedy and breaking conventions"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "Became a multi-domain leader — comedian, actor, director, professor, decorated artist; pure creative will and authority"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "乾", "reasoning": "International praise — Venice Gold/Silver Lion, French honors, Japanese decorations; the world welcomed and celebrated him"}
+    },
+    {
+      "transition_id": "CORP_JP_368",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "巽", "reasoning": "The company in stable Nagoya origins — steady, grounded, receptive foundation before PE involvement"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "Stable, uneventful external environment — 304 stores operating normally, no major disruption"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "乾", "reasoning": "Unique FC model with flat royalty (1,500 yen/seat) — systematic, adaptive, penetrating strategy; wind-like gradual spread to 94.5% FC ratio"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "IPO on TSE First Section, 1000-store target — strong growth, market expansion, full upward momentum"}
+    },
+    {
+      "transition_id": "FAM_JP_224",
+      "before_lower": {"trigram": "震", "confidence": "high", "alternative": "坎", "reasoning": "Father's sudden death was a shock — unexpected event that threw the family into chaos internally"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "External environment became difficult — legal complexity of inheritance without a will, financial disputes"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "坤", "reasoning": "Family gradually adapted through multiple meetings, reaching consensus on legal inheritance — gentle, methodical resolution"},
+      "after_upper": {"trigram": "坤", "confidence": "high", "alternative": "巽", "reasoning": "Stable outcome — divided according to law, no ongoing conflict, settled situation; they even encourage others about end-of-life planning"}
+    },
+    {
+      "transition_id": "CORP_JP_093",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "Company in deep crisis internally — profitability destroyed by extreme yen strength, survival at stake"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "Harsh external environment — super-strong yen making exports unviable, extremely difficult market conditions"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "艮", "reasoning": "Adapted gradually by shifting production to Southeast Asia — wind-like penetration into new territory over 5 years"},
+      "after_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "Domestic operations shrank, but overall survival — a contained, stabilized but reduced external footprint; mountain-like stillness"}
+    },
+    {
+      "transition_id": "CORP_JP_3053",
+      "before_lower": {"trigram": "乾", "confidence": "high", "alternative": "震", "reasoning": "Meiji Sugar had strong ambition and drive — aggressively expanding into Taiwan with large-scale plantations under colonial backing"},
+      "before_upper": {"trigram": "乾", "confidence": "medium", "alternative": "震", "reasoning": "Colonial Taiwan provided a growth environment — imperial expansion creating new territory and opportunity"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "Successfully established large-scale operations — strong organizational will driving sugar self-sufficiency for Japan"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "Major growth achieved — contributing to national sugar supply, large-scale success in the expansion environment"}
+    },
+    {
+      "transition_id": "CORP_JP_088",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "Travel company in existential crisis — overseas travel completely stopped, core business destroyed by COVID"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "External environment was maximally harsh — pandemic shut down all international travel"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "巽", "reasoning": "Creative vision to develop online tours and virtual experiences — clarity and innovative thinking driving new solutions"},
+      "after_upper": {"trigram": "乾", "confidence": "medium", "alternative": "兌", "reasoning": "Full recovery with hybrid real+virtual model — growth environment restored, company thriving in expanded market"}
+    },
+    {
+      "transition_id": "PERS_JP_0026",
+      "before_lower": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "University student in a static, pre-career phase — stopped, not yet activated professionally"},
+      "before_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "Stagnant starting point — typical student without platform or business opportunities yet"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "Creative vision and passion on TikTok attracted 1M followers — inner clarity about Z-generation marketing, seeing opportunity"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "Rapid growth — founded company, reached 300M yen annual revenue in 4 years; strong expansion environment"}
+    },
+    {
+      "transition_id": "PERS_JP_1030",
+      "before_lower": {"trigram": "離", "confidence": "high", "alternative": "艮", "reasoning": "Had a clear skill (illustration) and passion — inner creative fire and vision, even before the salon"},
+      "before_upper": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "External situation was stagnant — no audience, no income stream from the skill, blocked"},
+      "after_lower": {"trigram": "兌", "confidence": "high", "alternative": "離", "reasoning": "Built a joyful community — 1000+ members, fan business, communication and exchange at the core"},
+      "after_upper": {"trigram": "乾", "confidence": "medium", "alternative": "兌", "reasoning": "Growth and expansion — stable monthly income, new business ventures, thriving enterprise"}
+    },
+    {
+      "transition_id": "FAM_JP_277",
+      "before_lower": {"trigram": "坤", "confidence": "high", "alternative": "巽", "reasoning": "Family in a stable, peaceful state before mother's condition worsened — passive, receptive daily life"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "External environment was stable and uneventful — normal family life without crisis"},
+      "after_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "Inner state is endurance through difficulty — sacrificed career, personal life feels lost, trapped in caregiving crisis"},
+      "after_upper": {"trigram": "艮", "confidence": "high", "alternative": "坎", "reasoning": "External situation is frozen/stagnant — no end in sight, refusing facility care, everything stopped; mountain-like immovability"}
+    },
+    {
+      "transition_id": "COUN_JP_369",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "Internal state of deep crisis — wars, millions dead, violence, exploitation; pure inner danger and suffering"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "Harsh external environment — resource curse, armed groups, foreign exploitation creating brutal conditions"},
+      "after_lower": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "Internal crisis continues — poverty persists, eastern violence ongoing, no relief for the population"},
+      "after_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "External environment remains harsh — one of the world's least developed regions, armed conflict continues, no improvement"}
+    },
+    {
+      "transition_id": "FAM_JP_146",
+      "before_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "Father Shigenobu's strong athletic will and drive — Asia record holder, pushing limits, inner determination"},
+      "before_upper": {"trigram": "震", "confidence": "medium", "alternative": "坎", "reasoning": "Competitive sports environment is disruptive and challenging — Olympic-level competition with high pressure"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "Son Koji's will and leadership — gold medalist, then Sports Agency commissioner driving national sports policy"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "乾", "reasoning": "International recognition and praise — Olympic gold, government leadership; welcoming, celebratory environment"}
+    },
+    {
+      "transition_id": "CORP_JP_909",
+      "before_lower": {"trigram": "乾", "confidence": "medium", "alternative": "離", "reasoning": "Ambitious MRJ project — strong corporate will to create a domestic jet, 287 orders secured, driving national aspiration"},
+      "before_upper": {"trigram": "坤", "confidence": "medium", "alternative": "兌", "reasoning": "Stable initial environment — orders were coming in, no immediate external crisis at the start"},
+      "after_lower": {"trigram": "艮", "confidence": "high", "alternative": "坎", "reasoning": "Complete stop — project frozen in 2020, cancelled in 2023, special liquidation in 2024; inner state is full stoppage"},
+      "after_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "Harsh external outcome — 641.3 billion yen in debt, type certification impossible, COVID made it worse; brutal environment"}
+    },
+    {
+      "transition_id": "OTHR_JP_176",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "Tourism industry in deep crisis internally — COVID destroyed all inbound travel, existential difficulty"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "External environment was maximally harsh — pandemic, border closures, no tourists"},
+      "after_lower": {"trigram": "兌", "confidence": "high", "alternative": "乾", "reasoning": "Joy and welcoming spirit of tourism recovery — visitors flooding back, industry celebrating record numbers"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "Explosive growth — past records exceeded, weak yen as tailwind, massive expansion of inbound tourism"}
+    },
+    {
+      "transition_id": "OTHR_JP_940",
+      "before_lower": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "Rural communities passively maintaining traditional lifestyle — receptive, patient, quietly preserving gassho-zukuri"},
+      "before_upper": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "Stagnant external situation — remote mountain villages facing decline, no recognition, blocked from the outside world"},
+      "after_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "The 'yui' spirit of collective maintenance — mountain-like steadfastness, stopping and preserving, deliberate conservation"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "離", "reasoning": "World Heritage recognition, 2M annual visitors — welcoming environment, international praise, cultural celebration"}
+    },
+    {
+      "transition_id": "OTHR_JP_954",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "After the bubble, people were passive and depleted — receptive to new health approaches but not yet activated"},
+      "before_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "Post-bubble stagnant social environment — health culture not yet established, blocked"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "坤", "reasoning": "Walking is the most gradual, gentle form of exercise — wind-like, steady, penetrating daily habit; 8000 steps/day slowly absorbed"},
+      "after_upper": {"trigram": "巽", "confidence": "high", "alternative": "坤", "reasoning": "Slow, gradual spread across society — pedometer boom, Nordic walking, smartphone step counters; gentle, pervasive change"}
+    },
+    {
+      "transition_id": "CORP_JP_2774",
+      "before_lower": {"trigram": "離", "confidence": "high", "alternative": "巽", "reasoning": "Fujifilm had clarity and vision to see film was dying — inner illumination about the need for radical transformation"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "Digital disruption created a harsh, threatening external environment — film demand completely destroyed"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "乾", "reasoning": "Leveraged existing film technology to gradually adapt into cosmetics, medical devices, pharmaceuticals — wind-like penetration into new domains"},
+      "after_upper": {"trigram": "震", "confidence": "medium", "alternative": "乾", "reasoning": "Complete structural transformation — bold, dramatic shift to entirely new business portfolio; disruptive renewal of the company's external identity"}
+    },
+    {
+      "transition_id": "CORP_JP_3372",
+      "before_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "Suntory founder's strong will and determination — building Japan's first whisky distillery required enormous inner conviction"},
+      "before_upper": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "No market for Japanese whisky existed — stagnant, unresponsive environment; decades of no visible results"},
+      "after_lower": {"trigram": "艮", "confidence": "high", "alternative": "巽", "reasoning": "40 years of patient foundation-building — mountain-like steadfast investment, stopping to perfect craft before seeking growth"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "World-class recognition and growth — Japanese whisky now globally acclaimed, the patient investment paid off in massive expansion"}
+    },
+    {
+      "transition_id": "CORP_JP_3601",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "Sony in deep internal crisis — electronics business failing, company struggling to find direction"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "Harsh external competitive environment — loss of market share, industry disruption, severe financial pressure"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "Hirai's clear vision — selection and concentration, clarity about what Sony should become; entertainment-focused identity"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "Revival as entertainment conglomerate — growth across games, music, film; strong expansion and market success"}
+    },
+    {
+      "transition_id": "COUN_JP_1358",
+      "before_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "Post-Cold War military in a stopped state — obsolete Cold War structure, East German army absorbed but not yet transformed"},
+      "before_upper": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "Stagnant strategic environment — Cold War over, old mission obsolete, new role unclear"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "乾", "reasoning": "20-year gradual transformation — systematic, wind-like adaptation from Cold War army to crisis response force"},
+      "after_upper": {"trigram": "震", "confidence": "medium", "alternative": "巽", "reasoning": "NATO eastern expansion, new peacekeeping missions — disruptive strategic environment demanding active military modernization"}
+    },
+    {
+      "transition_id": "OTHR_JP_1151",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "巽", "reasoning": "Traditional French cuisine was established and receptive — stable culinary tradition, not actively innovating from within"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "Stable, established external culinary world — classical French cuisine was the undisputed standard"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "兌", "reasoning": "Bocuse brought creative vision and clarity — nouvelle cuisine was about illumination, seeing food differently, artistic passion"},
+      "after_upper": {"trigram": "震", "confidence": "high", "alternative": "乾", "reasoning": "Disrupted the entire culinary world — established a new order, overturning traditional norms; shockwave through global cuisine"}
+    },
+    {
+      "transition_id": "PERS_JP_1914",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "乾", "reasoning": "Inamori in a receptive, humble state of 'keiten aijin' — love of heaven, love of people; inner groundedness and devotion"},
+      "before_upper": {"trigram": "坤", "confidence": "medium", "alternative": "乾", "reasoning": "Stable environment — Kyocera and KDDI already established, peaceful baseline before JAL challenge"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "Pure leadership and will — created Kyocera, KDDI, rebuilt JAL without compensation; ultimate inner strength and determination"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "乾", "reasoning": "Universally respected and praised — 'miracle' JAL turnaround celebrated, many executives follow his philosophy; welcoming acclaim"}
+    },
+    {
+      "transition_id": "PERS_JP_2948",
+      "before_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "Miyazaki deliberately stopped — retirement announcement, withdrawal from feature animation, 4 years of stillness and reflection"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "Stable external environment — Studio Ghibli continued, anime industry steady, no crisis forcing return"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "Creative fire reignited — came back with renewed artistic vision for 'How Do You Live?', inner passion and clarity restored"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "乾", "reasoning": "Academy Award for Best Animated Feature — ultimate international praise and recognition; welcoming celebration from the world"}
+    }
+  ]
+}
