@@ -1181,7 +1181,7 @@
     "result": "FAIL",
     "avg_kappa": 0.5451,
     "avg_ac1": 0.5922,
-    "uncertain_warning": "uncertain率がA=78.0%, B=66.0%で10%を超えています"
+    "uncertain_warning": "uncertain率がA=78.0%, B=66.0%で10%超過"
   },
   "purity": {
     "before_a": 0.0425,
@@ -1240,4 +1240,7 @@
   "gate2": {
     "criterion": "avg_kappa >= 0.60",
     "avg_kappa": 0.5451,
-    "pass": 
+    "pass": false,
+    "result": "FAIL"
+  }
+}
