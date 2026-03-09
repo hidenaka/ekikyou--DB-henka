@@ -1,0 +1,50 @@
+2026-03-09 13:32:37,513 [INFO] Loaded 800 cases from /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/analysis/gold_set/selected_800_cases.json
+2026-03-09 13:32:37,513 [INFO] DRY RUN: limited to 5 cases
+2026-03-09 13:32:37,571 [INFO] === Pass 1 (temperature=0) ===
+2026-03-09 13:32:37,571 [INFO]   Total cases: 5
+2026-03-09 13:32:37,571 [INFO]   Output: /Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/analysis/gold_set/annotations_pass1.json
+2026-03-09 13:32:37,571 [INFO]   Remaining: 5 cases
+2026-03-09 13:32:37,571 [INFO]   Batch 1/1 (5 cases)
+2026-03-09 13:32:37,571 [INFO]   [1/5] CORP_JP_004
+2026-03-09 13:32:37,963 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:32:37,963 [WARNING]   Attempt 1: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt3JC7gkoz1oucLwgPb'}
+2026-03-09 13:32:43,206 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:32:43,207 [WARNING]   Attempt 2: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt3h52jPDUXiuRGJPy2'}
+2026-03-09 13:32:48,449 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:32:48,450 [WARNING]   Attempt 3: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt45VfBN5NJhsyqx5PK'}
+2026-03-09 13:32:48,450 [ERROR]   FAILED after 3 retries: CORP_JP_004
+2026-03-09 13:32:49,653 [INFO]   [2/5] CORP_JP_008
+2026-03-09 13:32:49,848 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:32:49,849 [WARNING]   Attempt 1: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt4BV5CX95x3Wvc5dXT'}
+2026-03-09 13:32:55,130 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:32:55,130 [WARNING]   Attempt 2: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt4ZzQzXpAwvgheLXkY'}
+2026-03-09 13:33:00,506 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:00,507 [WARNING]   Attempt 3: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt4xi9YKcHhcA7gADL8'}
+2026-03-09 13:33:00,507 [ERROR]   FAILED after 3 retries: CORP_JP_008
+2026-03-09 13:33:01,708 [INFO]   [3/5] CORP_JP_015
+2026-03-09 13:33:01,942 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:01,942 [WARNING]   Attempt 1: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt559byRHxs5uRSi3ZD'}
+2026-03-09 13:33:08,086 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:08,087 [WARNING]   Attempt 2: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt5XNgFWmbTCiVX8FqL'}
+2026-03-09 13:33:13,388 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:13,388 [WARNING]   Attempt 3: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt5v3hEb3sxr1Tx2pFh'}
+2026-03-09 13:33:13,388 [ERROR]   FAILED after 3 retries: CORP_JP_015
+2026-03-09 13:33:14,593 [INFO]   [4/5] CORP_JP_016
+2026-03-09 13:33:14,881 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:14,881 [WARNING]   Attempt 1: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt62PwFg2kr4jyGdaQr'}
+2026-03-09 13:33:20,183 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:20,183 [WARNING]   Attempt 2: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt6R4T8QGPa1LC5r3H9'}
+2026-03-09 13:33:25,439 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:25,439 [WARNING]   Attempt 3: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt6oeFnctrSGVVvoK2p'}
+2026-03-09 13:33:25,439 [ERROR]   FAILED after 3 retries: CORP_JP_016
+2026-03-09 13:33:26,643 [INFO]   [5/5] CORP_JP_024
+2026-03-09 13:33:26,914 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:26,915 [WARNING]   Attempt 1: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt6uwGdxEn6oJCEGUqK'}
+2026-03-09 13:33:32,194 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:32,195 [WARNING]   Attempt 2: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt7JXKp6X6KJafraoJh'}
+2026-03-09 13:33:37,445 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-03-09 13:33:37,446 [WARNING]   Attempt 3: API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYrt7gvTmbXimyGJyxkTZ'}
+2026-03-09 13:33:37,446 [ERROR]   FAILED after 3 retries: CORP_JP_024
+2026-03-09 13:33:38,647 [INFO]   Batch saved. Total: 0 done, 5 failed
+2026-03-09 13:33:38,647 [INFO] === Pass 1 complete: 0 new, 0 resumed, 5 failed ===
+2026-03-09 13:33:38,647 [INFO] All annotation passes complete.

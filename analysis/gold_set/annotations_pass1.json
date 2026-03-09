@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "pass_number": 1,
+    "model": "claude-sonnet-4-6",
+    "temperature": 0,
+    "total_cases": 5,
+    "annotated": 0,
+    "failed": 5,
+    "timestamp": "2026-03-09T13:33:38"
+  },
+  "annotations": [
+    {
+      "transition_id": "CORP_JP_004",
+      "target_name": "CORP_JP_004",
+      "error": "Failed after 3 retries"
+    },
+    {
+      "transition_id": "CORP_JP_008",
+      "target_name": "CORP_JP_008",
+      "error": "Failed after 3 retries"
+    },
+    {
+      "transition_id": "CORP_JP_015",
+      "target_name": "CORP_JP_015",
+      "error": "Failed after 3 retries"
+    },
+    {
+      "transition_id": "CORP_JP_016",
+      "target_name": "CORP_JP_016",
+      "error": "Failed after 3 retries"
+    },
+    {
+      "transition_id": "CORP_JP_024",
+      "target_name": "CORP_JP_024",
+      "error": "Failed after 3 retries"
+    }
+  ]
+}
