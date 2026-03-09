@@ -639,7 +639,8 @@ def generate_report(all_results, metadata):
         lines.append(f"- **Isomorphism evidence level**: {level}")
         lines.append(f"- Pro-isomorphism rejections: {len(pro)}/5")
         lines.append(f"- Anti-isomorphism rejections: {len(anti)}/5")
-        lines.append(f"- Effect sizes (z): {', '.join(f'{r[\"test\"]}={r[\"z_score\"]}' for r in primary)}")
+        effect_parts = [f"{r['test']}={r['z_score']}" for r in primary]
+        lines.append(f"- Effect sizes (z): {', '.join(effect_parts)}")
         lines.append("")
 
         # Sensitivity
@@ -702,9 +703,22 @@ def main():
         "results": {str(k): v for k, v in all_results.items()},
         "generated_at": datetime.now().isoformat(),
     }
+    class NumpyEncoder(json.JSONEncoder):
+        def default(self, obj):
+            import numpy as np
+            if isinstance(obj, (np.bool_, bool)):
+                return bool(obj)
+            if isinstance(obj, (np.integer,)):
+                return int(obj)
+            if isinstance(obj, (np.floating,)):
+                return float(obj)
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            return super().default(obj)
+
     json_path = PHASE3_DIR / "phase3_v4_results.json"
     with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(json_results, f, ensure_ascii=False, indent=2)
+        json.dump(json_results, f, ensure_ascii=False, indent=2, cls=NumpyEncoder)
     print(f"JSON: {json_path}")
 
 
