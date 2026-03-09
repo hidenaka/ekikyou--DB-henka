@@ -13,15 +13,16 @@
 
 import json
 import sys
+import argparse
 import numpy as np
 from collections import Counter, defaultdict
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
-ANNOTATIONS_PATH = BASE / "analysis" / "gold_set" / "pilot_annotations.json"
+DEFAULT_ANNOTATIONS_PATH = BASE / "analysis" / "gold_set" / "pilot_annotations.json"
 PILOT_PATH = BASE / "analysis" / "gold_set" / "pilot_100.json"
-REPORT_JSON_PATH = BASE / "analysis" / "gold_set" / "pilot_agreement_report.json"
-REPORT_MD_PATH = BASE / "analysis" / "gold_set" / "pilot_agreement_report.md"
+DEFAULT_REPORT_JSON_PATH = BASE / "analysis" / "gold_set" / "pilot_agreement_report.json"
+DEFAULT_REPORT_MD_PATH = BASE / "analysis" / "gold_set" / "pilot_agreement_report.md"
 
 TRIGRAMS = ["乾", "坤", "震", "巽", "坎", "離", "艮", "兌"]
 FIELDS = ["before_lower", "before_upper", "after_lower", "after_upper"]
@@ -30,9 +31,9 @@ SEED = 42
 N_BOOTSTRAP = 2000
 
 
-def load_data():
+def load_data(annotations_path):
     """アノテーションとパイロットデータを読み込み"""
-    with open(ANNOTATIONS_PATH, "r", encoding="utf-8") as f:
+    with open(annotations_path, "r", encoding="utf-8") as f:
         ann_data = json.load(f)
 
     with open(PILOT_PATH, "r", encoding="utf-8") as f:
@@ -305,8 +306,26 @@ def generate_report(report: dict) -> str:
     return "\n".join(lines)
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(description="パイロットアノテーション一致率分析")
+    parser.add_argument("--input", "-i", type=str, default=None,
+                        help="アノテーションJSONファイルパス（デフォルト: pilot_annotations.json）")
+    parser.add_argument("--output-json", type=str, default=None,
+                        help="レポートJSON出力先")
+    parser.add_argument("--output-md", type=str, default=None,
+                        help="レポートMD出力先")
+    parser.add_argument("--label", type=str, default=None,
+                        help="レポートに付与するラベル")
+    return parser.parse_args()
+
+
 def main():
-    ann_data, source_lookup = load_data()
+    args = parse_args()
+    annotations_path = Path(args.input) if args.input else DEFAULT_ANNOTATIONS_PATH
+    report_json_path = Path(args.output_json) if args.output_json else DEFAULT_REPORT_JSON_PATH
+    report_md_path = Path(args.output_md) if args.output_md else DEFAULT_REPORT_MD_PATH
+
+    ann_data, source_lookup = load_data(annotations_path)
     annotations = ann_data.get("annotations", [])
     summary = ann_data.get("summary", {})
 
@@ -417,15 +436,15 @@ def main():
     }
 
     # Save JSON
-    with open(REPORT_JSON_PATH, "w", encoding="utf-8") as f:
+    with open(report_json_path, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
-    print(f"\nJSON: {REPORT_JSON_PATH}")
+    print(f"\nJSON: {report_json_path}")
 
     # Save MD
     md = generate_report(report)
-    with open(REPORT_MD_PATH, "w", encoding="utf-8") as f:
+    with open(report_md_path, "w", encoding="utf-8") as f:
         f.write(md)
-    print(f"MD: {REPORT_MD_PATH}")
+    print(f"MD: {report_md_path}")
 
     print(f"\n=== 総合判定: {result} ===")
     print(f"  κ平均: {avg_k:.4f}, AC1平均: {avg_ac1:.4f}")

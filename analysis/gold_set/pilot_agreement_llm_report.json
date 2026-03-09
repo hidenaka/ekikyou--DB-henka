@@ -1,0 +1,998 @@
+{
+  "meta": {
+    "total_pairs": 100,
+    "uncertain_rate_a": 0.38,
+    "uncertain_rate_b": 0.24
+  },
+  "fields": {
+    "before_lower": {
+      "n": 100,
+      "agree": 76,
+      "raw_agreement": 0.76,
+      "kappa": 0.6986,
+      "kappa_ci": [
+        0.6036,
+        0.796
+      ],
+      "ac1": 0.7293,
+      "ac1_ci": [
+        0.6377,
+        0.8204
+      ],
+      "confusion_matrix": {
+        "乾": {
+          "乾": 33,
+          "坤": 0,
+          "震": 1,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "坤": {
+          "乾": 1,
+          "坤": 16,
+          "震": 2,
+          "巽": 0,
+          "坎": 2,
+          "離": 0,
+          "艮": 0,
+          "兌": 4
+        },
+        "震": {
+          "乾": 0,
+          "坤": 0,
+          "震": 6,
+          "巽": 0,
+          "坎": 0,
+          "離": 1,
+          "艮": 0,
+          "兌": 1
+        },
+        "巽": {
+          "乾": 2,
+          "坤": 0,
+          "震": 0,
+          "巽": 4,
+          "坎": 0,
+          "離": 2,
+          "艮": 0,
+          "兌": 0
+        },
+        "坎": {
+          "乾": 1,
+          "坤": 1,
+          "震": 0,
+          "巽": 1,
+          "坎": 7,
+          "離": 0,
+          "艮": 0,
+          "兌": 1
+        },
+        "離": {
+          "乾": 0,
+          "坤": 1,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 1,
+          "兌": 0
+        },
+        "艮": {
+          "乾": 0,
+          "坤": 0,
+          "震": 0,
+          "巽": 0,
+          "坎": 1,
+          "離": 1,
+          "艮": 7,
+          "兌": 0
+        },
+        "兌": {
+          "乾": 0,
+          "坤": 0,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 3
+        }
+      },
+      "category_agreement": {
+        "乾": {
+          "total": 38,
+          "agree": 33,
+          "rate": 0.868
+        },
+        "坤": {
+          "total": 27,
+          "agree": 16,
+          "rate": 0.593
+        },
+        "震": {
+          "total": 11,
+          "agree": 6,
+          "rate": 0.545
+        },
+        "巽": {
+          "total": 9,
+          "agree": 4,
+          "rate": 0.444
+        },
+        "坎": {
+          "total": 14,
+          "agree": 7,
+          "rate": 0.5
+        },
+        "離": {
+          "total": 6,
+          "agree": 0,
+          "rate": 0.0
+        },
+        "艮": {
+          "total": 10,
+          "agree": 7,
+          "rate": 0.7
+        },
+        "兌": {
+          "total": 9,
+          "agree": 3,
+          "rate": 0.333
+        }
+      },
+      "disagreement_patterns": [
+        {
+          "trigram_1": "兌",
+          "trigram_2": "坤",
+          "count": 4
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "坤",
+          "count": 3
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "巽",
+          "count": 2
+        },
+        {
+          "trigram_1": "巽",
+          "trigram_2": "離",
+          "count": 2
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "震",
+          "count": 2
+        },
+        {
+          "trigram_1": "艮",
+          "trigram_2": "離",
+          "count": 2
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "震",
+          "count": 1
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "坎",
+          "count": 1
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "艮",
+          "count": 1
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "離",
+          "count": 1
+        },
+        {
+          "trigram_1": "離",
+          "trigram_2": "震",
+          "count": 1
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "巽",
+          "count": 1
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "坤",
+          "count": 1
+        },
+        {
+          "trigram_1": "兌",
+          "trigram_2": "震",
+          "count": 1
+        },
+        {
+          "trigram_1": "兌",
+          "trigram_2": "坎",
+          "count": 1
+        }
+      ],
+      "source_type_agreement": {
+        "blog": {
+          "n": 7,
+          "agree": 6,
+          "raw_agreement": 0.857,
+          "kappa": 0.8108
+        },
+        "book": {
+          "n": 13,
+          "agree": 10,
+          "raw_agreement": 0.769,
+          "kappa": 0.6829
+        },
+        "news": {
+          "n": 39,
+          "agree": 30,
+          "raw_agreement": 0.769,
+          "kappa": 0.6641
+        },
+        "official": {
+          "n": 10,
+          "agree": 6,
+          "raw_agreement": 0.6,
+          "kappa": 0.5122
+        },
+        "sns": {
+          "n": 4,
+          "agree": 1,
+          "raw_agreement": 0.25,
+          "kappa": null
+        },
+        "unknown": {
+          "n": 27,
+          "agree": 23,
+          "raw_agreement": 0.852,
+          "kappa": 0.7996
+        }
+      }
+    },
+    "before_upper": {
+      "n": 100,
+      "agree": 74,
+      "raw_agreement": 0.74,
+      "kappa": 0.6652,
+      "kappa_ci": [
+        0.5612,
+        0.7717
+      ],
+      "ac1": 0.7079,
+      "ac1_ci": [
+        0.6157,
+        0.809
+      ],
+      "confusion_matrix": {
+        "乾": {
+          "乾": 4,
+          "坤": 1,
+          "震": 0,
+          "巽": 0,
+          "坎": 1,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "坤": {
+          "乾": 1,
+          "坤": 11,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "震": {
+          "乾": 2,
+          "坤": 4,
+          "震": 31,
+          "巽": 0,
+          "坎": 2,
+          "離": 2,
+          "艮": 0,
+          "兌": 1
+        },
+        "巽": {
+          "乾": 2,
+          "坤": 0,
+          "震": 0,
+          "巽": 2,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "坎": {
+          "乾": 1,
+          "坤": 2,
+          "震": 0,
+          "巽": 0,
+          "坎": 20,
+          "離": 0,
+          "艮": 1,
+          "兌": 0
+        },
+        "離": {
+          "乾": 0,
+          "坤": 0,
+          "震": 0,
+          "巽": 1,
+          "坎": 0,
+          "離": 1,
+          "艮": 0,
+          "兌": 0
+        },
+        "艮": {
+          "乾": 0,
+          "坤": 0,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 3,
+          "兌": 0
+        },
+        "兌": {
+          "乾": 1,
+          "坤": 4,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 2
+        }
+      },
+      "category_agreement": {
+        "乾": {
+          "total": 13,
+          "agree": 4,
+          "rate": 0.308
+        },
+        "坤": {
+          "total": 23,
+          "agree": 11,
+          "rate": 0.478
+        },
+        "震": {
+          "total": 42,
+          "agree": 31,
+          "rate": 0.738
+        },
+        "巽": {
+          "total": 5,
+          "agree": 2,
+          "rate": 0.4
+        },
+        "坎": {
+          "total": 27,
+          "agree": 20,
+          "rate": 0.741
+        },
+        "離": {
+          "total": 4,
+          "agree": 1,
+          "rate": 0.25
+        },
+        "艮": {
+          "total": 4,
+          "agree": 3,
+          "rate": 0.75
+        },
+        "兌": {
+          "total": 8,
+          "agree": 2,
+          "rate": 0.25
+        }
+      },
+      "disagreement_patterns": [
+        {
+          "trigram_1": "兌",
+          "trigram_2": "坤",
+          "count": 4
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "震",
+          "count": 4
+        },
+        {
+          "trigram_1": "離",
+          "trigram_2": "震",
+          "count": 2
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "巽",
+          "count": 2
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "震",
+          "count": 2
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "坎",
+          "count": 2
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "坤",
+          "count": 2
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "坤",
+          "count": 2
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "震",
+          "count": 2
+        },
+        {
+          "trigram_1": "巽",
+          "trigram_2": "離",
+          "count": 1
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "艮",
+          "count": 1
+        },
+        {
+          "trigram_1": "兌",
+          "trigram_2": "震",
+          "count": 1
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "兌",
+          "count": 1
+        }
+      ],
+      "source_type_agreement": {
+        "blog": {
+          "n": 7,
+          "agree": 6,
+          "raw_agreement": 0.857,
+          "kappa": 0.8
+        },
+        "book": {
+          "n": 13,
+          "agree": 12,
+          "raw_agreement": 0.923,
+          "kappa": 0.9008
+        },
+        "news": {
+          "n": 39,
+          "agree": 28,
+          "raw_agreement": 0.718,
+          "kappa": 0.6295
+        },
+        "official": {
+          "n": 10,
+          "agree": 6,
+          "raw_agreement": 0.6,
+          "kappa": 0.4444
+        },
+        "sns": {
+          "n": 4,
+          "agree": 0,
+          "raw_agreement": 0.0,
+          "kappa": null
+        },
+        "unknown": {
+          "n": 27,
+          "agree": 22,
+          "raw_agreement": 0.815,
+          "kappa": 0.7187
+        }
+      }
+    },
+    "after_lower": {
+      "n": 100,
+      "agree": 72,
+      "raw_agreement": 0.72,
+      "kappa": 0.6475,
+      "kappa_ci": [
+        0.5366,
+        0.7459
+      ],
+      "ac1": 0.6842,
+      "ac1_ci": [
+        0.5825,
+        0.7769
+      ],
+      "confusion_matrix": {
+        "乾": {
+          "乾": 32,
+          "坤": 0,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 3
+        },
+        "坤": {
+          "乾": 0,
+          "坤": 12,
+          "震": 0,
+          "巽": 1,
+          "坎": 0,
+          "離": 0,
+          "艮": 4,
+          "兌": 0
+        },
+        "震": {
+          "乾": 1,
+          "坤": 2,
+          "震": 6,
+          "巽": 0,
+          "坎": 0,
+          "離": 2,
+          "艮": 0,
+          "兌": 0
+        },
+        "巽": {
+          "乾": 0,
+          "坤": 4,
+          "震": 0,
+          "巽": 2,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "坎": {
+          "乾": 1,
+          "坤": 0,
+          "震": 0,
+          "巽": 0,
+          "坎": 8,
+          "離": 0,
+          "艮": 2,
+          "兌": 0
+        },
+        "離": {
+          "乾": 0,
+          "坤": 0,
+          "震": 0,
+          "巽": 1,
+          "坎": 0,
+          "離": 0,
+          "艮": 1,
+          "兌": 0
+        },
+        "艮": {
+          "乾": 0,
+          "坤": 2,
+          "震": 0,
+          "巽": 2,
+          "坎": 0,
+          "離": 0,
+          "艮": 11,
+          "兌": 0
+        },
+        "兌": {
+          "乾": 1,
+          "坤": 0,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 1,
+          "兌": 1
+        }
+      },
+      "category_agreement": {
+        "乾": {
+          "total": 38,
+          "agree": 32,
+          "rate": 0.842
+        },
+        "坤": {
+          "total": 25,
+          "agree": 12,
+          "rate": 0.48
+        },
+        "震": {
+          "total": 11,
+          "agree": 6,
+          "rate": 0.545
+        },
+        "巽": {
+          "total": 10,
+          "agree": 2,
+          "rate": 0.2
+        },
+        "坎": {
+          "total": 11,
+          "agree": 8,
+          "rate": 0.727
+        },
+        "離": {
+          "total": 4,
+          "agree": 0,
+          "rate": 0.0
+        },
+        "艮": {
+          "total": 23,
+          "agree": 11,
+          "rate": 0.478
+        },
+        "兌": {
+          "total": 6,
+          "agree": 1,
+          "rate": 0.167
+        }
+      },
+      "disagreement_patterns": [
+        {
+          "trigram_1": "坤",
+          "trigram_2": "艮",
+          "count": 6
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "巽",
+          "count": 5
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "兌",
+          "count": 4
+        },
+        {
+          "trigram_1": "離",
+          "trigram_2": "震",
+          "count": 2
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "震",
+          "count": 2
+        },
+        {
+          "trigram_1": "巽",
+          "trigram_2": "艮",
+          "count": 2
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "艮",
+          "count": 2
+        },
+        {
+          "trigram_1": "兌",
+          "trigram_2": "艮",
+          "count": 1
+        },
+        {
+          "trigram_1": "巽",
+          "trigram_2": "離",
+          "count": 1
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "坎",
+          "count": 1
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "震",
+          "count": 1
+        },
+        {
+          "trigram_1": "艮",
+          "trigram_2": "離",
+          "count": 1
+        }
+      ],
+      "source_type_agreement": {
+        "blog": {
+          "n": 7,
+          "agree": 5,
+          "raw_agreement": 0.714,
+          "kappa": 0.6
+        },
+        "book": {
+          "n": 13,
+          "agree": 9,
+          "raw_agreement": 0.692,
+          "kappa": 0.6061
+        },
+        "news": {
+          "n": 39,
+          "agree": 30,
+          "raw_agreement": 0.769,
+          "kappa": 0.6863
+        },
+        "official": {
+          "n": 10,
+          "agree": 6,
+          "raw_agreement": 0.6,
+          "kappa": 0.5
+        },
+        "sns": {
+          "n": 4,
+          "agree": 3,
+          "raw_agreement": 0.75,
+          "kappa": null
+        },
+        "unknown": {
+          "n": 27,
+          "agree": 19,
+          "raw_agreement": 0.704,
+          "kappa": 0.6204
+        }
+      }
+    },
+    "after_upper": {
+      "n": 100,
+      "agree": 84,
+      "raw_agreement": 0.84,
+      "kappa": 0.7804,
+      "kappa_ci": [
+        0.6843,
+        0.8679
+      ],
+      "ac1": 0.8215,
+      "ac1_ci": [
+        0.7325,
+        0.8998
+      ],
+      "confusion_matrix": {
+        "乾": {
+          "乾": 0,
+          "坤": 0,
+          "震": 0,
+          "巽": 0,
+          "坎": 1,
+          "離": 0,
+          "艮": 0,
+          "兌": 1
+        },
+        "坤": {
+          "乾": 0,
+          "坤": 5,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "震": {
+          "乾": 0,
+          "坤": 1,
+          "震": 26,
+          "巽": 0,
+          "坎": 1,
+          "離": 0,
+          "艮": 0,
+          "兌": 1
+        },
+        "巽": {
+          "乾": 0,
+          "坤": 1,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 2,
+          "兌": 0
+        },
+        "坎": {
+          "乾": 0,
+          "坤": 2,
+          "震": 0,
+          "巽": 0,
+          "坎": 8,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "離": {
+          "乾": 0,
+          "坤": 1,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 0
+        },
+        "艮": {
+          "乾": 0,
+          "坤": 4,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 5,
+          "兌": 0
+        },
+        "兌": {
+          "乾": 0,
+          "坤": 1,
+          "震": 0,
+          "巽": 0,
+          "坎": 0,
+          "離": 0,
+          "艮": 0,
+          "兌": 40
+        }
+      },
+      "category_agreement": {
+        "乾": {
+          "total": 2,
+          "agree": 0,
+          "rate": 0.0
+        },
+        "坤": {
+          "total": 15,
+          "agree": 5,
+          "rate": 0.333
+        },
+        "震": {
+          "total": 29,
+          "agree": 26,
+          "rate": 0.897
+        },
+        "巽": {
+          "total": 3,
+          "agree": 0,
+          "rate": 0.0
+        },
+        "坎": {
+          "total": 12,
+          "agree": 8,
+          "rate": 0.667
+        },
+        "離": {
+          "total": 1,
+          "agree": 0,
+          "rate": 0.0
+        },
+        "艮": {
+          "total": 11,
+          "agree": 5,
+          "rate": 0.455
+        },
+        "兌": {
+          "total": 43,
+          "agree": 40,
+          "rate": 0.93
+        }
+      },
+      "disagreement_patterns": [
+        {
+          "trigram_1": "坤",
+          "trigram_2": "艮",
+          "count": 4
+        },
+        {
+          "trigram_1": "巽",
+          "trigram_2": "艮",
+          "count": 2
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "坤",
+          "count": 2
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "巽",
+          "count": 1
+        },
+        {
+          "trigram_1": "兌",
+          "trigram_2": "坤",
+          "count": 1
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "兌",
+          "count": 1
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "震",
+          "count": 1
+        },
+        {
+          "trigram_1": "乾",
+          "trigram_2": "坎",
+          "count": 1
+        },
+        {
+          "trigram_1": "坎",
+          "trigram_2": "震",
+          "count": 1
+        },
+        {
+          "trigram_1": "坤",
+          "trigram_2": "離",
+          "count": 1
+        },
+        {
+          "trigram_1": "兌",
+          "trigram_2": "震",
+          "count": 1
+        }
+      ],
+      "source_type_agreement": {
+        "blog": {
+          "n": 7,
+          "agree": 6,
+          "raw_agreement": 0.857,
+          "kappa": 0.8
+        },
+        "book": {
+          "n": 13,
+          "agree": 11,
+          "raw_agreement": 0.846,
+          "kappa": 0.7679
+        },
+        "news": {
+          "n": 39,
+          "agree": 30,
+          "raw_agreement": 0.769,
+          "kappa": 0.7043
+        },
+        "official": {
+          "n": 10,
+          "agree": 8,
+          "raw_agreement": 0.8,
+          "kappa": 0.5918
+        },
+        "sns": {
+          "n": 4,
+          "agree": 4,
+          "raw_agreement": 1.0,
+          "kappa": null
+        },
+        "unknown": {
+          "n": 27,
+          "agree": 25,
+          "raw_agreement": 0.926,
+          "kappa": 0.8933
+        }
+      }
+    }
+  },
+  "judgment": {
+    "result": "PASS",
+    "avg_kappa": 0.6979,
+    "avg_ac1": 0.7357,
+    "uncertain_warning": "uncertain率がA=38.0%, B=24.0%で10%を超えています。規約の見直しが必要です。"
+  },
+  "purity": {
+    "before_a": 0.01,
+    "before_b": 0.0,
+    "after_a": 0.0,
+    "after_b": 0.03
+  },
+  "diversity": {
+    "before_unique_a": 30,
+    "before_unique_b": 32,
+    "after_unique_a": 27,
+    "after_unique_b": 23
+  }
+}

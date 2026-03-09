@@ -1,0 +1,2315 @@
+{
+  "summary": {
+    "total": 100,
+    "method": "llm_heuristic_v1",
+    "description": "拡張キーワード辞書 + 位置重み + 純卦抑制 + uncertain閾値制御",
+    "uncertain_rate_a": 0.38,
+    "uncertain_rate_b": 0.24,
+    "pure_rate_before_a": 0.01,
+    "pure_rate_before_b": 0.0,
+    "pure_rate_after_a": 0.0,
+    "pure_rate_after_b": 0.03
+  },
+  "annotations": [
+    {
+      "transition_id": "_pilot_000",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「急成長、積極、成長」がマッチ。 スコア上位: 乾(3.31), 坎(1.3), 震(1.05)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 乾(3.16), 坎(1.3), 震(1.25)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「急成長、積極、成長」がマッチ。 スコア上位: 乾(3.61), 兌(2.01), 震(1.05)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 乾(3.16), 兌(2.31), 震(1.25)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「急成長、積極、成長」がマッチ。 スコア上位: 乾(3.32), 兌(2.86), 震(1.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.16), 乾(2.87), 震(1.2)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「急成長、積極、成長」がマッチ。 スコア上位: 乾(3.05), 坎(1.78), 震(1.01)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 乾(2.9), 坎(1.78), 震(1.21)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_001",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「調整」がマッチ。 スコア上位: 坎(2.39), 巽(1.06), 乾(1.02)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(2.39), 巽(1.06), 乾(1.02)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.02), 乾(1.32), 坎(1.09)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 坎(1.09), 巽(1.06)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.82), 乾(1.59), 巽(0.94)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.12), 乾(1.29), 巽(0.94)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 坎(2.42), 乾(1.32), 巽(0.95)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(2.42), 乾(1.32), 巽(0.95)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_002",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 震(1.16), 巽(1.09)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 坎(1.3), 震(1.21), 巽(1.09)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 兌(2.01), 震(1.17), 巽(1.09)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 震(1.22), 巽(1.09)。"
+      },
+      "annotator_b": {
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 兌(2.86), 震(1.49), 巽(0.58)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.16), 震(1.54), 巽(0.58)。",
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.78), 震(1.5), 巽(0.58)。 | Before 外卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 坎(1.78), 震(1.55), 巽(0.58)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_003",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_004",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.21), 震(1.09), 離(1.03)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.09), 乾(1.06), 離(1.03)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.01), 乾(1.51), 震(1.09)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 震(1.09), 乾(1.06)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.87), 乾(1.37), 離(1.23)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.17), 離(1.23), 乾(0.92)。",
+        "before_lower": "乾",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 離(1.25), 乾(1.08), 震(0.58)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 離を選択。 キーワード「メディア」がマッチ。 スコア上位: 離(1.25), 乾(0.93), 震(0.58)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_005",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「挫折」がマッチ。 スコア上位: 震(1.09), 坎(1.07), 離(1.04)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 震(1.29), 坎(1.07), 離(1.04)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 兌(2.04), 震(1.09), 坎(1.07)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.34), 震(1.29), 坎(1.07)。"
+      },
+      "annotator_b": {
+        "after_lower": "離",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 離を選択。 キーワード「注目」がマッチ。 スコア上位: 兌(2.59), 離(1.03), 坎(0.76)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.89), 離(1.03), 坎(0.76)。",
+        "before_lower": "坎",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「挫折」がマッチ。 スコア上位: 離(1.08), 坎(0.79), 震(0.56)。 | Before 外卦: 離を選択。 キーワード「注目」がマッチ。 スコア上位: 離(1.08), 坎(0.79), 震(0.76)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_006",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 艮(2.12), 巽(1.03), 乾(1.0)。 | Before 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(2.12), 巽(1.03), 乾(1.0)。",
+        "after_lower": "巽",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 艮(3.13), 巽(1.04), 坤(1.01)。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(3.13), 巽(1.04), 坤(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(3.19), 坤(1.43), 巽(1.11)。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(3.19), 坤(1.43), 巽(1.11)。",
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 艮(1.83), 乾(1.45), 巽(1.15)。 | Before 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(1.83), 乾(1.45), 巽(1.15)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_007",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「普及」がマッチ。 スコア上位: 坎(1.3), 巽(1.09), 兌(1.05)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 巽(1.09), 兌(1.05)。",
+        "after_lower": "兌",
+        "after_upper": "巽",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 兌を選択。 キーワード「復活」がマッチ。 スコア上位: 巽(1.09), 兌(1.05), 離(1.02)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 巽を選択。 キーワード「普及」がマッチ。 スコア上位: 巽(1.09), 兌(1.05), 離(1.02)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.43), 艮(1.4), 離(1.29)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.43), 艮(1.4), 離(1.29)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "離",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 離を選択。 キーワード「差別化」がマッチ。 スコア上位: 坎(1.77), 離(1.31), 兌(0.99)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.77), 離(1.31), 兌(0.99)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_008",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_009",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_010",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.04), 乾(0.3), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.34), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.64), 乾(0.3), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.94), 震(0.2), 乾(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_011",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "巽",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 巽(1.09), 艮(1.02), 乾(1.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 巽を選択。 キーワード「普及」がマッチ。 スコア上位: 巽(1.09), 艮(1.02), 乾(1.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "巽",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「普及」がマッチ。 スコア上位: 艮(2.03), 巽(1.09), 坤(1.01)。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(2.03), 巽(1.09), 坤(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(2.7), 坤(1.44), 巽(0.61)。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(2.7), 坤(1.44), 巽(0.61)。",
+        "before_lower": "艮",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 乾(1.46), 艮(1.33), 巽(0.62)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.46), 艮(1.33), 巽(0.62)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "_pilot_012",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.04), 乾(0.3), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.34), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.63), 乾(0.3), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.93), 震(0.2), 乾(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_013",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "兌",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(2.12), 坤(1.01), 乾(0.0)。 | Before 外卦: 兌を選択。 キーワード「ファン、人気」がマッチ。 スコア上位: 兌(2.12), 坤(1.01), 震(0.2)。",
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 兌(2.12), 艮(1.01), 坤(1.01)。 | After 外卦: 兌を選択。 キーワード「ファン、人気」がマッチ。 スコア上位: 兌(2.12), 艮(1.01), 坤(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(1.77), 坤(1.41), 艮(1.38)。 | After 外卦: 兌を選択。 キーワード「ファン、人気」がマッチ。 スコア上位: 兌(1.77), 坤(1.41), 艮(1.38)。",
+        "before_lower": "坤",
+        "before_upper": "兌",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(1.8), 坤(1.41), 乾(0.0)。 | Before 外卦: 兌を選択。 キーワード「ファン、人気」がマッチ。 スコア上位: 兌(1.8), 坤(1.41), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_014",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_015",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "兌",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定、地道」がマッチ。 スコア上位: 兌(2.14), 坤(2.04), 坎(1.08)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 兌を選択。 キーワード「回復、人気」がマッチ。 スコア上位: 兌(2.14), 坤(2.04), 坎(1.08)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「休止、縮小」がマッチ。 スコア上位: 兌(2.15), 艮(2.08), 坤(2.04)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 兌を選択。 キーワード「回復、人気」がマッチ。 スコア上位: 兌(2.15), 艮(2.08), 坤(2.04)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「休止、縮小」がマッチ。 スコア上位: 坤(2.56), 艮(2.22), 兌(1.54)。 | After 外卦: 坤を選択。 キーワード「安定、地道」がマッチ。 スコア上位: 坤(2.56), 艮(2.22), 兌(1.54)。",
+        "before_lower": "兌",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「回復、人気」がマッチ。 スコア上位: 坤(2.58), 兌(1.56), 艮(0.85)。 | Before 外卦: 坤を選択。 キーワード「安定、地道」がマッチ。 スコア上位: 坤(2.58), 兌(1.56), 艮(0.85)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_016",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_017",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "_pilot_018",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "兌",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.08), 乾(1.17), 離(1.05)。 | Before 外卦: 兌を選択。 キーワード「人気、口コミ」がマッチ。 スコア上位: 兌(2.08), 離(1.05), 乾(1.02)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(4.09), 乾(1.47), 離(1.05)。 | After 外卦: 兌を選択。 キーワード「回復、V字、人気、口コミ」がマッチ。 スコア上位: 兌(4.39), 離(1.05), 乾(1.02)。"
+      },
+      "annotator_b": {
+        "after_lower": "兌",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 兌を選択。 キーワード「回復、V字、人気、口コミ」がマッチ。 スコア上位: 兌(5.06), 乾(1.71), 離(1.03)。 | After 外卦: 兌を選択。 キーワード「回復、V字、人気、口コミ」がマッチ。 スコア上位: 兌(5.36), 乾(1.26), 離(1.03)。",
+        "before_lower": "乾",
+        "before_upper": "兌",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.24), 乾(1.43), 離(1.05)。 | Before 外卦: 兌を選択。 キーワード「人気、口コミ」がマッチ。 スコア上位: 兌(2.24), 乾(1.28), 離(1.05)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_019",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_020",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「不安」がマッチ。 スコア上位: 坎(1.04), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(1.04), 震(0.2), 乾(0.0)。",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「不安」がマッチ。 スコア上位: 坎(1.04), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(1.04), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「不安」がマッチ。 スコア上位: 坎(1.12), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(1.12), 震(0.2), 乾(0.0)。",
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「不安」がマッチ。 スコア上位: 坎(1.1), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(1.1), 震(0.2), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_021",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(2.16), 坤(1.01), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「困難、危機」がマッチ。 スコア上位: 坎(2.16), 坤(1.01), 乾(0.0)。",
+        "after_lower": "艮",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坎(2.16), 艮(1.01), 坤(1.01)。 | After 外卦: 坎を選択。 キーワード「困難、危機」がマッチ。 スコア上位: 坎(2.16), 艮(1.01), 坤(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.42), 坤(1.4), 艮(1.37)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坎を選択。 キーワード「困難、危機」がマッチ。 スコア上位: 坎(1.42), 坤(1.4), 艮(1.37)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.44), 坤(1.4), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坎を選択。 キーワード「困難、危機」がマッチ。 スコア上位: 坎(1.44), 坤(1.4), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "_pilot_022",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.19), 坤(0.0), 震(0.0)。 | Before 外卦: 震を選択。 スコア上位: 乾(1.04), 震(0.2), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.04), 乾(1.49), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.34), 乾(1.04), 震(0.2)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.62), 乾(1.52), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.92), 乾(1.07), 震(0.2)。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.27), 坤(0.0), 震(0.0)。 | Before 外卦: 震を選択。 スコア上位: 乾(1.12), 震(0.2), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_023",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_024",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "巽",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 巽(1.09), 艮(1.02), 乾(1.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 巽を選択。 キーワード「普及」がマッチ。 スコア上位: 巽(1.09), 艮(1.02), 乾(1.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "巽",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「普及」がマッチ。 スコア上位: 艮(2.03), 巽(1.09), 坤(1.01)。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(2.03), 巽(1.09), 坤(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(2.67), 坤(1.43), 巽(0.57)。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(2.67), 坤(1.43), 巽(0.57)。",
+        "before_lower": "艮",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 乾(1.46), 艮(1.31), 巽(0.57)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.46), 艮(1.31), 巽(0.57)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "_pilot_025",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「融合」がマッチ。 スコア上位: 巽(1.1), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 巽(1.1), 震(0.2), 乾(0.0)。",
+        "after_lower": "巽",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「融合」がマッチ。 スコア上位: 巽(1.1), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 巽(1.1), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "巽",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「融合」がマッチ。 スコア上位: 巽(0.53), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 巽(0.53), 震(0.2), 乾(0.0)。",
+        "before_lower": "巽",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「融合」がマッチ。 スコア上位: 巽(0.53), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 巽(0.53), 震(0.2), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "_pilot_026",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 巽(1.04), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 巽(1.04), 震(0.2), 乾(0.0)。",
+        "after_lower": "巽",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 巽(1.03), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 巽(1.03), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "巽",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 巽(1.16), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 巽(1.16), 震(0.2), 乾(0.0)。",
+        "before_lower": "巽",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 巽(1.14), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 巽(1.14), 震(0.2), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_027",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 乾(0.15), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.15), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.15), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 乾(0.15), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1016",
+      "annotator_a": {
+        "before_lower": "兌",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「黒字」がマッチ。 スコア上位: 乾(2.05), 兌(1.03), 坤(0.0)。 | Before 外卦: 乾を選択。 キーワード「上場、成長」がマッチ。 スコア上位: 乾(2.05), 兌(1.03), 坤(0.0)。",
+        "after_lower": "兌",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 兌を選択。 キーワード「黒字」がマッチ。 スコア上位: 乾(1.04), 兌(1.03), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 乾を選択。 キーワード「上場」がマッチ。 スコア上位: 乾(1.04), 兌(1.03), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「上場」がマッチ。 スコア上位: 兌(1.19), 乾(1.06), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 兌を選択。 キーワード「黒字」がマッチ。 スコア上位: 兌(1.19), 乾(1.06), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "兌",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「黒字」がマッチ。 スコア上位: 乾(2.51), 兌(1.22), 坤(0.0)。 | Before 外卦: 乾を選択。 キーワード「上場、成長」がマッチ。 スコア上位: 乾(2.51), 兌(1.22), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1067",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(2.18), 坤(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 スコア上位: 乾(2.03), 坤(0.0), 震(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.03), 乾(1.48), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.33), 乾(1.03), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.67), 乾(1.67), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.97), 乾(1.22), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(2.89), 坤(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 スコア上位: 乾(2.74), 坤(0.0), 震(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1094",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「急成長、成長」がマッチ。 スコア上位: 乾(2.29), 坎(1.31), 震(1.07)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 乾(2.14), 坎(1.31), 震(1.07)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「急成長、成長」がマッチ。 スコア上位: 乾(2.59), 兌(2.03), 震(1.07)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.33), 乾(2.14), 震(1.07)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「急成長、成長」がマッチ。 スコア上位: 兌(2.66), 乾(2.01), 震(0.77)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.96), 乾(1.56), 震(0.77)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「急成長、成長」がマッチ。 スコア上位: 坎(1.75), 乾(1.74), 震(0.78)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.75), 乾(1.59), 震(0.78)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_127",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "離",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「グローバル、展開」がマッチ。 スコア上位: 離(2.06), 巽(2.06), 坎(1.1)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 離を選択。 キーワード「ブランド」がマッチ。 スコア上位: 離(2.06), 巽(2.06), 坎(1.1)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "離",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 離を選択。 キーワード「ブランド」がマッチ。 スコア上位: 兌(3.08), 離(2.06), 巽(2.06)。 | After 外卦: 兌を選択。 キーワード「回復、V字、復活」がマッチ。 スコア上位: 兌(3.38), 離(2.06), 巽(2.06)。"
+      },
+      "annotator_b": {
+        "after_lower": "巽",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「グローバル、展開」がマッチ。 スコア上位: 兌(3.72), 巽(2.4), 離(2.36)。 | After 外卦: 兌を選択。 キーワード「回復、V字、復活」がマッチ。 スコア上位: 兌(4.02), 巽(2.4), 離(2.36)。",
+        "before_lower": "離",
+        "before_upper": "巽",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 離を選択。 キーワード「ブランド」がマッチ。 スコア上位: 巽(2.42), 離(2.39), 兌(0.84)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 巽を選択。 キーワード「グローバル、展開」がマッチ。 スコア上位: 巽(2.42), 離(2.39), 兌(0.84)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1393",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_142",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 震(1.04), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 震(1.04), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "艮",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 震(1.04), 艮(1.01), 坤(1.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 震(1.04), 艮(1.01), 坤(1.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.45), 艮(1.43), 震(1.08)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.45), 艮(1.43), 震(1.08)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 坤(1.45), 震(1.1), 乾(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.45), 震(1.1), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1476",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 震(1.09), 乾(1.01), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「スタートアップ」がマッチ。 スコア上位: 震(1.09), 乾(1.01), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 震(1.09), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 キーワード「スタートアップ」がマッチ。 スコア上位: 震(1.09), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 震(0.56), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 キーワード「スタートアップ」がマッチ。 スコア上位: 震(0.56), 乾(0.0), 坤(0.0)。",
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「スタートアップ」がマッチ。 スコア上位: 乾(1.41), 震(0.56), 坤(0.0)。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.41), 震(0.56), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1504",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「攻勢、積極、成長」がマッチ。 スコア上位: 乾(3.35), 坎(1.05), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(3.2), 坎(1.05), 震(0.2)。",
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「積極、攻勢」がマッチ。 スコア上位: 乾(2.34), 坎(1.06), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(2.19), 坎(1.06), 震(0.2)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「積極、攻勢」がマッチ。 スコア上位: 乾(1.23), 坎(0.92), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(1.08), 坎(0.92), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「攻勢、積極、成長」がマッチ。 スコア上位: 乾(2.6), 坎(0.95), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(2.45), 坎(0.95), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1527",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(2.41), 乾(0.0), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(2.41), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 坎(1.1), 乾(0.0), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.1), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 坎(0.5), 乾(0.0), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(0.5), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(2.22), 乾(0.0), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(2.22), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1775",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(1.07), 乾(0.15), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.07), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 坎(1.07), 乾(0.15), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.07), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 坎(0.76), 乾(0.15), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(0.76), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(0.76), 乾(0.15), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(0.76), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2206",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 スコア上位: 坎(2.4), 震(0.15), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機、倒産」がマッチ。 スコア上位: 坎(2.4), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坎",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「倒産」がマッチ。 スコア上位: 兌(2.02), 坎(1.09), 乾(0.3)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 坎(1.09), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「倒産」がマッチ。 スコア上位: 兌(2.77), 坎(0.58), 乾(0.3)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.07), 坎(0.58), 乾(0.0)。",
+        "before_lower": "震",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 スコア上位: 坎(2.35), 震(0.15), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機、倒産」がマッチ。 スコア上位: 坎(2.35), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_225",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「リストラ、縮小」がマッチ。 スコア上位: 艮(2.09), 震(1.2), 兌(1.09)。 | Before 外卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 艮(2.09), 震(1.25), 兌(1.09)。",
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「リストラ、縮小」がマッチ。 スコア上位: 兌(3.1), 艮(2.09), 震(1.21)。 | After 外卦: 兌を選択。 キーワード「回復、V字、利益」がマッチ。 スコア上位: 兌(3.4), 艮(2.09), 震(1.26)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「リストラ、縮小」がマッチ。 スコア上位: 兌(3.48), 艮(2.11), 震(1.1)。 | After 外卦: 兌を選択。 キーワード「回復、V字、利益」がマッチ。 スコア上位: 兌(3.78), 艮(2.11), 震(1.15)。",
+        "before_lower": "艮",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「リストラ、縮小」がマッチ。 スコア上位: 艮(2.13), 震(1.11), 坎(0.84)。 | Before 外卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 艮(2.13), 震(1.16), 坎(0.84)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2283",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「赤字、下落」がマッチ。 スコア上位: 乾(2.13), 坎(2.06), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 乾を選択。 キーワード「上場、拡大」がマッチ。 スコア上位: 乾(2.13), 坎(2.06), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「赤字、下落」がマッチ。 スコア上位: 乾(2.13), 坎(2.06), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 乾を選択。 キーワード「上場、拡大」がマッチ。 スコア上位: 乾(2.13), 坎(2.06), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「上場、拡大」がマッチ。 スコア上位: 坎(2.36), 乾(1.73), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「赤字、下落」がマッチ。 スコア上位: 坎(2.36), 乾(1.73), 震(0.2)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「上場、拡大」がマッチ。 スコア上位: 坎(2.36), 乾(1.73), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「赤字、下落」がマッチ。 スコア上位: 坎(2.36), 乾(1.73), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2524",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 艮(2.11), 乾(1.03), 坤(0.0)。 | Before 外卦: 艮を選択。 キーワード「撤退、選択と集中」がマッチ。 スコア上位: 艮(2.11), 乾(1.03), 震(0.2)。",
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退、選択と集中」がマッチ。 スコア上位: 艮(2.11), 兌(2.02), 乾(1.33)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 艮(2.11), 乾(1.03)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退、選択と集中」がマッチ。 スコア上位: 兌(2.83), 艮(1.88), 乾(1.47)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.13), 艮(1.88), 乾(1.17)。",
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 艮(1.91), 乾(1.19), 坤(0.0)。 | Before 外卦: 艮を選択。 キーワード「撤退、選択と集中」がマッチ。 スコア上位: 艮(1.91), 乾(1.19), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2755",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 坤(2.05), 震(1.09), 乾(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.05), 震(1.09), 乾(0.0)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 兌(2.01), 震(1.09), 坤(1.05)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 震(1.09), 坤(1.05)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「守り」がマッチ。 スコア上位: 兌(2.88), 坤(1.04), 震(0.55)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.17), 坤(1.04), 震(0.55)。",
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 坤(2.5), 震(0.56), 乾(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.5), 震(0.56), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2864",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 坎(1.31), 震(1.06), 乾(0.15)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.31), 震(1.06), 乾(0.0)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 兌(2.04), 震(1.06), 乾(0.45)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.34), 震(1.06), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 兌(2.59), 震(0.85), 乾(0.45)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.89), 震(0.85), 乾(0.0)。",
+        "before_lower": "震",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 坎(1.74), 震(0.88), 乾(0.15)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.74), 震(0.88), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3020",
+      "annotator_a": {
+        "before_lower": "兌",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「再生」がマッチ。 スコア上位: 坎(1.3), 兌(1.04), 乾(0.15)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 兌(1.04), 震(0.2)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(3.06), 乾(0.45), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字、再生」がマッチ。 スコア上位: 兌(3.36), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "兌",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 兌を選択。 キーワード「回復、V字、再生」がマッチ。 スコア上位: 兌(3.88), 乾(0.45), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字、再生」がマッチ。 スコア上位: 兌(4.18), 震(0.2), 乾(0.0)。",
+        "before_lower": "兌",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「再生」がマッチ。 スコア上位: 坎(1.77), 兌(1.13), 乾(0.15)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.77), 兌(1.13), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3124",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 震(1.07), 艮(1.04), 坎(1.02)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.07), 艮(1.04), 坎(1.02)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "艮",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 震(1.07), 艮(1.04), 坎(1.02)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.07), 艮(1.04), 坎(1.02)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 坎(1.26), 艮(1.13), 震(0.84)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.26), 艮(1.13), 震(0.84)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(1.47), 坎(1.28), 艮(1.14)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.47), 坎(1.28), 艮(1.14)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_344",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 巽(2.14), 艮(1.05), 乾(0.0)。 | Before 外卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 巽(2.14), 艮(1.05), 震(0.2)。",
+        "after_lower": "艮",
+        "after_upper": "巽",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 巽(2.14), 艮(2.06), 坤(1.01)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 巽(2.14), 艮(2.06), 坤(1.01)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "巽",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 艮(2.41), 巽(1.59), 坤(1.41)。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(2.41), 巽(1.59), 坤(1.41)。",
+        "before_lower": "艮",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 巽(1.6), 艮(1.05), 乾(0.0)。 | Before 外卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 巽(1.6), 艮(1.05), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3441",
+      "annotator_a": {
+        "before_lower": "離",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 離を選択。 キーワード「ブランド」がマッチ。 スコア上位: 震(2.14), 離(1.02), 坤(1.01)。 | Before 外卦: 震を選択。 キーワード「創業、変革」がマッチ。 スコア上位: 震(2.14), 離(1.02), 坤(1.01)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「創業、変革」がマッチ。 スコア上位: 震(2.15), 兌(2.02), 離(1.02)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 震(2.15), 離(1.02)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「創業、変革」がマッチ。 スコア上位: 兌(2.84), 震(1.54), 離(1.3)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.14), 震(1.54), 離(1.3)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 震(1.56), 坤(1.44), 離(1.33)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「創業、変革」がマッチ。 スコア上位: 震(1.56), 坤(1.44), 離(1.33)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3466",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 坤(2.04), 震(1.1), 離(1.03)。 | Before 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.04), 震(1.1), 離(1.03)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 兌(2.01), 震(1.1), 坤(1.04)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 震(1.1), 坤(1.04)。"
+      },
+      "annotator_b": {
+        "after_lower": "離",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 離を選択。 キーワード「革新」がマッチ。 スコア上位: 兌(2.89), 離(1.22), 坤(1.09)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.19), 離(1.22), 坤(1.09)。",
+        "before_lower": "離",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 離を選択。 キーワード「革新」がマッチ。 スコア上位: 坤(2.57), 離(1.24), 震(0.54)。 | Before 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.57), 離(1.24), 震(0.54)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_365",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(2.16), 震(1.08), 坤(0.0)。 | Before 外卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 乾(2.01), 震(1.08), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.01), 乾(1.46), 震(1.08)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 震(1.08), 乾(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.86), 乾(1.83), 震(0.68)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.16), 乾(1.38), 震(0.68)。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(3.05), 震(0.69), 坤(0.0)。 | Before 外卦: 震を選択。 キーワード「創業」がマッチ。 スコア上位: 乾(2.9), 震(0.69), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4263",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「拡大」がマッチ。 スコア上位: 坤(2.03), 乾(1.16), 艮(1.06)。 | Before 外卦: 坤を選択。 キーワード「基盤、安定」がマッチ。 スコア上位: 坤(2.03), 艮(1.06), 離(1.05)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「拡大」がマッチ。 スコア上位: 兌(2.01), 乾(1.47), 艮(1.06)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 艮(1.06), 離(1.05)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「拡大」がマッチ。 スコア上位: 兌(2.87), 乾(1.79), 坤(1.26)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.17), 乾(1.34), 坤(1.26)。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「拡大」がマッチ。 スコア上位: 坤(2.73), 乾(1.52), 離(1.01)。 | Before 外卦: 坤を選択。 キーワード「基盤、安定」がマッチ。 スコア上位: 坤(2.73), 乾(1.37), 離(1.01)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_451",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「トップ、成長」がマッチ。 スコア上位: 乾(2.19), 震(2.14), 兌(1.08)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「創業、突破」がマッチ。 スコア上位: 震(2.34), 乾(2.04), 兌(1.08)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「創業、突破」がマッチ。 スコア上位: 兌(3.08), 震(2.14), 乾(1.49)。 | After 外卦: 兌を選択。 キーワード「回復、V字、利益」がマッチ。 スコア上位: 兌(3.38), 震(2.34), 乾(1.04)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「トップ」がマッチ。 スコア上位: 兌(3.69), 乾(1.6), 震(1.6)。 | After 外卦: 兌を選択。 キーワード「回復、V字、利益」がマッチ。 スコア上位: 兌(3.99), 震(1.8), 乾(1.15)。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「トップ、成長」がマッチ。 スコア上位: 乾(2.8), 震(1.61), 兌(0.75)。 | Before 外卦: 震を選択。 キーワード「創業、突破」がマッチ。 スコア上位: 乾(2.65), 震(1.81), 兌(0.75)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4890",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 艮(1.05), 乾(0.0), 坤(0.0)。 | Before 外卦: 艮を選択。 キーワード「売却」がマッチ。 スコア上位: 艮(1.05), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 艮(1.05), 乾(0.0), 坤(0.0)。 | After 外卦: 艮を選択。 キーワード「売却」がマッチ。 スコア上位: 艮(1.05), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 艮(1.0), 乾(0.0), 坤(0.0)。 | After 外卦: 艮を選択。 キーワード「売却」がマッチ。 スコア上位: 艮(1.0), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 艮(1.0), 乾(0.0), 坤(0.0)。 | Before 外卦: 艮を選択。 キーワード「売却」がマッチ。 スコア上位: 艮(1.0), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_840",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "兌",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(1.09), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 兌を選択。 キーワード「コミュニティ」がマッチ。 スコア上位: 兌(1.09), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "坤",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(3.11), 坤(1.01), 乾(0.3)。 | After 外卦: 兌を選択。 キーワード「コミュニティ、V字、回復」がマッチ。 スコア上位: 兌(3.41), 坤(1.01), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(3.42), 坤(1.37), 乾(0.3)。 | After 外卦: 兌を選択。 キーワード「コミュニティ、V字、回復」がマッチ。 スコア上位: 兌(3.72), 坤(1.37), 乾(0.0)。",
+        "before_lower": "兌",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「コミュニティ」がマッチ。 スコア上位: 坤(1.4), 兌(0.58), 乾(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.4), 兌(0.58), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_929",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「撤退、見直し」がマッチ。 スコア上位: 坎(2.08), 艮(2.05), 乾(2.01)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坎を選択。 キーワード「リスク」がマッチ。 スコア上位: 坎(2.08), 艮(2.05), 乾(2.01)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「リスク」がマッチ。 スコア上位: 艮(3.06), 坎(2.08), 乾(1.01)。 | After 外卦: 艮を選択。 キーワード「撤退、見直し、縮小」がマッチ。 スコア上位: 艮(3.06), 坎(2.08), 乾(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「リスク」がマッチ。 スコア上位: 艮(3.87), 坎(2.15), 坤(1.46)。 | After 外卦: 艮を選択。 キーワード「撤退、見直し、縮小」がマッチ。 スコア上位: 艮(3.87), 坎(2.15), 坤(1.46)。",
+        "before_lower": "艮",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「撤退、見直し」がマッチ。 スコア上位: 乾(2.89), 艮(2.48), 坎(2.19)。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(2.89), 艮(2.48), 坎(2.19)。"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_029",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「急、ショック」がマッチ。 スコア上位: 震(4.4), 艮(1.05), 兌(1.04)。 | Before 外卦: 震を選択。 キーワード「急、ショック」がマッチ。 スコア上位: 震(4.25), 艮(1.05), 兌(1.04)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「急、ショック」がマッチ。 スコア上位: 震(4.41), 兌(3.05), 乾(1.32)。 | After 外卦: 兌を選択。 キーワード「回復、V字、復活」がマッチ。 スコア上位: 震(4.26), 兌(3.35), 艮(1.06)。"
+      },
+      "annotator_b": {
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「急、ショック」がマッチ。 スコア上位: 兌(4.02), 震(3.59), 乾(1.58)。 | After 外卦: 兌を選択。 キーワード「回復、V字、復活」がマッチ。 スコア上位: 兌(4.32), 震(3.44), 坤(1.4)。",
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「急、ショック」がマッチ。 スコア上位: 震(3.61), 坤(1.41), 乾(1.29)。 | Before 外卦: 坤を選択。 キーワード「基盤」がマッチ。 スコア上位: 震(3.46), 坤(1.41), 乾(1.29)。"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_031",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「リスク」がマッチ。 スコア上位: 乾(2.02), 坎(1.09), 巽(1.02)。 | Before 外卦: 乾を選択。 キーワード「トップ、成長」がマッチ。 スコア上位: 乾(2.02), 坎(1.09), 巽(1.02)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「トップ」がマッチ。 スコア上位: 兌(2.01), 乾(1.32), 坎(1.09)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 坎(1.09), 巽(1.02)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「トップ」がマッチ。 スコア上位: 兌(2.9), 乾(1.64), 巽(1.28)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.2), 乾(1.34), 巽(1.28)。",
+        "before_lower": "巽",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「グローバル」がマッチ。 スコア上位: 乾(2.85), 巽(1.31), 坎(0.62)。 | Before 外卦: 乾を選択。 キーワード「トップ、成長」がマッチ。 スコア上位: 乾(2.85), 巽(1.31), 坎(0.62)。"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1213",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(2.05), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.05), 乾(0.0), 震(0.0)。",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(2.05), 艮(1.01), 乾(0.0)。 | After 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.05), 艮(1.01), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(2.47), 艮(1.4), 乾(0.0)。 | After 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.47), 艮(1.4), 乾(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(2.48), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定、守り」がマッチ。 スコア上位: 坤(2.48), 乾(0.0), 震(0.0)。"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1341",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 震(1.17), 乾(0.0), 坤(0.0)。 | Before 外卦: 乾を選択。 スコア上位: 震(1.02), 乾(0.0), 坤(0.0)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 兌(2.02), 震(1.17), 乾(0.3)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 震(1.02), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 兌(2.84), 震(1.44), 乾(0.3)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.14), 震(1.29), 乾(0.0)。",
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「変革」がマッチ。 スコア上位: 震(1.46), 乾(0.0), 坤(0.0)。 | Before 外卦: 乾を選択。 スコア上位: 震(1.31), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1377",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.06), 乾(0.15), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(1.06), 震(0.2), 乾(0.0)。",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.06), 乾(0.15), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(1.06), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(0.86), 乾(0.15), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(0.86), 震(0.2), 乾(0.0)。",
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(0.86), 乾(0.15), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(0.86), 震(0.2), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1380",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 坎(3.18), 震(1.06), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「赤字、債務、危機」がマッチ。 スコア上位: 坎(3.18), 震(1.06), 乾(0.0)。",
+        "after_lower": "震",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 坎(3.18), 震(1.06), 艮(1.01)。 | After 外卦: 坎を選択。 キーワード「赤字、債務、危機」がマッチ。 スコア上位: 坎(3.18), 震(1.06), 艮(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(2.69), 坤(1.44), 艮(1.42)。 | After 外卦: 坎を選択。 キーワード「赤字、債務、危機」がマッチ。 スコア上位: 坎(2.69), 坤(1.44), 艮(1.42)。",
+        "before_lower": "震",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 坎(2.72), 震(0.9), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「赤字、債務、危機」がマッチ。 スコア上位: 坎(2.72), 震(0.9), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_400",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.05), 坤(1.0), 震(0.15)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坎を選択。 キーワード「破綻」がマッチ。 スコア上位: 坎(1.05), 坤(1.0), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「破綻」がマッチ。 スコア上位: 坎(1.05), 震(0.15), 乾(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(1.05), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「破綻」がマッチ。 スコア上位: 坎(0.97), 震(0.15), 乾(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(0.97), 震(0.2), 乾(0.0)。",
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「破綻」がマッチ。 スコア上位: 坤(1.46), 坎(0.97), 震(0.15)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.46), 坎(0.97), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_056",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 震(1.08), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 震(1.08), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 震(1.08), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 震(1.08), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 震(0.68), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 震(0.68), 乾(0.0), 坤(0.0)。",
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「発覚」がマッチ。 スコア上位: 坤(1.43), 震(0.68), 乾(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.43), 震(0.68), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_116",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.01), 乾(0.3), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.89), 乾(0.3), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.19), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_174",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(1.3), 乾(0.15), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.01), 乾(0.45), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(2.87), 乾(0.45), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.17), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(1.78), 乾(0.15), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.78), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "HEX07_YAO6_001",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「売却」がマッチ。 スコア上位: 乾(2.09), 艮(1.04), 離(1.03)。 | Before 外卦: 乾を選択。 キーワード「トップ、世界一」がマッチ。 スコア上位: 乾(2.09), 艮(1.04), 離(1.03)。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「トップ、世界一」がマッチ。 スコア上位: 乾(2.39), 兌(2.02), 艮(1.04)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 乾(2.09), 艮(1.04)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「トップ、世界一」がマッチ。 スコア上位: 兌(2.85), 乾(2.38), 離(1.15)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.15), 乾(2.08), 離(1.15)。",
+        "before_lower": "離",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 離を選択。 キーワード「明確」がマッチ。 スコア上位: 乾(2.11), 離(1.17), 艮(1.1)。 | Before 外卦: 乾を選択。 キーワード「トップ、世界一」がマッチ。 スコア上位: 乾(2.11), 離(1.17), 艮(1.1)。"
+      }
+    },
+    {
+      "transition_id": "HEX28_YAO6_001",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「倒産」がマッチ。 スコア上位: 坎(1.04), 乾(0.15), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(1.04), 震(0.2), 乾(0.0)。",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「倒産」がマッチ。 スコア上位: 坎(1.04), 乾(0.15), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(1.04), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「倒産」がマッチ。 スコア上位: 坎(1.1), 乾(0.15), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 坎(1.1), 震(0.2), 乾(0.0)。",
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「倒産」がマッチ。 スコア上位: 坎(1.1), 乾(0.15), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(1.1), 震(0.2), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "HEX34_YAO6_001",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「攻勢」がマッチ。 スコア上位: 坎(2.31), 乾(1.23), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗、危機」がマッチ。 スコア上位: 坎(2.31), 乾(1.08), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「攻勢」がマッチ。 スコア上位: 乾(1.23), 坎(1.01), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(1.08), 坎(1.01), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「攻勢」がマッチ。 スコア上位: 坎(1.41), 乾(0.89), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.41), 乾(0.74), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「攻勢」がマッチ。 スコア上位: 坎(3.18), 乾(0.89), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗、危機」がマッチ。 スコア上位: 坎(3.18), 乾(0.74), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_060",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「柔軟」がマッチ。 スコア上位: 震(2.13), 巽(1.04), 乾(0.0)。 | Before 外卦: 震を選択。 キーワード「スタートアップ、起業」がマッチ。 スコア上位: 震(2.33), 巽(1.04), 乾(0.0)。",
+        "after_lower": "巽",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「柔軟」がマッチ。 スコア上位: 震(2.13), 巽(1.04), 艮(1.01)。 | After 外卦: 震を選択。 キーワード「スタートアップ、起業」がマッチ。 スコア上位: 震(2.33), 巽(1.04), 艮(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 震(1.7), 坤(1.41), 艮(1.37)。 | After 外卦: 震を選択。 キーワード「スタートアップ、起業」がマッチ。 スコア上位: 震(1.9), 坤(1.41), 艮(1.37)。",
+        "before_lower": "巽",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「柔軟」がマッチ。 スコア上位: 震(1.72), 巽(1.07), 乾(0.0)。 | Before 外卦: 震を選択。 キーワード「スタートアップ、起業」がマッチ。 スコア上位: 震(1.92), 巽(1.07), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1012",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 乾(1.02), 坤(1.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.02), 坤(1.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.01), 乾(1.33), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 乾(1.03), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(2.87), 乾(1.55), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.17), 乾(1.25), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 坤(1.45), 乾(1.27), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.45), 乾(1.27), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1136",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 坤(1.06), 巽(1.04), 乾(1.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坤を選択。 キーワード「地道」がマッチ。 スコア上位: 坤(1.06), 巽(1.04), 乾(1.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "坤",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「地道」がマッチ。 スコア上位: 兌(2.02), 坤(1.06), 巽(1.05)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 坤(1.06), 巽(1.05)。"
+      },
+      "annotator_b": {
+        "after_lower": "巽",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 兌(2.84), 巽(1.03), 坤(0.92)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.14), 巽(1.03), 坤(0.92)。",
+        "before_lower": "巽",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 巽を選択。 キーワード「連携」がマッチ。 スコア上位: 乾(1.46), 巽(1.07), 坤(0.94)。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.46), 巽(1.07), 坤(0.94)。"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1528",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.06), 坤(1.06), 艮(1.03)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坎を選択。 キーワード「不安」がマッチ。 スコア上位: 坎(1.06), 坤(1.06), 艮(1.03)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "坎",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「不安」がマッチ。 スコア上位: 兌(2.02), 坎(1.06), 坤(1.06)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.32), 坎(1.06), 坤(1.06)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「統合」がマッチ。 スコア上位: 兌(2.82), 艮(1.14), 坤(0.92)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.12), 艮(1.14), 坤(0.92)。",
+        "before_lower": "坤",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(1.15), 坤(0.93), 坎(0.91)。 | Before 外卦: 艮を選択。 キーワード「統合」がマッチ。 スコア上位: 艮(1.15), 坤(0.93), 坎(0.91)。"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_356",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「積極、成長」がマッチ。 スコア上位: 乾(2.27), 坎(1.07), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(2.12), 坎(1.07), 震(0.2)。",
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「積極」がマッチ。 スコア上位: 乾(1.25), 坎(1.08), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(1.1), 坎(1.08), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「積極」がマッチ。 スコア上位: 坎(0.7), 乾(0.65), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(0.7), 乾(0.5), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「積極、成長」がマッチ。 スコア上位: 乾(1.96), 坎(0.75), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 乾(1.81), 坎(0.75), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_414",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_587",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 離(2.18), 乾(1.17), 坤(0.0)。 | Before 外卦: 離を選択。 キーワード「明確、ビジョン」がマッチ。 スコア上位: 離(2.18), 乾(1.02), 坤(0.0)。",
+        "after_lower": "艮",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 離(2.19), 艮(1.03), 坤(1.02)。 | After 外卦: 離を選択。 キーワード「明確、ビジョン」がマッチ。 スコア上位: 離(2.19), 艮(1.03), 坤(1.02)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.28), 艮(1.2), 離(1.13)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.28), 艮(1.2), 離(1.13)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.49), 離(1.16), 坤(0.0)。 | Before 外卦: 離を選択。 キーワード「明確、ビジョン」がマッチ。 スコア上位: 乾(1.34), 離(1.16), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1013",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「守り」がマッチ。 スコア上位: 坎(1.3), 坤(1.07), 乾(0.15)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 坤(1.07), 乾(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「守り」がマッチ。 スコア上位: 兌(2.01), 坤(1.07), 乾(0.45)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 坤(1.07), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「守り」がマッチ。 スコア上位: 兌(2.86), 坤(0.79), 乾(0.45)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.16), 坤(0.79), 乾(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「守り」がマッチ。 スコア上位: 坎(1.78), 坤(0.79), 乾(0.15)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.78), 坤(0.79), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1179",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(1.3), 震(0.2), 乾(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(1.01), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(1.01), 坤(1.01), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.45), 艮(1.43), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.45), 艮(1.43), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.78), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 スコア上位: 坎(1.78), 震(0.2), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1386",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(1.07), 乾(0.0), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.07), 乾(0.0), 坤(0.0)。",
+        "after_lower": "艮",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坎(1.07), 艮(1.03), 坤(1.02)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.07), 艮(1.03), 坤(1.02)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.27), 艮(1.18), 坎(0.77)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.27), 艮(1.18), 坎(0.77)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(0.79), 乾(0.0), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(0.79), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1425",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(2.41), 乾(0.0), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「困難、危機」がマッチ。 スコア上位: 坎(2.41), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 坎(1.1), 乾(0.0), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「困難」がマッチ。 スコア上位: 坎(1.1), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 坎(0.5), 乾(0.0), 坤(0.0)。 | After 外卦: 坎を選択。 キーワード「困難」がマッチ。 スコア上位: 坎(0.5), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坎(2.21), 乾(0.0), 坤(0.0)。 | Before 外卦: 坎を選択。 キーワード「困難、危機」がマッチ。 スコア上位: 坎(2.21), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1455",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.02), 坤(0.0), 震(0.0)。 | Before 外卦: 震を選択。 スコア上位: 乾(1.02), 震(0.2), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(1.03), 坤(1.02), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(1.03), 坤(1.02), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.27), 艮(1.18), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.27), 艮(1.18), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.33), 坤(0.0), 震(0.0)。 | Before 外卦: 震を選択。 スコア上位: 乾(1.33), 震(0.2), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1509",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.07), 坤(1.03), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.07), 坤(1.03), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "艮",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坎(1.08), 艮(1.03), 坤(1.02)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坎(1.08), 艮(1.03), 坤(1.02)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.26), 艮(1.17), 坎(0.74)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.26), 艮(1.17), 坎(0.74)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 坤(1.24), 坎(0.76), 乾(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.24), 坎(0.76), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_204",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.0), 坤(0.0), 震(0.0)。 | Before 外卦: 震を選択。 スコア上位: 乾(1.0), 震(0.2), 坤(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 スコア上位: 震(0.2), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.48), 坤(0.0), 震(0.0)。 | Before 外卦: 震を選択。 スコア上位: 乾(1.48), 震(0.2), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2041",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(1.01), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.01), 乾(0.0), 震(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(1.01), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(1.01), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.44), 艮(1.42), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.44), 艮(1.42), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(1.44), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.44), 乾(0.0), 震(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2045",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(1.01), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.01), 乾(0.0), 震(0.0)。",
+        "after_lower": "坤",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 艮(1.01), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 艮(1.01), 坤(1.01), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(1.44), 艮(1.42), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.44), 艮(1.42), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(1.44), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.44), 乾(0.0), 震(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2128",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.15), 坤(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 スコア上位: 乾(1.0), 坤(0.0), 震(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.15), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.15), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.61), 坤(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 スコア上位: 乾(1.46), 坤(0.0), 震(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2729",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「損失」がマッチ。 スコア上位: 坎(2.12), 震(1.09), 兌(1.08)。 | Before 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 坎(2.12), 震(1.29), 兌(1.08)。",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「損失」がマッチ。 スコア上位: 坎(2.12), 震(1.09), 兌(1.08)。 | After 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 坎(2.12), 震(1.29), 兌(1.08)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「損失」がマッチ。 スコア上位: 坎(1.77), 兌(0.7), 震(0.62)。 | After 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 坎(1.77), 震(0.82), 兌(0.7)。",
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.77), 坤(1.46), 兌(0.7)。 | Before 外卦: 坎を選択。 キーワード「損失」がマッチ。 スコア上位: 坎(1.77), 坤(1.46), 震(0.82)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2735",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.16), 震(1.07), 兌(1.07)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.07), 兌(1.07), 乾(1.01)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(3.08), 乾(1.46), 震(1.07)。 | After 外卦: 兌を選択。 キーワード「回復、V字、口コミ」がマッチ。 スコア上位: 兌(3.38), 震(1.07), 乾(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(3.72), 乾(1.85), 震(0.8)。 | After 外卦: 兌を選択。 キーワード「回復、V字、口コミ」がマッチ。 スコア上位: 兌(4.02), 乾(1.4), 震(0.8)。",
+        "before_lower": "乾",
+        "before_upper": "兌",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.57), 兌(0.83), 震(0.81)。 | Before 外卦: 兌を選択。 キーワード「口コミ」がマッチ。 スコア上位: 乾(1.42), 兌(0.83), 震(0.81)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2742",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "兌",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.23), 兌(1.06), 乾(1.01)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 兌を選択。 キーワード「人気」がマッチ。 スコア上位: 震(1.08), 兌(1.06), 乾(1.01)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(3.08), 乾(1.31), 震(1.23)。 | After 外卦: 兌を選択。 キーワード「回復、V字、人気」がマッチ。 スコア上位: 兌(3.38), 震(1.08), 乾(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 兌(3.74), 乾(1.7), 震(0.83)。 | After 外卦: 兌を選択。 キーワード「回復、V字、人気」がマッチ。 スコア上位: 兌(4.04), 乾(1.4), 震(0.68)。",
+        "before_lower": "兌",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「人気」がマッチ。 スコア上位: 乾(1.42), 兌(0.85), 震(0.84)。 | Before 外卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.42), 兌(0.85), 震(0.69)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2798",
+      "annotator_a": {
+        "before_lower": "離",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 離を選択。 キーワード「差別化」がマッチ。 スコア上位: 震(1.05), 離(1.04), 艮(1.01)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「急」がマッチ。 スコア上位: 震(1.25), 離(1.04), 艮(1.01)。",
+        "after_lower": "離",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 離を選択。 キーワード「差別化」がマッチ。 スコア上位: 震(1.05), 離(1.04), 艮(1.01)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 キーワード「急」がマッチ。 スコア上位: 震(1.25), 離(1.04), 艮(1.01)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 艮(1.36), 離(1.1), 震(0.98)。 | After 外卦: 震を選択。 キーワード「急」がマッチ。 スコア上位: 艮(1.36), 震(1.18), 離(1.1)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "艮",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 坤(1.45), 艮(1.36), 離(1.1)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.45), 艮(1.36), 震(1.18)。 1位と2位のスコア差が小さく確信度が低い。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2806",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "兌",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(1.07), 坤(1.0), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 兌を選択。 キーワード「成果」がマッチ。 スコア上位: 兌(1.07), 坤(1.0), 震(0.2)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "兌",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 兌を選択。 キーワード「成果」がマッチ。 スコア上位: 兌(1.07), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 兌(1.07), 震(0.2), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "兌",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 兌を選択。 キーワード「成果」がマッチ。 スコア上位: 兌(0.83), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 スコア上位: 兌(0.83), 震(0.2), 乾(0.0)。",
+        "before_lower": "兌",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「成果」がマッチ。 スコア上位: 坤(1.45), 兌(0.83), 乾(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.45), 兌(0.83), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2890",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.3), 坤(1.02), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 坤(1.02), 乾(0.0)。",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(2.02), 艮(1.01), 乾(0.0)。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(2.02), 艮(1.01), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「縮小」がマッチ。 スコア上位: 坤(2.75), 艮(1.41), 乾(0.0)。 | After 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(2.75), 艮(1.41), 乾(0.0)。",
+        "before_lower": "坤",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坎(1.78), 坤(1.32), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.78), 坤(1.32), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2903",
+      "annotator_a": {
+        "before_lower": "兌",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「コミュニティ」がマッチ。 スコア上位: 震(2.1), 兌(1.04), 乾(0.15)。 | Before 外卦: 震を選択。 キーワード「起業、立ち上げ」がマッチ。 スコア上位: 震(2.1), 兌(1.04), 乾(0.0)。",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「起業、立ち上げ」がマッチ。 スコア上位: 兌(3.05), 震(2.1), 乾(0.45)。 | After 外卦: 兌を選択。 キーワード「コミュニティ、V字、回復」がマッチ。 スコア上位: 兌(3.35), 震(2.1), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 震を選択。 キーワード「起業、立ち上げ」がマッチ。 スコア上位: 兌(4.02), 震(1.98), 乾(0.45)。 | After 外卦: 兌を選択。 キーワード「コミュニティ、V字、回復」がマッチ。 スコア上位: 兌(4.32), 震(1.98), 乾(0.0)。",
+        "before_lower": "兌",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「コミュニティ」がマッチ。 スコア上位: 震(2.0), 兌(1.13), 乾(0.15)。 | Before 外卦: 震を選択。 キーワード「起業、立ち上げ」がマッチ。 スコア上位: 震(2.0), 兌(1.13), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2946",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.3), 震(1.1), 艮(1.05)。 | Before 外卦: 震を選択。 キーワード「事件」がマッチ。 スコア上位: 坎(1.3), 震(1.3), 艮(1.05)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "艮",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 震(1.1), 艮(1.05), 兌(1.02)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 キーワード「事件」がマッチ。 スコア上位: 震(1.3), 艮(1.05), 兌(1.02)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 兌(1.25), 艮(0.97), 震(0.54)。 | After 外卦: 兌を選択。 キーワード「復活」がマッチ。 スコア上位: 兌(1.25), 艮(0.97), 震(0.74)。",
+        "before_lower": "兌",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「復活」がマッチ。 スコア上位: 坎(1.78), 兌(1.24), 艮(0.97)。 | Before 外卦: 坎を選択。 キーワード「危機」がマッチ。 スコア上位: 坎(1.78), 兌(1.24), 艮(0.97)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_586",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(1.01), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.01), 乾(0.0), 震(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 坤を選択。 スコア上位: 乾(0.0), 坤(0.0), 震(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 坤(1.43), 乾(0.0), 震(0.0)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.43), 乾(0.0), 震(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_769",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.17), 震(1.09), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 震(1.09), 乾(1.02), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.17), 震(1.09), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 震(1.09), 乾(1.02), 坤(0.0)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.44), 震(0.63), 坤(0.0)。 | After 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 乾(1.29), 震(0.63), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 キーワード「成長」がマッチ。 スコア上位: 乾(1.47), 震(0.63), 坤(0.0)。 | Before 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 乾(1.32), 震(0.63), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_809",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 巽(2.15), 艮(1.05), 乾(0.0)。 | Before 外卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 巽(2.15), 艮(1.05), 震(0.2)。",
+        "after_lower": "艮",
+        "after_upper": "巽",
+        "after_uncertain": true,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「撤退、縮小」がマッチ。 スコア上位: 巽(2.15), 艮(2.07), 坤(1.01)。 1位と2位のスコア差が小さく確信度が低い。 | After 外卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 巽(2.15), 艮(2.07), 坤(1.01)。 1位と2位のスコア差が小さく確信度が低い。"
+      },
+      "annotator_b": {
+        "after_lower": "巽",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 艮(2.34), 巽(1.53), 坤(1.41)。 | After 外卦: 艮を選択。 キーワード「撤退、縮小」がマッチ。 スコア上位: 艮(2.34), 巽(1.53), 坤(1.41)。",
+        "before_lower": "艮",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「撤退」がマッチ。 スコア上位: 巽(1.54), 艮(0.98), 乾(0.0)。 | Before 外卦: 巽を選択。 キーワード「適応、柔軟」がマッチ。 スコア上位: 巽(1.54), 艮(0.98), 震(0.2)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_855",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 震(1.18), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.23), 乾(0.0), 坤(0.0)。",
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 震(1.18), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.23), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 震(1.38), 乾(0.0), 坤(0.0)。 | After 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.43), 乾(0.0), 坤(0.0)。",
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 乾を選択。 スコア上位: 震(1.38), 乾(0.0), 坤(0.0)。 | Before 外卦: 震を選択。 キーワード「開始」がマッチ。 スコア上位: 震(1.43), 乾(0.0), 坤(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_873",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「整理」がマッチ。 スコア上位: 坎(2.39), 艮(1.03), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「債務、危機」がマッチ。 スコア上位: 坎(2.39), 艮(1.03), 乾(0.0)。",
+        "after_lower": "坎",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「債務」がマッチ。 スコア上位: 兌(2.01), 坎(1.08), 艮(1.03)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(2.31), 坎(1.08), 艮(1.03)。"
+      },
+      "annotator_b": {
+        "after_lower": "艮",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 艮を選択。 キーワード「整理」がマッチ。 スコア上位: 兌(2.89), 艮(1.19), 坎(0.65)。 | After 外卦: 兌を選択。 キーワード「回復、V字」がマッチ。 スコア上位: 兌(3.19), 艮(1.19), 坎(0.65)。",
+        "before_lower": "艮",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 艮を選択。 キーワード「整理」がマッチ。 スコア上位: 坎(2.44), 艮(1.2), 乾(0.0)。 | Before 外卦: 坎を選択。 キーワード「債務、危機」がマッチ。 スコア上位: 坎(2.44), 艮(1.2), 乾(0.0)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_944",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 震(4.2), 坎(2.07), 乾(1.15)。 | Before 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 震(4.4), 坎(2.07), 乾(1.0)。",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 震(4.21), 坎(2.07), 乾(0.15)。 | After 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 震(4.41), 坎(2.07), 乾(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 震(3.95), 坎(2.25), 乾(0.15)。 | After 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 震(4.15), 坎(2.25), 乾(0.0)。",
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 坎を選択。 キーワード「失敗」がマッチ。 スコア上位: 震(3.98), 坎(2.27), 乾(1.63)。 | Before 外卦: 震を選択。 キーワード「起業」がマッチ。 スコア上位: 震(4.18), 坎(2.27), 乾(1.48)。"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_970",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "兌",
+        "before_uncertain": true,
+        "before_reasoning": "Before 内卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 兌(1.07), 坤(1.0), 乾(0.15)。 1位と2位のスコア差が小さく確信度が低い。 | Before 外卦: 兌を選択。 キーワード「人気」がマッチ。 スコア上位: 兌(1.07), 坤(1.0), 乾(0.0)。 1位と2位のスコア差が小さく確信度が低い。",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 乾を選択。 スコア上位: 兌(3.09), 乾(0.45), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字、人気」がマッチ。 スコア上位: 兌(3.39), 乾(0.0), 坤(0.0)。"
+      },
+      "annotator_b": {
+        "after_lower": "兌",
+        "after_upper": "兌",
+        "after_uncertain": false,
+        "after_reasoning": "After 内卦: 兌を選択。 キーワード「回復、V字、人気」がマッチ。 スコア上位: 兌(3.63), 乾(0.45), 坤(0.0)。 | After 外卦: 兌を選択。 キーワード「回復、V字、人気」がマッチ。 スコア上位: 兌(3.93), 乾(0.0), 坤(0.0)。",
+        "before_lower": "兌",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "Before 内卦: 兌を選択。 キーワード「人気」がマッチ。 スコア上位: 坤(1.45), 兌(0.77), 乾(0.15)。 | Before 外卦: 坤を選択。 キーワード「安定」がマッチ。 スコア上位: 坤(1.45), 兌(0.77), 乾(0.0)。"
+      }
+    }
+  ]
+}
