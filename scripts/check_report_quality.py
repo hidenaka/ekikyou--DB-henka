@@ -21,16 +21,14 @@ from datetime import datetime, timezone, timedelta
 # Gate 1: Forbidden word / pattern definitions
 # ---------------------------------------------------------------------------
 
-FORBIDDEN_PATTERNS: list[dict] = [
+FORBIDDEN_PATTERNS = [
     # --- CRITICAL: Assertive predictions ---
     {
         "category": "断定的予測",
         "severity": "CRITICAL",
-        "pattern": r"[^\s]になります",
+        "pattern": r".になります",
         "label": "〜になります",
-        "context_filter": _make_polite_filter  # resolved later
-        if False
-        else None,
+        "needs_polite_check": True,
     },
     {
         "category": "断定的予測",
@@ -281,19 +279,19 @@ FORBIDDEN_PATTERNS: list[dict] = [
     {
         "category": "タイプ分け",
         "severity": "MEDIUM",
-        "pattern": r"[ぁ-んァ-ヶー\w]+タイプ",
+        "pattern": r"[\u3041-\u3093\u30A1-\u30F6\u30FC\w]+タイプ",
         "label": "〇〇タイプ",
     },
     {
         "category": "タイプ分け",
         "severity": "MEDIUM",
-        "pattern": r"[ぁ-んァ-ヶー\w]+型",
+        "pattern": r"[\u3041-\u3093\u30A1-\u30F6\u30FC\w]+型",
         "label": "〇〇型",
     },
     {
         "category": "タイプ分け",
         "severity": "MEDIUM",
-        "pattern": r"あなたは[ぁ-んァ-ヶー\w]+な人",
+        "pattern": r"あなたは[\u3041-\u3093\u30A1-\u30F6\u30FC\w]+な人",
         "label": "あなたは〇〇な人",
     },
     # --- HIGH: Technical terms (internal field names) ---
@@ -359,11 +357,11 @@ FORBIDDEN_PATTERNS: list[dict] = [
     },
 ]
 
+
 # ---------------------------------------------------------------------------
 # Polite-form exclusion for "になります"
 # ---------------------------------------------------------------------------
 
-# Patterns where "になります" is just polite speech, not a prediction
 _POLITE_NARIMASU_PREFIXES = [
     r"以下のように",
     r"次のように",
@@ -387,17 +385,9 @@ _POLITE_PATTERN = re.compile(
 
 def _is_polite_narimasu(line: str, match_start: int) -> bool:
     """Return True if 'になります' in this context is polite, not predictive."""
-    # Look at up to 30 chars before the match
     window_start = max(0, match_start - 30)
     window = line[window_start : match_start + 10]
     return bool(_POLITE_PATTERN.search(window))
-
-
-# ---------------------------------------------------------------------------
-# Fix up the placeholder in FORBIDDEN_PATTERNS
-# ---------------------------------------------------------------------------
-# The first entry had a placeholder for context_filter; clean it up.
-FORBIDDEN_PATTERNS[0]["context_filter"] = None  # will handle inline
 
 
 # ---------------------------------------------------------------------------
@@ -405,7 +395,7 @@ FORBIDDEN_PATTERNS[0]["context_filter"] = None  # will handle inline
 # ---------------------------------------------------------------------------
 
 
-def check_gate_1(lines: list[str]) -> dict:
+def check_gate_1(lines: list) -> dict:
     """Run forbidden-word checks. Returns gate_1 result dict."""
     violations = []
 
@@ -414,14 +404,18 @@ def check_gate_1(lines: list[str]) -> dict:
             pattern = rule["pattern"]
             for m in re.finditer(pattern, line):
                 # Special handling for "になります" polite exclusion
-                if rule["label"] == "〜になります":
+                if rule.get("needs_polite_check"):
                     if _is_polite_narimasu(line, m.start()):
                         continue
 
                 # Build context snippet (up to 60 chars around match)
                 start = max(0, m.start() - 20)
                 end = min(len(line), m.end() + 20)
-                context = ("..." if start > 0 else "") + line[start:end] + ("..." if end < len(line) else "")
+                context = (
+                    ("..." if start > 0 else "")
+                    + line[start:end]
+                    + ("..." if end < len(line) else "")
+                )
 
                 violations.append(
                     {
@@ -444,37 +438,36 @@ def check_gate_1(lines: list[str]) -> dict:
 # Gate 2 implementation
 # ---------------------------------------------------------------------------
 
-# Section detection patterns  (## or ### followed by section number or name)
 FULL_SECTIONS = [
     {
         "id": 1,
         "name": "現在地の構造化",
-        "patterns": [r"#+\s*(?:セクション\s*1|1\.|1[:：]|現在地)"],
+        "patterns": [r"#+\s*(?:セクション\s*1|1\.\s|1[:：]\s*|現在地)"],
     },
     {
         "id": 2,
         "name": "このまま進んだ場合のシナリオ",
-        "patterns": [r"#+\s*(?:セクション\s*2|2\.|2[:：]|このまま|現行|シナリオ)"],
+        "patterns": [r"#+\s*(?:セクション\s*2|2\.\s|2[:：]\s*|このまま|現行ルート|シナリオ)"],
     },
     {
         "id": 3,
         "name": "別ルート",
-        "patterns": [r"#+\s*(?:セクション\s*3|3\.|3[:：]|別ルート|代替|オプション|選択肢)"],
+        "patterns": [r"#+\s*(?:セクション\s*3|3\.\s|3[:：]\s*|別ルート|代替|オプション|選択肢)"],
     },
     {
         "id": 4,
         "name": "各ルートの比較表",
-        "patterns": [r"#+\s*(?:セクション\s*4|4\.|4[:：]|比較|ルート.*比較)"],
+        "patterns": [r"#+\s*(?:セクション\s*4|4\.\s|4[:：]\s*|比較|ルート.*比較)"],
     },
     {
         "id": 5,
         "name": "今日の1アクション",
-        "patterns": [r"#+\s*(?:セクション\s*5|5\.|5[:：]|今日.*アクション|1アクション|ファーストステップ)"],
+        "patterns": [r"#+\s*(?:セクション\s*5|5\.\s|5[:：]\s*|今日.*アクション|1アクション|ファーストステップ|最初の一歩)"],
     },
     {
         "id": 6,
         "name": "30日/90日実験プラン",
-        "patterns": [r"#+\s*(?:セクション\s*6|6\.|6[:：]|30日|90日|実験プラン)"],
+        "patterns": [r"#+\s*(?:セクション\s*6|6\.\s|6[:：]\s*|30日|90日|実験プラン)"],
     },
 ]
 
@@ -485,7 +478,7 @@ LIGHT_SECTIONS = [
 ]
 
 
-def _detect_section(lines: list[str], section_def: dict) -> bool:
+def _detect_section(lines: list, section_def: dict) -> bool:
     """Return True if the section is found in the text."""
     for line in lines:
         for pat in section_def["patterns"]:
@@ -496,11 +489,11 @@ def _detect_section(lines: list[str], section_def: dict) -> bool:
 
 def _has_markdown_table(text: str) -> bool:
     """Check if text contains a markdown table (|---|)."""
-    return bool(re.search(r"\|[\s-]+\|", text))
+    return bool(re.search(r"\|[\s\-]+\|", text))
 
 
 def _has_evidence_labels(text: str) -> bool:
-    """Check if evidence labels (観測済み / 仮説) are present."""
+    """Check if evidence labels are present."""
     has_observed = "観測済み" in text
     has_hypothesis = "仮説" in text
     return has_observed or has_hypothesis
@@ -508,24 +501,26 @@ def _has_evidence_labels(text: str) -> bool:
 
 def _has_action_with_duration(text: str) -> bool:
     """Check if an action item with time/duration indication exists."""
-    # Look for time-related patterns near action-related headings
     action_section = False
     for line in text.split("\n"):
-        if re.search(r"#+\s*(?:セクション\s*5|5\.|5[:：]|今日.*アクション|1アクション|ファーストステップ)", line):
+        if re.search(
+            r"#+\s*(?:セクション\s*5|5\.\s|5[:：]|今日.*アクション|1アクション|ファーストステップ|最初の一歩)",
+            line,
+        ):
             action_section = True
         if action_section:
             if re.search(r"\d+\s*分|\d+\s*時間|\d+\s*秒|今日|今すぐ|まず", line):
                 return True
-    # Fallback: check globally
+    # Fallback: check globally for action + time
     return bool(re.search(r"今日.*(?:分|時間|秒|やる|する|試す|始める)", text))
 
 
 def _has_experiment_plan(text: str) -> bool:
     """Check if 30-day/90-day experiment plan exists."""
-    return bool(re.search(r"(?:30日|90日|30\s*日|90\s*日|1ヶ月|3ヶ月)", text))
+    return bool(re.search(r"(?:30\s*日|90\s*日|1\s*ヶ月|3\s*ヶ月)", text))
 
 
-def check_gate_2(lines: list[str], text: str, plan_type: str) -> dict:
+def check_gate_2(lines: list, text: str, plan_type: str) -> dict:
     """Run structural checks. Returns gate_2 result dict."""
     sections = FULL_SECTIONS if plan_type == "full" else LIGHT_SECTIONS
     char_count = len(text)
@@ -536,11 +531,9 @@ def check_gate_2(lines: list[str], text: str, plan_type: str) -> dict:
         char_min, char_max = 1000, 2000
 
     # Section presence
-    found_sections = {}
     missing = []
     for sec in sections:
         present = _detect_section(lines, sec)
-        found_sections[f"section_{sec['id']}"] = present
         if not present:
             missing.append(f"セクション{sec['id']}: {sec['name']}")
 
@@ -562,13 +555,9 @@ def check_gate_2(lines: list[str], text: str, plan_type: str) -> dict:
     if plan_type == "full":
         experiment_plan = _has_experiment_plan(text)
         checks["experiment_plan_present"] = experiment_plan
-    else:
-        experiment_plan = True  # not required for light
 
     # MUST failures
-    must_failures = []
-    if not sections_all_present:
-        must_failures.extend(missing)
+    must_failures = list(missing)  # copy
     if not evidence_labels:
         must_failures.append("根拠ラベル（観測済み/仮説）が見つかりません")
     if not comparison_table:
@@ -590,24 +579,21 @@ def check_gate_2(lines: list[str], text: str, plan_type: str) -> dict:
 
 def check_gate_3(text: str) -> dict:
     """Run evidence consistency checks. Returns gate_3 result dict."""
+    lines = text.split("\n")
 
-    # Check: observed cases have outcome descriptions
     observed_ok = True
     hypothesis_ok = True
 
-    # Simple heuristic: look for "観測済み" near some outcome text
-    # and "仮説" near some reasoning text
-    lines = text.split("\n")
     for i, line in enumerate(lines):
         if "観測済み" in line:
             # Check surrounding lines (within 5 lines) for outcome-like content
             window = "\n".join(lines[max(0, i - 2) : i + 6])
-            if not re.search(r"(結果|アウトカム|実際|成果|経過|推移|その後)", window):
+            if not re.search(r"(結果|アウトカム|実際|成果|経過|推移|その後|達成|失敗|成功)", window):
                 observed_ok = False
         if "仮説" in line:
             # Check surrounding lines for reasoning
             window = "\n".join(lines[max(0, i - 2) : i + 6])
-            if not re.search(r"(根拠|理由|推論|なぜなら|ため|背景|因|基づ)", window):
+            if not re.search(r"(根拠|理由|推論|なぜなら|ため|背景|因|基づ|類似|傾向|パターン)", window):
                 hypothesis_ok = False
 
     # Check for "事例数不足" label
@@ -673,7 +659,11 @@ def build_human_checklist() -> dict:
 
 def compute_overall(gate_1: dict, gate_2: dict, gate_3: dict) -> str:
     """Compute overall status from gate results."""
-    if gate_1["status"] == "FAIL" or gate_2["status"] == "FAIL" or gate_3["status"] == "FAIL":
+    if (
+        gate_1["status"] == "FAIL"
+        or gate_2["status"] == "FAIL"
+        or gate_3["status"] == "FAIL"
+    ):
         return "FAIL"
     if gate_3["status"] == "NEEDS_HUMAN_REVIEW":
         return "NEEDS_HUMAN_REVIEW"
@@ -725,7 +715,10 @@ def main():
         report_file = args.file
     else:
         if sys.stdin.isatty():
-            print("Error: No input provided. Use --file or pipe input via stdin.", file=sys.stderr)
+            print(
+                "Error: No input provided. Use --file or pipe input via stdin.",
+                file=sys.stderr,
+            )
             sys.exit(1)
         text = sys.stdin.read()
         report_file = "<stdin>"
@@ -770,11 +763,9 @@ def main():
     else:
         print(output_json)
 
-    # Exit code based on overall status
+    # Exit code: 2 for FAIL, 0 otherwise
     if overall == "FAIL":
         sys.exit(2)
-    elif overall == "NEEDS_HUMAN_REVIEW":
-        sys.exit(0)
     else:
         sys.exit(0)
 
