@@ -47,14 +47,23 @@ DA_KEYWORDS = [
 ]
 
 
+def get_case_id(case):
+    """Get case ID from either 'transition_id' or 'id' field."""
+    return case.get("transition_id") or case.get("id") or ""
+
+
 def load_cases():
-    """Load all cases from JSONL."""
+    """Load all cases from JSONL. Normalize ID field."""
     cases = []
     with open(CASES_PATH, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if line:
-                cases.append(json.loads(line))
+                c = json.loads(line)
+                # Normalize: ensure transition_id exists
+                if "transition_id" not in c:
+                    c["transition_id"] = c.get("id", "")
+                cases.append(c)
     return cases
 
 
