@@ -362,41 +362,33 @@ FORBIDDEN_PATTERNS = [
 # Polite-form exclusion for "になります"
 # ---------------------------------------------------------------------------
 
-_POLITE_NARIMASU_PREFIXES = [
-    r"以下のように",
-    r"次のように",
-    r"下記のように",
-    r"ご案内",
-    r"ご説明",
-    r"ご確認",
-    r"ご参考",
-    r"お知らせ",
-    r"表のように",
-    r"こちら",
-    r"構成",
-    r"内容",
-    r"結果",
-]
-
-_POLITE_PATTERN = re.compile(
-    r"(?:" + "|".join(_POLITE_NARIMASU_PREFIXES) + r").{0,10}になります"
+# Patterns where "になります" is just polite phrasing.
+# We check what appears before "になります" (up to 20 chars) for these stems.
+# Note: "以下のように" + "なります" = "以下のようになります", so the stem
+# before "になります" is "以下のよう".  We match on the text *before* "に".
+_POLITE_BEFORE_NI_PATTERNS = re.compile(
+    r"(?:"
+    r"以下のよう|次のよう|下記のよう|表のよう"  # 〜ようになります
+    r"|ご案内|ご説明|ご確認|ご参考|お知らせ"    # ご〜になります
+    r"|こちら|構成|内容|結果"                    # 〜になります (polite)
+    r").{0,10}$"
 )
 
 
 def _is_polite_narimasu(line: str, match_start: int) -> bool:
     """Return True if 'になります' in this context is polite, not predictive.
 
-    The match_start points to the start of the '.になります' match (i.e. the
-    character before 'に').  We locate 'になります' within that match and then
-    look backwards up to 30 characters for a polite prefix.
+    The match_start points to the start of the '.になります' regex match.
+    We find where 'になります' actually starts and then examine the text
+    preceding it for polite-speech stems.
     """
-    # Find the position of 'になります' inside the match
     ni_pos = line.find("になります", match_start)
     if ni_pos < 0:
         return False
-    window_start = max(0, ni_pos - 30)
-    window = line[window_start : ni_pos + len("になります")]
-    return bool(_POLITE_PATTERN.search(window))
+    # Look at up to 20 chars before the 'に'
+    window_start = max(0, ni_pos - 20)
+    before = line[window_start:ni_pos]
+    return bool(_POLITE_BEFORE_NI_PATTERNS.search(before))
 
 
 # ---------------------------------------------------------------------------

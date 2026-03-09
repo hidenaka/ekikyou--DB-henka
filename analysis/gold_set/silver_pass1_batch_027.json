@@ -1,0 +1,217 @@
+{
+  "batch_id": 27,
+  "pass_number": 1,
+  "prompt_type": "analytical",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "離", "reasoning": "粉飾決算という隠された危険・欺瞞が内部に存在。坎=内的な困難・危機が潜んでいた状態。"},
+      "before_upper": {"trigram": "震", "confidence": "high", "alternative": "坎", "reasoning": "発覚による激震。信用失墜、銀行融資打ち切り、取引先契約解除という突然の衝撃が外部環境を支配。"},
+      "after_lower": {"trigram": "坎", "confidence": "high", "alternative": "坤", "reasoning": "民事再生法適用申請、大量離職。内部は深い危機の中にある。坎=困難が継続。"},
+      "after_upper": {"trigram": "艮", "confidence": "high", "alternative": "坎", "reasoning": "事業継続すら危ぶまれ停止状態。外部環境は硬直・停滞。艮=止まっている。"}
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "先見性ある創業者の強い意志とリーダーシップ。内的な創造的エネルギーが満ちている。"},
+      "before_upper": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "明確なビジョンで業界の常識を覆す革新的プロダクト。離=明晰さ・ビジョンが外部に放射。"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "全社員一丸、創業者のリーダーシップのもと世界展開加速。内的な意志と力が持続。"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "市場席巻、投資順調、急拡大。外部環境は圧倒的成長。乾=天の力が満ちる。"}
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {"trigram": "震", "confidence": "medium", "alternative": "坎", "reasoning": "業界構造変化というショックに直面。競合関係の緊張感。内部に変革への衝動がある。"},
+      "before_upper": {"trigram": "坎", "confidence": "medium", "alternative": "艮", "reasoning": "構造変化で厳しい外部環境。価格競争や市場縮小など困難に直面。"},
+      "after_lower": {"trigram": "兌", "confidence": "high", "alternative": "巽", "reasoning": "対話を重ね、オープンな情報共有と対等な関係を構築。内的には交流・喜びの共有=兌。"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "巽", "reasoning": "業界全体に協調の機運、新エコシステム形成。外部環境は歓迎・開放的=兌。"}
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {"trigram": "離", "confidence": "high", "alternative": "坎", "reasoning": "調査報道記者の数年にわたる取材=真実を見通す明晰さ・パッション。内部に離の火が燃えている。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "坤", "reasoning": "癒着構造が隠蔽された社会。外部環境は闇・困難=坎。不正が覆い隠されている。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "真相が明るみに出て市民の意識が変わる。内的な覚醒・明晰化=離。"},
+      "after_upper": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "透明性を求める社会運動が全国に拡大。外部は報道・メディアの光=離。"}
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "受容的・安定的な経営姿勢。市場変化に段階的に対応する受動性=坤。"},
+      "before_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "静的安定。業界での存在感が薄れつつある停滞的な外部環境=艮。"},
+      "after_lower": {"trigram": "巽", "confidence": "medium", "alternative": "坤", "reasoning": "段階的な見直し、小規模投資の継続。漸進的・柔軟な適応=巽。"},
+      "after_upper": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "大きな成功も失敗もなく安定維持。外部環境は平穏・安定=坤。"}
+    },
+    {
+      "transition_id": "FAM_JP_291",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "相続争い=家族内の困難・感情的危機。遺産分割を巡る内的な苦しみ。"},
+      "before_upper": {"trigram": "震", "confidence": "medium", "alternative": "坎", "reasoning": "家庭裁判所に持ち込まれる混乱。相続発生（死別）という突然の変化が外的環境を揺るがす。"},
+      "after_lower": {"trigram": "兌", "confidence": "medium", "alternative": "巽", "reasoning": "調停による家族間対話で解決。対話・コミュニケーション=兌が内部で機能。"},
+      "after_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "縮小安定。争いは収まり安定した状態に。外部環境は静かで安定=坤。"}
+    },
+    {
+      "transition_id": "CORP_JP_400",
+      "before_lower": {"trigram": "離", "confidence": "medium", "alternative": "乾", "reasoning": "ホームズのビジョンと情熱は本物だったが、中身は虚偽。離=ビジョン・情熱だが、内実が伴わない「見せかけの火」。"},
+      "before_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "評価額90億ドル、メディアの絶賛。外部環境は絶頂の成長・拡大=乾。"},
+      "after_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "SEC詐欺起訴、禁錮11年。内部は完全な危機・崩壊。"},
+      "after_upper": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "WSJ暴露、社会的注目と批判。外部環境はメディアの厳しい監視の目=離。"}
+    },
+    {
+      "transition_id": "OTHR_JP_141",
+      "before_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "停滞・閉塞の内部状態。コワーキング文化が日本で未発展、動きが止まっている。"},
+      "before_upper": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "市場が未開拓で静的。外部環境は変化に乏しい安定状態。"},
+      "after_lower": {"trigram": "巽", "confidence": "medium", "alternative": "震", "reasoning": "リモートワーク普及で徐々にサードプレイス需要が回復。コロナ打撃後の漸進的適応=巽。"},
+      "after_upper": {"trigram": "乾", "confidence": "medium", "alternative": "兌", "reasoning": "V字回復、地方でも展開拡大。外部環境は成長=乾。"}
+    },
+    {
+      "transition_id": "PERS_JP_437",
+      "before_lower": {"trigram": "乾", "confidence": "high", "alternative": "震", "reasoning": "たけしの圧倒的な意志力とエネルギー。エレベーターボーイから這い上がる内なる力=乾。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "中退、ストリップ劇場の底辺からのスタート。外部環境は厳しく困難=坎。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "映画監督としてのビジョン・芸術的明晰さ。「戦場のメリークリスマス」から「HANA-BI」へ。内的なビジョンと創造性=離。"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "ベネチア金獅子賞、世界的映画監督に。外部環境は圧倒的成功・成長=乾。"}
+    },
+    {
+      "transition_id": "CORP_JP_471",
+      "before_lower": {"trigram": "乾", "confidence": "high", "alternative": "震", "reasoning": "ペレス会長の強力なリーダーシップと大胆な決断力。借金清算、宿敵から選手獲得。内部に強い意志=乾。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "経営危機。借金を抱え、クラブは困難な状態にあった。外部環境は厳しい=坎。"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "2億ユーロ投資、銀河系軍団形成。強いリーダーシップと野心的な戦略が継続=乾。"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "リーガ5回、CL6回優勝、3連覇。圧倒的な成功と成長=乾。"}
+    },
+    {
+      "transition_id": "PERS_JP_1130",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "兌", "reasoning": "コロナ後の株高に乗って受動的に投資開始。明確な戦略なく流行に従った受動性=坤。"},
+      "before_upper": {"trigram": "坤", "confidence": "medium", "alternative": "乾", "reasoning": "安定・平和な外部環境。特に困難もない平穏な状態。"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "坤", "reasoning": "「長期・分散・積立」への方針転換。漸進的・柔軟で地道な適応=巽。"},
+      "after_upper": {"trigram": "乾", "confidence": "medium", "alternative": "坤", "reasoning": "V字回復。インデックス投資で回復し成果を上げる。外部環境は成長=乾。"}
+    },
+    {
+      "transition_id": "CORP_JP_125",
+      "before_lower": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "大手との価格競争で苦しみながらも踏みとどまる意志。24年という長い忍耐=艮の「止まる・耐える」。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "大手メーカーとの価格競争という厳しい外部環境=坎。"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "艮", "reasoning": "有機・無添加に特化という段階的な適応戦略。24年かけてじっくり変化=巽。"},
+      "after_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "ニッチ市場で存続。大きな成長はないが安定した外部環境=坤。"}
+    },
+    {
+      "transition_id": "COUN_JP_1209",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "どん底の観光地。人気低迷、施設老朽化、内部は困難=坎。"},
+      "before_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坎", "reasoning": "団体旅行から個人旅行への変化に対応できず停滞。外部環境は硬直=艮。"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "離", "reasoning": "リノベーション、若者向けカフェ誘致など緩やかな適応。内的に漸進的変化=巽。"},
+      "after_upper": {"trigram": "兌", "confidence": "medium", "alternative": "乾", "reasoning": "新たな観光地像の構築でV字回復。若者が集まる魅力的な場=兌（歓迎・喜び）。"}
+    },
+    {
+      "transition_id": "CORP_JP_148",
+      "before_lower": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "スーパーに押されながらも手作りの価値を守る意志。止まって耐える=艮。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "大量生産品との厳しい競争環境=坎。"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "艮", "reasoning": "国産大豆と手作りの価値訴求で段階的に差別化。24年かけた漸進的適応=巽。"},
+      "after_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "縮小しながら存続。外部環境は静的安定=坤。"}
+    },
+    {
+      "transition_id": "PERS_JP_853",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "坤", "reasoning": "性暴力被害という深刻な内的苦しみ・危機。組織内で声を上げられなかった困難=坎。"},
+      "before_upper": {"trigram": "坤", "confidence": "medium", "alternative": "坎", "reasoning": "当初は防衛省の対応不十分。組織は受動的で変化を拒む外部環境=坤。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "実名・顔出しで真実を公表。内的な明晰さと勇気、ビジョン=離。真実を照らす火。"},
+      "after_upper": {"trigram": "震", "confidence": "high", "alternative": "離", "reasoning": "世論の後押し、Time誌選出、組織内ハラスメント問題に一石。社会への衝撃=震。"}
+    },
+    {
+      "transition_id": "COUN_JP_607",
+      "before_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "停滞した行政の内部状態。旧来型の閉鎖的な運営=艮（止まっている）。"},
+      "before_upper": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "閉塞的だが安定した外部環境。住民との距離が遠い=坤。"},
+      "after_lower": {"trigram": "兌", "confidence": "high", "alternative": "離", "reasoning": "SNSで住民と対話、質問対応。内的にコミュニケーション・交流=兌。"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "離", "reasoning": "明るく開かれた行政イメージ、信頼関係構築、若年層の関心喚起。外部は歓迎・開放的=兌。"}
+    },
+    {
+      "transition_id": "PERS_JP_939",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "乾", "reasoning": "15年安定したキャリアの内的状態。日々の仕事を受容的にこなす=坤。"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "安定・平和な外部環境。特に変化のない業界=坤。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "自分の経験をビジネスに変える明晰なビジョン。「自分の経験がビジネスになった」=離（明晰・情熱）。"},
+      "after_upper": {"trigram": "兌", "confidence": "high", "alternative": "乾", "reasoning": "同じ悩みを持つ美容師からの支持。共感と喜びの交流=兌。"}
+    },
+    {
+      "transition_id": "PERS_JP_1033",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "安定した日常を営む商店主。受容的で穏やかな内的状態=坤。"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "安定・平和な外部環境。災害前の平穏な日常。"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "坎", "reasoning": "全てを失ってから10年かけて再建する強い意志。「生きているから頑張れる」=乾の不屈の意志。"},
+      "after_upper": {"trigram": "震", "confidence": "medium", "alternative": "坎", "reasoning": "震災という大変動を経て変質・新生。外部環境は震災の衝撃=震。語り継ぐ活動も含め根本的な変化。"}
+    },
+    {
+      "transition_id": "PERS_JP_2868",
+      "before_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "29歳で引退を決断。止まって内省する=艮。世界放浪も探索・内省の時間。"},
+      "before_upper": {"trigram": "艮", "confidence": "medium", "alternative": "坤", "reasoning": "W杯後の停滞・閉塞。サッカー界での役割を終え、外部環境も停滞=艮。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "日本の伝統工芸に着目しビジョンを持つ。「REVALUE NIPPON」=日本文化の価値を照らす離のビジョン。"},
+      "after_upper": {"trigram": "巽", "confidence": "medium", "alternative": "兌", "reasoning": "SAKE100、REVALUE NIPPONなど新事業を展開。急激ではなく緩やかな新領域への進出=巽。"}
+    },
+    {
+      "transition_id": "OTHR_JP_012",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "赤字が続く地方鉄道の内的困難。経営的に厳しい危機状態=坎。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "艮", "reasoning": "人口減少と自家用車普及という厳しい外部環境=坎。"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "艮", "reasoning": "24年かけて存続を模索。観光列車と上下分離方式=漸進的適応=巽。"},
+      "after_upper": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "厳しい経営を何とか維持。縮小安定=劇的な変化なく静的=坤。"}
+    },
+    {
+      "transition_id": "OTHR_JP_033",
+      "before_lower": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "安定した道の駅の運営。受容的で穏やかな内的状態=坤。"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "安定・平和な外部環境。人気の観光拠点として安定していた=坤。"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "艮", "reasoning": "7年かけて地元食材と体験型コンテンツで差別化。緩やかな適応=巽。"},
+      "after_upper": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "縮小安定。競合に押されつつも存続。外部は大きな変化なく安定=坤。"}
+    },
+    {
+      "transition_id": "CORP_JP_3440",
+      "before_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "「全品280円均一」の価格破壊という強い意志と創業者のビジョン。大胆な戦略=乾。"},
+      "before_upper": {"trigram": "坎", "confidence": "medium", "alternative": "震", "reasoning": "成長痛の外部環境。飲食業界の厳しい競争と拡大の困難=坎。"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "600店舗突破、海外展開開始。強い拡大意志とリーダーシップの継続=乾。"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "兌", "reasoning": "V字回復・大成功。日本の居酒屋文化を世界に発信。外部環境は圧倒的成長=乾。"}
+    },
+    {
+      "transition_id": "FAM_JP_526",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "360年以上の伝統を受け継ぐ受容的な内的姿勢。型を守る=坤（受容・継承）。"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "安定した古典芸能の世界。外部環境は安定的=坤。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "ワンピース歌舞伎など新作への挑戦、若い世代への普及活動。伝統に新しいビジョンを注入=離。"},
+      "after_upper": {"trigram": "乾", "confidence": "medium", "alternative": "兌", "reasoning": "V字回復・大成功。13代目襲名、古典芸能の継続的発展。外部環境は成長=乾。"}
+    },
+    {
+      "transition_id": "CORP_JP_3116",
+      "before_lower": {"trigram": "震", "confidence": "high", "alternative": "坎", "reasoning": "3行統合という大変動。異なる文化の衝突、システム統合の混乱=震。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "度重なるシステム障害。外部環境は厳しく困難=坎。"},
+      "after_lower": {"trigram": "巽", "confidence": "high", "alternative": "艮", "reasoning": "「One MIZUHO」構想でガバナンス改革を断行。真の統合に向けた段階的適応=巽。"},
+      "after_upper": {"trigram": "坤", "confidence": "medium", "alternative": "艮", "reasoning": "縮小安定・生存。劇的な成長はないが安定化へ向かう=坤。"}
+    },
+    {
+      "transition_id": "CORP_JP_3379",
+      "before_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "AI開発における明晰なビジョン。倫理的課題を早期に見通す先見性=離。"},
+      "before_upper": {"trigram": "震", "confidence": "medium", "alternative": "乾", "reasoning": "AI開発の急速な進展が外部環境を揺るがす。技術革新の衝撃=震。"},
+      "after_lower": {"trigram": "艮", "confidence": "high", "alternative": "巽", "reasoning": "「若い牛に枷」=早期に制約を設ける。内部で意図的に止める・抑制する=艮。"},
+      "after_upper": {"trigram": "坤", "confidence": "medium", "alternative": "巽", "reasoning": "規制リスク軽減で安定化。外部環境は安定=坤。縮小安定・生存の状態。"}
+    },
+    {
+      "transition_id": "CORP_JP_3608",
+      "before_lower": {"trigram": "離", "confidence": "medium", "alternative": "坤", "reasoning": "シュルツのビジョンと顧客体験への情熱。復帰後の明確な方向性=離。"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "成熟期の安定した外部環境。市場は安定=坤。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "乾", "reasoning": "デジタル投資とリワードプログラムで顧客体験を革新。ビジョン駆動の革新=離。"},
+      "after_upper": {"trigram": "乾", "confidence": "medium", "alternative": "巽", "reasoning": "V字回復・安定成長の継続。外部環境は成長=乾。"}
+    },
+    {
+      "transition_id": "COUN_JP_1393",
+      "before_lower": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "原油価格下落によるOPEC諸国の深刻な経済危機。内部は困難=坎。"},
+      "before_upper": {"trigram": "坎", "confidence": "high", "alternative": "震", "reasoning": "原油市場の暴落という厳しい外部環境=坎。"},
+      "after_lower": {"trigram": "兌", "confidence": "high", "alternative": "巽", "reasoning": "ロシアとの協力体制構築。対話と交渉による協調=兌。コミュニケーションで問題解決。"},
+      "after_upper": {"trigram": "坤", "confidence": "high", "alternative": "巽", "reasoning": "市場安定化、縮小安定。減産合意で安定した外部環境=坤。"}
+    },
+    {
+      "transition_id": "OTHR_JP_1376",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "坎", "reasoning": "業界慣行として談合が根付いていた。受動的に不正に従う内部状態=坤。"},
+      "before_upper": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "停滞・閉塞した外部環境。談合により市場が硬直=艮。"},
+      "after_lower": {"trigram": "離", "confidence": "high", "alternative": "震", "reasoning": "リニエンシー制度の導入=真実を明らかにする制度的な明晰さ。不正を照らす=離。"},
+      "after_upper": {"trigram": "震", "confidence": "high", "alternative": "離", "reasoning": "大型談合の次々摘発。業界慣行の法的除去という衝撃=震（外部環境の disruption）。"}
+    },
+    {
+      "transition_id": "PERS_JP_2141",
+      "before_lower": {"trigram": "坤", "confidence": "medium", "alternative": "巽", "reasoning": "師（湯川秀樹）の下で学ぶ受容的な弟子の姿勢。知識を吸収する=坤。"},
+      "before_upper": {"trigram": "乾", "confidence": "medium", "alternative": "離", "reasoning": "ノーベル賞受賞者のもとで成長。師のリーダーシップと卓越した学術環境=乾。"},
+      "after_lower": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "師の枠を超えて独自の理論を確立。自らの意志と創造力で切り開く=乾。"},
+      "after_upper": {"trigram": "乾", "confidence": "high", "alternative": "離", "reasoning": "ノーベル賞理論確立。外部環境は圧倒的成功=乾。"}
+    },
+    {
+      "transition_id": "PERS_JP_2983",
+      "before_lower": {"trigram": "艮", "confidence": "high", "alternative": "坤", "reasoning": "引退宣言。40年の活動の後に立ち止まる決断=艮（止まる・内省）。"},
+      "before_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "安定した外部環境。巨匠の地位は確立済み。静かで安定=坤。"},
+      "after_lower": {"trigram": "艮", "confidence": "high", "alternative": "巽", "reasoning": "引退期間は充電・様子見。引退撤回するまで内的には止まっている=艮。"},
+      "after_upper": {"trigram": "坤", "confidence": "high", "alternative": "艮", "reasoning": "現状維持・延命。外部環境に大きな変化はなく安定=坤。"}
+    }
+  ]
+}
