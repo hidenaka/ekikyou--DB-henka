@@ -1,0 +1,817 @@
+{
+  "batch_id": 11,
+  "pass_number": 2,
+  "prompt_type": "holistic",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Internally, the construction company had strong will and ambition driving growth—an inner fire of expansion that masked rot underneath."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Outwardly the company projected visibility and success—a bright facade of accomplishment that concealed the fraud."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Inside, the emotional reality is drowning—crisis, despair, and the feeling of being trapped in an inescapable pit of consequences."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, everything collapses into crisis—banks cut off, contracts cancelled, civil rehabilitation. A harsh, unforgiving landscape."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Before the breakthrough, the internal state was stable receptivity—a quiet, grounded foundation waiting for the right catalyst."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, the company was in a steady, unremarkable state—stable but not yet differentiated in the market."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The founder's inner force is pure creative will—an unstoppable drive and conviction that powers the revolution."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Outwardly, the company blazes with visibility—revolutionary product, market dominance, a vision that illuminates the entire industry."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Each company's inner drive was competitive will—fierce determination to dominate, creating friction and growth pain."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, the competitive tension created disruption and turbulence in the industry—shake-ups and market stress."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Inside, the emotional quality shifts to joy and openness—genuine willingness to share, mutual respect, and delight in collaboration."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Outwardly, the new ecosystem radiates welcoming cooperation—open doors, shared platforms, an atmosphere of mutual benefit."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Internally, the society was stuck in a dark current—hidden corruption creating a sense of unease and decline beneath the surface."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Outwardly, things appeared stagnant and blocked—a system that refused to move, concealing its rot under stillness."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Inside, the emotional quality is awakening—clarity, revelation, the shock of seeing truth. The inner eye opens."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, everything is illuminated—evidence exposed, investigations launched, truth blazing across society. A fire of revelation."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Internally, the company rests in receptive stability—no strong ambitions or disruptive forces, just quiet steadiness."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Externally, the company presents a stable, unremarkable presence—solid but fading into the background."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Inside, the gradual adjustments reflect gentle adaptation—no dramatic shifts, just quiet recalibration of priorities."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Externally, the change is barely perceptible—slow, wind-like shifts in portfolio, a gentle evolution that preserves health without fanfare."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_030",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The family's inner world was one of trusting receptivity—they believed in their peaceful life, grounded in an assumed shared reality with the father."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Externally, everything appeared stable and harmonious—a normal family life with no visible cracks."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Inside, the emotional tenor is betrayal and drowning—the discovery of 20 million yen debt and hidden addiction floods the family with grief and crisis. 'Were we also to blame for not knowing?'"
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, the situation is frozen—they managed the legal deadline barely, but the family is stuck, unable to move forward. Memories are tainted, and life is on pause rather than transformed."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_087",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The inner drive is ambitious will—pursuing career growth and global experience with determination, accepting sacrifice as the cost."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, the overseas assignment is disruptive—uprooting the family, creating turbulence in daily life and relationships."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Inside, the person gains clarity and expanded vision—a global perspective that illuminates new understanding of the world."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "low",
+        "alternative": "坎",
+        "reasoning": "The outcome is bittersweet—success achieved but with the ache of missed family moments. The external result is growth, but the emotional tenor carries both joy and loss, a complex welcoming of a new identity."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_725",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Inside, the regional newspaper is stuck—frozen in its ways, unable to adapt. A mountain that cannot move, watching the world change around it."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, the environment is harsh and erosive—aging readers, youth abandoning print, digital media flooding in. A slow drowning."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Inside, the emotional quality is exhaustion and finality—the deep sadness of a 40-year institution reaching its end. Crisis completed."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, what remains is emptiness—the paper ceases to exist, returning to formless ground. The earth absorbs what was."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_0100",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Inside, the piano teacher feels the weight of stagnation—declining students, the sense of a calling under siege. A mountain bearing heavy snow."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Externally, demographic decline and digitalization create harsh, erosive conditions—a hostile environment for traditional music education."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Inside, the teacher adapts gently over 14 years—bending like wind, finding new niches (seniors, recitals) without breaking. Patient flexibility."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally, the business is smaller but stable—a reduced footprint that holds firm. Not growing, but surviving with dignity on solid ground."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1165",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Inside, the comedian thrived on joy, laughter, and audience adoration—the inner world was all about pleasing and being loved."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Externally, maximum visibility—TV everywhere, bright spotlight, fame blazing. The fire of public attention at its peak."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Inside, the transformation is gradual adaptation—humility replacing ego, patient rebuilding from ground-level work. A wind that changed direction."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally, the revival comes through YouTube and new fan connections—a different kind of joy and welcome, more authentic than the previous spotlight."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_002",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Inside, Hoshino Yoshiharu carries disruptive reforming energy—he shakes the foundations of the family business, challenging the old guard with thunderous conviction."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, the situation is crisis and conflict—expulsion, family schism, power struggles. A dangerous, turbulent environment."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Inside, the founder's will is now fully realized—creative leadership matured through hardship into unstoppable vision and determination."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally, reconciliation with the father and world-class resort status reflect a joyful outcome—harmony restored, success welcomed by the world."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_071",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Nissan's inner drive was dominated by Ghosn's powerful will—autocratic leadership that drove growth but also created dependency and tension."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the arrest was a thunderbolt—shocking disruption that shook the company, the alliance, and the industry. Pure seismic energy."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Inside, the company slowly adapts—restructuring, recalibrating the Renault relationship, gradually finding a new identity. Gentle, persistent adjustment."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Externally, the EV shift represents a new vision—a clarified direction forward, illuminating a different path than the Ghosn era."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2177",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Inside, the 80% drop in reservations and 25% staff cuts feel like an earthquake—sudden, devastating disruption to everything known."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, COVID creates a harsh, inescapable crisis environment—a flood that drowns the hospitality industry."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Inside, the strategic pivot to long-stay reveals clarity of vision—seeing what others didn't, a new light illuminating an alternative path."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Externally, record-high revenue represents triumphant growth—the full force of creative will manifested in remarkable results."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_853",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Inside, Muji carries a deeply receptive, humble ethos—simplicity, honesty, and grounded values. The earth element of quiet integrity."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, the brand presents stable steadiness—a calm, reliable presence in the marketplace without flashiness."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Inside, the emphasis on dialogue and connection reflects joyful openness—genuine delight in customer interaction and co-creation."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Externally, SNS engagement and store events create a warm, welcoming atmosphere—an approachable brand that invites participation."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_821",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Inside the education system, there was rigid willpower—a forceful drive to push students to top academic performance through sheer determination."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally, the system appeared stable and immovable—a mountain of established practice that seemed unshakeable, even as cracks formed."
+      },
+      "after_lower": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Inside, the repeated policy reversals created internal disruption—educators, students, and parents shocked by constant directional changes."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Externally, the oscillation between extremes created a harsh, confusing landscape—a system lost in turbulent waters, unable to find stable ground."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_496",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Inside the political system, constant upheaval—presidents falling one after another like dominoes. The ground never stops shaking."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Externally, the political environment is crisis after crisis—arrests, resignations, a harsh landscape of institutional failure."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Inside the economy, there is steady receptive strength—copper and resources provide a quiet, earth-like foundation beneath the political chaos."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, the contradiction persists—the surface remains disturbed and unstable politically, even as economic survival continues underneath."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_200",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Inside, the painter carries strong professional will—determination to maintain quality standards despite fierce price competition."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Externally, the market is harsh—price wars, comparison sites eroding margins. A difficult, threatening environment."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Inside, the 14-year adaptation reflects patient, wind-like persistence—gradual differentiation through insulation specialization and quality guarantees."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally, the business stabilizes at a smaller but defensible position—a mountain that cannot be undercut, solid in its niche."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1187",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Inside, the lecturer was burning bright—the fire of visibility and recognition, but also the fire consuming itself. Brilliance edging toward burnout."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally, the peak of success—maximum output, full schedule, relentless growth. The heaven of achievement at its zenith."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Inside, the 1-year rest is a conscious stopping—mountain stillness after the fire. Pausing to find what matters beneath the productivity."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Externally, the 'quality over quantity' style reflects gentle adaptation—a wind that blows more softly, a sustainable pace replacing frantic output."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1314",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Inside British politics, the referendum result was a thunderbolt that kept reverberating—shock waves of a decision nobody fully planned for."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, the political environment was crisis—three rejections, PM resignation, parliament vs. government. A harsh, drowning landscape."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Inside, the emotional quality is being stuck—exhaustion, inability to decide, political paralysis. A mountain that cannot be moved or climbed."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, international credibility erodes—repeated deadline extensions signal a nation drowning in its own indecision. The harsh environment persists."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4558",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Inside, Starbucks carries a burning vision—the 'third place' concept is a clarity of purpose, an illuminating idea about human connection."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Externally, the company was in growth mode with growing pains—expanding aggressively, pushing into new territories with creative force."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Inside, the rewards program and mobile ordering create genuine delight—the joy of belonging, of being recognized and welcomed. Pure lake energy."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Externally, the brand becomes a beacon of customer experience—a fire of vision realized, illuminating how loyalty programs can transcend points."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2071",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Inside Jobs, the return to Apple was coming from a place of deep crisis—the pain of exile, the struggle of NeXT, the harsh waters of being cast out."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Externally, Apple in 1997 was at death's door—90 days from bankruptcy, products unfocused, the company drowning."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Inside, the deep resonance with Jony Ive ignited creative vision—a fire of shared aesthetic understanding, clarity of design philosophy."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Externally, iMac/iPod/iPhone represent the ultimate creative force realized—heaven's will made manifest, industry-defining growth."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2834",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Inside, Chikirin was in quiet stability as a corporate worker—steady, receptive, absorbing knowledge and analytical skills in a grounded way."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, a normal corporate career—stable, unremarkable, blending into the landscape of foreign firms in Japan."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Inside, the transformation is about clarity and vision—the fire of intellectual illumination, 'think with your own head,' a burning drive to reveal truth."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally, the anonymous brand-building is gradual and wind-like—blog to books to Voicy to paid newsletter, each step a gentle expansion of influence without revealing identity."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1371",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Inside the Eastern Bloc, everything was frozen—stagnant, immovable, a rigid mountain of ideology that suppressed all organic movement."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Externally, the bloc appeared as an imposing wall—the Iron Curtain, the Berlin Wall, literally blocking all passage. Maximum stuckness."
+      },
+      "after_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Inside, the Wall's fall unleashed pent-up seismic energy—decades of suppressed desire for freedom erupting in a single transformative shock."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "Externally, the dissolution of the USSR and Eastern Bloc was harsh and chaotic—the old structures collapsed into crisis, economies shattered, nations fractured."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2767",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Inside, the actress has fierce willpower—2 years of intense English study with no overseas experience. Pure determination and creative force."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, the challenge of breaking into international markets creates disruption—stepping out of the comfort zone, shaking up her career trajectory."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Inside, the acquired English skill opens new vision—a clarity that illuminates global opportunities previously invisible. The fire of expanded awareness."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally, the results are triumphant growth—50M yen per CM, doubled income, international brand ambassadorships. Heaven's creative force in full bloom."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3188",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Inside Fujifilm, the emotional reality was existential crisis—the core business dying, the ground dissolving. Deep waters of uncertainty."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally, the digital revolution was an unstoppable flood destroying the film market—a harsh, merciless environmental force."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Inside, CEO Komori's vision is pure fire—seeing that chemical expertise could illuminate entirely new fields (cosmetics, medical). Visionary clarity."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Externally, the simultaneous shrinking of old and building of new represents masterful creative will—complete structural transformation into a growth powerhouse."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3501",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Inside Sharp, the emotional quality is despair and crisis—the LCD bet failed catastrophically, drowning the company in losses."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Externally, the harsh reality of acquisition by a foreign company—loss of independence, a painful submersion under Foxconn's control."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Inside, the 4-year incubation period reflects patient adaptation—slowly adjusting under new ownership, gently recalibrating capabilities toward AIoT."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Externally, Sharp stabilizes at a reduced but viable level—a mountain that found its new base, no longer falling but not yet soaring."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4945",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Inside SoftBank, Son's inner drive is pure aggressive will—$21.6 billion bet on Sprint, the warrior's charge into the US market."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally, the acquisition projects dominance and creative force—a Japanese company daring to conquer American telecom at its peak confidence."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Inside, the shift from conquest to compromise reflects adaptation—bending to reality, accepting a reduced stake, finding the wind's path rather than forcing through the wall."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Externally, the T-Mobile merger represents dialogue and welcome—fusion over dominance, finding an exit through cooperative opening rather than brute force."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_752",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Inside the Murdoch family, there was surface-level harmony—siblings coexisting under the patriarch, a lake of apparent familial warmth."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, the media empire presented stability—the patriarch in control, the family structure appearing solid and grounded."
+      },
+      "after_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Inside, the father's trust manipulation was a thunderbolt—shattering the siblings' assumed security, erupting into shock and fury."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally, after the court battle and $1B per sibling settlement, things freeze into a new stasis—the structure is preserved but hardened, immovable. Maintenance mode."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_947",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Inside, kampo medicine was stuck—ancient knowledge frozen in tradition, unable to gain acceptance in the modern medical establishment."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, the environment was harsh for traditional medicine—marginalized, dismissed by Western medical science, struggling for legitimacy."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Inside, the integration with evidence-based medicine brings illumination—traditional wisdom revealed and validated through scientific methodology."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, 90% of physicians now prescribe kampo—a joyful welcoming into mainstream practice, doors opening worldwide for integrated medicine."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2730",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Inside, the salaryman was in stable receptivity—a secure corporate life providing the ground from which the side business grew."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Externally, the Amazon reselling success was joyful and welcoming—60万 monthly income, the thrill of entrepreneurial success, an open door to a new life."
+      },
+      "after_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Inside, the IP violation notice is a thunderbolt—the shock of account suspension, 2 million yen in unsellable inventory, dreams shattered in an instant."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Externally, the platform dependency reveals a harsh truth—the environment was always dangerous, and now the full force of that risk crashes down."
+      }
+    }
+  ]
+}
