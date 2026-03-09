@@ -1,0 +1,365 @@
+{
+  "batch_id": 15,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "CORP_JP_3158",
+      "story_summary": "主力のフィルム事業がデジカメ普及で急減する中、富士フイルムはフィルム技術を活かしたヘルスケア・化粧品事業へ転換。M&Aと自社技術を組み合わせた新体制で、祖業消滅の危機を乗り越え再成長を実現。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "化学・ヘルスケア",
+      "scale": "company",
+      "story_length": 95
+    },
+    {
+      "transition_id": "CORP_JP_069",
+      "story_summary": "液晶パネルへの巨額投資が裏目に出て2012年に経営危機に陥ったシャープ。2016年に鴻海精密工業の傘下に入り、経営再建を進める。2024年には黒字体質を確立し、堅実経営で復活を遂げる。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 92
+    },
+    {
+      "transition_id": "CORP_JP_4609",
+      "story_summary": "1990年代、Nikeは東南アジア工場での児童労働・劣悪労働環境が告発され、大規模な不買運動に直面。1998年以降、工場リストを公開し独立監査を導入。労働条件改善を可視化してPR。危機を変革の機会に転換し、CSR経営のリーダーとして評価を回復した。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "アパレル・ファッション",
+      "scale": "company",
+      "story_length": 124
+    },
+    {
+      "transition_id": "CORP_JP_3156",
+      "story_summary": "ユニリーバは2010年に「サステナブル・リビング・プラン」を発表。環境負荷削減と社会貢献を追求しながら、売上を2倍に成長させる目標を設定。社会と企業の双方に益をもたらすモデルを実践。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "消費財・日用品",
+      "scale": "company",
+      "story_length": 91
+    },
+    {
+      "transition_id": "CORP_JP_3133",
+      "story_summary": "ユニクロは世界各地にR&Dセンターを設置し、トレンド・素材・消費者ニーズを継続観察。フリースブームの創出、ヒートテック開発など、市場の「観察」から革新的商品を生み出した。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "小売・アパレル",
+      "scale": "company",
+      "story_length": 85
+    },
+    {
+      "transition_id": "CORP_JP_3369",
+      "story_summary": "エンロンは革新的なエネルギー取引で急成長したが、粉飾決算が発覚し史上最大級の破綻。「冥豫」—暗闘での喜び—は会計操作による虚偽の繁栄だった。成功は幻想で、すべてが変わった。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "エネルギー・金融",
+      "scale": "company",
+      "story_length": 86
+    },
+    {
+      "transition_id": "FAM_JP_168",
+      "story_summary": "ラーマ9世は70年在位、国民から神のように敬愛される。2016年崩御、息子ラーマ10世が即位。しかし複数の離婚、ドイツ長期滞在、民主化デモへの対応で批判も。不敬罪で議論は抑圧されるが、王室への信頼は揺らぐ。",
+      "before_state": "絶頂・慢心",
+      "after_state": "現状維持・延命",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 103
+    },
+    {
+      "transition_id": "OTHR_JP_270",
+      "story_summary": "アパレル業界で再編が加速。オンワードHD、ワールドなど大手も構造改革。EC化率上昇とサステナブルファッションへの対応が課題。ZARAやSHEINなど海外勢との競争も激化。選択と集中が進む。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "小売・サービス",
+      "scale": "other",
+      "story_length": 94
+    },
+    {
+      "transition_id": "CORP_JP_4566",
+      "story_summary": "化粧品ブランドのアテニアは20万人以上が参加する国内最大級の化粧品ファンコミュニティを構築。ユーザー同士が「とことん話せる場」を設け、2025年3月末時点で投稿数41万件に達した。顧客との対話から商品開発に活かし、熱狂的なファン層を形成した。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "business",
+      "scale": "company",
+      "story_length": 121
+    },
+    {
+      "transition_id": "COUN_JP_1141",
+      "story_summary": "バブル崩壊後、アベノミクス等の対策も効果限定的。デフレ脱却に30年かかり、2024年にようやく賃上げ局面へ。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "国家・政治",
+      "scale": "country",
+      "story_length": 54
+    },
+    {
+      "transition_id": "CORP_JP_422",
+      "story_summary": "2014年2月、サティア・ナデラがCEO就任。モバイル・クラウドで後塵を拝し、内部文化も縦割りで硬直化していた。「モバイルファースト・クラウドファースト」戦略を掲げ、Windows依存から脱却。「Windows Azure」から「Azure」に改名、Linux対応を発表し業界に衝撃。Office for iOS/Android提供など競合OSへのオープン化推進。成長マインドセットを導入し企業文化も刷新。時価総額3000億ドルから2.5兆ドル超へ、10倍成長を達成。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 234
+    },
+    {
+      "transition_id": "CORP_JP_2673",
+      "story_summary": "「販売の質向上プログラム（SSP）」を全店に段階的に導入。販売スキルの可視化とOJTの改善を着実に進め、従業員エンゲージメント向上と売上増加を同時に実現した漸進的改革。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "小売・サービス",
+      "scale": "company",
+      "story_length": 84
+    },
+    {
+      "transition_id": "FAM_JP_234",
+      "story_summary": "再婚で連れ子同士が兄弟に。最初は距離感に戸惑いながらも、時間をかけて「新しい家族」として絆を深める。「血のつながりだけが家族ではない」という価値観。継親子関係の難しさも経験。",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 87
+    },
+    {
+      "transition_id": "PERS_JP_3009",
+      "story_summary": "CHAGE and ASKAのASKAが2014年に覚醒剤取締法違反で逮捕。ミリオンヒットを連発した国民的アーティスト（離）としての輝きが一瞬で崩壊する衝撃（震）を社会に与えた。2016年に再逮捕されるも、2019年に音楽活動を再開しコンサートツアーを敢行。表現者としての再起を図っている。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "音楽・芸術",
+      "scale": "individual",
+      "story_length": 145
+    },
+    {
+      "transition_id": "COUN_JP_407",
+      "story_summary": "132年のフランス植民地支配から血塗られた独立戦争で1962年独立。社会主義路線も1990年代はイスラム過激派との内戦で20万人死亡。石油依存経済、若者の失業、2019年には大規模デモでブーテフリカ大統領退陣。",
+      "before_state": "どん底・危機",
+      "after_state": "現状維持・延命",
+      "main_domain": "エネルギー・環境",
+      "scale": "country",
+      "story_length": 105
+    },
+    {
+      "transition_id": "FAM_JP_143",
+      "story_summary": "永守重信が日本電産を創業、世界最大のモーターメーカーに。後継者として外部人材を次々登用するも全員退任。長男を後継候補から外すなど世襲を明確に否定。80歳を超えても経営の第一線に。創業者依存からの脱却が最大の課題。",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "main_domain": "製造",
+      "scale": "family",
+      "story_length": 106
+    },
+    {
+      "transition_id": "CORP_JP_4244",
+      "story_summary": "Tim Cook就任後、Appleは時価総額3,500億ドルから3兆ドル超へ成長。iPhone・サービス事業の拡大、Apple Silicon導入、インド市場進出など多角的成長戦略を展開し、世界初の3兆ドル企業となった。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": null,
+      "scale": "company",
+      "story_length": 110
+    },
+    {
+      "transition_id": "PERS_JP_996",
+      "story_summary": "バイク事故で脊髄損傷、下半身麻痺に。絶望から立ち直り、車椅子バスケを始める。今ではパラアスリートとして全国大会出場。「事故がなければ出会えなかった仲間がいる」と語る。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "物流・交通",
+      "scale": "individual",
+      "story_length": 83
+    },
+    {
+      "transition_id": "CORP_JP_4283",
+      "story_summary": "2024年5月の乱気流事故（死者1名・負傷者多数）に対し、CEOが即座に謝罪動画を公開し、幹部が被害者を直接訪問。透明性の高い対応と誠実なコミュニケーションにより、ブランド信頼を維持した。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": null,
+      "scale": "company",
+      "story_length": 94
+    },
+    {
+      "transition_id": "CORP_JP_3577",
+      "story_summary": "李健熙会長の「新経営宣言」により品質革命を断行。初動で社員の意識改革を徹底し、不良品を焼却処分するなど強いメッセージを発信。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "電機・エレクトロニクス",
+      "scale": "company",
+      "story_length": 62
+    },
+    {
+      "transition_id": "OTHR_JP_872",
+      "story_summary": "900年以上の歴史を持つ世界最古級の大学。39のカレッジが独立運営しつつ大学全体と協働する独自システム。チュートリアル制度で少人数教育を実現。ノーベル賞受賞者、首相など多数輩出。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "教育",
+      "scale": "other",
+      "story_length": 89
+    },
+    {
+      "transition_id": "OTHR_JP_922",
+      "story_summary": "香川県直島はベネッセによる現代アートの島づくり。1992年のベネッセハウス開館から始まり、地中美術館、家プロジェクトと展開。瀬戸内国際芸術祭の中心地として年間100万人が来島。過疎の島が世界的アートスポットに。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "地域振興",
+      "scale": "other",
+      "story_length": 105
+    },
+    {
+      "transition_id": "PERS_JP_450",
+      "story_summary": "IT企業を退職しWebサービスで起業。クラウドファンディングで500万円調達し話題に。しかしユーザーが伸びずピボットを繰り返す。VCからの資金調達にも失敗し、共同創業者と対立して解散。残ったのは消費者金融からの借金200万円。現在は派遣社員として働きながら返済中。",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "main_domain": "テクノロジー",
+      "scale": "individual",
+      "story_length": 132
+    },
+    {
+      "transition_id": "CORP_JP_3104",
+      "story_summary": "米投資ファンドのスティール・パートナーズがブルドックソースに敵対的TOBを仕掛ける。ブルドック側は買収防衛策を発動し、最高裁で防衛策の有効性が認められた。株主価値を巡る見解の対立が法廷闘争に発展。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "食品・消費財",
+      "scale": "company",
+      "story_length": 98
+    },
+    {
+      "transition_id": "PERS_JP_2991",
+      "story_summary": "森友学園理事長として政治家との対話・交渉で国有地を格安取得したとされる問題が2017年に発覚。国会での証人喚問後、補助金詐欺で逮捕。約300日の勾留を経て、2020年に懲役5年の実刑判決。政界との太いパイプが一転して苦境の源となった。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "教育・政治",
+      "scale": "individual",
+      "story_length": 117
+    }
+  ]
+}

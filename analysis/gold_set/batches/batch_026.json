@@ -1,0 +1,365 @@
+{
+  "batch_id": 26,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "CORP_JP_004",
+      "story_summary": "三菱重工業が2008年から開発を進めていたスペースジェット（SJ）事業について、型式証明取得難航とコロナ禍の航空業界への影響から2020年10月に事業凍結、2023年2月に開発中止を正式発表。約1兆円を投じた国産ジェット計画に終止符。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 117
+    },
+    {
+      "transition_id": "OTHR_JP_1509",
+      "story_summary": "財務・法務デューデリでは企業文化・暗黙知・人間関係は見えない。2024年の教訓は「人と文化のデューデリ」の重要性。統合失敗の8割がここに起因。",
+      "before_state": "安定・平和",
+      "after_state": "迷走・混乱",
+      "main_domain": "ビジネス",
+      "scale": "other",
+      "story_length": 71
+    },
+    {
+      "transition_id": "OTHR_JP_240",
+      "story_summary": "2024年のラーメン店倒産は72件で過去最多を大幅更新。前年比3割超増。原価は22年比1割超増加。「1杯1000円の壁」で値上げ困難。醤油・中華29.8%、とんこつ24.5%、味噌12.2%が倒産上位。関東25件で最多。1年以内廃業率40%とも。",
+      "before_state": "成長痛",
+      "after_state": "迷走・混乱",
+      "main_domain": "小売・サービス",
+      "scale": "other",
+      "story_length": 123
+    },
+    {
+      "transition_id": "CORP_JP_3602",
+      "story_summary": "フィアットからの分離独立後の成熟期。限定生産戦略を維持しながら、ブランド価値を最大化する経営で高収益を実現。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "自動車・高級車",
+      "scale": "company",
+      "story_length": 54
+    },
+    {
+      "transition_id": "COUN_VE_001",
+      "story_summary": "2014年以降の原油価格下落と政治混乱で経済危機に陥ったベネズエラ。ハイパーインフレと物資不足の中、国民は10年間の困難を耐え続ける。2024年も回復途上。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "国家・政治",
+      "scale": "country",
+      "story_length": 78
+    },
+    {
+      "transition_id": "PERS_JP_2742",
+      "story_summary": "SIerのSEが趣味のゲーム実況をYouTubeで開始。VTuberとしてのキャラクター運営が人気を博し、チャンネル登録15万人を達成。企業案件やグッズ販売で月収200万円を超え、退職してVTuber事務所を設立。所属タレント10名を抱えるまでに成長した。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンターテインメント",
+      "scale": "individual",
+      "story_length": 128
+    },
+    {
+      "transition_id": "PERS_JP_686",
+      "story_summary": "SNSで情報発信し、フォロワー5万人を獲得。しかしプライバシーがなくなり、批判も増える。影響力は得たが、普通の生活は失った。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "individual",
+      "story_length": 62
+    },
+    {
+      "transition_id": "PERS_JP_2733",
+      "story_summary": "デザイン会社勤務の女性がWeb制作を副業で開始。クラウドソーシングで案件を受注するも、価格競争が激化し単価が年々下落。時給換算で500円を切る案件も出てきて消耗。スキルアップの時間も取れず、副業開始から3年で撤退し本業に集中する選択をした。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "Web制作",
+      "scale": "individual",
+      "story_length": 120
+    },
+    {
+      "transition_id": "PERS_JP_1043",
+      "story_summary": "新卒で入った会社がブラック企業、毎日終電、休日出勤当たり前。3年で心身ともに限界を迎え退職。半年の休養後、労働環境を重視して転職。今では定時退社、有給消化100%の会社で働く。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "エネルギー・環境",
+      "scale": "individual",
+      "story_length": 88
+    },
+    {
+      "transition_id": "COUN_JP_1344",
+      "story_summary": "ソ連は10年に及ぶアフガニスタン介入から撤退を決断。国力の消耗と国際的孤立を認識し、困難な撤退を実行。遯尾（退却の尻尾）で危険を冒しながらの撤退。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "政治・行政",
+      "scale": "country",
+      "story_length": 73
+    },
+    {
+      "transition_id": "CORP_JP_3283",
+      "story_summary": "コダックはデジタルカメラを世界で初めて開発したが、フィルム事業への固執から本格参入を躊躇。デジタル時代への学びを拒み、自社技術に閉じこもった結果、2012年に経営破綻。学びの壁に阻まれた困蒙の典型例。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "製造業",
+      "scale": "company",
+      "story_length": 100
+    },
+    {
+      "transition_id": "OTHR_JP_1136",
+      "story_summary": "1970年の日本支部設立から30年、死刑廃止運動や良心の囚人支援を継続。地道な署名活動と国際連携により、日本における人権意識の向上と政策提言力を獲得した。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "NPO・公益",
+      "scale": "other",
+      "story_length": 77
+    },
+    {
+      "transition_id": "CORP_JP_4239",
+      "story_summary": "東芝は会計スキャンダルと原子力事業の失敗を受け、テレビ事業から撤退。自社工場での生産を中止し、ブランドライセンスを他社に供与する形で事業を縮小。経営再建の一環として選択と集中を進めた。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": null,
+      "scale": "company",
+      "story_length": 92
+    },
+    {
+      "transition_id": "OTHR_JP_1088",
+      "story_summary": "岩手県の鋳物産業。伝統的な鉄瓶から、カラフルな急須、フライパンなど現代のキッチン用品へと展開。海外市場での人気も高まり、輸出が拡大。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造業",
+      "scale": "other",
+      "story_length": 66
+    },
+    {
+      "transition_id": "PERS_JP_2058",
+      "story_summary": "松下幸之助は1918年、妻むめの弟・井植歳男と出会い、二人三脚で松下電器を発展させた。井植という「包みの魚」を静かに認識し、30年間慎重に関係を築いた。この育成が後の三洋電機創業につながり、両社とも成功を収めた。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "電機・電子",
+      "scale": "individual",
+      "story_length": 106
+    },
+    {
+      "transition_id": "CORP_JP_016",
+      "story_summary": "2009年に7873億円の巨額赤字を計上した日立製作所が、社会インフラとIT事業に集中。祖業の家電や半導体を売却し、Lumada事業を柱にデジタル企業へ変貌。2024年は過去最高益を更新。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 94
+    },
+    {
+      "transition_id": "PERS_JP_2825",
+      "story_summary": "アフリカの少数民族を撮影するスキルを独学で磨いたヨシダナギが、クレイジージャーニー出演を機にブレイク。写真集・個展・企業案件で収益化し、唯一無二のポジションを確立した異色のフォトグラファー。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "アート・写真",
+      "scale": "individual",
+      "story_length": 95
+    },
+    {
+      "transition_id": "CORP_JP_3596",
+      "story_summary": "DVDレンタルからストリーミングへの転換期。クイックスター失敗後、ストリーミングに集中する決断で事業を革新した。",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンターテインメント・IT",
+      "scale": "company",
+      "story_length": 56
+    },
+    {
+      "transition_id": "FAM_JP_290",
+      "story_summary": "先代の会員制高級路線で無借金経営の優良企業。次代社長が低価格路線に転換後、親子間対立が表面化。ブランドイメージ損傷で業績低迷。2019年にヤマダ電機傘下入り。親子間対立の象徴的失敗事例。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "main_domain": "製造",
+      "scale": "family",
+      "story_length": 93
+    },
+    {
+      "transition_id": "PERS_JP_2968",
+      "story_summary": "終戦後、GHQの財閥解体指定や労働争議で松下電器は経営危機に陥り、松下幸之助は一家の生計を賭けて様子見・忍耐の時期を過ごした。1950年に朝鮮戦争特需という外部ショックを契機に事業を急拡大。家電量産体制を確立し松下家は「経営の神様」一族としての基盤を築いた。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "電機・製造",
+      "scale": "family",
+      "story_length": 129
+    },
+    {
+      "transition_id": "PERS_JP_952",
+      "story_summary": "隣家からの延焼で自宅が全焼。家財道具、思い出の品、ペットも失う。火災保険に加入していたため建物の再建費用は賄えたが、精神的ショックは大きくPTSDに。カウンセリングを受けながら、2年かけて新居を再建。「物は買い直せるが、心の傷は簡単には癒えない」。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "金融",
+      "scale": "individual",
+      "story_length": 124
+    },
+    {
+      "transition_id": "PERS_JP_482",
+      "story_summary": "何気ない投稿がSNSで炎上。本名と勤務先が特定され、会社に苦情が殺到。会社から退職を勧められ、事実上の解雇。新しい会社に就職するも、過去の炎上が発覚し、試用期間で終了。「デジタルタトゥー」に苦しむ日々。",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "main_domain": "テクノロジー",
+      "scale": "individual",
+      "story_length": 101
+    },
+    {
+      "transition_id": "PERS_JP_2767",
+      "story_summary": "女優としてキャリアを持ちながら2014年に英語学習を本格化。留学経験はないが2年間の猛勉強でビジネス英語を習得。海外ブランドのアンバサダー契約が増加しCM契約料は1本5000万円超。英語力が年間CM収入を2倍以上に押し上げた。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ・メディア",
+      "scale": "individual",
+      "story_length": 113
+    },
+    {
+      "transition_id": "PERS_JP_301",
+      "story_summary": "大阪府出身。5歳で碁を覚え、6歳で石井邦生九段に弟子入り。12歳でプロ入り。2005年阿含・桐山杯で16歳4ヶ月の史上最年少タイトル。2009年名人獲得（史上最年少20歳4ヶ月）。2016年26歳で囲碁界史上初の七冠独占達成、さらに2度目の七冠と年間グランドスラムも達成。タイトル獲得数77は歴代1位。2018年羽生善治と共に棋士として史上初の国民栄誉賞受賞。「魔王」の異名。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Lifestyle",
+      "scale": "individual",
+      "story_length": 188
+    },
+    {
+      "transition_id": "CORP_JP_3354",
+      "story_summary": "孫正義は「群戦略」として、関連するテック企業群への投資を展開。Alibaba、ARM、WeWorkなど多数の企業に投資し、投資先同士のシナジーを狙った。一社の成功が他社を引き上げる連鎖を目指した。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "通信・IT",
+      "scale": "company",
+      "story_length": 98
+    }
+  ]
+}

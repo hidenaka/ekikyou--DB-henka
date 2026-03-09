@@ -1,0 +1,365 @@
+{
+  "batch_id": 24,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "OTHR_JP_846",
+      "story_summary": "宮城県の伊豆沼・内沼は、マガンをはじめとする渡り鳥の日本最大の越冬地。ラムサール条約登録後、農家と連携した冬期湛水田の拡大、ハス刈り取りによる開水面確保など、農業と野生生物保護の両立を実現。毎冬10万羽以上の水鳥が飛来。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "環境",
+      "scale": "other",
+      "story_length": 110
+    },
+    {
+      "transition_id": "COUN_JP_327",
+      "story_summary": "マハティール首相の「ルック・イースト政策」で工業化に成功。しかし1997年アジア通貨危機、後継ナジブ首相の汚職（1MDB事件）で混乱。2018年92歳のマハティールが奇跡の政権復帰するも、2年で退陣。民族間対立、イスラム化、汚職体質など構造問題が残る。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "国家・政治",
+      "scale": "country",
+      "story_length": 126
+    },
+    {
+      "transition_id": "PERS_JP_231",
+      "story_summary": "東京深川出身。1923年松竹キネマ蒲田撮影所に入社、1927年監督デビュー。ローポジション撮影と厳密な構図の「小津調」を確立。1943年軍報道部として南方へ従軍、終戦後捕虜生活を経て帰国。1949年『晩春』、1953年『東京物語』など原節子主演の名作を発表。2012年英国映画協会調査で『東京物語』が監督投票1位に。1958年紫綬褒章、1959年芸術院会員（映画人初）。1963年、60歳の誕生日に癌で死去。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 204
+    },
+    {
+      "transition_id": "CORP_JP_2843",
+      "story_summary": "200年の歴史を持つ龍角散が、健康志向の高まりと喉ケア需要という緩やかな市場変化に対応。のど飴やタブレットなど現代的な形態で伝統処方を展開し復活。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 73
+    },
+    {
+      "transition_id": "PERS_JP_239",
+      "story_summary": "東京生まれ、京都育ち。京都大学物理学科で量子力学を研究。1935年、28歳で中間子論を発表、原子核内の強い相互作用を理論的に予言。1947年に中間子が発見され、1949年日本人初のノーベル物理学賞受賞。敗戦・占領下の日本国民に大きな希望を与えた。1953年京都大学基礎物理学研究所初代所長。世界平和アピール七人委員会に参加し、核廃絶運動にも尽力。1943年文化勲章（戦中受章）。1981年死去。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "individual",
+      "story_length": 197
+    },
+    {
+      "transition_id": "CORP_JP_2719",
+      "story_summary": "日産は環境規制強化の潮流を読み、量産型EVのリーフを発売。テスラに続く形でEV市場に参入し、一時は世界最量販EVに。時流への追随が功を奏したが、その後の失速も経験した。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 84
+    },
+    {
+      "transition_id": "CORP_JP_3000",
+      "story_summary": "森永太一郎が米国で製菓技術を学び創業。ミルクキャラメルが大ヒットし、国民的菓子メーカーに成長。「おいしく、たのしく、すこやかに」の理念で事業拡大。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 73
+    },
+    {
+      "transition_id": "CORP_JP_035",
+      "story_summary": "2012年創業のマネーフォワードが、家計簿アプリから法人向け経費精算・会計ソフトへ拡大。2017年東証マザーズ上場後、2024年には売上300億円超の総合FinTech企業に成長。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 90
+    },
+    {
+      "transition_id": "PERS_JP_570",
+      "story_summary": "糖尿病が悪化し、合併症で入院。復職するも体調管理と仕事の両立が困難。度重なる休職で退職勧奨を受け、最終的に早期退職。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "Healthcare",
+      "scale": "individual",
+      "story_length": 58
+    },
+    {
+      "transition_id": "CORP_JP_4939",
+      "story_summary": "「かぼちゃの馬車」投資用シェアハウス向け融資で、審査書類の改ざんなど組織的不正が2018年に発覚。顧客との対話・サービスを強みとしていた地銀が、金融庁から6ヶ月の一部業務停止命令を受けた。不正融資総額は約1兆円に上り、経営陣が総退陣する衝撃的な刷新が行われた。",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
+      "main_domain": "金融",
+      "scale": "company",
+      "story_length": 130
+    },
+    {
+      "transition_id": "OTHR_JP_729",
+      "story_summary": "小惑星イトカワからのサンプルリターンというミッションを7年かけて達成。数々のトラブルを乗り越え、2010年に地球帰還。世界初の偉業を達成し、次のはやぶさ2へとバトンを繋いだ完成のプロジェクト。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Science",
+      "scale": "other",
+      "story_length": 96
+    },
+    {
+      "transition_id": "CORP_JP_117",
+      "story_summary": "音楽配信の普及でCD売上が激減したCDショップが、14年かけてアナログレコードとK-POPに特化。ニッチ市場で生き残りを図る。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "エンタメ",
+      "scale": "company",
+      "story_length": 63
+    },
+    {
+      "transition_id": "COUN_JP_396",
+      "story_summary": "2010年大地震で23万人死亡の壊滅的被害。復興進まぬ中、2021年大統領暗殺。ギャング支配が拡大、首都は事実上の無政府状態に。国連安保理は多国籍治安維持部隊派遣を承認。西半球最貧国の終わらない苦難。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "社会・コミュニティ",
+      "scale": "country",
+      "story_length": 100
+    },
+    {
+      "transition_id": "PERS_JP_2147",
+      "story_summary": "パリで活動した藤田嗣治が、モディリアーニ、スーティンらと互いに刺激し合いながら独自の乳白色技法を確立。異文化の中での相互学習が芸術的革新を生んだ。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "芸術・絵画",
+      "scale": "individual",
+      "story_length": 73
+    },
+    {
+      "transition_id": "CORP_JP_4845",
+      "story_summary": "パワハラで300万円請求されたケースを6分の1の慰謝料額で和解成立。訴訟期間を短縮し、企業イメージへのダメージを最小化した成功事例。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "main_domain": "ビジネス",
+      "scale": "company",
+      "story_length": 66
+    },
+    {
+      "transition_id": "CORP_JP_740",
+      "story_summary": "1938年創業、東京・自由が丘発祥の老舗和菓子店。「ナボナ」で全国的知名度。しかし和菓子市場の縮小と消費者嗜好の変化で苦戦。2024年に鵜の木店、矢向店、新城店など複数店舗が相次いで閉店。丸善ジュンク堂との業務提携後も店舗縮小が続く厳しい状況。",
+      "before_state": "停滞・閉塞",
+      "after_state": "縮小安定・生存",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 122
+    },
+    {
+      "transition_id": "CORP_JP_3373",
+      "story_summary": "ジョブズ復帰後のAppleは「白馬のように飾る」デザイン哲学を確立。iMacの半透明ボディ、iPodの白いイヤホンなど、白を基調とした洗練された美学で製品を飾り、ブランド価値を高めた。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "IT・電子機器",
+      "scale": "company",
+      "story_length": 92
+    },
+    {
+      "transition_id": "FAM_JP_530",
+      "story_summary": "中国の知識人層は、文化大革命で迫害を受けながらも、知恵を隠して生き延びた。明かりが傷つけられる時代に、内面の光を守りながら耐え忍んだ。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "社会・文化",
+      "scale": "family",
+      "story_length": 67
+    },
+    {
+      "transition_id": "OTHR_JP_128",
+      "story_summary": "ランサーズ、クラウドワークスなど日本でもプラットフォームが成長。副業、在宅ワークの受け皿に。コロナで需要急増、フリーランス人口は500万人超に。しかし報酬の低さ、安定性の課題も。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "other",
+      "story_length": 89
+    },
+    {
+      "transition_id": "FAM_JP_297",
+      "story_summary": "2023年度の不登校児童生徒数が過去最多の34万人超。家庭でのオンライン学習やフリースクール活用が増加。保護者の「学校に戻す」から「子供に合った環境を探す」への意識変化。多様な学びの選択肢が拡大。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "エネルギー・環境",
+      "scale": "family",
+      "story_length": 98
+    },
+    {
+      "transition_id": "PERS_JP_087",
+      "story_summary": "筑波大学准教授として研究しながら、メディアアーティストとしても活躍。「現代の魔法使い」と称され、テクノロジーとアートを融合させた作品を発表。研究者・アーティスト・実業家の三刀流。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 89
+    },
+    {
+      "transition_id": "PERS_JP_201",
+      "story_summary": "埼玉県所沢市出身。1985年15歳でプロ入り。1989年初タイトル竜王位獲得。1996年史上初の七冠独占達成（167日間維持）。2008年永世竜王をかけた竜王戦で3連勝後4連敗という屈辱を経験。2017年永世竜王を獲得し史上初の永世七冠達成、2018年棋士初の国民栄誉賞。2018年27年ぶり無冠、「九段」として再起。タイトル通算99期は歴代1位。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "Lifestyle",
+      "scale": "individual",
+      "story_length": 174
+    },
+    {
+      "transition_id": "COUN_JP_1395",
+      "story_summary": "西ローマ帝国の最終期。ゲルマン民族の侵入を食い止められず、ついにオドアケルにより滅亡。終末への不可逆的な道程。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "政治",
+      "scale": "country",
+      "story_length": 55
+    },
+    {
+      "transition_id": "CORP_JP_4562",
+      "story_summary": "2013年開始のMUJI passportアプリでオンライン・オフラインの顧客動向を把握。レジ通過者の30%がアプリ利用。「くらしの良品研究所」で商品アイデアを募集し、顧客との共創を実現。2023年からは「ファンマーケティング2.0」で、インフルエンサーとの共創にも注力。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "business",
+      "scale": "company",
+      "story_length": 136
+    },
+    {
+      "transition_id": "PERS_JP_075",
+      "story_summary": "整形外科医として臨床に携わるも、手術の不器用さから「ジャマナカ」と呼ばれる。基礎研究に転身し、iPS細胞を発見。2012年にノーベル生理学・医学賞を受賞。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "医療・製薬",
+      "scale": "individual",
+      "story_length": 77
+    }
+  ]
+}

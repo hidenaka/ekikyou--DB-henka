@@ -1,0 +1,365 @@
+{
+  "batch_id": 8,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "CORP_JP_3440",
+      "story_summary": "1985年大阪で創業した鳥貴族が「全品280円均一」の価格破壊で成長。焼き鳥を気軽に楽しめる業態を確立し、2020年には国内600店舗を突破。2022年からは海外展開も開始し、日本の居酒屋文化を世界に発信している。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "食品・飲料",
+      "scale": "company",
+      "story_length": 107
+    },
+    {
+      "transition_id": "PERS_JP_223",
+      "story_summary": "東京都千代田区出身。本名・樋口奈津。小学校を首席卒業も「女に学問不要」と進学断念。14歳で萩の舎に入塾、17歳で父の死と負債を背負う。20歳で生活のため小説執筆開始。『大つごもり』『たけくらべ』『にごりえ』など「奇蹟の十四ヶ月」で名作を発表、森鷗外・幸田露伴らから激賞される。1896年肺結核で死去、享年24。五千円札の肖像（2004-2024年）。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "教育",
+      "scale": "individual",
+      "story_length": 175
+    },
+    {
+      "transition_id": "CORP_JP_3141",
+      "story_summary": "パタゴニアは1985年から売上の1%を環境保護に寄付。2022年には創業者が全株式を環境NPOに譲渡。言行一致の環境姿勢が顧客の深い信頼とブランドロイヤルティを獲得。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "アパレル・アウトドア",
+      "scale": "company",
+      "story_length": 83
+    },
+    {
+      "transition_id": "OTHR_JP_831",
+      "story_summary": "日大アメフト部の悪質タックル事件は、単なる選手の問題ではなく、監督・コーチ、さらには大学経営層の体質問題へと発展した。組織の中枢にまで腐敗が及んでいたことが次々と明らかになった。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "教育",
+      "scale": "other",
+      "story_length": 89
+    },
+    {
+      "transition_id": "PERS_JP_2071",
+      "story_summary": "1997年にAppleに復帰したジョブズは、デザインチームのジョナサン・アイブらと深い共感関係を築いた。感応的なコラボレーションから、iMac、iPod、iPhoneが生まれ、Apple復活を果たした。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "IT・通信",
+      "scale": "individual",
+      "story_length": 101
+    },
+    {
+      "transition_id": "PERS_JP_2739",
+      "story_summary": "調剤薬局の薬剤師がサプリメントの知識を活かし、オンラインでの健康相談とサプリメント選定アドバイスを副業で開始。信頼性の高い情報発信が評価され、自社ブランドのサプリメントをEC販売。月商200万円を達成し、薬局を退職して健康食品事業に専念した。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "ヘルスケア・EC",
+      "scale": "individual",
+      "story_length": 121
+    },
+    {
+      "transition_id": "PERS_JP_307",
+      "story_summary": "東京都足立区出身。本名・北野武。ビートきよしと漫才コンビ「ツービート」を結成し人気に。1983年大島渚監督「戦場のメリークリスマス」で俳優として注目。1989年「その男、凶暴につき」で映画監督デビュー。1997年「HANA-BI」でベネチア国際映画祭金獅子賞、2003年「座頭市」で銀獅子賞受賞。2005年から東京芸術大学大学院教授。フランス芸術文化勲章、レジオン・ドヌール勲章、旭日小綬章受章。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 198
+    },
+    {
+      "transition_id": "PERS_JP_178",
+      "story_summary": "山梨県甲府市出身。韮崎高校から1995年ベルマーレ平塚入団。1997年ジョホールバルの奇跡で3点全てに関与。1998年セリエAペルージャ移籍、ユベントス相手に2得点デビュー。2001年ローマでスクデット獲得。アトランタ五輪で監督と確執、グロインペイン症候群、パルマ破産など苦難を経験。2006年29歳で「喜びが奪われた」と電撃引退。以後100か国以上を旅し、日本酒・日本茶事業で日本文化発信。",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 196
+    },
+    {
+      "transition_id": "CORP_JP_4311",
+      "story_summary": "BYDは電気自動車で勢いに乗り世界市場に攻勢。大いなる力を発揮して販売台数世界一に。積極的な拡大戦略で成功。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "自動車",
+      "scale": "company",
+      "story_length": 54
+    },
+    {
+      "transition_id": "OTHR_JP_960",
+      "story_summary": "1989年「8020運動」（80歳で20本の歯を保つ）開始。フッ化物塗布、定期健診の普及で、達成者が8%から51%へ大幅増加。口腔と全身の健康の関連性も認知され、予防歯科が当たり前に。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "歯科医療",
+      "scale": "other",
+      "story_length": 92
+    },
+    {
+      "transition_id": "OTHR_JP_026",
+      "story_summary": "子どもの貧困問題を受け、地域有志が子ども食堂を開設。最初は週1回から始め、今では毎日開催。ボランティアと寄付で運営し、延べ1万人以上に食事を提供。「ここに来れば誰かがいる」安心感が評価される。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "story_length": 96
+    },
+    {
+      "transition_id": "CORP_JP_3377",
+      "story_summary": "ソフトバンクはSprint買収後、T-Mobileとの統合を目指したが規制で頓挫。「車軸を外す」ように米国市場での拡大を一時停止し、Arm買収など別の成長路線に切り替えた。戦略的撤退と蓄積。",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "main_domain": "通信・投資",
+      "scale": "company",
+      "story_length": 95
+    },
+    {
+      "transition_id": "FAM_JP_306",
+      "story_summary": "保護者の就労要件なしで保育施設を利用できる「こども誰でも通園制度」が2024年度から試行。月10時間まで利用可能。在宅育児家庭の孤立防止と負担軽減が狙い。2026年度本格実施予定。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 90
+    },
+    {
+      "transition_id": "PERS_JP_2650",
+      "story_summary": "大手日系メーカーのエンジニアとして勤務しながら2014年に不動産投資を開始。2018年にYouTubeで不動産投資の情報発信を始め登録者30万人超に成長。副業収入が本業を大幅に超え、2019年に退職して不動産・メディア事業に専念。資産2億円超を構築。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "金融",
+      "scale": "individual",
+      "story_length": 125
+    },
+    {
+      "transition_id": "PERS_JP_170",
+      "story_summary": "千葉県佐倉市出身。幼少期は終戦直後で母の手縫いグラブと青竹バットで野球を始める。高校では甲子園出場ならず公式本塁打1本のみ。立教大学で首位打者2度、1958年巨人入団。新人王、MVP5回、首位打者6回、V9の中心選手として「ミスタープロ野球」に。監督1年目は球団初の最下位も、その後リーグ優勝5回。国民栄誉賞、プロ野球界初の文化勲章。2025年89歳で死去。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 179
+    },
+    {
+      "transition_id": "HEX13_YAO6_001",
+      "story_summary": "経団連は郊外で人と同じくするように、業界全体で緩やかな連携を維持。直接的な利害を超えて日本経済全体のために政策提言を行い、広範な協力関係を構築した。外部との緩やかだが重要な同人関係。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "経済団体",
+      "scale": "other",
+      "story_length": 91
+    },
+    {
+      "transition_id": "FAM_JP_039",
+      "story_summary": "代々続く農家の長男。東京で就職するも、父の病気で帰郷を決意。妻は反対したが説得して戻る。しかし農業の厳しさに直面し、妻との関係が悪化。結局離婚し、一人で農業を続ける。「守るべきものが何だったのか」と自問する日々。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "農林水産",
+      "scale": "family",
+      "story_length": 106
+    },
+    {
+      "transition_id": "CORP_JP_756",
+      "story_summary": "早稲田大学正門そばの老舗書店。長年学生に親しまれてきた地域の顔。出版不況、スマホ普及による読書離れ、ネット書店との競合で経営環境が悪化。2024年9月16日に閉店。早稲田の街から学生御用達の書店が姿を消した。地域文化の担い手喪失。",
+      "before_state": "停滞・閉塞",
+      "after_state": "崩壊・消滅",
+      "main_domain": "エンタメ",
+      "scale": "company",
+      "story_length": 115
+    },
+    {
+      "transition_id": "FAM_JP_087",
+      "story_summary": "海外赴任で貴重な経験を獲得。グローバルな視野が広がる。しかし家族との時間は犠牲に、子供の成長を見逃す。経験と家族のトレードオフ。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 64
+    },
+    {
+      "transition_id": "CORP_JP_433",
+      "story_summary": "1999年、7000億円近い巨額赤字。ルノーから5857億円を受け入れ、カルロス・ゴーンがCOO就任。CFT（クロスファンクショナルチーム）を結成し、系列破壊・2万人削減など「日産リバイバルプラン」を断行。2001年3月期に純利益3310億円と過去最高を記録。しかし2018年11月にゴーン逮捕（金商法違反）、2019年12月にレバノン逃亡。2020年3月期は6712億円の最終赤字に転落。",
+      "before_state": "どん底・危機",
+      "after_state": "迷走・混乱",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 195
+    },
+    {
+      "transition_id": "CORP_JP_2541",
+      "story_summary": "低価格スマホで新興国市場を席巻。IoTエコシステムを構築。2024年にEV市場参入を発表。AppleとSamsungの間で独自のポジションを確立。",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 73
+    },
+    {
+      "transition_id": "COUN_JP_294",
+      "story_summary": "移民受け入れで労働力不足は解消。経済成長に寄与。しかし文化的摩擦、治安への懸念も。経済と社会の間で揺れる政策。",
+      "before_state": "停滞・閉塞",
+      "after_state": "迷走・混乱",
+      "main_domain": "エンタメ",
+      "scale": "country",
+      "story_length": 55
+    },
+    {
+      "transition_id": "CORP_JP_3452",
+      "story_summary": "戦後の電電公社から始まり、1985年の民営化を経てNTTグループへ。固定電話の全国普及から光ファイバー網の整備、モバイル通信への展開と、時代の変化に対応しながら通信インフラを発展させてきた。現在も5Gやデータセンターなど次世代基盤を構築中。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "インフラ",
+      "scale": "company",
+      "story_length": 120
+    },
+    {
+      "transition_id": "COUN_JP_569",
+      "story_summary": "インド経済が2024年も7%前後の高成長を維持。人口世界一、若い労働力が強み。製造業誘致とデジタル化が進展。モディ政権3期目でも改革継続。中国に代わる投資先として注目高まる。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "country",
+      "story_length": 87
+    },
+    {
+      "transition_id": "CORP_JP_3403",
+      "story_summary": "日本の大企業では新入社員は研修から始まる。現場配属前の基礎訓練、マナー教育、会社理念の学習。雁が水辺に降り立つように、まず足場を固める第一歩の期間。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "人事・組織",
+      "scale": "company",
+      "story_length": 74
+    }
+  ]
+}

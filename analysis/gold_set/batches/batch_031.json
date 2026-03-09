@@ -1,0 +1,365 @@
+{
+  "batch_id": 31,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "COUN_JP_425",
+      "story_summary": "EU加盟で急成長、1990年代「ケルトの虎」と呼ばれる。しかし2008年バブル崩壊で銀行危機、IMF支援を受ける。教育投資とIT企業誘致で復活、今ではEU随一の成長国に。人口流出も逆転。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "country",
+      "story_length": 93
+    },
+    {
+      "transition_id": "COUN_JP_538",
+      "story_summary": "高度成長期を経て成熟期に入ったドイツ経済。急成長はないが、製造業の強さと堅実な財政政策で安定を維持。EU内での影響力を保ちつつ、次世代産業への投資も継続。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "製造",
+      "scale": "country",
+      "story_length": 77
+    },
+    {
+      "transition_id": "CORP_JP_3204",
+      "story_summary": "トヨタ生産方式（TPS）は世界中の企業が学びに来る「光」となった。GMやフォードも工場見学に訪れ、リーン生産方式として世界に広まった。模範を示す企業の姿。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "自動車",
+      "scale": "company",
+      "story_length": 77
+    },
+    {
+      "transition_id": "FAM_JP_017",
+      "story_summary": "盛田昭夫は創業者でありながら、息子を後継者にせず実力主義を貫いた。「創業者の息子だからという理由で社長にしてはいけない」と語り、大賀典雄に社長を譲った。家族よりも企業を優先。",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 87
+    },
+    {
+      "transition_id": "CORP_JP_3173",
+      "story_summary": "2003年から2023年の20年間で海外売上比率を37%から83%へと飛躍的に拡大。2015年にはインドで空調市場シェア1位を獲得し、世界空調市場でトップの地位を確立。各国の気候や住宅事情に対応した製品開発で、業務用空調で世界シェア首位を維持。正当な評価を受けた進出の成功。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造・重工業",
+      "scale": "company",
+      "story_length": 137
+    },
+    {
+      "transition_id": "PERS_JP_878",
+      "story_summary": "本業の傍らネットショップを開業。初期投資と広告費で借金が膨らみ、副業収入を大幅に上回る。200万円の借金を抱え事業を断念。本業に集中し、残業と節約で3年かけて完済。「副業は甘くない。本業をおろそかにしてはいけなかった」と反省。現在は堅実な資産形成に取り組む。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "金融",
+      "scale": "individual",
+      "story_length": 129
+    },
+    {
+      "transition_id": "COUN_JP_378",
+      "story_summary": "2000年に通貨をドルに切り替え、経済安定化。しかし近年は麻薬組織の暴力が急増、刑務所暴動で数百人死亡。2024年にはTV局襲撃事件も。「平和な国」から「危険な国」への急変に国際社会も衝撃。",
+      "before_state": "安定・平和",
+      "after_state": "迷走・混乱",
+      "main_domain": "医療・製薬",
+      "scale": "country",
+      "story_length": 95
+    },
+    {
+      "transition_id": "CORP_JP_480",
+      "story_summary": "コンビニ業界の覇者として君臨。2021年にスピードウェイ買収で売上高11.8兆円に拡大。しかし2024年3〜11月期は純利益65%減の636億円。国内コンビニは既存店売上3ヶ月連続マイナス、ファミマ・ローソンに「独り負け」状態。海外コンビニも営業利益32%減。カナダ企業から7兆円超の買収提案、創業家による9兆円規模MBO案など経営権争奪戦に発展。イオンの「まいばすけっと」攻勢にも直面。",
+      "before_state": "絶頂・慢心",
+      "after_state": "迷走・混乱",
+      "main_domain": "小売・サービス",
+      "scale": "company",
+      "story_length": 194
+    },
+    {
+      "transition_id": "CORP_JP_3584",
+      "story_summary": "ファストファッションモデルを確立した発展期。製造から販売までの垂直統合で、トレンドへの迅速な対応を実現し世界展開を加速。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "ファッション・アパレル",
+      "scale": "company",
+      "story_length": 60
+    },
+    {
+      "transition_id": "PERS_JP_540",
+      "story_summary": "仮想通貨ブームに乗って全財産を投入。一時は3倍になるも、暴落で元本割れ。ナンピンを繰り返し、最終的に8割を失う。「投資ではなくギャンブルだった」。",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "main_domain": "金融",
+      "scale": "individual",
+      "story_length": 73
+    },
+    {
+      "transition_id": "COUN_JP_404",
+      "story_summary": "2005年、2010年と2度の革命で大統領を追放、中央アジア唯一の「民主主義」。しかし政治は不安定、2020年にも抗議で政権交代。民族対立、汚職、経済停滞が課題。「中央アジアのスイス」を目指すも道は険しい。",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
+      "main_domain": "国家・政治",
+      "scale": "country",
+      "story_length": 103
+    },
+    {
+      "transition_id": "PERS_JP_839",
+      "story_summary": "2010年、WikiLeaksで米軍イラク戦争の機密映像等を公開し世界に衝撃。同年スウェーデンで性的暴行容疑で逮捕状。2012年エクアドル大使館に亡命、7年間籠城。2019年に英警察が逮捕、米国への身柄引き渡しを巡り法廷闘争。最大175年の禁固刑の可能性も。2024年6月、司法取引で有罪を認めサイパンで解放、オーストラリアに帰国。14年ぶりの自由を得た。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "農林水産",
+      "scale": "individual",
+      "story_length": 178
+    },
+    {
+      "transition_id": "PERS_JP_2743",
+      "story_summary": "コンサル会社勤務の女性がNotionのテンプレートをGumroadで販売する副業を開始。Twitterでの発信が海外ユーザーにも拡散し、累計販売数5000件を達成。Notionアンバサダーにも認定され、退職後に生産性コンサルタントとして独立。企業向けNotion導入支援も手がけている。",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "main_domain": "生産性ツール",
+      "scale": "individual",
+      "story_length": 143
+    },
+    {
+      "transition_id": "CORP_JP_3599",
+      "story_summary": "トヨタ生産方式が世界標準として認知された発展期。「改善」「ジャスト・イン・タイム」が製造業のベストプラクティスとして確立。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "自動車・製造業",
+      "scale": "company",
+      "story_length": 61
+    },
+    {
+      "transition_id": "CORP_JP_031",
+      "story_summary": "2014年創業のPreferred Networksが、深層学習技術でトヨタ・ファナックなど大手と提携。2024年には企業価値3500億円超の日本最大AIスタートアップに成長。製造業AIで存在感。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 98
+    },
+    {
+      "transition_id": "COUN_JP_095",
+      "story_summary": "外資導入による輸出主導型成長で「アジアの奇跡」の一翼を担い、自動車産業の集積地（東洋のデトロイト）となった。1997年の通貨危機の震源地となり大打撃を受けたが、通貨切り下げによる輸出競争力回復と観光業の伸長によりV字回復。その後も政情不安を抱えつつ、ASEANの中核経済として成長を続けた。",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造",
+      "scale": "country",
+      "story_length": 145
+    },
+    {
+      "transition_id": "OTHR_JP_957",
+      "story_summary": "1963年に日本リハビリテーション医学会設立。脳卒中・整形外科疾患のリハビリ体系化を経て、回復期リハビリテーション病棟制度（2000年）で急性期から在宅への橋渡しが整備。ADL改善で社会復帰を支援。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "リハビリ医学",
+      "scale": "other",
+      "story_length": 99
+    },
+    {
+      "transition_id": "FAM_JP_525",
+      "story_summary": "銅精錬から始まり430年以上の歴史。「自利利他公私一如」の理念で事業を拡大。鉱山→金融→商社と緩やかに多角化。GHQ解体後もグループの結束を維持し、現代でも住友精神を継承。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "コングロマリット",
+      "scale": "family",
+      "story_length": 86
+    },
+    {
+      "transition_id": "CORP_JP_4815",
+      "story_summary": "老舗電機メーカーが秀和システムに買収後わずか3年半で破綻。トップの上田氏は破産直前に社長辞任。組織統率の失敗と短期的利益追求により、従業員約500名が職を失う結果に。",
+      "before_state": "停滞・閉塞",
+      "after_state": "崩壊・消滅",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 83
+    },
+    {
+      "transition_id": "FAM_JP_239",
+      "story_summary": "夫からのDVに耐えていたが、子供への影響を考えてシェルターに避難。離婚、養育費の確保を経て、母子で新生活をスタート。「逃げることは負けではない」と同じ境遇の人に伝える。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 84
+    },
+    {
+      "transition_id": "PERS_JP_856",
+      "story_summary": "会社倒産で失業、再就職に失敗し生活保護を受給。「このままではいけない」と一念発起し、少ない保護費から参考書代を捻出。2年間の独学で宅建士資格を取得。不動産会社に就職が決まり生活保護を脱却。就労自立給付金も受給。現在は中堅営業として活躍中。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "不動産・建設",
+      "scale": "individual",
+      "story_length": 119
+    },
+    {
+      "transition_id": "PERS_JP_2793",
+      "story_summary": "営業職26歳がテックアカデミー（約30万円）でRailsを学び6ヶ月後にフリーランスエンジニアに転職。月単価65万円を達成後、自身のSaaSプロダクトを開発。MRR（月次定期収入）100万円を突破し2024年にはシードラウンドで5000万円を調達。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "IT・テクノロジー",
+      "scale": "individual",
+      "story_length": 124
+    },
+    {
+      "transition_id": "PERS_JP_182",
+      "story_summary": "福岡県出身。小学2年で柔道を始め、世界選手権6連覇を含む7回優勝。1992年バルセロナ、1996年アトランタで銀メダルが続き「金メダルを取れない選手」と言われるも、「最高でも金、最低でも金」と自らを鼓舞し2000年シドニーで悲願の金。2004年アテネも金。産後7ヶ月でママさん選手として復帰、北京で銅。オリンピック5大会連続メダルという偉業を達成。2010年引退後は政治家に転身。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "教育",
+      "scale": "individual",
+      "story_length": 190
+    },
+    {
+      "transition_id": "PERS_JP_2898",
+      "story_summary": "沖縄戦で両親と兄弟を失い、戦争孤児として収容所を転々とした。米軍統治下の沖縄で孤児院を出た後、独学で簿記を学び、那覇で小さな商店を開業。復帰運動にも参加し、地域の商工会議所で活躍する人物となった。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "起業・ビジネス",
+      "scale": "individual",
+      "story_length": 98
+    },
+    {
+      "transition_id": "CORP_JP_4531",
+      "story_summary": "Appleは2011年、Samsungに対し特許侵害で提訴。スマートフォン市場における訴訟合戦の初動期。争いの始まりは慎重に対処すべきとの教訓を示す事例。",
+      "before_state": "成長痛",
+      "after_state": "迷走・混乱",
+      "main_domain": "IT・通信",
+      "scale": "company",
+      "story_length": 77
+    }
+  ]
+}

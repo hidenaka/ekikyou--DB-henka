@@ -1,0 +1,365 @@
+{
+  "batch_id": 17,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "CORP_JP_2637",
+      "story_summary": "ミドリムシ（ユーグレナ）の大量培養に世界で初めて成功。バングラデシュの栄養失調問題解決を創業の志とし、食料・燃料・健康食品など多角的に事業展開。山雷頤の「世界を養う」使命を持つスタートアップ。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "バイオテクノロジー",
+      "scale": "company",
+      "story_length": 96
+    },
+    {
+      "transition_id": "CORP_JP_144",
+      "story_summary": "大手チェーン店との競争で苦境に立つ個人喫茶店が、24年かけて差別化を追求。自家焙煎とレトロな雰囲気で、固定客を維持しながら存続。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "農林水産",
+      "scale": "company",
+      "story_length": 64
+    },
+    {
+      "transition_id": "OTHR_JP_964",
+      "story_summary": "開国後、包み紙として使われていた浮世絵が欧州で「発見」される。モネ、ゴッホ、クリムトらに影響を与え「ジャポニスム」を生む。60年かけて日本美術の価値が世界に認められ、文化交流の象徴となった。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "芸術・デザイン",
+      "scale": "other",
+      "story_length": 95
+    },
+    {
+      "transition_id": "PERS_JP_2700",
+      "story_summary": "離島の診療所に勤務する看護師が、オンライン健康相談を副業で開始。過疎地の医療アクセス問題を解決するサービスとして注目され、クラウドファンディングで資金調達に成功。退職後、遠隔健康相談プラットフォームを法人化し、全国の僻地医療をカバーする事業に成長した。",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "main_domain": "ヘルスケア",
+      "scale": "individual",
+      "story_length": 126
+    },
+    {
+      "transition_id": "CORP_JP_786",
+      "story_summary": "中古車販売大手ビッグモーターで保険金不正請求が発覚。街路樹への除草剤散布も判明。創業家が経営から退陣。2024年に伊藤忠商事系ファンドが再建支援に参画。企業文化の問題が露呈。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "金融",
+      "scale": "company",
+      "story_length": 87
+    },
+    {
+      "transition_id": "OTHR_JP_273",
+      "story_summary": "トラック運転手の時間外労働上限規制で輸送力不足懸念。運賃交渉力向上、中継輸送、モーダルシフトを推進。荷主との関係見直しも進む。物流の持続可能性確保に向け業界構造転換が加速。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "物流・交通",
+      "scale": "other",
+      "story_length": 86
+    },
+    {
+      "transition_id": "COUN_JP_1419",
+      "story_summary": "ニクソン政権からの繊維輸出自主規制要求に、日本は信頼関係を重視して交渉を進めた。中孚の初爻として、まず誠実さの基盤を固め、最終的に妥協点を見出した。",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "main_domain": "国家・貿易",
+      "scale": "country",
+      "story_length": 74
+    },
+    {
+      "transition_id": "COUN_JP_413",
+      "story_summary": "独立後、政治不安定とクーデターの繰り返し。世界有数の生物多様性を誇るも、貧困で森林破壊が進行。2021年南部で大干ばつ、飢餓危機。観光と農業に依存する脆弱な経済、気候変動の脅威が増大。",
+      "before_state": "停滞・閉塞",
+      "after_state": "崩壊・消滅",
+      "main_domain": "エネルギー・環境",
+      "scale": "country",
+      "story_length": 92
+    },
+    {
+      "transition_id": "PERS_JP_2146",
+      "story_summary": "民藝運動の提唱者・柳宗悦の理念を実践で体現した濱田庄司。益子焼を通じて民藝の美を世界に発信し、後に人間国宝となった。理論と実践の師弟連携。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "伝統工芸",
+      "scale": "individual",
+      "story_length": 69
+    },
+    {
+      "transition_id": "PERS_JP_2712",
+      "story_summary": "IT企業の部長職を57歳で早期退職し、地域おこし協力隊として中山間地域に移住。古民家を改修した農泊施設を運営する副業を開始。任期終了後に事業を本格化し、年間宿泊者数1000名を超える人気施設に育て上げた。地域の高齢農家と協力し体験型農業ツアーも展開している。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "観光・宿泊業",
+      "scale": "individual",
+      "story_length": 129
+    },
+    {
+      "transition_id": "PERS_JP_325",
+      "story_summary": "神奈川県出身。4歳でテニスを始め、15歳で世界ジュニアランキング1位。17歳でプロ転向、34歳まで17年間のキャリア。WTAダブルス1位（日本人初）、グランドスラムダブルス3勝・混合1勝。シングルス最高8位。グランドスラム連続出場62回はギネス記録（当時）。オリンピック4大会連続出場。2009年引退後、現在はビリー・ジーン・キング・カップ日本代表監督。",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "main_domain": "スポーツ",
+      "scale": "individual",
+      "story_length": 177
+    },
+    {
+      "transition_id": "CORP_JP_3282",
+      "story_summary": "シャープは液晶パネルに巨額投資し「亀山モデル」で成功を収めたが、技術的優位に固執して他社との提携を拒絶。韓国・台湾勢の台頭で孤立し、2012年に経営危機に陥った。学びの壁（他社からの学習拒否）が困蒙を招いた典型例。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "電機・電子",
+      "scale": "company",
+      "story_length": 107
+    },
+    {
+      "transition_id": "COUN_JP_1354",
+      "story_summary": "2005年食育基本法施行。「食べる力」を育む国民運動として学校給食改革、地産地消推進、食品ロス削減などを展開。和食のユネスコ無形文化遺産登録（2013年）も追い風に、食への意識が向上。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "健康増進",
+      "scale": "country",
+      "story_length": 92
+    },
+    {
+      "transition_id": "CORP_JP_3480",
+      "story_summary": "創業300年超の京都の老舗旅館。11代目佐藤年から次世代への継承において、伝統的なおもてなしの心を守りながら、現代的な設備投資とサービス改善を実施。世界中のVIPが訪れる名旅館として地位を確立。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "観光・宿泊",
+      "scale": "company",
+      "story_length": 97
+    },
+    {
+      "transition_id": "CORP_JP_3445",
+      "story_summary": "千葉県鴨川市で開業。過疎地でありながら、最新医療と患者サービスを追求。「断らない救急」「ホテルライクな病院」で全国から患者が来院。地域医療と先端医療を両立させ、地方病院の成功モデルに。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "医療機関",
+      "scale": "company",
+      "story_length": 92
+    },
+    {
+      "transition_id": "CORP_JP_3119",
+      "story_summary": "セブン&アイはQRコード決済「セブンペイ」を開始するも、不正アクセス被害が発生。わずか3ヶ月でサービス終了を決断。経営トップが「二段階認証を知らなかった」発言で批判を浴び、デジタル戦略の見直しを迫られた。",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "main_domain": "小売・サービス",
+      "scale": "company",
+      "story_length": 102
+    },
+    {
+      "transition_id": "FAM_JP_227",
+      "story_summary": "実家から離れて暮らす中、親の介護が必要に。介護サービスの活用、見守りカメラ、定期的な帰省で遠距離介護を実現。兄弟で役割分担し、負担を分散。「離れていてもできること」を模索。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "小売・サービス",
+      "scale": "family",
+      "story_length": 86
+    },
+    {
+      "transition_id": "COUN_JP_607",
+      "story_summary": "地方自治体がSNSで住民と対話。2024年も継続。政策説明、質問対応で透明性向上。明るく開かれた行政イメージ。対話により信頼関係構築。若年層の関心も喚起。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "社会・コミュニティ",
+      "scale": "country",
+      "story_length": 77
+    },
+    {
+      "transition_id": "CORP_JP_2683",
+      "story_summary": "1875年創業の科学機器メーカー。分析計測技術という基盤技術を150年にわたり蓄積し、2002年には田中耕一氏がノーベル化学賞を受賞。技術という井戸から絶えず新しい価値を汲み上げ続ける。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 93
+    },
+    {
+      "transition_id": "PERS_JP_1055",
+      "story_summary": "地方在住ながら車を手放す決断。電動自転車、カーシェア、公共交通を駆使。年間50万円の節約と健康増進を実現。「車社会への問い」として注目され、地域のモデルケースに。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "医療・製薬",
+      "scale": "individual",
+      "story_length": 81
+    },
+    {
+      "transition_id": "PERS_JP_2949",
+      "story_summary": "2006年ワールドカップ後に29歳で引退し、サッカー界から完全撤退。約3年間世界を旅しながら様子見の期間を過ごした後、2009年から日本酒プロジェクト「SAKE100」を立ち上げ、日本文化発信という新領域で衝撃的な転身を果たした。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "スポーツ・文化",
+      "scale": "individual",
+      "story_length": 115
+    },
+    {
+      "transition_id": "CORP_JP_2814",
+      "story_summary": "動画配信サービスの普及というメディア消費の緩やかな変化を受け、レンタル事業を縮小しながらTポイント事業やライフスタイル提案型店舗へシフト。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 69
+    },
+    {
+      "transition_id": "CORP_JP_2675",
+      "story_summary": "高い給与と充実した研修で優秀な人材を集め、営業利益率50%超を実現。属人化を排除しつつチーム全員で切磋琢磨する文化が求心力となり、日本最高水準の収益力を持つ企業に成長。沢地萃の「人が集まる力」を体現。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 100
+    },
+    {
+      "transition_id": "COUN_JP_336",
+      "story_summary": "1990年にマンデラ釈放、アパルトヘイト撤廃へ。1994年初の全人種選挙でマンデラ大統領に。真実和解委員会で復讐ではなく和解を選択。しかし経済格差、犯罪率、汚職は深刻なまま。「虹の国」の理想と現実の乖離が続くが、内戦は回避し民主主義を維持。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "国家・政治",
+      "scale": "country",
+      "story_length": 120
+    },
+    {
+      "transition_id": "PERS_JP_2707",
+      "story_summary": "介護施設で働く介護福祉士がプログラミングを独学で習得し、介護記録のデジタル化ツールを副業で開発。施設内で試験導入したところ業務効率が大幅に改善され、他施設からも問い合わせが殺到。退職して介護テックのスタートアップを創業し、全国100施設に導入されるまでに成長した。",
+      "before_state": "停滞・閉塞",
+      "after_state": "縮小安定・生存",
+      "main_domain": "介護テクノロジー",
+      "scale": "individual",
+      "story_length": 132
+    }
+  ]
+}

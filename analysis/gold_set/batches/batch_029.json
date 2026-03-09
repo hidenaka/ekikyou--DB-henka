@@ -1,0 +1,365 @@
+{
+  "batch_id": 29,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "CORP_JP_4808",
+      "story_summary": "創業者アダム・ニューマンのカリスマで470億ドル評価に到達。2019年IPO目論見書で利益相反・損失額が発覚し上場中止、ニューマンは17億ドルで退任。2021年SPACで上場するも2023年11月に破綻、負債100-500億ドル。2024年5月に再建完了、Yardi Systemsが60%取得。ニューマンの500億円買収提案は却下。ユニコーン神話の崩壊と再生。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "real_estate",
+      "scale": "company",
+      "story_length": 181
+    },
+    {
+      "transition_id": "OTHR_JP_809",
+      "story_summary": "東証は2022年に市場区分を「プライム・スタンダード・グロース」の3市場に再編。企業のガバナンス向上と国際競争力強化を目指す。約60年ぶりの大改革で日本の資本市場の新体制を構築。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "金融・証券",
+      "scale": "other",
+      "story_length": 89
+    },
+    {
+      "transition_id": "PERS_JP_1214",
+      "story_summary": "2024年9月の自民党総裁選で石破茂が勝利。5度目の挑戦で念願の首相就任。「地方創生」「防災省設置」等を掲げる。野党との対話姿勢を示すも少数与党運営に苦慮。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "社会・コミュニティ",
+      "scale": "individual",
+      "story_length": 78
+    },
+    {
+      "transition_id": "COUN_JP_005",
+      "story_summary": "サブプライム住宅ローン危機を発端とするリーマン・ブラザーズ破綻により、世界金融危機が発生。米国経済は深刻な不況に陥ったが、FRBによる量的緩和（QE）や自動車産業への公的支援など、迅速かつ大規模な対応により、比較的早期に景気回復軌道に乗せた。",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造",
+      "scale": "country",
+      "story_length": 121
+    },
+    {
+      "transition_id": "FAM_JP_016",
+      "story_summary": "松下幸之助には男子がおらず、娘婿・平田正治を後継者として育てる。しかし平田が急逝し、後継者計画が崩壊。その後、実力主義で高橋荒太郎を社長に据え、家族経営から脱却した。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 83
+    },
+    {
+      "transition_id": "HEX03_YAO6_001",
+      "story_summary": "ソ連崩壊後のロシアは血の涙を流すような極限の苦難を経験。ハイパーインフレ、犯罪の横行、経済崩壊と、建国期の産みの苦しみを極限まで味わった。屯の上爻、最も辛い時期を象徴。",
+      "before_state": "どん底・危機",
+      "after_state": "現状維持・延命",
+      "main_domain": "国家運営",
+      "scale": "country",
+      "story_length": 84
+    },
+    {
+      "transition_id": "CORP_JP_3608",
+      "story_summary": "ハワード・シュルツ復帰後の成熟期。デジタル投資とリワードプログラムで顧客体験を革新し、安定成長を継続。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "飲食・小売",
+      "scale": "company",
+      "story_length": 51
+    },
+    {
+      "transition_id": "PERS_JP_927",
+      "story_summary": "人口50人の限界集落で町内会長に就任。高齢化と人口減少で集落消滅の危機。移住促進のためSNSで情報発信を開始。空き家バンクを活用し、6年間で10世帯の移住者を獲得。子供の声が戻り、集落に活気が復活。「諦めなければ地域は守れる」と全国で講演も。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "社会・コミュニティ",
+      "scale": "individual",
+      "story_length": 121
+    },
+    {
+      "transition_id": "OTHR_JP_1525",
+      "story_summary": "統合ビジョンの不明確さがPMI失敗の最大要因と判明。2024年の成功事例は全て、統合初日に明確なビジョンを全社員に共有している。",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "main_domain": "ビジネス",
+      "scale": "other",
+      "story_length": 64
+    },
+    {
+      "transition_id": "CORP_JP_377",
+      "story_summary": "1949年愛知県でおでん屋「酒房源氏」として創業。1997年に物語コーポレーションに社名変更、2008年ジャスダック上場。焼肉食べ放題「焼肉きんぐ」が焼肉業界売上No.1に成長。2025年6月期は売上1239億円、営業利益92億円で5年連続過去最高。2030年に売上2200億円目標。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 142
+    },
+    {
+      "transition_id": "PERS_JP_2813",
+      "story_summary": "分子生物学者の福岡伸一が『生物と無生物のあいだ』で科学エッセイストとしてブレイク。専門知識を一般読者向けに翻訳するスキルで80万部超のベストセラーを生み出し、講演・メディア出演でも収益化した。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "医療・介護",
+      "scale": "individual",
+      "story_length": 96
+    },
+    {
+      "transition_id": "PERS_JP_0261",
+      "story_summary": "ポートレート撮影で評価の高いフォトグラファーがスマホ普及で依頼減少。8年かけて動画制作と商業撮影で事業多角化。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "Technology",
+      "scale": "individual",
+      "story_length": 55
+    },
+    {
+      "transition_id": "CORP_JP_3003",
+      "story_summary": "開拓使麦酒醸造所として札幌で創業。北海道開拓の一環として設立され、払下げ後も北海道を代表するビールとして発展。黒ラベルなど独自ブランドを確立。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 71
+    },
+    {
+      "transition_id": "PERS_JP_176",
+      "story_summary": "東京都足立区出身、塗装工の父の家庭に生まれる。1973年ツービート結成、お笑いタレントとして成功。1989年深作欣二の辞退で『その男、凶暴につき』で監督デビュー。1週間おきの撮影という過酷な条件で「あんなに大変な仕事はない」と苦労。1997年『HANA-BI』でヴェネツィア国際映画祭金獅子賞、「キタノブルー」で世界的監督に。カンヌ60周年で唯一の日本人選出。東京藝術大学特別教授も。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 192
+    },
+    {
+      "transition_id": "PERS_JP_248",
+      "story_summary": "和歌山県串本町生まれ、奈良県育ち。3歳で母を病気で亡くす。実家は水産加工業で「さんま」の芸名の由来に。1974年笑福亭松之助に入門、落語家から師匠の推薦でタレントに転向。1981年『オレたちひょうきん族』で全国区に。1987年FNS27時間テレビでたけし・タモリと共演、「お笑いBIG3」に。1999年ギネス「日本で最も露出の多いテレビスター」認定。69歳現在もトップを走り続ける「お笑い怪獣」。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 198
+    },
+    {
+      "transition_id": "CORP_US_008",
+      "story_summary": "2014年にCEOに就任したサティア・ナデラが、WindowsからクラウドとAIにシフト。AzureとOpenAI投資で成長を加速し、2024年には時価総額3兆ドル超でAppleを抜き世界最高額に。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 99
+    },
+    {
+      "transition_id": "PERS_JP_2166",
+      "story_summary": "テスラとSpaceXの資金難で破産寸前に追い込まれたマスクは、最後の資金を投入して耐え忍んだ。小さな蓄えを信じて粘り強く待ち続け、最終的にNASAとの契約と追加投資を獲得した。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "宇宙・自動車",
+      "scale": "individual",
+      "story_length": 88
+    },
+    {
+      "transition_id": "CORP_JP_4635",
+      "story_summary": "戦前は近距離運送で日本一だったが、長距離運送に出遅れ業績悪化。既存事業での巻き返しを諦め、当時「非合理」とされた個人宅配市場への参入を決断。従来の常識を捨て、新市場で独自の仕組みを構築し、宅急便で大成功を収めた。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "ビジネス",
+      "scale": "company",
+      "story_length": 106
+    },
+    {
+      "transition_id": "COUN_JP_504",
+      "story_summary": "1994年の大虐殺で80万人以上が犠牲に。カガメ大統領のもと、ICT立国を目指して急速に復興。「アフリカのシンガポール」と呼ばれるまでに発展。和解と経済発展の両立を実現。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "社会・コミュニティ",
+      "scale": "country",
+      "story_length": 85
+    },
+    {
+      "transition_id": "COUN_JP_597",
+      "story_summary": "地方自治体がSNSで住民と対話。2024年も継続。政策説明、質問対応で透明性向上。明るく開かれた行政イメージ。対話により信頼関係構築。若年層の関心も喚起。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "社会・コミュニティ",
+      "scale": "country",
+      "story_length": 77
+    },
+    {
+      "transition_id": "CORP_JP_3604",
+      "story_summary": "シンプルデザインと適正価格で国内外に展開。成熟期に入り、ブランドの一貫性を保ちながら着実に成長を続けた。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "小売・ライフスタイル",
+      "scale": "company",
+      "story_length": 52
+    },
+    {
+      "transition_id": "COUN_JP_564",
+      "story_summary": "ロシアのウクライナ侵攻から3年目。2024年も膠着状態が継続。ウクライナはクルスク越境作戦を実施。西側支援疲れも指摘される。トランプ当選で停戦交渉の可能性も。人道危機は深刻化。",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
+      "main_domain": "国家・政治",
+      "scale": "country",
+      "story_length": 88
+    },
+    {
+      "transition_id": "PERS_JP_1165",
+      "story_summary": "テレビで引っ張りだこの人気芸人が、スキャンダルで一時干される。反省の日々を過ごし、地道な営業活動から再スタート。YouTubeでも活動し、新しいファン層を獲得。違う形で復活。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 87
+    },
+    {
+      "transition_id": "FAM_JP_532",
+      "story_summary": "創業者サム・ウォルトン死後、子供たちが経営を継承した。家人の5爻として、王が家に至るように、一族が協力して企業価値を守り、世界最大の小売企業を維持した。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "小売・一族",
+      "scale": "family",
+      "story_length": 76
+    },
+    {
+      "transition_id": "PERS_JP_937",
+      "story_summary": "公立中学校で15年勤務。管理職からのパワハラと過重労働でうつ病を発症し退職。療養後、塾講師からスタートし、オンライン家庭教師として独立。不登校の子供を専門に指導するフリーランスに。「学校という枠を外れたら、本当に必要な教育ができる」と手応え。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "教育",
+      "scale": "individual",
+      "story_length": 121
+    }
+  ]
+}

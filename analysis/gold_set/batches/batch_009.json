@@ -1,0 +1,365 @@
+{
+  "batch_id": 9,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "CORP_JP_4262",
+      "story_summary": "Amazonは137億ドルでWhole Foodsを買収し、実店舗小売市場に本格参入。オンラインとオフラインの統合を進め、Amazon Fresh・Prime配送との連携により食品小売事業を拡大した。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": null,
+      "scale": "company",
+      "story_length": 100
+    },
+    {
+      "transition_id": "CORP_JP_715",
+      "story_summary": "1919年創業、業歴105年の老舗紳士服メーカー。「キングタイガー」ブランドで一世を風靡。ピーク時売上334億円から長期低迷、1994年以降は慢性的赤字。コロナ禍でスーツ需要激減、売上38億円に急落し債務超過。2024年7月に民事再生申請（負債約39億円）。スポンサー探し中。",
+      "before_state": "停滞・閉塞",
+      "after_state": "崩壊・消滅",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 138
+    },
+    {
+      "transition_id": "FAM_JP_216",
+      "story_summary": "夫婦別姓を望み事実婚を選択。子供も生まれ、一般家庭と変わらない生活。しかし法的保護の弱さに直面することも。「制度と幸せは別」と割り切りつつ、法改正を訴え続ける。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 80
+    },
+    {
+      "transition_id": "CORP_JP_4371",
+      "story_summary": "「教育こそ最大の福利厚生」を掲げ、社員1人あたり年間26万円の教育投資を実施。2-3年での配置転換で多様な経験を積ませ、ニトリ大学を設立してグローバル人材育成に注力。人材への投資が持続的成長を支える。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "business",
+      "scale": "company",
+      "story_length": 100
+    },
+    {
+      "transition_id": "PERS_JP_437",
+      "story_summary": "東京都足立区出身。明治大学工学部中退後、浅草のストリップ劇場でエレベーターボーイから芸人へ。ビートきよしとツービート結成、漫才ブームで人気者に。1983年「戦場のメリークリスマス」で俳優デビュー。1989年「その男、凶暴につき」で映画監督デビュー。1997年「HANA-BI」でベネチア金獅子賞。世界的映画監督に。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 157
+    },
+    {
+      "transition_id": "CORP_JP_3507",
+      "story_summary": "柳井正CEOの下、国内アパレル最大手として安定的な成長を維持。海外展開を加速させながらも、ヒートテックやエアリズムなど機能性商品で市場をリードした成熟期。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "アパレル",
+      "scale": "company",
+      "story_length": 77
+    },
+    {
+      "transition_id": "OTHR_JP_987",
+      "story_summary": "明治期に外国人居留地で評価が始まり、150年以上かけて世界的ブランドに。但馬牛の血統管理、厳格な認定基準、偽造防止の取り組みで品質を担保。2009年のアメリカ輸出解禁以降、世界のセレブシェフが絶賛する存在に。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "農業・一次産業",
+      "scale": "other",
+      "story_length": 104
+    },
+    {
+      "transition_id": "COUN_JP_138",
+      "story_summary": "1980年代初頭の「オランダ病（資源依存と高福祉による不況）」を克服するため、ワッセナー合意により労使協調路線（ポルダーモデル）を確立。賃金抑制と引き換えに労働時間の短縮（ワークシェアリング）を進め、雇用を創出。「参加型福祉国家」として経済成長と社会的公正の両立に成功した。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "医療・製薬",
+      "scale": "country",
+      "story_length": 137
+    },
+    {
+      "transition_id": "COUN_JP_508",
+      "story_summary": "2億人超の人口を持つアフリカ最大の国。石油に依存した経済は不安定。ボコ・ハラムのテロ、北部と南部の対立、選挙をめぐる混乱。ポテンシャルを活かしきれない巨人。",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エネルギー・環境",
+      "scale": "country",
+      "story_length": 78
+    },
+    {
+      "transition_id": "PERS_JP_1166",
+      "story_summary": "会社を辞めてフリーランスになったが、明確なビジョンがなく漂流状態。案件を選ばず受けていたが、専門性が身につかず単価も上がらない。ある師匠との出会いで方向性が定まり、専門特化で成功。",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Lifestyle",
+      "scale": "individual",
+      "story_length": 90
+    },
+    {
+      "transition_id": "CORP_JP_4828",
+      "story_summary": "すかいらーくHDが北九州発祥の「資さんうどん」を240億円で子会社化。地方の人気チェーンを大手傘下に集約し、全国展開への足がかりとする戦略的M&A。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "飲食・サービス",
+      "scale": "company",
+      "story_length": 74
+    },
+    {
+      "transition_id": "PERS_JP_716",
+      "story_summary": "完全テレワークで通勤から解放。時間の余裕ができる。しかし同僚との交流がなくなり、孤立感を感じる。自由と孤独の狭間で揺れる。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "Lifestyle",
+      "scale": "individual",
+      "story_length": 61
+    },
+    {
+      "transition_id": "PERS_JP_0121",
+      "story_summary": "リラクゼーション店の乱立で競争が激化する中、あん摩マッサージ指圧師が14年かけて差別化を追求。訪問マッサージと医療連携で継続。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "医療・製薬",
+      "scale": "individual",
+      "story_length": 63
+    },
+    {
+      "transition_id": "CORP_JP_2160",
+      "story_summary": "1887年創業の製糸業。1983年に製糸業撤退後、1970年代開発の金属酸化物型センサに集中し湿度センサで世界トップシェア獲得。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "story_length": 64
+    },
+    {
+      "transition_id": "COUN_JP_1274",
+      "story_summary": "人口増加と経済改革を背景にG20内で第3位の平均成長率約4.6%を達成。2023年時点でフランス・イタリアの実質GDPを追い抜き、生体認証システムAadhaarなど先進国を飛び越える「リープフロッグ型発展」も実現。国際的な発言力も増大し、新興国のリーダーとしての地位を確立。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "国家経済",
+      "scale": "country",
+      "story_length": 137
+    },
+    {
+      "transition_id": "FAM_JP_038",
+      "story_summary": "アメリカ人夫と結婚し渡米。文化の違い、言葉の壁、義家族との関係に苦しむ。子供が生まれても孤立感は消えず、うつ状態に。夫の理解を得て日本に里帰り。最終的に日本に永住し、夫は遠距離婚姻の形を取る。「どこにも属せない」感覚。",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "main_domain": "エンタメ",
+      "scale": "family",
+      "story_length": 109
+    },
+    {
+      "transition_id": "PERS_JP_508",
+      "story_summary": "離婚で財産分与と養育費の支払いが発生。手取りの半分が消える生活に。再婚を考えるも、経済状況を知ると相手が離れていく。孤独と貧困の二重苦で、精神的にも追い詰められる。",
+      "before_state": "どん底・危機",
+      "after_state": "現状維持・延命",
+      "main_domain": "生活・暮らし",
+      "scale": "individual",
+      "story_length": 82
+    },
+    {
+      "transition_id": "CORP_JP_3359",
+      "story_summary": "WeWorkはオフィスの「門」を開き、異業種のスタートアップや個人が同じ空間で出会う文化を創出。初期は革新的なコミュニティ形成に成功したが、IPO失敗で急落。門を開く理念は評価されたが持続性に課題。",
+      "before_state": "成長痛",
+      "after_state": "迷走・混乱",
+      "main_domain": "不動産・サービス",
+      "scale": "company",
+      "story_length": 99
+    },
+    {
+      "transition_id": "CORP_JP_342",
+      "story_summary": "市場調査を行っていた会社がリアルタイムデータの普及で陳腐化。明晰な調査の価値が低下し、事業見直し中。",
+      "before_state": "成長痛",
+      "after_state": "迷走・混乱",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 50
+    },
+    {
+      "transition_id": "PERS_JP_106",
+      "story_summary": "歌手として大成功を収め、「平成の歌姫」として活躍（兌）。絶頂期に自ら引退を決断し（坤）、音楽業界から身を引いた。有終の美を飾り、伝説となった。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 71
+    },
+    {
+      "transition_id": "PERS_JP_2033",
+      "story_summary": "ビル・ゲイツとメリンダ・ゲイツは2000年に財団を設立し、グローバルヘルスと教育に注力。2006年にはウォーレン・バフェットが430億ドル相当を寄付。2024年までに1,023億ドル以上を支出し、マラリア・ポリオ撲滅などで世界的な成果を上げた。恩恵の拡大と成長を体現する二爻の典型。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "慈善・フィランソロピー",
+      "scale": "individual",
+      "story_length": 141
+    },
+    {
+      "transition_id": "CORP_JP_262",
+      "story_summary": "働き方改革を推進するも、現場の反発で骨抜きに。結局、形式だけの制度が残り、実態は何も変わらない。改革推進者は孤立。",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 57
+    },
+    {
+      "transition_id": "CORP_JP_2688",
+      "story_summary": "大手トラック運送会社から個人宅配市場を開拓。「採算が合わない」と誰も参入しなかった市場を革新的な配送システムで攻略し、物流業界に革命を起こした。宅急便という新概念の創造。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Logistics",
+      "scale": "company",
+      "story_length": 85
+    },
+    {
+      "transition_id": "PERS_JP_1033",
+      "story_summary": "東日本大震災で自宅と店舗を失った商店主。避難所生活を経て仮設店舗で再開、10年かけて新店舗を建設。「あの日」を語り継ぐ活動も行う。「生きているから頑張れる」という言葉。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "不動産・建設",
+      "scale": "individual",
+      "story_length": 84
+    },
+    {
+      "transition_id": "CORP_JP_4454",
+      "story_summary": "2013年7月にメルカリをローンチ。検索機能もなく手数料無料という不完全なアプリだったが、改善を重ねながら成長。2014年5月にはテレビCMを開始し、一気に認知度を高めた。プロダクトの磨き込みとマーケティング展開を同時に進めた展開期。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "technology",
+      "scale": "company",
+      "story_length": 117
+    }
+  ]
+}

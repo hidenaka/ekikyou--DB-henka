@@ -1,0 +1,365 @@
+{
+  "batch_id": 32,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "OTHR_JP_821",
+      "story_summary": "1990年代、日本の詰め込み教育は世界トップクラスの学力を実現したが、創造性欠如や不登校増加などの問題が顕在化。2002年にゆとり教育が導入されたが、今度は学力低下が問題視され、結局2011年に脱ゆとりへ。極端な教育方針は逆効果という教訓を残した。",
+      "before_state": "安定・平和",
+      "after_state": "迷走・混乱",
+      "main_domain": "教育",
+      "scale": "other",
+      "story_length": 124
+    },
+    {
+      "transition_id": "CORP_JP_148",
+      "story_summary": "スーパーの大量生産品に押される街の豆腐店が、24年かけて生き残りを図る。国産大豆と手作りの価値を訴求し、縮小しながら存続。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "小売・サービス",
+      "scale": "company",
+      "story_length": 61
+    },
+    {
+      "transition_id": "PERS_JP_0117",
+      "story_summary": "ヨガスタジオの乱立とオンライン配信で競争が激化する中、個人インストラクターが9年かけて差別化を追求。産後ヨガと企業向けで、継続。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "エネルギー・環境",
+      "scale": "individual",
+      "story_length": 64
+    },
+    {
+      "transition_id": "OTHR_JP_1132",
+      "story_summary": "2014年の待ち時間スキャンダル後、大規模な組織改革を実施。民間医療との連携拡大、デジタル化推進、メンタルヘルス支援強化により、サービス品質を段階的に改善。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "社会福祉",
+      "scale": "other",
+      "story_length": 78
+    },
+    {
+      "transition_id": "CORP_JP_510",
+      "story_summary": "世界最大の暗号資産取引所。創業者CZ（チャンペン・ジャオ）が率いる。2023年11月、マネーロンダリング対策違反で米司法省と43億ドルで和解。CZは有罪を認めCEOを辞任、5000万ドルの罰金。後任にリチャード・テンが就任。2024年4月、CZは懲役4ヶ月の判決（検察は36ヶ月を求刑）。9月に出所。2025年10月、トランプ大統領がCZに恩赦を付与。",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "main_domain": "農林水産",
+      "scale": "company",
+      "story_length": 176
+    },
+    {
+      "transition_id": "CORP_JP_4806",
+      "story_summary": "2021年4月にNASDAQ直接上場、初値381ドルで時価総額860億ドル。しかし2022年暗号資産冬の到来で株価80%下落。2023年6月にSECから提訴されるも、2025年2月にSECが訴訟取り下げ。規制との戦いを乗り越え、暗号資産取引所としての地位を確立。IPOから訴訟、そして勝利への波乱の道のり。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "fintech",
+      "scale": "company",
+      "story_length": 153
+    },
+    {
+      "transition_id": "CORP_JP_3179",
+      "story_summary": "Patagoniaは1985年から売上の1%を環境保護に寄付する方針を開始。2002年に創業者イヴォン・シュイナードがBlue Ribbon Fliesのクレイグ・マシューズと共に「1% for the Planet」を設立。「ビジネスは地球を救うためにある」という理念の下、小さな環境貢献から始め、現在は5,700社以上が参加する国際的なムーブメントに発展。恩恵の種を蒔く初爻の典型事例。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "アパレル・小売",
+      "scale": "company",
+      "story_length": 195
+    },
+    {
+      "transition_id": "CORP_JP_204",
+      "story_summary": "サラ・カサノバ社長が全国を行脚し、「母親目線」での対話と品質改善を徹底。店舗の改装、メニューの刷新、デリバリー強化など、顧客体験の向上に全力を注いだ。信頼回復とともに業績は急回復し、過去最高益を更新するまでに至った。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 108
+    },
+    {
+      "transition_id": "CORP_JP_2177",
+      "story_summary": "2020年コロナで予約80%減、社員25%削減。長期滞在型に戦略転換し、2022年には過去最高収益を達成。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 53
+    },
+    {
+      "transition_id": "FAM_JP_248",
+      "story_summary": "同居で嫁姑関係が悪化、離婚寸前に。しかし夫が仲介役を買って出て、定期的な「三者面談」を実施。お互いの期待値を調整し、今では良好な関係に。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 68
+    },
+    {
+      "transition_id": "OTHR_JP_958",
+      "story_summary": "1992年に在宅医療が診療報酬上位置づけられ、訪問診療・訪問看護が拡大。地域包括ケアシステムの中核として発展し、「最期まで自宅で」を希望する高齢者を支援。24時間対応の在宅療養支援診療所も増加。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "在宅医療",
+      "scale": "other",
+      "story_length": 97
+    },
+    {
+      "transition_id": "CORP_JP_3154",
+      "story_summary": "2018年、ネスレはスターバックスの家庭用コーヒー事業のライセンスを71億ドルで取得。スターバックスは店舗外収益を確保し、ネスレはプレミアムブランドを獲得。両社の強みを活かした提携。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "食品・飲料",
+      "scale": "company",
+      "story_length": 91
+    },
+    {
+      "transition_id": "OTHR_JP_280",
+      "story_summary": "コロナで激減した日本人留学がV字回復。2024年はコロナ前水準に近づく。政府の留学支援強化も後押し。一方で円安が費用負担増加の要因に。グローバル人材育成の重要性が再認識。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "国家・政治",
+      "scale": "other",
+      "story_length": 85
+    },
+    {
+      "transition_id": "PERS_JP_467",
+      "story_summary": "コロナ禍で在宅勤務になり、余った時間で投資を始める。YouTubeで学び、仮想通貨に全財産500万円を投入。一時は1500万円まで増えるも、暴落で100万円に。「もう一度」とFXにも手を出し、借金300万円。婚約者に見捨てられ、現在は返済のため副業三昧。",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "main_domain": "金融",
+      "scale": "individual",
+      "story_length": 127
+    },
+    {
+      "transition_id": "PERS_JP_2198",
+      "story_summary": "業績不振に陥った松下電器を立て直すため、幸之助は熱海に販売店主を集め、直接対話で信頼回復を図った。臨む姿勢の中心として、現場との絆を再構築した。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "電機・経営",
+      "scale": "individual",
+      "story_length": 72
+    },
+    {
+      "transition_id": "CORP_JP_3250",
+      "story_summary": "WeWorkはアダム・ニューマンCEOの下、急拡大を図り多くのスタートアップを集結させた。しかしIPO直前に経営の杜撰さが露呈し、企業価値は470億ドルから80億ドルに暴落。人材と資金の結集は嘆きに終わった。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "不動産・テック",
+      "scale": "company",
+      "story_length": 104
+    },
+    {
+      "transition_id": "PERS_JP_409",
+      "story_summary": "薩摩藩（現鹿児島県）出身。島津斉彬に見出され、藩政に参画。安政の大獄で入水自殺未遂、島流し。復帰後、薩長同盟・王政復古で活躍。戊辰戦争では江戸城無血開城を実現。明治政府で参議・陸軍大将。1873年征韓論争で下野、1877年西南戦争を起こし敗北・自決。「敬天愛人」。上野公園に銅像。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "国家・政治",
+      "scale": "individual",
+      "story_length": 140
+    },
+    {
+      "transition_id": "CORP_JP_3469",
+      "story_summary": "1962年開業以来「和のホテル」として独自路線を貫く。日本建築の美を取り入れた本館は惜しまれつつも建て替えられたが、その精神は新本館に継承。東京オリンピック時の接遇経験を基に、静謐で格調高いサービスで世界のVIPを魅了し続けている。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "観光・レジャー",
+      "scale": "company",
+      "story_length": 116
+    },
+    {
+      "transition_id": "CORP_JP_4830",
+      "story_summary": "三洋貿易がシンガポールのAIスタートアップPolymerize社と接点を持ち、国内代理店契約から資本業務提携へ発展。9ヶ月で戦略的パートナーシップを構築した迅速な意思決定。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "商社・貿易",
+      "scale": "company",
+      "story_length": 86
+    },
+    {
+      "transition_id": "CORP_JP_725",
+      "story_summary": "1983年創刊の静岡県の地域紙。約40年にわたり地域の情報を発信してきたが、読者の高齢化と若者の新聞離れで部数が減少。デジタルメディアの台頭もあり、2024年に廃刊。地域ジャーナリズムの衰退を象徴する事例。",
+      "before_state": "停滞・閉塞",
+      "after_state": "崩壊・消滅",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 103
+    },
+    {
+      "transition_id": "COUN_JP_033",
+      "story_summary": "ソ連崩壊による支援断絶と自然災害により「苦難の行軍」と呼ばれる大飢饉が発生。配給制度が崩壊したが、なし崩し的に発生した闇市場（チャンマダン）が国民の生存を支える形となった。その後も核開発に伴う厳しい国際制裁下にあるが、中国との貿易やサイバー攻撃による外貨獲得、市場活動の黙認により、体制と最低限の経済活動を維持し続けている。",
+      "before_state": "どん底・危機",
+      "after_state": "現状維持・延命",
+      "main_domain": "不動産・建設",
+      "scale": "country",
+      "story_length": 162
+    },
+    {
+      "transition_id": "PERS_JP_473",
+      "story_summary": "高校でいじめを受け不登校に。通信制高校に転校するも人間関係が苦手で卒業後は引きこもり。アルバイトに挑戦するも1週間で挫折。10年間自室にこもり、親の年金で生活。「社会復帰したいけど怖い」という状態が続く。",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "main_domain": "教育",
+      "scale": "individual",
+      "story_length": 102
+    },
+    {
+      "transition_id": "CORP_JP_143",
+      "story_summary": "ネット通販と量販店に押される玩具店が、14年かけて事業を再構築。体験型イベントとプレミアムトイに特化し、縮小しながら存続。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "小売・サービス",
+      "scale": "company",
+      "story_length": 61
+    },
+    {
+      "transition_id": "CORP_JP_3339",
+      "story_summary": "任天堂は1889年に花札製造で創業。70年以上にわたり伝統的なカードゲーム事業を続けながら、次の時代を見据えて技術開発を続けた。派手な動きを控え、時を待ちながら着実に基盤を固め、後のゲーム産業参入への布石を打った。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "玩具・ゲーム",
+      "scale": "company",
+      "story_length": 107
+    },
+    {
+      "transition_id": "PERS_JP_1187",
+      "story_summary": "オンライン講座で人気を博し、多忙を極めた講師。しかし同じ内容の繰り返しに虚しさを感じ、燃え尽き症候群に。1年休養後、新しいテーマで再開。「量より質」の活動スタイルに転換。",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "main_domain": "Lifestyle",
+      "scale": "individual",
+      "story_length": 85
+    }
+  ]
+}

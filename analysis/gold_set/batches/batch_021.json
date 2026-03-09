@@ -1,0 +1,365 @@
+{
+  "batch_id": 21,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "PERS_JP_028",
+      "story_summary": "6股交際スキャンダルで活動自粛に追い込まれる。しかし真摯に謝罪し、批判を受け止める姿勢を貫き、徐々に仕事が戻ってきた。現在はYouTubeでも成功を収めている。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 80
+    },
+    {
+      "transition_id": "PERS_JP_1914",
+      "story_summary": "京セラ、KDDIを創業し、JAL再建でも成功。「敬天愛人」「利他の心」という誠実な経営哲学を貫き、多くの経営者から尊敬される存在に。無報酬でJAL会長を引き受けた誠実さが奇跡の再建を可能にした。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Management",
+      "scale": "individual",
+      "story_length": 97
+    },
+    {
+      "transition_id": "FAM_JP_258",
+      "story_summary": "東京在住、親は地方で一人暮らし。認知症の兆候が出て遠距離介護を開始。月1回の帰省、見守りサービス、地域包括支援センターを活用。仕事との両立に苦労しながらも5年が経過。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "小売・サービス",
+      "scale": "family",
+      "story_length": 83
+    },
+    {
+      "transition_id": "PERS_JP_3014",
+      "story_summary": "2012年頃からメディア露出を控え、ライブ活動中心の静かな活動に移行していた。2017年9月20日、デビュー25周年に引退を電撃発表。2018年9月16日の沖縄ラストライブで25万人動員のファイナルツアーを完遂し、全楽曲のサブスク配信停止という前例のない完全撤退を実行した。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "芸能・エンタメ",
+      "scale": "individual",
+      "story_length": 137
+    },
+    {
+      "transition_id": "PERS_JP_1171",
+      "story_summary": "何気ない投稿が100万いいねを獲得。一躍有名人になったが、身バレ、誹謗中傷に悩まされる。アカウントを削除し、リアルの生活に戻る決断。「バズの代償」の大きさを知った。",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "individual",
+      "story_length": 82
+    },
+    {
+      "transition_id": "CORP_JP_649",
+      "story_summary": "2007年の民営化で日本郵便として再出発。ゆうパックはシェア3位だが、全国津々浦々のネットワークは強み。かんぽ生命の不正販売問題もあり、信頼回復と事業変革を迫られる。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 83
+    },
+    {
+      "transition_id": "COUN_JP_1319",
+      "story_summary": "1986年チェルノブイリ原発事故発生。当初ソ連政府は隠蔽を図るも、放射性物質がヨーロッパに拡散し国際的非難が高まる。ゴルバチョフは「渙きて其の汗を大号す」の如く危機を広く世界に公表。この情報公開がグラスノスチ（情報公開）政策の転換点となり、ソ連体制変革の契機に。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "エネルギー",
+      "scale": "country",
+      "story_length": 131
+    },
+    {
+      "transition_id": "PERS_JP_939",
+      "story_summary": "美容師として15年のキャリア。しかし薬剤による手荒れが悪化し、ハサミが持てなくなり引退。一時は絶望したが、美容師向けの手荒れ対策グッズを開発・販売する会社を起業。同じ悩みを持つ美容師からの支持を集め、事業は順調。「自分の経験がビジネスになった」。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "医療・製薬",
+      "scale": "individual",
+      "story_length": 123
+    },
+    {
+      "transition_id": "CORP_JP_200",
+      "story_summary": "価格競争と一括見積もりサイトの普及で競争が激化する中、塗装業者が14年かけて差別化を追求。断熱塗装と長期保証で、品質重視の顧客を維持しながら存続。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 73
+    },
+    {
+      "transition_id": "CORP_JP_3595",
+      "story_summary": "「Don't Buy This Jacket」広告で環境メッセージを発信。持続可能性と利益を両立させるビジネスモデルを発展させた。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "ファッション・アウトドア",
+      "scale": "company",
+      "story_length": 65
+    },
+    {
+      "transition_id": "OTHR_JP_947",
+      "story_summary": "1967年に漢方エキス製剤が保険適用となり、西洋医学と統合。大学医学部でも教育が開始され、今や医師の9割が漢方を処方経験あり。エビデンスに基づく漢方研究が進み、統合医療として世界に発信。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "伝統医療",
+      "scale": "other",
+      "story_length": 93
+    },
+    {
+      "transition_id": "OTHR_JP_252",
+      "story_summary": "三越伊勢丹・高島屋など大手は2024年度も過去最高益見込み。インバウンド・富裕層のブランド品・化粧品が牽引。一方、地方百貨店は閉店続出し「百貨店ゼロ県」は4県に拡大。都心と地方で明暗分かれる。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "小売・サービス",
+      "scale": "other",
+      "story_length": 96
+    },
+    {
+      "transition_id": "PERS_JP_712",
+      "story_summary": "転勤を拒否して家族との生活を選択。子供の成長を見守れる幸せ。しかし出世コースからは外れ、キャリアは停滞。家族とキャリアのトレードオフ。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "生活・暮らし",
+      "scale": "individual",
+      "story_length": 67
+    },
+    {
+      "transition_id": "CORP_JP_4805",
+      "story_summary": "2021年GameStop騒動で取引制限を実施、420億ドルの出金要求で流動性危機に直面。訴訟・規制調査の嵐を乗り越え、2024年には売上29.5億ドル（58%増）、純利益14.1億ドルで黒字転換。暗号資産取引量400%増、退職口座資産600%増。2025年Q3には売上12.7億ドル（100%増）。危機を乗り越えた再生の好例。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "fintech",
+      "scale": "company",
+      "story_length": 164
+    },
+    {
+      "transition_id": "COUN_JP_1340",
+      "story_summary": "コール首相の西ドイツは、東西統一を見据えながらも慎重に準備を進めた。NATOとの関係維持、経済力強化、東側との対話など、変革に備えて体制を堅固に保った期間。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "政治・行政",
+      "scale": "country",
+      "story_length": 78
+    },
+    {
+      "transition_id": "OTHR_JP_1533",
+      "story_summary": "2025年、トランプ大統領が中国への145%関税、メキシコ・カナダへの25%関税を発動。世界経済に大きな不確実性をもたらし、各国が対応に追われる「未完成」の状態が継続。",
+      "before_state": "安定・平和",
+      "after_state": "迷走・混乱",
+      "main_domain": null,
+      "scale": "other",
+      "story_length": 84
+    },
+    {
+      "transition_id": "CORP_JP_3583",
+      "story_summary": "ファミリーコンピュータ発売後の初動期。娯楽の喜びを提供するという理念のもと、家庭用ゲーム機市場を創出した。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "ゲーム・エンターテインメント",
+      "scale": "company",
+      "story_length": 53
+    },
+    {
+      "transition_id": "OTHR_JP_101",
+      "story_summary": "1994年規制緩和で地ビール解禁。当初は観光土産だったが、品質向上で「クラフトビール」として再定義。大手も参入し市場拡大、若者のビール離れに対抗。「多様性」が新たな価値に。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "観光・旅行",
+      "scale": "other",
+      "story_length": 86
+    },
+    {
+      "transition_id": "PERS_JP_643",
+      "story_summary": "定年後に新しい仕事を探すも、「年齢がネック」で採用されず。シルバー人材センターに登録するも、希望する仕事は回ってこない。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "生活・暮らし",
+      "scale": "individual",
+      "story_length": 60
+    },
+    {
+      "transition_id": "COUN_JP_1276",
+      "story_summary": "スウェーデン・フィンランド・ノルウェーなど北欧諸国は、高税率と包括的な社会福祉制度により世界最高水準の幸福度・平等性を実現。教育・医療・育児への「上から下への恩恵」が経済成長と社会安定の両立を可能にした。世界幸福度ランキングで常にトップ10入り。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "政策・福祉",
+      "scale": "country",
+      "story_length": 123
+    },
+    {
+      "transition_id": "FAM_JP_721",
+      "story_summary": "秋篠宮家の長女・眞子内親王と小室圭の婚約内定後、小室家の金銭トラブルが報道され皇室に衝撃が走った。問題は4年間にわたりメディアで取り上げられ続け、眞子内親王はPTSD診断を受けた。2021年に皇室儀式なし・一時金辞退という異例の形で結婚が実現し、皇室の内部問題が国民の前に露呈した。",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 141
+    },
+    {
+      "transition_id": "PERS_JP_548",
+      "story_summary": "ワーキングホリデーで海外へ。しかし語学力不足で良い仕事に就けず、日本食レストランでバイト。帰国後も「何のスキルも身についていない」と就活で苦戦。",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "main_domain": "小売・サービス",
+      "scale": "individual",
+      "story_length": 72
+    },
+    {
+      "transition_id": "FAM_JP_072",
+      "story_summary": "相続税対策でアパートを建築。しかし空室が続きローン返済は自己資金から。相続時には負の遺産となり、子供に迷惑をかける結果に。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 61
+    },
+    {
+      "transition_id": "CORP_JP_015",
+      "story_summary": "ホンダとソニーが2022年3月にEV合弁会社ソニー・ホンダモビリティを設立。2024年1月にブランド名『AFEELA』を発表し、2025年の北米販売開始を目指す。異業種連携で新たな価値創出。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 95
+    },
+    {
+      "transition_id": "PERS_JP_2667",
+      "story_summary": "安定した会社員が副業ライターとして活動を開始し、月5本のペースで記事を執筆。しかし文字単価1円台から上がらず、月収3万円程度の小規模副収入レベルで生存が続いている。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "小売・サービス",
+      "scale": "individual",
+      "story_length": 82
+    }
+  ]
+}

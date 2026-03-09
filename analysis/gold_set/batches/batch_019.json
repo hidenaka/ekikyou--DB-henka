@@ -1,0 +1,365 @@
+{
+  "batch_id": 19,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "OTHR_JP_1454",
+      "story_summary": "ISSは15カ国の協力で建設・運用され、人類の宇宙滞在技術の集大成となった。2024年には運用26年目を迎え、1,100以上の科学実験が完了。国際協力による完成の象徴となっている。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": null,
+      "scale": "other",
+      "story_length": 90
+    },
+    {
+      "transition_id": "COUN_JP_1201",
+      "story_summary": "過疎化が進む徳島県神山町が、光ファイバー整備を活かしIT企業のサテライトオフィスを誘致。人口減少という緩やかな変化を逆手に、移住者を呼び込む。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "",
+      "scale": "country",
+      "story_length": 71
+    },
+    {
+      "transition_id": "COUN_JP_1393",
+      "story_summary": "原油価格下落後の協調減産合意。ロシアとの協力体制（OPEC+）を構築し、市場安定化で成熟した国際協調を実現。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "エネルギー・国際機関",
+      "scale": "country",
+      "story_length": 54
+    },
+    {
+      "transition_id": "FAM_JP_523",
+      "story_summary": "ロッテ創業家の兄弟間で経営権を巡る激しい対立が発生。辛東彬と辛東主の兄弟対決は韓国・日本両国のメディアを賑わせた。司法判断を経て弟が勝利するも、グループイメージは大きく毀損された。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "食品・流通",
+      "scale": "family",
+      "story_length": 90
+    },
+    {
+      "transition_id": "CORP_JP_024",
+      "story_summary": "1943年創業のSCREENホールディングスが、半導体洗浄装置で世界シェア首位を維持。微細化時代に洗浄工程の重要性が増し、2024年は過去最高益を更新。京都発のグローバル企業。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 88
+    },
+    {
+      "transition_id": "CORP_JP_2506",
+      "story_summary": "BG Groupを買収し規模拡大。エネルギー転換に向けた再エネ投資を推進するも、2023年に戦略縮小を発表。株主還元を重視し、石油・ガス事業への回帰を示唆。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 78
+    },
+    {
+      "transition_id": "CTRY_JP_2977",
+      "story_summary": "ムバラク政権下で外交対話路線を維持していたエジプトで、2011年1月にチュニジア革命の波及により大規模デモが発生。18日間の抗議運動で30年間のムバラク政権が崩壊。軍が暫定統治を経てモルシ政権が成立したが、政治的混乱が続いた。",
+      "before_state": "安定・平和",
+      "after_state": "迷走・混乱",
+      "main_domain": "政治・外交",
+      "scale": "country",
+      "story_length": 113
+    },
+    {
+      "transition_id": "FAM_JP_755",
+      "story_summary": "チャールズ皇太子とダイアナ妃は1981年の「世紀の結婚」で世界中に祝福されたが、1993年にチャールズとカミラ・パーカー・ボウルズの親密な電話が盗聴・公開され「カミラゲート」として報道。1994年にチャールズ自身がTVでカミラとの関係を認め、王室の完璧な家庭像が崩壊。離婚手続きの中で王室の内情がさらに可視化された。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 158
+    },
+    {
+      "transition_id": "OTHR_JP_833",
+      "story_summary": "ビートルズは1970年に解散。ポール・マッカートニーの脱退表明で、音楽史上最も成功したパートナーシップが終焉した。馬匹亡う（パートナーを失う）の典型例。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "エンターテインメント",
+      "scale": "other",
+      "story_length": 76
+    },
+    {
+      "transition_id": "CORP_JP_3512",
+      "story_summary": "永守重信会長の下、M&Aで世界最大の精密モーターメーカーの地位を確立。EV用モーター事業への参入を見据えながら、着実に技術蓄積を続けた安定成熟期。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造業・精密機器",
+      "scale": "company",
+      "story_length": 73
+    },
+    {
+      "transition_id": "COUN_JP_276",
+      "story_summary": "国内主要3銀行がリーマンショックで破綻し、負債総額がGDPの10倍に達する国家破産状態に。通貨クローナは暴落したが、政府は銀行を救済せず破綻させ、厳格な資本規制を導入するという異例の措置を選択。通貨安を逆手に取った観光業の爆発的成長により、予想よりもはるかに早く経済成長を取り戻した。",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "main_domain": "金融",
+      "scale": "country",
+      "story_length": 142
+    },
+    {
+      "transition_id": "COUN_JP_369",
+      "story_summary": "独立後のコンゴ動乱、モブツ独裁、2度の「アフリカ大戦」で数百万人死亡。コバルト、ダイヤなど資源は豊富だが「資源の呪い」で国民は貧困のまま。東部では武装勢力の暴力が続く。世界で最も開発が遅れた地域の一つ。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "不動産・建設",
+      "scale": "country",
+      "story_length": 101
+    },
+    {
+      "transition_id": "PERS_JP_867",
+      "story_summary": "残業続きの激務の中、ある朝突然起き上がれなくなりうつ病と診断。1年間休職し、リワークプログラムに通所。意識的に「何もしない」時間を作り回復。経理部から総務部へ異動して復職。「毎日定時で帰れるだけで幸せ」「頑張らないことが大切」と語る。2度目の休職を防ぐため無理をしない働き方を実践中。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "main_domain": "テクノロジー",
+      "scale": "individual",
+      "story_length": 142
+    },
+    {
+      "transition_id": "CORP_JP_4484",
+      "story_summary": "2000年代後半「ユニバレ」という言葉が生まれ、安物イメージが定着していたユニクロ。佐藤可士和氏をクリエイティブディレクターに起用しブランドを再構築。ロゴを英文字・カタカナ2パターンで刷新。ヒートテック・エアリズム等高機能商品をPRし「おしゃれで機能的な定番ブランド」としての地位を確立した。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "アパレル・ファッション",
+      "scale": "company",
+      "story_length": 146
+    },
+    {
+      "transition_id": "OTHR_JP_746",
+      "story_summary": "江戸時代から続く近江商人の「売り手よし、買い手よし、世間よし」の精神は、400年以上にわたり日本の商業道徳の基盤となっている。現代のCSRやESGの先駆けとして、多くの長寿企業に継承されている。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "商業・倫理",
+      "scale": "other",
+      "story_length": 97
+    },
+    {
+      "transition_id": "CORP_JP_3372",
+      "story_summary": "サントリーは日本初のウイスキー蒸留所を山崎に建設。40年近くかけて「足を飾る」ように醸造技術の基礎を確立。派手な成果は後年だが、基盤づくりへの投資が世界的評価につながった。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "飲料・酒造",
+      "scale": "company",
+      "story_length": 86
+    },
+    {
+      "transition_id": "OTHR_JP_1077",
+      "story_summary": "日本固有の温泉文化は、湯治から観光へと目的を変えながらも脈々と受け継がれてきた。2014年には世界無形文化遺産への登録運動も開始。温泉ソムリエなど新たな楽しみ方も普及し、健康・美容・観光の融合した現代的な温泉文化として発展を続けている。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "観光・レジャー",
+      "scale": "other",
+      "story_length": 118
+    },
+    {
+      "transition_id": "COUN_JP_513",
+      "story_summary": "天然ガスで世界有数の富裕国に。2017年にはサウジ主導の断交を経験するも、独自外交で乗り切る。2022年W杯開催で存在感を示す。「小国の生き残り」の教科書的事例。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エネルギー・環境",
+      "scale": "country",
+      "story_length": 81
+    },
+    {
+      "transition_id": "COUN_JP_366",
+      "story_summary": "アフリカ最大の人口と経済。石油で富を得るも軍政、汚職、地域対立が続く。ボコ・ハラムのテロ、宗教対立で北部は危機的。民主化は進むも若者の失業、頭脳流出が深刻。ナイジェリア映画「ノリウッド」は世界第3位の生産量。",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
+      "main_domain": "エンタメ",
+      "scale": "country",
+      "story_length": 104
+    },
+    {
+      "transition_id": "PERS_JP_436",
+      "story_summary": "大阪府出身。在日韓国人3世。1968年「星空の孤独」でデビュー。「あの鐘を鳴らすのはあなた」「笑って許して」などヒット曲多数。2024年で芸能生活56年。「アッコにおまかせ！」は1985年から40年近く続く長寿番組。「芸能界のご意見番」「ゴッド姉ちゃん」として影響力を持つ。日本レコード大賞最優秀歌唱賞3回。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 154
+    },
+    {
+      "transition_id": "CORP_JP_3423",
+      "story_summary": "1854年創業のラグジュアリーブランド。職人の手仕事を守りながら、アートとのコラボやデジタル戦略で若い世代にもアピール。「旅」というブランドの核は変えず、表現方法を時代に合わせて進化。LVMH傘下でも独自性を維持。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "ラグジュアリー",
+      "scale": "company",
+      "story_length": 107
+    },
+    {
+      "transition_id": "PERS_JP_175",
+      "story_summary": "石川県能美市出身。星稜高校から1992年ドラフト1位で巨人入団。10年間で首位打者1回、本塁打王3回、「ゴジラ」の愛称で日本一3回に貢献。2002年FA権行使でヤンキース移籍、「裏切り者と言われても命を懸ける」と決意。ムービング・ファストボールに苦しむも打法改造で克服。2006年左手首骨折で大半欠場。2009年アジア人初のワールドシリーズMVP。2013年長嶋茂雄と共に国民栄誉賞。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "教育",
+      "scale": "individual",
+      "story_length": 192
+    },
+    {
+      "transition_id": "CORP_JP_909",
+      "story_summary": "三菱重工が国産ジェット機開発で287機受注獲得も、型式証明取得難航とコロナ禍で2020年事業凍結。2023年開発中止決定、2024年7月特別清算申請。負債6413億円、国産旅客機の夢潰える。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "物流・交通",
+      "scale": "company",
+      "story_length": 95
+    },
+    {
+      "transition_id": "COUN_JP_1209",
+      "story_summary": "団体旅行から個人旅行へという旅行形態の緩やかな変化に対応。古い宿泊施設のリノベーション、若者向けカフェ誘致など、新たな観光地像を構築。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "",
+      "scale": "country",
+      "story_length": 67
+    },
+    {
+      "transition_id": "COUN_JP_1318",
+      "story_summary": "2021年の軍事クーデター後、ミャンマーは民主派との内戦状態に陥った。国際制裁、経済崩壊、少数民族武装勢力の攻勢が絡み合い、軍政は出口を見いだせない状態が続いている。国全体が蔓草に絡まった困窮状態にある。",
+      "before_state": "混乱・カオス",
+      "after_state": "迷走・混乱",
+      "main_domain": "政治・行政",
+      "scale": "country",
+      "story_length": 102
+    }
+  ]
+}

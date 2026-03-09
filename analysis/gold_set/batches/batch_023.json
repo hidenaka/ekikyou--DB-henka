@@ -1,0 +1,365 @@
+{
+  "batch_id": 23,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "CORP_JP_3313",
+      "story_summary": "1949年に分離したデンソーとトヨタは、単なる取引関係を超えた深い共創関係を構築。技術者の相互派遣、共同開発を通じて往来を重ね、電動化・自動運転時代においても朋として思いを共有。70年以上にわたる心からの交流が両社の競争力を支えている。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "自動車",
+      "scale": "company",
+      "story_length": 118
+    },
+    {
+      "transition_id": "COUN_JP_397",
+      "story_summary": "独立後、観光とボーキサイトで発展。ボブ・マーリーのレゲエで世界的に知られる。しかし高い殺人率、麻薬取引、ギャング問題が深刻。陸上競技ではボルトなど世界的選手を輩出。文化的影響力と社会問題が同居する島国。",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "main_domain": "医療・製薬",
+      "scale": "country",
+      "story_length": 101
+    },
+    {
+      "transition_id": "FAM_JP_146",
+      "story_summary": "父・重信がアジア記録保持者、息子・広治が金メダリストに。親子二代でオリンピックに出場する偉業。広治はスポーツ庁長官に就任、「スポーツ立国」を推進。ルーマニア人の母との離婚など私生活の苦労もあったが、スポーツ一家として成功。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "スポーツ",
+      "scale": "family",
+      "story_length": 111
+    },
+    {
+      "transition_id": "CORP_JP_2768",
+      "story_summary": "2020年、トヨタは工場跡地をスマートシティ「Woven City」として活用すると発表。NTTはラスベガスでの類似事業経験を持つ最適なパートナーとして提携。異業種の出会いが新たな都市開発の形を生み出している。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "複合",
+      "scale": "company",
+      "story_length": 105
+    },
+    {
+      "transition_id": "CORP_JP_3224",
+      "story_summary": "1973年創業のパタゴニアは、創業時から環境保護を企業理念の中心に据えた。イヴォン・シュイナードは「地球のためのビジネス」という誠実な出発点を貫き、アウトドアブランドとして確固たる地位を築いた。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "小売・消費財",
+      "scale": "company",
+      "story_length": 97
+    },
+    {
+      "transition_id": "CORP_JP_2685",
+      "story_summary": "デジタル化でフィルム市場が年率20%以上で縮小する中、コダックは倒産したが富士フイルムは根本的な事業転換に成功。フィルム技術をヘルスケア・化粧品に転用し、「奇跡のイノベーション」と世界から称賛される革命的変革を実現。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 108
+    },
+    {
+      "transition_id": "HEX25_YAO3_001",
+      "story_summary": "東京電力は無妄の災いに見舞われた。津波という不可抗力の災害により、誠実に運営していたはずの原発が大事故を起こした。無実でありながら災難に遭う典型例として、企業の危機管理を問い直すきっかけに。",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "main_domain": "電力",
+      "scale": "company",
+      "story_length": 95
+    },
+    {
+      "transition_id": "FAM_JP_194",
+      "story_summary": "双子を出産後、想像を超える大変さに夫婦ともに疲弊。産後うつにもなりかけたが、双子サークルで同じ境遇の親と出会い救われる。「一人じゃない」と思えたことが転機に。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 79
+    },
+    {
+      "transition_id": "OTHR_JP_955",
+      "story_summary": "1953年のREM睡眠発見から始まり、睡眠の重要性が科学的に解明。睡眠時無呼吸症候群の治療法確立、睡眠負債概念の普及を経て、「睡眠は投資」という認識が広がる。スリープテック産業も成長。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "睡眠医学",
+      "scale": "other",
+      "story_length": 92
+    },
+    {
+      "transition_id": "COUN_JP_496",
+      "story_summary": "2016年以降、大統領が次々と辞任・罷免・逮捕される異常事態。政治不安定ながらも経済は比較的安定、銅など資源輸出で成長。「政治は混乱、経済は堅調」という矛盾。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "main_domain": "国家・政治",
+      "scale": "country",
+      "story_length": 79
+    },
+    {
+      "transition_id": "FAM_JP_277",
+      "story_summary": "認知症の母の在宅介護を8年続けている。仕事を辞め、自分の人生を犠牲にしている感覚もある。しかし施設には入れたくない。「いつまで続くかわからない」耐久戦を覚悟で続ける日々。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "医療・製薬",
+      "scale": "family",
+      "story_length": 85
+    },
+    {
+      "transition_id": "PERS_JP_359",
+      "story_summary": "鹿児島県桜島町出身。横浜フリューゲルス入団後、1999年京都パープルサンガ、2001年ガンバ大阪。ガンバで22年間プレー、J1通算最多出場・最多得点記録。「日本代表史上最高のボランチ」として代表152試合出場（歴代2位）。W杯2大会出場。「遠藤コロコロPK」の代名詞。2024年引退、指導者へ。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Lifestyle",
+      "scale": "individual",
+      "story_length": 147
+    },
+    {
+      "transition_id": "CORP_JP_3182",
+      "story_summary": "ソフトバンクはVision Fundを通じてWeWorkに約100億ドルを投資し、評価額470億ドルまで押し上げた。しかし2019年のIPO失敗後、2023年にWeWorkは破産。累計損失は142億ドルに達した。過度な期待と投資が裏目に出た、恩恵の限界の典型例。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "投資・ファンド",
+      "scale": "company",
+      "story_length": 131
+    },
+    {
+      "transition_id": "CORP_JP_4378",
+      "story_summary": "職位を問わず一気通貫した人材育成を行う第三者的教育機関として設立。理念の理解・浸透、次世代経営者候補の育成、専門性向上を重点テーマに据え、人事部と連携したキャリア構築支援を実現した。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "business",
+      "scale": "company",
+      "story_length": 91
+    },
+    {
+      "transition_id": "FAM_JP_176",
+      "story_summary": "貧困から身を起こし、黄熱病研究でアフリカに渡り感染死。「偉人」として神話化されるも、研究成果には疑問も。母シカとの涙の別れは美談として語り継がれる。千円札の肖像として現代も知られる。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "教育",
+      "scale": "family",
+      "story_length": 91
+    },
+    {
+      "transition_id": "OTHR_JP_862",
+      "story_summary": "2013年12月、「和食；日本人の伝統的な食文化」がユネスコ無形文化遺産に登録。農林水産省主導で2010年から登録運動を展開。単なる料理ではなく、自然の尊重・栄養バランス・年中行事との関連・美しい盛り付けの4要素が評価された。登録後は和食給食推進など次世代継承活動が活発化。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "食・農業",
+      "scale": "other",
+      "story_length": 137
+    },
+    {
+      "transition_id": "CORP_JP_709",
+      "story_summary": "1900年創業の衣料用繊維織物メーカー。東証スタンダード上場企業だったが、雇用調整助成金の不正受給が発覚。複数の疑義が生じ、会社更生法の適用を申請した。",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "main_domain": "製造",
+      "scale": "company",
+      "story_length": 76
+    },
+    {
+      "transition_id": "OTHR_JP_028",
+      "story_summary": "入館者数トップクラスの美術館が来館者減少で危機感。7年かけて体験型展示とSNS戦略で若者を取り込み復活。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "other",
+      "story_length": 52
+    },
+    {
+      "transition_id": "CORP_JP_3427",
+      "story_summary": "1872年に日本初の洋風調剤薬局として創業。化粧品への転換後も150年以上、「美」という価値を追求し続ける。研究開発への継続投資とグローバル展開を両立。伝統とイノベーションの融合を体現。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "化粧品・美容",
+      "scale": "company",
+      "story_length": 93
+    },
+    {
+      "transition_id": "OTHR_JP_952",
+      "story_summary": "1981年に日本初のホスピス「聖隷三方原病院」開設。1990年に緩和ケア病棟が保険適用され全国に拡大。「治す医療」から「支える医療」への転換が進み、在宅緩和ケアも充実。QOL重視の終末期医療が定着。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "終末期医療",
+      "scale": "other",
+      "story_length": 99
+    },
+    {
+      "transition_id": "CORP_JP_475",
+      "story_summary": "1998年から2011年まで携帯電話販売首位、市場シェア40%の「北欧の巨人」。2002年に世界初のSymbianスマートフォンを投入したパイオニア。1990年代後半にはタッチスクリーン端末を試作済み。しかし2007年Apple iPhone登場で状況一変。「タッチスクリーンは普及しない」と見誤る。競争力の源泉がハードからソフトに移行したのを理解できず。2010年「iPhoneキラー」も失敗、2011年に市場価値90%下落。2013年にマイクロソフトが携帯電話事業を54.4億ユーロ（約7100億円）で買収。現在は通信機器ビジネスが売上8割。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "Telecom",
+      "scale": "company",
+      "story_length": 273
+    },
+    {
+      "transition_id": "PERS_JP_0043",
+      "story_summary": "10年間引きこもり生活を送った30代男性が、支援団体との出会いで社会復帰を開始。段階的な就労支援を経て、10年かけて正社員として働けるように。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "individual",
+      "story_length": 71
+    },
+    {
+      "transition_id": "COUN_JP_1117",
+      "story_summary": "1965年マレーシアから追放され独立。リー・クアンユー指導下で教育・インフラ・金融に集中投資し先進国入り。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "金融",
+      "scale": "country",
+      "story_length": 53
+    },
+    {
+      "transition_id": "CORP_JP_647",
+      "story_summary": "1976年の「宅急便」で物流革命を起こした老舗。Amazonとの取引拡大で取扱量増も、ドライバー不足が深刻化。2017年には値上げと総量規制を断行。働き方改革と事業継続の両立に苦闘。",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "main_domain": "物流・交通",
+      "scale": "company",
+      "story_length": 91
+    },
+    {
+      "transition_id": "OTHR_JP_1153",
+      "story_summary": "ギリシャ債務危機でEUは分裂の危機に直面した。未済の6爻として、最後まで解決に至らない状態が続いたが、第三次救済で何とか崩壊を回避した。",
+      "before_state": "どん底・危機",
+      "after_state": "現状維持・延命",
+      "main_domain": "経済・国際",
+      "scale": "other",
+      "story_length": 68
+    }
+  ]
+}

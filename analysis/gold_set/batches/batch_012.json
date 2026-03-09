@@ -1,0 +1,365 @@
+{
+  "batch_id": 12,
+  "n_cases": 25,
+  "calibration_anchors": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
+      "before_state": "成長痛",
+      "after_state": "どん底・危機",
+      "main_domain": "不動産・建設",
+      "scale": "company",
+      "expected_before_lower": "坎",
+      "expected_before_upper": "震",
+      "expected_after_lower": "坎",
+      "expected_after_upper": "艮",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "坎"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "坎",
+          "坤"
+        ]
+      },
+      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "story_summary": "先見性のある創業者が、業界の常識を覆す革新的プロダクトを発表。圧倒的な技術力と明確なビジョンで市場を席巻し、競合他社を引き離す。投資家からの資金調達も順調で、事業は急拡大。創業者のリーダーシップのもと、全社員が一丸となって世界市場への展開を加速させている。",
+      "before_state": "静的安定",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "expected_before_lower": "乾",
+      "expected_before_upper": "離",
+      "expected_after_lower": "乾",
+      "expected_after_upper": "乾",
+      "acceptable_alternatives": {
+        "before_lower": [],
+        "before_upper": [
+          "乾"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "離"
+        ]
+      },
+      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "story_summary": "長年競合関係にあった電機メーカー2社が、業界の構造変化を受けて技術提携を発表。両社の経営陣が対話を重ね、互いの強みを活かした共同開発体制を構築。オープンな情報共有と対等な関係が実を結び、両社とも業績が改善。業界全体に協調の機運が広がり、新たなエコシステムが形成された。",
+      "before_state": "成長痛",
+      "after_state": "共創・協調",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "震",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "兌",
+      "expected_after_upper": "兌",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎",
+          "艮"
+        ],
+        "before_upper": [
+          "震",
+          "艮"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "巽",
+          "離"
+        ]
+      },
+      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "story_summary": "調査報道記者が、大企業と政治家の癒着構造を数年にわたる取材で解明。隠蔽されていた不正資金の流れを証拠とともに報道し、社会に衝撃を与えた。報道をきっかけに捜査が進み、真相が明るみに出る。市民の意識が変わり、透明性を求める社会運動が全国に広がった。",
+      "before_state": "沈滞・衰退",
+      "after_state": "覚醒・発見",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "expected_before_lower": "離",
+      "expected_before_upper": "坎",
+      "expected_after_lower": "離",
+      "expected_after_upper": "離",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "坎"
+        ],
+        "before_upper": [
+          "坤"
+        ],
+        "after_lower": [],
+        "after_upper": [
+          "乾",
+          "震"
+        ]
+      },
+      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "story_summary": "中堅メーカーが、市場環境の緩やかな変化に対応して事業ポートフォリオを段階的に見直し。既存事業の効率化を進めつつ、新規分野への小規模な投資を継続。大きな成功も失敗もなく、安定的な経営を維持している。業界内での存在感は薄れつつあるが、財務体質は健全。",
+      "before_state": "静的安定",
+      "after_state": "漸進的変化",
+      "main_domain": "製造",
+      "scale": "company",
+      "expected_before_lower": "坤",
+      "expected_before_upper": "艮",
+      "expected_after_lower": "巽",
+      "expected_after_upper": "坤",
+      "acceptable_alternatives": {
+        "before_lower": [
+          "艮",
+          "巽"
+        ],
+        "before_upper": [
+          "坤",
+          "巽"
+        ],
+        "after_lower": [
+          "坤",
+          "艮"
+        ],
+        "after_upper": [
+          "艮",
+          "巽"
+        ]
+      },
+      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
+    }
+  ],
+  "cases": [
+    {
+      "transition_id": "OTHR_JP_1066",
+      "story_summary": "江戸時代から湯治場として発展し、東海道の宿場町としても栄えた。明治以降は外国人観光客も増え、戦後は大規模観光地へと発展。富士山と温泉を組み合わせた魅力で、年間2,000万人以上が訪れる日本屈指の温泉リゾートとして成長を続けている。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "観光・レジャー",
+      "scale": "other",
+      "story_length": 115
+    },
+    {
+      "transition_id": "CORP_JP_4564",
+      "story_summary": "会員制ファンサイト「それいけ！じゃがり校」を2007年から14年間運営。テスト販売中の商品を「生徒」に試食してもらい意見を反映する商品開発サイクルを確立。近年の「じゃがりこ」ほぼすべての商品にこのプロセスが適用され、ファン参加型の商品開発モデルとして成功した。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "business",
+      "scale": "company",
+      "story_length": 130
+    },
+    {
+      "transition_id": "OTHR_JP_1134",
+      "story_summary": "1992年の日本事務局設立後、阪神大震災での国内活動を経て認知度が向上。継続的な広報と透明性の高い会計により寄付者基盤を拡大し、年間100億円規模の安定した支援体制を確立した。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "NPO・公益",
+      "scale": "other",
+      "story_length": 88
+    },
+    {
+      "transition_id": "PERS_JP_853",
+      "story_summary": "陸上自衛官として勤務中、複数の男性隊員から性暴力被害を受ける。2022年12月、実名・顔出しで事実を公表し話題に。防衛省に被害を訴えるも当初は対応が不十分。しかし世論の後押しで調査が進み、加害者の処分が実現。2023年にTime誌「世界で最も影響力のある100人」に選出。日本の組織内ハラスメント問題に一石を投じた。",
+      "before_state": "成長痛",
+      "after_state": "変質・新生",
+      "main_domain": "国家・政治",
+      "scale": "individual",
+      "story_length": 158
+    },
+    {
+      "transition_id": "OTHR_JP_1124",
+      "story_summary": "殺処分ゼロを目指す動物愛護活動が全国に拡大。保護犬猫の譲渡会、TNR活動（捕獲・去勢・リリース）、啓発活動を展開。自治体との連携も進み、殺処分数は大幅に減少。ペットショップ規制の議論にも影響。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "NPO・公益",
+      "scale": "other",
+      "story_length": 96
+    },
+    {
+      "transition_id": "CORP_JP_466",
+      "story_summary": "2010年1月、負債2.3兆円で会社更生法申請、戦後最大の事業会社倒産。リーマン・ショックが引き金も、長年の脆弱な企業体質が根本原因。政府要請で稲盛和夫（京セラ創業者）が会長に就任。「JALフィロソフィ」と「アメーバ経営」を導入し意識改革。2010年3月期の営業赤字1337億円から、2012年3月期に営業黒字2049億円へV字回復。わずか2年半で2012年9月に再上場。1年後に過去最高の1800億円、2年後に2000億円超の営業利益を達成。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "物流・交通",
+      "scale": "company",
+      "story_length": 222
+    },
+    {
+      "transition_id": "PERS_JP_1001",
+      "story_summary": "30代で難病が発覚、余命10年と告げられる。絶望から「残された時間で何をするか」を考える。会社を辞め、闘病しながら世界一周旅行を決行。帰国後はYouTubeで発信、同じ病気の人を励ます存在に。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "観光・旅行",
+      "scale": "individual",
+      "story_length": 96
+    },
+    {
+      "transition_id": "PERS_JP_0169",
+      "story_summary": "世界ツアー参戦のサーファーが肩の大怪我で長期離脱。4年かけてリハビリとトレーニング改革で復帰し、国内大会優勝。",
+      "before_state": "安定・平和",
+      "after_state": "縮小安定・生存",
+      "main_domain": "観光・旅行",
+      "scale": "individual",
+      "story_length": 55
+    },
+    {
+      "transition_id": "CORP_JP_3501",
+      "story_summary": "液晶テレビ事業の失敗で2016年台湾・鴻海精密工業傘下入り。4年間の経営再建期を経て黒字化。AIoT家電で新たな成長軌道へ。外資傘下での潜伏期が再生を可能にした。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "電機・精密機器",
+      "scale": "company",
+      "story_length": 81
+    },
+    {
+      "transition_id": "OTHR_JP_046",
+      "story_summary": "オンラインコミュニティが炎上で崩壊。一部メンバーの問題行動が外部に拡散され、運営者は心労で活動停止。5年間の積み重ねが一瞬で消える。",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "main_domain": "社会・コミュニティ",
+      "scale": "other",
+      "story_length": 66
+    },
+    {
+      "transition_id": "PERS_JP_2698",
+      "story_summary": "地方新聞社の記者が取材力を活かし、副業でローカルWebメディアを立ち上げ。地域の飲食店や観光情報を発信し、広告収入が本業の給与を超えた。新聞社を退職後、地域情報プラットフォームとして法人化し、自治体の広報業務も受託するようになった。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "メディア",
+      "scale": "individual",
+      "story_length": 116
+    },
+    {
+      "transition_id": "CORP_JP_4571",
+      "story_summary": "#味ぽんの日、#たまご醤油たれのたれが欲しい のXキャンペーンで4日間で2度のトレンド1位を獲得。ユーザー参加型のハッシュタグ企画で、商品への愛着と共感を引き出し、自然なUGC（ユーザー生成コンテンツ）の拡散に成功した。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "business",
+      "scale": "company",
+      "story_length": 110
+    },
+    {
+      "transition_id": "OTHR_JP_1129",
+      "story_summary": "戦後に始まったPTA活動は80年以上継続。近年は任意加入化、活動のスリム化が進む。働く保護者の増加に対応し、オンライン会議の導入など柔軟に変化。学校と家庭を結ぶ組織として機能を維持。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "NPO・公益",
+      "scale": "other",
+      "story_length": 91
+    },
+    {
+      "transition_id": "FAM_JP_291",
+      "story_summary": "2024年中に家庭裁判所で認容・調停成立した相続案件は7974件。遺産1000万円以下が33.8%、5000万円以下が約8割。富裕層より一般家庭で争いが多い実態。調停による家族間対話で解決。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 95
+    },
+    {
+      "transition_id": "FAM_JP_224",
+      "story_summary": "父が遺言書を残さず急死。預金、不動産、株の分配で家族会議を重ねる。法定相続通りに分けることで合意したが、「遺言書があれば」と後悔。周囲にも終活を勧めるように。",
+      "before_state": "混乱・カオス",
+      "after_state": "V字回復・大成功",
+      "main_domain": "金融",
+      "scale": "family",
+      "story_length": 79
+    },
+    {
+      "transition_id": "CORP_JP_2769",
+      "story_summary": "300年続く奈良の老舗・中川政七商店は、衰退する日本の工芸メーカーとの出会いをきっかけに、工芸の再生をミッションに掲げる。各地の職人との出会いを通じて、日本工芸の復興運動を牽引している。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造・小売",
+      "scale": "company",
+      "story_length": 93
+    },
+    {
+      "transition_id": "OTHR_JP_766",
+      "story_summary": "不動産探しのデジタル化という緩やかな消費者行動変化に対応。オンライン内見、電子契約、IT重説など、業界全体のデジタル化が進行。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "",
+      "scale": "other",
+      "story_length": 63
+    },
+    {
+      "transition_id": "COUN_JP_1413",
+      "story_summary": "六者協議という信頼醸成の場が設けられたが、北朝鮮の核実験で信頼は完全に崩壊した。誠実さの極限で、約束は反故にされた。",
+      "before_state": "停滞・閉塞",
+      "after_state": "現状維持・延命",
+      "main_domain": "国際政治",
+      "scale": "country",
+      "story_length": 58
+    },
+    {
+      "transition_id": "COUN_JP_1557",
+      "story_summary": "2020年オリンピック開催都市として東京が選出。国民の期待と喜びが高まり、インフラ整備や観光産業への楽観的展望が広がった。準備段階の希望に満ちた時期。",
+      "before_state": "安定・平和",
+      "after_state": "迷走・混乱",
+      "main_domain": "politics",
+      "scale": "country",
+      "story_length": 75
+    },
+    {
+      "transition_id": "COUN_JP_562",
+      "story_summary": "日本の高齢化率（65歳以上人口比率）が2024年に29.3%に到達。2025年には団塊世代が全員75歳以上に。医療・介護費用の増大が財政を圧迫。健康寿命延伸と社会保障改革が喫緊の課題。",
+      "before_state": "成長痛",
+      "after_state": "現状維持・延命",
+      "main_domain": "医療・製薬",
+      "scale": "country",
+      "story_length": 92
+    },
+    {
+      "transition_id": "COUN_JP_545",
+      "story_summary": "日本の再生可能エネルギー比率が2024年に約22%に到達。太陽光・風力発電が伸長。洋上風力の大規模導入計画も進行。カーボンニュートラル2050に向け着実に前進。電力系統の課題は残存。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エネルギー・環境",
+      "scale": "country",
+      "story_length": 91
+    },
+    {
+      "transition_id": "OTHR_JP_147",
+      "story_summary": "低金利、人口減少で地方銀行の経営環境は厳しい。合併・再編が進み、100行を切る時代に。デジタル化、地域密着型サービスで差別化を図るも、淘汰は続く。「地域のインフラ」としての役割が問われる。",
+      "before_state": "停滞・閉塞",
+      "after_state": "縮小安定・生存",
+      "main_domain": "テクノロジー",
+      "scale": "other",
+      "story_length": 94
+    },
+    {
+      "transition_id": "OTHR_JP_946",
+      "story_summary": "沖縄が世界一の長寿地域として注目を集め、ブルーゾーン研究の対象に。食事・社会的つながり・ストレス管理など多角的研究が進行。世界の長寿研究に多大な貢献をし、健康長寿のモデルケースとなった。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "長寿研究",
+      "scale": "other",
+      "story_length": 93
+    },
+    {
+      "transition_id": "CORP_JP_895",
+      "story_summary": "Zapposが365日返品無料、最長10時間超の顧客対応など伝説的カスタマーサービス展開。マニュアルなし・時間制限なしで社員判断に一任。リピート率75%達成しAmazonが800億円で買収。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "小売・サービス",
+      "scale": "company",
+      "story_length": 95
+    },
+    {
+      "transition_id": "PERS_JP_031",
+      "story_summary": "1977年に右肘を骨折し、選手生命の危機に。しかし前人未到のリハビリと独自のトレーニングで復活し、40歳を超えてもノーヒットノーランを達成するなど活躍した。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "スポーツ",
+      "scale": "individual",
+      "story_length": 78
+    }
+  ]
+}
