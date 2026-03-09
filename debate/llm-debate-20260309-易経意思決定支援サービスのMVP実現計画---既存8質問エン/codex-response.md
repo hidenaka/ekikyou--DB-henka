@@ -1,0 +1,68 @@
+# Codex (OpenAI GPT-5.4) の批評
+
+### 結論（最初に明言）
+このMVP計画は**不採択である**。理由は明白で、**「既存8質問エンジンの入口と出口を整えるだけで最短リリースする」という建前と、Claude案の実体が一致していない**からだ。Claude案は入口変更ではない。**自由記述→8質問推定という新しい中核ロジックを追加している。** それは最短化ではなく、未検証の誤差源の増設である。
+
+現行コードでは、自由記述5軸抽出→候補提示→5レイヤー出力の導線がすでに存在する。[app.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/app.py) の238-478行、[scripts/llm_dialogue.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/llm_dialogue.py) の330-617行、[tests/test_web_app.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/tests/test_web_app.py) の357-488行がそれを示している。**最短で出すなら既存の自由記述導線を磨くべきであり、8質問へ戻すのは逆走である。**
+
+### 批判的分析
+1. **論理的整合性が壊れている。**  
+Claude案は「入口を自由記述に変更し、既存diagnostic_engineにそのまま流す」と言うが、これは入口変更ではない。**自由記述を8質問へ射影する新しい分類器の導入**である。しかも現行の8質問エンジンは、質問選択肢の重みづけを前提に `primary_hex`、`momentum`、`timing`、`before_state` を計算しているだけで、自由記述入力を扱う設計ではない。[scripts/diagnostic_engine.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/diagnostic_engine.py) の87-205行がそれを示している。**「既存資産を流用する」という表現は事実に反する。**
+
+2. **5点固定へのマッピングが雑で、意味がずれている。**  
+`Layer2（変化方向）→ 今やれ` は誤りである。**之卦は行動命令ではなく、変化の構造である。** `Layer3（隠れた力学）→ 反対視点` も半分しか正しくない。錯卦・綜卦は視点反転の素材ではあるが、自動的に「反対視点」になるわけではない。さらに `Layer5（問い）` を削る判断も浅い。現行設計では問いは内省の停止装置であり、安易な断定を防ぐ役割を持つ。[scripts/feedback_engine.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/feedback_engine.py) の152-182行、254-446行を見れば、各層は別機能であり、単純置換できない。
+
+3. **「成功率を消せば予測ではなくなる」という発想が浅い。**  
+現行の8質問エンジンの推奨行動スコアは、`statistics_table` の `success_rate` を基礎にしている。[scripts/diagnostic_engine.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/diagnostic_engine.py) の206-346行がそれを明示している。UIから百分率を消して `N件中M件` に言い換えても、本質は変わらない。**内部ロジックが成功率ベースのままなら、出力は予測の言い換えに留まる。** これは「予測しない。参照する」という合意済み方針と矛盾する。
+
+4. **「今やるな」「今やれ」の導出方法が間違っている。**  
+`今やるな` を行動順位の下位から作る設計は誤りである。現行エンジンの禁止ロジックは、順位ではなく `avoid_pattern` と `high_risk_actions` にある。[scripts/diagnostic_engine.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/diagnostic_engine.py) の315-373行がその核心だ。**禁止は「低スコア行動」ではない。高コストで取り返しがつきにくい一手を明示的に排除する規則でなければならない。**
+
+5. **実現可能性の見積もりが甘い。**  
+2週間で可能なのは、既存導線を使い、出力テンプレートだけを再編する場合だけである。Claude案のように `自由記述→8質問推定` を挟むなら、最低でも以下が増える。  
+- 変換精度の評価セット作成  
+- 曖昧入力に対する確認質問設計  
+- 変換失敗時のフォールバック  
+- 危機ケースの誤通過評価  
+- 新導線の回帰テスト  
+**5人テストでは何も検証できない。** それはユーザーの感想を集めるだけで、マッピング精度も安全性も測れない。
+
+6. **スケーラビリティ以前に根拠の純度が足りない。**  
+現行実装は `domain` を抽出しているのに、候補選定では使っていない。[scripts/llm_dialogue.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/llm_dialogue.py) の534-617行では `domain` を返すが、[app.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/app.py) の388-399行では `get_top_candidates` に渡していない。さらに `ProbabilityMapper()` はデフォルトで全体テーブルを読む。[scripts/probability_tables.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/probability_tables.py) の107-120行。`CaseSearchEngine` には scale フィルタがあるのに、`FeedbackEngine` はそれを使っていない。[scripts/case_search.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/case_search.py) の96-180行、[scripts/feedback_engine.py](/Users/hideakimacbookair/Library/Mobile Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/feedback_engine.py) の398-424行。**つまり、個人向け相談に企業・国家・家族の混合分布をそのまま当てている。11,336件という総数は、個人向け商品の根拠件数ではない。**
+
+7. **新規性の主張は弱い。**  
+「現在地整理」「行動提案」「類似事例参照」は新しくない。コーチング、キャリア相談、意思決定支援に既にある。**差分は、易経の分類体系、禁忌中心の助言、事例DB接続の3点しかない。** そしてそのDBのラベル精度が `kappa=0.561` なら、強い真実装置としては使えない。**使い方は診断ではなく、参照と視点変換に限定すべきである。**
+
+8. **エッジケースで簡単に破綻する。**  
+仕事・家族・健康が同時に絡む相談、危機を婉曲表現する相談、答えだけを欲しがる相談、可逆性の低い決断を迫られている相談では、この設計は危険側に倒れる。キーワード検出だけの危機退避は不十分である。**必要なのはキーワード辞書ではなく、拒否条件の明文化と人間レビュー前提の運用である。**
+
+### Claudeの意見への反論/修正
+Claudeの案で正しいのは3点だけである。  
+- **象徴解釈と事例参照の分離**は正しい。しかもこれは新提案ではなく、現行の `FeedbackEngine` がすでにそうなっている。  
+- **成功率表示の排除**は正しい。だが、表示を消すだけでは足りない。内部のスコア意味論まで修正しなければ矛盾は残る。  
+- **危機ケースの退避導線**は必須である。これは採用すべきだ。
+
+Claudeの案で誤っているのは以下である。  
+- **「自由記述→8質問推定が最短」**は誤りである。現行にはすでに自由記述5軸抽出導線がある。  
+- **「5レイヤー→5点固定は1-2日でいける」**は誤りである。単なるテンプレート置換では済まず、各層の意味を再定義しなければならない。  
+- **「N件中M件表示なら安全」**は誤りである。これは語彙置換でしかない。  
+- **「自前Webをすぐ公開」**は誤りである。一人運用で安全基準未確立のまま公開すると、危機案件とクレーム対応で破綻する。  
+- **「5人程度で検証」**は誤りである。感想は取れても、精度も安全性も測れない。
+
+### より正確な見解
+本質的な評価はこうである。**この資産が向いているのは「人生の現在地診断」ではない。単一の迷いを扱う「局面レビュー付き意思決定支援」である。** ここを外すと、入力が広すぎて何を診断しているのか不明になる。
+
+MVPの正しい形は次である。  
+- **入口**は自由記述を維持する。ただし「今なにを決めたいか」「領域」「時間軸」を必須入力にし、追加で「一番避けたい結果」と「今守りたいもの」の2問だけを明示的に聞く。**8質問への隠れ変換はやめる。**  
+- **中核ロジック**は既存の `extract → confirm → feedback` を使う。その上で、候補選定と事例参照を**individual専用テーブル/scaleフィルタ**に切り替える。  
+- **出力5点固定**はこう切る。  
+  1. 現在地 = Layer1  
+  2. 今やるな = 明示的なリスク規則  
+  3. 今やれ = 可逆な7日実験を1つ  
+  4. 反対視点 = 錯卦か綜卦を1つに絞る  
+  5. 類似事例 = Layer4  
+  **Layer2は「今やれ」に潰さず、「変化の型」の根拠として裏に置く。**
+- **チャネル**は公開Webではなく、手動レビュー前提のクローズドβかココナラ一本に絞る。  
+- **評価指標**は満足度ではない。判断の明確化、7日以内の着手率、危険な過信の発生率、人手による差し戻し率、根拠薄弱出力率を測るべきである。
+
+要するに、**Claude案は「最短で出す計画」に見えて、実際には最短ルートを外している。** 通すべき計画は、8質問エンジン中心案ではない。**既存の自由記述5軸導線を基盤にし、個人スケールへ絞り、5点出力を厳密に定義し直す案**である。これならMVPになる。今の案のままではならない。
