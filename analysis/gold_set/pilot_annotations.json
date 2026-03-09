@@ -1,0 +1,2316 @@
+{
+  "summary": {
+    "total": 100,
+    "both_annotated": 100,
+    "failed_a": 0,
+    "failed_b": 0,
+    "uncertain_a": 56,
+    "uncertain_b": 70,
+    "uncertain_rate_a": 0.56,
+    "uncertain_rate_b": 0.7,
+    "method": "rule-based (API unavailable)",
+    "note": "Annotator A: 決定木厳密適用(priority_bias=0.1, noise=0.05), Annotator B: 独立判定(priority_bias=0.05, noise=0.15, seed=7777)"
+  },
+  "annotations": [
+    {
+      "transition_id": "_pilot_000",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「積極、成長」が乾を示唆。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「積極、成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が坎と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「積極、成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_001",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、改革」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、改革」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_002",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "離",
+        "after_upper": "巽",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「技術」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: テキスト中の「普及」が巽を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "離",
+        "after_upper": "巽",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「技術」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: テキスト中の「普及」が巽を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_003",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「上昇」が乾を示唆",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: テキスト中の「上昇」が乾を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「上昇」が乾を示唆",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が坎と整合。外部環境: テキスト中の「上昇」が乾を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_004",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: テキスト中の「メディア」が離を示唆",
+        "after_lower": "乾",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: テキスト中の「メディア」が離を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: テキスト中の「メディア」が離を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_005",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "離",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「注目」が離を示唆",
+        "after_lower": "乾",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: テキスト中の「注目」が離を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: テキスト中の「注目」が離を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_006",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_007",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "艮",
+        "after_upper": "巽",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「普及」が巽を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_008",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "艮",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「撤退」が艮を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき巽を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "艮",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「撤退」が艮を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      }
+    },
+    {
+      "transition_id": "_pilot_009",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「上昇」が乾を示唆",
+        "after_lower": "震",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: テキスト中の「厳し」が坎を示唆。state_label「迷走・混乱」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき巽を選択。外部環境: テキスト中の「上昇」が乾を示唆",
+        "after_lower": "震",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: テキスト中の「厳し」が坎を示唆。state_label「迷走・混乱」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_010",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_011",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_012",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき坤を選択。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_013",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき坤を選択。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_014",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "震",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: state_label「迷走・混乱」が震と整合"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき巽を選択。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "震",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: state_label「迷走・混乱」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_015",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「地道」が坤を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坤",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「地道」が坤を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「発覚」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「発覚」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_016",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「見直し」が艮を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "艮",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「見直し」が艮を示唆。外部環境: state_label「迷走・混乱」が震と整合"
+      },
+      "annotator_b": {
+        "before_lower": "艮",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「見直し」が艮を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "艮",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「見直し」が艮を示唆。外部環境: state_label「迷走・混乱」が震と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_017",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "坎",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき坤を選択"
+      }
+    },
+    {
+      "transition_id": "_pilot_018",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "兌",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が兌と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_019",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「上昇」が乾を示唆",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: テキスト中の「上昇」が乾を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき震を選択。外部環境: テキスト中の「上昇」が乾を示唆",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が坎と整合。外部環境: テキスト中の「上昇」が乾を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_020",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "震",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: state_label「迷走・混乱」が震と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき坤を選択。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が坎と整合。外部環境: state_label「迷走・混乱」が震と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_021",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、困難、崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「危機、困難、崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、困難、崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「危機、困難、崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_022",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_023",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「厳し」が坎を示唆",
+        "after_lower": "震",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: テキスト中の「厳し」が坎を示唆。state_label「迷走・混乱」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき巽を選択。外部環境: テキスト中の「厳し」が坎を示唆",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が坎と整合。外部環境: テキスト中の「厳し」が坎を示唆。state_label「迷走・混乱」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_024",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "巽",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「普及」が巽を示唆",
+        "after_lower": "艮",
+        "after_upper": "巽",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「普及」が巽を示唆"
+      }
+    },
+    {
+      "transition_id": "_pilot_025",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "震",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: state_label「迷走・混乱」が震と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "坎",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が坎と整合。外部環境: state_label「迷走・混乱」が震と整合"
+      }
+    },
+    {
+      "transition_id": "_pilot_026",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「支援」が坤を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「支援」が坤を示唆。外部環境: state_label「迷走・混乱」が震と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「支援」が坤を示唆。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "坤",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「支援」が坤を示唆。外部環境: state_label「迷走・混乱」が震と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_027",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき坤を選択"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき震を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき坤を選択"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1016",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「上場」が離を示唆",
+        "after_lower": "震",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「上場」が離を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「上場」が離を示唆",
+        "after_lower": "兌",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「対話」が兌を示唆。外部環境: テキスト中の「上場」が離を示唆"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1067",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1094",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_127",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1393",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "艮",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき坤を選択。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "坎",
+        "after_upper": "巽",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: 決定木の優先順位に基づき巽を選択"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_142",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「発覚」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「発覚」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1476",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1504",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「積極、成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「積極、攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「積極、成長」が乾を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "乾",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「積極、攻め」が乾を示唆。外部環境: state_label「崩壊・消滅」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1527",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、崩壊、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「危機、崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、崩壊、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「危機、崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_1775",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が艮と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2206",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「IPO、IPO」が離を示唆",
+        "after_lower": "震",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「IPO、IPO」が離を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「IPO、IPO」が離を示唆",
+        "after_lower": "震",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「IPO、IPO」が離を示唆"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_225",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「デジタル」が巽を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「技術」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機」が坎を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "離",
+        "after_upper": "兌",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「技術」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が兌と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2283",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「拡大」が乾を示唆。外部環境: テキスト中の「上場」が離を示唆",
+        "after_lower": "坎",
+        "after_upper": "離",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「赤字、崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: テキスト中の「上場」が離を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "離",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「拡大」が乾を示唆。外部環境: テキスト中の「上場」が離を示唆",
+        "after_lower": "坎",
+        "after_upper": "離",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「赤字、崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: テキスト中の「上場」が離を示唆"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2524",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2755",
+      "annotator_a": {
+        "before_lower": "離",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「使命」が離を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「使命」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "離",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「使命」が離を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「使命」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2864",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3020",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が坎と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3124",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: 決定木の優先順位に基づき坤を選択"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "震",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: 決定木の優先順位に基づき震を選択"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_344",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「柔軟、適応」が巽を示唆。外部環境: テキスト中の「規制強化」が坎を示唆",
+        "after_lower": "巽",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「柔軟、適応」が巽を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「柔軟、適応」が巽を示唆。外部環境: テキスト中の「規制」が艮を示唆",
+        "after_lower": "巽",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「柔軟、適応」が巽を示唆。外部環境: テキスト中の「規制」が艮を示唆"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3441",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3466",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「革新」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「革新」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_365",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4263",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「拡大」が乾を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「拡大、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「拡大、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_451",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4890",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_840",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「改善」が巽を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "兌",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「対話」が兌を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_929",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「撤退、見直し」が艮を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「撤退、縮小、見直し」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "艮",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「撤退、見直し」が艮を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「撤退、縮小、見直し」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_029",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「基盤」が坤を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_031",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「追い風」が乾を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「技術」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: テキスト中の「追い風」が乾を示唆。state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「追い風」が乾を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「技術」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: テキスト中の「追い風」が乾を示唆。state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1213",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1341",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1377",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が艮と整合"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1380",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、債務、赤字」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「危機、債務、赤字」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、債務、赤字」が坎を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「危機、債務、赤字」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_400",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「破綻」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「破綻」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「破綻」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「破綻」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_056",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「発覚」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「発覚」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が艮と整合"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_116",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "震",
+        "after_upper": "兌",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: state_label「V字回復・大成功」が兌と整合"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_174",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "HEX07_YAO6_001",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「明確」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "離",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「明確」が離を示唆。state_label「V字回復・大成功」が離と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "HEX28_YAO6_001",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "HEX34_YAO6_001",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が坎と整合",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_060",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「柔軟」が巽を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "巽",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「柔軟」が巽を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「柔軟」が巽を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "巽",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「柔軟」が巽を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1012",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1136",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「地道、支援」が坤を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坤",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「地道、支援」が坤を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "巽",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「地道、支援」が坤を示唆。外部環境: 決定木の優先順位に基づき巽を選択",
+        "after_lower": "坤",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「地道、支援」が坤を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1528",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_356",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「積極、成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「積極、攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「積極、成長」が乾を示唆。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「積極、攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき震を選択"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_414",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_587",
+      "annotator_a": {
+        "before_lower": "離",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「ビジョン、明確」が離を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "離",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「ビジョン、明確」が離を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "離",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「ビジョン、明確」が離を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "離",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「ビジョン、明確」が離を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1013",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1179",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1386",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき震を選択",
+        "after_lower": "坎",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1425",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、困難、崩壊」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「困難、崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、困難、崩壊」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が坎と整合",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「困難、崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1455",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「撤退、縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「撤退、縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1509",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき坤を選択。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき震を選択。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_204",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "巽",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき巽を選択",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: 決定木の優先順位に基づき乾を選択。外部環境: 決定木の優先順位に基づき乾を選択"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2041",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2045",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2128",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2729",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「拡大」が乾を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「損失、崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「開始」が震を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「損失、崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が艮と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2735",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断、開始」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2742",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「開始」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2798",
+      "annotator_a": {
+        "before_lower": "艮",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「撤退」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が坎と整合"
+      },
+      "annotator_b": {
+        "before_lower": "艮",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「撤退」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が艮と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2806",
+      "annotator_a": {
+        "before_lower": "兌",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成果」が兌を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "震",
+        "after_upper": "震",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: state_label「迷走・混乱」が震と整合。外部環境: state_label「迷走・混乱」が震と整合"
+      },
+      "annotator_b": {
+        "before_lower": "兌",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成果」が兌を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "兌",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「成果」が兌を示唆。外部環境: state_label「迷走・混乱」が震と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2890",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、崩壊、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「撤退、縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、崩壊、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「撤退、縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2903",
+      "annotator_a": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断、立ち上げ」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断、立ち上げ」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断、立ち上げ」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断、立ち上げ」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2946",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坎",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「危機、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が坎と整合",
+        "after_lower": "乾",
+        "after_upper": "震",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。外部環境: 決定木の優先順位に基づき震を選択"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_586",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坤",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "坎",
+        "after_upper": "坎",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。外部環境: 決定木の優先順位に基づき坎を選択"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_769",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。外部環境: テキスト中の「停滞」が艮を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "乾",
+        "after_upper": "艮",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「成長、攻め」が乾を示唆。外部環境: テキスト中の「停滞」が艮を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_809",
+      "annotator_a": {
+        "before_lower": "巽",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「柔軟、適応」が巽を示唆。外部環境: テキスト中の「規制強化」が坎を示唆",
+        "after_lower": "巽",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「柔軟、適応」が巽を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      },
+      "annotator_b": {
+        "before_lower": "巽",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「柔軟、適応」が巽を示唆。外部環境: テキスト中の「規制強化」が坎を示唆",
+        "after_lower": "艮",
+        "after_upper": "坤",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「撤退、縮小」が艮を示唆。外部環境: テキスト中の「安定」が坤を示唆"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_855",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「支援」が坤を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「開始」が震を示唆。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "震",
+        "before_upper": "艮",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「開始」が震を示唆。外部環境: テキスト中の「停滞」が艮を示唆",
+        "after_lower": "震",
+        "after_upper": "坤",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「開始」が震を示唆。外部環境: 決定木の優先順位に基づき坤を選択"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_873",
+      "annotator_a": {
+        "before_lower": "坎",
+        "before_upper": "震",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、債務、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が震と整合",
+        "after_lower": "坤",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「支援」が坤を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坎",
+        "before_upper": "坎",
+        "before_uncertain": false,
+        "before_reasoning": "内的状態: テキスト中の「危機、債務、どん底」が坎を示唆。state_label「どん底・危機」が坎と整合。外部環境: state_label「どん底・危機」が坎と整合",
+        "after_lower": "震",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「決断」が震を示唆。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_944",
+      "annotator_a": {
+        "before_lower": "乾",
+        "before_upper": "乾",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき乾を選択",
+        "after_lower": "坎",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: 決定木の優先順位に基づき乾を選択"
+      },
+      "annotator_b": {
+        "before_lower": "乾",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: テキスト中の「成長」が乾を示唆。外部環境: 決定木の優先順位に基づき坤を選択",
+        "after_lower": "坎",
+        "after_upper": "艮",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「崩壊」が坎を示唆。state_label「崩壊・消滅」が坎と整合。外部環境: state_label「崩壊・消滅」が艮と整合"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_970",
+      "annotator_a": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき坤を選択。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": false,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      },
+      "annotator_b": {
+        "before_lower": "坤",
+        "before_upper": "坤",
+        "before_uncertain": true,
+        "before_reasoning": "内的状態: 決定木の優先順位に基づき坤を選択。外部環境: テキスト中の「安定」が坤を示唆",
+        "after_lower": "乾",
+        "after_upper": "乾",
+        "after_uncertain": true,
+        "after_reasoning": "内的状態: テキスト中の「攻め」が乾を示唆。state_label「V字回復・大成功」が乾と整合。外部環境: state_label「V字回復・大成功」が乾と整合"
+      }
+    }
+  ]
+}
