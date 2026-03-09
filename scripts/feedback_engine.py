@@ -77,6 +77,14 @@ QUESTIONS_BY_YAO = {
 # 品質ゲート Q1: 禁止語リスト
 FORBIDDEN_WORDS = ["予測", "予言", "運命", "占い", "になるでしょう", "必ず", "確実に"]
 
+# domain (日本語) → scale (DB内部値) マッピング
+DOMAIN_TO_SCALE = {
+    "個人": "individual",
+    "企業": "company",
+    "家族": "family",
+    "国家": "country",
+}
+
 
 # ============================================================
 # FeedbackEngine
@@ -156,14 +164,22 @@ class FeedbackEngine:
         before_state: str,
         action_type: str,
         mapping_confidence: float = 0.7,
+        domain: str = None,
     ) -> dict:
-        """5レイヤー構造のフィードバックを dict 形式で返す。"""
+        """5レイヤー構造のフィードバックを dict 形式で返す。
+
+        Args:
+            domain: ユーザーのドメイン (例: "個人", "企業", "家族", "国家")。
+                    指定時、事例検索をそのスケールでフィルタリングする。
+        """
+        # domain → scale 変換
+        scale = DOMAIN_TO_SCALE.get(domain) if domain else None
 
         layer1 = self._build_layer1(hexagram_number, yao_position)
         layer2 = self._build_layer2(hexagram_number, yao_position)
         layer3 = self._build_layer3(hexagram_number)
         layer4 = self._build_layer4(hexagram_number, yao_position,
-                                    before_state, action_type)
+                                    before_state, action_type, scale=scale)
         layer5 = self._build_layer5(yao_position,
                                     layer2["resulting_hexagram"]["id"])
 
@@ -191,10 +207,12 @@ class FeedbackEngine:
         action_type: str,
         mapping_confidence: float = 0.7,
         show_extended: bool = False,
+        domain: str = None,
     ) -> str:
         """CLI 表示用のテキストを返す。"""
         data = self.generate(hexagram_number, yao_position,
-                             before_state, action_type, mapping_confidence)
+                             before_state, action_type, mapping_confidence,
+                             domain=domain)
         return self._render_text(data, show_extended)
 
     # ------------------------------------------------------------------
@@ -401,9 +419,10 @@ class FeedbackEngine:
         yao: int,
         before_state: str,
         action_type: str,
+        scale: str = None,
     ) -> dict:
         dist = self._case_search.get_conditional_distribution(
-            before_state, action_type
+            before_state, action_type, scale=scale
         )
 
         # 八卦タグを取得（before_hex / action_hex）
@@ -416,6 +435,7 @@ class FeedbackEngine:
             before_hex=lower,
             action_hex=upper,
             limit=3,
+            scale=scale,
         )
 
         return {

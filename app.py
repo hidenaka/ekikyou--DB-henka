@@ -444,13 +444,14 @@ def feedback():
     # yao がない場合はデフォルト3
     yao = candidate.get("yao", 3)
 
-    # フィードバック生成
+    # フィードバック生成（domainでスケールフィルタリング）
     fb = feedback_engine.generate(
         candidate["hexagram_number"],
         yao,
         s["db_labels"]["db_state"],
         s["db_labels"]["db_action"],
         s["db_labels"]["overall_confidence"],
+        domain=s["db_labels"].get("domain"),
     )
 
     # 互換性データを追加（本卦と之卦の関係）

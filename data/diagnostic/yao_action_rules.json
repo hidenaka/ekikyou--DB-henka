@@ -1,0 +1,3867 @@
+{
+  "version": "1.0",
+  "description": "384爻の行動ルールテーブル。5点固定出力の「今やるな」「今やれ」の根拠。",
+  "rules": {
+    "1_1": {
+      "hexagram_number": 1,
+      "yao_position": 1,
+      "hexagram_name": "乾為天",
+      "do_not": "焦ること",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "創造・剛健の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "今はまだ動く時ではありません。力を蓄えて、静かに準備を整える段階です。焦らなくて大丈夫です。"
+    },
+    "1_2": {
+      "hexagram_number": 1,
+      "yao_position": 2,
+      "hexagram_name": "乾為天",
+      "do_not": "焦って表に出ること",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "創造・剛健の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "徐々に表舞台に出始める時期です。信頼できる人との出会いが、大きな転機になるかもしれません。"
+    },
+    "1_3": {
+      "hexagram_number": 1,
+      "yao_position": 3,
+      "hexagram_name": "乾為天",
+      "do_not": "油断すること",
+      "do": "踏み出す時が近づいています。しかし慎重に。",
+      "condition": "創造・剛健の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "忙しい時期ですが、油断は禁物です。日中は全力で取り組み、夜は振り返りを忘れずに。緊張感を持ち続けることで、失敗を避けられます。"
+    },
+    "1_4": {
+      "hexagram_number": 1,
+      "yao_position": 4,
+      "hexagram_name": "乾為天",
+      "do_not": "出過ぎること",
+      "do": "勢いがありますが、謙虚さを忘れずに。",
+      "condition": "創造・剛健の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "飛躍のチャンスが近づいています。でも、まだ完全に表に出る時ではありません。様子を見ながら、タイミングを計ってもいい時期です。"
+    },
+    "1_5": {
+      "hexagram_number": 1,
+      "yao_position": 5,
+      "hexagram_name": "乾為天",
+      "do_not": "傲慢になること",
+      "do": "力を発揮できる時です。しかし傲慢にならないように。",
+      "condition": "創造・剛健の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "最も力を発揮できる時期です。あなたの能力が存分に活かされ、影響力のある人との出会いもプラスに働きます。自信を持って進んで大丈夫です。"
+    },
+    "1_6": {
+      "hexagram_number": 1,
+      "yao_position": 6,
+      "hexagram_name": "乾為天",
+      "do_not": "やりすぎること",
+      "do": "極まれば転ずる。次への準備を始めましょう。",
+      "condition": "創造・剛健の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "頂点に達した後は、下り坂が始まります。やりすぎには注意が必要な時期です。謙虚さを忘れないことで、後悔を避けられます。"
+    },
+    "2_1": {
+      "hexagram_number": 2,
+      "yao_position": 1,
+      "hexagram_name": "坤為地",
+      "do_not": "軽はずみに動くこと",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "受容・柔順の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "小さな変化の兆しが見え始めています。今のうちに準備をしておくと、後で困らずに済みます。"
+    },
+    "2_2": {
+      "hexagram_number": 2,
+      "yao_position": 2,
+      "hexagram_name": "坤為地",
+      "do_not": "焦って表に出ること",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "受容・柔順の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "素直で誠実な姿勢が、自然と良い結果を生みます。無理に頑張らなくても、うまくいく時期です。"
+    },
+    "2_3": {
+      "hexagram_number": 2,
+      "yao_position": 3,
+      "hexagram_name": "坤為地",
+      "do_not": "自分を前面に出すこと",
+      "do": "動き出す兆しがありますが、まだ控えめに。",
+      "condition": "受容・柔順の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "自分の才能を前面に出すより、控えめに保つ時期です。成果を主張しなくても、最終的にはうまく収まります。"
+    },
+    "2_4": {
+      "hexagram_number": 2,
+      "yao_position": 4,
+      "hexagram_name": "坤為地",
+      "do_not": "無理に動くこと",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "受容・柔順の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "今は目立たないようにしている方がいい時期です。無理に動かなくても問題はありませんし、かといって評価されることもない、そんな時期です。"
+    },
+    "2_5": {
+      "hexagram_number": 2,
+      "yao_position": 5,
+      "hexagram_name": "坤為地",
+      "do_not": "現状に抗うこと",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "受容・柔順の卦において、中心・リーダーにいます。",
+      "strength": "strong",
+      "source_text": "控えめでありながらも、確かな存在感がある時期です。大きな幸運が期待できます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "2_6": {
+      "hexagram_number": 2,
+      "yao_position": 6,
+      "hexagram_name": "坤為地",
+      "do_not": "無理に自分を押し通すこと",
+      "do": "穏やかに次の段階へ移行しましょう。",
+      "condition": "受容・柔順の卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "頑張りすぎると衝突が起こりやすい時期です。無理に自分を押し通そうとすると、傷つくことになりかねません。"
+    },
+    "3_1": {
+      "hexagram_number": 3,
+      "yao_position": 1,
+      "hexagram_name": "水雷屯",
+      "do_not": "焦ること",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "困難の始まりの卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "前に進みづらさを感じる時期かもしれません。でも、焦らなくて大丈夫です。今は土台を固めることに意識を向けると、後々の飛躍につながります。"
+    },
+    "3_2": {
+      "hexagram_number": 3,
+      "yao_position": 2,
+      "hexagram_name": "水雷屯",
+      "do_not": "焦って表に出ること",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "困難の始まりの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "思うように進まず、戸惑う時期かもしれません。でも、それは敵ではなく味方からの働きかけです。すぐに結論を出さなくていい。時間をかければ、良い結果につながります。"
+    },
+    "3_3": {
+      "hexagram_number": 3,
+      "yao_position": 3,
+      "hexagram_name": "水雷屯",
+      "do_not": "無理に動くこと",
+      "do": "最も厳しい時期かもしれません。耐えてください。",
+      "condition": "困難の始まりの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "ガイドなしで追いかけると、森の中で迷ってしまいます。今は無理に追わず、引き返す勇気も大切です。"
+    },
+    "3_4": {
+      "hexagram_number": 3,
+      "yao_position": 4,
+      "hexagram_name": "水雷屯",
+      "do_not": "出過ぎること",
+      "do": "少し光が見えてきました。慎重に進みましょう。",
+      "condition": "困難の始まりの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "助けを求めることで、前に進める時期です。一人で抱え込まず、協力者を探すことが吉につながります。周囲に頼ることは弱さではありません。"
+    },
+    "3_5": {
+      "hexagram_number": 3,
+      "yao_position": 5,
+      "hexagram_name": "水雷屯",
+      "do_not": "急いで行動すること",
+      "do": "困難を乗り越える力があります。誠実に対処を。",
+      "condition": "困難の始まりの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "恵みを与えたくても、なかなかうまくいかない時期かもしれません。小さなことからコツコツ始めるのが吉。大きなことを急ぐと裏目に出やすいです。"
+    },
+    "3_6": {
+      "hexagram_number": 3,
+      "yao_position": 6,
+      "hexagram_name": "水雷屯",
+      "do_not": "無理に動くこと",
+      "do": "困難の出口が見えています。もう少しです。",
+      "condition": "困難の始まりの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "進退窮まって、辛い状況かもしれません。今は無理に動かず、状況が落ち着くのを待つ時期です。"
+    },
+    "4_1": {
+      "hexagram_number": 4,
+      "yao_position": 1,
+      "hexagram_name": "山水蒙",
+      "do_not": "軽はずみに動くこと",
+      "do": "学びの時、師を求める。力を蓄えながら、機会を待ちましょう",
+      "condition": "未熟・啓蒙の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "学び始めは厳しさも必要かもしれません。でも、厳しすぎると逆効果。バランスが大切です。"
+    },
+    "4_2": {
+      "hexagram_number": 4,
+      "yao_position": 2,
+      "hexagram_name": "山水蒙",
+      "do_not": "焦って表に出ること",
+      "do": "学びの時、師を求める。着実に実力をつけていきましょう",
+      "condition": "未熟・啓蒙の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "未熟な人を寛容に受け入れることで、良い結果が生まれます。責任を担う力が備わっている時期です。"
+    },
+    "4_3": {
+      "hexagram_number": 4,
+      "yao_position": 3,
+      "hexagram_name": "山水蒙",
+      "do_not": "この段階で油断すること",
+      "do": "学びの時、師を求める。慎重に、しかし勇気を持って進みましょう",
+      "condition": "未熟・啓蒙の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "目先の利益や外見にとらわれて判断すると、後で困ることになります。本質を見極めることが大切です。"
+    },
+    "4_4": {
+      "hexagram_number": 4,
+      "yao_position": 4,
+      "hexagram_name": "山水蒙",
+      "do_not": "出過ぎること",
+      "do": "学びの時、師を求める。謙虚に、上位者との関係を大切に",
+      "condition": "未熟・啓蒙の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "分からないことに囲まれて、身動きが取れない感覚かもしれません。この状況を脱するには、助けを求めることも必要です。"
+    },
+    "4_5": {
+      "hexagram_number": 4,
+      "yao_position": 5,
+      "hexagram_name": "山水蒙",
+      "do_not": "傲慢になること",
+      "do": "学びの時、師を求める。徳をもってリードしましょう",
+      "condition": "未熟・啓蒙の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "純粋で謙虚な姿勢が、幸運を呼び込みます。知らないことを素直に認める姿勢が大切です。"
+    },
+    "4_6": {
+      "hexagram_number": 4,
+      "yao_position": 6,
+      "hexagram_name": "山水蒙",
+      "do_not": "執着すること",
+      "do": "学びの時、師を求める。次の段階への移行を考えましょう",
+      "condition": "未熟・啓蒙の卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "厳しく叩くのではなく、守り育てる姿勢が必要な時期です。攻撃よりも防御に力を入れることで、良い結果が生まれます。"
+    },
+    "5_1": {
+      "hexagram_number": 5,
+      "yao_position": 1,
+      "hexagram_name": "水天需",
+      "do_not": "軽はずみに動くこと",
+      "do": "時機を待ち、焦らない。力を蓄えながら、機会を待ちましょう",
+      "condition": "待つの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "まだ中心から離れた場所で待っている段階です。一貫した姿勢を保っていれば、問題ありません。"
+    },
+    "5_2": {
+      "hexagram_number": 5,
+      "yao_position": 2,
+      "hexagram_name": "水天需",
+      "do_not": "焦って表に出ること",
+      "do": "時機を待ち、焦らない。着実に実力をつけていきましょう",
+      "condition": "待つの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "少し批判を受けるかもしれませんが、最終的には良い結果になります。気にしすぎず、待つことで道が開けます。"
+    },
+    "5_3": {
+      "hexagram_number": 5,
+      "yao_position": 3,
+      "hexagram_name": "水天需",
+      "do_not": "軽率に行動すること",
+      "do": "時機を待ち、焦らない。慎重に、しかし勇気を持って進みましょう",
+      "condition": "待つの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "危険に近づきすぎている状態です。このままでは問題を招きやすいので、少し距離を取った方がいいかもしれません。"
+    },
+    "5_4": {
+      "hexagram_number": 5,
+      "yao_position": 4,
+      "hexagram_name": "水天需",
+      "do_not": "出過ぎること",
+      "do": "時機を待ち、焦らない。謙虚に、上位者との関係を大切に",
+      "condition": "待つの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "困難な状況の中にいますが、そこから抜け出せます。状況に順応しながら、チャンスを待つことで道が開けます。"
+    },
+    "5_5": {
+      "hexagram_number": 5,
+      "yao_position": 5,
+      "hexagram_name": "水天需",
+      "do_not": "傲慢になること",
+      "do": "時機を待ち、焦らない。徳をもってリードしましょう",
+      "condition": "待つの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "ゆとりを持って待てる状況です。正しい姿勢を保っていれば、良い結果が待っています。"
+    },
+    "5_6": {
+      "hexagram_number": 5,
+      "yao_position": 6,
+      "hexagram_name": "水天需",
+      "do_not": "執着すること",
+      "do": "時機を待ち、焦らない。次の段階への移行を考えましょう",
+      "condition": "待つの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "予期せぬ助けが来る時期です。それを丁寧に受け入れることで、最終的には良い結果になります。"
+    },
+    "6_1": {
+      "hexagram_number": 6,
+      "yao_position": 1,
+      "hexagram_name": "天水訟",
+      "do_not": "軽はずみに動くこと",
+      "do": "対立を避け、妥協点を探る。力を蓄えながら、機会を待ちましょう",
+      "condition": "争いの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "争いを長引かせないことが吉につながります。少し言われることがあっても、最終的には良い結果になります。"
+    },
+    "6_2": {
+      "hexagram_number": 6,
+      "yao_position": 2,
+      "hexagram_name": "天水訟",
+      "do_not": "現状に抗うこと",
+      "do": "対立を避け、妥協点を探る。着実に実力をつけていきましょう",
+      "condition": "争いの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "争いに勝てない状況です。一歩引いて静かに過ごすことで、災いを避けられます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "6_3": {
+      "hexagram_number": 6,
+      "yao_position": 3,
+      "hexagram_name": "天水訟",
+      "do_not": "成果を声高に主張すること",
+      "do": "対立を避け、妥協点を探る。慎重に、しかし勇気を持って進みましょう",
+      "condition": "争いの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "今あるものを守り、堅実に過ごすことが吉です。成果を主張しなくても、最終的には認められます。"
+    },
+    "6_4": {
+      "hexagram_number": 6,
+      "yao_position": 4,
+      "hexagram_name": "天水訟",
+      "do_not": "出過ぎること",
+      "do": "対立を避け、妥協点を探る。謙虚に、上位者との関係を大切に",
+      "condition": "争いの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "争いをやめて、本来あるべき道に戻ることが吉です。心を落ち着けて、正しい道を選び直す時期です。"
+    },
+    "6_5": {
+      "hexagram_number": 6,
+      "yao_position": 5,
+      "hexagram_name": "天水訟",
+      "do_not": "傲慢になること",
+      "do": "対立を避け、妥協点を探る。徳をもってリードしましょう",
+      "condition": "争いの卦において、中心・リーダーにいます。",
+      "strength": "strong",
+      "source_text": "正しい立場から争うことで、大きな吉を得られます。中庸を保ち、正しい位置にいることが重要です。"
+    },
+    "6_6": {
+      "hexagram_number": 6,
+      "yao_position": 6,
+      "hexagram_name": "天水訟",
+      "do_not": "執着すること",
+      "do": "対立を避け、妥協点を探る。次の段階への移行を考えましょう",
+      "condition": "争いの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "争いに勝っても、その成果は長く保てません。勝利を誇示しすぎると、かえって失うものが増えます。"
+    },
+    "7_1": {
+      "hexagram_number": 7,
+      "yao_position": 1,
+      "hexagram_name": "地水師",
+      "do_not": "焦ること",
+      "do": "組織を率い、規律を守る。力を蓄えながら、機会を待ちましょう",
+      "condition": "統率の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "規律に従って動くことが大切です。ルールを無視すると、問題が生じやすくなります。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "7_2": {
+      "hexagram_number": 7,
+      "yao_position": 2,
+      "hexagram_name": "地水師",
+      "do_not": "焦って表に出ること",
+      "do": "組織を率い、規律を守る。着実に実力をつけていきましょう",
+      "condition": "統率の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "チームの中心にいることで、良い結果が生まれます。上からの信頼を得て、大きな役割を担えます。"
+    },
+    "7_3": {
+      "hexagram_number": 7,
+      "yao_position": 3,
+      "hexagram_name": "地水師",
+      "do_not": "この段階で油断すること",
+      "do": "組織を率い、規律を守る。慎重に、しかし勇気を持って進みましょう",
+      "condition": "統率の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "リーダーが複数いると、うまくいきません。指揮系統を明確にすることが成功への鍵です。"
+    },
+    "7_4": {
+      "hexagram_number": 7,
+      "yao_position": 4,
+      "hexagram_name": "地水師",
+      "do_not": "出過ぎること",
+      "do": "組織を率い、規律を守る。謙虚に、上位者との関係を大切に",
+      "condition": "統率の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "戦略的に退くことも、賢明な判断です。無理に前進せず、態勢を整える時期だと考えて良いです。"
+    },
+    "7_5": {
+      "hexagram_number": 7,
+      "yao_position": 5,
+      "hexagram_name": "地水師",
+      "do_not": "傲慢になること",
+      "do": "組織を率い、規律を守る。徳をもってリードしましょう",
+      "condition": "統率の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "問題があれば対処し、経験ある人に任せることが吉です。若手に重要な役割を任せすぎると、問題が生じやすくなります。"
+    },
+    "7_6": {
+      "hexagram_number": 7,
+      "yao_position": 6,
+      "hexagram_name": "地水師",
+      "do_not": "執着すること",
+      "do": "組織を率い、規律を守る。次の段階への移行を考えましょう",
+      "condition": "統率の卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "大きな成功の後は、成果を正しく分配することが大切です。貢献した人を適切に評価することで、組織が安定します。"
+    },
+    "8_1": {
+      "hexagram_number": 8,
+      "yao_position": 1,
+      "hexagram_name": "水地比",
+      "do_not": "軽はずみに動くこと",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "親しむの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "誠実さを持って人と結びつくことで、良い結果が生まれます。心からの誠意があれば、思わぬ幸運も訪れます。"
+    },
+    "8_2": {
+      "hexagram_number": 8,
+      "yao_position": 2,
+      "hexagram_name": "水地比",
+      "do_not": "現状に抗うこと",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "親しむの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "内面から自然に結びつこうとする姿勢が吉です。自分を見失わないことが大切です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "8_3": {
+      "hexagram_number": 8,
+      "yao_position": 3,
+      "hexagram_name": "水地比",
+      "do_not": "この段階で油断すること",
+      "do": "動き出す兆しがありますが、まだ控えめに。",
+      "condition": "親しむの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "結びつくべきでない相手と関わると、問題が生じます。相手を選ぶ目を持つことが重要です。"
+    },
+    "8_4": {
+      "hexagram_number": 8,
+      "yao_position": 4,
+      "hexagram_name": "水地比",
+      "do_not": "出過ぎること",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "親しむの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "外にいる賢い人と結びつくことが吉です。正しい道を歩む人についていくことで、良い方向に進めます。"
+    },
+    "8_5": {
+      "hexagram_number": 8,
+      "yao_position": 5,
+      "hexagram_name": "水地比",
+      "do_not": "無理に動くこと",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "親しむの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "開かれた姿勢で人と結びつくことが吉です。無理に追わず、自然と集まる関係を大切にすることで、良い結果につながります。"
+    },
+    "8_6": {
+      "hexagram_number": 8,
+      "yao_position": 6,
+      "hexagram_name": "水地比",
+      "do_not": "執着すること",
+      "do": "穏やかに次の段階へ移行しましょう。",
+      "condition": "親しむの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "最初から信頼関係を築く姿勢がなければ、良い結果は生まれません。スタートの姿勢が大切です。"
+    },
+    "9_1": {
+      "hexagram_number": 9,
+      "yao_position": 1,
+      "hexagram_name": "風天小畜",
+      "do_not": "軽はずみに動くこと",
+      "do": "少しずつ積み上げる。力を蓄えながら、機会を待ちましょう",
+      "condition": "小さく蓄えるの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "自分の道に戻って進むことが吉です。正しい方向に向かっていれば、問題ありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "9_2": {
+      "hexagram_number": 9,
+      "yao_position": 2,
+      "hexagram_name": "風天小畜",
+      "do_not": "焦って表に出ること",
+      "do": "少しずつ積み上げる。着実に実力をつけていきましょう",
+      "condition": "小さく蓄えるの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "引き寄せられて正しい道に戻ることで、吉が生まれます。中道を保つことで、過ちを避けられます。"
+    },
+    "9_3": {
+      "hexagram_number": 9,
+      "yao_position": 3,
+      "hexagram_name": "風天小畜",
+      "do_not": "この段階で油断すること",
+      "do": "少しずつ積み上げる。慎重に、しかし勇気を持って進みましょう",
+      "condition": "小さく蓄えるの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "パートナーとの関係がぎくしゃくしやすい時期です。お互いの期待が噛み合わないことがあるかもしれません。"
+    },
+    "9_4": {
+      "hexagram_number": 9,
+      "yao_position": 4,
+      "hexagram_name": "風天小畜",
+      "do_not": "軽率に行動すること",
+      "do": "少しずつ積み上げる。謙虚に、上位者との関係を大切に",
+      "condition": "小さく蓄えるの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "誠実さがあれば、危険は去り、心配も解消されます。上の人と志が合っていることで、問題を避けられます。"
+    },
+    "9_5": {
+      "hexagram_number": 9,
+      "yao_position": 5,
+      "hexagram_name": "風天小畜",
+      "do_not": "傲慢になること",
+      "do": "少しずつ積み上げる。徳をもってリードしましょう",
+      "condition": "小さく蓄えるの卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "誠実さを持って周囲と結びつくことで、豊かさが生まれます。自分だけでなく、周りも巻き込んで進む時期です。"
+    },
+    "9_6": {
+      "hexagram_number": 9,
+      "yao_position": 6,
+      "hexagram_name": "風天小畜",
+      "do_not": "無理に動くこと",
+      "do": "少しずつ積み上げる。次の段階への移行を考えましょう",
+      "condition": "小さく蓄えるの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "成果が実り、進むべき道が定まりました。ただし、頂点に達した後は慎重さが必要です。無理に進むと問題が生じやすくなります。"
+    },
+    "10_1": {
+      "hexagram_number": 10,
+      "yao_position": 1,
+      "hexagram_name": "天沢履",
+      "do_not": "軽はずみに動くこと",
+      "do": "礼を守り、危険を避ける。力を蓄えながら、機会を待ちましょう",
+      "condition": "慎重に歩むの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "慣れた道を歩み続けることで、問題なく前に進めます。派手なことより堅実さが吉につながります。"
+    },
+    "10_2": {
+      "hexagram_number": 10,
+      "yao_position": 2,
+      "hexagram_name": "天沢履",
+      "do_not": "焦って表に出ること",
+      "do": "礼を守り、危険を避ける。着実に実力をつけていきましょう",
+      "condition": "慎重に歩むの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "平坦で広い道を静かに歩む人が吉を得ます。正しい道を保つことで、心が乱れません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "10_3": {
+      "hexagram_number": 10,
+      "yao_position": 3,
+      "hexagram_name": "天沢履",
+      "do_not": "自分の能力を過信すること",
+      "do": "礼を守り、危険を避ける。慎重に、しかし勇気を持って進みましょう",
+      "condition": "慎重に歩むの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "自分の能力を過信すると、危険を招きます。実力以上のことをしようとすると、問題が生じやすいです。"
+    },
+    "10_4": {
+      "hexagram_number": 10,
+      "yao_position": 4,
+      "hexagram_name": "天沢履",
+      "do_not": "軽率に行動すること",
+      "do": "礼を守り、危険を避ける。謙虚に、上位者との関係を大切に",
+      "condition": "慎重に歩むの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "危険な状況でも、慎重に注意深く行動すれば、最終的には良い結果になります。用心を怠らないことが大切です。"
+    },
+    "10_5": {
+      "hexagram_number": 10,
+      "yao_position": 5,
+      "hexagram_name": "天沢履",
+      "do_not": "慎重さを失うこと",
+      "do": "礼を守り、危険を避ける。徳をもってリードしましょう",
+      "condition": "慎重に歩むの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "決断力を持って進むことで成果を得られますが、その分慎重さも必要です。正しい位置にいることで、力を発揮できます。"
+    },
+    "10_6": {
+      "hexagram_number": 10,
+      "yao_position": 6,
+      "hexagram_name": "天沢履",
+      "do_not": "執着すること",
+      "do": "礼を守り、危険を避ける。次の段階への移行を考えましょう",
+      "condition": "慎重に歩むの卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "これまでの歩みを振り返り、その結果を見極めることで、大きな吉が生まれます。最高の位置で大きな喜びを得られます。"
+    },
+    "11_1": {
+      "hexagram_number": 11,
+      "yao_position": 1,
+      "hexagram_name": "地天泰",
+      "do_not": "軽はずみに動くこと",
+      "do": "順調だが永続しない。力を蓄えながら、機会を待ちましょう",
+      "condition": "通じるの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "仲間と共に前進することで、良い結果が生まれます。根っこでつながった存在と共に動くことが吉です。"
+    },
+    "11_2": {
+      "hexagram_number": 11,
+      "yao_position": 2,
+      "hexagram_name": "地天泰",
+      "do_not": "焦って表に出ること",
+      "do": "順調だが永続しない。着実に実力をつけていきましょう",
+      "condition": "通じるの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "困難な人にも寛容に接し、遠くのことも忘れずにいることが大切です。偏らない姿勢で中道を歩むことで、良い結果につながります。"
+    },
+    "11_3": {
+      "hexagram_number": 11,
+      "yao_position": 3,
+      "hexagram_name": "地天泰",
+      "do_not": "この段階で油断すること",
+      "do": "順調だが永続しない。慎重に、しかし勇気を持って進みましょう",
+      "condition": "通じるの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "平穏な状態は永遠には続きません。去ったものは戻り、困難もやがて訪れます。それを理解した上で、今の幸せを大切にすることが重要です。"
+    },
+    "11_4": {
+      "hexagram_number": 11,
+      "yao_position": 4,
+      "hexagram_name": "地天泰",
+      "do_not": "出過ぎること",
+      "do": "順調だが永続しない。謙虚に、上位者との関係を大切に",
+      "condition": "通じるの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "謙虚な姿勢で周囲と協力することで、良い結果が生まれます。誠意を持って接することが大切です。"
+    },
+    "11_5": {
+      "hexagram_number": 11,
+      "yao_position": 5,
+      "hexagram_name": "地天泰",
+      "do_not": "傲慢になること",
+      "do": "順調だが永続しない。徳をもってリードしましょう",
+      "condition": "通じるの卦において、中心・リーダーにいます。",
+      "strength": "strong",
+      "source_text": "控えめな姿勢で良縁を結ぶことで、大きな幸せが訪れます。中心にいて願いを実現できる時期です。"
+    },
+    "11_6": {
+      "hexagram_number": 11,
+      "yao_position": 6,
+      "hexagram_name": "地天泰",
+      "do_not": "無理に動くこと",
+      "do": "順調だが永続しない。次の段階への移行を考えましょう",
+      "condition": "通じるの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "築いたものが崩れる時期が来ています。無理に動かず、身近なところから立て直すことが必要です。"
+    },
+    "12_1": {
+      "hexagram_number": 12,
+      "yao_position": 1,
+      "hexagram_name": "天地否",
+      "do_not": "軽はずみに動くこと",
+      "do": "閉塞期、内に籠もる。力を蓄えながら、機会を待ちましょう",
+      "condition": "塞がるの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "仲間と共に正しい道を守ることで、吉が生まれます。志を同じくする人と協力することが大切です。"
+    },
+    "12_2": {
+      "hexagram_number": 12,
+      "yao_position": 2,
+      "hexagram_name": "天地否",
+      "do_not": "焦って表に出ること",
+      "do": "閉塞期、内に籠もる。着実に実力をつけていきましょう",
+      "condition": "塞がるの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "忍耐強く待つことで、良い結果につながります。小さな人は順応し、大きな人は困難に向き合うことで道が開けます。"
+    },
+    "12_3": {
+      "hexagram_number": 12,
+      "yao_position": 3,
+      "hexagram_name": "天地否",
+      "do_not": "この段階で油断すること",
+      "do": "閉塞期、内に籠もる。慎重に、しかし勇気を持って進みましょう",
+      "condition": "塞がるの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "恥ずかしい状況にあるかもしれませんが、今は耐える時期です。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "12_4": {
+      "hexagram_number": 12,
+      "yao_position": 4,
+      "hexagram_name": "天地否",
+      "do_not": "出過ぎること",
+      "do": "閉塞期、内に籠もる。謙虚に、上位者との関係を大切に",
+      "condition": "塞がるの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "天の命に従って動くことで、問題は避けられます。仲間と共に幸せを分かち合える時期が来ます。"
+    },
+    "12_5": {
+      "hexagram_number": 12,
+      "yao_position": 5,
+      "hexagram_name": "天地否",
+      "do_not": "油断すること",
+      "do": "閉塞期、内に籠もる。徳をもってリードしましょう",
+      "condition": "塞がるの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "停滞を終わらせる力がある時期です。油断せず、常に危機感を持つことで、安定した状態を維持できます。"
+    },
+    "12_6": {
+      "hexagram_number": 12,
+      "yao_position": 6,
+      "hexagram_name": "天地否",
+      "do_not": "執着すること",
+      "do": "閉塞期、内に籠もる。次の段階への移行を考えましょう",
+      "condition": "塞がるの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "停滞が終わり、喜びが訪れる時期です。最初は困難でも、後には良い結果が待っています。"
+    },
+    "13_1": {
+      "hexagram_number": 13,
+      "yao_position": 1,
+      "hexagram_name": "天火同人",
+      "do_not": "軽はずみに動くこと",
+      "do": "志を同じくする者と。力を蓄えながら、機会を待ちましょう",
+      "condition": "協調の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "門を出て人と結びつくことで、問題は生じません。開かれた姿勢で人と接することが吉です。"
+    },
+    "13_2": {
+      "hexagram_number": 13,
+      "yao_position": 2,
+      "hexagram_name": "天火同人",
+      "do_not": "焦って表に出ること",
+      "do": "志を同じくする者と。着実に実力をつけていきましょう",
+      "condition": "協調の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "身内だけで固まると、後々問題が生じやすいです。より広い視野で人と結びつくことが大切です。"
+    },
+    "13_3": {
+      "hexagram_number": 13,
+      "yao_position": 3,
+      "hexagram_name": "天火同人",
+      "do_not": "この段階で油断すること",
+      "do": "志を同じくする者と。慎重に、しかし勇気を持って進みましょう",
+      "condition": "協調の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "警戒して動きを控える時期です。相手が強い場合は、長い間待つことも必要です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "13_4": {
+      "hexagram_number": 13,
+      "yao_position": 4,
+      "hexagram_name": "天火同人",
+      "do_not": "出過ぎること",
+      "do": "志を同じくする者と。謙虚に、上位者との関係を大切に",
+      "condition": "協調の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "攻撃する準備はあっても、実行しないことが吉です。困難な状況でも、正しい道に戻ることで良い結果につながります。"
+    },
+    "13_5": {
+      "hexagram_number": 13,
+      "yao_position": 5,
+      "hexagram_name": "天火同人",
+      "do_not": "傲慢になること",
+      "do": "志を同じくする者と。徳をもってリードしましょう",
+      "condition": "協調の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "最初は苦しくても、最後には笑いがあります。大きな力で困難を乗り越え、仲間と再会できます。"
+    },
+    "13_6": {
+      "hexagram_number": 13,
+      "yao_position": 6,
+      "hexagram_name": "天火同人",
+      "do_not": "執着すること",
+      "do": "志を同じくする者と。次の段階への移行を考えましょう",
+      "condition": "協調の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "郊外で人と結びつく段階です。後悔はありませんが、まだ目標は完全には達成されていません。"
+    },
+    "14_1": {
+      "hexagram_number": 14,
+      "yao_position": 1,
+      "hexagram_name": "火天大有",
+      "do_not": "軽はずみに動くこと",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "豊かの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "問題を引き起こさないように、困難を意識しながら進むことで、過ちを避けられます。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "14_2": {
+      "hexagram_number": 14,
+      "yao_position": 2,
+      "hexagram_name": "火天大有",
+      "do_not": "焦って表に出ること",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "豊かの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "大きな荷物を運べる力があります。どの方向に進んでも問題ありません。蓄えた力で失敗を避けられます。"
+    },
+    "14_3": {
+      "hexagram_number": 14,
+      "yao_position": 3,
+      "hexagram_name": "火天大有",
+      "do_not": "傲慢になること",
+      "do": "踏み出す時が近づいています。しかし慎重に。",
+      "condition": "豊かの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "高い地位の人に仕えることができる時期です。ただし、謙虚さを忘れると問題が生じます。"
+    },
+    "14_4": {
+      "hexagram_number": 14,
+      "yao_position": 4,
+      "hexagram_name": "火天大有",
+      "do_not": "自分を前面に出すこと",
+      "do": "勢いがありますが、謙虚さを忘れずに。",
+      "condition": "豊かの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "持っている力を誇示せず、控えめにすることで問題を避けられます。賢明な判断ができる時期です。"
+    },
+    "14_5": {
+      "hexagram_number": 14,
+      "yao_position": 5,
+      "hexagram_name": "火天大有",
+      "do_not": "傲慢になること",
+      "do": "力を発揮できる時です。しかし傲慢にならないように。",
+      "condition": "豊かの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "誠実さが周囲に伝わり、威厳も備わる時期です。信頼関係を築くことで、良い結果につながります。"
+    },
+    "14_6": {
+      "hexagram_number": 14,
+      "yao_position": 6,
+      "hexagram_name": "火天大有",
+      "do_not": "執着すること",
+      "do": "極まれば転ずる。次への準備を始めましょう。",
+      "condition": "豊かの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "天からの助けがある時期です。全ての面で有利に物事が進みます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "15_1": {
+      "hexagram_number": 15,
+      "yao_position": 1,
+      "hexagram_name": "地山謙",
+      "do_not": "傲慢になること",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "謙遜の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "謙虚さに謙虚さを重ねることで、どんな困難も乗り越えられます。自分を低く保つことで、徳を養えます。"
+    },
+    "15_2": {
+      "hexagram_number": 15,
+      "yao_position": 2,
+      "hexagram_name": "地山謙",
+      "do_not": "傲慢になること",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "謙遜の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "謙虚さが周囲に認められる時期です。正しい道を守ることで、吉が生まれます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "15_3": {
+      "hexagram_number": 15,
+      "yao_position": 3,
+      "hexagram_name": "地山謙",
+      "do_not": "この段階で油断すること",
+      "do": "動き出す兆しがありますが、まだ控えめに。",
+      "condition": "謙遜の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "功績がありながらも謙虚な人は、最後まで良い結果を得られます。多くの人がついてきます。"
+    },
+    "15_4": {
+      "hexagram_number": 15,
+      "yao_position": 4,
+      "hexagram_name": "地山謙",
+      "do_not": "傲慢になること",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "謙遜の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "あらゆることが有利に進みます。謙虚さをさらに発揮することで、道理に反しません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "15_5": {
+      "hexagram_number": 15,
+      "yao_position": 5,
+      "hexagram_name": "地山謙",
+      "do_not": "傲慢になること",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "謙遜の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "財力がなくても、謙虚さで周囲の協力を得られます。必要であれば行動を起こすことも可能です。"
+    },
+    "15_6": {
+      "hexagram_number": 15,
+      "yao_position": 6,
+      "hexagram_name": "地山謙",
+      "do_not": "傲慢になること",
+      "do": "穏やかに次の段階へ移行しましょう。",
+      "condition": "謙遜の卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "謙虚さが周囲に知れ渡っています。行動を起こすことで、身近な問題を解決できます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "16_1": {
+      "hexagram_number": 16,
+      "yao_position": 1,
+      "hexagram_name": "雷地豫",
+      "do_not": "自分を前面に出すこと",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "喜び・準備の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "喜びを大げさに表現すると、問題が生じます。控えめにすることが吉です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "16_2": {
+      "hexagram_number": 16,
+      "yao_position": 2,
+      "hexagram_name": "雷地豫",
+      "do_not": "焦って表に出ること",
+      "do": "柔順に従い、力を蓄える時期です。",
+      "condition": "喜び・準備の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "岩のように堅実で、事が起こる前に察知できる人は吉です。中正であることで、良い結果が生まれます。"
+    },
+    "16_3": {
+      "hexagram_number": 16,
+      "yao_position": 3,
+      "hexagram_name": "雷地豫",
+      "do_not": "この段階で油断すること",
+      "do": "動き出す兆しがありますが、まだ控えめに。",
+      "condition": "喜び・準備の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "上を見上げて喜びを求めると、後悔することになります。早めに気づくことが大切です。"
+    },
+    "16_4": {
+      "hexagram_number": 16,
+      "yao_position": 4,
+      "hexagram_name": "雷地豫",
+      "do_not": "出過ぎること",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "喜び・準備の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "喜びの源となる人は、大きな成果を得られます。疑いを持たなければ、仲間が集まってきます。"
+    },
+    "16_5": {
+      "hexagram_number": 16,
+      "yao_position": 5,
+      "hexagram_name": "雷地豫",
+      "do_not": "傲慢になること",
+      "do": "中庸を守り、穏やかに進みましょう。",
+      "condition": "喜び・準備の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "困難な状況でも持ちこたえられます。中心にいることで、過去の恵みが消えていません。"
+    },
+    "16_6": {
+      "hexagram_number": 16,
+      "yao_position": 6,
+      "hexagram_name": "雷地豫",
+      "do_not": "執着すること",
+      "do": "穏やかに次の段階へ移行しましょう。",
+      "condition": "喜び・準備の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "暗い中で喜びを求めても、長続きしません。途中で方向を変えれば、問題を避けられます。"
+    },
+    "17_1": {
+      "hexagram_number": 17,
+      "yao_position": 1,
+      "hexagram_name": "沢雷随",
+      "do_not": "軽はずみに動くこと",
+      "do": "時勢に従い、柔軟に。力を蓄えながら、機会を待ちましょう",
+      "condition": "従うの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "目標が変わっても、正しい道を守れば吉です。門を出て交流することで、成果が得られます。"
+    },
+    "17_2": {
+      "hexagram_number": 17,
+      "yao_position": 2,
+      "hexagram_name": "沢雷随",
+      "do_not": "焦って表に出ること",
+      "do": "時勢に従い、柔軟に。着実に実力をつけていきましょう",
+      "condition": "従うの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "若い者に執着すると、経験ある者との関係を失います。どちらを選ぶか、慎重に考えることが必要です。"
+    },
+    "17_3": {
+      "hexagram_number": 17,
+      "yao_position": 3,
+      "hexagram_name": "沢雷随",
+      "do_not": "この段階で油断すること",
+      "do": "時勢に従い、柔軟に。慎重に、しかし勇気を持って進みましょう",
+      "condition": "従うの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "経験ある者を選び、若い者を手放すことで、求めるものが得られます。堅実さを保つことが有利です。"
+    },
+    "17_4": {
+      "hexagram_number": 17,
+      "yao_position": 4,
+      "hexagram_name": "沢雷随",
+      "do_not": "出過ぎること",
+      "do": "時勢に従い、柔軟に。謙虚に、上位者との関係を大切に",
+      "condition": "従うの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "従う者を得ますが、正しくあっても問題が生じやすい時期です。誠実さと明確さを持つことで、過ちを避けられます。"
+    },
+    "17_5": {
+      "hexagram_number": 17,
+      "yao_position": 5,
+      "hexagram_name": "沢雷随",
+      "do_not": "傲慢になること",
+      "do": "時勢に従い、柔軟に。徳をもってリードしましょう",
+      "condition": "従うの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "良いものを信じることで、吉が生まれます。正しい位置にいることで、良い結果が得られます。"
+    },
+    "17_6": {
+      "hexagram_number": 17,
+      "yao_position": 6,
+      "hexagram_name": "沢雷随",
+      "do_not": "執着すること",
+      "do": "時勢に従い、柔軟に。次の段階への移行を考えましょう",
+      "condition": "従うの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "強く結びつき、さらに維持される関係があります。深い信仰心を持って山で祭りを行うように、誠実さが大切です。"
+    },
+    "18_1": {
+      "hexagram_number": 18,
+      "yao_position": 1,
+      "hexagram_name": "山風蠱",
+      "do_not": "軽はずみに動くこと",
+      "do": "腐敗を改め、刷新する。力を蓄えながら、機会を待ちましょう",
+      "condition": "立て直しの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "先代の問題を引き継いで解決する時期です。有能な後継者があれば、先代の過ちも許されます。困難でも最終的には吉です。"
+    },
+    "18_2": {
+      "hexagram_number": 18,
+      "yao_position": 2,
+      "hexagram_name": "山風蠱",
+      "do_not": "現状に抗うこと",
+      "do": "腐敗を改め、刷新する。着実に実力をつけていきましょう",
+      "condition": "立て直しの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "母親的な問題を解決する時期です。ただし、厳しすぎず、中道を守ることが重要です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "18_3": {
+      "hexagram_number": 18,
+      "yao_position": 3,
+      "hexagram_name": "山風蠱",
+      "do_not": "現状に抗うこと",
+      "do": "腐敗を改め、刷新する。慎重に、しかし勇気を持って進みましょう",
+      "condition": "立て直しの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "先代の問題に取り組む中で、小さな後悔はあっても大きな過ちはありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "18_4": {
+      "hexagram_number": 18,
+      "yao_position": 4,
+      "hexagram_name": "山風蠱",
+      "do_not": "出過ぎること",
+      "do": "腐敗を改め、刷新する。謙虚に、上位者との関係を大切に",
+      "condition": "立て直しの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "先代の問題を放置すると、後で困ることになります。早めに対処することが大切です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "18_5": {
+      "hexagram_number": 18,
+      "yao_position": 5,
+      "hexagram_name": "山風蠱",
+      "do_not": "傲慢になること",
+      "do": "腐敗を改め、刷新する。徳をもってリードしましょう",
+      "condition": "立て直しの卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "先代の問題を解決することで、称賛を得られます。徳をもって応じることで、良い結果につながります。"
+    },
+    "18_6": {
+      "hexagram_number": 18,
+      "yao_position": 6,
+      "hexagram_name": "山風蠱",
+      "do_not": "執着すること",
+      "do": "腐敗を改め、刷新する。次の段階への移行を考えましょう",
+      "condition": "立て直しの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "王にも諸侯にも仕えず、自分の道を高く掲げる時期です。これも一つの生き方として尊重されます。"
+    },
+    "19_1": {
+      "hexagram_number": 19,
+      "yao_position": 1,
+      "hexagram_name": "地沢臨",
+      "do_not": "軽はずみに動くこと",
+      "do": "責任を持って対処。力を蓄えながら、機会を待ちましょう",
+      "condition": "臨むの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "共に前進することで、吉が生まれます。正しい道を歩む意志があることで、良い結果につながります。"
+    },
+    "19_2": {
+      "hexagram_number": 19,
+      "yao_position": 2,
+      "hexagram_name": "地沢臨",
+      "do_not": "焦って表に出ること",
+      "do": "責任を持って対処。着実に実力をつけていきましょう",
+      "condition": "臨むの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "共に前進することで、良いことが起こります。まだ従わない者もいますが、利益がある時期です。"
+    },
+    "19_3": {
+      "hexagram_number": 19,
+      "yao_position": 3,
+      "hexagram_name": "地沢臨",
+      "do_not": "この段階で油断すること",
+      "do": "責任を持って対処。慎重に、しかし勇気を持って進みましょう",
+      "condition": "臨むの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "喜んで進もうとしますが、それだけでは有利ではありません。心配することで、問題を避けられます。"
+    },
+    "19_4": {
+      "hexagram_number": 19,
+      "yao_position": 4,
+      "hexagram_name": "地沢臨",
+      "do_not": "出過ぎること",
+      "do": "責任を持って対処。謙虚に、上位者との関係を大切に",
+      "condition": "臨むの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "最高の形で進むことで、問題はありません。適切な位置にいることが、良い結果を生みます。"
+    },
+    "19_5": {
+      "hexagram_number": 19,
+      "yao_position": 5,
+      "hexagram_name": "地沢臨",
+      "do_not": "傲慢になること",
+      "do": "責任を持って対処。徳をもってリードしましょう",
+      "condition": "臨むの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "知恵を持って進むことが、偉大なリーダーにふさわしい態度です。中道を実践することが吉につながります。"
+    },
+    "19_6": {
+      "hexagram_number": 19,
+      "yao_position": 6,
+      "hexagram_name": "地沢臨",
+      "do_not": "執着すること",
+      "do": "責任を持って対処。次の段階への移行を考えましょう",
+      "condition": "臨むの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "誠実さと寛容さを持って進むことで、吉が生まれ、問題も避けられます。内なるものに志が向いています。"
+    },
+    "20_1": {
+      "hexagram_number": 20,
+      "yao_position": 1,
+      "hexagram_name": "風地観",
+      "do_not": "軽はずみに動くこと",
+      "do": "よく観察し、状況把握。力を蓄えながら、機会を待ちましょう",
+      "condition": "観るの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "子どものような見方をしていると、重要なことを見落とします。より深く物事を観察することが必要です。"
+    },
+    "20_2": {
+      "hexagram_number": 20,
+      "yao_position": 2,
+      "hexagram_name": "風地観",
+      "do_not": "焦って表に出ること",
+      "do": "よく観察し、状況把握。着実に実力をつけていきましょう",
+      "condition": "観るの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "隙間から覗き見るような観察では、限界があります。より広い視野を持つことが大切です。"
+    },
+    "20_3": {
+      "hexagram_number": 20,
+      "yao_position": 3,
+      "hexagram_name": "風地観",
+      "do_not": "この段階で油断すること",
+      "do": "よく観察し、状況把握。慎重に、しかし勇気を持って進みましょう",
+      "condition": "観るの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "自分の人生を振り返り、進むべきか退くべきかを判断する時期です。道を誤ることはありません。"
+    },
+    "20_4": {
+      "hexagram_number": 20,
+      "yao_position": 4,
+      "hexagram_name": "風地観",
+      "do_not": "出過ぎること",
+      "do": "よく観察し、状況把握。謙虚に、上位者との関係を大切に",
+      "condition": "観るの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "国の輝きを観察する時期です。上の人に仕えることが有利です。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "20_5": {
+      "hexagram_number": 20,
+      "yao_position": 5,
+      "hexagram_name": "風地観",
+      "do_not": "焦ること",
+      "do": "よく観察し、状況把握。徳をもってリードしましょう",
+      "condition": "観るの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "自分の人生を観察することで、過ちを避けられます。民の状態を見ることが大切です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "20_6": {
+      "hexagram_number": 20,
+      "yao_position": 6,
+      "hexagram_name": "風地観",
+      "do_not": "執着すること",
+      "do": "よく観察し、状況把握。次の段階への移行を考えましょう",
+      "condition": "観るの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "自分の性格や行いを振り返ることで、過ちを避けられます。まだ心が完全に安らいではいません。"
+    },
+    "21_1": {
+      "hexagram_number": 21,
+      "yao_position": 1,
+      "hexagram_name": "火雷噬嗑",
+      "do_not": "軽はずみに動くこと",
+      "do": "断固として悪を除く。力を蓄えながら、機会を待ちましょう",
+      "condition": "障害除去の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "足かせをはめられて動けない状態ですが、これ以上悪くなることは防げます。初期段階で止められることで、問題を避けられます。"
+    },
+    "21_2": {
+      "hexagram_number": 21,
+      "yao_position": 2,
+      "hexagram_name": "火雷噬嗑",
+      "do_not": "焦って表に出ること",
+      "do": "断固として悪を除く。着実に実力をつけていきましょう",
+      "condition": "障害除去の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "柔らかい肉を噛む程度の障害です。深く噛み込んでも問題はありません。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "21_3": {
+      "hexagram_number": 21,
+      "yao_position": 3,
+      "hexagram_name": "火雷噬嗑",
+      "do_not": "この段階で油断すること",
+      "do": "断固として悪を除く。慎重に、しかし勇気を持って進みましょう",
+      "condition": "障害除去の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "乾いた肉を噛むと、不快なものに出会うかもしれません。小さな後悔はありますが、大きな問題にはなりません。"
+    },
+    "21_4": {
+      "hexagram_number": 21,
+      "yao_position": 4,
+      "hexagram_name": "火雷噬嗑",
+      "do_not": "出過ぎること",
+      "do": "断固として悪を除く。謙虚に、上位者との関係を大切に",
+      "condition": "障害除去の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "骨つき肉を噛む困難がありますが、金の矢を得るような報酬もあります。困難を認識して堅実に対処すれば吉です。"
+    },
+    "21_5": {
+      "hexagram_number": 21,
+      "yao_position": 5,
+      "hexagram_name": "火雷噬嗑",
+      "do_not": "軽率に行動すること",
+      "do": "断固として悪を除く。徳をもってリードしましょう",
+      "condition": "障害除去の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "乾いた肉を噛んで黄金を得る時期です。危険を意識しながら正しい道を守れば、問題ありません。"
+    },
+    "21_6": {
+      "hexagram_number": 21,
+      "yao_position": 6,
+      "hexagram_name": "火雷噬嗑",
+      "do_not": "現状に固執すること",
+      "do": "断固として悪を除く。次の段階への移行を考えましょう",
+      "condition": "障害除去の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "首かせをはめられて耳を失う状態です。聞こうとしないことによる凶です。警告に耳を傾けることが大切です。"
+    },
+    "22_1": {
+      "hexagram_number": 22,
+      "yao_position": 1,
+      "hexagram_name": "山火賁",
+      "do_not": "軽はずみに動くこと",
+      "do": "外見を整えつつ本質も。力を蓄えながら、機会を待ちましょう",
+      "condition": "飾るの卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "足元を飾る時期です。車を捨てて歩くことが正しい選択となることもあります。派手さより実直さが大切です。"
+    },
+    "22_2": {
+      "hexagram_number": 22,
+      "yao_position": 2,
+      "hexagram_name": "山火賁",
+      "do_not": "焦って表に出ること",
+      "do": "外見を整えつつ本質も。着実に実力をつけていきましょう",
+      "condition": "飾るの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "髭を飾るように、上の人と共に動く時期です。連携を大切にすることが良い結果を生みます。"
+    },
+    "22_3": {
+      "hexagram_number": 22,
+      "yao_position": 3,
+      "hexagram_name": "山火賁",
+      "do_not": "この段階で油断すること",
+      "do": "外見を整えつつ本質も。慎重に、しかし勇気を持って進みましょう",
+      "condition": "飾るの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "潤いのある装飾の時期です。正しい道を永く守れば吉です。最後まで侮られることはありません。"
+    },
+    "22_4": {
+      "hexagram_number": 22,
+      "yao_position": 4,
+      "hexagram_name": "山火賁",
+      "do_not": "出過ぎること",
+      "do": "外見を整えつつ本質も。謙虚に、上位者との関係を大切に",
+      "condition": "飾るの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "白い装飾の時期です。敵ではなく、婚姻を求める者が来ます。疑いはあっても、最終的には問題ありません。"
+    },
+    "22_5": {
+      "hexagram_number": 22,
+      "yao_position": 5,
+      "hexagram_name": "山火賁",
+      "do_not": "傲慢になること",
+      "do": "外見を整えつつ本質も。徳をもってリードしましょう",
+      "condition": "飾るの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "丘や園を飾る時期です。贈り物は少なくても、最終的には吉です。控えめでも喜びがあります。"
+    },
+    "22_6": {
+      "hexagram_number": 22,
+      "yao_position": 6,
+      "hexagram_name": "山火賁",
+      "do_not": "執着すること",
+      "do": "外見を整えつつ本質も。次の段階への移行を考えましょう",
+      "condition": "飾るの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "白だけで飾ることで、問題を避けられます。シンプルさが最高の装飾となる時期です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "23_1": {
+      "hexagram_number": 23,
+      "yao_position": 1,
+      "hexagram_name": "山地剥",
+      "do_not": "現状に固執すること",
+      "do": "衰退期、静観する。力を蓄えながら、機会を待ちましょう",
+      "condition": "崩壊の卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "寝台の足が崩れる状態です。正しいものが損なわれ、凶です。基礎から崩れ始めています。"
+    },
+    "23_2": {
+      "hexagram_number": 23,
+      "yao_position": 2,
+      "hexagram_name": "山地剥",
+      "do_not": "現状に固執すること",
+      "do": "衰退期、静観する。着実に実力をつけていきましょう",
+      "condition": "崩壊の卦において、発展初期にいます。",
+      "strength": "strong",
+      "source_text": "寝台の枠が崩れる状態です。正しいものが損なわれ、凶です。まだ仲間がいない状態です。"
+    },
+    "23_3": {
+      "hexagram_number": 23,
+      "yao_position": 3,
+      "hexagram_name": "山地剥",
+      "do_not": "基盤を軽視すること",
+      "do": "衰退期、静観する。慎重に、しかし勇気を持って進みましょう",
+      "condition": "崩壊の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "崩れる中にいても問題はありません。上下との関係が異なることで、問題を避けられます。"
+    },
+    "23_4": {
+      "hexagram_number": 23,
+      "yao_position": 4,
+      "hexagram_name": "山地剥",
+      "do_not": "焦ること",
+      "do": "衰退期、静観する。謙虚に、上位者との関係を大切に",
+      "condition": "崩壊の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "寝台が崩れて肌にまで達する状態です。災いが間近に迫っています。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "23_5": {
+      "hexagram_number": 23,
+      "yao_position": 5,
+      "hexagram_name": "山地剥",
+      "do_not": "傲慢になること",
+      "do": "衰退期、静観する。徳をもってリードしましょう",
+      "condition": "崩壊の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "魚を連ねるように、宮中の人々に恩恵を与える時期です。あらゆることに利があります。"
+    },
+    "23_6": {
+      "hexagram_number": 23,
+      "yao_position": 6,
+      "hexagram_name": "山地剥",
+      "do_not": "執着すること",
+      "do": "衰退期、静観する。次の段階への移行を考えましょう",
+      "condition": "崩壊の卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "大きな果実が食べられずに残っている状態です。賢い人は車を得て民に愛され、小人は住む場所を失います。"
+    },
+    "24_1": {
+      "hexagram_number": 24,
+      "yao_position": 1,
+      "hexagram_name": "地雷復",
+      "do_not": "極端に走ること",
+      "do": "再生、焦らず自然に。力を蓄えながら、機会を待ちましょう",
+      "condition": "回復の卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "遠くまで行かずに戻ることで、大きな後悔を避けられます。大いなる吉です。身を修めることにつながります。"
+    },
+    "24_2": {
+      "hexagram_number": 24,
+      "yao_position": 2,
+      "hexagram_name": "地雷復",
+      "do_not": "焦って表に出ること",
+      "do": "再生、焦らず自然に。着実に実力をつけていきましょう",
+      "condition": "回復の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "美しく戻ることで吉が生まれます。下の徳ある者に従うことで、良い結果が得られます。"
+    },
+    "24_3": {
+      "hexagram_number": 24,
+      "yao_position": 3,
+      "hexagram_name": "地雷復",
+      "do_not": "軽率に行動すること",
+      "do": "再生、焦らず自然に。慎重に、しかし勇気を持って進みましょう",
+      "condition": "回復の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "何度も戻ることは危うさを伴いますが、問題はありません。正義を求めることは過ちにはなりません。"
+    },
+    "24_4": {
+      "hexagram_number": 24,
+      "yao_position": 4,
+      "hexagram_name": "地雷復",
+      "do_not": "現状に抗うこと",
+      "do": "再生、焦らず自然に。謙虚に、上位者との関係を大切に",
+      "condition": "回復の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "中にいながら一人で戻る時期です。道に従うことで、独自の道を歩めます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "24_5": {
+      "hexagram_number": 24,
+      "yao_position": 5,
+      "hexagram_name": "地雷復",
+      "do_not": "傲慢になること",
+      "do": "再生、焦らず自然に。徳をもってリードしましょう",
+      "condition": "回復の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "誠実に戻ることで後悔はありません。中にあって自らを省みることで、良い結果が得られます。"
+    },
+    "24_6": {
+      "hexagram_number": 24,
+      "yao_position": 6,
+      "hexagram_name": "地雷復",
+      "do_not": "現状に固執すること",
+      "do": "再生、焦らず自然に。次の段階への移行を考えましょう",
+      "condition": "回復の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "戻ることに迷うと凶です。災いが生じます。軍を動かせば大敗し、十年たっても立ち直れません。"
+    },
+    "25_1": {
+      "hexagram_number": 25,
+      "yao_position": 1,
+      "hexagram_name": "天雷无妄",
+      "do_not": "軽はずみに動くこと",
+      "do": "虚偽なく、正直に。力を蓄えながら、機会を待ちましょう",
+      "condition": "誠実の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "無心で進めば吉です。志を得ることができます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "25_2": {
+      "hexagram_number": 25,
+      "yao_position": 2,
+      "hexagram_name": "天雷无妄",
+      "do_not": "焦って表に出ること",
+      "do": "虚偽なく、正直に。着実に実力をつけていきましょう",
+      "condition": "誠実の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "耕さずに収穫し、開墾せずに豊かな畑を得るように、思わぬ恵みがある時期です。どの方向に動いても有利です。"
+    },
+    "25_3": {
+      "hexagram_number": 25,
+      "yao_position": 3,
+      "hexagram_name": "天雷无妄",
+      "do_not": "この段階で油断すること",
+      "do": "虚偽なく、正直に。慎重に、しかし勇気を持って進みましょう",
+      "condition": "誠実の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "無心でいても災いがあることがあります。繋いでおいた牛を通りがかりの人が連れていくように、町の人に災いが降りかかることも。"
+    },
+    "25_4": {
+      "hexagram_number": 25,
+      "yao_position": 4,
+      "hexagram_name": "天雷无妄",
+      "do_not": "出過ぎること",
+      "do": "虚偽なく、正直に。謙虚に、上位者との関係を大切に",
+      "condition": "誠実の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "正しく堅実であれば問題ありません。持っているものをしっかり守ることが大切です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "25_5": {
+      "hexagram_number": 25,
+      "yao_position": 5,
+      "hexagram_name": "天雷无妄",
+      "do_not": "傲慢になること",
+      "do": "虚偽なく、正直に。徳をもってリードしましょう",
+      "condition": "誠実の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "無心であるのに病にかかることがあります。薬を使わずとも喜びがあります。自然に任せることで回復します。"
+    },
+    "25_6": {
+      "hexagram_number": 25,
+      "yao_position": 6,
+      "hexagram_name": "天雷无妄",
+      "do_not": "執着すること",
+      "do": "虚偽なく、正直に。次の段階への移行を考えましょう",
+      "condition": "誠実の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "無心であっても行動すれば災いがあり、利することはありません。時が尽きた時の災いです。"
+    },
+    "26_1": {
+      "hexagram_number": 26,
+      "yao_position": 1,
+      "hexagram_name": "山天大畜",
+      "do_not": "軽率に行動すること",
+      "do": "力を蓄え、学ぶ。力を蓄えながら、機会を待ちましょう",
+      "condition": "大いに蓄えるの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "危険がある時期です。止まることが有利です。むやみに進むと災いを招きます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "26_2": {
+      "hexagram_number": 26,
+      "yao_position": 2,
+      "hexagram_name": "山天大畜",
+      "do_not": "焦って表に出ること",
+      "do": "力を蓄え、学ぶ。着実に実力をつけていきましょう",
+      "condition": "大いに蓄えるの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "車から部品が取れる状態です。中にあって問題を避けられます。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "26_3": {
+      "hexagram_number": 26,
+      "yao_position": 3,
+      "hexagram_name": "山天大畜",
+      "do_not": "この段階で油断すること",
+      "do": "力を蓄え、学ぶ。慎重に、しかし勇気を持って進みましょう",
+      "condition": "大いに蓄えるの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "良い馬で追いかける時期です。困難を認識して堅実に対処し、日々鍛錬することで、どの方向に動いても有利です。"
+    },
+    "26_4": {
+      "hexagram_number": 26,
+      "yao_position": 4,
+      "hexagram_name": "山天大畜",
+      "do_not": "現状に抗うこと",
+      "do": "力を蓄え、学ぶ。謙虚に、上位者との関係を大切に",
+      "condition": "大いに蓄えるの卦において、新段階の入口にいます。",
+      "strength": "strong",
+      "source_text": "若い牛に横木をつける時期です。大いなる吉があります。喜びがある時期です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "26_5": {
+      "hexagram_number": 26,
+      "yao_position": 5,
+      "hexagram_name": "山天大畜",
+      "do_not": "傲慢になること",
+      "do": "力を蓄え、学ぶ。徳をもってリードしましょう",
+      "condition": "大いに蓄えるの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "去勢した豚の牙のように、力を抑制する時期です。吉があり、祝うべき時です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "26_6": {
+      "hexagram_number": 26,
+      "yao_position": 6,
+      "hexagram_name": "山天大畜",
+      "do_not": "執着すること",
+      "do": "力を蓄え、学ぶ。次の段階への移行を考えましょう",
+      "condition": "大いに蓄えるの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "天の道を行く時期です。大いに通じ、道が大きく開けます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "27_1": {
+      "hexagram_number": 27,
+      "yao_position": 1,
+      "hexagram_name": "山雷頤",
+      "do_not": "現状に固執すること",
+      "do": "養生、言動に注意。力を蓄えながら、機会を待ちましょう",
+      "condition": "養うの卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "霊験あらたかな亀を捨てて、他人が食べるのを羨む状態は凶です。自分の価値を認識することが大切です。"
+    },
+    "27_2": {
+      "hexagram_number": 27,
+      "yao_position": 2,
+      "hexagram_name": "山雷頤",
+      "do_not": "現状に固執すること",
+      "do": "養生、言動に注意。着実に実力をつけていきましょう",
+      "condition": "養うの卦において、発展初期にいます。",
+      "strength": "strong",
+      "source_text": "上から養われることを求めたり、丘から養われることを求めたりするのは、正道に反します。進めば凶です。"
+    },
+    "27_3": {
+      "hexagram_number": 27,
+      "yao_position": 3,
+      "hexagram_name": "山雷頤",
+      "do_not": "現状に固執すること",
+      "do": "養生、言動に注意。慎重に、しかし勇気を持って進みましょう",
+      "condition": "養うの卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "養う道に反しており、堅実でも凶です。十年間動かないことが有利です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "27_4": {
+      "hexagram_number": 27,
+      "yao_position": 4,
+      "hexagram_name": "山雷頤",
+      "do_not": "出過ぎること",
+      "do": "養生、言動に注意。謙虚に、上位者との関係を大切に",
+      "condition": "養うの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "上から養われることを求めるのは吉です。虎のように見つめ、追い求めれば問題ありません。"
+    },
+    "27_5": {
+      "hexagram_number": 27,
+      "yao_position": 5,
+      "hexagram_name": "山雷頤",
+      "do_not": "傲慢になること",
+      "do": "養生、言動に注意。徳をもってリードしましょう",
+      "condition": "養うの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "常道に反していますが、堅実に留まれば吉です。ただし大川を渡ることはできません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "27_6": {
+      "hexagram_number": 27,
+      "yao_position": 6,
+      "hexagram_name": "山雷頤",
+      "do_not": "軽率に行動すること",
+      "do": "養生、言動に注意。次の段階への移行を考えましょう",
+      "condition": "養うの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "養いの源となる時期です。危険ですが吉があり、大川を渡ることも有利です。大いに祝うべき時です。"
+    },
+    "28_1": {
+      "hexagram_number": 28,
+      "yao_position": 1,
+      "hexagram_name": "沢風大過",
+      "do_not": "現状に抗うこと",
+      "do": "非常事態、決断を。力を蓄えながら、機会を待ちましょう",
+      "condition": "過剰の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "白い茅を敷いて、下に柔らかいものを置く時期です。丁寧に扱えば問題ありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "28_2": {
+      "hexagram_number": 28,
+      "yao_position": 2,
+      "hexagram_name": "沢風大過",
+      "do_not": "焦って表に出ること",
+      "do": "非常事態、決断を。着実に実力をつけていきましょう",
+      "condition": "過剰の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "枯れた柳に新芽が出る時期です。老いた夫が若い妻を得るように、思わぬ良いことがあります。"
+    },
+    "28_3": {
+      "hexagram_number": 28,
+      "yao_position": 3,
+      "hexagram_name": "沢風大過",
+      "do_not": "現状に固執すること",
+      "do": "非常事態、決断を。慎重に、しかし勇気を持って進みましょう",
+      "condition": "過剰の卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "棟木がたわんで凶です。支えることができない状態です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "28_4": {
+      "hexagram_number": 28,
+      "yao_position": 4,
+      "hexagram_name": "沢風大過",
+      "do_not": "出過ぎること",
+      "do": "非常事態、決断を。謙虚に、上位者との関係を大切に",
+      "condition": "過剰の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "棟木が隆起して吉です。ただし、他のことを求めると問題があります。下に頼らないことが吉の理由です。"
+    },
+    "28_5": {
+      "hexagram_number": 28,
+      "yao_position": 5,
+      "hexagram_name": "沢風大過",
+      "do_not": "傲慢になること",
+      "do": "非常事態、決断を。徳をもってリードしましょう",
+      "condition": "過剰の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "枯れた柳に花が咲くように、老婆が若い夫を得る時期です。咎めもなく、誉れもない状態です。"
+    },
+    "28_6": {
+      "hexagram_number": 28,
+      "yao_position": 6,
+      "hexagram_name": "沢風大過",
+      "do_not": "現状に固執すること",
+      "do": "非常事態、決断を。次の段階への移行を考えましょう",
+      "condition": "過剰の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "頭まで水に沈むほど無謀に渡ろうとすると凶です。ただし、誰も咎めることはできません。"
+    },
+    "29_1": {
+      "hexagram_number": 29,
+      "yao_position": 1,
+      "hexagram_name": "坎為水",
+      "do_not": "現状に固執すること",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "険難の卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "危険が重なり、穴に入る状態は凶です。道を失っています。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "29_2": {
+      "hexagram_number": 29,
+      "yao_position": 2,
+      "hexagram_name": "坎為水",
+      "do_not": "軽率に行動すること",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "険難の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "危険の中で危うさがありますが、小さなものを求めて得ることはできます。完全に脱出はできていません。"
+    },
+    "29_3": {
+      "hexagram_number": 29,
+      "yao_position": 3,
+      "hexagram_name": "坎為水",
+      "do_not": "軽率に行動すること",
+      "do": "最も厳しい時期かもしれません。耐えてください。",
+      "condition": "険難の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "来ても去っても危険だらけで、休むこともできません。穴に入り、動かないことが最善です。"
+    },
+    "29_4": {
+      "hexagram_number": 29,
+      "yao_position": 4,
+      "hexagram_name": "坎為水",
+      "do_not": "焦ること",
+      "do": "少し光が見えてきました。慎重に進みましょう。",
+      "condition": "険難の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "酒と食事、土器を用いて、窓から誠意を通す時期です。最終的に問題はありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "29_5": {
+      "hexagram_number": 29,
+      "yao_position": 5,
+      "hexagram_name": "坎為水",
+      "do_not": "焦ること",
+      "do": "困難を乗り越える力があります。誠実に対処を。",
+      "condition": "険難の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "危険がまだ満ちていませんが、やがて平らになります。問題はありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "29_6": {
+      "hexagram_number": 29,
+      "yao_position": 6,
+      "hexagram_name": "坎為水",
+      "do_not": "現状に固執すること",
+      "do": "困難の出口が見えています。もう少しです。",
+      "condition": "険難の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "縄で縛られ、茨の中に置かれる状態です。三年たっても得られず、凶です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "30_1": {
+      "hexagram_number": 30,
+      "yao_position": 1,
+      "hexagram_name": "離為火",
+      "do_not": "軽はずみに動くこと",
+      "do": "明晰、正しきに付く。力を蓄えながら、機会を待ちましょう",
+      "condition": "明らかの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "足取りが乱れていますが、敬意を持って進めば問題ありません。敬意によって過ちを避けられます。"
+    },
+    "30_2": {
+      "hexagram_number": 30,
+      "yao_position": 2,
+      "hexagram_name": "離為火",
+      "do_not": "現状に抗うこと",
+      "do": "明晰、正しきに付く。着実に実力をつけていきましょう",
+      "condition": "明らかの卦において、発展初期にいます。",
+      "strength": "strong",
+      "source_text": "黄色く輝く時期で、大いなる吉です。中道を得ています。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "30_3": {
+      "hexagram_number": 30,
+      "yao_position": 3,
+      "hexagram_name": "離為火",
+      "do_not": "現状に固執すること",
+      "do": "明晰、正しきに付く。慎重に、しかし勇気を持って進みましょう",
+      "condition": "明らかの卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "日が傾く時の輝きです。土器を叩いて歌わなければ、老いた人の嘆きとなり凶です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "30_4": {
+      "hexagram_number": 30,
+      "yao_position": 4,
+      "hexagram_name": "離為火",
+      "do_not": "現状に抗うこと",
+      "do": "明晰、正しきに付く。謙虚に、上位者との関係を大切に",
+      "condition": "明らかの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "突然やってきて、燃え、死んで、捨てられる状態です。居場所がありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "30_5": {
+      "hexagram_number": 30,
+      "yao_position": 5,
+      "hexagram_name": "離為火",
+      "do_not": "焦ること",
+      "do": "明晰、正しきに付く。徳をもってリードしましょう",
+      "condition": "明らかの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "涙を流し、嘆き悲しみますが、吉です。離れて中正であることが吉の理由です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "30_6": {
+      "hexagram_number": 30,
+      "yao_position": 6,
+      "hexagram_name": "離為火",
+      "do_not": "執着すること",
+      "do": "明晰、正しきに付く。次の段階への移行を考えましょう",
+      "condition": "明らかの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "王が征伐に用い、首謀者を討ち取ることで称賛を得ます。ただし、一般の人には問題はありません。"
+    },
+    "31_1": {
+      "hexagram_number": 31,
+      "yao_position": 1,
+      "hexagram_name": "沢山咸",
+      "do_not": "軽はずみに動くこと",
+      "do": "交流、心を開く。力を蓄えながら、機会を待ちましょう",
+      "condition": "感応の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "最初の段階では、足の親指に感じる程度です。まだ動きの兆しにすぎず、志が外に向かっている状態です。"
+    },
+    "31_2": {
+      "hexagram_number": 31,
+      "yao_position": 2,
+      "hexagram_name": "沢山咸",
+      "do_not": "現状に固執すること",
+      "do": "交流、心を開く。着実に実力をつけていきましょう",
+      "condition": "感応の卦において、発展初期にいます。",
+      "strength": "strong",
+      "source_text": "ふくらはぎに感じる状態は凶ですが、じっとしていれば吉です。動きたい気持ちを抑えることで、問題を避けられます。"
+    },
+    "31_3": {
+      "hexagram_number": 31,
+      "yao_position": 3,
+      "hexagram_name": "沢山咸",
+      "do_not": "この段階で油断すること",
+      "do": "交流、心を開く。慎重に、しかし勇気を持って進みましょう",
+      "condition": "感応の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "ももに感じ、つき従おうとする状態です。進むと問題が生じやすく、執着することで位置が低くなります。"
+    },
+    "31_4": {
+      "hexagram_number": 31,
+      "yao_position": 4,
+      "hexagram_name": "沢山咸",
+      "do_not": "出過ぎること",
+      "do": "交流、心を開く。謙虚に、上位者との関係を大切に",
+      "condition": "感応の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "堅実であれば吉で後悔もなくなります。しかし、思いが行ったり来たりすると、友も同様についてきては離れていきます。"
+    },
+    "31_5": {
+      "hexagram_number": 31,
+      "yao_position": 5,
+      "hexagram_name": "沢山咸",
+      "do_not": "傲慢になること",
+      "do": "交流、心を開く。徳をもってリードしましょう",
+      "condition": "感応の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "背中の肉に感じる状態で、後悔はありません。志が末端に向かっている状態ですが、問題は生じにくいです。"
+    },
+    "31_6": {
+      "hexagram_number": 31,
+      "yao_position": 6,
+      "hexagram_name": "沢山咸",
+      "do_not": "執着すること",
+      "do": "交流、心を開く。次の段階への移行を考えましょう",
+      "condition": "感応の卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "口や舌に感じる状態です。言葉で動かそうとしていますが、実際の行動が伴っていません。"
+    },
+    "32_1": {
+      "hexagram_number": 32,
+      "yao_position": 1,
+      "hexagram_name": "雷風恒",
+      "do_not": "現状に固執すること",
+      "do": "一貫性を保つ。力を蓄えながら、機会を待ちましょう",
+      "condition": "持続の卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "深く恒久を求めすぎると凶です。利することはありません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "32_2": {
+      "hexagram_number": 32,
+      "yao_position": 2,
+      "hexagram_name": "雷風恒",
+      "do_not": "焦ること",
+      "do": "一貫性を保つ。着実に実力をつけていきましょう",
+      "condition": "持続の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "後悔が消える時期です。中にあって恒久であることで、後悔を避けられます。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "32_3": {
+      "hexagram_number": 32,
+      "yao_position": 3,
+      "hexagram_name": "雷風恒",
+      "do_not": "焦ること",
+      "do": "一貫性を保つ。慎重に、しかし勇気を持って進みましょう",
+      "condition": "持続の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "徳を恒久に保たなければ、恥をかくかもしれません。堅実でも問題があります。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "32_4": {
+      "hexagram_number": 32,
+      "yao_position": 4,
+      "hexagram_name": "雷風恒",
+      "do_not": "出過ぎること",
+      "do": "一貫性を保つ。謙虚に、上位者との関係を大切に",
+      "condition": "持続の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "場所にいても獲物がいない状態です。位置が正しくありません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "32_5": {
+      "hexagram_number": 32,
+      "yao_position": 5,
+      "hexagram_name": "雷風恒",
+      "do_not": "現状に固執すること",
+      "do": "一貫性を保つ。徳をもってリードしましょう",
+      "condition": "持続の卦において、中心・リーダーにいます。",
+      "strength": "strong",
+      "source_text": "徳を恒久に保つことが堅実で、女性にとっては吉、男性にとっては凶です。従う者と従われる者の違いです。"
+    },
+    "32_6": {
+      "hexagram_number": 32,
+      "yao_position": 6,
+      "hexagram_name": "雷風恒",
+      "do_not": "現状に固執すること",
+      "do": "一貫性を保つ。次の段階への移行を考えましょう",
+      "condition": "持続の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "恒久に動き続けることは凶です。常に変化すると、功を得られません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "33_1": {
+      "hexagram_number": 33,
+      "yao_position": 1,
+      "hexagram_name": "天山遯",
+      "do_not": "軽率に行動すること",
+      "do": "撤退、無理に戦わない。力を蓄えながら、機会を待ちましょう",
+      "condition": "退くの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "退く時に尾にいると危険です。どこにも行かないことが良いかもしれません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "33_2": {
+      "hexagram_number": 33,
+      "yao_position": 2,
+      "hexagram_name": "天山遯",
+      "do_not": "焦って表に出ること",
+      "do": "撤退、無理に戦わない。着実に実力をつけていきましょう",
+      "condition": "退くの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "黄牛の皮で縛られたように、離れることができません。志を持って従うことで、離れられない状態です。"
+    },
+    "33_3": {
+      "hexagram_number": 33,
+      "yao_position": 3,
+      "hexagram_name": "天山遯",
+      "do_not": "焦ること",
+      "do": "撤退、無理に戦わない。慎重に、しかし勇気を持って進みましょう",
+      "condition": "退くの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "縛られて退けない状態は危険で困難です。臣下を養うことで吉が得られます。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "33_4": {
+      "hexagram_number": 33,
+      "yao_position": 4,
+      "hexagram_name": "天山遯",
+      "do_not": "出過ぎること",
+      "do": "撤退、無理に戦わない。謙虚に、上位者との関係を大切に",
+      "condition": "退くの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "好んで退くのは、賢い人には吉ですが、小人には難しいです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "33_5": {
+      "hexagram_number": 33,
+      "yao_position": 5,
+      "hexagram_name": "天山遯",
+      "do_not": "傲慢になること",
+      "do": "撤退、無理に戦わない。徳をもってリードしましょう",
+      "condition": "退くの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "美しく退くことで堅実さが吉をもたらします。正しいことを志すことで、称賛を得られます。"
+    },
+    "33_6": {
+      "hexagram_number": 33,
+      "yao_position": 6,
+      "hexagram_name": "天山遯",
+      "do_not": "執着すること",
+      "do": "撤退、無理に戦わない。次の段階への移行を考えましょう",
+      "condition": "退くの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "太って退くと、問題がなく、何をしても有利です。疑いがありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "34_1": {
+      "hexagram_number": 34,
+      "yao_position": 1,
+      "hexagram_name": "雷天大壮",
+      "do_not": "現状に固執すること",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "壮大の卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "足に強さがあります。進めば凶です。誠意があります。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "34_2": {
+      "hexagram_number": 34,
+      "yao_position": 2,
+      "hexagram_name": "雷天大壮",
+      "do_not": "焦って表に出ること",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "壮大の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "堅実であれば吉です。中にあることで吉が生まれます。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "34_3": {
+      "hexagram_number": 34,
+      "yao_position": 3,
+      "hexagram_name": "雷天大壮",
+      "do_not": "軽率に行動すること",
+      "do": "踏み出す時が近づいています。しかし慎重に。",
+      "condition": "壮大の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "小人は強さを使い、賢い人は使いません。堅実でも危険です。羊が垣根に突っ込んで角を絡ませるようなものです。"
+    },
+    "34_4": {
+      "hexagram_number": 34,
+      "yao_position": 4,
+      "hexagram_name": "雷天大壮",
+      "do_not": "出過ぎること",
+      "do": "勢いがありますが、謙虚さを忘れずに。",
+      "condition": "壮大の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "堅実で吉、後悔が消えます。垣根が開いて角を絡ませず、大きな車の軸受けのように強さがあります。"
+    },
+    "34_5": {
+      "hexagram_number": 34,
+      "yao_position": 5,
+      "hexagram_name": "雷天大壮",
+      "do_not": "焦ること",
+      "do": "力を発揮できる時です。しかし傲慢にならないように。",
+      "condition": "壮大の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "羊を易々と失うように、執着がありません。後悔はありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "34_6": {
+      "hexagram_number": 34,
+      "yao_position": 6,
+      "hexagram_name": "雷天大壮",
+      "do_not": "執着すること",
+      "do": "極まれば転ずる。次への準備を始めましょう。",
+      "condition": "壮大の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "羊が垣根に突っ込んで、進むことも退くこともできません。利することはありませんが、困難が吉に変わることがあります。"
+    },
+    "35_1": {
+      "hexagram_number": 35,
+      "yao_position": 1,
+      "hexagram_name": "火地晋",
+      "do_not": "軽はずみに動くこと",
+      "do": "前進、才能を発揮。力を蓄えながら、機会を待ちましょう",
+      "condition": "昇進の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "進もうとしても押し戻される状態ですが、堅実であれば吉です。信用されなくても、ゆったり構えれば問題ありません。"
+    },
+    "35_2": {
+      "hexagram_number": 35,
+      "yao_position": 2,
+      "hexagram_name": "火地晋",
+      "do_not": "焦って表に出ること",
+      "do": "前進、才能を発揮。着実に実力をつけていきましょう",
+      "condition": "昇進の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "進んでも憂いがあります。堅実であれば吉で、王母から大きな福を受けられます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "35_3": {
+      "hexagram_number": 35,
+      "yao_position": 3,
+      "hexagram_name": "火地晋",
+      "do_not": "この段階で油断すること",
+      "do": "前進、才能を発揮。慎重に、しかし勇気を持って進みましょう",
+      "condition": "昇進の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "衆人の同意を得て、後悔が消えます。皆が進むことを認めています。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "35_4": {
+      "hexagram_number": 35,
+      "yao_position": 4,
+      "hexagram_name": "火地晋",
+      "do_not": "軽率に行動すること",
+      "do": "前進、才能を発揮。謙虚に、上位者との関係を大切に",
+      "condition": "昇進の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "ハムスターのように進んでも、堅実には危険があります。位置が正しくありません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "35_5": {
+      "hexagram_number": 35,
+      "yao_position": 5,
+      "hexagram_name": "火地晋",
+      "do_not": "傲慢になること",
+      "do": "前進、才能を発揮。徳をもってリードしましょう",
+      "condition": "昇進の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "後悔が消えます。得失を気にする必要はありません。進めば吉で、何をしても有利です。"
+    },
+    "35_6": {
+      "hexagram_number": 35,
+      "yao_position": 6,
+      "hexagram_name": "火地晋",
+      "do_not": "軽率に行動すること",
+      "do": "前進、才能を発揮。次の段階への移行を考えましょう",
+      "condition": "昇進の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "角を使って進むのは、敵を征伐する時だけにします。危険ですが吉となり、問題ありません。ただし、堅実であっても恥をかくことがあります。"
+    },
+    "36_1": {
+      "hexagram_number": 36,
+      "yao_position": 1,
+      "hexagram_name": "地火明夷",
+      "do_not": "軽はずみに動くこと",
+      "do": "才能を隠し、耐える。力を蓄えながら、機会を待ちましょう",
+      "condition": "明が傷つくの卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "飛んでいるものが翼を垂れる状態です。賢い人は旅の途中で三日食べなくても、行くべき所には主人が言うことがあります。"
+    },
+    "36_2": {
+      "hexagram_number": 36,
+      "yao_position": 2,
+      "hexagram_name": "地火明夷",
+      "do_not": "焦って表に出ること",
+      "do": "才能を隠し、耐える。着実に実力をつけていきましょう",
+      "condition": "明が傷つくの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "左ももを傷つけられますが、馬の力で救われ、吉です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "36_3": {
+      "hexagram_number": 36,
+      "yao_position": 3,
+      "hexagram_name": "地火明夷",
+      "do_not": "急いで行動すること",
+      "do": "才能を隠し、耐える。慎重に、しかし勇気を持って進みましょう",
+      "condition": "明が傷つくの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "南を狩って大きな首領を得ますが、急いで正すことはできません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "36_4": {
+      "hexagram_number": 36,
+      "yao_position": 4,
+      "hexagram_name": "地火明夷",
+      "do_not": "出過ぎること",
+      "do": "才能を隠し、耐える。謙虚に、上位者との関係を大切に",
+      "condition": "明が傷つくの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "左の腹を突き、明るさが傷つく心を得て、門や庭を出ます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "36_5": {
+      "hexagram_number": 36,
+      "yao_position": 5,
+      "hexagram_name": "地火明夷",
+      "do_not": "傲慢になること",
+      "do": "才能を隠し、耐える。徳をもってリードしましょう",
+      "condition": "明が傷つくの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "箕子のように、堅実さが有利です。明るさを消すことはできません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "36_6": {
+      "hexagram_number": 36,
+      "yao_position": 6,
+      "hexagram_name": "地火明夷",
+      "do_not": "焦ること",
+      "do": "才能を隠し、耐える。次の段階への移行を考えましょう",
+      "condition": "明が傷つくの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "明るくないから暗いのです。最初は天に昇っても、後には地に入ります。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "37_1": {
+      "hexagram_number": 37,
+      "yao_position": 1,
+      "hexagram_name": "風火家人",
+      "do_not": "極端に走ること",
+      "do": "内部を整える。力を蓄えながら、機会を待ちましょう",
+      "condition": "家庭の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "家に規則を設けることで、後悔を避けられます。志が変わらないうちに規則を作ることが大切です。"
+    },
+    "37_2": {
+      "hexagram_number": 37,
+      "yao_position": 2,
+      "hexagram_name": "風火家人",
+      "do_not": "焦ること",
+      "do": "内部を整える。着実に実力をつけていきましょう",
+      "condition": "家庭の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "従うべきことがなく、中で食事を作る役割です。堅実で吉です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "37_3": {
+      "hexagram_number": 37,
+      "yao_position": 3,
+      "hexagram_name": "風火家人",
+      "do_not": "軽率に行動すること",
+      "do": "内部を整える。慎重に、しかし勇気を持って進みましょう",
+      "condition": "家庭の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "家の人が厳しく叱ると、後悔しても危険ですが吉です。女性や子供が笑い合うと、最終的には恥をかきます。"
+    },
+    "37_4": {
+      "hexagram_number": 37,
+      "yao_position": 4,
+      "hexagram_name": "風火家人",
+      "do_not": "焦ること",
+      "do": "内部を整える。謙虚に、上位者との関係を大切に",
+      "condition": "家庭の卦において、新段階の入口にいます。",
+      "strength": "strong",
+      "source_text": "家を富ませることで大吉です。順に位置にあることで、大吉が生まれます。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "37_5": {
+      "hexagram_number": 37,
+      "yao_position": 5,
+      "hexagram_name": "風火家人",
+      "do_not": "傲慢になること",
+      "do": "内部を整える。徳をもってリードしましょう",
+      "condition": "家庭の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "王が家を持つように、心配せずとも吉です。愛を交わすことで、吉が生まれます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "37_6": {
+      "hexagram_number": 37,
+      "yao_position": 6,
+      "hexagram_name": "風火家人",
+      "do_not": "執着すること",
+      "do": "内部を整える。次の段階への移行を考えましょう",
+      "condition": "家庭の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "誠意があり威厳があれば、最終的に吉です。自分を反省することで吉に向かいます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "38_1": {
+      "hexagram_number": 38,
+      "yao_position": 1,
+      "hexagram_name": "火沢睽",
+      "do_not": "軽はずみに動くこと",
+      "do": "対立、小事から。力を蓄えながら、機会を待ちましょう",
+      "condition": "背くの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "後悔が消えます。馬を失っても追わなければ戻ってきます。悪い人を見てもそれで過ちを避けられます。"
+    },
+    "38_2": {
+      "hexagram_number": 38,
+      "yao_position": 2,
+      "hexagram_name": "火沢睽",
+      "do_not": "焦って表に出ること",
+      "do": "対立、小事から。着実に実力をつけていきましょう",
+      "condition": "背くの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "路地で主人に出会います。問題ありません。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "38_3": {
+      "hexagram_number": 38,
+      "yao_position": 3,
+      "hexagram_name": "火沢睽",
+      "do_not": "この段階で油断すること",
+      "do": "対立、小事から。慎重に、しかし勇気を持って進みましょう",
+      "condition": "背くの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "車を引かれ、牛を止められ、人は刺青され鼻を削がれます。始まりはありませんが、終わりがあります。"
+    },
+    "38_4": {
+      "hexagram_number": 38,
+      "yao_position": 4,
+      "hexagram_name": "火沢睽",
+      "do_not": "出過ぎること",
+      "do": "対立、小事から。謙虚に、上位者との関係を大切に",
+      "condition": "背くの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "対立して孤独ですが、元の男に出会って誠意を交わせば問題ありません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "38_5": {
+      "hexagram_number": 38,
+      "yao_position": 5,
+      "hexagram_name": "火沢睽",
+      "do_not": "傲慢になること",
+      "do": "対立、小事から。徳をもってリードしましょう",
+      "condition": "背くの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "後悔が消えます。宗族が膚を噛むように、進んでも何の問題もありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "38_6": {
+      "hexagram_number": 38,
+      "yao_position": 6,
+      "hexagram_name": "火沢睽",
+      "do_not": "執着すること",
+      "do": "対立、小事から。次の段階への移行を考えましょう",
+      "condition": "背くの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "対立して孤独で、豚が泥を背負い、車に鬼が満ちているように見えます。最初は弓を引きますが、後には弓を置きます。敵ではなく婚姻でした。進めば雨に会い、吉です。"
+    },
+    "39_1": {
+      "hexagram_number": 39,
+      "yao_position": 1,
+      "hexagram_name": "水山蹇",
+      "do_not": "軽はずみに動くこと",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "困難の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "進めば困難、戻れば称賛されます。まず待つことが正しいです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "39_2": {
+      "hexagram_number": 39,
+      "yao_position": 2,
+      "hexagram_name": "水山蹇",
+      "do_not": "現状に抗うこと",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "困難の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "王の臣として困難に困難を重ねますが、自分のためではありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "39_3": {
+      "hexagram_number": 39,
+      "yao_position": 3,
+      "hexagram_name": "水山蹇",
+      "do_not": "この段階で油断すること",
+      "do": "最も厳しい時期かもしれません。耐えてください。",
+      "condition": "困難の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "進めば困難、戻って来ます。内から喜ばれます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "39_4": {
+      "hexagram_number": 39,
+      "yao_position": 4,
+      "hexagram_name": "水山蹇",
+      "do_not": "現状に抗うこと",
+      "do": "少し光が見えてきました。慎重に進みましょう。",
+      "condition": "困難の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "進めば困難、戻れば仲間と連なります。位置が正しいからです。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "39_5": {
+      "hexagram_number": 39,
+      "yao_position": 5,
+      "hexagram_name": "水山蹇",
+      "do_not": "傲慢になること",
+      "do": "困難を乗り越える力があります。誠実に対処を。",
+      "condition": "困難の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "大いなる困難に友が来ます。中正であることで、大徳の報いがあります。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "39_6": {
+      "hexagram_number": 39,
+      "yao_position": 6,
+      "hexagram_name": "水山蹇",
+      "do_not": "焦ること",
+      "do": "困難の出口が見えています。もう少しです。",
+      "condition": "困難の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "進めば困難、戻れば大いなる成果があります。吉で、偉大な人に会うことが有利です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "40_1": {
+      "hexagram_number": 40,
+      "yao_position": 1,
+      "hexagram_name": "雷水解",
+      "do_not": "軽はずみに動くこと",
+      "do": "解放、許す。力を蓄えながら、機会を待ちましょう",
+      "condition": "解けるの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "問題ありません。休息が正しいです。剛と柔が交わり、義に問題ありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "40_2": {
+      "hexagram_number": 40,
+      "yao_position": 2,
+      "hexagram_name": "雷水解",
+      "do_not": "現状に抗うこと",
+      "do": "解放、許す。着実に実力をつけていきましょう",
+      "condition": "解けるの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "狩りで三匹の狐を得て黄金の矢を得ます。堅実で吉です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "40_3": {
+      "hexagram_number": 40,
+      "yao_position": 3,
+      "hexagram_name": "雷水解",
+      "do_not": "この段階で油断すること",
+      "do": "解放、許す。慎重に、しかし勇気を持って進みましょう",
+      "condition": "解けるの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "荷物を背負って車に乗ると、盗賊を招きます。堅実でも恥をかきます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "40_4": {
+      "hexagram_number": 40,
+      "yao_position": 4,
+      "hexagram_name": "雷水解",
+      "do_not": "現状に抗うこと",
+      "do": "解放、許す。謙虚に、上位者との関係を大切に",
+      "condition": "解けるの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "親指を解くと、朋友が来て信頼されます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "40_5": {
+      "hexagram_number": 40,
+      "yao_position": 5,
+      "hexagram_name": "雷水解",
+      "do_not": "傲慢になること",
+      "do": "解放、許す。徳をもってリードしましょう",
+      "condition": "解けるの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "賢い人だけが解を持っています。吉で、小人に信頼をもたらします。退く者があります。"
+    },
+    "40_6": {
+      "hexagram_number": 40,
+      "yao_position": 6,
+      "hexagram_name": "雷水解",
+      "do_not": "焦ること",
+      "do": "解放、許す。次の段階への移行を考えましょう",
+      "condition": "解けるの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "公が鷹を射って高い城壁の上で手に入れます。何も有利でないことはありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "41_1": {
+      "hexagram_number": 41,
+      "yao_position": 1,
+      "hexagram_name": "山沢損",
+      "do_not": "軽はずみに動くこと",
+      "do": "過剰を抑制。力を蓄えながら、機会を待ちましょう",
+      "condition": "減らすの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "自分の仕事を終えて早く動けば問題ありません。何を減らすか、何を残すかを見極めることが大切な時期です。"
+    },
+    "41_2": {
+      "hexagram_number": 41,
+      "yao_position": 2,
+      "hexagram_name": "山沢損",
+      "do_not": "現状に固執すること",
+      "do": "過剰を抑制。着実に実力をつけていきましょう",
+      "condition": "減らすの卦において、発展初期にいます。",
+      "strength": "strong",
+      "source_text": "堅実であれば吉、進めば凶です。減らさずに増やすことができます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "41_3": {
+      "hexagram_number": 41,
+      "yao_position": 3,
+      "hexagram_name": "山沢損",
+      "do_not": "この段階で油断すること",
+      "do": "過剰を抑制。慎重に、しかし勇気を持って進みましょう",
+      "condition": "減らすの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "三人で行けば一人を減らし、一人で行けば友を得ます。調整が必要な時期です。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "41_4": {
+      "hexagram_number": 41,
+      "yao_position": 4,
+      "hexagram_name": "山沢損",
+      "do_not": "焦ること",
+      "do": "過剰を抑制。謙虚に、上位者との関係を大切に",
+      "condition": "減らすの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "病を減らせば、早く喜びができて問題ありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "41_5": {
+      "hexagram_number": 41,
+      "yao_position": 5,
+      "hexagram_name": "山沢損",
+      "do_not": "現状に抗うこと",
+      "do": "過剰を抑制。徳をもってリードしましょう",
+      "condition": "減らすの卦において、中心・リーダーにいます。",
+      "strength": "strong",
+      "source_text": "亀の甲羅で占っても止められないほどの増益があります。大いなる吉です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "41_6": {
+      "hexagram_number": 41,
+      "yao_position": 6,
+      "hexagram_name": "山沢損",
+      "do_not": "執着すること",
+      "do": "過剰を抑制。次の段階への移行を考えましょう",
+      "condition": "減らすの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "減らさずに増やすと問題なく、堅実で吉です。どこに行っても有利で、臣下を得ますが家族はいません。"
+    },
+    "42_1": {
+      "hexagram_number": 42,
+      "yao_position": 1,
+      "hexagram_name": "風雷益",
+      "do_not": "軽はずみに動くこと",
+      "do": "発展、良きを増やす。力を蓄えながら、機会を待ちましょう",
+      "condition": "増やすの卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "大きな作為をするのに有利な時期です。大いなる吉で問題ありません。下が厚くないのは自分のためではありません。"
+    },
+    "42_2": {
+      "hexagram_number": 42,
+      "yao_position": 2,
+      "hexagram_name": "風雷益",
+      "do_not": "焦って表に出ること",
+      "do": "発展、良きを増やす。着実に実力をつけていきましょう",
+      "condition": "増やすの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "亀の甲羅で占っても止められないほどの増益があります。永く堅実であれば吉です。王が帝に祭祀を行うと吉です。"
+    },
+    "42_3": {
+      "hexagram_number": 42,
+      "yao_position": 3,
+      "hexagram_name": "風雷益",
+      "do_not": "現状に固執すること",
+      "do": "発展、良きを増やす。慎重に、しかし勇気を持って進みましょう",
+      "condition": "増やすの卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "凶事によって増やすと問題なく、中道で進み、公に告げて信頼を得ます。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "42_4": {
+      "hexagram_number": 42,
+      "yao_position": 4,
+      "hexagram_name": "風雷益",
+      "do_not": "出過ぎること",
+      "do": "発展、良きを増やす。謙虚に、上位者との関係を大切に",
+      "condition": "増やすの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "中道で公に告げて従えば、国を移すことを頼むのに有利です。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "42_5": {
+      "hexagram_number": 42,
+      "yao_position": 5,
+      "hexagram_name": "風雷益",
+      "do_not": "傲慢になること",
+      "do": "発展、良きを増やす。徳をもってリードしましょう",
+      "condition": "増やすの卦において、中心・リーダーにいます。",
+      "strength": "strong",
+      "source_text": "恩恵を与える心があり、問わずとも大いなる吉です。人々が我が徳を恵んでくれます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "42_6": {
+      "hexagram_number": 42,
+      "yao_position": 6,
+      "hexagram_name": "風雷益",
+      "do_not": "現状に固執すること",
+      "do": "発展、良きを増やす。次の段階への移行を考えましょう",
+      "condition": "増やすの卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "増やさずに打つと、恒心がなく凶です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "43_1": {
+      "hexagram_number": 43,
+      "yao_position": 1,
+      "hexagram_name": "沢天夬",
+      "do_not": "軽はずみに動くこと",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "決するの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "つま先に力を入れて前進しても、勝てないなら問題があります。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "43_2": {
+      "hexagram_number": 43,
+      "yao_position": 2,
+      "hexagram_name": "沢天夬",
+      "do_not": "現状に抗うこと",
+      "do": "まだ力を発揮する時ではありません。準備に徹しましょう。",
+      "condition": "決するの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "警戒の叫びを上げれば、夜に武器を持っても恐れることはありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "43_3": {
+      "hexagram_number": 43,
+      "yao_position": 3,
+      "hexagram_name": "沢天夬",
+      "do_not": "現状に固執すること",
+      "do": "踏み出す時が近づいています。しかし慎重に。",
+      "condition": "決するの卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "頬骨に力があると凶です。決断力のある人が一人で雨に濡れて不快になっても、問題はありません。"
+    },
+    "43_4": {
+      "hexagram_number": 43,
+      "yao_position": 4,
+      "hexagram_name": "沢天夬",
+      "do_not": "出過ぎること",
+      "do": "勢いがありますが、謙虚さを忘れずに。",
+      "condition": "決するの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "尻に皮がなく、歩みが難しい時期です。羊を率いれば後悔が消えます。言葉を聞いても信じません。"
+    },
+    "43_5": {
+      "hexagram_number": 43,
+      "yao_position": 5,
+      "hexagram_name": "沢天夬",
+      "do_not": "傲慢になること",
+      "do": "力を発揮できる時です。しかし傲慢にならないように。",
+      "condition": "決するの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "雑草を決断するように、中道で進めば問題ありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "43_6": {
+      "hexagram_number": 43,
+      "yao_position": 6,
+      "hexagram_name": "沢天夬",
+      "do_not": "現状に固執すること",
+      "do": "極まれば転ずる。次への準備を始めましょう。",
+      "condition": "決するの卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "叫びがなければ、最終的に凶があります。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "44_1": {
+      "hexagram_number": 44,
+      "yao_position": 1,
+      "hexagram_name": "天風姤",
+      "do_not": "現状に固執すること",
+      "do": "偶然、注意深く。力を蓄えながら、機会を待ちましょう",
+      "condition": "出会いの卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "金の止め具で止める時期です。堅実で吉。どこかに行けば凶を見ます。やせた豚がよじ登っているようです。"
+    },
+    "44_2": {
+      "hexagram_number": 44,
+      "yao_position": 2,
+      "hexagram_name": "天風姤",
+      "do_not": "焦って表に出ること",
+      "do": "偶然、注意深く。着実に実力をつけていきましょう",
+      "condition": "出会いの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "袋の中に魚がいて問題なく、客には適しません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "44_3": {
+      "hexagram_number": 44,
+      "yao_position": 3,
+      "hexagram_name": "天風姤",
+      "do_not": "現状に抗うこと",
+      "do": "偶然、注意深く。慎重に、しかし勇気を持って進みましょう",
+      "condition": "出会いの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "尻に皮がなく、歩みが難しい時期です。大きな問題は避けられます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "44_4": {
+      "hexagram_number": 44,
+      "yao_position": 4,
+      "hexagram_name": "天風姤",
+      "do_not": "現状に固執すること",
+      "do": "偶然、注意深く。謙虚に、上位者との関係を大切に",
+      "condition": "出会いの卦において、新段階の入口にいます。",
+      "strength": "strong",
+      "source_text": "袋に魚がなく、凶が起こります。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "44_5": {
+      "hexagram_number": 44,
+      "yao_position": 5,
+      "hexagram_name": "天風姤",
+      "do_not": "傲慢になること",
+      "do": "偶然、注意深く。徳をもってリードしましょう",
+      "condition": "出会いの卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "瓜を杞で包むように、美しさを含んでいます。天から降るものがあります。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "44_6": {
+      "hexagram_number": 44,
+      "yao_position": 6,
+      "hexagram_name": "天風姤",
+      "do_not": "現状に抗うこと",
+      "do": "偶然、注意深く。次の段階への移行を考えましょう",
+      "condition": "出会いの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "角を使って遇うと恥をかきますが、問題はありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "45_1": {
+      "hexagram_number": 45,
+      "yao_position": 1,
+      "hexagram_name": "沢地萃",
+      "do_not": "軽はずみに動くこと",
+      "do": "結集、組織化。力を蓄えながら、機会を待ちましょう",
+      "condition": "集まるの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "誠意があっても終わらなければ、乱れて集まります。呼べば一握りで笑いになり、恐れることはありません。進めば問題ありません。"
+    },
+    "45_2": {
+      "hexagram_number": 45,
+      "yao_position": 2,
+      "hexagram_name": "沢地萃",
+      "do_not": "焦って表に出ること",
+      "do": "結集、組織化。着実に実力をつけていきましょう",
+      "condition": "集まるの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "引かれて吉で問題ありません。誠意があれば、簡素な祭祀でも有利です。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "45_3": {
+      "hexagram_number": 45,
+      "yao_position": 3,
+      "hexagram_name": "沢地萃",
+      "do_not": "この段階で油断すること",
+      "do": "結集、組織化。慎重に、しかし勇気を持って進みましょう",
+      "condition": "集まるの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "集まっても嘆く時期です。利がなく、進めば問題なく、小さな恥をかきます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "45_4": {
+      "hexagram_number": 45,
+      "yao_position": 4,
+      "hexagram_name": "沢地萃",
+      "do_not": "出過ぎること",
+      "do": "結集、組織化。謙虚に、上位者との関係を大切に",
+      "condition": "集まるの卦において、新段階の入口にいます。",
+      "strength": "strong",
+      "source_text": "大いなる吉で問題ありません。位置が正しくないからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "45_5": {
+      "hexagram_number": 45,
+      "yao_position": 5,
+      "hexagram_name": "沢地萃",
+      "do_not": "傲慢になること",
+      "do": "結集、組織化。徳をもってリードしましょう",
+      "condition": "集まるの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "位置があって集まり、問題はありません。信じなくても、元から永く堅実であれば、後悔が消えます。"
+    },
+    "45_6": {
+      "hexagram_number": 45,
+      "yao_position": 6,
+      "hexagram_name": "沢地萃",
+      "do_not": "現状に抗うこと",
+      "do": "結集、組織化。次の段階への移行を考えましょう",
+      "condition": "集まるの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "悲嘆し涙を流しますが、問題はありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "46_1": {
+      "hexagram_number": 46,
+      "yao_position": 1,
+      "hexagram_name": "地風升",
+      "do_not": "軽はずみに動くこと",
+      "do": "着実に上昇。力を蓄えながら、機会を待ちましょう",
+      "condition": "昇るの卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "誠実に昇ると大吉です。上と志が合っています。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "46_2": {
+      "hexagram_number": 46,
+      "yao_position": 2,
+      "hexagram_name": "地風升",
+      "do_not": "焦って表に出ること",
+      "do": "着実に上昇。着実に実力をつけていきましょう",
+      "condition": "昇るの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "誠意があれば、簡素な祭祀でも問題ありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "46_3": {
+      "hexagram_number": 46,
+      "yao_position": 3,
+      "hexagram_name": "地風升",
+      "do_not": "この段階で油断すること",
+      "do": "着実に上昇。慎重に、しかし勇気を持って進みましょう",
+      "condition": "昇るの卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "空っぽの都市に昇るように、障害がない時期です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "46_4": {
+      "hexagram_number": 46,
+      "yao_position": 4,
+      "hexagram_name": "地風升",
+      "do_not": "現状に抗うこと",
+      "do": "着実に上昇。謙虚に、上位者との関係を大切に",
+      "condition": "昇るの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "王が岐山に祭祀を行うと吉で問題ありません。順にして事を行っています。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "46_5": {
+      "hexagram_number": 46,
+      "yao_position": 5,
+      "hexagram_name": "地風升",
+      "do_not": "傲慢になること",
+      "do": "着実に上昇。徳をもってリードしましょう",
+      "condition": "昇るの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "堅実で吉、階段を昇ります。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "46_6": {
+      "hexagram_number": 46,
+      "yao_position": 6,
+      "hexagram_name": "地風升",
+      "do_not": "執着すること",
+      "do": "着実に上昇。次の段階への移行を考えましょう",
+      "condition": "昇るの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "暗闘の中で昇り、止まらずに堅実であることが有利です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "47_1": {
+      "hexagram_number": 47,
+      "yao_position": 1,
+      "hexagram_name": "沢水困",
+      "do_not": "現状に抗うこと",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "困窮の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "尻を木の株で困らせ、暗い谷に入って三年出られません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "47_2": {
+      "hexagram_number": 47,
+      "yao_position": 2,
+      "hexagram_name": "沢水困",
+      "do_not": "現状に固執すること",
+      "do": "困難の中にいますが、焦らず基盤を固めましょう。",
+      "condition": "困窮の卦において、発展初期にいます。",
+      "strength": "strong",
+      "source_text": "酒食に困っていると、朱い帯をつけた者が来ます。祭祀を行うのに有利で、進めば凶ですが問題はありません。"
+    },
+    "47_3": {
+      "hexagram_number": 47,
+      "yao_position": 3,
+      "hexagram_name": "沢水困",
+      "do_not": "現状に固執すること",
+      "do": "最も厳しい時期かもしれません。耐えてください。",
+      "condition": "困窮の卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "石に困り、棘に寄りかかります。家に入っても妻が見えません。凶です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "47_4": {
+      "hexagram_number": 47,
+      "yao_position": 4,
+      "hexagram_name": "沢水困",
+      "do_not": "出過ぎること",
+      "do": "少し光が見えてきました。慎重に進みましょう。",
+      "condition": "困窮の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "ゆっくり来て、金の車に困ります。恥をかきますが終わりがあります。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "47_5": {
+      "hexagram_number": 47,
+      "yao_position": 5,
+      "hexagram_name": "沢水困",
+      "do_not": "傲慢になること",
+      "do": "困難を乗り越える力があります。誠実に対処を。",
+      "condition": "困窮の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "鼻や足を切られても、朱い帯をつけた者に困らされます。ゆっくりと喜びがあり、祭祀を行うことが有利です。"
+    },
+    "47_6": {
+      "hexagram_number": 47,
+      "yao_position": 6,
+      "hexagram_name": "沢水困",
+      "do_not": "軽率に行動すること",
+      "do": "困難の出口が見えています。もう少しです。",
+      "condition": "困窮の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "つる草に困り、動けば危うい状態です。後悔があると言えば後悔がないので、進めば吉です。"
+    },
+    "48_1": {
+      "hexagram_number": 48,
+      "yao_position": 1,
+      "hexagram_name": "水風井",
+      "do_not": "現状に抗うこと",
+      "do": "基本に立ち返る。力を蓄えながら、機会を待ちましょう",
+      "condition": "源泉の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "井戸の泥は食べられません。古い井戸には鳥も来ません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "48_2": {
+      "hexagram_number": 48,
+      "yao_position": 2,
+      "hexagram_name": "水風井",
+      "do_not": "焦ること",
+      "do": "基本に立ち返る。着実に実力をつけていきましょう",
+      "condition": "源泉の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "井戸の谷で魚を射ます。甕は壊れて漏れています。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "48_3": {
+      "hexagram_number": 48,
+      "yao_position": 3,
+      "hexagram_name": "水風井",
+      "do_not": "この段階で油断すること",
+      "do": "基本に立ち返る。慎重に、しかし勇気を持って進みましょう",
+      "condition": "源泉の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "井戸は澄んでも飲まれません。心が痛みます。汲むことができれば、王が明であれば共に福を受けられます。"
+    },
+    "48_4": {
+      "hexagram_number": 48,
+      "yao_position": 4,
+      "hexagram_name": "水風井",
+      "do_not": "焦ること",
+      "do": "基本に立ち返る。謙虚に、上位者との関係を大切に",
+      "condition": "源泉の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "井戸を石で覆って問題ありません。修繕の時期です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "48_5": {
+      "hexagram_number": 48,
+      "yao_position": 5,
+      "hexagram_name": "水風井",
+      "do_not": "傲慢になること",
+      "do": "基本に立ち返る。徳をもってリードしましょう",
+      "condition": "源泉の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "井戸は冽として、冷たい泉を飲みます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "48_6": {
+      "hexagram_number": 48,
+      "yao_position": 6,
+      "hexagram_name": "水風井",
+      "do_not": "焦ること",
+      "do": "基本に立ち返る。次の段階への移行を考えましょう",
+      "condition": "源泉の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "井戸から汲んで覆わず、誠意があって大いなる吉です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "49_1": {
+      "hexagram_number": 49,
+      "yao_position": 1,
+      "hexagram_name": "沢火革",
+      "do_not": "軽はずみに動くこと",
+      "do": "古いものを改める。力を蓄えながら、機会を待ちましょう",
+      "condition": "変革の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "黄牛の皮で縛られています。動くことができません。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "49_2": {
+      "hexagram_number": 49,
+      "yao_position": 2,
+      "hexagram_name": "沢火革",
+      "do_not": "焦って表に出ること",
+      "do": "古いものを改める。着実に実力をつけていきましょう",
+      "condition": "変革の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "実行して変革すれば吉で問題ありません。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "49_3": {
+      "hexagram_number": 49,
+      "yao_position": 3,
+      "hexagram_name": "沢火革",
+      "do_not": "現状に固執すること",
+      "do": "古いものを改める。慎重に、しかし勇気を持って進みましょう",
+      "condition": "変革の卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "進めば凶で堅実であっても危険です。変革の言葉が三度周れば信じられます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "49_4": {
+      "hexagram_number": 49,
+      "yao_position": 4,
+      "hexagram_name": "沢火革",
+      "do_not": "出過ぎること",
+      "do": "古いものを改める。謙虚に、上位者との関係を大切に",
+      "condition": "変革の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "後悔が消え、信じられて命を変えると吉です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "49_5": {
+      "hexagram_number": 49,
+      "yao_position": 5,
+      "hexagram_name": "沢火革",
+      "do_not": "傲慢になること",
+      "do": "古いものを改める。徳をもってリードしましょう",
+      "condition": "変革の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "偉大な人が虎のように変わり、占わなくても信じられます。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "49_6": {
+      "hexagram_number": 49,
+      "yao_position": 6,
+      "hexagram_name": "沢火革",
+      "do_not": "現状に固執すること",
+      "do": "古いものを改める。次の段階への移行を考えましょう",
+      "condition": "変革の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "賢い人が豹のように変わり、小人は顔つきを変えます。進めば凶、堅実に留まれば吉です。"
+    },
+    "50_1": {
+      "hexagram_number": 50,
+      "yao_position": 1,
+      "hexagram_name": "火風鼎",
+      "do_not": "軽はずみに動くこと",
+      "do": "新体制を確立。力を蓄えながら、機会を待ちましょう",
+      "condition": "刷新の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "鼎の足を逆さにして、汚れを出すのに利があります。妾を得て子のためにしますが問題ありません。"
+    },
+    "50_2": {
+      "hexagram_number": 50,
+      "yao_position": 2,
+      "hexagram_name": "火風鼎",
+      "do_not": "現状に抗うこと",
+      "do": "新体制を確立。着実に実力をつけていきましょう",
+      "condition": "刷新の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "鼎に実があり、敵が嫉妬しても私に及ぶことはありません。吉です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "50_3": {
+      "hexagram_number": 50,
+      "yao_position": 3,
+      "hexagram_name": "火風鼎",
+      "do_not": "この段階で油断すること",
+      "do": "新体制を確立。慎重に、しかし勇気を持って進みましょう",
+      "condition": "刷新の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "鼎の耳が変わり、行動が塞がれ、キジの汁を食べられません。雨が降って後悔が減り、最終的に吉です。"
+    },
+    "50_4": {
+      "hexagram_number": 50,
+      "yao_position": 4,
+      "hexagram_name": "火風鼎",
+      "do_not": "焦ること",
+      "do": "新体制を確立。謙虚に、上位者との関係を大切に",
+      "condition": "刷新の卦において、新段階の入口にいます。",
+      "strength": "strong",
+      "source_text": "鼎の足が折れ、公の食事をこぼして刑罰を受けます。凶です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "50_5": {
+      "hexagram_number": 50,
+      "yao_position": 5,
+      "hexagram_name": "火風鼎",
+      "do_not": "現状に抗うこと",
+      "do": "新体制を確立。徳をもってリードしましょう",
+      "condition": "刷新の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "鼎に黄金の耳と玉の飾り、堅実であれば有利です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "50_6": {
+      "hexagram_number": 50,
+      "yao_position": 6,
+      "hexagram_name": "火風鼎",
+      "do_not": "現状に抗うこと",
+      "do": "新体制を確立。次の段階への移行を考えましょう",
+      "condition": "刷新の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "鼎に玉の飾りがあり、大いなる吉で何も不利なことはありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "51_1": {
+      "hexagram_number": 51,
+      "yao_position": 1,
+      "hexagram_name": "震為雷",
+      "do_not": "軽はずみに動くこと",
+      "do": "衝撃、恐れつつ省みる。力を蓄えながら、機会を待ちましょう",
+      "condition": "震動の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "雷が来て恐れますが、後には笑いがあります。吉です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "51_2": {
+      "hexagram_number": 51,
+      "yao_position": 2,
+      "hexagram_name": "震為雷",
+      "do_not": "軽率に行動すること",
+      "do": "衝撃、恐れつつ省みる。着実に実力をつけていきましょう",
+      "condition": "震動の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "雷が来て危険です。億を失うと考え、九陵に登ります。追わなくても七日で得られます。"
+    },
+    "51_3": {
+      "hexagram_number": 51,
+      "yao_position": 3,
+      "hexagram_name": "震為雷",
+      "do_not": "焦ること",
+      "do": "衝撃、恐れつつ省みる。慎重に、しかし勇気を持って進みましょう",
+      "condition": "震動の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "雷がぼんやりします。雷によって行動しても問題ありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "51_4": {
+      "hexagram_number": 51,
+      "yao_position": 4,
+      "hexagram_name": "震為雷",
+      "do_not": "現状に抗うこと",
+      "do": "衝撃、恐れつつ省みる。謙虚に、上位者との関係を大切に",
+      "condition": "震動の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "雷が泥に落ちます。抜け出せない状態です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "51_5": {
+      "hexagram_number": 51,
+      "yao_position": 5,
+      "hexagram_name": "震為雷",
+      "do_not": "軽率に行動すること",
+      "do": "衝撃、恐れつつ省みる。徳をもってリードしましょう",
+      "condition": "震動の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "雷が往来して危険ですが、失うことなく何かがあります。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "51_6": {
+      "hexagram_number": 51,
+      "yao_position": 6,
+      "hexagram_name": "震為雷",
+      "do_not": "現状に固執すること",
+      "do": "衝撃、恐れつつ省みる。次の段階への移行を考えましょう",
+      "condition": "震動の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "雷がぼうぜんとして見回し、進めば凶です。雷が身に及ばず近隣に及ぶなら問題ありません。婚姻には言葉があります。"
+    },
+    "52_1": {
+      "hexagram_number": 52,
+      "yao_position": 1,
+      "hexagram_name": "艮為山",
+      "do_not": "焦ること",
+      "do": "静止、動かない。力を蓄えながら、機会を待ちましょう",
+      "condition": "止まるの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "つま先で止まると問題なく、永く堅実であれば有利です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "52_2": {
+      "hexagram_number": 52,
+      "yao_position": 2,
+      "hexagram_name": "艮為山",
+      "do_not": "焦って表に出ること",
+      "do": "静止、動かない。着実に実力をつけていきましょう",
+      "condition": "止まるの卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "ふくらはぎで止まり、従う者を救えず心が楽しくありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "52_3": {
+      "hexagram_number": 52,
+      "yao_position": 3,
+      "hexagram_name": "艮為山",
+      "do_not": "軽率に行動すること",
+      "do": "静止、動かない。慎重に、しかし勇気を持って進みましょう",
+      "condition": "止まるの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "腰で止まり、背骨が裂けます。心が燃えるような危険があります。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "52_4": {
+      "hexagram_number": 52,
+      "yao_position": 4,
+      "hexagram_name": "艮為山",
+      "do_not": "出過ぎること",
+      "do": "静止、動かない。謙虚に、上位者との関係を大切に",
+      "condition": "止まるの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "体で止まると問題ありません。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "52_5": {
+      "hexagram_number": 52,
+      "yao_position": 5,
+      "hexagram_name": "艮為山",
+      "do_not": "傲慢になること",
+      "do": "静止、動かない。徳をもってリードしましょう",
+      "condition": "止まるの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "顎で止まり、言葉に順序があれば後悔が消えます。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "52_6": {
+      "hexagram_number": 52,
+      "yao_position": 6,
+      "hexagram_name": "艮為山",
+      "do_not": "焦ること",
+      "do": "静止、動かない。次の段階への移行を考えましょう",
+      "condition": "止まるの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "敦厚に止まれば吉です。自分を信じて、一歩ずつ進むことで道が開けます。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "53_1": {
+      "hexagram_number": 53,
+      "yao_position": 1,
+      "hexagram_name": "風山漸",
+      "do_not": "軽率に行動すること",
+      "do": "徐々に、着実に。力を蓄えながら、機会を待ちましょう",
+      "condition": "漸進の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "鴻雁が水辺に徐々に進みます。若者が危険で言葉がありますが問題ありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "53_2": {
+      "hexagram_number": 53,
+      "yao_position": 2,
+      "hexagram_name": "風山漸",
+      "do_not": "焦って表に出ること",
+      "do": "徐々に、着実に。着実に実力をつけていきましょう",
+      "condition": "漸進の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "鴻雁が磐石に徐々に進みます。飲み食いして楽しく吉です。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "53_3": {
+      "hexagram_number": 53,
+      "yao_position": 3,
+      "hexagram_name": "風山漸",
+      "do_not": "現状に固執すること",
+      "do": "徐々に、着実に。慎重に、しかし勇気を持って進みましょう",
+      "condition": "漸進の卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "鴻雁が陸に徐々に進みます。夫が出て戻らず、婦が孕んでも育てません。凶です。ただし寇を防ぐのに有利です。"
+    },
+    "53_4": {
+      "hexagram_number": 53,
+      "yao_position": 4,
+      "hexagram_name": "風山漸",
+      "do_not": "焦ること",
+      "do": "徐々に、着実に。謙虚に、上位者との関係を大切に",
+      "condition": "漸進の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "鴻雁が木に徐々に進みます。平らな枝を得れば問題ありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "53_5": {
+      "hexagram_number": 53,
+      "yao_position": 5,
+      "hexagram_name": "風山漸",
+      "do_not": "傲慢になること",
+      "do": "徐々に、着実に。徳をもってリードしましょう",
+      "condition": "漸進の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "鴻雁が丘陵に徐々に進みます。婦が三年孕まず、最終的には勝てないものはありません。吉です。"
+    },
+    "53_6": {
+      "hexagram_number": 53,
+      "yao_position": 6,
+      "hexagram_name": "風山漸",
+      "do_not": "焦ること",
+      "do": "徐々に、着実に。次の段階への移行を考えましょう",
+      "condition": "漸進の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "鴻雁が陸に徐々に進み、その羽が儀式に用いられます。吉です。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "54_1": {
+      "hexagram_number": 54,
+      "yao_position": 1,
+      "hexagram_name": "雷沢帰妹",
+      "do_not": "現状に抗うこと",
+      "do": "分を守る。力を蓄えながら、機会を待ちましょう",
+      "condition": "従属の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "嫁ぐ少女が妹として行きます。足が不自由でも歩けるなら進んで吉です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "54_2": {
+      "hexagram_number": 54,
+      "yao_position": 2,
+      "hexagram_name": "雷沢帰妹",
+      "do_not": "現状に抗うこと",
+      "do": "分を守る。着実に実力をつけていきましょう",
+      "condition": "従属の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "片目でも見えます。隠居者の堅実さが有利です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "54_3": {
+      "hexagram_number": 54,
+      "yao_position": 3,
+      "hexagram_name": "雷沢帰妹",
+      "do_not": "現状に抗うこと",
+      "do": "分を守る。慎重に、しかし勇気を持って進みましょう",
+      "condition": "従属の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "嫁ぐ少女が妹として帰り、嫁ぎ直します。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "54_4": {
+      "hexagram_number": 54,
+      "yao_position": 4,
+      "hexagram_name": "雷沢帰妹",
+      "do_not": "出過ぎること",
+      "do": "分を守る。謙虚に、上位者との関係を大切に",
+      "condition": "従属の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "嫁ぐ少女が期限を過ぎ、遅く嫁ぐのが時を待つことです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "54_5": {
+      "hexagram_number": 54,
+      "yao_position": 5,
+      "hexagram_name": "雷沢帰妹",
+      "do_not": "傲慢になること",
+      "do": "分を守る。徳をもってリードしましょう",
+      "condition": "従属の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "帝乙が少女を嫁がせ、その衣装の袖は側室のものより美しくありません。月が満ちそうな時が吉です。"
+    },
+    "54_6": {
+      "hexagram_number": 54,
+      "yao_position": 6,
+      "hexagram_name": "雷沢帰妹",
+      "do_not": "執着すること",
+      "do": "分を守る。次の段階への移行を考えましょう",
+      "condition": "従属の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "女性が籠を持っても実がなく、士が羊を刺しても血が出ません。利することがありません。"
+    },
+    "55_1": {
+      "hexagram_number": 55,
+      "yao_position": 1,
+      "hexagram_name": "雷火豊",
+      "do_not": "軽はずみに動くこと",
+      "do": "繁栄、永続しない。力を蓄えながら、機会を待ちましょう",
+      "condition": "豊穣の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "同格の主人に会っても問題なく、十日間動けません。進めば称賛されます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "55_2": {
+      "hexagram_number": 55,
+      "yao_position": 2,
+      "hexagram_name": "雷火豊",
+      "do_not": "焦って表に出ること",
+      "do": "繁栄、永続しない。着実に実力をつけていきましょう",
+      "condition": "豊穣の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "豊かな帳が昼間を暗くし、北斗七星を見ます。進めば疑いがあり、誠意を持てば喜びがあります。吉です。"
+    },
+    "55_3": {
+      "hexagram_number": 55,
+      "yao_position": 3,
+      "hexagram_name": "雷火豊",
+      "do_not": "この段階で油断すること",
+      "do": "繁栄、永続しない。慎重に、しかし勇気を持って進みましょう",
+      "condition": "豊穣の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "豊かな旗が太陽を遮り、昼間でも小星を見ます。右腕を折りますが問題ありません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "55_4": {
+      "hexagram_number": 55,
+      "yao_position": 4,
+      "hexagram_name": "雷火豊",
+      "do_not": "出過ぎること",
+      "do": "繁栄、永続しない。謙虚に、上位者との関係を大切に",
+      "condition": "豊穣の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "豊かな帳が昼間を暗くし、北斗七星を見ます。主人に会えば吉です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "55_5": {
+      "hexagram_number": 55,
+      "yao_position": 5,
+      "hexagram_name": "雷火豊",
+      "do_not": "傲慢になること",
+      "do": "繁栄、永続しない。徳をもってリードしましょう",
+      "condition": "豊穣の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "明るさが来て祝福と称賛があり、吉です。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "55_6": {
+      "hexagram_number": 55,
+      "yao_position": 6,
+      "hexagram_name": "雷火豊",
+      "do_not": "現状に固執すること",
+      "do": "繁栄、永続しない。次の段階への移行を考えましょう",
+      "condition": "豊穣の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "家を豊かにしますが、家族を見ず、門を覗いても誰もおらず、三年会いません。凶です。"
+    },
+    "56_1": {
+      "hexagram_number": 56,
+      "yao_position": 1,
+      "hexagram_name": "火山旅",
+      "do_not": "軽はずみに動くこと",
+      "do": "不安定、寄寓。力を蓄えながら、機会を待ちましょう",
+      "condition": "旅の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "旅人が細かいことにこだわると、災いを招きます。志が窮して災いを得るからです。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "56_2": {
+      "hexagram_number": 56,
+      "yao_position": 2,
+      "hexagram_name": "火山旅",
+      "do_not": "焦ること",
+      "do": "不安定、寄寓。着実に実力をつけていきましょう",
+      "condition": "旅の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "旅人が宿に着き、資金を懐にして、若い従者の忠誠を得ます。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "56_3": {
+      "hexagram_number": 56,
+      "yao_position": 3,
+      "hexagram_name": "火山旅",
+      "do_not": "軽率に行動すること",
+      "do": "不安定、寄寓。慎重に、しかし勇気を持って進みましょう",
+      "condition": "旅の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "旅人が宿を焼き、若い従者を失います。堅実であっても危険です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "56_4": {
+      "hexagram_number": 56,
+      "yao_position": 4,
+      "hexagram_name": "火山旅",
+      "do_not": "焦ること",
+      "do": "不安定、寄寓。謙虚に、上位者との関係を大切に",
+      "condition": "旅の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "旅人が場所を得て、資金と斧を得ますが心は楽しくありません。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "56_5": {
+      "hexagram_number": 56,
+      "yao_position": 5,
+      "hexagram_name": "火山旅",
+      "do_not": "焦ること",
+      "do": "不安定、寄寓。徳をもってリードしましょう",
+      "condition": "旅の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "雉を射て一矢で得、最終的には命と誉れを得ます。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "56_6": {
+      "hexagram_number": 56,
+      "yao_position": 6,
+      "hexagram_name": "火山旅",
+      "do_not": "現状に固執すること",
+      "do": "不安定、寄寓。次の段階への移行を考えましょう",
+      "condition": "旅の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "鳥が巣を焼かれ、旅人は最初は笑い後には泣きます。牛を失っても軽く考えると凶です。"
+    },
+    "57_1": {
+      "hexagram_number": 57,
+      "yao_position": 1,
+      "hexagram_name": "巽為風",
+      "do_not": "軽はずみに動くこと",
+      "do": "柔軟に入り込む。力を蓄えながら、機会を待ちましょう",
+      "condition": "浸透の卦において、始まりの段階にいます。",
+      "strength": "neutral",
+      "source_text": "進んだり退いたりで、武人の堅実さが有利です。志が疑っているからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "57_2": {
+      "hexagram_number": 57,
+      "yao_position": 2,
+      "hexagram_name": "巽為風",
+      "do_not": "焦って表に出ること",
+      "do": "柔軟に入り込む。着実に実力をつけていきましょう",
+      "condition": "浸透の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "床の下で従い、巫医を多く用います。吉で問題ありません。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "57_3": {
+      "hexagram_number": 57,
+      "yao_position": 3,
+      "hexagram_name": "巽為風",
+      "do_not": "この段階で油断すること",
+      "do": "柔軟に入り込む。慎重に、しかし勇気を持って進みましょう",
+      "condition": "浸透の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "何度も従うと恥をかきます。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "57_4": {
+      "hexagram_number": 57,
+      "yao_position": 4,
+      "hexagram_name": "巽為風",
+      "do_not": "現状に抗うこと",
+      "do": "柔軟に入り込む。謙虚に、上位者との関係を大切に",
+      "condition": "浸透の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "後悔が消え、狩りで三品を得ます。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "57_5": {
+      "hexagram_number": 57,
+      "yao_position": 5,
+      "hexagram_name": "巽為風",
+      "do_not": "傲慢になること",
+      "do": "柔軟に入り込む。徳をもってリードしましょう",
+      "condition": "浸透の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "堅実で吉、後悔が消えます。何も利がないことはありません。始めはなくても終わりがあり、変更を告げる前に三日、告げた後に三日、吉です。"
+    },
+    "57_6": {
+      "hexagram_number": 57,
+      "yao_position": 6,
+      "hexagram_name": "巽為風",
+      "do_not": "現状に固執すること",
+      "do": "柔軟に入り込む。次の段階への移行を考えましょう",
+      "condition": "浸透の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "床の下で従い、資金と斧を失います。堅実であっても凶です。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "58_1": {
+      "hexagram_number": 58,
+      "yao_position": 1,
+      "hexagram_name": "兌為沢",
+      "do_not": "軽はずみに動くこと",
+      "do": "和やかに交流。力を蓄えながら、機会を待ちましょう",
+      "condition": "喜びの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "和らいで喜び、吉です。志が喜ばしいからです。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "58_2": {
+      "hexagram_number": 58,
+      "yao_position": 2,
+      "hexagram_name": "兌為沢",
+      "do_not": "焦って表に出ること",
+      "do": "和やかに交流。着実に実力をつけていきましょう",
+      "condition": "喜びの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "誠意を持って喜び、吉で後悔が消えます。信じて喜びます。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "58_3": {
+      "hexagram_number": 58,
+      "yao_position": 3,
+      "hexagram_name": "兌為沢",
+      "do_not": "現状に固執すること",
+      "do": "和やかに交流。慎重に、しかし勇気を持って進みましょう",
+      "condition": "喜びの卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "来て喜ぶのは凶です。位置が正しくないからです。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "58_4": {
+      "hexagram_number": 58,
+      "yao_position": 4,
+      "hexagram_name": "兌為沢",
+      "do_not": "出過ぎること",
+      "do": "和やかに交流。謙虚に、上位者との関係を大切に",
+      "condition": "喜びの卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "商量して喜ぶのはまだ寧らかではありません。境界を塞いだ後に喜びがあります。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "58_5": {
+      "hexagram_number": 58,
+      "yao_position": 5,
+      "hexagram_name": "兌為沢",
+      "do_not": "軽率に行動すること",
+      "do": "和やかに交流。徳をもってリードしましょう",
+      "condition": "喜びの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "剥がすものを信じると危険があります。位置が正しいからです。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "58_6": {
+      "hexagram_number": 58,
+      "yao_position": 6,
+      "hexagram_name": "兌為沢",
+      "do_not": "現状に抗うこと",
+      "do": "和やかに交流。次の段階への移行を考えましょう",
+      "condition": "喜びの卦において、終わり・極みにいます。",
+      "strength": "neutral",
+      "source_text": "引いて喜びます。まだ輝いていません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "59_1": {
+      "hexagram_number": 59,
+      "yao_position": 1,
+      "hexagram_name": "風水渙",
+      "do_not": "焦ること",
+      "do": "分散、まとめ直す。力を蓄えながら、機会を待ちましょう",
+      "condition": "散らすの卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "馬の力で救うと吉です。初めに命を行うからです。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "59_2": {
+      "hexagram_number": 59,
+      "yao_position": 2,
+      "hexagram_name": "風水渙",
+      "do_not": "焦って表に出ること",
+      "do": "分散、まとめ直す。着実に実力をつけていきましょう",
+      "condition": "散らすの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "散らばって席に走れば後悔が消えます。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "59_3": {
+      "hexagram_number": 59,
+      "yao_position": 3,
+      "hexagram_name": "風水渙",
+      "do_not": "この段階で油断すること",
+      "do": "分散、まとめ直す。慎重に、しかし勇気を持って進みましょう",
+      "condition": "散らすの卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "身を散らすのは後悔がありません。志が外にあるからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "59_4": {
+      "hexagram_number": 59,
+      "yao_position": 4,
+      "hexagram_name": "風水渙",
+      "do_not": "出過ぎること",
+      "do": "分散、まとめ直す。謙虚に、上位者との関係を大切に",
+      "condition": "散らすの卦において、新段階の入口にいます。",
+      "strength": "strong",
+      "source_text": "群れを散らすと大吉で、散らばって丘に集まります。匪の夷が思うところです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "59_5": {
+      "hexagram_number": 59,
+      "yao_position": 5,
+      "hexagram_name": "風水渙",
+      "do_not": "現状に抗うこと",
+      "do": "分散、まとめ直す。徳をもってリードしましょう",
+      "condition": "散らすの卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "散らばって声を発し、王が居ると問題ありません。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "59_6": {
+      "hexagram_number": 59,
+      "yao_position": 6,
+      "hexagram_name": "風水渙",
+      "do_not": "執着すること",
+      "do": "分散、まとめ直す。次の段階への移行を考えましょう",
+      "condition": "散らすの卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "血を散らして離れると問題ありません。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "60_1": {
+      "hexagram_number": 60,
+      "yao_position": 1,
+      "hexagram_name": "水沢節",
+      "do_not": "軽はずみに動くこと",
+      "do": "制限、度を過ごさない。力を蓄えながら、機会を待ちましょう",
+      "condition": "節度の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "戸を庭から出ませんので問題ありません。通じるべきことを知っているからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "60_2": {
+      "hexagram_number": 60,
+      "yao_position": 2,
+      "hexagram_name": "水沢節",
+      "do_not": "現状に固執すること",
+      "do": "制限、度を過ごさない。着実に実力をつけていきましょう",
+      "condition": "節度の卦において、発展初期にいます。",
+      "strength": "strong",
+      "source_text": "門を庭から出ないと凶です。時を失っているからです。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "60_3": {
+      "hexagram_number": 60,
+      "yao_position": 3,
+      "hexagram_name": "水沢節",
+      "do_not": "この段階で油断すること",
+      "do": "制限、度を過ごさない。慎重に、しかし勇気を持って進みましょう",
+      "condition": "節度の卦において、転換点にいます。",
+      "strength": "moderate",
+      "source_text": "節度がなければ嘆く者があり、問題はありません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "60_4": {
+      "hexagram_number": 60,
+      "yao_position": 4,
+      "hexagram_name": "水沢節",
+      "do_not": "出過ぎること",
+      "do": "制限、度を過ごさない。謙虚に、上位者との関係を大切に",
+      "condition": "節度の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "安らかに節度を守れば通じます。節度を受け継いで通じているからです。自分を信じて、一歩ずつ進むことで道が開けます。"
+    },
+    "60_5": {
+      "hexagram_number": 60,
+      "yao_position": 5,
+      "hexagram_name": "水沢節",
+      "do_not": "現状に抗うこと",
+      "do": "制限、度を過ごさない。徳をもってリードしましょう",
+      "condition": "節度の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "甘い節度で吉があり、進めば尊敬されます。中正だからです。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "60_6": {
+      "hexagram_number": 60,
+      "yao_position": 6,
+      "hexagram_name": "水沢節",
+      "do_not": "現状に固執すること",
+      "do": "制限、度を過ごさない。次の段階への移行を考えましょう",
+      "condition": "節度の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "苦しい節度で堅実でも凶ですが、後悔が消えます。道が窮するからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "61_1": {
+      "hexagram_number": 61,
+      "yao_position": 1,
+      "hexagram_name": "風沢中孚",
+      "do_not": "軽はずみに動くこと",
+      "do": "内なる誠で通じる。力を蓄えながら、機会を待ちましょう",
+      "condition": "誠信の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "心を定めれば吉で、他があれば安らぎません。志がまだ変わっていないからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "61_2": {
+      "hexagram_number": 61,
+      "yao_position": 2,
+      "hexagram_name": "風沢中孚",
+      "do_not": "焦って表に出ること",
+      "do": "内なる誠で通じる。着実に実力をつけていきましょう",
+      "condition": "誠信の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "鶴が陰で鳴き、その子が和します。良い酒があり、私は汝と共に飲みます。中心の願いです。"
+    },
+    "61_3": {
+      "hexagram_number": 61,
+      "yao_position": 3,
+      "hexagram_name": "風沢中孚",
+      "do_not": "この段階で油断すること",
+      "do": "内なる誠で通じる。慎重に、しかし勇気を持って進みましょう",
+      "condition": "誠信の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "敵を得て、太鼓を打ったり止めたり、泣いたり歌ったりします。正しい位置を得ていないからです。"
+    },
+    "61_4": {
+      "hexagram_number": 61,
+      "yao_position": 4,
+      "hexagram_name": "風沢中孚",
+      "do_not": "出過ぎること",
+      "do": "内なる誠で通じる。謙虚に、上位者との関係を大切に",
+      "condition": "誠信の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "月が満ちそうな時に、馬の仲間が亡くなりますが問題ありません。上に従っているからです。"
+    },
+    "61_5": {
+      "hexagram_number": 61,
+      "yao_position": 5,
+      "hexagram_name": "風沢中孚",
+      "do_not": "傲慢になること",
+      "do": "内なる誠で通じる。徳をもってリードしましょう",
+      "condition": "誠信の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "孚が連なり、問題ありません。正しい位置にあるからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "61_6": {
+      "hexagram_number": 61,
+      "yao_position": 6,
+      "hexagram_name": "風沢中孚",
+      "do_not": "現状に固執すること",
+      "do": "内なる誠で通じる。次の段階への移行を考えましょう",
+      "condition": "誠信の卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "鶏の声が天に聞こえても、堅実なら凶です。長続きしないからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "62_1": {
+      "hexagram_number": 62,
+      "yao_position": 1,
+      "hexagram_name": "雷山小過",
+      "do_not": "現状に固執すること",
+      "do": "大事は控える。力を蓄えながら、機会を待ちましょう",
+      "condition": "小さく過ぎるの卦において、始まりの段階にいます。",
+      "strength": "strong",
+      "source_text": "飛ぶ鳥で凶を招きます。どうにもならないからです。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "62_2": {
+      "hexagram_number": 62,
+      "yao_position": 2,
+      "hexagram_name": "雷山小過",
+      "do_not": "焦って表に出ること",
+      "do": "大事は控える。着実に実力をつけていきましょう",
+      "condition": "小さく過ぎるの卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "祖父を過ぎて祖母に遇い、君に及ばず臣に遇います。問題ありません。位を犯さず、臣として遇うからです。"
+    },
+    "62_3": {
+      "hexagram_number": 62,
+      "yao_position": 3,
+      "hexagram_name": "雷山小過",
+      "do_not": "現状に固執すること",
+      "do": "大事は控える。慎重に、しかし勇気を持って進みましょう",
+      "condition": "小さく過ぎるの卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "過ぎて防がないと、従う者がこれを殺すかもしれません。凶で、位置が正しくないからです。"
+    },
+    "62_4": {
+      "hexagram_number": 62,
+      "yao_position": 4,
+      "hexagram_name": "雷山小過",
+      "do_not": "軽率に行動すること",
+      "do": "大事は控える。謙虚に、上位者との関係を大切に",
+      "condition": "小さく過ぎるの卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "問題はありません。過ぎずに遇い、進めば危険で戒めなければなりません。用いるのは永く堅実であってはなりません。剛が位置を得ていないからです。"
+    },
+    "62_5": {
+      "hexagram_number": 62,
+      "yao_position": 5,
+      "hexagram_name": "雷山小過",
+      "do_not": "現状に抗うこと",
+      "do": "大事は控える。徳をもってリードしましょう",
+      "condition": "小さく過ぎるの卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "密雲が西郊から来ても雨が降らず、公が矢を射て穴にいる者を取ります。今の状況を受け入れながら、次を考えてみると良いです。"
+    },
+    "62_6": {
+      "hexagram_number": 62,
+      "yao_position": 6,
+      "hexagram_name": "雷山小過",
+      "do_not": "現状に固執すること",
+      "do": "大事は控える。次の段階への移行を考えましょう",
+      "condition": "小さく過ぎるの卦において、終わり・極みにいます。",
+      "strength": "strong",
+      "source_text": "過ぎずに過ぎ、飛ぶ鳥が離れて網にかかります。凶で、これを災と言います。すでに遠いからです。"
+    },
+    "63_1": {
+      "hexagram_number": 63,
+      "yao_position": 1,
+      "hexagram_name": "水火既済",
+      "do_not": "軽はずみに動くこと",
+      "do": "達成、油断禁物。力を蓄えながら、機会を待ちましょう",
+      "condition": "完成の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "車輪を引いて尾を濡らしますが問題ありません。義として問題ないからです。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "63_2": {
+      "hexagram_number": 63,
+      "yao_position": 2,
+      "hexagram_name": "水火既済",
+      "do_not": "焦って表に出ること",
+      "do": "達成、油断禁物。着実に実力をつけていきましょう",
+      "condition": "完成の卦において、発展初期にいます。",
+      "strength": "neutral",
+      "source_text": "婦人が車の飾りを失いますが、追わなくても七日で得られます。中道を持って行うからです。"
+    },
+    "63_3": {
+      "hexagram_number": 63,
+      "yao_position": 3,
+      "hexagram_name": "水火既済",
+      "do_not": "信頼できない人に任せること",
+      "do": "達成、油断禁物。慎重に、しかし勇気を持って進みましょう",
+      "condition": "完成の卦において、転換点にいます。",
+      "strength": "neutral",
+      "source_text": "高宗が鬼方を討ち、三年で克ちます。小人は用いるべきではありません。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "63_4": {
+      "hexagram_number": 63,
+      "yao_position": 4,
+      "hexagram_name": "水火既済",
+      "do_not": "焦ること",
+      "do": "達成、油断禁物。謙虚に、上位者との関係を大切に",
+      "condition": "完成の卦において、新段階の入口にいます。",
+      "strength": "neutral",
+      "source_text": "良い衣服に油染みができ、一日中戒めます。疑いがあるからです。焦らず、自分のペースで進んでいくことが大切です。"
+    },
+    "63_5": {
+      "hexagram_number": 63,
+      "yao_position": 5,
+      "hexagram_name": "水火既済",
+      "do_not": "傲慢になること",
+      "do": "達成、油断禁物。徳をもってリードしましょう",
+      "condition": "完成の卦において、中心・リーダーにいます。",
+      "strength": "neutral",
+      "source_text": "東隣が牛を殺すより、西隣の簡素な祭りの方が、実に福を受けます。大いなる来たるからです。"
+    },
+    "63_6": {
+      "hexagram_number": 63,
+      "yao_position": 6,
+      "hexagram_name": "水火既済",
+      "do_not": "軽率に行動すること",
+      "do": "達成、油断禁物。次の段階への移行を考えましょう",
+      "condition": "完成の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "頭を濡らすと危険です。どうして長続きするでしょうか。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "64_1": {
+      "hexagram_number": 64,
+      "yao_position": 1,
+      "hexagram_name": "火水未済",
+      "do_not": "軽はずみに動くこと",
+      "do": "まだ終わらない。力を蓄えながら、機会を待ちましょう",
+      "condition": "未完成の卦において、始まりの段階にいます。",
+      "strength": "moderate",
+      "source_text": "尾を濡らすと恥をかきます。極みを知らないからです。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "64_2": {
+      "hexagram_number": 64,
+      "yao_position": 2,
+      "hexagram_name": "火水未済",
+      "do_not": "焦って表に出ること",
+      "do": "まだ終わらない。着実に実力をつけていきましょう",
+      "condition": "未完成の卦において、発展初期にいます。",
+      "strength": "moderate",
+      "source_text": "車輪を引いて堅実なら吉です。中正だからです。この時期を大切にすることで、良い流れが生まれます。"
+    },
+    "64_3": {
+      "hexagram_number": 64,
+      "yao_position": 3,
+      "hexagram_name": "火水未済",
+      "do_not": "現状に固執すること",
+      "do": "まだ終わらない。慎重に、しかし勇気を持って進みましょう",
+      "condition": "未完成の卦において、転換点にいます。",
+      "strength": "strong",
+      "source_text": "まだ成っていないのに進めば凶です。大川を渡るのに有利です。まだ位置を得ていませんが有利です。"
+    },
+    "64_4": {
+      "hexagram_number": 64,
+      "yao_position": 4,
+      "hexagram_name": "火水未済",
+      "do_not": "出過ぎること",
+      "do": "まだ終わらない。謙虚に、上位者との関係を大切に",
+      "condition": "未完成の卦において、新段階の入口にいます。",
+      "strength": "moderate",
+      "source_text": "堅実で吉、後悔が消えます。震えて鬼方を討ち、三年で大国から賞を受けます。志が行われます。"
+    },
+    "64_5": {
+      "hexagram_number": 64,
+      "yao_position": 5,
+      "hexagram_name": "火水未済",
+      "do_not": "傲慢になること",
+      "do": "まだ終わらない。徳をもってリードしましょう",
+      "condition": "未完成の卦において、中心・リーダーにいます。",
+      "strength": "moderate",
+      "source_text": "堅実で吉、後悔なく、賢い人の輝きがあります。誠意があれば吉で、中正だからです。周囲の変化に注意を払いながら、柔軟に対応すると良いです。"
+    },
+    "64_6": {
+      "hexagram_number": 64,
+      "yao_position": 6,
+      "hexagram_name": "火水未済",
+      "do_not": "執着すること",
+      "do": "まだ終わらない。次の段階への移行を考えましょう",
+      "condition": "未完成の卦において、終わり・極みにいます。",
+      "strength": "moderate",
+      "source_text": "酒を飲むことに誠意があれば問題ありませんが、頭を濡らすと誠意を失います。度を知ることが大切です。"
+    }
+  },
+  "metadata": {
+    "total_rules": 384,
+    "generated_at": "2026-03-09T23:27:36.582757+00:00",
+    "generation_method": "pattern_extraction_from_modern_ja",
+    "sources": [
+      "data/reference/iching_texts_ctext_legge_ja.json",
+      "data/diagnostic/yao_384.json",
+      "data/diagnostic/hexagram_64.json"
+    ],
+    "statistics": {
+      "do_not_extracted": 384,
+      "do_not_default": 0,
+      "do_extracted": 384,
+      "do_default": 0,
+      "condition_extracted": 384,
+      "condition_default": 0,
+      "strength_strong": 58,
+      "strength_moderate": 218,
+      "strength_neutral": 108
+    }
+  }
+}
