@@ -1,0 +1,817 @@
+{
+  "batch_id": 24,
+  "pass_number": 2,
+  "prompt_type": "holistic",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Beneath the surface of a functioning construction firm, rot was already spreading — falsified accounts, hidden danger. The inner reality is坎: peril concealed within, a crisis waiting to erupt."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Outwardly, the company still projected the image of a major player — visible success, market presence. The façade of clarity and visibility (離) masked the internal decay, creating the conditions for dramatic revelation."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After exposure, the internal state plunges into existential crisis — mass exodus of employees, loss of all trust, survival itself in question. The deepest expression of坎: drowning in danger."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external world delivers a cascade of shocks — banks withdraw, contracts cancelled, forced into civil rehabilitation. Thunder striking from every direction, the震 quality of sudden, violent disruption."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The founder was quietly accumulating capability in a stable, receptive state — patient preparation, building internal resources. The坤 quality of fertile ground waiting for the seed."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external market was settled, conventional, without disruption — a calm landscape that had not yet been challenged. Stable and receptive ground waiting for a creative force."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The founder's inner state radiates pure creative will — visionary leadership, unshakeable confidence, driving force that unifies the entire company. The essence of乾: heaven's creative power."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment reflects powerful upward momentum — investment pouring in, market dominance, global expansion. The environment itself becomes乾: everything rising, everything growing."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Both companies were locked in competitive stalemate — stuck, unable to advance alone. The inner experience is艮: a mountain blocking progress, the frustration of arrested movement."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The industry was undergoing painful structural shifts — a harsh environment eroding old business models. External pressure (坎) was the catalyst forcing both sides to seek a new path."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After partnership, the inner state is joyful exchange — open communication, mutual benefit, genuine delight in collaboration. The兌 quality of two parties meeting with open hearts."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment becomes one of gentle, organic spread — a new ecosystem forming, cooperation rippling across the industry. The巽 quality of wind carrying change gradually outward."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Corruption was deeply embedded — hidden flows of money, concealed relationships between power and business. The inner reality of the system is坎: dangerous waters running underground, unseen peril."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Society was in a state of stagnation and decline — public awareness was blocked, information suppressed. The external world felt like艮: a mountain of silence, things stopped and opaque."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Truth is brought to light — hidden corruption exposed, evidence illuminated. The inner transformation is fundamentally離: fire that reveals, clarity that burns away concealment."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Society is shaken awake — investigations launched, national movements for transparency emerge. The external world experiences震: the thunder of awakening, a shockwave of collective action."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The company was in a receptive, stable internal state — no bold vision, no crisis, simply maintaining. The坤 quality of steady, unambitious ground-holding."
+      },
+      "before_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The market was shifting slowly — gradual winds of change rather than sudden disruption. The external environment had the quality of巽: gentle, persistent pressure requiring adaptation."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Internal adjustments are incremental — small investments, careful portfolio shifts, nothing dramatic. The巽 quality of wind: flexible, adaptive, moving without force."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external result is stable but unremarkable — sound finances, fading presence, no breakthroughs. The environment remains坤: flat, receptive, lacking dynamic energy."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_264",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The child is exhausted and overwhelmed — drowning in obligations, internal distress from being pushed too hard. The narrative arc begins with a body in crisis. This is坎: the inner experience of being submerged."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external environment is one of relentless parental ambition and drive — piano, swimming, English, programming, all stacked up. The parents are projecting乾energy: will, achievement, growth — but it's crushing the child."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After the conversation and reduction, the child is smiling again — joy restored, lightness returned. The inner state transforms to兌: genuine happiness, a spirit that can breathe."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The family environment becomes spacious and nurturing — weekends together, no more frantic scheduling. The outer world settles into坤: receptive, supportive, stable ground for the child to grow naturally."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_686",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Before the SNS breakthrough, the individual was stuck — blocked, lacking voice or platform. The inner state has the quality of艮: a mountain of unexpressed potential, feeling stopped."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external world was flat and uneventful — no audience, no reach, a stable but unremarkable environment. The坤 quality of undifferentiated ground without opportunity."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "After gaining 50k followers, the person is highly visible — illuminated, exposed, their inner world on display. But this visibility has a double edge. 離: fire that reveals but also burns."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external environment becomes hostile — criticism, loss of privacy, a dangerous world that accompanies influence. Despite 'success', the outer world feels like坎: harsh waters, constant peril from public exposure."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_102",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The software industry was locked behind proprietary walls — closed, static, movement blocked. The inner state of the field was艮: a mountain of accumulated knowledge that couldn't flow freely."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment was dominated by corporate ownership and control — powerful companies dictating terms, the乾 energy of hierarchical command over the software landscape."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Open source created joyful, open exchange — anyone can contribute, anyone can improve. The inner spirit of the movement is fundamentally兌: sharing, welcoming, communal delight in creation."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Linux spread like wind — penetrating servers, smartphones, IoT, everywhere gradually and pervasively. The external impact is巽: gentle but unstoppable diffusion, adapting and entering every corner."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_307",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Kitano Takeshi's early career as Beat Takeshi in the manzai duo was explosive, disruptive energy — a shocking comedic force that broke conventions. The inner state is震: raw, electrifying power demanding release."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The entertainment world that received him was one of joy and entertainment — comedy stages, audience laughter, the兌 quality of an environment built for delight and exchange."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "As filmmaker, Kitano's inner state becomes visionary clarity — HANA-BI, Zatoichi, works of artistic illumination. He transforms raw energy into cinematic vision. The離 quality of an artist whose inner fire produces clarity."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "International recognition, Venice Golden Lion, Légion d'honneur, university professor — the external world crowns him with the highest honors. The乾 quality of reaching the summit, maximum creative authority recognized globally."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_368",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "A stable Nagoya-based company with 304 stores — solid, grounded, operating steadily. The inner state is坤: receptive earth, a foundation that has been quietly built over decades."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment was stable and conventional — a predictable franchise landscape without dramatic shifts. The坤 quality of calm, steady market conditions."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After PE investment and IPO, the company embodies aggressive growth ambition — 1000-store target, unique FC model with flat royalty. The inner drive becomes乾: powerful will, expansion, creative business strategy."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "TSE First Section listing, PE backing, 94.5% franchise model — the external environment rewards the company with growth infrastructure. The乾 quality of everything rising, momentum building on momentum."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_224",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The father's sudden death is the defining emotional event — a thunderbolt that shatters the family's world. The inner experience is震: shock, disorientation, the ground pulled from under them."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "No will left behind creates a dangerous external situation — assets (deposits, real estate, stocks) without guidance, potential for family conflict. The坎 quality of perilous waters that must be navigated."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Through repeated family meetings, they adapt and find agreement — following the legal framework, bending to circumstance. The inner state becomes巽: flexibility, gradual acceptance, yielding to the wind of necessity."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The outcome is stable resolution — legal inheritance executed, family intact, now advocating end-of-life planning to others. The external world returns to坤: stable, grounded, a lesson absorbed."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_093",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The manufacturer's profitability is collapsing under the super-strong yen — an existential crisis where the core business model is drowning. The inner state is坎: surrounded by dangerous waters, survival at stake."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The external environment is brutally harsh — yen at historic highs, export markets becoming impossible. Double坎: the crisis is both internal and external, a flood from every direction."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The company adapts by moving production to Southeast Asia — flexible, yielding, going where the wind carries. The inner transformation is巽: accepting the need to change form to survive."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The outcome is survival through contraction — domestic factories shrink, overseas stabilizes but without dramatic growth. The external state is艮: stopped at a new resting point, reduced but solid."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3053",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Meiji Sugar's expansion into Taiwan was driven by imperial ambition and bold commercial will — seizing colonial opportunity for large-scale plantation development. The inner state is乾: powerful driving force, expansive intent."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The colonial context of Taiwan governance was itself a disruptive upheaval — a new territory opened by political force. The external environment is震: the shaking ground of colonial acquisition creating new opportunities."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The company achieves its expansive vision — massive plantations, contribution to national sugar self-sufficiency. The inner state remains乾: fulfilled ambition, creative will manifested in concrete achievement."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Taiwan's fertile land becomes the productive ground — the plantation yields abundantly, the territory serves as stable productive base. The external environment settles into坤: receptive earth bearing fruit."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_088",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The travel company faces existential crisis — international travel completely halted, revenue gone, survival in question. The inner state is坎: drowning, trapped in dangerous circumstances."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "COVID created the harshest possible external environment for travel — borders closed worldwide, an inescapable crisis. Double坎: danger everywhere, no safe ground."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The company develops virtual tours and hybrid experiences — creative vision, new ways of seeing and sharing. The inner transformation is離: illumination, finding a new way to make travel visible even when physical travel is impossible."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "By 2024, the hybrid model enables full revival — stronger than before, combining real and virtual. The external outcome is乾: growth, momentum, a company that has transcended its previous form."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_0026",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "A university student in a static, unremarkable position — not yet activated, potential still dormant. The inner state is艮: paused, waiting, the mountain before eruption."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment is stable and conventional — student life, no particular opportunities visible. The坤 quality of flat, undifferentiated ground."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "With 1M TikTok followers and a marketing company, the individual burns with visibility and creative vision — understanding Gen Z, seeing what companies need. The inner state is離: fire of insight, clarity of vision."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "300M yen revenue in 4 years, companies flooding in with PR requests — the external environment is pure growth and expansion. The乾 quality of upward momentum, creative power manifested in market success."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1030",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The illustrator's talent existed but was dormant — stuck without a channel, skills unused commercially. The inner state is艮: potential blocked, a mountain of capability that hasn't found its path."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external world offered no obvious avenue — a flat landscape without visible opportunity. The坤 quality of waiting ground."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The online salon is fundamentally about community and joyful exchange — 1000+ members, fan business, mutual connection. The inner state is兌: open-hearted sharing, delight in community."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Monthly income, new business expansion, sustainable livelihood — the external world rewards with growth and abundance. The乾 quality of creative expansion powered by the community."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_277",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Before the dementia caregiving began, the family was in a peaceful, stable state — ordinary life, nothing dramatic. The inner state was坤: receptive, steady, grounded."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment was similarly calm — no crisis, no disruption, stable conditions. Double坤: peaceful earth on all sides."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "8 years of caregiving, career sacrificed, life on hold — the inner state is profoundly stuck, unable to move forward. The艮 quality of being stopped by an immovable mountain, endurance without progress."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external situation is a war of attrition with no end in sight — 'how long will this last?' The harsh, grinding quality of坎: difficulty that persists, danger in the endlessness of it."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_369",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Congo was already in deep crisis — post-independence chaos, Mobutu's dictatorship, millions dead. The inner state of the nation is坎: drowning in danger, structural collapse at the core."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Two 'African World Wars,' armed groups, constant violent upheaval — the external environment is震: shock upon shock, thunder that never stops."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Despite vast resources, the people remain in poverty — the 'resource curse' means internal crisis deepens. The inner state stays坎: the waters only get deeper, no escape from the pit."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Eastern violence continues, development among the world's worst — the external environment is now坎 as well: harsh, unrelenting, no safe ground. A descent from震-shock into grinding坎-despair."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_146",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Father Shigenobu was already an Asia-record holder — powerful competitive will, driving ambition in athletics. The inner state is乾: creative force, relentless drive toward excellence."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The family navigated significant challenges — international marriage, divorce, the pressures of elite sport. The external environment had the quality of坎: difficult waters to navigate alongside the pursuit of greatness."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Son Koji becomes Olympic gold medalist and later Sports Agency commissioner — the inner drive continues in the next generation, amplified. The乾 energy is inherited and expanded: will, achievement, leadership."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Gold medal, Sports Agency leadership, 'Sports Nation' policy — the family becomes visible and illuminating on a national stage. The離 quality of fire that reveals: a family legacy that lights the way."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_909",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Mitsubishi Heavy Industries pursued the domestic jet dream with great ambition — 287 orders secured, national pride at stake. The inner state is乾: powerful will, creative aspiration, the drive to build something unprecedented."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The external environment was initially supportive — stable market conditions, welcoming reception for a Japanese-made jet. The坤 quality of receptive ground that seemed ready for this ambition."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Type certification difficulties and COVID brought everything to a halt — frozen, unable to advance, the dream stuck. The inner state becomes艮: stopped at the mountain, the project immovable."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "6413 billion yen in debt, special liquidation, the project cancelled — the external environment delivers a crushing verdict. The坎 quality of harsh reality, dangerous waters that swallowed the dream."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_176",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "COVID destroyed inbound tourism completely — an industry plunged into existential crisis, revenue vanished overnight. The inner state of the tourism sector is坎: drowning, darkness, no visible way forward."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment was maximally hostile — borders closed, international travel impossible, a pandemic raging. Double坎: crisis on all sides."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Record-breaking tourist numbers, a welcoming Japan — the inner state of the sector becomes兌: joy, openness, welcoming the world back with enthusiasm."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Past records surpassed, yen weakness as tailwind, surging growth — the external environment is乾: powerful upward momentum. Though overtourism introduces new tensions, the dominant note is expansion."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_940",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The gassho-zukuri villages were in decline — traditional architecture deteriorating, communities shrinking, a way of life on the verge of being lost. The inner state is艮: stopped, frozen in time, unable to continue."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external world had largely forgotten these villages — no recognition, no support, the quiet indifference of a society moving on. The坤 quality of flat, featureless ground with no energy flowing toward preservation."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The 'yui' spirit — communal cooperation to maintain thatched roofs — is the inner force. This is坤: receptive earth, collective nurturing, the community sustaining itself through shared labor and tradition."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "World Heritage designation in 1995, 2 million annual visitors — the villages are illuminated on the world stage, their value revealed and recognized. The離 quality of fire that makes visible what was hidden."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_954",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Before the walking boom, physical activity culture was stagnant for many — post-bubble malaise, sedentary lifestyles becoming the norm. The inner state is艮: stillness, inertia, bodies not moving."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external health landscape was flat — no particular movement or trend driving people toward exercise. The坤 quality of neutral ground without momentum."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Walking is the gentlest form of movement — gradual, accessible, no shock or force required. The inner transformation is巽: wind, the most natural and easy adaptation, a slow shift in daily habit."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Pedometers, smartphone step counters, 8000-step recommendations — the trend spreads gradually and pervasively through society. The external diffusion is also巽: wind penetrating everywhere, gentle but unstoppable cultural change."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2774",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Fujifilm's core business — film — was being annihilated by digital. The inner state is existential crisis: the very reason for existence evaporating. The坎 quality of deep, structural danger."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Digital disruption was a thunderbolt to the entire film industry — sudden, irreversible technological revolution. The external environment is震: a shock that demolishes the old world."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Fujifilm's transformation was driven by visionary clarity — seeing how film technology could apply to cosmetics, medical devices, pharmaceuticals. The inner state becomes離: the fire of insight that illuminates new possibilities from old capabilities."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The business structure is completely renewed but through adaptation, not force — gradual entry into new domains, leveraging existing technology. The external form is巽: flexible transformation, wind reshaping the landscape."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3372",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Suntory's whisky project required nearly 40 years of patient foundation-building — no flashy results, just steady, painstaking work on distillation technique. The inner state is艮: mountain, stillness, the patience of stone being shaped slowly."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment offered no recognition or reward for decades — the Japanese whisky market was small, the world indifferent. The坤 quality of flat, unrewarding ground."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The decades of investment bear fruit as world-class whisky — the inner accumulated power is finally expressed as creative achievement. The乾 quality of heaven: the dragon ascending after long preparation."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Global recognition and acclaim — Yamazaki becomes world-famous, Japanese whisky is 'revealed' to international audiences. The離 quality of light: what was hidden in patient obscurity now shines brilliantly."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3601",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Sony was in deep crisis — electronics division bleeding, identity lost, the company's very survival questioned. The inner state is坎: drowning in structural problems, existential danger."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external electronics market was brutally competitive — commoditization, Korean and Chinese rivals eroding margins. The external environment is坎: harsh, unforgiving competitive waters."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Hirai's vision was the transformative force — seeing Sony's future in entertainment (games, music, film) rather than electronics. The inner state becomes離: clarity of vision, the fire that illuminates the right path."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Revival as an entertainment conglomerate — PlayStation, music, film all thriving, stock recovering. The external environment reflects乾: growth, upward momentum, creative power rewarded by the market."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1358",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Post-reunification Germany faced a frozen military situation — absorbing the East German army, Cold War structures obsolete but not yet replaced. The inner state is艮: stuck between two worlds, unable to move in the old way."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "German reunification and the end of the Cold War were seismic geopolitical shifts — the entire European security landscape was disrupted. The external environment is震: the thunder of history reshaping the world order."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Over 20 years, the military transformed gradually — from Cold War defense to crisis response, peacekeeping operations. The inner transformation is巽: wind, slow adaptive change, flexible evolution rather than sudden revolution."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "NATO expansion, successful modernization, expanded international role — the external outcome is strength and growth. Germany's military reaches a new, modernized capacity. The乾 quality of realized strength and established authority."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1151",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Traditional French cuisine before Nouvelle Cuisine was stable, established, grounded in centuries of tradition — heavy sauces, elaborate preparations. The inner state is坤: solid, receptive earth, the weight of tradition."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The culinary world was in a comfortable, stable equilibrium — established hierarchies, known standards, no disruption. The external environment is坤: steady, unchanging ground."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Bocuse and colleagues brought visionary clarity to cuisine — lighter, fresher, a new aesthetic of illumination. The inner transformation is離: fire that clarifies, vision that reveals a new way of seeing food."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "A new order established worldwide — Nouvelle Cuisine reshaped global culinary culture, created new standards of excellence. The external impact is乾: creative power that establishes a new heavenly order in the culinary world."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1914",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Inamori Kazuo had already built Kyocera and KDDI — his inner state was established creative mastery, a proven capacity for building. The乾 quality of accumulated power and wisdom at its peak."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "His external world was stable — respected elder statesman of business, peaceful retirement. The坤 quality of a settled, comfortable environment."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Taking JAL chairmanship without pay — 'keiten aijin' (respect heaven, love people), 'rita no kokoro' (altruistic heart). The inner state shifts to坤: selfless receptivity, nurturing devotion, earth that supports others without seeking."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "JAL's miraculous revival, universal respect from business leaders, a legacy that transcends individual companies — the external result is乾: supreme creative achievement, reaching the highest point through service."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2948",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After announcing retirement in 2013, Miyazaki entered a period of deliberate pause — 4 years of observation, reflection, not producing. The inner state is艮: the mountain at rest, the artist who has stopped."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external world accepted his retirement — stable, quiet, no pressure or upheaval. The坤 quality of peaceful ground, the world going on without him."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Reversing retirement and creating 'The Boy and the Heron' — an act of supreme creative will, an 82-year-old master driven by an irresistible inner force. The乾 quality of heaven's creative power: the dragon cannot stay grounded."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Academy Award for Best Animated Feature — the work is illuminated on the world's grandest stage, its brilliance recognized universally. The離 quality of fire: the master's vision burns bright for all to see."
+      }
+    }
+  ]
+}
