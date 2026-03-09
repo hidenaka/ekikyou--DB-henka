@@ -1,7 +1,11 @@
 {
-  "batch_id": 16,
-  "n_cases": 25,
-  "calibration_anchors": [
+  "batch_id": "batch_016",
+  "batch_number": 16,
+  "total_batches": 32,
+  "calibration_count": 5,
+  "case_count": 25,
+  "total_items": 30,
+  "cases": [
     {
       "transition_id": "CALIBRATION_001",
       "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
@@ -9,22 +13,7 @@
       "after_state": "どん底・危機",
       "main_domain": "不動産・建設",
       "scale": "company",
-      "expected_before_lower": "坎",
-      "expected_before_upper": "震",
-      "expected_after_lower": "坎",
-      "expected_after_upper": "艮",
-      "acceptable_alternatives": {
-        "before_lower": [],
-        "before_upper": [
-          "坎"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "坎",
-          "坤"
-        ]
-      },
-      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_002",
@@ -33,21 +22,7 @@
       "after_state": "V字回復・大成功",
       "main_domain": "テクノロジー",
       "scale": "company",
-      "expected_before_lower": "乾",
-      "expected_before_upper": "離",
-      "expected_after_lower": "乾",
-      "expected_after_upper": "乾",
-      "acceptable_alternatives": {
-        "before_lower": [],
-        "before_upper": [
-          "乾"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "離"
-        ]
-      },
-      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_003",
@@ -56,26 +31,7 @@
       "after_state": "共創・協調",
       "main_domain": "製造",
       "scale": "company",
-      "expected_before_lower": "震",
-      "expected_before_upper": "坎",
-      "expected_after_lower": "兌",
-      "expected_after_upper": "兌",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "坎",
-          "艮"
-        ],
-        "before_upper": [
-          "震",
-          "艮"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "巽",
-          "離"
-        ]
-      },
-      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_004",
@@ -84,24 +40,7 @@
       "after_state": "覚醒・発見",
       "main_domain": "社会・コミュニティ",
       "scale": "other",
-      "expected_before_lower": "離",
-      "expected_before_upper": "坎",
-      "expected_after_lower": "離",
-      "expected_after_upper": "離",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "坎"
-        ],
-        "before_upper": [
-          "坤"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "乾",
-          "震"
-        ]
-      },
-      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_005",
@@ -110,85 +49,77 @@
       "after_state": "漸進的変化",
       "main_domain": "製造",
       "scale": "company",
-      "expected_before_lower": "坤",
-      "expected_before_upper": "艮",
-      "expected_after_lower": "巽",
-      "expected_after_upper": "坤",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "艮",
-          "巽"
-        ],
-        "before_upper": [
-          "坤",
-          "巽"
-        ],
-        "after_lower": [
-          "坤",
-          "艮"
-        ],
-        "after_upper": [
-          "艮",
-          "巽"
-        ]
-      },
-      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
-    }
-  ],
-  "cases": [
-    {
-      "transition_id": "HEX10_YAO2_001",
-      "story_summary": "デロイトトーマツは慎重かつ着実な監査業務で信頼を積み上げ、順調にクライアント基盤を拡大。礼節を守りながら平坦な道を歩むように、コンプライアンスを重視した堅実な成長を遂げた。",
-      "before_state": "安定・平和",
-      "after_state": "V字回復・大成功",
-      "main_domain": "会計・監査",
-      "scale": "company",
-      "story_length": 86
+      "is_calibration": true
     },
     {
-      "transition_id": "FAM_JP_271",
-      "story_summary": "結婚10年目で大きな危機。仕事、育児のストレスで会話がなくなり、離婚寸前に。カップルカウンセリングを受け、関係を再構築。「危機を乗り越えた」ことで絆が深まった。",
-      "before_state": "どん底・危機",
+      "transition_id": "FAM_JP_168",
+      "story_summary": "ラーマ9世は70年在位、国民から神のように敬愛される。2016年崩御、息子ラーマ10世が即位。しかし複数の離婚、ドイツ長期滞在、民主化デモへの対応で批判も。不敬罪で議論は抑圧されるが、王室への信頼は揺らぐ。",
+      "before_state": "絶頂・慢心",
+      "after_state": "現状維持・延命",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 103,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "FAM_JP_253",
+      "story_summary": "結婚5年、なかなか授からず不妊治療を開始。人工授精、体外受精と進み、300万円以上の費用と精神的負担。7年かかって授かり、今は3歳の子供との幸せな生活。",
+      "before_state": "停滞・閉塞",
       "after_state": "変質・新生",
       "main_domain": "生活・暮らし",
       "scale": "family",
-      "story_length": 80
+      "story_length": 76,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_104",
-      "story_summary": "2000年のそごう破綻後、西武百貨店と統合。セブン&アイ傘下で再建を図るも22年間苦戦が続き、2022年に米投資ファンドへ売却が決定。",
+      "transition_id": "COUN_JP_425",
+      "story_summary": "EU加盟で急成長、1990年代「ケルトの虎」と呼ばれる。しかし2008年バブル崩壊で銀行危機、IMF支援を受ける。教育投資とIT企業誘致で復活、今ではEU随一の成長国に。人口流出も逆転。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "country",
+      "story_length": 93,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_170",
+      "story_summary": "千葉県佐倉市出身。幼少期は終戦直後で母の手縫いグラブと青竹バットで野球を始める。高校では甲子園出場ならず公式本塁打1本のみ。立教大学で首位打者2度、1958年巨人入団。新人王、MVP5回、首位打者6回、V9の中心選手として「ミスタープロ野球」に。監督1年目は球団初の最下位も、その後リーグ優勝5回。国民栄誉賞、プロ野球界初の文化勲章。2025年89歳で死去。",
       "before_state": "どん底・危機",
-      "after_state": "崩壊・消滅",
-      "main_domain": "金融",
-      "scale": "company",
-      "story_length": 67
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "individual",
+      "story_length": 179,
+      "is_calibration": false
     },
     {
-      "transition_id": "COUN_JP_022",
-      "story_summary": "1990年代初頭の不況以降、資源ブーム（鉄鉱石・石炭等）と中国経済の台頭を追い風に、28年間リセッション（景気後退）知らずという先進国で稀有な記録を樹立した。資源だけでなく、教育・観光などのサービス輸出や、変動相場制・中央銀行の独立性といった柔軟な経済政策が奏功し、外的ショック（アジア通貨危機、リーマンショック）を巧みにかわして成長を続けた。",
+      "transition_id": "FAM_JP_213",
+      "story_summary": "共働きなのに家事は妻に偏り、限界を迎える。話し合いの末、家事を見える化しフェアに分担。今では夫も料理を担当、子供も参加。「誰かに押し付けない」文化が家庭に定着。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "エンタメ",
+      "scale": "family",
+      "story_length": 80,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_291",
+      "story_summary": "北九州市がSDGs未来都市として積極的PR。環境技術・循環型社会で国際評価。2024年も視察・投資が増加。工業都市から環境都市へのブランド転換。明るいイメージで若者呼び込み。",
       "before_state": "停滞・閉塞",
       "after_state": "V字回復・大成功",
       "main_domain": "金融",
-      "scale": "country",
-      "story_length": 172
+      "scale": "other",
+      "story_length": 87,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_3105",
-      "story_summary": "コクヨがぺんてる株式を買い増し筆頭株主に。ぺんてる経営陣は「敵対的」として反発し、プラスとの提携で対抗。最終的にコクヨの経営関与を限定する形で決着するも、双方の信頼関係は損なわれた。",
-      "before_state": "安定・平和",
-      "after_state": "現状維持・延命",
-      "main_domain": "文具・事務用品",
-      "scale": "company",
-      "story_length": 91
-    },
-    {
-      "transition_id": "COUN_JP_436",
-      "story_summary": "1971年に7首長国が連邦を結成。石油依存からの脱却を目指し、ドバイは観光・金融ハブに。万博開催、火星探査機打ち上げと野心的な目標を次々達成。「砂漠の奇跡」を演出。",
-      "before_state": "停滞・閉塞",
+      "transition_id": "COUN_JP_005",
+      "story_summary": "サブプライム住宅ローン危機を発端とするリーマン・ブラザーズ破綻により、世界金融危機が発生。米国経済は深刻な不況に陥ったが、FRBによる量的緩和（QE）や自動車産業への公的支援など、迅速かつ大規模な対応により、比較的早期に景気回復軌道に乗せた。",
+      "before_state": "混乱・カオス",
       "after_state": "V字回復・大成功",
-      "main_domain": "金融",
+      "main_domain": "製造",
       "scale": "country",
-      "story_length": 82
+      "story_length": 121,
+      "is_calibration": false
     },
     {
       "transition_id": "CORP_JP_2529",
@@ -197,169 +128,178 @@
       "after_state": "V字回復・大成功",
       "main_domain": "",
       "scale": "company",
-      "story_length": 72
+      "story_length": 72,
+      "is_calibration": false
     },
     {
-      "transition_id": "PERS_JP_247",
-      "story_summary": "甲斐国山梨郡出身。生家は「油屋」と呼ばれる名家。17歳で郡役所書記、29歳で村会議員、31歳県会議員、44歳衆議院議員（4期13年）。県会議員時代に若尾逸平・雨宮敬次郎と知り合い、鉄道株投資で財を築く。1905年「東武鉄道空引会社」と揶揄された東武鉄道社長に就任、経営再建に成功。利根川架橋、日光・鬼怒川開発で収益拡大。生涯で創設・経営参画した会社は200数十社。「鉄道王」と称される。1940年死去。",
-      "before_state": "成長痛",
-      "after_state": "V字回復・大成功",
-      "main_domain": "金融",
-      "scale": "individual",
-      "story_length": 201
-    },
-    {
-      "transition_id": "FAM_JP_235",
-      "story_summary": "共働きで子育てと仕事の両立に限界、親との二世帯同居を決断。プライバシーの確保、家事分担のルール作りで衝突を防ぐ。「適度な距離感」がカギ。孫の世話も親の生きがいに。",
-      "before_state": "どん底・危機",
-      "after_state": "V字回復・大成功",
-      "main_domain": "生活・暮らし",
-      "scale": "family",
-      "story_length": 81
-    },
-    {
-      "transition_id": "COUN_JP_1190",
-      "story_summary": "バーツ暴落でアジア通貨危機の発火点に。IMFから172億ドルの支援を受ける。GDP42%減の深刻な不況。構造改革を経て2001年頃から回復軌道に。",
-      "before_state": "絶頂・慢心",
+      "transition_id": "FAM_JP_258",
+      "story_summary": "東京在住、親は地方で一人暮らし。認知症の兆候が出て遠距離介護を開始。月1回の帰省、見守りサービス、地域包括支援センターを活用。仕事との両立に苦労しながらも5年が経過。",
+      "before_state": "安定・平和",
       "after_state": "縮小安定・生存",
-      "main_domain": "",
-      "scale": "country",
-      "story_length": 73
+      "main_domain": "小売・サービス",
+      "scale": "family",
+      "story_length": 83,
+      "is_calibration": false
     },
     {
-      "transition_id": "OTHR_JP_122",
-      "story_summary": "テスラが電気自動車市場を創造、時価総額でトヨタを抜く。日本メーカーはハイブリッドに固執し出遅れ、今や中国BYDにも追い上げられる。「100年に一度の変革」に対応できるか。",
-      "before_state": "絶頂・慢心",
-      "after_state": "現状維持・延命",
-      "main_domain": "製造",
-      "scale": "other",
-      "story_length": 85
-    },
-    {
-      "transition_id": "COUN_JP_494",
-      "story_summary": "2000年代は資源ブームで急成長、BRICSの一角として注目。しかし汚職スキャンダル、景気後退で失速。ボルソナロ、ルラと政権交代を繰り返し、政治的分断も深刻化。",
-      "before_state": "絶頂・慢心",
-      "after_state": "迷走・混乱",
-      "main_domain": "国家・政治",
-      "scale": "country",
-      "story_length": 80
-    },
-    {
-      "transition_id": "COUN_JP_037",
-      "story_summary": "先進国でありながら、「失われた20年」とも言われる長期の経済停滞を経験。公的債務の大きさから財政出動ができず、ユーロ導入により通貨切り下げ手段も失った。政治的不安定さが改革を阻んだが、北部の強力な製造業クラスターと家計の貯蓄力に支えられ、国家破綻は回避しつつ「低空飛行」を続けている。",
-      "before_state": "停滞・閉塞",
-      "after_state": "現状維持・延命",
-      "main_domain": "製造",
-      "scale": "country",
-      "story_length": 142
-    },
-    {
-      "transition_id": "CORP_JP_4825",
-      "story_summary": "ヤマチユナイテッドの住宅事業ジョンソンホームズとインテリアショップACTUSがコラボし、家具・住宅・リノベーション・レストランを融合した「暮らしのトータル提案」を実現。",
+      "transition_id": "PERS_JP_2648",
+      "story_summary": "IT企業経営者が2018年にYouTubeで「お金の教養」チャンネルを開設。副業的な情報発信が登録者数250万人超に成長。書籍『本当の自由を手に入れるお金の大学』は100万部を突破し、オンラインコミュニティ運営を含む教育事業に発展した。",
       "before_state": "安定・平和",
       "after_state": "V字回復・大成功",
-      "main_domain": "建設・不動産",
-      "scale": "company",
-      "story_length": 84
-    },
-    {
-      "transition_id": "PERS_JP_2794",
-      "story_summary": "イベント企画会社を経営しながらブログと自己啓発のスキルを磨き、2018年出版『Girl, Wash Your Face』が世界500万部のベストセラーに。講演料は1回25万ドル。しかし2020年の離婚とSNS炎上で支持者が離反し年商は推定2000万ドルから急減。",
-      "before_state": "どん底・危機",
-      "after_state": "迷走・混乱",
       "main_domain": "教育",
       "scale": "individual",
-      "story_length": 131
+      "story_length": 118,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_3126",
-      "story_summary": "オリンパスは2020年、84年の歴史を持つカメラ事業を投資ファンドに売却。スマートフォンの台頭で市場が縮小する中、医療機器事業への集中を決断。ブランドとしての「オリンパス」カメラとの決別。",
+      "transition_id": "COUN_JP_356",
+      "story_summary": "ソ連占領地域に成立した社会主義国家。シュタージ（秘密警察）による監視社会、ベルリンの壁で「逃亡防止」。スポーツ強国として威信誇示も経済は西に大敗。1989年ハンガリー経由の脱出が雪崩を打ち、壁崩壊で国家消滅。",
       "before_state": "停滞・閉塞",
-      "after_state": "変質・新生",
-      "main_domain": "精密機器・医療",
-      "scale": "company",
-      "story_length": 94
+      "after_state": "崩壊・消滅",
+      "main_domain": "社会・コミュニティ",
+      "scale": "country",
+      "story_length": 104,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_3424",
-      "story_summary": "花札メーカーから世界的ゲーム企業へ。130年以上の歴史で、玩具→ゲーム→携帯ゲーム→Switch と緩やかに進化。「遊び」という本質は変えず、技術と形態を時代に合わせて変化。独自路線を貫く経営哲学。",
-      "before_state": "安定・平和",
-      "after_state": "変質・新生",
-      "main_domain": "エンタメ・ゲーム",
+      "transition_id": "CORP_JP_335",
+      "story_summary": "柔軟に変化に対応していた組織が方向性を見失う。適応しすぎてアイデンティティ危機に。立て直しのため一時停止。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
+      "main_domain": "Business",
       "scale": "company",
-      "story_length": 99
+      "story_length": 53,
+      "is_calibration": false
     },
     {
-      "transition_id": "COUN_JP_1550",
-      "story_summary": "700億ドル超の債務を抱えたプエルトリコは、米国史上最大の地方自治体破産を申請。2022年に債務の80%削減に成功し、正式に破産から脱却。年金基金への15億ドル補填も実現した。",
+      "transition_id": "PERS_JP_1164",
+      "story_summary": "フォロワー50万人のインフルエンサーが不用意な発言で炎上。企業案件は全てキャンセル、収入激減。謝罪動画を投稿し、半年間沈黙。別のプラットフォームで再起を図る。",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "main_domain": "Lifestyle",
+      "scale": "individual",
+      "story_length": 79,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_830",
+      "story_summary": "2020年の国家安全法施行後、香港の民主派活動家たちは次々と海外に亡命。周庭、羅冠聡らは傷ついた鳥のように故郷を離れ、英国やカナダなどで活動を続けることを余儀なくされた。",
       "before_state": "どん底・危機",
       "after_state": "縮小安定・生存",
-      "main_domain": null,
-      "scale": "country",
-      "story_length": 88
-    },
-    {
-      "transition_id": "CORP_JP_2774",
-      "story_summary": "デジタル化でフィルム需要が消滅する中、富士フイルムは祖業に固執せず、化粧品、医療機器、創薬支援など新事業へ大胆に転換。フィルム技術を活かした新体制を構築し、事業構造を完全に刷新した。",
-      "before_state": "停滞・閉塞",
-      "after_state": "変質・新生",
-      "main_domain": "化学・医療",
-      "scale": "company",
-      "story_length": 91
-    },
-    {
-      "transition_id": "OTHR_JP_1380",
-      "story_summary": "インスタ映え文化は、実際の生活とは乖離した美しい画像の投稿を促進。飲食店はSNS向けの派手な見た目重視に走り、本質的な味よりも撮影しやすさが優先された。表面的な成功を追う風潮が広がった。",
-      "before_state": "成長痛",
-      "after_state": "現状維持・延命",
-      "main_domain": "IT・消費文化",
+      "main_domain": "政治・行政",
       "scale": "other",
-      "story_length": 93
+      "story_length": 85,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_008",
-      "story_summary": "リクルートホールディングスが2012年9月、米求人検索サイト大手Indeedを約1200億円で買収。その後Indeedは急成長し、2019年には月間2.5億ユーザーを抱える世界最大の求人サイトに。リクルートのグローバル成長エンジンに。",
+      "transition_id": "CORP_JP_4564",
+      "story_summary": "会員制ファンサイト「それいけ！じゃがり校」を2007年から14年間運営。テスト販売中の商品を「生徒」に試食してもらい意見を反映する商品開発サイクルを確立。近年の「じゃがりこ」ほぼすべての商品にこのプロセスが適用され、ファン参加型の商品開発モデルとして成功した。",
       "before_state": "安定・平和",
       "after_state": "V字回復・大成功",
-      "main_domain": "小売・サービス",
+      "main_domain": "business",
       "scale": "company",
-      "story_length": 117
+      "story_length": 130,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_1197",
-      "story_summary": "ウェアラブル機器メーカーがFitbit・Apple Watchとの競争に敗れ清算。累計9億ドル調達。",
-      "before_state": "成長痛",
-      "after_state": "崩壊・消滅",
-      "main_domain": "製造",
-      "scale": "company",
-      "story_length": 50
-    },
-    {
-      "transition_id": "PERS_JP_192",
-      "story_summary": "大分県中津藩の下級武士の子として大阪の蔵屋敷で誕生。2歳で父を亡くし貧困の中で育つ。14歳で塾に通い始め、19歳で長崎へ、その後緒方洪庵の適塾で蘭学を学ぶ。1860年咸臨丸で渡米、能力で活躍できる社会に感動。1868年慶應義塾を創設。『学問のすすめ』は300万部のベストセラー。1882年『時事新報』創刊。専修大学、一橋大学前身の設立にも尽力。1901年68歳で死去。",
-      "before_state": "どん底・危機",
+      "transition_id": "OTHR_JP_1066",
+      "story_summary": "江戸時代から湯治場として発展し、東海道の宿場町としても栄えた。明治以降は外国人観光客も増え、戦後は大規模観光地へと発展。富士山と温泉を組み合わせた魅力で、年間2,000万人以上が訪れる日本屈指の温泉リゾートとして成長を続けている。",
+      "before_state": "安定・平和",
       "after_state": "V字回復・大成功",
-      "main_domain": "農林水産",
-      "scale": "individual",
-      "story_length": 184
+      "main_domain": "観光・レジャー",
+      "scale": "other",
+      "story_length": 115,
+      "is_calibration": false
     },
     {
-      "transition_id": "OTHR_JP_954",
-      "story_summary": "バブル崩壊後の健康志向の高まりでウォーキングが注目。万歩計ブーム、ノルディックウォーキング導入を経て、最も手軽な運動として定着。1日8000歩推奨が浸透し、スマホの歩数計機能も普及。",
+      "transition_id": "CORP_JP_3412",
+      "story_summary": "シャープは液晶事業からの撤退判断が遅れ、経営危機に陥った。遯尾（撤退の遅れ）により傷を深め、最終的に鴻海に買収された。退くべき時に退けなかった事例。",
+      "before_state": "どん底・危機",
+      "after_state": "崩壊・消滅",
+      "main_domain": "電機・電子",
+      "scale": "company",
+      "story_length": 74,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_833",
+      "story_summary": "ビートルズは1970年に解散。ポール・マッカートニーの脱退表明で、音楽史上最も成功したパートナーシップが終焉した。馬匹亡う（パートナーを失う）の典型例。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "エンターテインメント",
+      "scale": "other",
+      "story_length": 76,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_2669",
+      "story_summary": "静岡県裾野市に未来型都市「ウーブン・シティ」を建設。ロボット工学、AI、自動運転を統合した実証都市で、社会全体への恵みを通じて自社の技術革新と価値創造を追求。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "Automotive",
+      "scale": "company",
+      "story_length": 79,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_3292",
+      "story_summary": "暗号資産取引所FTXは急成長し企業価値320億ドルに達したが、自社トークンFTTを担保とした過剰な資金調達と拡大投資を続けた。2022年11月、信用不安から取り付け騒ぎが発生し、蓄積の限界を超えて破綻。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "金融・保険",
+      "scale": "company",
+      "story_length": 101,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_3570",
+      "story_summary": "かつて世界最大の時価総額を誇ったGEは、金融事業の損失とコングロマリット戦略の失敗で株価90%下落。2018年にダウ平均から除外された。",
+      "before_state": "絶頂・慢心",
+      "after_state": "崩壊・消滅",
+      "main_domain": "総合電機",
+      "scale": "company",
+      "story_length": 68,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "COUN_JP_1319",
+      "story_summary": "1986年チェルノブイリ原発事故発生。当初ソ連政府は隠蔽を図るも、放射性物質がヨーロッパに拡散し国際的非難が高まる。ゴルバチョフは「渙きて其の汗を大号す」の如く危機を広く世界に公表。この情報公開がグラスノスチ（情報公開）政策の転換点となり、ソ連体制変革の契機に。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "エネルギー",
+      "scale": "country",
+      "story_length": 131,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "HEX13_YAO6_001",
+      "story_summary": "経団連は郊外で人と同じくするように、業界全体で緩やかな連携を維持。直接的な利害を超えて日本経済全体のために政策提言を行い、広範な協力関係を構築した。外部との緩やかだが重要な同人関係。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "経済団体",
+      "scale": "other",
+      "story_length": 91,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_955",
+      "story_summary": "1953年のREM睡眠発見から始まり、睡眠の重要性が科学的に解明。睡眠時無呼吸症候群の治療法確立、睡眠負債概念の普及を経て、「睡眠は投資」という認識が広がる。スリープテック産業も成長。",
       "before_state": "停滞・閉塞",
       "after_state": "V字回復・大成功",
-      "main_domain": "健康増進",
+      "main_domain": "睡眠医学",
       "scale": "other",
-      "story_length": 91
+      "story_length": 92,
+      "is_calibration": false
     },
     {
-      "transition_id": "FAM_JP_112",
-      "story_summary": "サウード家が建国し、石油で世界有数の富裕国に。しかし王族6,000人以上の放漫、石油依存経済、人権問題が課題。ムハンマド皇太子の「ビジョン2030」で脱石油を目指すも、ジャマル・カショギ記者殺害で国際的批判。改革と強権の両面を持つ。",
-      "before_state": "絶頂・慢心",
+      "transition_id": "PERS_JP_2793",
+      "story_summary": "営業職26歳がテックアカデミー（約30万円）でRailsを学び6ヶ月後にフリーランスエンジニアに転職。月単価65万円を達成後、自身のSaaSプロダクトを開発。MRR（月次定期収入）100万円を突破し2024年にはシードラウンドで5000万円を調達。",
+      "before_state": "停滞・閉塞",
       "after_state": "変質・新生",
-      "main_domain": "エネルギー・環境",
-      "scale": "family",
-      "story_length": 116
+      "main_domain": "IT・テクノロジー",
+      "scale": "individual",
+      "story_length": 124,
+      "is_calibration": false
     }
   ]
 }

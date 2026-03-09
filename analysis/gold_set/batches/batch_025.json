@@ -1,7 +1,11 @@
 {
-  "batch_id": 25,
-  "n_cases": 25,
-  "calibration_anchors": [
+  "batch_id": "batch_025",
+  "batch_number": 25,
+  "total_batches": 32,
+  "calibration_count": 5,
+  "case_count": 25,
+  "total_items": 30,
+  "cases": [
     {
       "transition_id": "CALIBRATION_001",
       "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
@@ -9,22 +13,7 @@
       "after_state": "どん底・危機",
       "main_domain": "不動産・建設",
       "scale": "company",
-      "expected_before_lower": "坎",
-      "expected_before_upper": "震",
-      "expected_after_lower": "坎",
-      "expected_after_upper": "艮",
-      "acceptable_alternatives": {
-        "before_lower": [],
-        "before_upper": [
-          "坎"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "坎",
-          "坤"
-        ]
-      },
-      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_002",
@@ -33,21 +22,7 @@
       "after_state": "V字回復・大成功",
       "main_domain": "テクノロジー",
       "scale": "company",
-      "expected_before_lower": "乾",
-      "expected_before_upper": "離",
-      "expected_after_lower": "乾",
-      "expected_after_upper": "乾",
-      "acceptable_alternatives": {
-        "before_lower": [],
-        "before_upper": [
-          "乾"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "離"
-        ]
-      },
-      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_003",
@@ -56,26 +31,7 @@
       "after_state": "共創・協調",
       "main_domain": "製造",
       "scale": "company",
-      "expected_before_lower": "震",
-      "expected_before_upper": "坎",
-      "expected_after_lower": "兌",
-      "expected_after_upper": "兌",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "坎",
-          "艮"
-        ],
-        "before_upper": [
-          "震",
-          "艮"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "巽",
-          "離"
-        ]
-      },
-      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_004",
@@ -84,24 +40,7 @@
       "after_state": "覚醒・発見",
       "main_domain": "社会・コミュニティ",
       "scale": "other",
-      "expected_before_lower": "離",
-      "expected_before_upper": "坎",
-      "expected_after_lower": "離",
-      "expected_after_upper": "離",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "坎"
-        ],
-        "before_upper": [
-          "坤"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "乾",
-          "震"
-        ]
-      },
-      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_005",
@@ -110,220 +49,67 @@
       "after_state": "漸進的変化",
       "main_domain": "製造",
       "scale": "company",
-      "expected_before_lower": "坤",
-      "expected_before_upper": "艮",
-      "expected_after_lower": "巽",
-      "expected_after_upper": "坤",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "艮",
-          "巽"
-        ],
-        "before_upper": [
-          "坤",
-          "巽"
-        ],
-        "after_lower": [
-          "坤",
-          "艮"
-        ],
-        "after_upper": [
-          "艮",
-          "巽"
-        ]
-      },
-      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
-    }
-  ],
-  "cases": [
-    {
-      "transition_id": "PERS_JP_2195",
-      "story_summary": "大蔵省を退官した渋沢は、民間の立場から日本初の銀行設立に着手した。同志を集める最初の一歩として、実業家たちとの協力関係を構築し始めた。",
-      "before_state": "安定・平和",
-      "after_state": "V字回復・大成功",
-      "main_domain": "金融・実業",
-      "scale": "individual",
-      "story_length": 67
+      "is_calibration": true
     },
     {
-      "transition_id": "FAM_JP_250",
-      "story_summary": "子供時代からの確執で兄弟が疎遠に。親の病気をきっかけに連絡を取り合うように。看護を通じて関係が修復され、親の死後も交流が続く。「家族の絆」を再確認。",
-      "before_state": "停滞・閉塞",
-      "after_state": "変質・新生",
-      "main_domain": "医療・製薬",
+      "transition_id": "FAM_JP_268",
+      "story_summary": "40代での結婚、すぐに子供を授かり幸運だった。体力的には若い親より大変だが、経済的・精神的な余裕がある。「遅く始まった家族」だからこそ、一日一日を大切にしている。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
       "scale": "family",
-      "story_length": 74
+      "story_length": 81,
+      "is_calibration": false
     },
     {
-      "transition_id": "OTHR_JP_1486",
-      "story_summary": "大企業がオープンイノベーション拠点を開設し、スタートアップとの協業を促進する動きが活発化。パートナーシップ構築宣言の一環として具体的な取組が進む。",
-      "before_state": "安定・平和",
-      "after_state": "V字回復・大成功",
-      "main_domain": "ビジネス",
-      "scale": "other",
-      "story_length": 73
-    },
-    {
-      "transition_id": "PERS_JP_2141",
-      "story_summary": "日本初のノーベル物理学賞受賞者・湯川秀樹の下で南部陽一郎が学び、後に自発的対称性の破れで独自のノーベル賞理論を確立。師の枠を超えた弟子の成長例。",
-      "before_state": "成長痛",
-      "after_state": "V字回復・大成功",
-      "main_domain": "学術研究",
-      "scale": "individual",
-      "story_length": 72
-    },
-    {
-      "transition_id": "CORP_JP_3610",
-      "story_summary": "デジタルカメラ時代への対応に失敗した最終期。フィルム事業に固執し、ついに破産法申請に至った終末の決断。",
-      "before_state": "どん底・危機",
-      "after_state": "崩壊・消滅",
-      "main_domain": "写真・化学",
-      "scale": "company",
-      "story_length": 51
-    },
-    {
-      "transition_id": "OTHR_JP_313",
-      "story_summary": "商店街で若手商店主が対話。2024年も継続。SNS活用、イベント企画で活性化。柔軟な発想と対話による合意形成。明るい雰囲気で客足回復。世代交代が成功のカギ。",
-      "before_state": "停滞・閉塞",
-      "after_state": "V字回復・大成功",
-      "main_domain": "Other",
-      "scale": "other",
-      "story_length": 78
-    },
-    {
-      "transition_id": "OTHR_JP_033",
-      "story_summary": "地域観光の拠点として人気の道の駅に近隣に競合施設が増加。7年かけて地元食材と体験型コンテンツで差別化。",
-      "before_state": "安定・平和",
-      "after_state": "縮小安定・生存",
-      "main_domain": "観光・旅行",
-      "scale": "other",
-      "story_length": 51
-    },
-    {
-      "transition_id": "CORP_JP_3417",
-      "story_summary": "堀江貴文率いるライブドアは急成長と派手な買収で注目を集めたが、2006年に証券取引法違反で摘発。高く飛びすぎた鳥が墜落した事例。",
-      "before_state": "絶頂・慢心",
-      "after_state": "崩壊・消滅",
-      "main_domain": "IT・通信",
-      "scale": "company",
-      "story_length": 64
-    },
-    {
-      "transition_id": "CORP_JP_3396",
-      "story_summary": "1997年に復帰したジョブズは、製品ラインを大幅削減し、iMac・iPodで革新を断行。取締役会と社員の信頼を得て「命を改めた」。悔いは消え、信頼による変革が成功した。",
-      "before_state": "どん底・危機",
-      "after_state": "V字回復・大成功",
-      "main_domain": "IT・通信",
-      "scale": "company",
-      "story_length": 84
-    },
-    {
-      "transition_id": "OTHR_JP_1524",
-      "story_summary": "2024年のPMIベストプラクティスとして、Day 1（初日）、Day 100（100日計画）、Year 1（1年計画）の3段階ロードマップが標準化。",
-      "before_state": "混乱・カオス",
-      "after_state": "V字回復・大成功",
-      "main_domain": "ビジネス",
-      "scale": "other",
-      "story_length": 75
-    },
-    {
-      "transition_id": "CORP_JP_291",
-      "story_summary": "人気アプリを持つ開発会社がプラットフォームのルール変更で収益激減。4年かけてサブスクモデル転換で再建。",
-      "before_state": "安定・平和",
-      "after_state": "縮小安定・生存",
-      "main_domain": "テクノロジー",
-      "scale": "company",
-      "story_length": 51
-    },
-    {
-      "transition_id": "OTHR_JP_1006",
-      "story_summary": "効率重視で消えかけていた各地の伝統野菜が見直される。京野菜、加賀野菜、なにわの伝統野菜など、自治体やJAが認定制度を創設。固有の風味と歴史的価値が評価され、高級食材として料理店で人気に。種の保存と継承が進む。",
-      "before_state": "どん底・危機",
-      "after_state": "縮小安定・生存",
-      "main_domain": "農業・一次産業",
-      "scale": "other",
-      "story_length": 104
-    },
-    {
-      "transition_id": "CORP_JP_3150",
-      "story_summary": "デンソーはトヨタからスピンオフ後も緊密な協力関係を維持。共同での技術開発により、両社とも世界トップクラスの競争力を獲得。長期的パートナーシップによる相互益の典型例。",
-      "before_state": "安定・平和",
-      "after_state": "V字回復・大成功",
-      "main_domain": "自動車・部品",
-      "scale": "company",
-      "story_length": 82
-    },
-    {
-      "transition_id": "PERS_JP_2983",
-      "story_summary": "2013年「風立ちぬ」公開後に引退を宣言。40年以上にわたりアニメ界で対話と融合を続けてきた巨匠が、静かに制作現場から身を引いた。しかし2017年に撤回し「君たちはどう生きるか」の制作を開始。引退期間は結果的に充電・様子見の時期となった。",
+      "transition_id": "PERS_JP_712",
+      "story_summary": "転勤を拒否して家族との生活を選択。子供の成長を見守れる幸せ。しかし出世コースからは外れ、キャリアは停滞。家族とキャリアのトレードオフ。",
       "before_state": "安定・平和",
       "after_state": "現状維持・延命",
-      "main_domain": "エンタメ・アニメ",
+      "main_domain": "生活・暮らし",
       "scale": "individual",
-      "story_length": 119
+      "story_length": 67,
+      "is_calibration": false
     },
     {
-      "transition_id": "PERS_JP_2193",
-      "story_summary": "サッカー選手の夢を諦めたラムゼイは、料理の世界で新たなスタートを切った。鼎の基礎を固めるように修行を重ね、やがてミシュラン三つ星シェフとなった。",
-      "before_state": "どん底・危機",
-      "after_state": "V字回復・大成功",
-      "main_domain": "飲食・料理",
-      "scale": "individual",
-      "story_length": 72
-    },
-    {
-      "transition_id": "CORP_JP_661",
-      "story_summary": "パソコン、携帯電話から撤退し、ITサービス・クラウドに集中。官公庁、金融向けシステム開発に強み。DX支援ビジネスを拡大。「ハード」から「サービス」への転換を完了。",
+      "transition_id": "OTHR_JP_121",
+      "story_summary": "固定価格買取制度で急拡大、参入者殺到。しかし買取価格低下で採算悪化、メガソーラー開発による環境破壊も問題に。一方で技術進歩でコスト低下、自家消費型にシフト。「補助金ビジネス」から「実力勝負」へ。",
       "before_state": "停滞・閉塞",
       "after_state": "V字回復・大成功",
       "main_domain": "テクノロジー",
-      "scale": "company",
-      "story_length": 81
+      "scale": "other",
+      "story_length": 97,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_2711",
-      "story_summary": "東芝は原発事業の巨額損失を隠蔽し、7年間で2000億円超の利益水増しを行った。経営陣と現場の意思疎通が断絶し、内部告発で発覚。上場廃止の危機に陥り、名門企業が事実上解体された。",
-      "before_state": "停滞・閉塞",
-      "after_state": "崩壊・消滅",
-      "main_domain": "",
-      "scale": "company",
-      "story_length": 88
-    },
-    {
-      "transition_id": "CORP_JP_650",
-      "story_summary": "戦前からの老舗物流企業。引越し「日通」としても有名。BtoB物流、国際物流に強み。NXホールディングスとしてグローバル展開を加速。「日本の物流インフラ」としての地位を維持。",
-      "before_state": "安定・平和",
+      "transition_id": "PERS_JP_310",
+      "story_summary": "東京都台東区出身。中学時代に父の事業失敗で貧困に。高校卒業後、浅草東洋劇場でコメディアン修業。1966年坂上二郎と「コント55号」結成、激しい動きと不条理なコントで人気爆発。1975年「欽ちゃんのドンとやってみよう！」開始。1982年には3本の冠番組が全て視聴率30%超え、「視聴率100%男」の異名。2005年社会人野球「茨城ゴールデンゴールズ」創設。2015年駒澤大学入学。",
+      "before_state": "どん底・危機",
       "after_state": "V字回復・大成功",
-      "main_domain": "物流・交通",
-      "scale": "company",
-      "story_length": 86
-    },
-    {
-      "transition_id": "COUN_JP_1371",
-      "story_summary": "東西冷戦期の東側陣営が、ベルリンの壁崩壊を経て連帯が瓦解。親和と協力の極限で分裂し、ソ連解体に至った。",
-      "before_state": "停滞・閉塞",
-      "after_state": "崩壊・消滅",
-      "main_domain": "政治",
-      "scale": "country",
-      "story_length": 51
-    },
-    {
-      "transition_id": "COUN_JP_559",
-      "story_summary": "ふるさと納税の寄付額が1兆円を突破。返礼品競争の過熱と都市部自治体の税収減少が問題化。総務省が経費率5割ルール厳格化。制度の持続可能性と本来の趣旨への回帰が議論に。",
-      "before_state": "成長痛",
-      "after_state": "変質・新生",
-      "main_domain": "社会・コミュニティ",
-      "scale": "country",
-      "story_length": 82
-    },
-    {
-      "transition_id": "PERS_JP_113",
-      "story_summary": "終戦直後の混乱期に本田技術研究所を設立。自転車用エンジンから始め、オートバイ市場に参入。1954年のマン島TTレース挑戦宣言は無謀と言われたが、技術革新を重ね1961年に125cc、250ccクラスで優勝。世界的メーカーへの道を開いた。",
-      "before_state": "混乱・カオス",
-      "after_state": "V字回復・大成功",
-      "main_domain": "製造",
+      "main_domain": "エンタメ",
       "scale": "individual",
-      "story_length": 118
+      "story_length": 189,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_399",
+      "story_summary": "1997年DVDレンタル郵送サービス開始。2007年ストリーミング参入、当初1000タイトルで競合から嘲笑される。2011年値上げとQwikster分社化を発表し80万人の会員が解約、株価77%下落。しかし1ヶ月でQwikster撤回、2013年にHouse of Cards制作でオリジナルコンテンツに舵切り。2023年にDVD事業終了、時価総額2400億ドル超のストリーミング覇者に。",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "main_domain": "金融",
+      "scale": "company",
+      "story_length": 194,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "FAM_JP_304",
+      "story_summary": "日銀の金融政策正常化で住宅ローン金利が上昇傾向。変動金利利用者への影響が懸念。固定金利への借換え検討が増加。住宅購入の判断に影響。家計の金利リスク意識が高まる。",
+      "before_state": "安定・平和",
+      "after_state": "変質・新生",
+      "main_domain": "金融",
+      "scale": "family",
+      "story_length": 80,
+      "is_calibration": false
     },
     {
       "transition_id": "CORP_JP_109",
@@ -332,34 +118,188 @@
       "after_state": "縮小安定・生存",
       "main_domain": "製造",
       "scale": "company",
-      "story_length": 64
+      "story_length": 64,
+      "is_calibration": false
     },
     {
-      "transition_id": "OTHR_JP_1030",
-      "story_summary": "日蓮正宗の在家組織として発足。戦後に急成長し、1970年代から国際展開を開始。現在192カ国・地域に広がり、会員数約1200万人。SGI（創価学会インタナショナル）として国連NGOの地位を持ち、平和・文化活動を展開。",
+      "transition_id": "COUN_JP_1190",
+      "story_summary": "バーツ暴落でアジア通貨危機の発火点に。IMFから172億ドルの支援を受ける。GDP42%減の深刻な不況。構造改革を経て2001年頃から回復軌道に。",
+      "before_state": "絶頂・慢心",
+      "after_state": "縮小安定・生存",
+      "main_domain": "",
+      "scale": "country",
+      "story_length": 73,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_115",
+      "story_summary": "郊外型SCとの競争で売上が減少した地方百貨店が、食品とサービスに特化して9年間生き残りを図る。規模縮小しながらも地域密着で存続。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "小売・サービス",
+      "scale": "company",
+      "story_length": 64,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_736",
+      "story_summary": "大学院に進学して専門性を獲得。研究者としての道が開ける。しかし2年間の機会費用、同期は出世していく焦り。専門性とキャリアのバランス。",
+      "before_state": "成長痛",
+      "after_state": "V字回復・大成功",
+      "main_domain": "教育",
+      "scale": "individual",
+      "story_length": 66,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_927",
+      "story_summary": "人口50人の限界集落で町内会長に就任。高齢化と人口減少で集落消滅の危機。移住促進のためSNSで情報発信を開始。空き家バンクを活用し、6年間で10世帯の移住者を獲得。子供の声が戻り、集落に活気が復活。「諦めなければ地域は守れる」と全国で講演も。",
       "before_state": "停滞・閉塞",
       "after_state": "V字回復・大成功",
-      "main_domain": "宗教・信仰",
-      "scale": "other",
-      "story_length": 108
-    },
-    {
-      "transition_id": "COUN_JP_280",
-      "story_summary": "1994年の大虐殺で人口の多くと社会基盤を失い、国家消滅の危機に瀕した。カガメ政権は「国民和解」と「国家再建」を強力に推進。海外援助を呼び込み、ゼロからのインフラ整備と治安回復に注力。絶望的な状況から短期間で秩序を取り戻し、後のICT立国へと続く復興の土台を築いた。",
-      "before_state": "どん底・危機",
-      "after_state": "変質・新生",
       "main_domain": "社会・コミュニティ",
-      "scale": "country",
-      "story_length": 133
+      "scale": "individual",
+      "story_length": 121,
+      "is_calibration": false
     },
     {
-      "transition_id": "PERS_JP_0077",
-      "story_summary": "交通死亡事故の加害者となった40代男性が、10年かけて賠償と償いを続ける。保険と自己資金で賠償を完了し、安全運転講習のボランティアに参加。",
+      "transition_id": "OTHR_JP_085",
+      "story_summary": "コロナ禍で医療逼迫、しかし開業医中心の医師会は病床確保に消極的との批判。政治力行使で診療報酬は守るも、国民からの信頼低下。「医師の利益団体」というイメージ払拭に苦慮。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "医療・製薬",
+      "scale": "other",
+      "story_length": 83,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "COUN_JP_389",
+      "story_summary": "1999年住民投票でインドネシアから独立決定、民兵による暴力で多数死亡。2002年独立達成、アジア最年少の国家に。石油収入を将来基金に積立てるも、若年失業、政治対立が課題。ノーベル平和賞受賞者を輩出した小国の挑戦。",
       "before_state": "どん底・危機",
-      "after_state": "縮小安定・生存",
-      "main_domain": "金融",
+      "after_state": "V字回復・大成功",
+      "main_domain": "不動産・建設",
+      "scale": "country",
+      "story_length": 107,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_303",
+      "story_summary": "サッカー日本代表が監督と選手の対話を重視。2024年も継続。戦術理解と選手の主体性を両立。明るいチーム雰囲気が成績向上につながる。森保監督のコミュニケーション力が評価。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "スポーツ",
+      "scale": "other",
+      "story_length": 84,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_273",
+      "story_summary": "トラック運転手の時間外労働上限規制で輸送力不足懸念。運賃交渉力向上、中継輸送、モーダルシフトを推進。荷主との関係見直しも進む。物流の持続可能性確保に向け業界構造転換が加速。",
+      "before_state": "混乱・カオス",
+      "after_state": "変質・新生",
+      "main_domain": "物流・交通",
+      "scale": "other",
+      "story_length": 86,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_299",
+      "story_summary": "尾道市が空き家を活用したまちづくりで成功。2024年もアートイベント・ゲストハウス増加。移住者も呼び込む。柔軟な発想と地域住民の協力が鍵。観光と生活の調和を実現。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "観光・旅行",
+      "scale": "other",
+      "story_length": 81,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_3154",
+      "story_summary": "2018年、ネスレはスターバックスの家庭用コーヒー事業のライセンスを71億ドルで取得。スターバックスは店舗外収益を確保し、ネスレはプレミアムブランドを獲得。両社の強みを活かした提携。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "食品・飲料",
+      "scale": "company",
+      "story_length": 91,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CTRY_JP_2977",
+      "story_summary": "ムバラク政権下で外交対話路線を維持していたエジプトで、2011年1月にチュニジア革命の波及により大規模デモが発生。18日間の抗議運動で30年間のムバラク政権が崩壊。軍が暫定統治を経てモルシ政権が成立したが、政治的混乱が続いた。",
+      "before_state": "安定・平和",
+      "after_state": "迷走・混乱",
+      "main_domain": "政治・外交",
+      "scale": "country",
+      "story_length": 113,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_3104",
+      "story_summary": "米投資ファンドのスティール・パートナーズがブルドックソースに敵対的TOBを仕掛ける。ブルドック側は買収防衛策を発動し、最高裁で防衛策の有効性が認められた。株主価値を巡る見解の対立が法廷闘争に発展。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "食品・消費財",
+      "scale": "company",
+      "story_length": 98,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_3373",
+      "story_summary": "ジョブズ復帰後のAppleは「白馬のように飾る」デザイン哲学を確立。iMacの半透明ボディ、iPodの白いイヤホンなど、白を基調とした洗練された美学で製品を飾り、ブランド価値を高めた。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "IT・電子機器",
+      "scale": "company",
+      "story_length": 92,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_3602",
+      "story_summary": "フィアットからの分離独立後の成熟期。限定生産戦略を維持しながら、ブランド価値を最大化する経営で高収益を実現。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "自動車・高級車",
+      "scale": "company",
+      "story_length": 54,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "COUN_JP_1369",
+      "story_summary": "ペリー来航後、幕末の動乱期に各藩が近代化を模索。薩摩・長州・土佐などが密かに力を蓄え、明治維新に向けた潜伏・準備期を過ごした。",
+      "before_state": "停滞・閉塞",
+      "after_state": "変質・新生",
+      "main_domain": "国家運営・政治",
+      "scale": "country",
+      "story_length": 63,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_1152",
+      "story_summary": "月に向かう途中で酸素タンクが爆発し、乗組員は生死の境をさまよった。小さな過ちが極限まで増幅されたが、冷静な対応で地球帰還を果たした。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "宇宙・科学",
+      "scale": "other",
+      "story_length": 66,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_1931",
+      "story_summary": "井深大より12歳年下の盛田昭夫は、ソニーで営業・販売を担当。技術の井深、営業の盛田という役割分担で世界企業を築いた。海外展開では盛田が「ソニーの顔」として活躍したが、技術面では常に井深を立てた。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "電機",
       "scale": "individual",
-      "story_length": 69
+      "story_length": 97,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_2949",
+      "story_summary": "2006年ワールドカップ後に29歳で引退し、サッカー界から完全撤退。約3年間世界を旅しながら様子見の期間を過ごした後、2009年から日本酒プロジェクト「SAKE100」を立ち上げ、日本文化発信という新領域で衝撃的な転身を果たした。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "スポーツ・文化",
+      "scale": "individual",
+      "story_length": 115,
+      "is_calibration": false
     }
   ]
 }

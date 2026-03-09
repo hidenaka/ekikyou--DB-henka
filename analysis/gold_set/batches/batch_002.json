@@ -1,7 +1,11 @@
 {
-  "batch_id": 2,
-  "n_cases": 25,
-  "calibration_anchors": [
+  "batch_id": "batch_002",
+  "batch_number": 2,
+  "total_batches": 32,
+  "calibration_count": 5,
+  "case_count": 25,
+  "total_items": 30,
+  "cases": [
     {
       "transition_id": "CALIBRATION_001",
       "story_summary": "大手建設会社が粉飾決算の発覚により信用を完全に失墜。主要取引銀行が融資を打ち切り、取引先が次々と契約を解除。経営陣は辞任し、会社は民事再生法の適用を申請。従業員の大量離職が続き、事業の継続すら危ぶまれる状態に陥った。",
@@ -9,22 +13,7 @@
       "after_state": "どん底・危機",
       "main_domain": "不動産・建設",
       "scale": "company",
-      "expected_before_lower": "坎",
-      "expected_before_upper": "震",
-      "expected_after_lower": "坎",
-      "expected_after_upper": "艮",
-      "acceptable_alternatives": {
-        "before_lower": [],
-        "before_upper": [
-          "坎"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "坎",
-          "坤"
-        ]
-      },
-      "rationale": "粉飾決算=内部に隠された危険(坎)、発覚による激震(震)。危機後は深い困難(坎)の中で停止・硬直(艮)。坎が支配的な典型的危機事例。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_002",
@@ -33,21 +22,7 @@
       "after_state": "V字回復・大成功",
       "main_domain": "テクノロジー",
       "scale": "company",
-      "expected_before_lower": "乾",
-      "expected_before_upper": "離",
-      "expected_after_lower": "乾",
-      "expected_after_upper": "乾",
-      "acceptable_alternatives": {
-        "before_lower": [],
-        "before_upper": [
-          "乾"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "離"
-        ]
-      },
-      "rationale": "創造的エネルギーと強いリーダーシップ=乾。ビジョンの明確さ・革新性=離。成功後は内外ともに乾(天)の力が満ちる。乾が支配的な拡大・創造事例。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_003",
@@ -56,26 +31,7 @@
       "after_state": "共創・協調",
       "main_domain": "製造",
       "scale": "company",
-      "expected_before_lower": "震",
-      "expected_before_upper": "坎",
-      "expected_after_lower": "兌",
-      "expected_after_upper": "兌",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "坎",
-          "艮"
-        ],
-        "before_upper": [
-          "震",
-          "艮"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "巽",
-          "離"
-        ]
-      },
-      "rationale": "競合→協調の転換。対話・交流・喜びの共有=兌。兌が支配的になるべき協調事例。兌の公平な扱いを検証するキャリブレーション。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_004",
@@ -84,24 +40,7 @@
       "after_state": "覚醒・発見",
       "main_domain": "社会・コミュニティ",
       "scale": "other",
-      "expected_before_lower": "離",
-      "expected_before_upper": "坎",
-      "expected_after_lower": "離",
-      "expected_after_upper": "離",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "坎"
-        ],
-        "before_upper": [
-          "坤"
-        ],
-        "after_lower": [],
-        "after_upper": [
-          "乾",
-          "震"
-        ]
-      },
-      "rationale": "真実を照らす火=離。隠された不正(坎)を明るみに出す=離の本質。変化後は内外ともに明晰・可視化(離)。離の公平な扱いを検証するキャリブレーション。"
+      "is_calibration": true
     },
     {
       "transition_id": "CALIBRATION_005",
@@ -110,32 +49,88 @@
       "after_state": "漸進的変化",
       "main_domain": "製造",
       "scale": "company",
-      "expected_before_lower": "坤",
-      "expected_before_upper": "艮",
-      "expected_after_lower": "巽",
-      "expected_after_upper": "坤",
-      "acceptable_alternatives": {
-        "before_lower": [
-          "艮",
-          "巽"
-        ],
-        "before_upper": [
-          "坤",
-          "巽"
-        ],
-        "after_lower": [
-          "坤",
-          "艮"
-        ],
-        "after_upper": [
-          "艮",
-          "巽"
-        ]
-      },
-      "rationale": "意図的に曖昧な事例。受容(坤)、安定(艮)、漸進(巽)のいずれも妥当。高信頼度アノテーションは不適切。medium/lowの信頼度が出るべきキャリブレーション。"
-    }
-  ],
-  "cases": [
+      "is_calibration": true
+    },
+    {
+      "transition_id": "FAM_JP_728",
+      "story_summary": "メディア王ルパート・マードックは4人の子供に平等な信託を設定していたが、2023年にFox Newsの保守路線維持のため長男ラクランに支配権を集中させようと信託条件の変更を画策。他の3人の子供が反対し法廷闘争に発展。裁判所は「慎重に仕組まれた茶番」と断じ変更を却下した。",
+      "before_state": "安定・平和",
+      "after_state": "崩壊・消滅",
+      "main_domain": "生活・暮らし",
+      "scale": "family",
+      "story_length": 135,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_1171",
+      "story_summary": "何気ない投稿が100万いいねを獲得。一躍有名人になったが、身バレ、誹謗中傷に悩まされる。アカウントを削除し、リアルの生活に戻る決断。「バズの代償」の大きさを知った。",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "main_domain": "生活・暮らし",
+      "scale": "individual",
+      "story_length": 82,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_031",
+      "story_summary": "2014年創業のPreferred Networksが、深層学習技術でトヨタ・ファナックなど大手と提携。2024年には企業価値3500億円超の日本最大AIスタートアップに成長。製造業AIで存在感。",
+      "before_state": "停滞・閉塞",
+      "after_state": "V字回復・大成功",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 98,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_128",
+      "story_summary": "ネットニュースの普及で購読者が減少する地方紙が、19年かけてデジタル化を推進。紙とWebのハイブリッドで、縮小しながら地域の情報インフラを維持。",
+      "before_state": "成長痛",
+      "after_state": "縮小安定・生存",
+      "main_domain": "テクノロジー",
+      "scale": "company",
+      "story_length": 72,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "FAM_JP_125",
+      "story_summary": "阪急電鉄創業、宝塚歌劇団設立で日本のビジネスモデルを革新した小林一三。子孫は阪急阪神ホールディングスの経営に関与も、プロパー経営者に移行。逸翁美術館など文化事業で創業者精神を継承。同族経営からの円滑な移行例。",
+      "before_state": "安定・平和",
+      "after_state": "V字回復・大成功",
+      "main_domain": "エンタメ",
+      "scale": "family",
+      "story_length": 104,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_2751",
+      "story_summary": "中堅生保の協栄生命は、高金利時代に高利回り商品を大量販売。低金利時代到来で逆ザヤが累積し、2000年10月に会社更生特例法を申請。負債総額4兆5,296億円は当時の戦後最大の倒産記録となった。",
+      "before_state": "成長痛",
+      "after_state": "崩壊・消滅",
+      "main_domain": "金融",
+      "scale": "company",
+      "story_length": 96,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "COUN_JP_095",
+      "story_summary": "外資導入による輸出主導型成長で「アジアの奇跡」の一翼を担い、自動車産業の集積地（東洋のデトロイト）となった。1997年の通貨危機の震源地となり大打撃を受けたが、通貨切り下げによる輸出競争力回復と観光業の伸長によりV字回復。その後も政情不安を抱えつつ、ASEANの中核経済として成長を続けた。",
+      "before_state": "絶頂・慢心",
+      "after_state": "V字回復・大成功",
+      "main_domain": "製造",
+      "scale": "country",
+      "story_length": 145,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_2719",
+      "story_summary": "日産は環境規制強化の潮流を読み、量産型EVのリーフを発売。テスラに続く形でEV市場に参入し、一時は世界最量販EVに。時流への追随が功を奏したが、その後の失速も経験した。",
+      "before_state": "どん底・危機",
+      "after_state": "変質・新生",
+      "main_domain": "",
+      "scale": "company",
+      "story_length": 84,
+      "is_calibration": false
+    },
     {
       "transition_id": "CORP_JP_447",
       "story_summary": "創業100年以上、かつての米国小売最大手。2010年に3555店舗、2016年には1503店舗に半減。店舗の経年劣化がひどく、買い物客が来店を敬遠。ECへの対応遅れとディスカウント店との競争で客を奪われる。中流階級の没落で顧客基盤が縮小。2018年10月15日、連邦破産法11条を申請。「小売業の黙示録（Retail Apocalypse）」の象徴的事例。",
@@ -143,133 +138,88 @@
       "after_state": "崩壊・消滅",
       "main_domain": "小売・サービス",
       "scale": "company",
-      "story_length": 178
+      "story_length": 178,
+      "is_calibration": false
     },
     {
-      "transition_id": "OTHR_JP_078",
-      "story_summary": "1991年から慰安婦問題を報道、国際問題化に貢献。しかし2014年「吉田証言」記事を取り消し、誤報を認める。保守層から激しい批判、不買運動で部数は700万部から400万部台に激減。デジタル化推進で生き残りを図る。",
-      "before_state": "絶頂・慢心",
-      "after_state": "縮小安定・生存",
-      "main_domain": "テクノロジー",
-      "scale": "other",
-      "story_length": 106
+      "transition_id": "PERS_JP_217",
+      "story_summary": "大阪市出身。元プロボクサー（リングネーム「グレート安藤」）。大学進学を断念し独学で建築を学ぶ。京大・阪大の友人から教科書を譲り受け1年で4年分を習得。1965年アルバイト資金で7ヶ月間世界を旅し建築を体験。1969年安藤忠雄建築研究所設立。1976年「住吉の長屋」で日本建築学会賞。1995年プリツカー賞（建築界のノーベル賞）。コンクリート打ち放しの独自表現で世界的評価。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "教育",
+      "scale": "individual",
+      "story_length": 186,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_4846",
-      "story_summary": "不当解雇の労働審判を1か月分の給与相当額の支払いで解決。長期化する訴訟を避け、早期和解で企業の評判維持と時間・コスト削減を実現。",
-      "before_state": "混乱・カオス",
+      "transition_id": "COUN_JP_442",
+      "story_summary": "マンデラ大統領就任で「虹の国」誕生に世界が感動。しかし30年後、失業率30%、停電頻発、治安悪化と課題山積。ANC政権の腐敗も深刻。「希望」から「失望」への道のり。",
+      "before_state": "どん底・危機",
       "after_state": "現状維持・延命",
-      "main_domain": "ビジネス",
-      "scale": "company",
-      "story_length": 64
-    },
-    {
-      "transition_id": "CORP_JP_516",
-      "story_summary": "中国第2位の不動産開発企業。過剰な借入で急成長。2021年、政府の「三本のレッドライン」政策で資金調達が困難に。同年末にドル建て債務でデフォルト宣言、負債3050億ドル（中国GDPの2%）。2023年7月、2021-2022年の純損失5800億元（806億ドル）を公表。8月に米国で連邦破産法15条を申請。9月に会長が警察の調査対象に。2024年1月、香港裁判所が清算を命令。",
-      "before_state": "絶頂・慢心",
-      "after_state": "崩壊・消滅",
-      "main_domain": "物流・交通",
-      "scale": "company",
-      "story_length": 188
-    },
-    {
-      "transition_id": "COUN_JP_575",
-      "story_summary": "2024年度薬価改定で約1000億円引き下げ。ドラッグラグ・ドラッグロスが問題化。海外新薬が日本未承認のケース増加。創薬ベンチャー支援と迅速承認の議論が活発化。医薬品の安定供給も課題。",
-      "before_state": "成長痛",
-      "after_state": "現状維持・延命",
-      "main_domain": "テクノロジー",
+      "main_domain": "国家・政治",
       "scale": "country",
-      "story_length": 92
+      "story_length": 82,
+      "is_calibration": false
     },
     {
-      "transition_id": "CORP_JP_2770",
-      "story_summary": "2011年の巨額粉飾決算発覚で経営危機に陥ったオリンパスは、2012年に新経営体制で再スタート。トップの対話集会200回開催、組織風土改革を推進し、100周年の2019年には完全復活を遂げた。",
-      "before_state": "混乱・カオス",
-      "after_state": "変質・新生",
-      "main_domain": "電機・医療",
-      "scale": "company",
-      "story_length": 96
-    },
-    {
-      "transition_id": "PERS_JP_292",
-      "story_summary": "宮城県仙台市出身。3歳9ヶ月で卓球を始め、平日4時間・休日8時間の英才教育。5歳で全日本選手権バンビの部史上最年少優勝。「天才卓球少女」「泣き虫愛ちゃん」として国民的アイドルに。五輪は2004年アテネから4大会連続出場。2012年ロンドン五輪で日本卓球界初の五輪メダル（団体銀）、2016年リオでも団体銅。2018年引退。現在は株式会社omusibi代表として社会貢献活動。",
+      "transition_id": "CORP_JP_375",
+      "story_summary": "1985年、大倉忠司氏が25歳で東大阪に1号店を開業。全品280円均一の低価格路線で勝負。100店舗達成に23年かかったが、その後3年で200店舗に。2014年ジャスダック上場、2016年東証一部上場。「うぬぼれろ」を理念に500店舗超の一大チェーンに成長。息子（関ジャニ∞大倉忠義）には継がせない方針を貫く。",
       "before_state": "成長痛",
-      "after_state": "変質・新生",
-      "main_domain": "金融",
-      "scale": "individual",
-      "story_length": 187
-    },
-    {
-      "transition_id": "PERS_JP_2868",
-      "story_summary": "2006年W杯後に29歳で現役引退を決断。世界放浪の旅を経て日本の伝統工芸に着目し、日本酒ブランド「SAKE100」や工芸プロジェクト「REVALUE NIPPON」を立ち上げ。",
-      "before_state": "停滞・閉塞",
-      "after_state": "変質・新生",
-      "main_domain": "スポーツ",
-      "scale": "individual",
-      "story_length": 89
-    },
-    {
-      "transition_id": "CORP_JP_484",
-      "story_summary": "2023年4月、海外向け車両の側面衝突試験で不正発覚。12月の第三者委員会報告で25試験項目・174件の不正が判明、64車種・3エンジンに及ぶ。トヨタ販売車22車種も含む。国内全工場で生産停止、3車種は型式指定取消の行政処分。社長・会長が引責辞任。2024年2月から段階的に生産再開、6月に全車種の確認完了。開発標準日程を1.4倍に延長する再発防止策を導入。",
-      "before_state": "安定・平和",
-      "after_state": "迷走・混乱",
-      "main_domain": "製造",
-      "scale": "company",
-      "story_length": 179
-    },
-    {
-      "transition_id": "OTHR_JP_1510",
-      "story_summary": "2024年調査でPMI成功企業の共通点は①明確な統合ビジョン、②早期コミュニケーション、③段階的統合ロードマップ。一気に統合せず段階を踏む戦略が有効。",
-      "before_state": "混乱・カオス",
       "after_state": "V字回復・大成功",
+      "main_domain": "Business",
+      "scale": "company",
+      "story_length": 155,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_1084",
+      "story_summary": "突然のパニック発作で日常生活に支障。電車にも乗れなくなったが、認知行動療法と薬物療法で改善。完治はしていないが、「発作が来ても対処できる」自信がついた。",
+      "before_state": "どん底・危機",
+      "after_state": "縮小安定・生存",
+      "main_domain": "医療・製薬",
+      "scale": "individual",
+      "story_length": 76,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_4847",
+      "story_summary": "労災事故の後遺障害訴訟で請求約1930万円を7分の1以下に減額して和解成立。企業側が適切な主張立証を行い、過大請求を抑制した。",
+      "before_state": "混乱・カオス",
+      "after_state": "縮小安定・生存",
       "main_domain": "ビジネス",
-      "scale": "other",
-      "story_length": 75
-    },
-    {
-      "transition_id": "PERS_JP_0047",
-      "story_summary": "ALSと診断された50代男性が、10年間在宅療養を続けながら生きがいを追求。視線入力装置でブログ執筆を続け、同じ境遇の人々の希望となる。",
-      "before_state": "どん底・危機",
-      "after_state": "縮小安定・生存",
-      "main_domain": "Lifestyle",
-      "scale": "individual",
-      "story_length": 68
-    },
-    {
-      "transition_id": "OTHR_JP_1082",
-      "story_summary": "アニメ・漫画・ゲームの舞台となった地域を訪れる「聖地巡礼」が観光トレンドに。『らき☆すた』の鷲宮神社、『ガールズ&パンツァー』の大洗町など、地域活性化の成功事例が続出。コンテンツツーリズムとして観光庁も支援し、ファン文化と地域経済の好循環を生み出している。",
-      "before_state": "停滞・閉塞",
-      "after_state": "V字回復・大成功",
-      "main_domain": "観光・レジャー",
-      "scale": "other",
-      "story_length": 128
-    },
-    {
-      "transition_id": "CORP_JP_4940",
-      "story_summary": "液晶事業の不振で経営危機に陥ったシャープは、産業革新機構と鴻海の2社から支援提案を受け対話を重ねた。2016年2月に鴻海の買収提案を受諾したが、直後に3500億円の偶発債務が発覚し交渉が一時停滞。最終的に買収額を引き下げて合意し、外資傘下で様子見の状態に入った。",
-      "before_state": "どん底・危機",
-      "after_state": "縮小安定・生存",
-      "main_domain": "電機・製造",
       "scale": "company",
-      "story_length": 131
+      "story_length": 63,
+      "is_calibration": false
     },
     {
-      "transition_id": "PERS_JP_100",
-      "story_summary": "16歳でグランプリファイナル優勝、トリプルアクセルを武器に世界トップスケーターに。怪我に苦しみながらも、復帰を目指して努力を続けている。若くして期待と重圧を背負う。",
+      "transition_id": "PERS_JP_828",
+      "story_summary": "米国短距離界の新星、2021年全米選手権100mを10.86秒で優勝し東京五輪出場権を獲得。しかし大麻陽性で1ヶ月出場停止、五輪出場を逃す。実母の訃報をマスコミから知らされた直後の使用だった。4×100mリレーにも選ばれず。2023年世界選手権100mで金メダル（10.65秒の大会新）。2024年パリ五輪100mで銀メダル、4×100mリレーでアンカーを務め逆転金メダル。ゴール前の振り向きが象徴的シーンに。",
       "before_state": "成長痛",
-      "after_state": "縮小安定・生存",
-      "main_domain": "Lifestyle",
+      "after_state": "V字回復・大成功",
+      "main_domain": "農林水産",
       "scale": "individual",
-      "story_length": 82
+      "story_length": 205,
+      "is_calibration": false
     },
     {
-      "transition_id": "PERS_JP_2077",
-      "story_summary": "ビル・ゲイツはMicrosoftを退いた後、ビル&メリンダ・ゲイツ財団で世界の課題に知恵で臨んでいる。疫病対策、教育、気候変動など、データと科学に基づく智慧のフィランソロピー。",
-      "before_state": "安定・平和",
-      "after_state": "V字回復・大成功",
-      "main_domain": "NPO・財団",
-      "scale": "individual",
-      "story_length": 88
+      "transition_id": "FAM_JP_112",
+      "story_summary": "サウード家が建国し、石油で世界有数の富裕国に。しかし王族6,000人以上の放漫、石油依存経済、人権問題が課題。ムハンマド皇太子の「ビジョン2030」で脱石油を目指すも、ジャマル・カショギ記者殺害で国際的批判。改革と強権の両面を持つ。",
+      "before_state": "絶頂・慢心",
+      "after_state": "変質・新生",
+      "main_domain": "エネルギー・環境",
+      "scale": "family",
+      "story_length": 116,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "OTHR_JP_1104",
+      "story_summary": "岐阜県の和傘製造。かつて全国シェア9割を誇ったが、洋傘普及で激減。現在は観光用、舞踊用、インテリアとして少数の職人が技術を継承。",
+      "before_state": "停滞・閉塞",
+      "after_state": "縮小安定・生存",
+      "main_domain": "製造業",
+      "scale": "other",
+      "story_length": 64,
+      "is_calibration": false
     },
     {
       "transition_id": "CORP_JP_4804",
@@ -278,88 +228,78 @@
       "after_state": "V字回復・大成功",
       "main_domain": "fintech",
       "scale": "company",
-      "story_length": 186
+      "story_length": 186,
+      "is_calibration": false
     },
     {
-      "transition_id": "FAM_JP_282",
-      "story_summary": "コロナ禍で家族の時間が増え、一緒に料理や庭仕事をする機会が増えた。劇的な変化はないが、日々の小さな共同作業が絆を深めた。「当たり前の幸せ」を再認識。",
+      "transition_id": "PERS_JP_2813",
+      "story_summary": "分子生物学者の福岡伸一が『生物と無生物のあいだ』で科学エッセイストとしてブレイク。専門知識を一般読者向けに翻訳するスキルで80万部超のベストセラーを生み出し、講演・メディア出演でも収益化した。",
       "before_state": "安定・平和",
       "after_state": "V字回復・大成功",
-      "main_domain": "生活・暮らし",
-      "scale": "family",
-      "story_length": 74
-    },
-    {
-      "transition_id": "OTHR_JP_102",
-      "story_summary": "リーナス・トーバルズが趣味で始めたOSが世界を変える。無料で誰でも改良可能な「オープンソース」モデルがソフトウェア産業を変革。今やサーバー、スマホ、IoTの基盤に。「共有」が「所有」に勝った。",
-      "before_state": "停滞・閉塞",
-      "after_state": "V字回復・大成功",
-      "main_domain": "テクノロジー",
-      "scale": "other",
-      "story_length": 96
-    },
-    {
-      "transition_id": "PERS_JP_2877",
-      "story_summary": "2010年バンクーバー五輪で「腰パン」服装問題、記者会見の態度が炎上し社会的バッシングを受けた。その後バックカントリー映像作家に転身し、Netflix映画で再評価された。",
-      "before_state": "混乱・カオス",
-      "after_state": "変質・新生",
-      "main_domain": "スポーツ",
+      "main_domain": "医療・介護",
       "scale": "individual",
-      "story_length": 85
+      "story_length": 96,
+      "is_calibration": false
     },
     {
-      "transition_id": "COUN_JP_1561",
-      "story_summary": "2011年3月の東日本大震災による福島第一原発事故は、日本の原子力政策を根底から破壊した。安全神話（離・知性の象徴）が津波で崩壊し、メルトダウンという衝撃（震）が世界を揺るがした。政府は全原発停止を決定、エネルギー政策の根本的見直しを迫られ、2023年時点でも処理水放出問題が続いている。",
-      "before_state": "安定・平和",
-      "after_state": "迷走・混乱",
-      "main_domain": "エネルギー・原子力",
-      "scale": "country",
-      "story_length": 144
-    },
-    {
-      "transition_id": "COUN_JP_032",
-      "story_summary": "ピノチェト軍政からの民政移管後も、自由市場路線を維持しつつ社会政策を強化。銅価格に連動した財政ルール（構造的財政黒字）を導入し、資源国特有のブーム＆バスト（激しい景気変動）を回避した。ラテンアメリカで最も安定した経済運営を実現し、OECD加盟を果たした。",
+      "transition_id": "CORP_JP_3150",
+      "story_summary": "デンソーはトヨタからスピンオフ後も緊密な協力関係を維持。共同での技術開発により、両社とも世界トップクラスの競争力を獲得。長期的パートナーシップによる相互益の典型例。",
       "before_state": "安定・平和",
       "after_state": "V字回復・大成功",
-      "main_domain": "小売・サービス",
-      "scale": "country",
-      "story_length": 127
+      "main_domain": "自動車・部品",
+      "scale": "company",
+      "story_length": 82,
+      "is_calibration": false
     },
     {
-      "transition_id": "COUN_JP_1331",
-      "story_summary": "終戦後、GHQの指導下で財閥解体、農地改革、労働三法制定など抜本的改革が実施された。旧体制の解体と新制度の導入により、中産階級が台頭し、高度経済成長の基盤が形成された。仲間と共に新時代を築いた事例。",
+      "transition_id": "CORP_JP_3431",
+      "story_summary": "1853年創業、170年以上デニムを作り続ける。501ジーンズのデザインを基本的に維持しながら、サステナビリティやカスタマイズで現代に適応。「オーセンティシティ」を核に、流行に流されない経営。",
+      "before_state": "安定・平和",
+      "after_state": "現状維持・延命",
+      "main_domain": "アパレル・繊維",
+      "scale": "company",
+      "story_length": 96,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "CORP_JP_4327",
+      "story_summary": "大壮の大いなる力と勢いで創業・起業。設立初年度から勢いに乗り、立ち上げ段階で着手した事業が萌芽期に急成長。創業時の第一歩。",
       "before_state": "どん底・危機",
       "after_state": "V字回復・大成功",
-      "main_domain": "国家政策",
-      "scale": "country",
-      "story_length": 99
-    },
-    {
-      "transition_id": "CORP_JP_4351",
-      "story_summary": "沢山咸の咸・感応・共鳴で築いた顧客関係が、末期に終結。心を通わせた関係が晩年に崩壊し、終焉を迎えた没落。",
-      "before_state": "安定・平和",
-      "after_state": "崩壊・消滅",
-      "main_domain": "小売",
+      "main_domain": "スタートアップ",
       "scale": "company",
-      "story_length": 52
+      "story_length": 61,
+      "is_calibration": false
     },
     {
-      "transition_id": "FAM_JP_084",
-      "story_summary": "より良い環境を求めて転居。住環境は大幅に改善。しかし友人や知人との繋がりが切れ、孤独感を感じる。新しい土地での人間関係構築に苦労。",
+      "transition_id": "COUN_JP_1560",
+      "story_summary": "安倍政権は2016年以降プーチン大統領と27回もの首脳会談を重ね、北方領土返還に向けた粘り強い交渉を展開した。2018年にはシンガポールで日ソ共同宣言を基礎とする平和条約締結に合意したが、2022年ロシアのウクライナ侵攻で交渉は完全凍結。長期撤退を余儀なくされた。",
       "before_state": "停滞・閉塞",
-      "after_state": "縮小安定・生存",
-      "main_domain": "不動産・建設",
-      "scale": "family",
-      "story_length": 65
+      "after_state": "現状維持・延命",
+      "main_domain": "外交・国際関係",
+      "scale": "country",
+      "story_length": 132,
+      "is_calibration": false
     },
     {
-      "transition_id": "COUN_JP_1383",
-      "story_summary": "リー・クアンユー体制下で厳格な規律と効率的な統治を維持。節度ある開発と規制で、小国ながら世界有数の金融センターへと発展した全盛期。",
+      "transition_id": "OTHR_JP_746",
+      "story_summary": "江戸時代から続く近江商人の「売り手よし、買い手よし、世間よし」の精神は、400年以上にわたり日本の商業道徳の基盤となっている。現代のCSRやESGの先駆けとして、多くの長寿企業に継承されている。",
       "before_state": "安定・平和",
       "after_state": "V字回復・大成功",
-      "main_domain": "政治",
-      "scale": "country",
-      "story_length": 65
+      "main_domain": "商業・倫理",
+      "scale": "other",
+      "story_length": 97,
+      "is_calibration": false
+    },
+    {
+      "transition_id": "PERS_JP_2193",
+      "story_summary": "サッカー選手の夢を諦めたラムゼイは、料理の世界で新たなスタートを切った。鼎の基礎を固めるように修行を重ね、やがてミシュラン三つ星シェフとなった。",
+      "before_state": "どん底・危機",
+      "after_state": "V字回復・大成功",
+      "main_domain": "飲食・料理",
+      "scale": "individual",
+      "story_length": 72,
+      "is_calibration": false
     }
   ]
 }
