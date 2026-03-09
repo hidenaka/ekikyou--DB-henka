@@ -1,0 +1,3 @@
+# Claude (Anthropic) の見解
+
+I propose: Step 1: Build coverage-constrained gold set (each trigram min 10 cases per field, ~400 cases total via stratified sampling + LLM annotation). Step 2: Retrain classifier with balanced gold set. Step 3: Re-run Phase 3 tests on non-isolated subgraph. Step 4: Go/No-Go decision - if A/B still fail, pivot away from isomorphism. Step 5: Only then consider Phase 4. Total estimated effort: 2-3 sessions.
