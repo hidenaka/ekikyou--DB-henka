@@ -117,7 +117,6 @@ def train_classifiers(records):
                 sublinear_tf=True,
             )),
             ("clf", LogisticRegression(
-                multi_class="ovr",
                 max_iter=1000,
                 C=1.0,
                 random_state=42,

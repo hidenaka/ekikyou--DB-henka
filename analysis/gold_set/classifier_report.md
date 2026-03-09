@@ -1,161 +1,124 @@
 # Trigram Classifier Report
 
 **Date**: 2026-03-09
-**Pipeline**: Gold Set Annotation + TF-IDF Classifier
+**Method**: TF-IDF (char n-gram 1-3) + Logistic Regression (balanced class weights)
+**Training data**: Gold 200 annotations (160 train / 40 test)
+**Applied to**: 11,336 cases (full DB)
 
-## 1. Methodology
+## Test Set Performance
 
-### Problem
-Previous keyword-based hexagram annotation failed Gate 2 (inter-annotator agreement κ=0.545 < 0.60 threshold). A more robust approach was needed.
+| Field | Accuracy | F1 (macro) | F1 (weighted) |
+|-------|----------|------------|---------------|
+| before_lower | 0.9000 | 0.8799 | 0.9004 |
+| before_upper | 0.4750 | 0.3680 | 0.4388 |
+| after_lower | 0.7500 | 0.4315 | 0.7220 |
+| after_upper | 0.6750 | 0.4084 | 0.6409 |
+| **Average** | **0.7000** | **0.5220** | **0.6755** |
 
-### Strategy
-1. **Gold Set Creation**: 200 cases annotated with semantic rules mapping state labels, action types, trigger types, and story text to trigram assignments
-2. **Classifier Training**: TF-IDF + LogisticRegression (4 independent classifiers for before_lower, before_upper, after_lower, after_upper trigrams)
-3. **Full Application**: Classifiers applied to all 11,336 cases
+## Agreement Rates
 
-### Annotation Logic
-- **Lower trigram** = internal/foundational driver of the state
-- **Upper trigram** = external/visible manifestation
-- Semantic scoring combines:
-  - State-label-based default trigram mapping (highest weight)
-  - Keyword scoring against story_summary text
-  - Action type influence (stronger for "after" phase)
-  - Trigger type influence (stronger for "before" phase)
-  - Small deterministic jitter for diversity
-- Pure hexagram prevention: if lower==upper, upper adjusted to second-best candidate
+| Field | Gold vs Classifier |
+|-------|--------------------|
+| before_lower | 0.9000 |
+| before_upper | 0.4750 |
+| after_lower | 0.7500 |
+| after_upper | 0.6750 |
 
-### Feature Engineering
-- **Text features**: TF-IDF with char_wb n-grams (2-4), 3,000 max features, sublinear TF
-- **Categorical features**: One-hot encoded before_state, after_state, action_type, trigger_type
-- **Total features**: 3,024 dimensions
+## Per-Class Performance (Test Set)
 
-## 2. Training / Test Results
+### before_lower
 
-**Split**: 160 train / 40 test (random, seed=42)
+| Class | Precision | Recall | F1 | Support |
+|-------|-----------|--------|-----|---------|
+| 乾 | 0.80 | 0.80 | 0.80 | 5 |
+| 坤 | 0.86 | 1.00 | 0.92 | 6 |
+| 震 | 0.80 | 0.80 | 0.80 | 5 |
+| 巽 | 0.80 | 0.80 | 0.80 | 5 |
+| 坎 | 1.00 | 0.92 | 0.96 | 12 |
+| 離 | 0.00 | 0.00 | 0.00 | 0 |
+| 艮 | 1.00 | 1.00 | 1.00 | 7 |
+| 兌 | 0.00 | 0.00 | 0.00 | 0 |
 
-| Field | Accuracy | Macro F1 | Weighted F1 |
-|-------|----------|----------|-------------|
-| before_lower_trigram | 0.950 | 0.800 | 0.938 |
-| before_upper_trigram | 0.950 | 0.951 | 0.951 |
-| after_lower_trigram | 0.800 | 0.635 | 0.796 |
-| after_upper_trigram | 0.850 | 0.763 | 0.850 |
+### before_upper
 
-### Notes
-- **before_lower** and **before_upper** achieve 95% accuracy — state labels are highly predictive of before-phase trigrams
-- **after_lower** has lower macro F1 (0.635) due to underrepresented classes (兌, 離 each had ≤1 sample in test)
-- **after_upper** performs well (85%) with balanced class representation
-- `class_weight='balanced'` used to compensate for class imbalance
+| Class | Precision | Recall | F1 | Support |
+|-------|-----------|--------|-----|---------|
+| 乾 | 0.00 | 0.00 | 0.00 | 2 |
+| 坤 | 0.00 | 0.00 | 0.00 | 3 |
+| 震 | 0.60 | 0.33 | 0.43 | 9 |
+| 巽 | 0.57 | 1.00 | 0.73 | 4 |
+| 坎 | 0.57 | 0.40 | 0.47 | 10 |
+| 離 | 0.25 | 0.33 | 0.29 | 3 |
+| 艮 | 0.50 | 0.86 | 0.63 | 7 |
+| 兌 | 0.33 | 0.50 | 0.40 | 2 |
 
-## 3. Application Statistics
+### after_lower
 
-**Total cases processed**: 11,336
+| Class | Precision | Recall | F1 | Support |
+|-------|-----------|--------|-----|---------|
+| 乾 | 0.88 | 1.00 | 0.94 | 15 |
+| 坤 | 0.67 | 1.00 | 0.80 | 4 |
+| 震 | 0.25 | 0.50 | 0.33 | 2 |
+| 巽 | 0.00 | 0.00 | 0.00 | 1 |
+| 坎 | 1.00 | 0.50 | 0.67 | 10 |
+| 離 | 0.00 | 0.00 | 0.00 | 1 |
+| 艮 | 0.62 | 0.83 | 0.71 | 6 |
+| 兌 | 0.00 | 0.00 | 0.00 | 1 |
 
-### Pure Hexagram Rate
-| Phase | Pure Count | Rate |
-|-------|-----------|------|
-| Before | 6 | 0.1% |
-| After | 249 | 2.2% |
-| **Total** | **255** | **1.1%** |
+### after_upper
 
-Target was <15%. Achieved 1.1%.
+| Class | Precision | Recall | F1 | Support |
+|-------|-----------|--------|-----|---------|
+| 乾 | 0.00 | 0.00 | 0.00 | 1 |
+| 坤 | 0.00 | 0.00 | 0.00 | 2 |
+| 震 | 0.38 | 0.60 | 0.46 | 5 |
+| 巽 | 0.50 | 0.50 | 0.50 | 2 |
+| 坎 | 0.75 | 0.50 | 0.60 | 6 |
+| 離 | 0.78 | 0.93 | 0.85 | 15 |
+| 艮 | 0.86 | 0.86 | 0.86 | 7 |
+| 兌 | 0.00 | 0.00 | 0.00 | 2 |
 
-### Unique Hexagrams Used
-| Set | Count |
-|-----|-------|
-| Before hexagrams | 18 |
-| After hexagrams | 28 |
-| Total unique | 34 |
+## Full Dataset Application (11,336 cases)
 
-### Trigram Frequency Distribution
+### Trigram Distribution
 
-#### Before Lower Trigram (internal foundation of initial state)
-| Trigram | Count | Percentage |
-|---------|-------|-----------|
-| 震 (雷/動) | 3,667 | 32.3% |
-| 艮 (山/停止) | 2,691 | 23.7% |
-| 坤 (地/受容) | 2,659 | 23.5% |
-| 坎 (水/危険) | 1,203 | 10.6% |
-| 乾 (天/創造) | 1,055 | 9.3% |
-| 兌 (沢/喜悦) | 42 | 0.4% |
-| 離 (火/明晰) | 19 | 0.2% |
-| 巽 (風/浸透) | 0 | 0.0% |
+| Trigram | before_lower | before_upper | after_lower | after_upper |
+|---------|-------------|-------------|------------|------------|
+| 乾 | 1,243 (11.0%) | 313 (2.8%) | 4,257 (37.6%) | 8 (0.1%) |
+| 坤 | 2,620 (23.1%) | 688 (6.1%) | 1,226 (10.8%) | 321 (2.8%) |
+| 震 | 1,427 (12.6%) | 2,655 (23.4%) | 1,044 (9.2%) | 1,668 (14.7%) |
+| 巽 | 1,781 (15.7%) | 2,262 (20.0%) | 28 (0.2%) | 1,008 (8.9%) |
+| 坎 | 1,545 (13.6%) | 1,865 (16.5%) | 2,005 (17.7%) | 1,203 (10.6%) |
+| 離 | 0 (0.0%) | 1,129 (10.0%) | 76 (0.7%) | 5,340 (47.1%) |
+| 艮 | 2,720 (24.0%) | 1,827 (16.1%) | 2,697 (23.8%) | 1,728 (15.2%) |
+| 兌 | 0 (0.0%) | 597 (5.3%) | 3 (0.0%) | 60 (0.5%) |
 
-#### Before Upper Trigram (external manifestation of initial state)
-| Trigram | Count | Percentage |
-|---------|-------|-----------|
-| 乾 (天/創造) | 2,558 | 22.6% |
-| 坤 (地/受容) | 2,471 | 21.8% |
-| 巽 (風/浸透) | 2,143 | 18.9% |
-| 坎 (水/危険) | 1,490 | 13.1% |
-| 震 (雷/動) | 1,101 | 9.7% |
-| 離 (火/明晰) | 1,033 | 9.1% |
-| 兌 (沢/喜悦) | 540 | 4.8% |
-| 艮 (山/停止) | 0 | 0.0% |
+### Hexagram Quality Metrics
 
-#### After Lower Trigram (internal driver of outcome)
-| Trigram | Count | Percentage |
-|---------|-------|-----------|
-| 乾 (天/創造) | 3,343 | 29.5% |
-| 坎 (水/危険) | 2,318 | 20.4% |
-| 艮 (山/停止) | 2,080 | 18.3% |
-| 震 (雷/動) | 2,002 | 17.7% |
-| 坤 (地/受容) | 1,198 | 10.6% |
-| 巽 (風/浸透) | 297 | 2.6% |
-| 兌 (沢/喜悦) | 87 | 0.8% |
-| 離 (火/明晰) | 11 | 0.1% |
+| Metric | Before | After |
+|--------|--------|-------|
+| Unique hexagrams | 43/64 | 39/64 |
+| Pure hexagram rate | 14.5% | 1.6% |
 
-#### After Upper Trigram (external manifestation of outcome)
-| Trigram | Count | Percentage |
-|---------|-------|-----------|
-| 離 (火/明晰) | 4,600 | 40.6% |
-| 兌 (沢/喜悦) | 2,753 | 24.3% |
-| 艮 (山/停止) | 2,728 | 24.1% |
-| 巽 (風/浸透) | 801 | 7.1% |
-| 震 (雷/動) | 257 | 2.3% |
-| 坤 (地/受容) | 197 | 1.7% |
-| 乾 (天/創造) | 0 | 0.0% |
-| 坎 (水/危険) | 0 | 0.0% |
+### Comparison with Prior Method (keyword-based pure hexagram)
 
-## 4. Comparison with Old Annotations
+| Metric | Old (keyword) | New (classifier) |
+|--------|---------------|------------------|
+| Pure before rate | 98.2% | 14.5% |
+| Pure after rate | 98.2% | 1.6% |
+| Unique before hexagrams | ~8 | 43 |
+| Unique after hexagrams | ~8 | 39 |
 
-| Field | Same | Changed | Agreement |
-|-------|------|---------|-----------|
-| before_lower_trigram | 3,034 | 8,302 | 26.8% |
-| before_upper_trigram | 1,425 | 9,911 | 12.6% |
-| after_lower_trigram | 2,790 | 8,546 | 24.6% |
-| after_upper_trigram | 1,895 | 9,441 | 16.7% |
+### Known Issues
 
-Low agreement with old annotations is expected and intentional — the old keyword-based approach had known quality issues (κ=0.545).
+1. **after_lower偏り**: 乾(37.6%)と艮(23.8%)に集中。離(0.7%)、巽(0.2%)、兌(0.0%)がほぼ未使用
+2. **after_upper偏り**: 離(47.1%)に集中。乾(0.1%)、兌(0.5%)が希少
+3. **before_lower偏り**: 離と兌が0件。Gold 200のtraining setに離・兌のサンプルが少なかったため
+4. **学習データサイズ**: 200件は8クラス分類には少ない。特に低頻度クラスの学習が不十分
 
-## 5. Quality Assessment
+### 改善方針
 
-### Strengths
-- Pure hexagram rate of 1.1% is excellent (target <15%)
-- High test accuracy for before-phase trigrams (95%)
-- Reasonable after-phase accuracy (80-85%)
-- Semantic rules are interpretable and grounded in trigram definitions
-- All 8 trigrams represented across at least some fields
-
-### Limitations
-- **Coverage gaps**: 巽 absent from before_lower; 艮 absent from before_upper; 乾/坎 absent from after_upper. This reflects the training data distribution where certain state-trigram combinations were rare
-- **After-lower diversity**: 離 and 兌 are severely underrepresented (<1%)
-- **34 of 64 hexagrams used**: Coverage is limited. Future work should increase gold set size and ensure more balanced trigram representation
-- **Macro F1 for after_lower (0.635)**: Weakest classifier, driven by class imbalance
-
-### Recommendations for Next Iteration
-1. **Expand gold set to 500+** cases with manual review to improve rare-trigram coverage
-2. **Add text augmentation** for underrepresented trigram classes
-3. **Consider ensemble approach** combining rule-based and ML predictions
-4. **Re-run Gate 2** inter-annotator agreement on the new annotations
-
-## 6. Files
-
-| File | Purpose |
-|------|---------|
-| `analysis/gold_set/gold_200_annotations.json` | 200 annotated gold cases |
-| `models/trigram_classifier.pkl` | Trained classifier package (4 models + vectorizer + encoders) |
-| `data/raw/cases.jsonl` | Updated with new trigram annotations |
-| `data/raw/cases_backup_20260309_*.jsonl` | Backup of original annotations |
-| `scripts/create_gold_annotations.py` | Gold annotation script |
-| `scripts/train_trigram_classifier.py` | Classifier training script |
-| `scripts/apply_trigram_classifier.py` | Classifier application script |
+- Gold setを500件以上に拡大し、8卦の均等代表を確保
+- 特徴量にbefore_state/after_stateの構造化ラベルを追加
+- 文字n-gramに加え、単語n-gramも併用
+- モデルのアンサンブル化（Random Forest, SVM等）

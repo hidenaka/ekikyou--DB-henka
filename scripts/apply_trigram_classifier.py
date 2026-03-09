@@ -1,242 +1,177 @@
 #!/usr/bin/env python3
 """
-Step 3: Apply trained trigram classifiers to all cases in cases.jsonl.
+Step 4: Apply trained trigram classifiers to all cases in cases.jsonl.
 
 1. Load models from models/trigram_classifier.pkl
-2. Load all cases from data/raw/cases.jsonl
-3. Predict 4 trigram fields per case
-4. Compute hexagram numbers from trigram pairs
-5. Create backup, then update cases.jsonl
-6. Report statistics
+2. Predict 4 trigram fields for all 11,336 cases
+3. Update cases.jsonl with new predictions
+4. Recalculate classical_before/after_hexagram
+5. Create backup before updating
 """
 
 import json
 import os
-import sys
+import pickle
 import shutil
-import numpy as np
-import joblib
 from datetime import datetime
 from collections import Counter
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from scipy.sparse import hstack, csr_matrix
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models/trigram_classifier.pkl")
+CASES_PATH = os.path.join(BASE_DIR, "data/raw/cases.jsonl")
 
-TRIGRAMS = ['乾', '坤', '震', '巽', '坎', '離', '艮', '兌']
-TRIGRAM_NAMES = {
-    '乾': '天/創造', '坤': '地/受容', '震': '雷/動', '巽': '風/浸透',
-    '坎': '水/危険', '離': '火/明晰', '艮': '山/停止', '兌': '沢/喜悦',
+# King Wen sequence
+KING_WEN = {
+    ("乾","乾"):1, ("坤","乾"):11, ("震","乾"):34, ("巽","乾"):9,
+    ("坎","乾"):5, ("離","乾"):14, ("艮","乾"):26, ("兌","乾"):43,
+    ("乾","坤"):12, ("坤","坤"):2, ("震","坤"):16, ("巽","坤"):20,
+    ("坎","坤"):8, ("離","坤"):35, ("艮","坤"):23, ("兌","坤"):45,
+    ("乾","震"):25, ("坤","震"):24, ("震","震"):51, ("巽","震"):42,
+    ("坎","震"):3, ("離","震"):21, ("艮","震"):27, ("兌","震"):17,
+    ("乾","巽"):44, ("坤","巽"):46, ("震","巽"):32, ("巽","巽"):57,
+    ("坎","巽"):48, ("離","巽"):50, ("艮","巽"):18, ("兌","巽"):28,
+    ("乾","坎"):6, ("坤","坎"):7, ("震","坎"):40, ("巽","坎"):59,
+    ("坎","坎"):29, ("離","坎"):64, ("艮","坎"):4, ("兌","坎"):47,
+    ("乾","離"):13, ("坤","離"):36, ("震","離"):55, ("巽","離"):37,
+    ("坎","離"):63, ("離","離"):30, ("艮","離"):22, ("兌","離"):49,
+    ("乾","艮"):33, ("坤","艮"):15, ("震","艮"):62, ("巽","艮"):53,
+    ("坎","艮"):39, ("離","艮"):56, ("艮","艮"):52, ("兌","艮"):31,
+    ("乾","兌"):10, ("坤","兌"):19, ("震","兌"):54, ("巽","兌"):61,
+    ("坎","兌"):60, ("離","兌"):38, ("艮","兌"):41, ("兌","兌"):58,
 }
 
-CATEGORICAL_FEATURES = ['before_state', 'after_state', 'action_type', 'trigger_type']
+HEX_NAMES = {
+    1: "乾為天", 2: "坤為地", 3: "水雷屯", 4: "山水蒙",
+    5: "水天需", 6: "天水訟", 7: "地水師", 8: "水地比",
+    9: "風天小畜", 10: "天沢履", 11: "地天泰", 12: "天地否",
+    13: "天火同人", 14: "火天大有", 15: "地山謙", 16: "雷地豫",
+    17: "沢雷随", 18: "山風蠱", 19: "地沢臨", 20: "風地観",
+    21: "火雷噬嗑", 22: "山火賁", 23: "山地剥", 24: "地雷復",
+    25: "天雷無妄", 26: "山天大畜", 27: "山雷頤", 28: "沢風大過",
+    29: "坎為水", 30: "離為火", 31: "沢山咸", 32: "雷風恒",
+    33: "天山遯", 34: "雷天大壮", 35: "火地晋", 36: "地火明夷",
+    37: "風火家人", 38: "火沢睽", 39: "水山蹇", 40: "雷水解",
+    41: "山沢損", 42: "風雷益", 43: "沢天夬", 44: "天風姤",
+    45: "沢地萃", 46: "地風升", 47: "沢水困", 48: "水風井",
+    49: "沢火革", 50: "火風鼎", 51: "震為雷", 52: "艮為山",
+    53: "風山漸", 54: "雷沢帰妹", 55: "雷火豊", 56: "火山旅",
+    57: "巽為風", 58: "兌為沢", 59: "風水渙", 60: "水沢節",
+    61: "風沢中孚", 62: "雷山小過", 63: "水火既済", 64: "火水未済"
+}
 
 
-def trigram_pair_to_hexagram_number(lower, upper):
-    """Convert trigram pair to King Wen sequence hexagram number (1-64)."""
-    trigram_index = {'乾': 0, '兌': 1, '離': 2, '震': 3, '巽': 4, '坎': 5, '艮': 6, '坤': 7}
-    king_wen = [
-        [1,  43, 14, 34, 9,  5,  26, 11],
-        [10, 58, 38, 54, 61, 60, 41, 19],
-        [13, 49, 30, 55, 37, 63, 22, 36],
-        [25, 17, 21, 51, 42, 3,  27, 24],
-        [44, 28, 50, 32, 57, 48, 18, 46],
-        [6,  47, 64, 40, 59, 29, 4,  7],
-        [33, 31, 56, 62, 53, 39, 52, 15],
-        [12, 45, 35, 16, 20, 8,  23, 2],
-    ]
-    li = trigram_index.get(lower, 0)
-    ui = trigram_index.get(upper, 0)
-    return king_wen[ui][li]
-
-
-def build_features_from_cases(cases, vectorizer, cat_encoders):
-    """Build feature matrix for prediction."""
-    texts = [c.get('story_summary', '') for c in cases]
-    text_features = vectorizer.transform(texts)
-
-    cat_matrices = []
-    for feat in CATEGORICAL_FEATURES:
-        values = [c.get(feat, 'unknown') for c in cases]
-        enc = cat_encoders[feat]
-        encoded = []
-        for v in values:
-            if v in enc.classes_:
-                encoded.append(enc.transform([v])[0])
-            else:
-                encoded.append(0)
-        encoded = np.array(encoded)
-
-        n_classes = len(enc.classes_)
-        one_hot = csr_matrix(
-            (np.ones(len(encoded)), (np.arange(len(encoded)), encoded)),
-            shape=(len(encoded), n_classes)
-        )
-        cat_matrices.append(one_hot)
-
-    X = hstack([text_features] + cat_matrices)
-    return X
+def get_hexagram_label(lower, upper):
+    """Get hexagram label from lower and upper trigrams."""
+    num = KING_WEN.get((lower, upper))
+    if num:
+        return f"{num}_{HEX_NAMES.get(num, '')}"
+    return None
 
 
 def main():
-    # Load models
-    model_path = os.path.join(BASE_DIR, 'models/trigram_classifier.pkl')
-    print(f"Loading models from {model_path}")
-    package = joblib.load(model_path)
+    print("=== Step 4: Apply Trigram Classifiers to All Cases ===")
 
-    models = package['models']
-    vectorizer = package['vectorizer']
-    cat_encoders = package['cat_encoders']
-    target_fields = package['target_fields']
+    # Load models
+    print(f"Loading models from: {MODEL_PATH}")
+    with open(MODEL_PATH, "rb") as f:
+        models = pickle.load(f)
+    print(f"Loaded {len(models)} classifiers: {list(models.keys())}")
+
+    # Backup
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_path = CASES_PATH.replace(".jsonl", f"_backup_{timestamp}.jsonl")
+    shutil.copy2(CASES_PATH, backup_path)
+    print(f"Backup created: {backup_path}")
 
     # Load all cases
-    cases_path = os.path.join(BASE_DIR, 'data/raw/cases.jsonl')
     cases = []
-    with open(cases_path, encoding='utf-8') as f:
+    with open(CASES_PATH) as f:
         for line in f:
             line = line.strip()
             if line:
                 cases.append(json.loads(line))
     print(f"Loaded {len(cases)} cases")
 
-    # Save old annotations for comparison
-    old_annotations = {}
-    for i, c in enumerate(cases):
-        old_annotations[i] = {
-            'before_lower_trigram': c.get('before_lower_trigram'),
-            'before_upper_trigram': c.get('before_upper_trigram'),
-            'after_lower_trigram': c.get('after_lower_trigram'),
-            'after_upper_trigram': c.get('after_upper_trigram'),
-        }
-
-    # Build features
-    print("Building features...")
-    X = build_features_from_cases(cases, vectorizer, cat_encoders)
-    print(f"Feature matrix: {X.shape}")
+    # Prepare text features
+    before_texts = []
+    after_texts = []
+    for case in cases:
+        summary = case.get("story_summary", "") or ""
+        before_state = case.get("before_state", "") or ""
+        after_state = case.get("after_state", "") or ""
+        before_texts.append(f"{before_state} {summary}")
+        after_texts.append(f"{after_state} {summary}")
 
     # Predict
-    field_map = {
-        'gold_before_lower': 'before_lower_trigram',
-        'gold_before_upper': 'before_upper_trigram',
-        'gold_after_lower': 'after_lower_trigram',
-        'gold_after_upper': 'after_upper_trigram',
-    }
-
+    print("\nPredicting...")
     predictions = {}
-    for gold_field in target_fields:
-        case_field = field_map[gold_field]
-        clf = models[gold_field]
-        preds = clf.predict(X)
-        predictions[case_field] = preds
-        print(f"Predicted {gold_field} → {case_field}: {Counter(preds)}")
-
-    # Apply predictions to cases
-    pure_before = 0
-    pure_after = 0
-
-    for i, case in enumerate(cases):
-        bl = predictions['before_lower_trigram'][i]
-        bu = predictions['before_upper_trigram'][i]
-        al = predictions['after_lower_trigram'][i]
-        au = predictions['after_upper_trigram'][i]
-
-        # Anti-pure hexagram adjustment
-        if bl == bu:
-            pure_before += 1
-        if al == au:
-            pure_after += 1
-
-        case['before_lower_trigram'] = bl
-        case['before_upper_trigram'] = bu
-        case['after_lower_trigram'] = al
-        case['after_upper_trigram'] = au
-
-        # Compute hexagram numbers
-        case['hexagram_number_before'] = trigram_pair_to_hexagram_number(bl, bu)
-        case['hexagram_number_after'] = trigram_pair_to_hexagram_number(al, au)
-
-    total = len(cases)
-    pure_rate = (pure_before + pure_after) / (total * 2) * 100
-
-    # Backup original file
-    backup_path = os.path.join(
-        BASE_DIR,
-        f'data/raw/cases_backup_{datetime.now().strftime("%Y%m%d_%H%M%S")}.jsonl'
-    )
-    shutil.copy2(cases_path, backup_path)
-    print(f"\nBackup saved to {backup_path}")
-
-    # Write updated cases
-    with open(cases_path, 'w', encoding='utf-8') as f:
-        for case in cases:
-            f.write(json.dumps(case, ensure_ascii=False) + '\n')
-    print(f"Updated {cases_path}")
-
-    # ─── Statistics ───
-    print(f"\n{'='*60}")
-    print("STATISTICS")
-    print(f"{'='*60}")
-
-    # Pure hexagram rate
-    print(f"\nPure hexagram rate: {pure_rate:.1f}% ({pure_before + pure_after}/{total*2})")
-    print(f"  Before pure: {pure_before} ({pure_before/total*100:.1f}%)")
-    print(f"  After pure:  {pure_after} ({pure_after/total*100:.1f}%)")
-
-    # Unique hexagrams
-    before_hexs = set(case.get('hexagram_number_before', 0) for case in cases)
-    after_hexs = set(case.get('hexagram_number_after', 0) for case in cases)
-    all_hexs = before_hexs | after_hexs
-    print(f"\nUnique hexagrams:")
-    print(f"  Before: {len(before_hexs)}")
-    print(f"  After:  {len(after_hexs)}")
-    print(f"  Total:  {len(all_hexs)}")
-
-    # Trigram frequency distribution
-    print(f"\nTrigram frequency distribution:")
-    for field in ['before_lower_trigram', 'before_upper_trigram',
-                  'after_lower_trigram', 'after_upper_trigram']:
-        dist = Counter(c.get(field, '') for c in cases)
-        total_f = sum(dist.values())
-        print(f"\n  {field}:")
-        for t in TRIGRAMS:
-            count = dist.get(t, 0)
-            pct = count / total_f * 100 if total_f > 0 else 0
-            bar = '#' * int(pct / 2)
-            print(f"    {t}({TRIGRAM_NAMES[t]:6s}): {count:5d} ({pct:5.1f}%) {bar}")
-
-    # Comparison with old annotations
-    print(f"\n{'='*60}")
-    print("COMPARISON WITH OLD ANNOTATIONS")
-    print(f"{'='*60}")
-
-    changed = {'before_lower_trigram': 0, 'before_upper_trigram': 0,
-                'after_lower_trigram': 0, 'after_upper_trigram': 0}
-    same = {'before_lower_trigram': 0, 'before_upper_trigram': 0,
-            'after_lower_trigram': 0, 'after_upper_trigram': 0}
-    old_missing = 0
-
-    for i, case in enumerate(cases):
-        old = old_annotations[i]
-        for field in changed:
-            old_val = old[field]
-            new_val = case[field]
-            if old_val is None or old_val == '':
-                old_missing += 1
-            elif old_val == new_val:
-                same[field] += 1
-            else:
-                changed[field] += 1
-
-    print(f"\nCases with old annotations missing: ~{old_missing // 4} cases")
-    for field in changed:
-        total_comparable = same[field] + changed[field]
-        if total_comparable > 0:
-            agreement = same[field] / total_comparable * 100
-            print(f"  {field}: {same[field]} same, {changed[field]} changed ({agreement:.1f}% agreement)")
+    for field, model in models.items():
+        if field.startswith("before"):
+            texts = before_texts
         else:
-            print(f"  {field}: no comparable old annotations")
+            texts = after_texts
+        preds = model.predict(texts)
+        predictions[field] = preds
+        print(f"  {field}: {Counter(preds)}")
+
+    # Update cases
+    print("\nUpdating cases...")
+    updated = 0
+    for i, case in enumerate(cases):
+        bl = predictions["before_lower"][i]
+        bu = predictions["before_upper"][i]
+        al = predictions["after_lower"][i]
+        au = predictions["after_upper"][i]
+
+        case["before_lower_trigram"] = bl
+        case["before_upper_trigram"] = bu
+        case["after_lower_trigram"] = al
+        case["after_upper_trigram"] = au
+
+        # Recalculate hexagrams
+        before_hex = get_hexagram_label(bl, bu)
+        after_hex = get_hexagram_label(al, au)
+
+        if before_hex:
+            case["classical_before_hexagram"] = before_hex
+        if after_hex:
+            case["classical_after_hexagram"] = after_hex
+
+        updated += 1
+
+    # Write back
+    with open(CASES_PATH, "w", encoding="utf-8") as f:
+        for case in cases:
+            f.write(json.dumps(case, ensure_ascii=False) + "\n")
+
+    print(f"Updated {updated} cases")
+    print(f"Saved to: {CASES_PATH}")
+
+    # Summary statistics
+    print("\n=== Distribution Summary ===")
+    for field in ["before_lower_trigram", "before_upper_trigram",
+                   "after_lower_trigram", "after_upper_trigram"]:
+        dist = Counter(case.get(field) for case in cases)
+        print(f"\n{field}:")
+        for k, v in sorted(dist.items(), key=lambda x: -x[1]):
+            print(f"  {k}: {v} ({v/len(cases)*100:.1f}%)")
+
+    # Hexagram stats
+    before_hex_set = set(case.get("classical_before_hexagram") for case in cases)
+    after_hex_set = set(case.get("classical_after_hexagram") for case in cases)
+    before_hex_set.discard(None)
+    after_hex_set.discard(None)
+
+    pure_before = sum(1 for c in cases
+                      if c.get("before_lower_trigram") == c.get("before_upper_trigram"))
+    pure_after = sum(1 for c in cases
+                     if c.get("after_lower_trigram") == c.get("after_upper_trigram"))
+
+    print(f"\nUnique before hexagrams: {len(before_hex_set)}/64")
+    print(f"Unique after hexagrams: {len(after_hex_set)}/64")
+    print(f"Pure before rate: {pure_before/len(cases)*100:.1f}%")
+    print(f"Pure after rate: {pure_after/len(cases)*100:.1f}%")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
