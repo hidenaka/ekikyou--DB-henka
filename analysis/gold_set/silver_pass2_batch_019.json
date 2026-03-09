@@ -6,55 +6,55 @@
     {
       "transition_id": "CALIBRATION_001",
       "before_lower": {
-        "trigram": "乾",
-        "confidence": "high",
-        "alternative": "離",
-        "reasoning": "The construction company was in a growth phase internally, pushing forward with ambition (乾 = will/growth), but this ambition was built on fraudulent foundations."
-      },
-      "before_upper": {
         "trigram": "離",
         "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The company's inner state was one of illusory clarity — maintaining a fabricated image of success through falsified accounts. Not genuine strength but a manufactured brightness concealing internal rot."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "Externally, the company presented a visible, illuminated facade of success to banks and partners (離 = revealed/vision), concealing the rot beneath."
+        "reasoning": "Externally the company projected power and expansion — a major construction firm operating with apparent confidence, strong banking relationships, and market presence."
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "After the scandal, the internal state is pure crisis — loss of leadership, mass departures, existential threat (坎 = crisis/harsh)."
+        "alternative": "坤",
+        "reasoning": "After exposure, the internal state is pure crisis — existential danger, leadership vacuum, mass exodus, and the organization fighting for survival in darkness."
       },
       "after_upper": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "The external environment is equally hostile — banks cutting loans, contracts cancelled, civil rehabilitation. A harsh, unforgiving landscape (坎 = crisis)."
+        "alternative": "艮",
+        "reasoning": "The external environment became uniformly hostile — banks withdrew, partners fled, civil rehabilitation filed. A surrounding landscape of unrelenting danger."
       }
     },
     {
       "transition_id": "CALIBRATION_002",
       "before_lower": {
         "trigram": "坤",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The company was in a stable, receptive state internally before the founder's visionary product launch — grounded and waiting (坤 = receptive/stable)."
+        "reasoning": "Before the breakthrough, the company was internally quiet and receptive — stable foundations with latent potential not yet activated."
       },
       "before_upper": {
         "trigram": "坤",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The external market was also static and stable — the status quo before disruption (坤 = stable)."
+        "reasoning": "The market was calm and established — no disruption, conventional industry norms in place, a stable external landscape."
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The founder's creative will and leadership drive the company forward with unstoppable energy — pure internal drive and ambition (乾 = will/growth)."
+        "reasoning": "The founder's creative will and leadership drive everything forward — unstoppable internal conviction, ambition, and the force to overturn industry norms."
       },
       "after_upper": {
         "trigram": "離",
         "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "The product revolutionizes the market, making the company highly visible. Investors flock in, the vision illuminates the industry (離 = vision/revealed)."
+        "alternative": "兌",
+        "reasoning": "The revolutionary product illuminated the market — investor enthusiasm, media attention, and industry-wide visibility. External clarity and brilliance."
       }
     },
     {
@@ -62,53 +62,53 @@
       "before_lower": {
         "trigram": "乾",
         "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "Both companies internally held strong competitive wills, each pushing for dominance — growth-oriented but straining against each other (乾 = will)."
+        "alternative": "坎",
+        "reasoning": "Both companies internally held fierce competitive wills — stubborn, assertive postures of rivals each insisting on dominance."
       },
       "before_upper": {
-        "trigram": "震",
+        "trigram": "坎",
         "confidence": "medium",
-        "alternative": "坎",
-        "reasoning": "The external industry was undergoing structural disruption, creating the pressure that forced rivals to reconsider (震 = shock/disruption)."
+        "alternative": "震",
+        "reasoning": "The industry faced structural difficulties externally — a challenging, pressure-filled environment that forced both companies to seek alternatives."
       },
       "after_lower": {
-        "trigram": "巽",
+        "trigram": "兌",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Both companies adapted their internal posture from competition to cooperation — a flexible, yielding internal shift (巽 = adapt/slow change)."
+        "alternative": "巽",
+        "reasoning": "The inner shift was toward genuine openness and joy in collaboration — both companies softened their competitive stance and embraced partnership with warmth."
       },
       "after_upper": {
         "trigram": "兌",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "The result is a welcoming ecosystem of open collaboration, mutual benefit, and industry-wide harmony (兌 = joy/welcoming)."
+        "reasoning": "The external result was a new ecosystem of cooperation — industry-wide harmony, shared benefits, and a collaborative atmosphere of mutual uplift."
       }
     },
     {
       "transition_id": "CALIBRATION_004",
       "before_lower": {
-        "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "Society was stuck in a stagnant state, with corruption hidden and unchallenged — a frozen, blocked internal condition (艮 = pause/stuck)."
-      },
-      "before_upper": {
         "trigram": "坎",
         "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The external environment was one of concealed danger — hidden corruption creating a harsh, opaque landscape for citizens (坎 = crisis/harsh)."
+        "reasoning": "The journalist operated internally in dangerous territory — years of clandestine investigation, navigating hidden corruption, an inner state of persisting through peril."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Society at large was passive and stagnant externally — corruption hidden beneath a surface of normalcy, the public unaware and inert."
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "The investigative reporting brought illumination — truth revealed, awareness awakened. The internal consciousness of society shifted to clarity (離 = vision/revealed)."
+        "reasoning": "The exposé brought inner illumination to society — truth revealed, consciousness awakened, a fire of clarity that burned away concealment."
       },
       "after_upper": {
         "trigram": "震",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The external impact was a shockwave — investigations, social movements, nationwide transformation. A disruptive awakening across society (震 = shock/disruption)."
+        "reasoning": "The external impact was thunderous — investigations launched, social movements erupted nationwide, the establishment shaken by a sudden, disruptive force."
       }
     },
     {
@@ -117,25 +117,25 @@
         "trigram": "坤",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "The manufacturer was internally stable and receptive, maintaining a solid foundation without aggressive ambition (坤 = receptive/stable)."
+        "reasoning": "The manufacturer was internally grounded and stable — receptive, without aggressive ambition, simply maintaining solid operations."
       },
       "before_upper": {
         "trigram": "坤",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "The external market was also in a static, stable state with only gradual shifts (坤 = stable)."
+        "reasoning": "The external market was calm with only gentle shifts — no dramatic upheaval, a steady, predictable environment."
       },
       "after_lower": {
         "trigram": "巽",
         "confidence": "high",
         "alternative": "坤",
-        "reasoning": "Internally, the company has shifted to a mode of gradual adaptation — small investments, incremental portfolio adjustments (巽 = adapt/slow change)."
+        "reasoning": "Internally the company shifted to gradual adaptation — small investments, incremental portfolio changes, a gentle wind of adjustment rather than bold action."
       },
       "after_upper": {
-        "trigram": "坤",
+        "trigram": "巽",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "Externally, the landscape remains stable. The company maintains sound finances but fading presence — no dramatic change in environment (坤 = stable)."
+        "alternative": "坤",
+        "reasoning": "The external outcome was equally gradual — the company maintained health but faded in presence, a slow, unremarkable transformation of the surrounding landscape."
       }
     },
     {
@@ -144,106 +144,106 @@
         "trigram": "坤",
         "confidence": "high",
         "alternative": "兌",
-        "reasoning": "The family was in a peaceful, stable internal state — a harmonious household in equilibrium before the separation (坤 = receptive/stable)."
+        "reasoning": "The family's inner state was peaceful and stable — a harmonious domestic equilibrium, grounded and content before the separation disrupted it."
       },
       "before_upper": {
         "trigram": "坤",
-        "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "Externally, life was settled and uneventful — stable environment with no disruption (坤 = stable)."
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was routine and settled — no disruption, ordinary family life in a stable setting."
       },
       "after_lower": {
         "trigram": "兌",
         "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "After 3 years apart and reunion, the family's internal emotional state is one of joy and deep appreciation — 'we understood the value of family' (兌 = joy/welcoming)."
+        "alternative": "離",
+        "reasoning": "After reunion, the family's inner emotional tenor is pure joy and deepened appreciation — 'we understood the preciousness of family,' a warm, open-hearted state."
       },
       "after_upper": {
-        "trigram": "乾",
+        "trigram": "離",
         "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The family emerged with strengthened bonds and renewed vitality — the relationship grew stronger through the trial, showing robust growth (乾 = will/growth)."
+        "reasoning": "The separation illuminated what truly mattered — the external experience brought clarity about the value of togetherness, a brighter understanding of family bonds."
       }
     },
     {
       "transition_id": "PERS_JP_0043",
       "before_lower": {
-        "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "10 years of hikikomori — the man was completely stuck, frozen, unable to move forward. His inner world was a mountain of immobility (艮 = pause/stuck)."
-      },
-      "before_upper": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "The external world felt hostile, dangerous, and impassable — the harsh reality of social isolation and crisis (坎 = crisis/harsh)."
+        "reasoning": "Ten years of hikikomori is profound inner crisis — isolation, despair, being lost in darkness with no way forward. The emotional tenor is one of drowning."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external world was completely walled off — no social engagement, total stillness, the mountain-like blockage of a world he could not enter."
       },
       "after_lower": {
-        "trigram": "乾",
-        "confidence": "medium",
-        "alternative": "巽",
-        "reasoning": "Over 10 years of gradual rehabilitation, he built internal strength and will to become a full-time employee — a slow but determined internal growth (乾 = will/growth)."
-      },
-      "after_upper": {
         "trigram": "巽",
         "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "The recovery was through gradual, step-by-step support — not a sudden breakthrough but a slow, adaptive re-entry into society (巽 = adapt/slow change)."
+        "alternative": "震",
+        "reasoning": "Recovery over 10 years was gradual and persistent — step-by-step adaptation, gentle internal growth, not a sudden breakthrough but a slow wind of change."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The support group and eventual employment represent an external environment of openness and acceptance — a welcoming world that received him back with collaborative support."
       }
     },
     {
       "transition_id": "COUN_JP_575",
       "before_lower": {
-        "trigram": "乾",
-        "confidence": "medium",
-        "alternative": "巽",
-        "reasoning": "The pharmaceutical sector was internally driven, with active drug development and business ambition, though strained by regulatory friction (乾 = will/growth)."
-      },
-      "before_upper": {
         "trigram": "震",
         "confidence": "medium",
-        "alternative": "坎",
-        "reasoning": "Externally, the industry faces disruptive pricing reforms and drug lag problems — a shaken, turbulent regulatory landscape (震 = shock/disruption)."
+        "alternative": "乾",
+        "reasoning": "The pharmaceutical sector was internally in active motion — energetic development efforts, innovation drives, and urgent pushes for new drug approvals. Restless internal action."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally, the regulatory landscape presented serious difficulties — drug lag, pricing cuts, and systemic obstacles creating a crisis-like environment."
       },
       "after_lower": {
         "trigram": "艮",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "Internally, the industry is stuck — drug lag persists, supply issues remain, and reform debates go nowhere. A frozen, stalled condition (艮 = pause/stuck)."
+        "alternative": "坤",
+        "reasoning": "Internally the industry is stuck in deliberate pause — structural problems unresolved, forced to stop and reconsider approaches that aren't working."
       },
       "after_upper": {
-        "trigram": "坤",
+        "trigram": "坎",
         "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The external outcome is mere maintenance of the status quo — no breakthrough, just stable but stagnant policy continuation (坤 = receptive/stable)."
+        "reasoning": "The external environment remains difficult — drug access gaps persist, supply instability continues, no clear resolution in sight. Ongoing crisis conditions."
       }
     },
     {
       "transition_id": "PERS_JP_208",
       "before_lower": {
-        "trigram": "乾",
+        "trigram": "離",
         "confidence": "high",
-        "alternative": "離",
-        "reasoning": "Young Sayuri Yoshinaga had immense internal drive and talent, debuting at age 11 — pure creative will and ambition pushing forward (乾 = will/growth)."
+        "alternative": "乾",
+        "reasoning": "Young Yoshinaga Sayuri burned with inner brilliance — debuting at 11, her natural talent and passion for performance was a fire of artistic clarity and vision."
       },
       "before_upper": {
         "trigram": "震",
         "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "The external environment was one of rapid industry expansion — the golden age of Japanese cinema where new stars burst onto the scene (震 = shock/disruption as explosive emergence)."
+        "alternative": "坎",
+        "reasoning": "The 1950s-60s Japanese film industry was a volatile, dynamic external environment — rapid production, fierce competition, explosive cultural shifts."
       },
       "after_lower": {
-        "trigram": "離",
-        "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "At 79, she remains a brilliantly visible, illuminating presence in cinema — her artistry shines as pure vision and clarity (離 = vision/revealed)."
-      },
-      "after_upper": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "124 films, Purple Ribbon Medal, Cultural Merit — externally she achieved the peak of success and sustained creative power over 6 decades (乾 = will/growth at the highest level)."
+        "reasoning": "At 79 with 124 films, her inner state embodies indomitable will — six decades of sustained creative power, an unwavering force that never diminished."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally she shines with recognition — Blue Ribbon awards, Purple Ribbon Medal, Cultural Merit designation. Her legacy illuminates the entire film world."
       }
     },
     {
@@ -252,52 +252,52 @@
         "trigram": "坎",
         "confidence": "medium",
         "alternative": "艮",
-        "reasoning": "The music industry was internally struggling — CD sales declining, the old business model failing, creating an internal crisis of identity and revenue (坎 = crisis)."
+        "reasoning": "The music industry was internally in crisis — CD sales collapsing, revenue models failing, an existential threat to the traditional business identity."
       },
       "before_upper": {
         "trigram": "震",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "Externally, streaming platforms like Spotify and Apple Music burst onto the scene as a disruptive force, shaking the entire industry (震 = shock/disruption)."
+        "reasoning": "Spotify and Apple Music arrived as sudden disruptive forces externally — technology platforms that shook the entire industry's foundation like thunder."
       },
       "after_lower": {
         "trigram": "巽",
         "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "The industry adapted its internal model — shifting from physical to streaming, a fundamental but gradual transformation of how music is consumed (巽 = adapt)."
+        "alternative": "兌",
+        "reasoning": "The industry adapted internally to streaming — a gradual transformation of consumption patterns, flexible adjustment to the new subscription paradigm."
       },
       "after_upper": {
-        "trigram": "乾",
-        "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "The market expanded — streaming brought growth, new revenue streams, and global reach. The external outcome is vigorous market expansion (乾 = growth)."
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The market expanded with joyful accessibility — music became universally available, creating an open ecosystem where artists and listeners connect freely."
       }
     },
     {
       "transition_id": "PERS_JP_878",
       "before_lower": {
-        "trigram": "坤",
-        "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "The person was in a stable, peaceful internal state with a steady job — a grounded, receptive baseline before the side business venture (坤 = stable)."
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The person was internally optimistic and excited about the side business — joy, enthusiasm, and perhaps naive openness driving the venture forward."
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "The external environment was also stable and unremarkable — normal life conditions (坤 = stable)."
+        "reasoning": "The external environment was stable and secure — steady main employment providing a grounded, uneventful backdrop."
       },
       "after_lower": {
         "trigram": "艮",
         "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "After the failure, the person is internally paused and constrained — focused on debt repayment, no new ventures, a deliberate stopping (艮 = pause/stuck)."
+        "alternative": "坤",
+        "reasoning": "After failure, the inner state is deliberate restraint — stopping all ventures, focusing purely on debt repayment, a conscious mountain-like halt and reflection."
       },
       "after_upper": {
         "trigram": "坤",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "Externally, life returned to a reduced but stable state — back to the main job, steady savings, a contracted but safe existence (坤 = stable)."
+        "reasoning": "The external world returned to quiet stability — main job, overtime, savings. A contracted but safe and grounded existence."
       }
     },
     {
@@ -305,26 +305,26 @@
       "before_lower": {
         "trigram": "震",
         "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "The parent-child conflict erupted as a disruptive internal force — the next-generation leader's radical strategy shift created internal shockwaves (震 = shock/disruption)."
+        "alternative": "乾",
+        "reasoning": "The next-generation president's radical price-cutting strategy was an impulsive, disruptive internal force — a sudden shift that shattered the established family approach."
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "medium",
         "alternative": "震",
-        "reasoning": "Externally the brand image was damaged, performance declined — a crisis-laden, dangerous business environment (坎 = crisis/harsh)."
+        "reasoning": "Externally the situation became a crisis — brand damage, public parent-child conflict, declining performance creating a dangerous business landscape."
       },
       "after_lower": {
         "trigram": "坤",
-        "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "Under Yamada Denki's subsidiary status, the internal posture became receptive and passive — accepting guidance from above (坤 = receptive)."
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Under Yamada Denki's umbrella, the internal posture became passive and receptive — surrendering independence, accepting direction from the parent company."
       },
       "after_upper": {
         "trigram": "艮",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "坤",
-        "reasoning": "The company survived but is stuck in a diminished position — no longer independent, a symbolic case of stalled family business (艮 = pause/stuck)."
+        "reasoning": "Externally the company reached a stopped, diminished state — contracted, no longer independent, a symbolic halt to what was once a premium brand."
       }
     },
     {
@@ -333,52 +333,52 @@
         "trigram": "離",
         "confidence": "high",
         "alternative": "乾",
-        "reasoning": "Theranos was built on a dazzling vision — Holmes' charisma and the promise of revolutionary blood testing created an internally luminous, vision-driven entity (離 = vision)."
+        "reasoning": "Theranos was built on dazzling but false illumination — Holmes' charismatic vision of revolutionary blood testing created a seductive inner narrative of brilliance and clarity."
       },
       "before_upper": {
-        "trigram": "乾",
-        "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Externally, the company reached $9B valuation — appearing as a powerhouse of unstoppable growth and ambition (乾 = will/growth at its peak)."
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The external environment was euphorically welcoming — investors, media, and public uncritically embraced the story with open, joyful credulity."
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "The truth revealed fraud — internally, the company collapsed into crisis, with criminal conviction. Complete internal devastation (坎 = crisis/harsh)."
+        "reasoning": "Criminal conviction and imprisonment — the founder's inner world collapsed into total crisis, existential danger, and inescapable consequences."
       },
       "after_upper": {
-        "trigram": "坎",
+        "trigram": "震",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "Externally, the company was destroyed — trial, conviction, dissolution. The harsh reality of total collapse (坎 = crisis/harsh)."
+        "alternative": "坎",
+        "reasoning": "The external shock was thunderous — the startup world was jolted, due diligence standards questioned, a seismic reckoning for Silicon Valley culture."
       }
     },
     {
       "transition_id": "OTHR_JP_252",
       "before_lower": {
-        "trigram": "震",
-        "confidence": "medium",
-        "alternative": "坎",
-        "reasoning": "The department store industry was internally disrupted — structural upheaval with the gap between urban and rural, chaotic conditions inside the sector (震 = disruption)."
-      },
-      "before_upper": {
         "trigram": "坎",
         "confidence": "medium",
         "alternative": "震",
-        "reasoning": "Externally the environment was harsh — consumer behavior shifts, regional closures, an industry in crisis (坎 = crisis)."
+        "reasoning": "The department store industry was internally in crisis — caught between diverging urban and rural fates, the sector struggled with identity and survival."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally the landscape was chaotic — consumer behavior shifting rapidly, inbound tourism surges, regional store closures creating a turbulent, disrupted environment."
       },
       "after_lower": {
         "trigram": "離",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "The surviving urban department stores found clarity — focusing on luxury, inbound tourism, and cosmetics. A clear vision of what works emerged (離 = vision/revealed)."
+        "reasoning": "The urban survivors found strategic clarity — focusing on luxury and inbound, they gained a clear inner vision of their niche and purpose."
       },
       "after_upper": {
         "trigram": "巽",
         "confidence": "medium",
-        "alternative": "離",
-        "reasoning": "The external landscape transformed gradually — a bifurcated market with urban prosperity and rural decline, an adapted new reality (巽 = adapt/slow change)."
+        "alternative": "坎",
+        "reasoning": "The external landscape gradually transformed into a new bifurcated normal — urban prosperity and rural decline became an accepted structural reality through gradual adaptation."
       }
     },
     {
@@ -386,53 +386,53 @@
       "before_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "The teacher's inner world was in crisis — power harassment, overwork, and depression created a state of internal drowning (坎 = crisis/harsh)."
+        "alternative": "坤",
+        "reasoning": "The teacher was in deep internal crisis — power harassment, overwork, and depression created a state of drowning in darkness, unable to find solid ground."
       },
       "before_upper": {
-        "trigram": "震",
-        "confidence": "medium",
-        "alternative": "坎",
-        "reasoning": "The external school environment was chaotic and disruptive — toxic management creating an unstable, shocking workplace (震 = disruption)."
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The school environment was externally oppressive and dangerous — toxic management and overwhelming demands created a hostile, crisis-laden institutional setting."
       },
       "after_lower": {
         "trigram": "離",
         "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "After recovery and reinvention, the teacher found a clear vision — 'outside the school framework, I can provide the education truly needed.' Internal illumination and purpose (離 = vision/revealed)."
+        "alternative": "兌",
+        "reasoning": "After recovery, genuine illumination: 'Outside the school framework, I can provide education that's truly needed.' Inner clarity, rediscovered purpose, and passionate vision."
       },
       "after_upper": {
         "trigram": "巽",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The external reality shifted gradually — from public school to tutoring to online freelance, a step-by-step adaptive transformation (巽 = adapt/slow change)."
+        "reasoning": "The freelance online teaching world is a flexible, adaptive external landscape — gentle, flowing conditions where the teacher works freely with vulnerable students."
       }
     },
     {
       "transition_id": "COUN_JP_559",
       "before_lower": {
-        "trigram": "乾",
-        "confidence": "medium",
-        "alternative": "兌",
-        "reasoning": "The furusato nouzei system was internally driven by ambitious growth — municipalities aggressively competing for donations, a strong willful push (乾 = will/growth)."
-      },
-      "before_upper": {
         "trigram": "震",
         "confidence": "medium",
         "alternative": "乾",
-        "reasoning": "Externally, the system's explosive growth past 1 trillion yen and the return-gift arms race created a disruptive, overheated landscape (震 = disruption)."
+        "reasoning": "Municipalities were in an agitated, competitive frenzy internally — impulsive escalation of return gifts, an energetic scramble driven by action rather than reflection."
+      },
+      "before_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external environment was one of cheerful excess — donors happily participating for attractive gifts, a festive marketplace atmosphere masking underlying problems."
       },
       "after_lower": {
-        "trigram": "巽",
+        "trigram": "艮",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "The Ministry tightened rules — the system adapted internally to the 50% expense rule, shifting from wild growth to regulated adaptation (巽 = adapt/slow change)."
+        "alternative": "離",
+        "reasoning": "The 50% expense rule forced deliberate restraint — municipalities must stop, reflect, and reconsider their approach. A mandated pause and self-regulation."
       },
       "after_upper": {
-        "trigram": "離",
+        "trigram": "巽",
         "confidence": "medium",
-        "alternative": "巽",
-        "reasoning": "The debate about the system's original purpose brought clarity — a moment of revelation about sustainability and intent. The true nature was exposed (離 = revealed)."
+        "alternative": "離",
+        "reasoning": "The system is gradually adapting to new regulations — the external landscape transforms incrementally as the original civic intent is slowly restored."
       }
     },
     {
@@ -440,26 +440,26 @@
       "before_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "The Netherlands was internally in deep crisis — 'Dutch Disease' with economic stagnation, high unemployment, and unsustainable welfare. A drowning nation (坎 = crisis)."
+        "alternative": "坤",
+        "reasoning": "The Netherlands was internally drowning — Dutch Disease created genuine suffering with unemployment, economic stagnation, and unsustainable welfare burden."
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "The external economic environment was equally harsh — resource dependency, recession, and competitive pressures (坎 = crisis/harsh)."
+        "alternative": "艮",
+        "reasoning": "The external economic environment was equally bleak — resource dependency, recession, and competitive pressures creating a harsh surrounding landscape."
       },
       "after_lower": {
         "trigram": "兌",
         "confidence": "high",
         "alternative": "巽",
-        "reasoning": "The Polder Model created internal harmony — labor and management cooperating joyfully, work-sharing, balanced welfare. A welcoming internal consensus (兌 = joy/welcoming)."
+        "reasoning": "The Wassenaar Accord embodied joyful collaboration — labor and management coming together in genuine partnership, creating a participatory welfare state with inner harmony."
       },
       "after_upper": {
-        "trigram": "乾",
+        "trigram": "巽",
         "confidence": "high",
         "alternative": "兌",
-        "reasoning": "Externally, the Netherlands achieved growth with social justice — a 'participatory welfare state' demonstrating robust national vitality (乾 = will/growth)."
+        "reasoning": "The external transformation was gradual and flexible — work-sharing, wage moderation, and balanced reform. Not a revolution but a measured, adaptive restructuring."
       }
     },
     {
@@ -468,79 +468,79 @@
         "trigram": "坤",
         "confidence": "high",
         "alternative": "兌",
-        "reasoning": "The person was internally in a peaceful, stable state — commuting routine, social connections at work, a grounded daily life (坤 = stable)."
+        "reasoning": "The person was internally stable and grounded — comfortable commuting routine, social connections, a settled inner equilibrium."
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "The external environment was also stable and unremarkable — standard office work life (坤 = stable)."
+        "alternative": "兌",
+        "reasoning": "The external office environment was stable and familiar — established social rhythms and collegial connections providing a grounded setting."
       },
       "after_lower": {
-        "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坎",
-        "reasoning": "Internally the person is stuck — caught between freedom and loneliness, unable to fully embrace either. A state of paralysis (艮 = pause/stuck)."
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The inner state is one of difficulty — isolation, loneliness, and being caught between freedom and solitude. An emotional struggle with no resolution."
       },
       "after_upper": {
-        "trigram": "巽",
+        "trigram": "艮",
         "confidence": "medium",
         "alternative": "坤",
-        "reasoning": "Externally, the shift to remote work represents a gradual adaptation — not crisis but a slow environmental change that brought mixed results (巽 = adapt/slow change)."
+        "reasoning": "The external world became walled off and still — no colleague interaction, social disconnection, a confined and stopped landscape despite physical freedom."
       }
     },
     {
       "transition_id": "COUN_JP_1340",
       "before_lower": {
-        "trigram": "乾",
-        "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "Kohl's West Germany was internally driven by a strong national will — preparing for reunification with strategic purpose, maintaining NATO ties, strengthening the economy (乾 = will)."
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Kohl possessed strategic clarity and foresight — a clear inner vision of reunification, seeing the path forward while maintaining careful preparation."
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "high",
         "alternative": "艮",
-        "reasoning": "Externally, the Cold War structure provided a stable, if tense, geopolitical framework — a known and steady international order (坤 = stable)."
+        "reasoning": "The Cold War framework provided a stable external structure — a known, divided but predictable geopolitical landscape requiring patient navigation."
       },
       "after_lower": {
         "trigram": "艮",
         "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "The narrative arc is about careful holding and preparation — Kohl kept the system solid, a deliberate pause and consolidation before the coming transformation (艮 = pause)."
+        "alternative": "乾",
+        "reasoning": "The strategy was deliberate fortification and holding — consciously maintaining the position, strengthening foundations, a mountain-like stability while preparing for the future."
       },
       "after_upper": {
-        "trigram": "坤",
-        "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "Externally, the result was a contracted but stable position — the system was maintained, reduced ambition but solid foundations preserved (坤 = stable)."
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external approach was gradual diplomatic adaptation — gentle engagement with NATO, Eastern dialogue, and economic strengthening within the existing framework."
       }
     },
     {
       "transition_id": "CORP_JP_4692",
       "before_lower": {
-        "trigram": "離",
-        "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "Toshiba was internally blinded by its own vision of success — excessive optimism created a false illumination, a mirage of performance (離 = vision, but distorted)."
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Toshiba's management was driven by excessive ambition — forceful internal will to present ever-improving results, aggressive confidence that overrode reality."
       },
       "before_upper": {
-        "trigram": "乾",
-        "confidence": "high",
+        "trigram": "兌",
+        "confidence": "medium",
         "alternative": "離",
-        "reasoning": "Externally, Toshiba projected an image of powerful corporate dominance — a peak of apparent strength and growth (乾 = will/growth at its zenith)."
+        "reasoning": "The external environment was uncritically supportive — markets, investors, and stakeholders accepted the optimistic picture with open trust and cheerful confidence."
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "The accounting fraud exposed a deep internal crisis — the organization was corroded from within, now facing existential danger (坎 = crisis/harsh)."
+        "alternative": "艮",
+        "reasoning": "After exposure, deep internal crisis — organizational corruption revealed, existential threat, leadership vacuum, and institutional paralysis."
       },
       "after_upper": {
-        "trigram": "坎",
+        "trigram": "震",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "Externally, the aftermath was devastating — regulatory investigations, stock plunge, reputation destroyed. A harsh, punishing external reality (坎 = crisis)."
+        "alternative": "坎",
+        "reasoning": "The external reaction was thunderous shock — regulatory investigations, stock collapse, public outcry, and reputation destruction hit suddenly and violently."
       }
     },
     {
@@ -548,80 +548,80 @@
       "before_lower": {
         "trigram": "坤",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Japanese onsen culture was internally stable and deeply rooted — a centuries-old tradition flowing naturally from toji (therapeutic bathing) origins (坤 = receptive/stable)."
+        "alternative": "艮",
+        "reasoning": "Traditional onsen culture was deeply rooted and earthy — a receptive, nurturing inner essence of healing passed down through centuries of therapeutic bathing tradition."
       },
       "before_upper": {
         "trigram": "坤",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "The external cultural landscape was also stable — onsen culture was an established, accepted part of Japanese life (坤 = stable)."
+        "alternative": "巽",
+        "reasoning": "The external cultural landscape was stable and traditional — onsen as an accepted, unchanging part of Japanese life and regional identity."
       },
       "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Modernization brought new clarity and intellectual appreciation — onsen sommeliers, health-beauty fusion, and heritage recognition illuminate the culture with fresh understanding."
+      },
+      "after_upper": {
         "trigram": "兌",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The evolution brought joy and new forms of appreciation — onsen sommelier, health/beauty fusion, cultural heritage recognition. Internal delight and openness (兌 = joy/welcoming)."
-      },
-      "after_upper": {
-        "trigram": "乾",
-        "confidence": "medium",
-        "alternative": "離",
-        "reasoning": "Externally, onsen culture is growing and thriving — UNESCO recognition efforts, tourism integration, continuous development into the modern era (乾 = growth)."
+        "reasoning": "The external landscape became joyfully expansive — new ways of enjoying onsen, UNESCO campaigns, tourism fusion, and celebratory cultural development."
       }
     },
     {
       "transition_id": "OTHR_JP_1134",
       "before_lower": {
-        "trigram": "乾",
+        "trigram": "巽",
         "confidence": "medium",
-        "alternative": "巽",
-        "reasoning": "The organization had internal drive and mission — establishing the Japan office in 1992 with ambitious humanitarian goals, though still building capacity (乾 = will/growth)."
+        "alternative": "離",
+        "reasoning": "The NGO was gradually adapting to the Japanese market — patient, persistent efforts to build trust and establish presence since 1992, a gentle internal flexibility."
       },
       "before_upper": {
-        "trigram": "震",
+        "trigram": "坎",
         "confidence": "medium",
-        "alternative": "坎",
-        "reasoning": "The Hanshin earthquake provided a shocking external catalyst that dramatically raised awareness — a disruptive event that transformed public perception (震 = shock)."
+        "alternative": "震",
+        "reasoning": "The Hanshin earthquake created a crisis-laden external catalyst — disaster and difficulty that paradoxically raised awareness and drove recognition."
       },
       "after_lower": {
         "trigram": "離",
-        "confidence": "medium",
+        "confidence": "high",
         "alternative": "乾",
-        "reasoning": "The organization achieved transparency and clarity — high-accountability financial reporting and clear communication of purpose built deep trust (離 = vision/revealed)."
+        "reasoning": "Transparent accounting and clear communication built genuine inner clarity — the organization achieved illumination in its operations, radiating trustworthiness."
       },
       "after_upper": {
-        "trigram": "乾",
+        "trigram": "兌",
         "confidence": "high",
-        "alternative": "兌",
-        "reasoning": "Externally, the organization expanded to 10 billion yen annual scale — robust, sustained growth and a strong, established presence (乾 = growth)."
+        "alternative": "坤",
+        "reasoning": "The donor base expanded through open, collaborative trust — 10 billion yen annually represents a joyful, willing relationship between the public and the organization."
       }
     },
     {
       "transition_id": "CORP_JP_3452",
       "before_lower": {
         "trigram": "乾",
-        "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "NTT's internal character was one of powerful institutional will — from national telephone corporation to privatized giant, always pushing forward with infrastructure ambition (乾 = will/growth)."
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "NTT began with powerful institutional will — from state-owned monopoly, a determined inner drive to build and control national telecommunications infrastructure."
       },
       "before_upper": {
         "trigram": "震",
         "confidence": "medium",
-        "alternative": "巽",
-        "reasoning": "Externally, the industry faced periodic disruptions — privatization in 1985, the mobile revolution, technological shifts that constantly reshaped the landscape (震 = disruption)."
+        "alternative": "坎",
+        "reasoning": "Privatization in 1985 and technological revolutions created a disruptive external environment — sudden structural changes reshaping the landscape repeatedly."
       },
       "after_lower": {
-        "trigram": "乾",
+        "trigram": "巽",
         "confidence": "high",
-        "alternative": "離",
-        "reasoning": "NTT maintained its powerful internal drive through every era — now building 5G and data centers, continuing its forward-pushing institutional will (乾 = will/growth)."
+        "alternative": "乾",
+        "reasoning": "NTT's key inner quality through the decades was adaptive flexibility — evolving from landlines to fiber to mobile to 5G, a persistent gentle wind of transformation."
       },
       "after_upper": {
         "trigram": "乾",
-        "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "Externally, NTT achieved dominant infrastructure status — commanding presence in telecommunications, continuous expansion and next-generation development (乾 = growth)."
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally NTT achieved dominant infrastructure status — commanding presence, continuous expansion, and next-generation leadership representing robust growth."
       }
     },
     {
@@ -629,26 +629,26 @@
       "before_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "JAL was in complete internal crisis after bankruptcy in 2010 — the organization was drowning, facing dissolution (坎 = crisis/harsh)."
+        "alternative": "坤",
+        "reasoning": "JAL in 2010 was in complete internal crisis — bankruptcy, organizational collapse, financial devastation. The deepest possible inner state of danger."
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "Externally, the airline faced a devastatingly harsh environment — creditor pressure, regulatory oversight, market skepticism (坎 = crisis)."
+        "reasoning": "The external environment was brutally hostile — creditor demands, regulatory oversight, market skepticism about any possibility of recovery."
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "Under Inamori's leadership, JAL rebuilt with powerful internal will and determination — achieving the 'impossible' re-listing in just 2 years 8 months (乾 = will/growth)."
+        "reasoning": "Under Inamori's leadership, JAL rebuilt with fierce internal will — achieving the 'impossible' relisting in 2 years 8 months required extraordinary determination and conviction."
       },
       "after_upper": {
         "trigram": "離",
         "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "The re-listing on TSE First Section was a brilliant, visible achievement — the turnaround illuminated what was possible, becoming a legendary business story (離 = vision/revealed)."
+        "alternative": "兌",
+        "reasoning": "TSE First Section relisting was a brilliant public achievement — the turnaround became legendary, illuminating what disciplined leadership could accomplish."
       }
     },
     {
@@ -657,25 +657,25 @@
         "trigram": "離",
         "confidence": "high",
         "alternative": "乾",
-        "reasoning": "Son Masayoshi's internal state was pure visionary fire — the 'group strategy' was a grand vision of interconnected tech ecosystem, a bold conceptual illumination (離 = vision)."
+        "reasoning": "Son Masayoshi's inner state was visionary fire — the 'cluster strategy' was a grand conceptual illumination, seeing interconnections between tech companies that others could not."
       },
       "before_upper": {
         "trigram": "震",
         "confidence": "medium",
-        "alternative": "乾",
-        "reasoning": "The external tech investment landscape was volatile and disruptive — rapid shifts in valuations, emerging giants, and high-stakes bets (震 = disruption)."
+        "alternative": "坎",
+        "reasoning": "The global tech investment landscape was volatile and fast-moving — rapid disruptions, high-stakes changes, and sudden shifts in company valuations."
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "The vision materialized into powerful growth — Alibaba's success validated the strategy, creating massive returns and demonstrating forceful execution (乾 = will/growth)."
+        "reasoning": "The vision crystallized into powerful execution — Alibaba, ARM investments demonstrating unstoppable ambition and creative force driving the portfolio forward."
       },
       "after_upper": {
-        "trigram": "乾",
-        "confidence": "high",
+        "trigram": "兌",
+        "confidence": "medium",
         "alternative": "離",
-        "reasoning": "Externally, the investment portfolio achieved enormous scale and influence — SoftBank became a global tech investment powerhouse (乾 = growth)."
+        "reasoning": "The goal was synergistic collaboration — companies lifting each other in an open, interconnected ecosystem of mutual benefit and joyful partnership."
       }
     },
     {
@@ -683,26 +683,26 @@
       "before_lower": {
         "trigram": "坤",
         "confidence": "high",
-        "alternative": "乾",
-        "reasoning": "The company was internally stable and solid before its expansion phase — a well-established foundation ready to receive new growth (坤 = receptive/stable)."
+        "alternative": "艮",
+        "reasoning": "Before the fast fashion revolution, the company had stable, solid foundations — receptive and grounded, with the potential for growth not yet unleashed."
       },
       "before_upper": {
         "trigram": "坤",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "巽",
-        "reasoning": "The external market was a stable fashion landscape before the fast fashion revolution (坤 = stable)."
+        "reasoning": "The external fashion retail landscape was traditional and stable — established industry norms without major disruption."
       },
       "after_lower": {
         "trigram": "乾",
         "confidence": "high",
-        "alternative": "離",
-        "reasoning": "The vertical integration from manufacturing to retail created a powerfully driven internal engine — pure organizational will and ambition (乾 = will/growth)."
+        "alternative": "震",
+        "reasoning": "Vertical integration from manufacturing to retail created an internally powerful engine — decisive organizational will, complete control, and aggressive ambition."
       },
       "after_upper": {
-        "trigram": "乾",
+        "trigram": "震",
         "confidence": "high",
         "alternative": "離",
-        "reasoning": "Externally, the fast fashion model conquered global markets — rapid worldwide expansion demonstrating unstoppable growth momentum (乾 = growth)."
+        "reasoning": "The fast fashion model disrupted global markets — rapid worldwide expansion, industry norms overturned, a thunderous external impact that shook established fashion."
       }
     },
     {
@@ -711,106 +711,106 @@
         "trigram": "坎",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "330,000 Allied troops were internally in dire crisis — surrounded by German forces, facing potential annihilation. Deep existential danger (坎 = crisis/harsh)."
+        "reasoning": "330,000 troops surrounded by German forces — deep existential inner crisis, fear of annihilation, trapped in the most dangerous possible situation."
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
         "alternative": "震",
-        "reasoning": "The external military situation was equally devastating — German encirclement, enemy advance, a battlefield of pure danger (坎 = crisis)."
+        "reasoning": "German encirclement created the most hostile possible external environment — enemy forces closing in, water behind, no obvious escape route."
       },
       "after_lower": {
         "trigram": "艮",
-        "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "After the miraculous evacuation, the forces were preserved but stopped — a strategic pause, saved but unable to advance. The army survived but was halted (艮 = pause)."
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The evacuation was a deliberate strategic retreat and stop — choosing survival over engagement, a conscious decision to halt and preserve rather than fight."
       },
       "after_upper": {
-        "trigram": "坤",
+        "trigram": "兌",
         "confidence": "medium",
-        "alternative": "艮",
-        "reasoning": "Externally, Britain gained stability through the evacuation — the troops returned home to a stable base, buying time to regroup. Contracted survival (坤 = receptive/stable)."
+        "alternative": "巽",
+        "reasoning": "The miraculous success depended on extraordinary collective effort — civilian boats volunteering, a remarkable spirit of openness and collaboration that transformed catastrophe into hope."
       }
     },
     {
       "transition_id": "HEX26_YAO1_001",
       "before_lower": {
-        "trigram": "乾",
-        "confidence": "high",
-        "alternative": "離",
-        "reasoning": "Buffett internally possessed tremendous investment power and accumulated wealth — a position of peak strength and capability (乾 = will/growth at its zenith)."
-      },
-      "before_upper": {
         "trigram": "離",
         "confidence": "medium",
         "alternative": "乾",
-        "reasoning": "Externally, the market situation was illuminated with clarity for Buffett — he could see the dangers others couldn't, a clear perception of overvaluation (離 = revealed)."
+        "reasoning": "Buffett's inner state was one of penetrating clarity — seeing danger where others saw opportunity, a lucid analytical vision that illuminated the true market conditions."
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The external market appeared strong and bullish — an environment of apparent expansion and confidence that most investors were riding enthusiastically."
       },
       "after_lower": {
         "trigram": "艮",
         "confidence": "high",
         "alternative": "坤",
-        "reasoning": "Buffett deliberately stopped — accumulating $120B+ in cash, refusing to invest. A masterful strategic pause, choosing stillness over action (艮 = pause)."
+        "reasoning": "Buffett deliberately stopped investing — accumulating $120B+ in cash, embodying mountain-like patience and restraint. A masterful inner decision to be still."
       },
       "after_upper": {
-        "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "Externally, the posture was one of complete restraint — holding cash, waiting, maintaining a mountain-like immobility. Pure strategic stopping (艮 = pause/stuck)."
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Externally the posture became receptive and waiting — holding cash, maintaining stability, a grounded and patient position ready to receive future opportunities."
       }
     },
     {
       "transition_id": "OTHR_JP_958",
       "before_lower": {
         "trigram": "艮",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "坎",
-        "reasoning": "Home healthcare was stuck in an institutional blind spot — not recognized in the reimbursement system, unable to develop or grow. Blocked and stalled (艮 = stuck)."
+        "reasoning": "Home healthcare was stuck in institutional limbo — not yet recognized in reimbursement systems, blocked from developing, unable to move forward."
       },
       "before_upper": {
-        "trigram": "艮",
-        "confidence": "high",
-        "alternative": "坤",
-        "reasoning": "The external healthcare infrastructure was also stalled regarding home care — no framework, no support system, institutional paralysis (艮 = stuck)."
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external healthcare infrastructure presented difficulties for home care — institutional barriers, aging population pressure, and lack of supporting frameworks."
       },
       "after_lower": {
         "trigram": "離",
-        "confidence": "high",
+        "confidence": "medium",
         "alternative": "兌",
-        "reasoning": "The 1992 policy recognition illuminated home healthcare as a viable path — a clear vision emerged of supporting elderly at home, purpose and clarity (離 = vision/revealed)."
+        "reasoning": "The 1992 policy recognition brought illumination — a clear vision of 'living at home until the end' emerged as a guiding purpose, lighting the path forward."
       },
       "after_upper": {
-        "trigram": "乾",
+        "trigram": "巽",
         "confidence": "high",
-        "alternative": "巽",
-        "reasoning": "Externally, home healthcare expanded robustly — 24-hour clinics increased, community care systems developed, continuous growth in the sector (乾 = growth)."
+        "alternative": "兌",
+        "reasoning": "The community-integrated care system developed gradually — a gentle, adaptive external expansion with 24-hour clinics increasing incrementally over decades."
       }
     },
     {
       "transition_id": "PERS_JP_2859",
       "before_lower": {
-        "trigram": "艮",
-        "confidence": "high",
+        "trigram": "乾",
+        "confidence": "medium",
         "alternative": "坎",
-        "reasoning": "The Watami founder was internally stuck after the karoshi scandal — social criticism paralyzed action, the 'black company' label immobilized the brand identity (艮 = stuck)."
+        "reasoning": "Despite the karoshi scandal, the leader pushed forward stubbornly — aggressive diversification into nursing, agriculture, and politics. Forceful will refusing to yield."
       },
       "before_upper": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "Externally, the environment was harshly hostile — public condemnation, media scrutiny, a punishing social landscape (坎 = crisis/harsh)."
+        "alternative": "震",
+        "reasoning": "The external environment was deeply hostile — 'black company' branding, social condemnation, media attacks, a harsh and punishing public landscape."
       },
       "after_lower": {
         "trigram": "坎",
         "confidence": "high",
-        "alternative": "震",
-        "reasoning": "Internally, the collapse deepened — diversification into nursing and agriculture failed, parliamentary career ended. A spiral of internal crisis (坎 = crisis)."
+        "alternative": "坤",
+        "reasoning": "Total internal collapse — every venture failed, political ambitions ended, food service abandoned. A spiral into complete inner crisis with no remaining direction."
       },
       "after_upper": {
-        "trigram": "坎",
-        "confidence": "high",
-        "alternative": "艮",
-        "reasoning": "Externally, total collapse — withdrawal from food service in 2019, election loss. The external world offered no refuge, only continued harsh reality (坎 = crisis)."
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally everything stopped — business withdrawal, election loss, complete cessation of activity. A final, imposed halt with nowhere left to go."
       }
     }
   ]
