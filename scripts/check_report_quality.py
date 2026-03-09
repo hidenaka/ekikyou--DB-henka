@@ -578,6 +578,12 @@ def check_gate_2(lines: list, text: str, plan_type: str) -> dict:
 # ---------------------------------------------------------------------------
 
 
+def _is_table_line(line: str) -> bool:
+    """Return True if line is part of a markdown table."""
+    stripped = line.strip()
+    return stripped.startswith("|") and stripped.endswith("|")
+
+
 def check_gate_3(text: str) -> dict:
     """Run evidence consistency checks. Returns gate_3 result dict."""
     lines = text.split("\n")
@@ -586,6 +592,10 @@ def check_gate_3(text: str) -> dict:
     hypothesis_ok = True
 
     for i, line in enumerate(lines):
+        # Skip markdown table rows — labels inside tables don't need outcome text
+        if _is_table_line(line):
+            continue
+
         if "観測済み" in line:
             # Check surrounding lines (within 5 lines) for outcome-like content
             window = "\n".join(lines[max(0, i - 2) : i + 6])
