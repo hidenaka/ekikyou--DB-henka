@@ -1,0 +1,817 @@
+{
+  "batch_id": 22,
+  "pass_number": 2,
+  "prompt_type": "holistic",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The internal reality is one of concealed peril — fraudulent accounting festers beneath a corporate facade. The emotional tenor is坎: hidden danger, structural rot at the core that has not yet surfaced."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Outwardly the firm still projects the image of a major construction company — visible, illuminated, credible. The surface is離: appearance and reputation still intact, but about to be shattered by revelation."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "After exposure, the inner state is existential crisis — mass resignations, collapse of morale, survival in question. Pure坎: drowning in danger with no visible escape."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally, the environment is pure shock — banks withdraw, partners flee, civil rehabilitation. A thunderclap of destruction that reshapes the entire external landscape."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The founder's inner world before the breakthrough is receptive and accumulating — patiently building capability, absorbing knowledge, quietly preparing. A坤 quality of grounded readiness."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The market environment is calm and undisturbed — no one expects disruption. A stable, receptive landscape awaiting the creative force that will reshape it."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After the breakthrough, the founder radiates pure乾 energy — overwhelming will, visionary confidence, creative force driving global expansion. The entire organization follows this commanding inner drive."
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "The external environment mirrors the inner force — investors flock, markets open, competitors fall behind. Upward momentum and growth surround the venture on all sides."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Internally both companies are stuck in entrenched competitive postures — rigid, guarded, unable to move forward alone. An艮 quality of immobility born from opposition."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The industry is undergoing structural upheaval that forces these rivals to reconsider their positions. External disruption — the shock of structural change — compels new thinking."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "After the partnership forms, the inner state of both companies is兌: openness, mutual joy, genuine exchange. Trust and dialogue replace guardedness."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The external ecosystem evolves through gradual adaptation — cooperative norms spread, new collaborative structures emerge organically. A巽 quality of gentle, pervasive transformation."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Society's inner condition is one of hidden corruption — dangerous, concealed, stagnant. The journalist must navigate treacherous waters to uncover what lies beneath. Pure坎: peril and obscurity."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The surface of society appears still and immovable — the establishment is entrenched, structures seem permanent, decline is masked by inertia. An艮 blockage that suppresses revelation."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "After the reporting, truth blazes into awareness — citizens see clearly what was hidden. The inner shift is離: illumination, awakening, clarity of vision replacing ignorance."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "Externally, the revelation sends shockwaves — investigations, social movements, demands for transparency. The environment is shaken and reorganized by the force of truth."
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The company's internal state is坤: stable, grounded, quietly receptive. No urgency, no driving vision — simply maintaining what exists with patient steadiness."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external market environment is calm and slowly shifting — no dramatic disruption, just gradual evolution. A stable backdrop against which the company operates."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "Internally the company adapts incrementally — small investments, gradual portfolio shifts, nothing dramatic. The emotional tenor is巽: flexible, adaptive, moving with the wind rather than against it."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment remains largely stable — the company's market position fades somewhat but the financial foundation holds. No upheaval, just gentle subsidence."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_239",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The woman's inner state is extreme danger and suffering — trapped in domestic violence, fearful for herself and her children. Pure坎: crisis, peril, being engulfed by threat."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external situation feels immovable — the marriage appears as a wall she cannot escape, social structures feel blocking. An艮 quality of being walled in and unable to move."
+      },
+      "after_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The decision to flee to a shelter is a thunderclap of decisive action — breaking free from paralysis, a seismic inner shift. The act of escape is震: sudden, forceful, life-altering movement."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The new life as mother and child brings openness and possibility — she speaks to others in similar situations, there is joy in freedom. The environment becomes兌: welcoming, communicative, open."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_643",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Before retirement, the inner state was stable and settled — a life of quiet routine, grounded in the predictable rhythms of employment.坤: peaceful receptivity without urgent drive."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external world before retirement was orderly and stable — structured employment, clear social role. A坤 environment of predictable stability."
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "After retirement, the inner state is stuck — desire to work but blocked by age discrimination, unable to move forward. An艮 feeling of hitting a wall, frustrated immobility."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The external environment is also blocking — age barriers in employment, limited options at the Silver Human Resources Center. The world presents walls at every turn."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_078",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "At its peak, the newspaper felt internally powerful and influential — driving national discourse on comfort women, shaping international opinion. A sense of乾: authority, reach, self-assured force."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally the newspaper was highly visible and prominent — the face of investigative journalism, a beacon of media influence. Pure離: illumination and public visibility at its zenith."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After the retraction, internal crisis engulfs the organization — credibility shattered, identity in peril, existential danger. 坎: drowning in self-inflicted damage and public backlash."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The organization adapts to survive through digitalization — a gradual, wind-like shift in strategy. Circulation drops drastically but the organization bends rather than breaks, seeking new form through巽: adaptive transformation."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_288",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Inoue Takehiko's inner state is blazing creative will — dropping out of university, pursuing manga with fierce determination, apprenticing under a master. Pure乾: indomitable drive toward a vision not yet realized."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment is harsh — manga is brutally competitive, basketball manga is a minor genre with no proven market. The terrain is坎: difficult, uncertain, full of risk."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After success, the inner creative force only intensifies — SLAM DUNK, Vagabond, Real, the 2022 film. The artistic will is undiminished, pure乾 energy sustaining decades of output."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The world opens up to him completely — 100 million copies, a box-office smash, cultural icon status, the scholarship. The environment is兌: joyful reception, celebration, welcoming abundance."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_106",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "At the peak of her career, her inner state is radiant joy and expression — 'Queen of Heisei pop', the fullness of artistic fulfillment. Pure兌: joyful expression at its highest pitch."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally she is at maximum visibility — the most prominent female artist of an era, blazing in the spotlight. 離: brilliance, fame, being seen and celebrated by the nation."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Her voluntary retirement represents a deliberate return to earth — choosing stillness over performance, receptivity over expression. The inner shift is to坤: quiet, grounded, at rest."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "She withdraws from public life entirely — the external world becomes a mountain of stillness and silence. An艮 quality of complete cessation, becoming unreachable, a legend frozen in time."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_312",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The securities firm's inner state was comfortable stability — serving wealthy clients in familiar patterns, a business rooted in tradition. 坤: grounded, settled, operating from established foundations."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment was stable before the internet disruption — traditional finance, established channels, predictable competition. A坤 landscape of orderly markets."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Over 7 years the firm gradually adapts its inner identity — shifting from trading to consulting and inheritance planning. A巽 process of slow, persistent internal transformation."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The competitive environment remains harsh — online brokers dominate, traditional firms are squeezed. The external terrain is坎: pressured, dangerous for those who cannot adapt fast enough."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_113",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Honda Soichiro's inner state is pure creative will amidst chaos — building from nothing in postwar rubble, declaring he would conquer the Isle of Man TT. An indomitable乾 spirit that refuses to accept limitations."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The external environment is postwar chaos — destroyed infrastructure, scarce resources, an industry in its infancy. Pure坎: harsh, dangerous, survival-level conditions."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After victory at the Isle of Man, Honda's inner force is validated and intensified — the same unbreakable will now proven on the world stage. 乾 at its fullest expression."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The world opens to Honda — international recognition, market expansion, the path to becoming a global manufacturer. An environment of兌: welcoming, celebratory, doors opening everywhere."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3000",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Morinaga Taichiro carries a burning vision from America — the will to bring Western confectionery to Japan. His inner state is乾: creative ambition, entrepreneurial drive, determined purpose despite starting from nothing."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Starting a confectionery business with foreign techniques in early modern Japan is fraught with difficulty — unfamiliar market, limited resources. The environment is坎: challenging, uncertain terrain."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The company crystallizes its identity through the 'Oishiku, Tanoshiku, Sukoyakani' philosophy — a clear vision that illuminates its purpose. 離: clarity of mission, guiding light for the enterprise."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "Milk Caramel becomes a national favorite — the public embraces it with joy and enthusiasm. The external response is兌: warm reception, delight, becoming beloved by the people."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2667",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The salaried worker's inner state is stable and grounded — secure employment, predictable life. 坤: settled, receptive, without strong creative urgency."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The external environment is also stable — steady employment, clear expectations. A坤 backdrop of social and economic predictability."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "As a side-hustle writer, the inner state shifts to gentle adaptation — gradually learning the craft, adjusting to freelance rhythms. 巽: persistent small effort, bending to market winds."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external market presents a ceiling — rates stuck at 1 yen per character, limited growth. An艮 quality of being blocked, unable to break through to higher earnings."
+      }
+    },
+    {
+      "transition_id": "FAM_JP_092",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The family feels trapped in their current situation — urban life has become stifling, a sense of being walled in. 艮: stuck, frustrated, unable to move toward the life they envision."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external environment feels oppressive — urban density, limited options, the difficulty of escaping established routines. A坎 quality of being pressed by circumstances."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The family adapts their dream — full countryside living becomes suburban compromise. Internally they bend with practical wisdom. 巽: flexible acceptance, adjusting the vision to reality."
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The suburban environment is stable and workable — not the dream but adequate. Nature is present, schools exist, jobs are accessible. A坤 quality of grounded, functional stability."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1142",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The founder in 2004 possessed a clear vision of the problem — seeing NEETs and hikikomori not as personal failures but as a social challenge requiring support. 離: visionary clarity, the ability to illuminate what others overlook."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The external landscape for youth employment support was bleak — no established infrastructure, social stigma, policy neglect. 坎: harsh conditions with little support or recognition."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Having built the model and influenced national policy, the organization's inner drive is fully realized — 10,000+ people supported annually, policy leadership achieved. 乾: strong will manifested as institutional power."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The external environment has transformed — government partnership, nationwide rollout, social acceptance of youth support. 兌: welcoming, collaborative, the community opening to receive this work."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_445",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The Philippines' inner condition is one of structural hardship — poverty drives millions overseas as OFWs, domestic opportunity is scarce. A坎 quality of persistent difficulty and survival-mode existence."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The external political and economic environment is stagnant — entrenched oligarchies, institutional blockages, limited industrial development. An艮 wall of structural immobility."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Growth emerges through adaptation — the BPO industry leverages English fluency, remittances create a unique economic engine. Internally the nation adapts resourcefully. 巽: flexible, opportunistic transformation."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "Externally there is disruption — Duterte's violent drug war, the Marcos family's political return, human rights controversies. The environment carries震 shock alongside the growth, creating turbulence."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_828",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Both the university and the company are stuck in their respective silos — researchers and corporations unable to bridge the gap between academia and industry. 艮: institutional rigidity, inability to move across boundaries."
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "The external innovation landscape is stagnant — traditional R&D models no longer yielding breakthroughs, industry-academia collaboration stuck in old patterns. Another layer of艮: structural blockage."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Through dialogue, mutual understanding blossoms — researchers and business people connect across disciplines with genuine exchange. 兌: joyful collaboration, openness, communicative synergy."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The joint research yields commercialized innovation — new technology brought to light, knowledge crystallized into product. 離: revelation, making the invisible visible, ideas manifesting in the world."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_206",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "From age 3, Uchimura's inner state is relentless drive — born into gymnastics, training with absolute dedication, pursuing perfection. 乾: overwhelming creative will channeled into physical mastery."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Elite international gymnastics is a harsh arena — intense competition, physical risk, the pressure of representing a nation. 坎: demanding, unforgiving external terrain that tests every fiber."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "After achieving unprecedented dominance — 6 consecutive world titles, 40 consecutive wins — his inner drive remains pure乾: unbroken will, the king of his domain."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The world celebrates him — 'King', 'Legend', gold medals, final performances watched with reverence. The environment is兌: joyful recognition, warm reception, universal acclaim."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_647",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Yamato Transport at its peak carries the pride and ambition of having revolutionized Japanese logistics with Takkyubin. Internal乾: powerful corporate will, confidence in their dominant position."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "Externally the company is highly visible and celebrated — synonymous with home delivery in Japan, a household name. 離: prominence, recognition, being the face of an industry."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The company adapts through painful adjustment — price hikes, volume controls, work-style reforms. Internally bending and restructuring rather than breaking. 巽: adaptive resilience, gradual transformation under pressure."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external environment remains harsh — Amazon's relentless volume, driver shortages, societal demands for reform. 坎: continuous pressure, an unrelenting external challenge."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_447",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Cambodia's inner state under the Khmer Rouge is the deepest possible crisis — 2 million dead, civilization dismantled, a nation's soul shattered. 坎 at its most extreme: absolute existential peril."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "Externally the environment is equally catastrophic — genocide, civil war, international isolation. Double坎: danger above and below, no safe ground anywhere."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "Recovery comes through gradual adaptation — tourism, garment manufacturing, and pragmatic economic development under authoritarian stability. The nation bends toward growth. 巽: slow, adaptive rebuilding."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Despite economic growth, the external environment remains perilous — democratic backsliding, deepening Chinese dependence, fragile institutions. 坎: danger still present beneath the surface of progress."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_937",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Hagi's inner essence is坤: a quiet, receptive repository of history. The castle town simply exists, holding its heritage without forceful ambition. Patient, grounded, preserving what is."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external environment is peaceful and stable — a small city in Yamaguchi Prefecture, undisturbed by rapid change. A坤 landscape of quiet continuity."
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "The preservation movement brings clarity of identity — the town sees itself through the lens of its historical significance, culminating in World Heritage recognition. 離: illumination of inherent value, making the invisible heritage visible."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "World Heritage status brings international recognition and celebration — tourists arrive, the world acknowledges Hagi's value. 兌: welcoming, joyful recognition from the wider world."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_774",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Internally the brand is stuck — unable to reconnect with Japanese consumers, the creative energy has stalled, online-only existence reflects paralysis. 艮: immovable, unable to find a way forward."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The Japanese retail environment is harsh for foreign fashion brands without physical presence — fast fashion dominates, consumer tastes have shifted. 坎: difficult, hostile terrain."
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "In the end, the brand returns to earth — its Japanese existence ceases entirely, returning to the void. 坤 in its dissolution aspect: dissolution back into formlessness."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "The market has closed its doors completely — 42 years end with total withdrawal, all stores shuttered. 艮: the final wall, the immovable endpoint of a market relationship."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_2770",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "After the 2011 fraud disclosure, Olympus internally is in deep crisis — shattered trust, organizational chaos, existential questioning. 坎: danger and confusion at the core."
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Externally the scandal erupts as a thunderclap — media storm, investor panic, regulatory scrutiny. 震: shocking disruption that reshapes the entire external landscape."
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "Through 200 dialogue sessions, the new leadership rebuilds internal culture through openness and communication. 兌: genuine exchange, transparency, joy of reconnection within the organization."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "By the 100th anniversary, the company has achieved clarity of vision and renewed identity — transformed into a transparent, reformed entity visible to the world. 離: renewed visibility, clarity of purpose made manifest."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3368",
+      "before_lower": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "SBF's inner state is described as 'dark joy' — surface兌 (exuberance, celebration, the euphoria of crypto success) but hollow and deceptive. A corrupted兌: false joy masking fraud."
+      },
+      "before_upper": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "Externally FTX blazed with maximum visibility — media darling, conference headliner, the face of crypto's legitimacy. 離: dazzling appearance, brilliance that was ultimately illusory."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After collapse, the inner reality is pure crisis — customer funds gone, legal prosecution, complete ruin. 坎: drowning in the consequences of fraud, existential destruction."
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The collapse sends shockwaves through the entire crypto industry — regulatory crackdowns, contagion, trust destroyed across the ecosystem. 震: devastating external disruption."
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3597",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Before the amoeba management transformation, Kyocera was stable and well-managed but operating in conventional patterns. 坤: grounded, receptive, ready for the next evolution."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external business environment was stable — ceramic and electronics markets functioning predictably. A坤 landscape of steady operations."
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "Inamori's amoeba system awakens entrepreneurial will in every employee — each person becomes a manager, creative ownership spreads throughout the organization. 乾: collective will and agency activated at every level."
+      },
+      "after_upper": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "The organizational culture becomes transparent and visible — every unit's performance is illuminated, accountability is clear. 離: clarity, transparency, making the invisible workings of the organization visible."
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1356",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "Before the care insurance system, Japan's eldercare was stuck in a familial burden model — immovable tradition, trapped caregivers, no institutional pathway forward. 艮: blockage, inability to move beyond the status quo."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The social environment was one of growing crisis — aging population accelerating, families crushed by caregiving burden, no systemic solution. 坎: mounting pressure and danger."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "The care insurance system creates gradual, pervasive change — diverse services emerge (day service, home visits, nursing homes), slowly transforming how eldercare works. 巽: gentle, adaptive, wind-like spread of a new system."
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "The social environment opens up — 7 million people gain access to care, family burden lightens, community-based support emerges. 兌: welcoming infrastructure, the society opening to receive its elderly with dignity."
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1144",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "Before COVID, the internal state of work culture is坤: stable, receptive, quietly accumulating readiness. Remote work tools are being adopted, the ground is being prepared without urgency."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "The external workplace environment is stable and traditional — office-based work is the norm, reform discussions are gentle. A坤 landscape of established routine."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "The shift is characterized by gradual adaptation — Slack and Zoom adoption spreads like wind through organizations, work styles evolve incrementally. 巽: pervasive, adaptive, spreading change."
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "The external environment shifts through gentle technological diffusion — new tools become normalized, work reform momentum builds organically. This is the pre-COVID accumulation phase, so the change is巽 rather than震."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_0261",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "The photographer's inner state was settled and confident — established reputation in portrait photography, comfortable in craft mastery. 坤: stable, grounded in a known identity."
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "巽",
+        "reasoning": "The external market for professional photography was stable and predictable before smartphone disruption. A坤 environment of established demand."
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "Over 8 years, the photographer adapts — diversifying into video production and commercial work, gradually transforming professional identity. 巽: persistent, adaptive change over a long period."
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "The market environment remains challenging — smartphone cameras have permanently reduced demand for traditional portrait work. The terrain is坎: pressured, requiring constant navigation of hostile conditions."
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2933",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "The repeated offender's inner state is chaos and crisis — each release brings the same cycle of desperation, unable to find footing. 坎: trapped in danger, drowning in a pattern of survival and failure."
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "The external environment is equally hostile — social prejudice, lack of support, no employment prospects for ex-convicts. Double坎: danger and rejection at every turn."
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "After 15+ years of the same cycle, the inner state remains坎 — trapped, unable to escape the pattern, each attempt at reform leading back to the same despair. No transformation has occurred."
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "The external world has become a permanent wall — society's doors are shut, the prison system cycles him through without change. 艮: the immovable barrier of social exclusion, a dead end with no opening."
+      }
+    }
+  ]
+}
