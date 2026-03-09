@@ -1,0 +1,817 @@
+{
+  "batch_id": 30,
+  "pass_number": 2,
+  "prompt_type": "holistic",
+  "annotations": [
+    {
+      "transition_id": "CALIBRATION_001",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "粉飾決算は表面的な輝き・見せかけの明晰さを内面に持っていた状態。離は明るみに出る前の虚偽の光"
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "大手建設会社として外部には強い意志・拡大路線を見せていた。乾の外的拡張の姿勢"
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "信用失墜・融資打切り・民事再生。内面は完全な危機・絶望の坎"
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "取引先離反・従業員離職・事業継続の危機。外部環境も完全な坎の水難"
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_002",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "静的安定からの出発。内面には蓄積された力と静かな準備期間がある。艮の山の沈黙"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "外部には特筆すべき動きなく、安定した地盤として受容的に存在していた"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "明確なビジョンと先見性が内面の駆動力。離の明晰な知見が革新を生んだ"
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "市場席巻・急拡大・世界展開。乾の天の力で外部を圧倒する拡張"
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_003",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "競合関係にある2社はそれぞれ内に強い意志と自尊心を持っていた。乾の剛の競争心"
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "業界の構造変化という困難な外部環境。成長痛の中で外部は坎の試練を与えていた"
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "対話を重ね互いの強みを活かす柔軟な姿勢。巽の風のように相互に浸透し合う内面"
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "協調・共創・新エコシステム形成。兌の喜びと協働が外部に花開いた"
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_004",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "隠蔽された不正構造の中、社会は沈滞。坎の暗い水の下に真実が沈んでいた内面"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "社会全体が衰退・沈滞の中で受動的。外部は坤の静かな停滞"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "真相が明るみに出る。離の火が闇を照らし、覚醒・発見の内面的な明晰さ"
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "社会に衝撃・運動が全国に広がる。震の雷のような外部への衝撃波"
+      }
+    },
+    {
+      "transition_id": "CALIBRATION_005",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "静的安定の内面。坤の大地のように受容的で堅実な基盤"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "外部環境も安定。大きな変動なく坤の平穏な外部状況"
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "段階的な見直しと小規模投資。巽の風のようにゆるやかな内面的変化"
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "大きな成功も失敗もなく安定維持。外部は坤のまま大きく変わらず"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_308",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "単独親権制度に固定された状態。内面的に止まっている艮の山。変化を求めながらも制度の壁で停滞"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "法的・社会的に閉塞した外部環境。坤の受容的だが動きのない状況"
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "子の利益を重視し共同親権へ。巽の風のように柔軟に浸透する新たな家族の内面的あり方"
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "民法改正という制度的な変動。震の雷のように社会構造を揺るがす外的変化"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2659",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "Google Japan勤務の安定期。坤の大地のように堅実な内面基盤"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "大企業での安定した外部環境。坤の受容的な平穏さ"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "急成長の裏にある見せかけの光。離の火だが虚偽の明るさで内面が不安定"
+      },
+      "after_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "炎上・経歴詐称疑惑・評価分裂。外部環境は坎の危機と混乱の水"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_1238",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "孫正義の内面にある明確なビジョンと先見の明。離の火が照らす未来像"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "まだ本格展開前の停滞した外部環境。艮の山のように動きが制限されている"
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "大胆投資・3.3兆円買収・10兆円ファンド。乾の天の力のような圧倒的な内面の意志力"
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "業界をリードする外部的拡張。乾の天が全方位に展開する姿"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_756",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "長年地域に根付いた老舗書店。坤の大地のように受容的で安定した内面"
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "出版不況・ネット書店競合・読書離れ。外部環境は坎の厳しい水難"
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "経営悪化で内面も危機に。坎の絶望的な状況"
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "閉店し地域文化の担い手が消失。坤の大地に還る静かな消滅"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_022",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "1990年代初頭の不況からの出発。内面には坎の困難を経た経験が蓄積"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "停滞・閉塞した外部環境。艮の山のように経済が止まっていた"
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "柔軟な経済政策・変動相場制・中央銀行の独立性。巽の風のように適応する内面的柔軟さ"
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "28年間リセッションなしの成長。乾の天の力で外部世界に拡張し続けた"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_660",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "安定した生活基盤からの出発。坤の大地のような受容的内面"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "安定・平和な外部環境。坤のまま変動なし"
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "語学力向上なし・変化なし。内面は坤のまま何も変わっていない"
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "投資は回収できず、英語も話せない。外部も坤のまま。現状維持の停滞"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_538",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "成熟した安定経済の内面。坤の大地の堅実さ"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "安定・平和な外部環境。EU内での存在感も坤の安定基盤"
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "急成長はないが堅実な製造業。艮の山のように内面で止まり守る姿勢"
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "次世代産業への継続投資と緩やかな適応。巽の風のように少しずつ外部に対応"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2010",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "所得倍増計画という明確なビジョン。離の火のような内面の明晰さと先見性"
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "安保闘争後の社会不安・混乱。震の雷のように揺れ動く外部環境"
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "経済大国へ導く強い意志と推進力。乾の天の力で国を牽引する内面"
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "高度経済成長の達成。外部世界に乾の拡張力が顕現した大成功"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_548",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "ワーキングホリデーに飛び出す衝動。震の雷のような内面の突発的行動欲"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "停滞・閉塞した外部環境から脱出を図る。艮の山に阻まれた状況"
+      },
+      "after_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "スキルなし・語学力不足のまま。内面は坤の停滞に戻っている"
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "就活で苦戦・変化なし。外部も艮の山のように止まったまま"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_336",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "アパルトヘイト下の内面的苦難。坎の水の試練が国民の内側に深く浸透"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "制度的に固定された閉塞状態。艮の山のように外部が不動の壁"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "medium",
+        "alternative": "兌",
+        "reasoning": "真実和解委員会による真実の光。離の明晰さで和解を選択した内面"
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "復讐ではなく和解・民主主義の維持。兌の喜びと協調の外部的実現。ただし格差・犯罪は残存"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_046",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "medium",
+        "alternative": "離",
+        "reasoning": "5年間積み重ねた活動の内面的エネルギー。成長痛の中でも乾の拡張意欲があった"
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "問題行動の外部拡散・炎上。震の雷のような外部からの衝撃"
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "運営者の心労・活動停止。内面は坎の危機と絶望"
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "コミュニティ崩壊・消滅。外部は坤の大地に還る完全な静寂"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_250",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "子供時代からの確執で内面が止まっている。艮の山のように感情が固定化"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "兄弟が疎遠で外部的にも停止状態。艮の不動の壁"
+      },
+      "after_lower": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "家族の絆を再確認した内面の喜び。兌の沢のような温かい感情の復活"
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "看護を通じた緩やかな関係修復。巽の風のように自然に外部関係が変化"
+      }
+    },
+    {
+      "transition_id": "FAM_JP_084",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "乾",
+        "reasoning": "より良い環境を求める内面の衝動。震の雷のような変化への欲求"
+      },
+      "before_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "停滞・閉塞した現在の外部環境。艮の山に閉じ込められた感覚"
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "medium",
+        "alternative": "艮",
+        "reasoning": "孤独感・人間関係構築の苦労。内面は坎の困難に直面"
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "住環境改善も繋がりは切断。外部は艮の山のように新しい壁が立ちはだかる"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_031",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "右肘骨折・選手生命の危機。内面は坎の深い水の底に沈んだ状態"
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "外部的にも選手としての活動が完全に止まる危機。坎の試練の外部環境"
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "前人未到のリハビリと独自トレーニング。乾の天の意志力で自らを再建する内面"
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "40歳超でノーヒットノーラン達成。乾の外部的拡張・大成功の顕現"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_407",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "植民地支配・内戦・20万人死亡。内面は坎の深い危機と苦難"
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "独立戦争・内戦・大規模デモ。外部は震の雷のような激しい動乱"
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "石油依存・若者失業。内面的な困難は坎のまま根本解決されていない"
+      },
+      "after_upper": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "大統領退陣後も構造問題は残存。外部は艮の山のように固定化した現状維持"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3283",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "フィルム事業への固執・変化の拒否。艮の山のように内面が止まり動かない"
+      },
+      "before_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "絶頂期の外部的支配力・市場でのプレゼンス。乾の天の慢心"
+      },
+      "after_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "経営破綻に至る内面の崩壊。坎の水に沈む"
+      },
+      "after_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "市場からの完全消滅。坤の大地に還る静かな崩壊"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_4460",
+      "before_lower": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "坎",
+        "reasoning": "東日本大震災という衝撃が内面の優先順位を根底から変えた。震の雷の衝撃"
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "大震災・混乱の外部環境。坎の水の災厄"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "震災の教訓から既読機能を着想。離の火のような明晰なビジョンが内面に生まれた"
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "震",
+        "reasoning": "わずか2ヶ月でリリース・大成功。乾の天の力で外部世界を制覇"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_987",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "明治期からの地道な血統管理と品質基盤。坤の大地のように内面で受容的に育む"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "安定した国内市場での存在。外部は坤の平穏な環境"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "厳格な認定基準・偽造防止。離の火のような品質への明晰な内面的こだわり"
+      },
+      "after_upper": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "世界のセレブシェフが絶賛・世界的ブランドへ。乾の天の力で外部に拡張"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3126",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "84年のカメラ事業への内面的執着・停滞。艮の山のように止まった状態"
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "スマートフォン台頭による市場縮小。外部は坎の困難な環境"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "医療機器への集中を決断。離の火のように内面で明確な方向を見出した"
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "震",
+        "reasoning": "事業売却という漸進的な変質・新生。巽の風のように外部的に新たな形へ移行"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3403",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "新入社員としての白紙の状態。坤の大地のように受容的に学ぶ準備ができた内面"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "入社前の安定・平和な外部環境。坤のまま"
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "巽",
+        "reasoning": "研修で足場を固める。艮の山のように内面でしっかりと基盤を築く"
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "マナー教育・会社理念の学習による漸進的成長。巽の風のように外部的に徐々に浸透"
+      }
+    },
+    {
+      "transition_id": "CORP_JP_3613",
+      "before_lower": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "スマートフォン競争に敗北したどん底。内面は坎の深い危機"
+      },
+      "before_upper": {
+        "trigram": "坎",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "市場シェア喪失・事業の終末期。外部も坎の困難"
+      },
+      "after_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "携帯事業売却で一つの時代に区切り。艮の山のように止まって手放す内面の決断"
+      },
+      "after_upper": {
+        "trigram": "巽",
+        "confidence": "medium",
+        "alternative": "坤",
+        "reasoning": "Microsoftへの売却による変質・新生。巽の風のように外部的に新たな形へ移行"
+      }
+    },
+    {
+      "transition_id": "COUN_JP_1414",
+      "before_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "離",
+        "reasoning": "戦後復興への強い国家的意志。乾の天の力で国を再建する内面的推進力"
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "成長痛の中での急速な変化。震の雷のように外部が動いていた"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "国際社会への復帰を印象づけた明確なビジョンの成就。離の内面的な光"
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "東京五輪成功・国際社会との協調。兌の喜びと交流の外部的実現"
+      }
+    },
+    {
+      "transition_id": "OTHR_JP_1384",
+      "before_lower": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "老舗企業の安定した内面基盤。坤の大地のように受容的で堅実"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "安定・平和な外部環境。坤の穏やかさ"
+      },
+      "after_lower": {
+        "trigram": "巽",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "番頭がトップの弱点を補い諫める。巽の風のように内面で柔軟に浸透する補佐の知恵"
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "意思決定の補完・日本的経営の知恵の外部的実現。兌の喜びと協働"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_2147",
+      "before_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "藤田嗣治の内面にある芸術的ビジョンと探求心。離の火のような明晰な創造衝動"
+      },
+      "before_upper": {
+        "trigram": "震",
+        "confidence": "medium",
+        "alternative": "坎",
+        "reasoning": "パリという異文化環境の刺激・成長痛。震の雷のような外部からの衝撃"
+      },
+      "after_lower": {
+        "trigram": "離",
+        "confidence": "high",
+        "alternative": "兌",
+        "reasoning": "独自の乳白色技法を確立。離の火のような内面の芸術的明晰さが結実"
+      },
+      "after_upper": {
+        "trigram": "兌",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "モディリアーニ、スーティンとの相互学習・協創。兌の喜びと協働の外部的実現"
+      }
+    },
+    {
+      "transition_id": "PERS_JP_3014",
+      "before_lower": {
+        "trigram": "艮",
+        "confidence": "high",
+        "alternative": "坤",
+        "reasoning": "メディア露出を控えライブ中心の静かな活動。艮の山のように内面で止まり省察する"
+      },
+      "before_upper": {
+        "trigram": "坤",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "安定・平和な外部環境。坤の大地のように穏やかな活動継続"
+      },
+      "after_lower": {
+        "trigram": "乾",
+        "confidence": "high",
+        "alternative": "艮",
+        "reasoning": "引退の電撃発表・完全撤退という強い意志の決断。乾の天の意志力が内面で発動"
+      },
+      "after_upper": {
+        "trigram": "震",
+        "confidence": "high",
+        "alternative": "乾",
+        "reasoning": "25万人動員ファイナル・サブスク全停止という前例のない衝撃。震の雷が外部世界を揺るがす"
+      }
+    }
+  ]
+}
