@@ -1,0 +1,3114 @@
+{
+  "metadata": {
+    "script": "scripts/analyze_source_bias.py",
+    "total_cases": 11336,
+    "analysis_date": "2026-03-09",
+    "context": "GPT-5.2批評: newsが構造を歪める可能性の定量検証"
+  },
+  "source_type_distribution": {
+    "total": 11336,
+    "counts": {
+      "news": {
+        "count": 10060,
+        "pct": 88.74
+      },
+      "book": {
+        "count": 752,
+        "pct": 6.63
+      },
+      "official": {
+        "count": 282,
+        "pct": 2.49
+      },
+      "blog": {
+        "count": 224,
+        "pct": 1.98
+      },
+      "sns": {
+        "count": 18,
+        "pct": 0.16
+      }
+    }
+  },
+  "categorical_fields": {
+    "state_label_before": {
+      "chi2_test": {
+        "chi2": 235.39169880110464,
+        "p_value": 9.92323396004108e-39,
+        "dof": 20,
+        "cramers_v": 0.07205027741323618,
+        "n": 11336,
+        "low_expected_cells_pct": 20.0,
+        "table_shape": [
+          5,
+          6
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "どん底・危機": {
+            "count": 980,
+            "pct": 9.74
+          },
+          "停滞・閉塞": {
+            "count": 2382,
+            "pct": 23.68
+          },
+          "安定・平和": {
+            "count": 2335,
+            "pct": 23.21
+          },
+          "成長痛": {
+            "count": 2049,
+            "pct": 20.37
+          },
+          "混乱・カオス": {
+            "count": 1383,
+            "pct": 13.75
+          },
+          "絶頂・慢心": {
+            "count": 931,
+            "pct": 9.25
+          }
+        },
+        "book": {
+          "どん底・危機": {
+            "count": 172,
+            "pct": 22.87
+          },
+          "停滞・閉塞": {
+            "count": 179,
+            "pct": 23.8
+          },
+          "安定・平和": {
+            "count": 146,
+            "pct": 19.41
+          },
+          "成長痛": {
+            "count": 114,
+            "pct": 15.16
+          },
+          "混乱・カオス": {
+            "count": 50,
+            "pct": 6.65
+          },
+          "絶頂・慢心": {
+            "count": 91,
+            "pct": 12.1
+          }
+        },
+        "official": {
+          "どん底・危機": {
+            "count": 26,
+            "pct": 9.22
+          },
+          "停滞・閉塞": {
+            "count": 74,
+            "pct": 26.24
+          },
+          "安定・平和": {
+            "count": 97,
+            "pct": 34.4
+          },
+          "成長痛": {
+            "count": 43,
+            "pct": 15.25
+          },
+          "混乱・カオス": {
+            "count": 15,
+            "pct": 5.32
+          },
+          "絶頂・慢心": {
+            "count": 27,
+            "pct": 9.57
+          }
+        },
+        "blog": {
+          "どん底・危機": {
+            "count": 27,
+            "pct": 12.05
+          },
+          "停滞・閉塞": {
+            "count": 48,
+            "pct": 21.43
+          },
+          "安定・平和": {
+            "count": 74,
+            "pct": 33.04
+          },
+          "成長痛": {
+            "count": 29,
+            "pct": 12.95
+          },
+          "混乱・カオス": {
+            "count": 41,
+            "pct": 18.3
+          },
+          "絶頂・慢心": {
+            "count": 5,
+            "pct": 2.23
+          }
+        },
+        "sns": {
+          "停滞・閉塞": {
+            "count": 8,
+            "pct": 44.44
+          },
+          "安定・平和": {
+            "count": 7,
+            "pct": 38.89
+          },
+          "成長痛": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "混乱・カオス": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "絶頂・慢心": {
+            "count": 1,
+            "pct": 5.56
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "どん底・危機": {
+            "news_pct": 9.74,
+            "non_news_pct": 17.63,
+            "delta_pp": -7.89
+          },
+          "停滞・閉塞": {
+            "news_pct": 23.68,
+            "non_news_pct": 24.22,
+            "delta_pp": -0.54
+          },
+          "安定・平和": {
+            "news_pct": 23.21,
+            "non_news_pct": 25.39,
+            "delta_pp": -2.18
+          },
+          "成長痛": {
+            "news_pct": 20.37,
+            "non_news_pct": 14.66,
+            "delta_pp": 5.71
+          },
+          "混乱・カオス": {
+            "news_pct": 13.75,
+            "non_news_pct": 8.39,
+            "delta_pp": 5.36
+          },
+          "絶頂・慢心": {
+            "news_pct": 9.25,
+            "non_news_pct": 9.72,
+            "delta_pp": -0.47
+          }
+        }
+      }
+    },
+    "state_label_after": {
+      "chi2_test": {
+        "chi2": 506.75818903332845,
+        "p_value": 1.1185959442696842e-94,
+        "dof": 20,
+        "cramers_v": 0.10571593943151693,
+        "n": 11336,
+        "low_expected_cells_pct": 16.7,
+        "table_shape": [
+          5,
+          6
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "V字回復・大成功": {
+            "count": 3329,
+            "pct": 33.09
+          },
+          "変質・新生": {
+            "count": 1067,
+            "pct": 10.61
+          },
+          "崩壊・消滅": {
+            "count": 1532,
+            "pct": 15.23
+          },
+          "現状維持・延命": {
+            "count": 1151,
+            "pct": 11.44
+          },
+          "縮小安定・生存": {
+            "count": 1945,
+            "pct": 19.33
+          },
+          "迷走・混乱": {
+            "count": 1036,
+            "pct": 10.3
+          }
+        },
+        "book": {
+          "V字回復・大成功": {
+            "count": 423,
+            "pct": 56.25
+          },
+          "変質・新生": {
+            "count": 100,
+            "pct": 13.3
+          },
+          "崩壊・消滅": {
+            "count": 117,
+            "pct": 15.56
+          },
+          "現状維持・延命": {
+            "count": 24,
+            "pct": 3.19
+          },
+          "縮小安定・生存": {
+            "count": 76,
+            "pct": 10.11
+          },
+          "迷走・混乱": {
+            "count": 12,
+            "pct": 1.6
+          }
+        },
+        "official": {
+          "V字回復・大成功": {
+            "count": 179,
+            "pct": 63.48
+          },
+          "変質・新生": {
+            "count": 28,
+            "pct": 9.93
+          },
+          "崩壊・消滅": {
+            "count": 8,
+            "pct": 2.84
+          },
+          "現状維持・延命": {
+            "count": 14,
+            "pct": 4.96
+          },
+          "縮小安定・生存": {
+            "count": 34,
+            "pct": 12.06
+          },
+          "迷走・混乱": {
+            "count": 19,
+            "pct": 6.74
+          }
+        },
+        "blog": {
+          "V字回復・大成功": {
+            "count": 68,
+            "pct": 30.36
+          },
+          "変質・新生": {
+            "count": 79,
+            "pct": 35.27
+          },
+          "崩壊・消滅": {
+            "count": 15,
+            "pct": 6.7
+          },
+          "現状維持・延命": {
+            "count": 9,
+            "pct": 4.02
+          },
+          "縮小安定・生存": {
+            "count": 46,
+            "pct": 20.54
+          },
+          "迷走・混乱": {
+            "count": 7,
+            "pct": 3.12
+          }
+        },
+        "sns": {
+          "V字回復・大成功": {
+            "count": 7,
+            "pct": 38.89
+          },
+          "変質・新生": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "崩壊・消滅": {
+            "count": 4,
+            "pct": 22.22
+          },
+          "縮小安定・生存": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "迷走・混乱": {
+            "count": 1,
+            "pct": 5.56
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "V字回復・大成功": {
+            "news_pct": 33.09,
+            "non_news_pct": 53.06,
+            "delta_pp": -19.97
+          },
+          "変質・新生": {
+            "news_pct": 10.61,
+            "non_news_pct": 16.46,
+            "delta_pp": -5.85
+          },
+          "崩壊・消滅": {
+            "news_pct": 15.23,
+            "non_news_pct": 11.29,
+            "delta_pp": 3.94
+          },
+          "現状維持・延命": {
+            "news_pct": 11.44,
+            "non_news_pct": 3.68,
+            "delta_pp": 7.76
+          },
+          "縮小安定・生存": {
+            "news_pct": 19.33,
+            "non_news_pct": 12.46,
+            "delta_pp": 6.87
+          },
+          "迷走・混乱": {
+            "news_pct": 10.3,
+            "non_news_pct": 3.06,
+            "delta_pp": 7.24
+          }
+        }
+      }
+    },
+    "outcome_type": {
+      "chi2_test": {
+        "chi2": 285.8125178094526,
+        "p_value": 4.446621042332396e-54,
+        "dof": 12,
+        "cramers_v": 0.09167482232214133,
+        "n": 11336,
+        "low_expected_cells_pct": 15.0,
+        "table_shape": [
+          5,
+          4
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "Failure": {
+            "count": 2852,
+            "pct": 28.35
+          },
+          "Mixed": {
+            "count": 2107,
+            "pct": 20.94
+          },
+          "PartialSuccess": {
+            "count": 272,
+            "pct": 2.7
+          },
+          "Success": {
+            "count": 4829,
+            "pct": 48.0
+          }
+        },
+        "book": {
+          "Failure": {
+            "count": 127,
+            "pct": 16.89
+          },
+          "Mixed": {
+            "count": 94,
+            "pct": 12.5
+          },
+          "PartialSuccess": {
+            "count": 15,
+            "pct": 1.99
+          },
+          "Success": {
+            "count": 516,
+            "pct": 68.62
+          }
+        },
+        "official": {
+          "Failure": {
+            "count": 10,
+            "pct": 3.55
+          },
+          "Mixed": {
+            "count": 41,
+            "pct": 14.54
+          },
+          "PartialSuccess": {
+            "count": 15,
+            "pct": 5.32
+          },
+          "Success": {
+            "count": 216,
+            "pct": 76.6
+          }
+        },
+        "blog": {
+          "Failure": {
+            "count": 26,
+            "pct": 11.61
+          },
+          "Mixed": {
+            "count": 32,
+            "pct": 14.29
+          },
+          "PartialSuccess": {
+            "count": 14,
+            "pct": 6.25
+          },
+          "Success": {
+            "count": 152,
+            "pct": 67.86
+          }
+        },
+        "sns": {
+          "Failure": {
+            "count": 5,
+            "pct": 27.78
+          },
+          "PartialSuccess": {
+            "count": 2,
+            "pct": 11.11
+          },
+          "Success": {
+            "count": 11,
+            "pct": 61.11
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "Failure": {
+            "news_pct": 28.35,
+            "non_news_pct": 13.17,
+            "delta_pp": 15.18
+          },
+          "Mixed": {
+            "news_pct": 20.94,
+            "non_news_pct": 13.09,
+            "delta_pp": 7.85
+          },
+          "PartialSuccess": {
+            "news_pct": 2.7,
+            "non_news_pct": 3.61,
+            "delta_pp": -0.91
+          },
+          "Success": {
+            "news_pct": 48.0,
+            "non_news_pct": 70.14,
+            "delta_pp": -22.14
+          }
+        }
+      }
+    },
+    "pattern_type": {
+      "chi2_test": {
+        "chi2": 217.19581091165148,
+        "p_value": 2.591175295666681e-37,
+        "dof": 16,
+        "cramers_v": 0.06920951535387365,
+        "n": 11336,
+        "low_expected_cells_pct": 16.0,
+        "table_shape": [
+          5,
+          5
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "Endurance": {
+            "count": 1615,
+            "pct": 16.05
+          },
+          "Hubris_Collapse": {
+            "count": 930,
+            "pct": 9.24
+          },
+          "Pivot_Success": {
+            "count": 3219,
+            "pct": 32.0
+          },
+          "Shock_Recovery": {
+            "count": 1943,
+            "pct": 19.31
+          },
+          "Slow_Decline": {
+            "count": 2353,
+            "pct": 23.39
+          }
+        },
+        "book": {
+          "Endurance": {
+            "count": 95,
+            "pct": 12.63
+          },
+          "Hubris_Collapse": {
+            "count": 68,
+            "pct": 9.04
+          },
+          "Pivot_Success": {
+            "count": 320,
+            "pct": 42.55
+          },
+          "Shock_Recovery": {
+            "count": 168,
+            "pct": 22.34
+          },
+          "Slow_Decline": {
+            "count": 101,
+            "pct": 13.43
+          }
+        },
+        "official": {
+          "Endurance": {
+            "count": 75,
+            "pct": 26.6
+          },
+          "Hubris_Collapse": {
+            "count": 11,
+            "pct": 3.9
+          },
+          "Pivot_Success": {
+            "count": 145,
+            "pct": 51.42
+          },
+          "Shock_Recovery": {
+            "count": 40,
+            "pct": 14.18
+          },
+          "Slow_Decline": {
+            "count": 11,
+            "pct": 3.9
+          }
+        },
+        "blog": {
+          "Endurance": {
+            "count": 35,
+            "pct": 15.62
+          },
+          "Hubris_Collapse": {
+            "count": 15,
+            "pct": 6.7
+          },
+          "Pivot_Success": {
+            "count": 112,
+            "pct": 50.0
+          },
+          "Shock_Recovery": {
+            "count": 44,
+            "pct": 19.64
+          },
+          "Slow_Decline": {
+            "count": 18,
+            "pct": 8.04
+          }
+        },
+        "sns": {
+          "Endurance": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "Hubris_Collapse": {
+            "count": 4,
+            "pct": 22.22
+          },
+          "Pivot_Success": {
+            "count": 9,
+            "pct": 50.0
+          },
+          "Shock_Recovery": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "Slow_Decline": {
+            "count": 1,
+            "pct": 5.56
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "Endurance": {
+            "news_pct": 16.05,
+            "non_news_pct": 16.14,
+            "delta_pp": -0.09
+          },
+          "Hubris_Collapse": {
+            "news_pct": 9.24,
+            "non_news_pct": 7.68,
+            "delta_pp": 1.56
+          },
+          "Pivot_Success": {
+            "news_pct": 32.0,
+            "non_news_pct": 45.92,
+            "delta_pp": -13.92
+          },
+          "Shock_Recovery": {
+            "news_pct": 19.31,
+            "non_news_pct": 19.98,
+            "delta_pp": -0.67
+          },
+          "Slow_Decline": {
+            "news_pct": 23.39,
+            "non_news_pct": 10.27,
+            "delta_pp": 13.12
+          }
+        }
+      }
+    },
+    "country": {
+      "chi2_test": {
+        "chi2": 1135.4170494019445,
+        "p_value": 3.0339874704606226e-49,
+        "dof": 512,
+        "cramers_v": 0.15824055277730803,
+        "n": 11336,
+        "low_expected_cells_pct": 92.9,
+        "table_shape": [
+          5,
+          129
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "AR": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "ASEAN": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "AU": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "BE": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "CA": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "CH": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "CN": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "DE": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "EU": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "FI": {
+            "count": 6,
+            "pct": 0.06
+          },
+          "GB": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "GR": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "HK": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "JP": {
+            "count": 179,
+            "pct": 1.78
+          },
+          "KP": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "KR": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "MM": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "RU": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "SA": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "SG": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "SU": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "SY": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "TW": {
+            "count": 5,
+            "pct": 0.05
+          },
+          "UA": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "UAE": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "UK": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "US": {
+            "count": 159,
+            "pct": 1.58
+          },
+          "VE": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "VN": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "XX": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "unknown": {
+            "count": 337,
+            "pct": 3.35
+          },
+          "アイスランド": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "アイルランド": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "アフガニスタン": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "アメリカ": {
+            "count": 643,
+            "pct": 6.39
+          },
+          "アメリカ・日本": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "アメリカ・韓国": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "アルゼンチン": {
+            "count": 6,
+            "pct": 0.06
+          },
+          "イエメン": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "イギリス": {
+            "count": 32,
+            "pct": 0.32
+          },
+          "イスラエル": {
+            "count": 6,
+            "pct": 0.06
+          },
+          "イタリア": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "インド": {
+            "count": 9,
+            "pct": 0.09
+          },
+          "インドネシア": {
+            "count": 10,
+            "pct": 0.1
+          },
+          "ウクライナ": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "エクアドル": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "エジプト": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "エストニア": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "エチオピア": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "オランダ": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "オーストラリア": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "カナダ": {
+            "count": 6,
+            "pct": 0.06
+          },
+          "ギリシャ": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "グローバル": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "ケニア": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "コンゴ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "サウジアラビア": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "シリア": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "シンガポール": {
+            "count": 9,
+            "pct": 0.09
+          },
+          "ジンバブエ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "スイス": {
+            "count": 7,
+            "pct": 0.07
+          },
+          "スウェーデン": {
+            "count": 8,
+            "pct": 0.08
+          },
+          "スペイン": {
+            "count": 6,
+            "pct": 0.06
+          },
+          "スリランカ": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "スーダン": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "ソビエト連邦": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "タイ": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "チェコ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "チリ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "デンマーク": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "トルコ": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "ドイツ": {
+            "count": 20,
+            "pct": 0.2
+          },
+          "ナイジェリア": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "ノルウェー": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "ハイチ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "バハマ": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "バングラデシュ": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "パキスタン": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "フィリピン": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "フィンランド": {
+            "count": 8,
+            "pct": 0.08
+          },
+          "フランス": {
+            "count": 13,
+            "pct": 0.13
+          },
+          "ブラジル": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "ベトナム": {
+            "count": 6,
+            "pct": 0.06
+          },
+          "ベネズエラ": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "ベルギー": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "ポルトガル": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "ポーランド": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "マリ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "マレーシア": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "ミャンマー": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "メキシコ": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "モロッコ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "ヨーロッパ": {
+            "count": 73,
+            "pct": 0.73
+          },
+          "リビア": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "ルーマニア": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "レバノン": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "ロシア": {
+            "count": 3,
+            "pct": 0.03
+          },
+          "中国": {
+            "count": 101,
+            "pct": 1.0
+          },
+          "北朝鮮": {
+            "count": 4,
+            "pct": 0.04
+          },
+          "北欧諸国": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "南アフリカ": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "台湾": {
+            "count": 8,
+            "pct": 0.08
+          },
+          "国際": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "日本": {
+            "count": 8166,
+            "pct": 81.17
+          },
+          "日本・フランス": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "日本・韓国": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "欧州": {
+            "count": 1,
+            "pct": 0.01
+          },
+          "米国": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "英国": {
+            "count": 2,
+            "pct": 0.02
+          },
+          "韓国": {
+            "count": 72,
+            "pct": 0.72
+          },
+          "韓国・中国": {
+            "count": 1,
+            "pct": 0.01
+          }
+        },
+        "book": {
+          "CH": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "CN": {
+            "count": 3,
+            "pct": 0.4
+          },
+          "DE": {
+            "count": 3,
+            "pct": 0.4
+          },
+          "DK": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "FI": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "GB": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "GR": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "JP": {
+            "count": 59,
+            "pct": 7.85
+          },
+          "KR": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "MY": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "SE": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "SG": {
+            "count": 3,
+            "pct": 0.4
+          },
+          "SU": {
+            "count": 3,
+            "pct": 0.4
+          },
+          "TW": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "US": {
+            "count": 32,
+            "pct": 4.26
+          },
+          "ZA": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "unknown": {
+            "count": 31,
+            "pct": 4.12
+          },
+          "アフリカ諸国": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "アメリカ": {
+            "count": 77,
+            "pct": 10.24
+          },
+          "イギリス": {
+            "count": 5,
+            "pct": 0.66
+          },
+          "イスラエル": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "イタリア": {
+            "count": 3,
+            "pct": 0.4
+          },
+          "イタリア（ローマ帝国）": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "インド": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "インドネシア": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "オランダ": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "オーストラリア": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "オーストリア": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "カナダ": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "シンガポール": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "スイス": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "スウェーデン": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "ソ連": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "タイ": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "チベット": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "トルコ": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "ドイツ": {
+            "count": 3,
+            "pct": 0.4
+          },
+          "ドイツ・フランス": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "ニュージーランド": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "バチカン": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "フランス": {
+            "count": 9,
+            "pct": 1.2
+          },
+          "ベトナム": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "マレーシア": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "メキシコ": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "ユーゴスラビア": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "ヨーロッパ": {
+            "count": 32,
+            "pct": 4.26
+          },
+          "ルワンダ": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "ロシア": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "ローマ帝国": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "中国": {
+            "count": 20,
+            "pct": 2.66
+          },
+          "南アフリカ": {
+            "count": 4,
+            "pct": 0.53
+          },
+          "国際": {
+            "count": 2,
+            "pct": 0.27
+          },
+          "日本": {
+            "count": 409,
+            "pct": 54.39
+          },
+          "米国": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "西ドイツ": {
+            "count": 1,
+            "pct": 0.13
+          },
+          "韓国": {
+            "count": 6,
+            "pct": 0.8
+          }
+        },
+        "official": {
+          "INT": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "JP": {
+            "count": 13,
+            "pct": 4.61
+          },
+          "TI": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "UK": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "US": {
+            "count": 6,
+            "pct": 2.13
+          },
+          "unknown": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "アメリカ": {
+            "count": 11,
+            "pct": 3.9
+          },
+          "イギリス": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "インド": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "カナダ": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "シンガポール": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "スウェーデン": {
+            "count": 2,
+            "pct": 0.71
+          },
+          "タイ": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "ドイツ": {
+            "count": 2,
+            "pct": 0.71
+          },
+          "フランス": {
+            "count": 2,
+            "pct": 0.71
+          },
+          "ヨーロッパ": {
+            "count": 5,
+            "pct": 1.77
+          },
+          "中国": {
+            "count": 3,
+            "pct": 1.06
+          },
+          "日本": {
+            "count": 225,
+            "pct": 79.79
+          },
+          "米国": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "英国": {
+            "count": 1,
+            "pct": 0.35
+          },
+          "韓国": {
+            "count": 2,
+            "pct": 0.71
+          }
+        },
+        "blog": {
+          "アメリカ": {
+            "count": 3,
+            "pct": 1.34
+          },
+          "オーストラリア": {
+            "count": 1,
+            "pct": 0.45
+          },
+          "カナダ": {
+            "count": 2,
+            "pct": 0.89
+          },
+          "日本": {
+            "count": 217,
+            "pct": 96.88
+          },
+          "韓国": {
+            "count": 1,
+            "pct": 0.45
+          }
+        },
+        "sns": {
+          "日本": {
+            "count": 18,
+            "pct": 100.0
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "AR": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ASEAN": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "AU": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "BE": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "CA": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "CH": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.07
+          },
+          "CN": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.24,
+            "delta_pp": -0.2
+          },
+          "DE": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.24,
+            "delta_pp": -0.2
+          },
+          "DK": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "EU": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.04
+          },
+          "FI": {
+            "news_pct": 0.06,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.02
+          },
+          "GB": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.13
+          },
+          "GR": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.06
+          },
+          "HK": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "INT": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "JP": {
+            "news_pct": 1.78,
+            "non_news_pct": 5.64,
+            "delta_pp": -3.86
+          },
+          "KP": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "KR": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.14
+          },
+          "MM": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "MY": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "RU": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "SA": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "SE": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.16
+          },
+          "SG": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.24,
+            "delta_pp": -0.23
+          },
+          "SU": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.24,
+            "delta_pp": -0.23
+          },
+          "SY": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "TI": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "TW": {
+            "news_pct": 0.05,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.03
+          },
+          "UA": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "UAE": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.04
+          },
+          "UK": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.05
+          },
+          "US": {
+            "news_pct": 1.58,
+            "non_news_pct": 2.98,
+            "delta_pp": -1.4
+          },
+          "VE": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "VN": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "XX": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ZA": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.16
+          },
+          "unknown": {
+            "news_pct": 3.35,
+            "non_news_pct": 2.51,
+            "delta_pp": 0.84
+          },
+          "アイスランド": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "アイルランド": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "アフガニスタン": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "アフリカ諸国": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "アメリカ": {
+            "news_pct": 6.39,
+            "non_news_pct": 7.13,
+            "delta_pp": -0.74
+          },
+          "アメリカ・日本": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "アメリカ・韓国": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "アルゼンチン": {
+            "news_pct": 0.06,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.06
+          },
+          "イエメン": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "イギリス": {
+            "news_pct": 0.32,
+            "non_news_pct": 0.47,
+            "delta_pp": -0.15
+          },
+          "イスラエル": {
+            "news_pct": 0.06,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.1
+          },
+          "イタリア": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.24,
+            "delta_pp": -0.22
+          },
+          "イタリア（ローマ帝国）": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "インド": {
+            "news_pct": 0.09,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.07
+          },
+          "インドネシア": {
+            "news_pct": 0.1,
+            "non_news_pct": 0.08,
+            "delta_pp": 0.02
+          },
+          "ウクライナ": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "エクアドル": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "エジプト": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "エストニア": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "エチオピア": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "オランダ": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.12
+          },
+          "オーストラリア": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.14
+          },
+          "オーストリア": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "カナダ": {
+            "news_pct": 0.06,
+            "non_news_pct": 0.31,
+            "delta_pp": -0.25
+          },
+          "ギリシャ": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "グローバル": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "ケニア": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "コンゴ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "サウジアラビア": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.04
+          },
+          "シリア": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "シンガポール": {
+            "news_pct": 0.09,
+            "non_news_pct": 0.24,
+            "delta_pp": -0.15
+          },
+          "ジンバブエ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "スイス": {
+            "news_pct": 0.07,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.01
+          },
+          "スウェーデン": {
+            "news_pct": 0.08,
+            "non_news_pct": 0.31,
+            "delta_pp": -0.23
+          },
+          "スペイン": {
+            "news_pct": 0.06,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.06
+          },
+          "スリランカ": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "スーダン": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ソビエト連邦": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ソ連": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.16
+          },
+          "タイ": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.12
+          },
+          "チェコ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "チベット": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "チリ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "デンマーク": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "トルコ": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.12
+          },
+          "ドイツ": {
+            "news_pct": 0.2,
+            "non_news_pct": 0.39,
+            "delta_pp": -0.19
+          },
+          "ドイツ・フランス": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "ナイジェリア": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "ニュージーランド": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "ノルウェー": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ハイチ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "バチカン": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "バハマ": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "バングラデシュ": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "パキスタン": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "フィリピン": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "フィンランド": {
+            "news_pct": 0.08,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.08
+          },
+          "フランス": {
+            "news_pct": 0.13,
+            "non_news_pct": 0.86,
+            "delta_pp": -0.73
+          },
+          "ブラジル": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "ベトナム": {
+            "news_pct": 0.06,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.02
+          },
+          "ベネズエラ": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.03
+          },
+          "ベルギー": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ポルトガル": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ポーランド": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "マリ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "マレーシア": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.04
+          },
+          "ミャンマー": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "メキシコ": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.06
+          },
+          "モロッコ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ユーゴスラビア": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "ヨーロッパ": {
+            "news_pct": 0.73,
+            "non_news_pct": 2.9,
+            "delta_pp": -2.17
+          },
+          "リビア": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "ルワンダ": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "ルーマニア": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "レバノン": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.02
+          },
+          "ロシア": {
+            "news_pct": 0.03,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.05
+          },
+          "ローマ帝国": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "中国": {
+            "news_pct": 1.0,
+            "non_news_pct": 1.8,
+            "delta_pp": -0.8
+          },
+          "北朝鮮": {
+            "news_pct": 0.04,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.04
+          },
+          "北欧諸国": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "南アフリカ": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.31,
+            "delta_pp": -0.3
+          },
+          "台湾": {
+            "news_pct": 0.08,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.08
+          },
+          "国際": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.15
+          },
+          "日本": {
+            "news_pct": 81.17,
+            "non_news_pct": 68.1,
+            "delta_pp": 13.07
+          },
+          "日本・フランス": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "日本・韓国": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "欧州": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          },
+          "米国": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.16,
+            "delta_pp": -0.14
+          },
+          "英国": {
+            "news_pct": 0.02,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.06
+          },
+          "西ドイツ": {
+            "news_pct": 0.0,
+            "non_news_pct": 0.08,
+            "delta_pp": -0.08
+          },
+          "韓国": {
+            "news_pct": 0.72,
+            "non_news_pct": 0.71,
+            "delta_pp": 0.01
+          },
+          "韓国・中国": {
+            "news_pct": 0.01,
+            "non_news_pct": 0.0,
+            "delta_pp": 0.01
+          }
+        }
+      }
+    }
+  },
+  "hexagram_fields": {
+    "before_lower_trigram": {
+      "chi2_test": {
+        "chi2": 74.55515656863625,
+        "p_value": 4.196010549450244e-06,
+        "dof": 28,
+        "cramers_v": 0.040548886156142425,
+        "n": 11336,
+        "low_expected_cells_pct": 20.0,
+        "table_shape": [
+          5,
+          8
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "乾": {
+            "count": 1765,
+            "pct": 17.54
+          },
+          "兌": {
+            "count": 637,
+            "pct": 6.33
+          },
+          "坎": {
+            "count": 1543,
+            "pct": 15.34
+          },
+          "坤": {
+            "count": 1522,
+            "pct": 15.13
+          },
+          "巽": {
+            "count": 811,
+            "pct": 8.06
+          },
+          "艮": {
+            "count": 1998,
+            "pct": 19.86
+          },
+          "離": {
+            "count": 742,
+            "pct": 7.38
+          },
+          "震": {
+            "count": 1042,
+            "pct": 10.36
+          }
+        },
+        "book": {
+          "乾": {
+            "count": 117,
+            "pct": 15.56
+          },
+          "兌": {
+            "count": 54,
+            "pct": 7.18
+          },
+          "坎": {
+            "count": 150,
+            "pct": 19.95
+          },
+          "坤": {
+            "count": 114,
+            "pct": 15.16
+          },
+          "巽": {
+            "count": 62,
+            "pct": 8.24
+          },
+          "艮": {
+            "count": 117,
+            "pct": 15.56
+          },
+          "離": {
+            "count": 51,
+            "pct": 6.78
+          },
+          "震": {
+            "count": 87,
+            "pct": 11.57
+          }
+        },
+        "official": {
+          "乾": {
+            "count": 43,
+            "pct": 15.25
+          },
+          "兌": {
+            "count": 24,
+            "pct": 8.51
+          },
+          "坎": {
+            "count": 34,
+            "pct": 12.06
+          },
+          "坤": {
+            "count": 51,
+            "pct": 18.09
+          },
+          "巽": {
+            "count": 30,
+            "pct": 10.64
+          },
+          "艮": {
+            "count": 44,
+            "pct": 15.6
+          },
+          "離": {
+            "count": 28,
+            "pct": 9.93
+          },
+          "震": {
+            "count": 28,
+            "pct": 9.93
+          }
+        },
+        "blog": {
+          "乾": {
+            "count": 19,
+            "pct": 8.48
+          },
+          "兌": {
+            "count": 18,
+            "pct": 8.04
+          },
+          "坎": {
+            "count": 32,
+            "pct": 14.29
+          },
+          "坤": {
+            "count": 39,
+            "pct": 17.41
+          },
+          "巽": {
+            "count": 33,
+            "pct": 14.73
+          },
+          "艮": {
+            "count": 34,
+            "pct": 15.18
+          },
+          "離": {
+            "count": 15,
+            "pct": 6.7
+          },
+          "震": {
+            "count": 34,
+            "pct": 15.18
+          }
+        },
+        "sns": {
+          "乾": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "坎": {
+            "count": 2,
+            "pct": 11.11
+          },
+          "坤": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "巽": {
+            "count": 4,
+            "pct": 22.22
+          },
+          "艮": {
+            "count": 4,
+            "pct": 22.22
+          },
+          "震": {
+            "count": 4,
+            "pct": 22.22
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "乾": {
+            "news_pct": 17.54,
+            "non_news_pct": 14.11,
+            "delta_pp": 3.43
+          },
+          "兌": {
+            "news_pct": 6.33,
+            "non_news_pct": 7.52,
+            "delta_pp": -1.19
+          },
+          "坎": {
+            "news_pct": 15.34,
+            "non_news_pct": 17.08,
+            "delta_pp": -1.74
+          },
+          "坤": {
+            "news_pct": 15.13,
+            "non_news_pct": 16.22,
+            "delta_pp": -1.09
+          },
+          "巽": {
+            "news_pct": 8.06,
+            "non_news_pct": 10.11,
+            "delta_pp": -2.05
+          },
+          "艮": {
+            "news_pct": 19.86,
+            "non_news_pct": 15.6,
+            "delta_pp": 4.26
+          },
+          "離": {
+            "news_pct": 7.38,
+            "non_news_pct": 7.37,
+            "delta_pp": 0.01
+          },
+          "震": {
+            "news_pct": 10.36,
+            "non_news_pct": 11.99,
+            "delta_pp": -1.63
+          }
+        }
+      }
+    },
+    "before_upper_trigram": {
+      "chi2_test": {
+        "chi2": 130.7145086242846,
+        "p_value": 3.2703711682924748e-15,
+        "dof": 28,
+        "cramers_v": 0.05369106060665661,
+        "n": 11336,
+        "low_expected_cells_pct": 20.0,
+        "table_shape": [
+          5,
+          8
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "乾": {
+            "count": 810,
+            "pct": 8.05
+          },
+          "兌": {
+            "count": 1044,
+            "pct": 10.38
+          },
+          "坎": {
+            "count": 1190,
+            "pct": 11.83
+          },
+          "坤": {
+            "count": 1268,
+            "pct": 12.6
+          },
+          "巽": {
+            "count": 1071,
+            "pct": 10.65
+          },
+          "艮": {
+            "count": 1785,
+            "pct": 17.74
+          },
+          "離": {
+            "count": 2056,
+            "pct": 20.44
+          },
+          "震": {
+            "count": 836,
+            "pct": 8.31
+          }
+        },
+        "book": {
+          "乾": {
+            "count": 88,
+            "pct": 11.7
+          },
+          "兌": {
+            "count": 78,
+            "pct": 10.37
+          },
+          "坎": {
+            "count": 122,
+            "pct": 16.22
+          },
+          "坤": {
+            "count": 104,
+            "pct": 13.83
+          },
+          "巽": {
+            "count": 97,
+            "pct": 12.9
+          },
+          "艮": {
+            "count": 106,
+            "pct": 14.1
+          },
+          "離": {
+            "count": 90,
+            "pct": 11.97
+          },
+          "震": {
+            "count": 67,
+            "pct": 8.91
+          }
+        },
+        "official": {
+          "乾": {
+            "count": 23,
+            "pct": 8.16
+          },
+          "兌": {
+            "count": 32,
+            "pct": 11.35
+          },
+          "坎": {
+            "count": 36,
+            "pct": 12.77
+          },
+          "坤": {
+            "count": 63,
+            "pct": 22.34
+          },
+          "巽": {
+            "count": 28,
+            "pct": 9.93
+          },
+          "艮": {
+            "count": 35,
+            "pct": 12.41
+          },
+          "離": {
+            "count": 41,
+            "pct": 14.54
+          },
+          "震": {
+            "count": 24,
+            "pct": 8.51
+          }
+        },
+        "blog": {
+          "乾": {
+            "count": 9,
+            "pct": 4.02
+          },
+          "兌": {
+            "count": 30,
+            "pct": 13.39
+          },
+          "坎": {
+            "count": 31,
+            "pct": 13.84
+          },
+          "坤": {
+            "count": 43,
+            "pct": 19.2
+          },
+          "巽": {
+            "count": 42,
+            "pct": 18.75
+          },
+          "艮": {
+            "count": 30,
+            "pct": 13.39
+          },
+          "離": {
+            "count": 23,
+            "pct": 10.27
+          },
+          "震": {
+            "count": 16,
+            "pct": 7.14
+          }
+        },
+        "sns": {
+          "乾": {
+            "count": 2,
+            "pct": 11.11
+          },
+          "兌": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "坎": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "坤": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "巽": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "艮": {
+            "count": 4,
+            "pct": 22.22
+          },
+          "震": {
+            "count": 2,
+            "pct": 11.11
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "乾": {
+            "news_pct": 8.05,
+            "non_news_pct": 9.56,
+            "delta_pp": -1.51
+          },
+          "兌": {
+            "news_pct": 10.38,
+            "non_news_pct": 11.05,
+            "delta_pp": -0.67
+          },
+          "坎": {
+            "news_pct": 11.83,
+            "non_news_pct": 15.05,
+            "delta_pp": -3.22
+          },
+          "坤": {
+            "news_pct": 12.6,
+            "non_news_pct": 16.69,
+            "delta_pp": -4.09
+          },
+          "巽": {
+            "news_pct": 10.65,
+            "non_news_pct": 13.32,
+            "delta_pp": -2.67
+          },
+          "艮": {
+            "news_pct": 17.74,
+            "non_news_pct": 13.71,
+            "delta_pp": 4.03
+          },
+          "離": {
+            "news_pct": 20.44,
+            "non_news_pct": 12.07,
+            "delta_pp": 8.37
+          },
+          "震": {
+            "news_pct": 8.31,
+            "non_news_pct": 8.54,
+            "delta_pp": -0.23
+          }
+        }
+      }
+    },
+    "after_lower_trigram": {
+      "chi2_test": {
+        "chi2": 248.48021343733674,
+        "p_value": 3.3257054765623264e-37,
+        "dof": 28,
+        "cramers_v": 0.07402629122454178,
+        "n": 11336,
+        "low_expected_cells_pct": 20.0,
+        "table_shape": [
+          5,
+          8
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "乾": {
+            "count": 1127,
+            "pct": 11.2
+          },
+          "兌": {
+            "count": 618,
+            "pct": 6.14
+          },
+          "坎": {
+            "count": 847,
+            "pct": 8.42
+          },
+          "坤": {
+            "count": 1325,
+            "pct": 13.17
+          },
+          "巽": {
+            "count": 2448,
+            "pct": 24.33
+          },
+          "艮": {
+            "count": 1075,
+            "pct": 10.69
+          },
+          "離": {
+            "count": 1127,
+            "pct": 11.2
+          },
+          "震": {
+            "count": 1493,
+            "pct": 14.84
+          }
+        },
+        "book": {
+          "乾": {
+            "count": 154,
+            "pct": 20.48
+          },
+          "兌": {
+            "count": 67,
+            "pct": 8.91
+          },
+          "坎": {
+            "count": 72,
+            "pct": 9.57
+          },
+          "坤": {
+            "count": 85,
+            "pct": 11.3
+          },
+          "巽": {
+            "count": 101,
+            "pct": 13.43
+          },
+          "艮": {
+            "count": 63,
+            "pct": 8.38
+          },
+          "離": {
+            "count": 118,
+            "pct": 15.69
+          },
+          "震": {
+            "count": 92,
+            "pct": 12.23
+          }
+        },
+        "official": {
+          "乾": {
+            "count": 86,
+            "pct": 30.5
+          },
+          "兌": {
+            "count": 22,
+            "pct": 7.8
+          },
+          "坎": {
+            "count": 18,
+            "pct": 6.38
+          },
+          "坤": {
+            "count": 26,
+            "pct": 9.22
+          },
+          "巽": {
+            "count": 38,
+            "pct": 13.48
+          },
+          "艮": {
+            "count": 23,
+            "pct": 8.16
+          },
+          "離": {
+            "count": 38,
+            "pct": 13.48
+          },
+          "震": {
+            "count": 31,
+            "pct": 10.99
+          }
+        },
+        "blog": {
+          "乾": {
+            "count": 40,
+            "pct": 17.86
+          },
+          "兌": {
+            "count": 26,
+            "pct": 11.61
+          },
+          "坎": {
+            "count": 22,
+            "pct": 9.82
+          },
+          "坤": {
+            "count": 17,
+            "pct": 7.59
+          },
+          "巽": {
+            "count": 39,
+            "pct": 17.41
+          },
+          "艮": {
+            "count": 26,
+            "pct": 11.61
+          },
+          "離": {
+            "count": 23,
+            "pct": 10.27
+          },
+          "震": {
+            "count": 31,
+            "pct": 13.84
+          }
+        },
+        "sns": {
+          "乾": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "兌": {
+            "count": 2,
+            "pct": 11.11
+          },
+          "坎": {
+            "count": 3,
+            "pct": 16.67
+          },
+          "坤": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "巽": {
+            "count": 2,
+            "pct": 11.11
+          },
+          "艮": {
+            "count": 5,
+            "pct": 27.78
+          },
+          "離": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "震": {
+            "count": 3,
+            "pct": 16.67
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "乾": {
+            "news_pct": 11.2,
+            "non_news_pct": 22.02,
+            "delta_pp": -10.82
+          },
+          "兌": {
+            "news_pct": 6.14,
+            "non_news_pct": 9.17,
+            "delta_pp": -3.03
+          },
+          "坎": {
+            "news_pct": 8.42,
+            "non_news_pct": 9.01,
+            "delta_pp": -0.59
+          },
+          "坤": {
+            "news_pct": 13.17,
+            "non_news_pct": 10.11,
+            "delta_pp": 3.06
+          },
+          "巽": {
+            "news_pct": 24.33,
+            "non_news_pct": 14.11,
+            "delta_pp": 10.22
+          },
+          "艮": {
+            "news_pct": 10.69,
+            "non_news_pct": 9.17,
+            "delta_pp": 1.52
+          },
+          "離": {
+            "news_pct": 11.2,
+            "non_news_pct": 14.11,
+            "delta_pp": -2.91
+          },
+          "震": {
+            "news_pct": 14.84,
+            "non_news_pct": 12.3,
+            "delta_pp": 2.54
+          }
+        }
+      }
+    },
+    "after_upper_trigram": {
+      "chi2_test": {
+        "chi2": 137.36080418854084,
+        "p_value": 2.220316757684297e-16,
+        "dof": 28,
+        "cramers_v": 0.05503912210251025,
+        "n": 11336,
+        "low_expected_cells_pct": 20.0,
+        "table_shape": [
+          5,
+          8
+        ]
+      },
+      "distribution_by_source": {
+        "news": {
+          "乾": {
+            "count": 1038,
+            "pct": 10.32
+          },
+          "兌": {
+            "count": 727,
+            "pct": 7.23
+          },
+          "坎": {
+            "count": 1679,
+            "pct": 16.69
+          },
+          "坤": {
+            "count": 1250,
+            "pct": 12.43
+          },
+          "巽": {
+            "count": 1735,
+            "pct": 17.25
+          },
+          "艮": {
+            "count": 1027,
+            "pct": 10.21
+          },
+          "離": {
+            "count": 1969,
+            "pct": 19.57
+          },
+          "震": {
+            "count": 635,
+            "pct": 6.31
+          }
+        },
+        "book": {
+          "乾": {
+            "count": 113,
+            "pct": 15.03
+          },
+          "兌": {
+            "count": 81,
+            "pct": 10.77
+          },
+          "坎": {
+            "count": 69,
+            "pct": 9.18
+          },
+          "坤": {
+            "count": 99,
+            "pct": 13.16
+          },
+          "巽": {
+            "count": 100,
+            "pct": 13.3
+          },
+          "艮": {
+            "count": 66,
+            "pct": 8.78
+          },
+          "離": {
+            "count": 176,
+            "pct": 23.4
+          },
+          "震": {
+            "count": 48,
+            "pct": 6.38
+          }
+        },
+        "official": {
+          "乾": {
+            "count": 47,
+            "pct": 16.67
+          },
+          "兌": {
+            "count": 20,
+            "pct": 7.09
+          },
+          "坎": {
+            "count": 12,
+            "pct": 4.26
+          },
+          "坤": {
+            "count": 49,
+            "pct": 17.38
+          },
+          "巽": {
+            "count": 34,
+            "pct": 12.06
+          },
+          "艮": {
+            "count": 31,
+            "pct": 10.99
+          },
+          "離": {
+            "count": 76,
+            "pct": 26.95
+          },
+          "震": {
+            "count": 13,
+            "pct": 4.61
+          }
+        },
+        "blog": {
+          "乾": {
+            "count": 26,
+            "pct": 11.61
+          },
+          "兌": {
+            "count": 22,
+            "pct": 9.82
+          },
+          "坎": {
+            "count": 16,
+            "pct": 7.14
+          },
+          "坤": {
+            "count": 34,
+            "pct": 15.18
+          },
+          "巽": {
+            "count": 37,
+            "pct": 16.52
+          },
+          "艮": {
+            "count": 24,
+            "pct": 10.71
+          },
+          "離": {
+            "count": 50,
+            "pct": 22.32
+          },
+          "震": {
+            "count": 15,
+            "pct": 6.7
+          }
+        },
+        "sns": {
+          "乾": {
+            "count": 2,
+            "pct": 11.11
+          },
+          "兌": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "坎": {
+            "count": 2,
+            "pct": 11.11
+          },
+          "坤": {
+            "count": 5,
+            "pct": 27.78
+          },
+          "巽": {
+            "count": 4,
+            "pct": 22.22
+          },
+          "艮": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "離": {
+            "count": 1,
+            "pct": 5.56
+          },
+          "震": {
+            "count": 2,
+            "pct": 11.11
+          }
+        }
+      },
+      "news_vs_non_news": {
+        "news_n": 10060,
+        "non_news_n": 1276,
+        "comparison": {
+          "乾": {
+            "news_pct": 10.32,
+            "non_news_pct": 14.73,
+            "delta_pp": -4.41
+          },
+          "兌": {
+            "news_pct": 7.23,
+            "non_news_pct": 9.72,
+            "delta_pp": -2.49
+          },
+          "坎": {
+            "news_pct": 16.69,
+            "non_news_pct": 7.76,
+            "delta_pp": 8.93
+          },
+          "坤": {
+            "news_pct": 12.43,
+            "non_news_pct": 14.66,
+            "delta_pp": -2.23
+          },
+          "巽": {
+            "news_pct": 17.25,
+            "non_news_pct": 13.71,
+            "delta_pp": 3.54
+          },
+          "艮": {
+            "news_pct": 10.21,
+            "non_news_pct": 9.56,
+            "delta_pp": 0.65
+          },
+          "離": {
+            "news_pct": 19.57,
+            "non_news_pct": 23.75,
+            "delta_pp": -4.18
+          },
+          "震": {
+            "news_pct": 6.31,
+            "non_news_pct": 6.11,
+            "delta_pp": 0.2
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "total_cases": 11336,
+    "news_count": 10060,
+    "news_pct": 88.7,
+    "non_news_count": 1276,
+    "non_news_pct": 11.3,
+    "fields_tested": 9,
+    "fields_significant_p05": 9,
+    "significant_fields": [
+      {
+        "field": "country",
+        "p_value": 3.0339874704606226e-49,
+        "cramers_v": 0.15824055277730803,
+        "effect_size": "medium"
+      },
+      {
+        "field": "state_label_after",
+        "p_value": 1.1185959442696842e-94,
+        "cramers_v": 0.10571593943151693,
+        "effect_size": "medium"
+      },
+      {
+        "field": "outcome_type",
+        "p_value": 4.446621042332396e-54,
+        "cramers_v": 0.09167482232214133,
+        "effect_size": "small"
+      },
+      {
+        "field": "after_lower_trigram",
+        "p_value": 3.3257054765623264e-37,
+        "cramers_v": 0.07402629122454178,
+        "effect_size": "small"
+      },
+      {
+        "field": "state_label_before",
+        "p_value": 9.92323396004108e-39,
+        "cramers_v": 0.07205027741323618,
+        "effect_size": "small"
+      },
+      {
+        "field": "pattern_type",
+        "p_value": 2.591175295666681e-37,
+        "cramers_v": 0.06920951535387365,
+        "effect_size": "small"
+      },
+      {
+        "field": "after_upper_trigram",
+        "p_value": 2.220316757684297e-16,
+        "cramers_v": 0.05503912210251025,
+        "effect_size": "small"
+      },
+      {
+        "field": "before_upper_trigram",
+        "p_value": 3.2703711682924748e-15,
+        "cramers_v": 0.05369106060665661,
+        "effect_size": "small"
+      },
+      {
+        "field": "before_lower_trigram",
+        "p_value": 4.196010549450244e-06,
+        "cramers_v": 0.040548886156142425,
+        "effect_size": "small"
+      }
+    ],
+    "gpt52_critique_validated": true,
+    "interpretation": "newsが88.7%を占める。χ²検定で9フィールドが有意(p<0.05)。source_typeは分布に統計的に有意な影響を与えている。"
+  }
+}
