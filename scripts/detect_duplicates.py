@@ -68,17 +68,29 @@ def periods_overlap(p1_start, p1_end, p2_start, p2_end):
 
 
 def is_partial_match(name_a, name_b):
-    """entity_nameの部分一致（片方がもう片方を含む）"""
+    """entity_nameの部分一致（片方がもう片方を含む）
+
+    誤検出を減らすため:
+    - 短い方の名前が3文字未満なら除外
+    - 短い方が長い方の長さの30%未満なら除外（「日本」が「日本マクドナルド」に一致するのを防ぐ）
+    """
     if not name_a or not name_b:
         return False
     if name_a == name_b:
         return False  # 完全一致は別カテゴリ
-    # 正規化: 括弧内を除去
+    # 正規化: 括弧内を除去、装飾的サフィックスを除去
     def normalize(n):
         n = re.sub(r'[（\(].+?[）\)]', '', n)
+        # 「_」や「・」以降の説明的テキストで始まるものは基本名だけ抽出
+        n = re.split(r'[_\s]', n)[0] if '_' in n else n
         return n.strip()
     na, nb = normalize(name_a), normalize(name_b)
-    if len(na) < 2 or len(nb) < 2:
+    shorter = min(len(na), len(nb))
+    longer = max(len(na), len(nb))
+    if shorter < 3:
+        return False
+    # 短い方が長い方の30%未満は除外
+    if shorter / longer < 0.3:
         return False
     return na in nb or nb in na
 
@@ -183,16 +195,21 @@ def detect_duplicates(cases):
                 for idx_b, cb in by_entity[nb]:
                     pb_s, pb_e = parse_period(cb.get('period', ''))
                     if periods_overlap(pa_s, pa_e, pb_s, pb_e):
+                        # summaryの類似度も計算してノイズを減らす
+                        sa = ca.get('story_summary', '') or ''
+                        sb = cb.get('story_summary', '') or ''
+                        sim = jaccard_similarity(char_ngrams(sa), char_ngrams(sb))
                         near_misses.append({
                             'type': 'near_miss',
                             'entity_name_a': na,
                             'entity_name_b': nb,
                             'period_a': str(ca.get('period', '')),
                             'period_b': str(cb.get('period', '')),
+                            'jaccard': round(sim, 3),
                             'transition_id_a': ca.get('transition_id', f'idx_{idx_a}'),
                             'transition_id_b': cb.get('transition_id', f'idx_{idx_b}'),
-                            'summary_a': (ca.get('story_summary') or '')[:100],
-                            'summary_b': (cb.get('story_summary') or '')[:100],
+                            'summary_a': sa[:100],
+                            'summary_b': sb[:100],
                         })
             checked += 1
 
