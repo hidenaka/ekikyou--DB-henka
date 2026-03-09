@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "n_transitions": 800,
+    "analysis": "Q6 distance-1 effect size upper bound",
+    "data_source": "analysis/gold_set/hexagram_transitions.json",
+    "phase": "Phase 3 v4.0"
+  },
+  "distance_distribution": {
+    "0": {
+      "count": 20,
+      "proportion": 0.025
+    },
+    "1": {
+      "count": 38,
+      "proportion": 0.0475
+    },
+    "2": {
+      "count": 218,
+      "proportion": 0.2725
+    },
+    "3": {
+      "count": 204,
+      "proportion": 0.255
+    },
+    "4": {
+      "count": 226,
+      "proportion": 0.2825
+    },
+    "5": {
+      "count": 68,
+      "proportion": 0.085
+    },
+    "6": {
+      "count": 26,
+      "proportion": 0.0325
+    }
+  },
+  "distance_1_analysis": {
+    "observed_count": 38,
+    "observed_proportion": 0.0475,
+    "random_expected_proportion": 0.095238,
+    "delta_point_estimate": -0.047738,
+    "delta_point_estimate_pct": -4.77,
+    "ci_95_lower": 0.03383,
+    "ci_95_upper": 0.064617,
+    "effect_size_lower_bound": -0.061408,
+    "effect_size_upper_bound": -0.030621,
+    "effect_size_upper_bound_pct": -3.06
+  },
+  "poisson_regression": {
+    "d1_dummy_model": {
+      "beta0": -1.5926,
+      "beta1_d1_dummy": -0.7205,
+      "beta1_pvalue": 0.0,
+      "beta1_ci_lower": -1.0465,
+      "beta1_ci_upper": -0.3945,
+      "rate_ratio": 0.4865,
+      "rate_ratio_ci_lower": 0.3512,
+      "rate_ratio_ci_upper": 0.674,
+      "significant": true
+    },
+    "distance_continuous_model": {
+      "beta0": -1.956,
+      "beta1_distance": 0.1005,
+      "beta1_pvalue": 0.0009,
+      "beta1_ci_lower": 0.0411,
+      "beta1_ci_upper": 0.1599
+    }
+  },
+  "tost_equivalence": {
+    "margin": 0.05,
+    "margin_pct": 5.0,
+    "z1": 0.3008,
+    "p1": 0.381793,
+    "z2": -12.9966,
+    "p2": 0.0,
+    "tost_p_value": 0.381793,
+    "equivalence_demonstrated": false,
+    "tost_3pct_margin": {
+      "p_value": 0.99083,
+      "equivalence_demonstrated": false
+    }
+  },
+  "conclusion": "距離1への集中は観測されない（むしろ逆方向の傾向）"
+}
