@@ -252,15 +252,21 @@ def _is_locally_negated(text: str, match_start: int, match_end: int) -> bool:
     return False
 
 
+_SEVERITY_RANK = {"critical": 3, "high": 2, "medium": 1}
+
+
 def _check_crisis_input(text: str):
     """ユーザー入力の危機検出。局所的な否定文脈を考慮する。
 
+    全カテゴリを走査し、検出された中で最も重大度が高いものを返す。
+    複合危機（例: DV + 自傷）でも最大重大度が正しく選択される。
+
     Returns:
-        critical検出: サービス遮断レスポンスdict
-        medium検出: 注意フラグ付きレスポンスdict（呼び出し元で継続判断）
+        検出あり: レスポンスdict（最大重大度のもの）
         未検出: None
     """
-    detected_medium = None
+    best = None
+    best_rank = 0
     for cat in _CRISIS_CATEGORIES:
         for keyword in cat["patterns"]:
             start = 0
@@ -269,15 +275,13 @@ def _check_crisis_input(text: str):
                 if idx == -1:
                     break
                 if not _is_locally_negated(text, idx, idx + len(keyword)):
-                    resp = _CRISIS_RESPONSES[cat["category"]]
-                    # critical/high は即座に返す（サービス遮断）
-                    if cat["severity"] in ("critical", "high"):
-                        return resp
-                    # medium は記録して後で返す（critical/highが優先）
-                    if detected_medium is None:
-                        detected_medium = resp
+                    rank = _SEVERITY_RANK.get(cat["severity"], 0)
+                    if rank > best_rank:
+                        best = _CRISIS_RESPONSES[cat["category"]]
+                        best_rank = rank
+                    break  # このカテゴリは確定、次のカテゴリへ
                 start = idx + len(keyword)
-    return detected_medium
+    return best
 
 
 # ---------------------------------------------------------------------------
@@ -447,14 +451,18 @@ def extract():
     # ユーザー向け要約
     summary = dialogue_engine.summarize_for_user(extraction)
 
-    return jsonify({
+    resp = {
         "extraction": extraction,
         "assessment": assessment,
         "summary": summary,
         "followup_question": followup_question,
         "phase": "reviewing",
         "demo_mode": demo_mode,
-    })
+    }
+    # MEDIUM検出時は即座にクライアントに通知
+    if s.get("safety_flag"):
+        resp["safety_flag"] = s["safety_flag"]
+    return jsonify(resp)
 
 
 # 4. POST /api/followup
@@ -532,14 +540,17 @@ def followup():
     # ユーザー向け要約
     summary = dialogue_engine.summarize_for_user(merged)
 
-    return jsonify({
+    resp = {
         "extraction": merged,
         "assessment": assessment,
         "summary": summary,
         "followup_question": followup_question,
         "phase": "reviewing",
         "demo_mode": demo_mode,
-    })
+    }
+    if s.get("safety_flag"):
+        resp["safety_flag"] = s["safety_flag"]
+    return jsonify(resp)
 
 
 # 5. POST /api/confirm
@@ -706,6 +717,9 @@ def diary_extract():
     if "error" in result:
         return jsonify(result), 500
 
+    # MEDIUM検出時は即座にクライアントに通知
+    if s.get("safety_flag"):
+        result["safety_flag"] = s["safety_flag"]
     return jsonify(result)
 
 
@@ -738,6 +752,8 @@ def diary_ideal_followup():
     if "error" in result:
         return jsonify(result), 400
 
+    if s.get("safety_flag"):
+        result["safety_flag"] = s["safety_flag"]
     return jsonify(result)
 
 

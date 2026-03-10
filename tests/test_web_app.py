@@ -687,3 +687,34 @@ class TestSafetyDetection:
         data = resp.get_json()
         assert data["crisis_detected"] is True
         assert data["phase"] == "crisis_rejected"
+
+    # --- 複合危機: 最大重大度が選択されること ---
+
+    def test_composite_dv_plus_selfharm_returns_critical(self, client):
+        """DV(high) + 自傷(critical)の複合入力でcriticalが返ること。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "夫に殴られています。もう死にたい。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data["crisis_detected"] is True
+        assert data["crisis_severity"] == "critical"
+        assert data["crisis_category"] == "self_harm"
+
+    # --- MEDIUM検出がextractレスポンスに即座に含まれること ---
+
+    @patch("app.dialogue_engine.extract_axes", return_value=MOCK_EXTRACTION_HIGH_CONF)
+    def test_medium_flag_in_extract_response(self, mock_extract, client):
+        """MEDIUM検出時、extractレスポンスにsafety_flagが即座に含まれること。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "眠れない日が続いている。転職したい。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data.get("phase") != "crisis_rejected"
+        assert "safety_flag" in data
+        assert data["safety_flag"]["crisis_severity"] == "medium"

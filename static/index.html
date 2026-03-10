@@ -1971,6 +1971,14 @@
                 summary.textContent = "状況を分析しました。";
             }
 
+            /* MEDIUM安全フラグ表示（extract時に即座に通知） */
+            if (data.safety_flag) {
+                const flagDiv = document.createElement("div");
+                flagDiv.style.cssText = "margin-bottom:12px;padding:10px 14px;background:rgba(255,193,7,0.15);border:1px solid rgba(255,193,7,0.4);border-radius:8px;font-size:0.85rem;color:#ffc107;";
+                flagDiv.textContent = data.safety_flag.message || "";
+                summary.parentNode.insertBefore(flagDiv, summary);
+            }
+
             /* Demo mode notice */
             if (data.demo_mode) {
                 showDemoBanner();
