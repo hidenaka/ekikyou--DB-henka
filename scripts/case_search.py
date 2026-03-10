@@ -14,9 +14,13 @@ Usage:
 
 import json
 import os
+import re
 from pathlib import Path
 from collections import Counter
 from typing import Optional
+
+# periodフィールドから最新年を抽出する正規表現
+_YEAR_RE = re.compile(r"(\d{4})")
 
 
 class CaseSearchEngine:
@@ -241,10 +245,12 @@ class CaseSearchEngine:
                 c for c in filtered
                 if c.get("transition_id", id(c)) not in used_ids
             ]
-            # 決定的ランキング: year降順 → target_name昇順（再現性保証）
-            available.sort(
-                key=lambda c: (-(c.get("year") or 0), c.get("target_name", "")),
-            )
+            # 決定的ランキング: period内最新年の降順 → target_name昇順（再現性保証）
+            def _sort_key(c):
+                years = _YEAR_RE.findall(c.get("period", ""))
+                max_year = max(int(y) for y in years) if years else 0
+                return (-max_year, c.get("target_name", ""))
+            available.sort(key=_sort_key)
             for case in available:
                 if len(results) >= limit:
                     return

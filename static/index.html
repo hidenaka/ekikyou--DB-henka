@@ -1903,6 +1903,15 @@
                     });
                     if (!res.ok) throw new Error("Extract failed");
                     const data = await res.json();
+
+                    /* 危機ケース検出時は専門機関への案内を表示 */
+                    if (data.crisis_detected) {
+                        addAIFollowup(data.message);
+                        btn.disabled = true;
+                        btn.textContent = "セッション終了";
+                        return;
+                    }
+
                     extractionResult = data;
 
                     if (data.followup_question) {
@@ -1924,6 +1933,15 @@
                     });
                     if (!res.ok) throw new Error("Followup failed");
                     const data = await res.json();
+
+                    /* 危機ケース検出 */
+                    if (data.crisis_detected) {
+                        addAIFollowup(data.message);
+                        btn.disabled = true;
+                        btn.textContent = "セッション終了";
+                        return;
+                    }
+
                     extractionResult = data;
                     followupCount++;
 
@@ -2112,12 +2130,17 @@
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         session_id: sessionId,
-                        candidate_index: index
+                        candidate_index: index,
+                        format: "5point"
                     })
                 });
                 if (!res.ok) throw new Error("Feedback failed");
                 const data = await res.json();
-                showResultPhase(data);
+                if (data.feedback_5point) {
+                    showResult5Point(data);
+                } else {
+                    showResultPhase(data);
+                }
             } catch (e) {
                 showToast("エラーが発生しました: " + e.message);
                 document.querySelectorAll(".candidate-card").forEach(c => {
@@ -2186,6 +2209,97 @@
                 buildLayer5Content(l5),
                 true
             ));
+
+            showPhase("result");
+        }
+
+        /* ===== Phase 4b: 5点固定出力 ===== */
+        function showResult5Point(data) {
+            const fp = data.feedback_5point || {};
+            const p1 = fp.point1_current_position || {};
+            const p2 = fp.point2_do_not || {};
+            const p3 = fp.point3_do || {};
+            const p4 = fp.point4_opposite_view || {};
+            const p5 = fp.point5_reference_cases || {};
+
+            /* Header */
+            const header = document.getElementById("result-header");
+            header.innerHTML =
+                '<div class="kua-title">' + escapeHtml(p1.hexagram_name || "---") + "</div>" +
+                '<div class="kua-sub">' + escapeHtml(p1.title || "") + "</div>";
+
+            /* 5 Points */
+            const layersContainer = document.getElementById("result-layers");
+            layersContainer.innerHTML = "";
+
+            /* 1. 現在地 */
+            let html1 = "";
+            if (p1.phase_description) html1 += field("局面", p1.phase_description);
+            if (p1.yao_message) html1 += field("爻辞", p1.yao_message);
+            if (p1.summary) html1 += field("概要", p1.summary);
+            if (p1.confidence) html1 += field("確信度", Math.round(p1.confidence * 100) + "%");
+            layersContainer.appendChild(buildAccordion(1, "あなたの現在地", html1, true));
+
+            /* 2. 今やるな */
+            let html2 = "";
+            if (p2.action) html2 += '<div class="field"><div class="field-label" style="color:#ff6b6b;">禁止</div><div class="field-value" style="font-size:1.05rem;font-weight:600;">' + escapeHtml(p2.action) + "</div></div>";
+            if (p2.reason) html2 += field("理由", p2.reason);
+            if (p2.strength) html2 += field("強度", p2.strength);
+            layersContainer.appendChild(buildAccordion(2, "今やるな", html2, true));
+
+            /* 3. 今やれ */
+            let html3 = "";
+            if (p3.action) html3 += '<div class="field"><div class="field-label" style="color:#51cf66;">推奨</div><div class="field-value" style="font-size:1.05rem;font-weight:600;">' + escapeHtml(p3.action) + "</div></div>";
+            if (p3.reason) html3 += field("理由", p3.reason);
+            if (p3.direction_hint) html3 += field("方向性", p3.direction_hint);
+            if (p3.strength) html3 += field("強度", p3.strength);
+            layersContainer.appendChild(buildAccordion(3, "今やれ", html3, true));
+
+            /* 4. 反対視点 */
+            let html4 = "";
+            const primary = p4.primary || {};
+            const secondary = p4.secondary || {};
+            if (primary.hexagram_name) {
+                html4 += '<div class="field"><div class="field-label">' + escapeHtml(primary.label || "綜卦") + '</div><div class="field-value"><strong>' + escapeHtml(primary.hexagram_name) + "</strong></div></div>";
+                if (primary.insight) html4 += field("示唆", primary.insight);
+            }
+            if (secondary.hexagram_name) {
+                html4 += '<div class="field"><div class="field-label">' + escapeHtml(secondary.label || "錯卦") + '</div><div class="field-value">' + escapeHtml(secondary.hexagram_name) + "</div></div>";
+                if (secondary.insight) html4 += field("示唆", secondary.insight);
+            }
+            layersContainer.appendChild(buildAccordion(4, "反対視点", html4, true));
+
+            /* 5. 類似事例 */
+            let html5 = "";
+            html5 += field("母集団", (p5.corpus_n || 0).toLocaleString() + "件");
+            html5 += field("条件一致", (p5.matched_n || 0).toLocaleString() + "件" + (p5.scale ? "（" + p5.scale + "）" : ""));
+            if (p5.confidence_note) html5 += field("信頼性", p5.confidence_note);
+            if (p5.top_outcome) {
+                const o = p5.top_outcome;
+                html5 += field("最多結果", (o.after_state || "不明") + "（" + Math.round((o.ratio || 0) * 100) + "%、" + (o.count || 0) + "件）");
+            }
+            const cases = p5.cases || [];
+            if (cases.length > 0) {
+                html5 += '<div class="field"><div class="field-label">参照事例</div></div>';
+                for (const c of cases) {
+                    html5 += '<div style="margin:8px 0 12px 0;padding:8px 12px;border-left:3px solid var(--gold);background:rgba(255,255,255,0.03);border-radius:4px;">';
+                    html5 += '<div style="font-weight:600;color:var(--gold);margin-bottom:4px;">' + escapeHtml(c.name || "不明") + '</div>';
+                    if (c.period) html5 += '<div style="font-size:0.8rem;color:#999;margin-bottom:2px;">' + escapeHtml(c.period) + '</div>';
+                    if (c.flow) html5 += '<div style="font-size:0.85rem;margin-bottom:2px;">' + escapeHtml(c.flow) + '</div>';
+                    if (c.summary) html5 += '<div style="font-size:0.8rem;color:#aaa;">' + escapeHtml(c.summary) + '</div>';
+                    html5 += '</div>';
+                }
+            }
+
+            /* 品質警告（デバッグ用） */
+            const warnings = fp.quality_warnings || [];
+            if (warnings.length > 0) {
+                html5 += '<div style="margin-top:12px;padding:8px;background:rgba(255,107,107,0.1);border-radius:4px;font-size:0.8rem;color:#ff6b6b;">';
+                html5 += warnings.map(w => escapeHtml(w)).join("<br>");
+                html5 += '</div>';
+            }
+
+            layersContainer.appendChild(buildAccordion(5, "類似事例", html5, true));
 
             showPhase("result");
         }

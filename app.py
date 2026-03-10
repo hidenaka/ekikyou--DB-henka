@@ -129,25 +129,47 @@ def _get_session_or_404(session_id):
 # 危機ケース検出（安全スクリーニング）
 # ---------------------------------------------------------------------------
 
-# 自傷・自殺関連
-_SELF_HARM_PATTERNS = [
-    r"死にたい", r"自殺", r"自死", r"殺したい",
-    r"飛び降り", r"首を吊", r"リストカット", r"ODした",
-    r"消えたい", r"いなくなりたい", r"生きていたくない",
-]
-# DV・虐待関連
-_DV_PATTERNS = [
-    r"虐待", r"DVされ", r"暴力を受け", r"殴られ",
-]
-# 否定文脈（誤検出防止）
-_NEGATION_PATTERNS = [
-    r"わけじゃない", r"わけではない", r"つもりはない",
-    r"ではなく", r"じゃなくて", r"とは思わない",
+# カテゴリ別キーワード定義
+_CRISIS_CATEGORIES = [
+    {
+        "category": "dv_abuse",
+        "patterns": ["虐待", "DVされ", "暴力を受け", "殴られ"],
+        "message_suffix": (
+            "暴力や虐待の状況にある場合は、以下の専門窓口にご相談ください：\n"
+            "・配偶者暴力相談支援センター: 0570-0-55210\n"
+            "・DV相談ナビ: #8008\n"
+            "・よりそいホットライン: 0120-279-338（24時間無料）\n"
+            "・児童虐待通報: 189（いちはやく）"
+        ),
+    },
+    {
+        "category": "other_harm",
+        "patterns": ["殺したい", "殺す"],
+        "message_suffix": (
+            "今つらい状況にある場合は、以下の専門窓口にご相談ください：\n"
+            "・よりそいホットライン: 0120-279-338（24時間無料）\n"
+            "・こころの健康相談統一ダイヤル: 0570-064-556\n"
+            "・警察相談: #9110"
+        ),
+    },
+    {
+        "category": "self_harm",
+        "patterns": [
+            "死にたい", "自殺", "自死",
+            "飛び降り", "首を吊", "リストカット", "ODした",
+            "消えたい", "いなくなりたい", "生きていたくない",
+        ],
+        "message_suffix": (
+            "今つらい状況にある場合は、以下の専門窓口にご相談ください：\n"
+            "・よりそいホットライン: 0120-279-338（24時間無料）\n"
+            "・いのちの電話: 0570-783-556\n"
+            "・こころの健康相談統一ダイヤル: 0570-064-556"
+        ),
+    },
 ]
 
-_SELF_HARM_RE = re.compile("|".join(_SELF_HARM_PATTERNS))
-_DV_RE = re.compile("|".join(_DV_PATTERNS))
-_NEGATION_RE = re.compile("|".join(_NEGATION_PATTERNS))
+# 否定表現（キーワードの直後5文字以内にあれば局所否定として除外）
+_NEGATION_WORDS = ["わけじゃない", "わけではない", "つもりはない", "とは思わない"]
 
 _CRISIS_BASE_MSG = (
     "あなたのお気持ちを受け止めています。"
@@ -155,41 +177,40 @@ _CRISIS_BASE_MSG = (
     "危機的な状況への専門的な支援を行うことはできません。\n\n"
 )
 
-_SELF_HARM_RESPONSE = {
-    "crisis_detected": True,
-    "crisis_category": "self_harm",
-    "message": _CRISIS_BASE_MSG + (
-        "今つらい状況にある場合は、以下の専門窓口にご相談ください：\n"
-        "・よりそいホットライン: 0120-279-338（24時間無料）\n"
-        "・いのちの電話: 0570-783-556\n"
-        "・こころの健康相談統一ダイヤル: 0570-064-556"
-    ),
-    "phase": "crisis_rejected",
-}
+# 各カテゴリのレスポンスを事前生成
+_CRISIS_RESPONSES = {}
+for _cat in _CRISIS_CATEGORIES:
+    _CRISIS_RESPONSES[_cat["category"]] = {
+        "crisis_detected": True,
+        "crisis_category": _cat["category"],
+        "message": _CRISIS_BASE_MSG + _cat["message_suffix"],
+        "phase": "crisis_rejected",
+    }
 
-_DV_RESPONSE = {
-    "crisis_detected": True,
-    "crisis_category": "dv_abuse",
-    "message": _CRISIS_BASE_MSG + (
-        "暴力や虐待の状況にある場合は、以下の専門窓口にご相談ください：\n"
-        "・配偶者暴力相談支援センター: 0570-0-55210\n"
-        "・DV相談ナビ: #8008\n"
-        "・よりそいホットライン: 0120-279-338（24時間無料）\n"
-        "・児童虐待通報: 189（いちはやく）"
-    ),
-    "phase": "crisis_rejected",
-}
+
+def _is_locally_negated(text: str, match_start: int, match_end: int) -> bool:
+    """キーワードの直後5文字以内に否定表現があるかチェック（局所否定）。"""
+    after = text[match_end:match_end + 15]  # 十分な長さを取得
+    for neg in _NEGATION_WORDS:
+        # 否定表現がキーワード直後〜5文字以内に始まっていれば局所否定
+        idx = after.find(neg)
+        if idx != -1 and idx <= 5:
+            return True
+    return False
 
 
 def _check_crisis_input(text: str):
-    """ユーザー入力の危機検出。検出時はレスポンスdictを返す。非検出時はNone。"""
-    # 否定文脈チェック — キーワード周辺に否定表現があれば誤検出として除外
-    has_negation = bool(_NEGATION_RE.search(text))
-
-    if _DV_RE.search(text) and not has_negation:
-        return _DV_RESPONSE
-    if _SELF_HARM_RE.search(text) and not has_negation:
-        return _SELF_HARM_RESPONSE
+    """ユーザー入力の危機検出。局所的な否定文脈を考慮する。検出時はレスポンスdictを返す。"""
+    for cat in _CRISIS_CATEGORIES:
+        for keyword in cat["patterns"]:
+            start = 0
+            while True:
+                idx = text.find(keyword, start)
+                if idx == -1:
+                    break
+                if not _is_locally_negated(text, idx, idx + len(keyword)):
+                    return _CRISIS_RESPONSES[cat["category"]]
+                start = idx + len(keyword)
     return None
 
 
@@ -513,6 +534,11 @@ def feedback():
     if s["phase"] != "confirmed":
         return jsonify({"error": "この操作は現在のフェーズでは実行できません"}), 400
 
+    # 出力フォーマットバリデーション（セッション変更前に検証）
+    output_format = data.get("format", "5layer")
+    if output_format not in ("5layer", "5point"):
+        return jsonify({"error": f"無効なformat値: {output_format}。'5layer' または '5point' を指定してください"}), 400
+
     if s["candidates"] is None:
         return jsonify({"error": "候補が存在しません"}), 400
 
@@ -554,9 +580,6 @@ def feedback():
     s["phase"] = "result"
 
     # 出力フォーマット選択
-    output_format = data.get("format", "5layer")
-    if output_format not in ("5layer", "5point"):
-        return jsonify({"error": f"無効なformat値: {output_format}。'5layer' または '5point' を指定してください"}), 400
     if output_format == "5point":
         view = feedback_engine.build_5point_view(fb, candidate["hexagram_number"], yao)
         return jsonify({

@@ -362,6 +362,12 @@ class FeedbackEngine:
         # QG3: 類似事例の母集団情報が正しいか
         if reference_cases["corpus_n"] <= 0:
             warnings.append("事例母集団が0件です")
+        # QG4: 条件一致事例が0件の場合
+        if reference_cases["matched_n"] == 0:
+            warnings.append("条件一致事例が0件です — 結果の参考性が低い可能性があります")
+        # QG5: 反対視点が空でないか
+        if not opposite_view.get("primary", {}).get("hexagram_name"):
+            warnings.append("反対視点（綜卦）が空です")
 
         return {
             "format": "5point",
