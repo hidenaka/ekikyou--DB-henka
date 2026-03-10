@@ -74,6 +74,25 @@ QUESTIONS_BY_YAO = {
     6: "ここまで来て、まだ握りしめているものは何ですか？",
 }
 
+# フェーズ別デフォルト行動指針（ルールテーブルのフォールバック）
+PHASE_DEFAULTS_DO_NOT = {
+    1: "拙速に動くこと",
+    2: "独断で進めること",
+    3: "油断すること",
+    4: "過去のやり方に固執すること",
+    5: "傲慢になること",
+    6: "しがみつくこと",
+}
+
+PHASE_DEFAULTS_DO = {
+    1: "準備と観察に専念する",
+    2: "信頼を築き、基盤を固める",
+    3: "慎重に判断し、決断する",
+    4: "新しい環境に適応する",
+    5: "中庸を保ち、影響力を適切に使う",
+    6: "手放し、次の段階に備える",
+}
+
 # 品質ゲート Q1: 禁止語リスト
 FORBIDDEN_WORDS = ["予測", "予言", "運命", "占い", "になるでしょう", "必ず", "確実に"]
 
@@ -150,6 +169,15 @@ class FeedbackEngine:
         with open(tpl_path, "r", encoding="utf-8") as f:
             self._template = f.read()
 
+        # 384爻アクションルール
+        yao_rules_path = os.path.join(_PROJECT_ROOT, "data", "diagnostic",
+                                      "yao_action_rules.json")
+        if os.path.exists(yao_rules_path):
+            with open(yao_rules_path, "r", encoding="utf-8") as f:
+                self._yao_action_rules = json.load(f).get("rules", {})
+        else:
+            self._yao_action_rules = {}
+
         # CaseSearchEngine
         self._case_search = CaseSearchEngine()
 
@@ -214,6 +242,136 @@ class FeedbackEngine:
                              before_state, action_type, mapping_confidence,
                              domain=domain)
         return self._render_text(data, show_extended)
+
+    # ------------------------------------------------------------------
+    # 5点固定出力ビューモデル
+    # ------------------------------------------------------------------
+
+    def build_5point_view(self, base_feedback: dict,
+                          hexagram_number: int, yao_position: int) -> dict:
+        """
+        5レイヤーフィードバックから5点固定出力ビューモデルを構築する。
+
+        5点: 現在地 / 今やるな / 今やれ / 反対視点 / 類似事例
+
+        Args:
+            base_feedback: generate() の返り値
+            hexagram_number: 卦番号
+            yao_position: 爻位
+
+        Returns:
+            5点固定出力のdict
+        """
+        l1 = base_feedback["layer1_current"]
+        l2 = base_feedback["layer2_direction"]
+        l3 = base_feedback["layer3_hidden"]
+        l4 = base_feedback["layer4_reference"]
+
+        # --- 1. 現在地（局面の圧縮）---
+        hex_info = l1["hexagram"]
+        cl = l1["changing_line"]
+        hex64_info = self._hex64.get(hexagram_number, {})
+
+        current_position = {
+            "title": f"{hex_info['name']}・第{cl['position']}爻「{cl['phase']}」",
+            "summary": l1.get("archetype", hex64_info.get("archetype", "")),
+            "phase_description": cl["phase_description"],
+            "yao_message": cl["yao_text_modern_ja"],
+            "hexagram_id": hexagram_number,
+            "hexagram_name": hex_info["name"],
+            "yao_position": yao_position,
+            "phase": cl["phase"],
+            "confidence": base_feedback.get("mapping_confidence", 0.0),
+        }
+
+        # --- 2. 今やるな / 3. 今やれ ---
+        rule_key = f"{hexagram_number}_{yao_position}"
+        rule = self._yao_action_rules.get(rule_key, {})
+
+        do_not = {
+            "action": rule.get("do_not", PHASE_DEFAULTS_DO_NOT.get(yao_position, "")),
+            "reason": rule.get("condition", cl["phase_description"]),
+            "strength": rule.get("strength", "moderate"),
+        }
+
+        do_action = {
+            "action": rule.get("do", PHASE_DEFAULTS_DO.get(yao_position, "")),
+            "reason": rule.get("condition", cl["phase_description"]),
+            "strength": rule.get("strength", "moderate"),
+            "direction_hint": self._first_sentence(
+                l2.get("resulting_judgment_modern_ja", "")
+            ),
+        }
+
+        # --- 4. 反対視点（綜卦を主、錯卦を補助）---
+        zong = l3["inverted"]
+        cuo = l3["complementary"]
+        opposite_view = {
+            "primary": {
+                "type": "綜卦",
+                "label": "立場を逆にすると",
+                "hexagram_name": zong["hexagram_name"],
+                "hexagram_id": zong["hexagram_id"],
+                "insight": self._first_sentence(zong["judgment_modern_ja"]),
+            },
+            "secondary": {
+                "type": "錯卦",
+                "label": "全てを反転すると",
+                "hexagram_name": cuo["hexagram_name"],
+                "hexagram_id": cuo["hexagram_id"],
+                "insight": self._first_sentence(cuo["judgment_modern_ja"]),
+            },
+        }
+
+        # --- 5. 類似事例 ---
+        dist = l4["conditional_distribution"]
+        similar = l4["similar_cases"]
+        reference_cases = {
+            "corpus_n": len(self._case_search.cases),
+            "matched_n": dist["total_n"],
+            "scale": dist["condition"].get("scale"),
+            "confidence_note": dist["confidence_note"],
+            "top_outcome": (
+                dist["distribution"][0] if dist["distribution"] else None
+            ),
+            "cases": [
+                {
+                    "name": c["target_name"],
+                    "period": c["period"],
+                    "flow": f"{c['before_state']} → {c['action_type']} → {c['after_state']}",
+                    "summary": c.get("story_summary", ""),
+                    "basis": c["similarity_basis"],
+                }
+                for c in similar
+            ],
+        }
+
+        return {
+            "format": "5point",
+            "version": "1.0",
+            "generated_at": base_feedback.get("generated_at", ""),
+            "point1_current_position": current_position,
+            "point2_do_not": do_not,
+            "point3_do": do_action,
+            "point4_opposite_view": opposite_view,
+            "point5_reference_cases": reference_cases,
+        }
+
+    def generate_5point(
+        self,
+        hexagram_number: int,
+        yao_position: int,
+        before_state: str,
+        action_type: str,
+        mapping_confidence: float = 0.7,
+        domain: str = None,
+    ) -> dict:
+        """5点固定出力を直接生成する。"""
+        base = self.generate(
+            hexagram_number, yao_position, before_state, action_type,
+            mapping_confidence, domain=domain,
+        )
+        return self.build_5point_view(base, hexagram_number, yao_position)
 
     # ------------------------------------------------------------------
     # LAYER 1: 現在地の読み解き
