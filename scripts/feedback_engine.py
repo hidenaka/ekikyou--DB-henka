@@ -362,9 +362,13 @@ class FeedbackEngine:
         # QG3: 類似事例の母集団情報が正しいか
         if reference_cases["corpus_n"] <= 0:
             warnings.append("事例母集団が0件です")
-        # QG4: 条件一致事例が0件の場合
+        # QG4: 条件一致事例が3件未満の場合（仕様: 3件未満は仮説ラベル必須）
         if reference_cases["matched_n"] == 0:
             warnings.append("条件一致事例が0件です — 結果の参考性が低い可能性があります")
+            reference_cases["evidence_label"] = "事例数不足: 仮説としてのみ提示"
+        elif reference_cases["matched_n"] < 3:
+            warnings.append(f"条件一致事例が{reference_cases['matched_n']}件です — 事例数不足: 仮説としてのみ提示")
+            reference_cases["evidence_label"] = "事例数不足: 仮説としてのみ提示"
         # QG5: 反対視点が空でないか
         if not opposite_view.get("primary", {}).get("hexagram_name"):
             warnings.append("反対視点（綜卦）が空です")

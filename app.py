@@ -130,10 +130,13 @@ def _get_session_or_404(session_id):
 # ---------------------------------------------------------------------------
 
 # カテゴリ別キーワード定義
+# severity: "critical"/"high" = サービス遮断, "medium" = 注意フラグ付き継続
 _CRISIS_CATEGORIES = [
     {
         "category": "dv_abuse",
-        "patterns": ["虐待", "DVされ", "暴力を受け", "殴られ"],
+        "severity": "high",
+        "patterns": ["虐待", "DVされ", "暴力を受け", "殴られ",
+                     "物を投げ", "壁を殴", "監禁"],
         "message_suffix": (
             "暴力や虐待の状況にある場合は、以下の専門窓口にご相談ください：\n"
             "・配偶者暴力相談支援センター: 0570-0-55210\n"
@@ -144,6 +147,7 @@ _CRISIS_CATEGORIES = [
     },
     {
         "category": "other_harm",
+        "severity": "critical",
         "patterns": ["殺したい", "殺す"],
         "message_suffix": (
             "今つらい状況にある場合は、以下の専門窓口にご相談ください：\n"
@@ -154,6 +158,7 @@ _CRISIS_CATEGORIES = [
     },
     {
         "category": "self_harm",
+        "severity": "critical",
         "patterns": [
             "死にたい", "自殺", "自死",
             "飛び降り", "首を吊", "リストカット", "ODした",
@@ -166,10 +171,39 @@ _CRISIS_CATEGORIES = [
             "・こころの健康相談統一ダイヤル: 0570-064-556"
         ),
     },
+    {
+        "category": "depression",
+        "severity": "medium",
+        "patterns": [
+            "布団から出られない", "ベッドから出られない",
+            "食欲がない", "食べられない",
+            "眠れない日が続",
+        ],
+        "message_suffix": (
+            "つらい状態が2週間以上続いている場合は、専門家への相談をお勧めします：\n"
+            "・こころの健康相談統一ダイヤル: 0570-064-556\n"
+            "・よりそいホットライン: 0120-279-338（24時間無料）"
+        ),
+    },
+    {
+        "category": "economic_crisis",
+        "severity": "medium",
+        "patterns": [
+            "借金が返せ", "破産", "闇金", "取り立て",
+            "返済できない", "返済が重",
+        ],
+        "message_suffix": (
+            "経済的な困難を抱えている場合は、専門窓口にご相談ください：\n"
+            "・法テラス: 0570-078374\n"
+            "・多重債務相談窓口（金融庁）: 0570-016811\n"
+            "・よりそいホットライン: 0120-279-338（24時間無料）"
+        ),
+    },
 ]
 
 # 否定表現（キーワードの直後5文字以内にあれば局所否定として除外）
-_NEGATION_WORDS = ["わけじゃない", "わけではない", "つもりはない", "とは思わない"]
+_NEGATION_WORDS = ["わけじゃない", "わけではない", "つもりはない", "とは思わない",
+                   "ではなく", "じゃなくて"]
 
 _CRISIS_BASE_MSG = (
     "あなたのお気持ちを受け止めています。"
@@ -177,15 +211,34 @@ _CRISIS_BASE_MSG = (
     "危機的な状況への専門的な支援を行うことはできません。\n\n"
 )
 
+_MEDIUM_BASE_MSG = (
+    "ご状況を受け止めています。\n"
+    "このサービスは意思決定の参考情報を提供しますが、"
+    "以下の専門窓口も併せてご検討ください。\n\n"
+)
+
 # 各カテゴリのレスポンスを事前生成
 _CRISIS_RESPONSES = {}
 for _cat in _CRISIS_CATEGORIES:
-    _CRISIS_RESPONSES[_cat["category"]] = {
-        "crisis_detected": True,
-        "crisis_category": _cat["category"],
-        "message": _CRISIS_BASE_MSG + _cat["message_suffix"],
-        "phase": "crisis_rejected",
-    }
+    sev = _cat["severity"]
+    if sev in ("critical", "high"):
+        # CRITICAL/HIGH: サービス遮断
+        _CRISIS_RESPONSES[_cat["category"]] = {
+            "crisis_detected": True,
+            "crisis_category": _cat["category"],
+            "crisis_severity": sev,
+            "message": _CRISIS_BASE_MSG + _cat["message_suffix"],
+            "phase": "crisis_rejected",
+        }
+    else:
+        # MEDIUM: サービスは継続するが注意フラグを付与
+        _CRISIS_RESPONSES[_cat["category"]] = {
+            "crisis_detected": True,
+            "crisis_category": _cat["category"],
+            "crisis_severity": "medium",
+            "message": _MEDIUM_BASE_MSG + _cat["message_suffix"],
+            "phase": "crisis_flagged",
+        }
 
 
 def _is_locally_negated(text: str, match_start: int, match_end: int) -> bool:
@@ -200,7 +253,14 @@ def _is_locally_negated(text: str, match_start: int, match_end: int) -> bool:
 
 
 def _check_crisis_input(text: str):
-    """ユーザー入力の危機検出。局所的な否定文脈を考慮する。検出時はレスポンスdictを返す。"""
+    """ユーザー入力の危機検出。局所的な否定文脈を考慮する。
+
+    Returns:
+        critical検出: サービス遮断レスポンスdict
+        medium検出: 注意フラグ付きレスポンスdict（呼び出し元で継続判断）
+        未検出: None
+    """
+    detected_medium = None
     for cat in _CRISIS_CATEGORIES:
         for keyword in cat["patterns"]:
             start = 0
@@ -209,9 +269,15 @@ def _check_crisis_input(text: str):
                 if idx == -1:
                     break
                 if not _is_locally_negated(text, idx, idx + len(keyword)):
-                    return _CRISIS_RESPONSES[cat["category"]]
+                    resp = _CRISIS_RESPONSES[cat["category"]]
+                    # critical/high は即座に返す（サービス遮断）
+                    if cat["severity"] in ("critical", "high"):
+                        return resp
+                    # medium は記録して後で返す（critical/highが優先）
+                    if detected_medium is None:
+                        detected_medium = resp
                 start = idx + len(keyword)
-    return None
+    return detected_medium
 
 
 # ---------------------------------------------------------------------------
@@ -336,11 +402,14 @@ def extract():
     if err:
         return err
 
-    # 危機ケース検出 — 専門機関への案内を返し、処理を中断する
+    # 危機ケース検出 — critical: サービス遮断、medium: 注意フラグ付き継続
     crisis = _check_crisis_input(text)
     if crisis:
-        s["phase"] = "crisis_rejected"
-        return jsonify(crisis)
+        if crisis.get("crisis_severity") in ("critical", "high"):
+            s["phase"] = "crisis_rejected"
+            return jsonify(crisis)
+        # MEDIUM: 注意フラグを記録してサービスは継続
+        s["safety_flag"] = crisis
 
     # デモモード: LLM未設定またはAPI呼び出し失敗時はサンプルデータを返す
     demo_mode = not dialogue_engine.is_available()
@@ -408,8 +477,10 @@ def followup():
     # 危機ケース検出
     crisis = _check_crisis_input(answer)
     if crisis:
-        s["phase"] = "crisis_rejected"
-        return jsonify(crisis)
+        if crisis.get("crisis_severity") in ("critical", "high"):
+            s["phase"] = "crisis_rejected"
+            return jsonify(crisis)
+        s["safety_flag"] = crisis
 
     demo_mode = not dialogue_engine.is_available()
 
@@ -579,21 +650,30 @@ def feedback():
     # セッション更新
     s["phase"] = "result"
 
+    # MEDIUM安全フラグがある場合、レスポンスに含める
+    safety_flag = s.get("safety_flag")
+
     # 出力フォーマット選択
     if output_format == "5point":
         view = feedback_engine.build_5point_view(fb, candidate["hexagram_number"], yao)
-        return jsonify({
+        resp = {
             "feedback_5point": view,
             "feedback": fb,
             "selected_candidate": candidate,
             "phase": "result",
-        })
+        }
+        if safety_flag:
+            resp["safety_flag"] = safety_flag
+        return jsonify(resp)
 
-    return jsonify({
+    resp = {
         "feedback": fb,
         "selected_candidate": candidate,
         "phase": "result",
-    })
+    }
+    if safety_flag:
+        resp["safety_flag"] = safety_flag
+    return jsonify(resp)
 
 
 # ---------------------------------------------------------------------------
@@ -617,8 +697,10 @@ def diary_extract():
     # 危機ケース検出
     crisis = _check_crisis_input(text)
     if crisis:
-        s["phase"] = "crisis_rejected"
-        return jsonify(crisis)
+        if crisis.get("crisis_severity") in ("critical", "high"):
+            s["phase"] = "crisis_rejected"
+            return jsonify(crisis)
+        s["safety_flag"] = crisis
 
     result = diary_orchestrator.extract_diary(s, text)
     if "error" in result:
@@ -647,8 +729,10 @@ def diary_ideal_followup():
     # 危機ケース検出
     crisis = _check_crisis_input(answer)
     if crisis:
-        s["phase"] = "crisis_rejected"
-        return jsonify(crisis)
+        if crisis.get("crisis_severity") in ("critical", "high"):
+            s["phase"] = "crisis_rejected"
+            return jsonify(crisis)
+        s["safety_flag"] = crisis
 
     result = diary_orchestrator.add_ideal_followup(s, answer)
     if "error" in result:

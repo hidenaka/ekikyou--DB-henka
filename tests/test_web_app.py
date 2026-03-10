@@ -531,3 +531,159 @@ class TestFullFlow:
         })
         assert resp.status_code == 200
         assert resp.get_json()["phase"] == "result"
+
+
+# ===========================================================================
+# TestSafetyDetection — 安全回帰テスト
+# ===========================================================================
+
+class TestSafetyDetection:
+    """危機検出の回帰テスト（REG_015/016/017/018相当）"""
+
+    # --- CRITICAL: サービス遮断 ---
+
+    def test_self_harm_critical(self, client):
+        """自傷キーワードでサービス遮断されること。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "もう死にたい。何もかも嫌になった。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data["crisis_detected"] is True
+        assert data["crisis_severity"] == "critical"
+        assert data["crisis_category"] == "self_harm"
+        assert data["phase"] == "crisis_rejected"
+
+    def test_dv_high(self, client):
+        """DV関連キーワードでHIGHサービス遮断されること（REG_018相当）。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "夫が怒ると物を投げるようになりました。壁を殴って穴を開けました。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data["crisis_detected"] is True
+        assert data["crisis_severity"] == "high"
+        assert data["crisis_category"] == "dv_abuse"
+        assert data["phase"] == "crisis_rejected"
+
+    def test_other_harm_critical(self, client):
+        """他害キーワードでサービス遮断されること。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "あいつを殺したい。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data["crisis_detected"] is True
+        assert data["crisis_category"] == "other_harm"
+
+    # --- MEDIUM: 注意フラグ付き継続 ---
+
+    @patch("app.dialogue_engine.extract_axes", return_value=MOCK_EXTRACTION_HIGH_CONF)
+    def test_depression_medium_continues(self, mock_extract, client):
+        """抑うつキーワードでMEDIUM検出→サービスは継続すること（REG_015相当）。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "布団から出られない朝が続いている。キャリアを見直したい。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        # サービス遮断ではない（phaseがcrisis_rejectedでない）
+        assert data.get("phase") != "crisis_rejected"
+        # 通常のextract処理が行われている
+        assert "extraction" in data or "summary" in data
+
+    @patch("app.dialogue_engine.extract_axes", return_value=MOCK_EXTRACTION_HIGH_CONF)
+    def test_economic_crisis_medium_continues(self, mock_extract, client):
+        """経済危機キーワードでMEDIUM検出→サービスは継続すること（REG_016相当）。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "借金が返せない。返済が重い。破産も考えている。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data.get("phase") != "crisis_rejected"
+
+    @patch("app.dialogue_engine.extract_axes", return_value=MOCK_EXTRACTION_HIGH_CONF)
+    def test_medium_flag_in_feedback(self, mock_extract, client):
+        """MEDIUM検出時、feedbackレスポンスにsafety_flagが含まれること。"""
+        sid = _create_session(client)
+        # extract
+        client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "布団から出られない日が増えた。転職したい。",
+        })
+        # confirm
+        client.post("/api/confirm", json={"session_id": sid})
+        # feedback
+        resp = client.post("/api/feedback", json={
+            "session_id": sid,
+            "candidate_index": 0,
+            "format": "5point",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert "safety_flag" in data
+        assert data["safety_flag"]["crisis_category"] == "depression"
+        assert data["safety_flag"]["crisis_severity"] == "medium"
+
+    # --- 否定コンテキスト除外 ---
+
+    @patch("app.dialogue_engine.extract_axes", return_value=MOCK_EXTRACTION_HIGH_CONF)
+    def test_negation_excludes_detection(self, mock_extract, client):
+        """否定コンテキスト「死にたいわけじゃない」は検出されないこと。"""
+        sid = _create_session(client)
+        resp = client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "死にたいわけじゃないけど、仕事がつらい。転職を考えている。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data.get("crisis_detected") is not True
+        assert data.get("phase") != "crisis_rejected"
+
+    # --- format不正値 ---
+
+    @patch("app.dialogue_engine.extract_axes", return_value=MOCK_EXTRACTION_HIGH_CONF)
+    def test_invalid_format_returns_400(self, mock_extract, client):
+        """不正なformat値で400エラーが返ること。"""
+        sid = _create_session(client)
+        client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "テスト",
+        })
+        client.post("/api/confirm", json={"session_id": sid})
+        resp = client.post("/api/feedback", json={
+            "session_id": sid,
+            "candidate_index": 0,
+            "format": "invalid_format",
+        })
+        assert resp.status_code == 400
+        assert "無効なformat値" in resp.get_json()["error"]
+
+    # --- followupエンドポイントでの危機検出 ---
+
+    @patch("app.dialogue_engine.extract_axes", return_value=MOCK_EXTRACTION_LOW_CONF)
+    @patch("app.dialogue_engine.generate_followup_question", return_value=MOCK_FOLLOWUP)
+    def test_followup_crisis_detection(self, mock_followup, mock_extract, client):
+        """followupでCRITICAL危機検出→サービス遮断されること。"""
+        sid = _create_session(client)
+        client.post("/api/extract", json={
+            "session_id": sid,
+            "text": "何かが変わりつつある。",
+        })
+        resp = client.post("/api/followup", json={
+            "session_id": sid,
+            "answer": "もう自殺したい。",
+        })
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert data["crisis_detected"] is True
+        assert data["phase"] == "crisis_rejected"

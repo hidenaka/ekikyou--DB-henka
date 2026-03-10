@@ -2224,9 +2224,15 @@
 
             /* Header */
             const header = document.getElementById("result-header");
-            header.innerHTML =
-                '<div class="kua-title">' + escapeHtml(p1.hexagram_name || "---") + "</div>" +
+            let headerHtml = "";
+            /* MEDIUM安全フラグ表示 */
+            if (data.safety_flag) {
+                headerHtml += '<div style="margin-bottom:12px;padding:10px 14px;background:rgba(255,193,7,0.15);border:1px solid rgba(255,193,7,0.4);border-radius:8px;font-size:0.85rem;color:#ffc107;">' +
+                    escapeHtml(data.safety_flag.message || "") + '</div>';
+            }
+            headerHtml += '<div class="kua-title">' + escapeHtml(p1.hexagram_name || "---") + "</div>" +
                 '<div class="kua-sub">' + escapeHtml(p1.title || "") + "</div>";
+            header.innerHTML = headerHtml;
 
             /* 5 Points */
             const layersContainer = document.getElementById("result-layers");
@@ -2271,6 +2277,9 @@
 
             /* 5. 類似事例 */
             let html5 = "";
+            if (p5.evidence_label) {
+                html5 += '<div style="margin-bottom:8px;padding:6px 10px;background:rgba(255,193,7,0.12);border-radius:4px;font-size:0.8rem;color:#ffc107;">' + escapeHtml(p5.evidence_label) + '</div>';
+            }
             html5 += field("母集団", (p5.corpus_n || 0).toLocaleString() + "件");
             html5 += field("条件一致", (p5.matched_n || 0).toLocaleString() + "件" + (p5.scale ? "（" + p5.scale + "）" : ""));
             if (p5.confidence_note) html5 += field("信頼性", p5.confidence_note);
