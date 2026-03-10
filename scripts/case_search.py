@@ -14,7 +14,6 @@ Usage:
 
 import json
 import os
-import random
 from pathlib import Path
 from collections import Counter
 from typing import Optional
@@ -225,7 +224,7 @@ class CaseSearchEngine:
         3. before_state + action_type が一致
         4. before_hex + action_hex が一致
 
-        各優先順位内ではランダムに選出。
+        各優先順位内では年度降順・名前昇順で決定的に選出（再現性保証）。
         最大 limit 件返す。
 
         Args:
@@ -236,13 +235,16 @@ class CaseSearchEngine:
         used_ids = set()  # transition_id で重複排除
 
         def _add_cases(candidate_list: list, basis: str):
-            """候補リストからまだ選ばれていないものをランダムに追加。"""
+            """候補リストからまだ選ばれていないものを決定的順位で追加。"""
             filtered = self._filter_by_scale(candidate_list, scale)
             available = [
                 c for c in filtered
                 if c.get("transition_id", id(c)) not in used_ids
             ]
-            random.shuffle(available)
+            # 決定的ランキング: year降順 → target_name昇順（再現性保証）
+            available.sort(
+                key=lambda c: (-(c.get("year") or 0), c.get("target_name", "")),
+            )
             for case in available:
                 if len(results) >= limit:
                     return

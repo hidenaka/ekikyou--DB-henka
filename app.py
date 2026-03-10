@@ -129,21 +129,36 @@ def _get_session_or_404(session_id):
 # 危機ケース検出（安全スクリーニング）
 # ---------------------------------------------------------------------------
 
-# 即座に専門機関を案内すべきキーワード
-_CRISIS_PATTERNS = [
-    r"死にたい", r"自殺", r"自死", r"殺したい", r"殺す",
+# 自傷・自殺関連
+_SELF_HARM_PATTERNS = [
+    r"死にたい", r"自殺", r"自死", r"殺したい",
     r"飛び降り", r"首を吊", r"リストカット", r"ODした",
     r"消えたい", r"いなくなりたい", r"生きていたくない",
-    r"虐待", r"DVされ", r"暴力を受け",
 ]
-_CRISIS_RE = re.compile("|".join(_CRISIS_PATTERNS))
+# DV・虐待関連
+_DV_PATTERNS = [
+    r"虐待", r"DVされ", r"暴力を受け", r"殴られ",
+]
+# 否定文脈（誤検出防止）
+_NEGATION_PATTERNS = [
+    r"わけじゃない", r"わけではない", r"つもりはない",
+    r"ではなく", r"じゃなくて", r"とは思わない",
+]
 
-_CRISIS_RESPONSE = {
+_SELF_HARM_RE = re.compile("|".join(_SELF_HARM_PATTERNS))
+_DV_RE = re.compile("|".join(_DV_PATTERNS))
+_NEGATION_RE = re.compile("|".join(_NEGATION_PATTERNS))
+
+_CRISIS_BASE_MSG = (
+    "あなたのお気持ちを受け止めています。"
+    "このサービスは意思決定の参考情報を提供するものであり、"
+    "危機的な状況への専門的な支援を行うことはできません。\n\n"
+)
+
+_SELF_HARM_RESPONSE = {
     "crisis_detected": True,
-    "message": (
-        "あなたのお気持ちを受け止めています。"
-        "このサービスは意思決定の参考情報を提供するものであり、"
-        "危機的な状況への専門的な支援を行うことはできません。\n\n"
+    "crisis_category": "self_harm",
+    "message": _CRISIS_BASE_MSG + (
         "今つらい状況にある場合は、以下の専門窓口にご相談ください：\n"
         "・よりそいホットライン: 0120-279-338（24時間無料）\n"
         "・いのちの電話: 0570-783-556\n"
@@ -152,10 +167,30 @@ _CRISIS_RESPONSE = {
     "phase": "crisis_rejected",
 }
 
+_DV_RESPONSE = {
+    "crisis_detected": True,
+    "crisis_category": "dv_abuse",
+    "message": _CRISIS_BASE_MSG + (
+        "暴力や虐待の状況にある場合は、以下の専門窓口にご相談ください：\n"
+        "・配偶者暴力相談支援センター: 0570-0-55210\n"
+        "・DV相談ナビ: #8008\n"
+        "・よりそいホットライン: 0120-279-338（24時間無料）\n"
+        "・児童虐待通報: 189（いちはやく）"
+    ),
+    "phase": "crisis_rejected",
+}
 
-def _check_crisis_input(text: str) -> bool:
-    """ユーザー入力に危機的キーワードが含まれるか検査する。"""
-    return bool(_CRISIS_RE.search(text))
+
+def _check_crisis_input(text: str):
+    """ユーザー入力の危機検出。検出時はレスポンスdictを返す。非検出時はNone。"""
+    # 否定文脈チェック — キーワード周辺に否定表現があれば誤検出として除外
+    has_negation = bool(_NEGATION_RE.search(text))
+
+    if _DV_RE.search(text) and not has_negation:
+        return _DV_RESPONSE
+    if _SELF_HARM_RE.search(text) and not has_negation:
+        return _SELF_HARM_RESPONSE
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -281,9 +316,10 @@ def extract():
         return err
 
     # 危機ケース検出 — 専門機関への案内を返し、処理を中断する
-    if _check_crisis_input(text):
+    crisis = _check_crisis_input(text)
+    if crisis:
         s["phase"] = "crisis_rejected"
-        return jsonify(_CRISIS_RESPONSE)
+        return jsonify(crisis)
 
     # デモモード: LLM未設定またはAPI呼び出し失敗時はサンプルデータを返す
     demo_mode = not dialogue_engine.is_available()
@@ -347,6 +383,12 @@ def followup():
 
     if s["followup_count"] >= 2:
         return jsonify({"error": "フォローアップの上限に達しました"}), 400
+
+    # 危機ケース検出
+    crisis = _check_crisis_input(answer)
+    if crisis:
+        s["phase"] = "crisis_rejected"
+        return jsonify(crisis)
 
     demo_mode = not dialogue_engine.is_available()
 
@@ -513,6 +555,8 @@ def feedback():
 
     # 出力フォーマット選択
     output_format = data.get("format", "5layer")
+    if output_format not in ("5layer", "5point"):
+        return jsonify({"error": f"無効なformat値: {output_format}。'5layer' または '5point' を指定してください"}), 400
     if output_format == "5point":
         view = feedback_engine.build_5point_view(fb, candidate["hexagram_number"], yao)
         return jsonify({
@@ -548,9 +592,10 @@ def diary_extract():
         return jsonify({"error": "日記モードのセッションではありません"}), 400
 
     # 危機ケース検出
-    if _check_crisis_input(text):
+    crisis = _check_crisis_input(text)
+    if crisis:
         s["phase"] = "crisis_rejected"
-        return jsonify(_CRISIS_RESPONSE)
+        return jsonify(crisis)
 
     result = diary_orchestrator.extract_diary(s, text)
     if "error" in result:
@@ -575,6 +620,12 @@ def diary_ideal_followup():
 
     if s.get("phase") != "diary-reviewing":
         return jsonify({"error": "この操作は現在のフェーズでは実行できません"}), 400
+
+    # 危機ケース検出
+    crisis = _check_crisis_input(answer)
+    if crisis:
+        s["phase"] = "crisis_rejected"
+        return jsonify(crisis)
 
     result = diary_orchestrator.add_ideal_followup(s, answer)
     if "error" in result:

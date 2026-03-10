@@ -346,6 +346,23 @@ class FeedbackEngine:
             ],
         }
 
+        # --- 品質ゲート ---
+        warnings = []
+        # QG1: 禁止と推奨が同一の行動を指していないか
+        if do_not["action"] and do_action["action"]:
+            if do_not["action"] == do_action["action"]:
+                warnings.append("do_not と do が同一の行動を指しています")
+        # QG2: 各ポイントに内容があるか
+        if not current_position.get("summary"):
+            warnings.append("現在地のサマリーが空です")
+        if not do_not.get("action"):
+            warnings.append("今やるなが空です")
+        if not do_action.get("action"):
+            warnings.append("今やれが空です")
+        # QG3: 類似事例の母集団情報が正しいか
+        if reference_cases["corpus_n"] <= 0:
+            warnings.append("事例母集団が0件です")
+
         return {
             "format": "5point",
             "version": "1.0",
@@ -355,6 +372,7 @@ class FeedbackEngine:
             "point3_do": do_action,
             "point4_opposite_view": opposite_view,
             "point5_reference_cases": reference_cases,
+            "quality_warnings": warnings,
         }
 
     def generate_5point(
