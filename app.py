@@ -29,6 +29,7 @@ Webブラウザから呼び出せるREST APIを提供する。
 
 import json
 import os
+import re
 import sys
 import uuid
 
@@ -122,6 +123,39 @@ def _get_session_or_404(session_id):
     if s is None:
         return None, (jsonify({"error": "セッションが見つかりません"}), 404)
     return s, None
+
+
+# ---------------------------------------------------------------------------
+# 危機ケース検出（安全スクリーニング）
+# ---------------------------------------------------------------------------
+
+# 即座に専門機関を案内すべきキーワード
+_CRISIS_PATTERNS = [
+    r"死にたい", r"自殺", r"自死", r"殺したい", r"殺す",
+    r"飛び降り", r"首を吊", r"リストカット", r"ODした",
+    r"消えたい", r"いなくなりたい", r"生きていたくない",
+    r"虐待", r"DVされ", r"暴力を受け",
+]
+_CRISIS_RE = re.compile("|".join(_CRISIS_PATTERNS))
+
+_CRISIS_RESPONSE = {
+    "crisis_detected": True,
+    "message": (
+        "あなたのお気持ちを受け止めています。"
+        "このサービスは意思決定の参考情報を提供するものであり、"
+        "危機的な状況への専門的な支援を行うことはできません。\n\n"
+        "今つらい状況にある場合は、以下の専門窓口にご相談ください：\n"
+        "・よりそいホットライン: 0120-279-338（24時間無料）\n"
+        "・いのちの電話: 0570-783-556\n"
+        "・こころの健康相談統一ダイヤル: 0570-064-556"
+    ),
+    "phase": "crisis_rejected",
+}
+
+
+def _check_crisis_input(text: str) -> bool:
+    """ユーザー入力に危機的キーワードが含まれるか検査する。"""
+    return bool(_CRISIS_RE.search(text))
 
 
 # ---------------------------------------------------------------------------
@@ -245,6 +279,11 @@ def extract():
     s, err = _get_session_or_404(session_id)
     if err:
         return err
+
+    # 危機ケース検出 — 専門機関への案内を返し、処理を中断する
+    if _check_crisis_input(text):
+        s["phase"] = "crisis_rejected"
+        return jsonify(_CRISIS_RESPONSE)
 
     # デモモード: LLM未設定またはAPI呼び出し失敗時はサンプルデータを返す
     demo_mode = not dialogue_engine.is_available()
@@ -472,6 +511,17 @@ def feedback():
     # セッション更新
     s["phase"] = "result"
 
+    # 出力フォーマット選択
+    output_format = data.get("format", "5layer")
+    if output_format == "5point":
+        view = feedback_engine.build_5point_view(fb, candidate["hexagram_number"], yao)
+        return jsonify({
+            "feedback_5point": view,
+            "feedback": fb,
+            "selected_candidate": candidate,
+            "phase": "result",
+        })
+
     return jsonify({
         "feedback": fb,
         "selected_candidate": candidate,
@@ -496,6 +546,11 @@ def diary_extract():
 
     if s.get("mode") != "diary":
         return jsonify({"error": "日記モードのセッションではありません"}), 400
+
+    # 危機ケース検出
+    if _check_crisis_input(text):
+        s["phase"] = "crisis_rejected"
+        return jsonify(_CRISIS_RESPONSE)
 
     result = diary_orchestrator.extract_diary(s, text)
     if "error" in result:
