@@ -1,0 +1,59 @@
+# LLM Debate: MVP最終レビュー-クローズドベータ移行可否
+
+## 議題
+MVP最終レビュー-クローズドベータ移行可否
+
+## Claude (Anthropic) の見解
+MVP全6ステップ中5完了。515テストパス。E2E: 5点出力OK、危機検出3カテゴリOK、否定除外OK、format検証OK。クローズドベータに進んでよいか？ブロッカーがあれば指摘せよ。
+
+## Codex (OpenAI GPT-5.4) の批評
+### 結論（最初に明言）
+**クローズドベータ移行は不可である。現状は「デモとしては動く」が、「安全・根拠・運用」の3点で出荷基準を満たしていない。外部ユーザーを入れる段階ではない。**
+
+### 批判的分析
+1. **論理的整合性が崩れている。** Claudeの「pytest 515テスト全パス」は事実ではない。2026-03-10時点でこのワークスペースで `python3 -m pytest -q` を実行すると **`520 passed, 5 errors`** で、失敗は [isomorphism_test.py](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/analysis/phase3/isomorphism_test.py#L275) などの fixture 欠落である。分析系テストを除外したいなら最初からそう定義すべきで、「全パス」と言うのは誤りである。
+
+2. **安全仕様と実装が一致していない。** 仕様は Layer1 キーワード、Layer2 LLM分類、Layer3 人間判断の3層で、CRITICAL/HIGH は人間通知とログ記録が必須である [safety_design.md](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/docs/safety_design.md#L7)。実装は単純な文字列一致と `phase = "crisis_rejected"` だけである [app.py](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/app.py#L132)。これは仕様準拠ではない。
+
+3. **反例で破綻している。** 仕様上 Safety 対象として定義された `REG_015`（重度抑うつ/MEDIUM）、`REG_016`（経済危機/MEDIUM）、`REG_018`（DV/HIGH）は [regression_cases.json](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/tests/regression_cases.json#L395) [regression_cases.json](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/tests/regression_cases.json#L423) [regression_cases.json](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/tests/regression_cases.json#L479) に存在するが、現行 `_check_crisis_input` は3件とも `None` を返す。これは**偽陰性**である。ベータ移行の即時ブロッカーだ。
+
+4. **根拠仕様に違反している。** 仕様では「類似事例が3件未満ならレポート生成を中止し、返金対応」と明記されている [evidence_specification.md](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/docs/evidence_specification.md#L28)。しかし実装は `matched_n == 0` のとき警告を出すだけで、3件未満を停止条件にしていない [feedback_engine.py](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/feedback_engine.py#L349)。しかもテストは「0件でも動作すること」を正としている [test_integration.py](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/tests/test_integration.py#L504)。これは仕様違反をテストで固定している。
+
+5. **ベータ前の検証計画が未完了である。** 自分たちで定義した Go/No Go 基準では、10ケースのドライラン、Safety偽陰性0件、品質ゲート通過率90%以上、フロー完走率100%が必要であり、Safety偽陰性が1件でもあれば即 No Go である [validation_framework_10cases.md](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/docs/validation_framework_10cases.md#L18) [validation_framework_10cases.md](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/docs/validation_framework_10cases.md#L214)。`validation/` にはペルソナしかなく、`runs/` や `summary.md` は存在しない。未検証である。
+
+6. **スケーラビリティと運用性が弱い。** Flask側のセッションはインメモリ辞書で保持しているだけで、永続化・監査証跡・復旧性がない [app.py](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/app.py#L92)。クローズドベータでも、再起動や多重プロセスでセッション消失する設計は不適切である。
+
+7. **新規性は誇張されている。** `5point` は新しい診断エンジンではなく、既存の `feedback` を `build_5point_view()` で整形した表示アダプタである [feedback_engine.py](/Users/hideakimacbookair/Library/Mobile%20Documents/com~apple~CloudDocs/易経変化ロジックDB/scripts/feedback_engine.py#L326)。「大きく前進した」というより「見せ方を変えた」が正確である。
+
+### Claudeの意見への反論/修正
+- Claudeの「format=5point」「4エンドポイントへの危機判定」「フロント更新」が実装されている点は正しい。機能追加自体は進んでいる。
+- Claudeの最大の誤りは、**機能追加の完了をベータ準備完了と混同していること**である。安全仕様の未実装、根拠仕様違反、未実施の検証計画を無視している。
+- Claudeの「危機検出3カテゴリOK」は誤りである。3カテゴリを拾えることは安全設計の達成を意味しない。実際には仕様で想定した MEDIUM/HIGH ケースを見逃している。
+- Claudeの「515テスト全パス」は事実誤認である。ここは評価全体の信頼性を損ねる。
+
+### より正確な見解
+**現状は「クローズドベータ可能なMVP」ではなく、「内部検証用プロトタイプ」である。**
+
+次の5点を満たすまでは外部クローズドベータに進めてはならない。
+
+1. `REG_015/016/018` を含む安全回帰ケースを自動テストに組み込み、偽陰性ゼロを達成する。  
+2. 類似事例3件未満のときは仕様どおり停止または明示ラベル付き制限提供に変更する。  
+3. 10ケース検証の `validation/runs/` と `validation/summary.md` を実際に作り、Go/No Go基準を埋める。  
+4. セッション永続化、危機ログ、人的エスカレーション記録を実装する。  
+5. テストスコープを明文化し、少なくとも「ベータ対象のテストは全緑」で再現可能にする。
+
+**進めるべき代替案は、外部クローズドベータではなく内部シャドーベータである。** 社内・自作ペルソナ・既存回帰ケースだけで運用を回し、上の5点を潰してから初めて限定ユーザーを入れるべきだ。
+
+
+## 統合分析
+### 共通点
+（Claudeによる分析が必要）
+
+### 相違点
+（Claudeによる分析が必要）
+
+### 結論・推奨
+（Claudeによる最終まとめが必要）
+
+---
+*生成日時: 2026-03-10T06:13:36.381Z*
